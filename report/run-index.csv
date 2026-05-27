@@ -1,0 +1,2 @@
+timestamp_utc,run_id,run_label,mode,refresh_baseline,baseline_revision,candidate_revision,baseline_admin_theme,candidate_admin_theme,vrt_exit_code,report_dir
+2026-05-27T20:12:58Z,20260527-160939,all-enhancements-validated,normal,false,26adc3e4f17,68cf8d51cf0,gin,claro,1,/Users/mike.gifford/drupal-diff/report/20260527-160939

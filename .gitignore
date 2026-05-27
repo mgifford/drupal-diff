@@ -1,0 +1,9 @@
+# Exclude local Drupal source copies
+/drupal-11.3.10/
+/drupal-git/
+
+# macOS
+.DS_Store
+
+# Optional editor/runner noise
+*.log

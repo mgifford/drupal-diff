@@ -1,0 +1,11 @@
+run_id: 20260527-160939
+run_label: all-enhancements-validated
+mode: normal
+refresh_baseline: false
+baseline_project: /Users/mike.gifford/drupal-diff/drupal-11.3.10
+baseline_revision: 26adc3e4f17
+baseline_admin_theme: gin
+candidate_project: /Users/mike.gifford/drupal-diff/drupal-git
+candidate_revision: 68cf8d51cf0
+candidate_admin_theme: claro
+timestamp_utc: 2026-05-27T20:09:40Z
