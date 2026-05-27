@@ -87,7 +87,7 @@ fi
 cd "$ROOT_DIR"
 
 echo "[3/4] Staging publishable paths"
-git add .gitignore src report screenshots
+git add .gitignore README.md src report screenshots
 
 if git diff --cached --quiet; then
   echo "No staged changes to commit."
