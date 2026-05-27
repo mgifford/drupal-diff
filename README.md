@@ -20,6 +20,23 @@ This repository intentionally **does not track** local Drupal source copies:
 
 Those are local working copies only.
 
+## Latest Published Reports
+
+Quick links for the most recent published run (`20260527-160939`):
+
+- [Element Compare Dashboard](report/20260527-160939/element-compare/element-compare-dashboard.html)
+- [Bug Drafts Index](report/20260527-160939/element-compare/bug-drafts-index.md)
+- [Issue Summary (Markdown)](report/20260527-160939/issue-3592061-summary.md)
+- [Issue Summary (CSV)](report/20260527-160939/issue-3592061-summary.csv)
+- [Side-by-side VRT Diff Viewer](report/20260527-160939/side-by-side-vrt-diffs.html)
+- [Side-by-side Interaction Viewer](report/20260527-160939/side-by-side-interactions.html)
+- [Playwright HTML Report](report/20260527-160939/playwright-report/index.html)
+
+Browse all published runs:
+
+- [All run folders](report)
+- [Run index](report/run-index.csv)
+
 ## Prerequisites
 
 Install the following on macOS/Linux:
