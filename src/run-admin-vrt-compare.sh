@@ -94,7 +94,7 @@ rsync -a --delete "$RUN_SCREENSHOT_DIR/baseline/" "$CANDIDATE_DIR/__screenshots_
 
 echo "[6/7] Running candidate comparison (Drupal 12 core admin)"
 set +e
-(cd "$CANDIDATE_DIR" && TZ=UTC LANG=C.UTF-8 LC_ALL=C.UTF-8 DRUPAL_ADMIN_USER=admin DRUPAL_ADMIN_PASS=adminadminadmin ddev vrt "$MODE_FLAG")
+(cd "$CANDIDATE_DIR" && TZ=UTC LANG=C.UTF-8 LC_ALL=C.UTF-8 DRUPAL_ADMIN_USER=admin DRUPAL_ADMIN_PASS=adminadminadmin ddev vrt "$MODE_FLAG" --no-bail)
 VRT_EXIT_CODE=$?
 set -e
 

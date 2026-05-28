@@ -136,6 +136,8 @@ Behavior:
 7. Exports issue summaries
 8. Updates [report/run-index.csv](report/run-index.csv)
 
+Note: The runner uses no-bail behavior for candidate comparison, so tests continue after failures and reports include all failing pages instead of stopping at the first 5 failures.
+
 ## Daily Workflow
 
 ### A) Compare current state
