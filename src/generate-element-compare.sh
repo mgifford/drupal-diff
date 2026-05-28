@@ -837,7 +837,7 @@ function evidenceMarkdown(title, evidence) {
 
   let idx = 1;
   for (const row of flagged) {
-    const title = `[Admin Theme][${row.colorMode}] ${row.route} - ${row.component} style regression vs Drupal 11 Gin`;
+    const title = `Admin Theme (${row.colorMode}) ${row.route} - ${row.component} style regression vs Drupal 11 Gin`;
     const deltas = [];
     for (const d of row.comparison.deltas) {
       if (d.flagged) {
