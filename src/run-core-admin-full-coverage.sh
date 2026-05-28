@@ -11,14 +11,20 @@ SEED_SCRIPT="$ROOT_DIR/src/seed-dummy-content.sh"
 RUN_LABEL="${1:-core-admin-full}"
 SEED_CONTENT="${2:-true}"
 MAX_PAGES="${3:-0}"
+COLOR_MODE="${4:-both}"
 
 if [[ "$SEED_CONTENT" != "true" && "$SEED_CONTENT" != "false" ]]; then
-  echo "Usage: $0 [run-label] [seed-content:true|false] [max-pages:0-for-unlimited]"
+  echo "Usage: $0 [run-label] [seed-content:true|false] [max-pages:0-for-unlimited] [light|dark|both]"
   exit 1
 fi
 
 if ! [[ "$MAX_PAGES" =~ ^[0-9]+$ ]]; then
   echo "max-pages must be a non-negative integer"
+  exit 1
+fi
+
+if [[ "$COLOR_MODE" != "light" && "$COLOR_MODE" != "dark" && "$COLOR_MODE" != "both" ]]; then
+  echo "color-mode must be one of: light, dark, both"
   exit 1
 fi
 
@@ -60,6 +66,7 @@ echo "[4/8] Discovering reachable /admin routes from baseline"
   OUT_FILE="/var/www/html/.ddev/drupal-admin-vrt/core-admin-routes.txt" \
   DRUPAL_ADMIN_USER="admin" \
   DRUPAL_ADMIN_PASS="adminadminadmin" \
+  COLOR_MODE="$COLOR_MODE" \
   MAX_PAGES="$MAX_PAGES" \
   node - <<'NODE'
 const fs = require('fs');
@@ -69,6 +76,8 @@ const baseUrl = process.env.BASE_URL;
 const outFile = process.env.OUT_FILE;
 const username = process.env.DRUPAL_ADMIN_USER;
 const password = process.env.DRUPAL_ADMIN_PASS;
+const colorMode = process.env.COLOR_MODE || 'both';
+const schemes = colorMode === 'both' ? ['light', 'dark'] : [colorMode];
 const maxPages = Number(process.env.MAX_PAGES || '0');
 
 function canonicalize(href, origin) {
@@ -98,30 +107,34 @@ function canonicalize(href, origin) {
   const queue = ['/admin'];
   const seen = new Set();
 
-  while (queue.length) {
-    const route = queue.shift();
-    if (seen.has(route)) continue;
-    seen.add(route);
+  for (const scheme of schemes) {
+    await page.emulateMedia({ colorScheme: scheme });
 
-    if (maxPages > 0 && seen.size >= maxPages) break;
+    while (queue.length) {
+      const route = queue.shift();
+      if (seen.has(route)) continue;
+      seen.add(route);
 
-    try {
-      await page.goto(`${baseUrl}${route}`, { waitUntil: 'networkidle', timeout: 30000 });
-      const links = await page.$$eval('a[href]', (nodes) => nodes.map((n) => n.getAttribute('href')).filter(Boolean));
-      for (const href of links) {
-        const c = (function(h, o) {
-          try {
-            const u = new URL(h, o);
-            if (u.origin !== o) return null;
-            if (!u.pathname.startsWith('/admin')) return null;
-            if (u.pathname === '/user/logout') return null;
-            return u.pathname;
-          } catch { return null; }
-        })(href, origin);
-        if (c && !seen.has(c)) queue.push(c);
+      if (maxPages > 0 && seen.size >= maxPages) break;
+
+      try {
+        await page.goto(`${baseUrl}${route}`, { waitUntil: 'networkidle', timeout: 30000 });
+        const links = await page.$$eval('a[href]', (nodes) => nodes.map((n) => n.getAttribute('href')).filter(Boolean));
+        for (const href of links) {
+          const c = (function(h, o) {
+            try {
+              const u = new URL(h, o);
+              if (u.origin !== o) return null;
+              if (!u.pathname.startsWith('/admin')) return null;
+              if (u.pathname === '/user/logout') return null;
+              return u.pathname;
+            } catch { return null; }
+          })(href, origin);
+          if (c && !seen.has(c)) queue.push(c);
+        }
+      } catch {
+        // Keep crawling even when some pages fail.
       }
-    } catch {
-      // Keep crawling even when some pages fail.
     }
   }
 
@@ -146,6 +159,7 @@ echo "[5/8] Capturing full-page and interactive element states across all routes
   STATUS_FILE="/var/www/html/.ddev/drupal-admin-vrt/core-admin-route-status.csv" \
   DRUPAL_ADMIN_USER="admin" \
   DRUPAL_ADMIN_PASS="adminadminadmin" \
+  COLOR_MODE="$COLOR_MODE" \
   node - <<'NODE'
 const fs = require('fs');
 const path = require('path');
@@ -158,6 +172,8 @@ const outDir = process.env.OUT_DIR;
 const statusFile = process.env.STATUS_FILE;
 const username = process.env.DRUPAL_ADMIN_USER;
 const password = process.env.DRUPAL_ADMIN_PASS;
+const colorMode = process.env.COLOR_MODE || 'both';
+const schemes = colorMode === 'both' ? ['light', 'dark'] : [colorMode];
 
 const selectors = 'a, button, input, select, textarea, [role="button"], [role="link"]';
 
@@ -178,8 +194,9 @@ async function gotoRoute(page, url) {
   return response ? response.status() : 0;
 }
 
-async function captureStates(page, basePath, side) {
-  await page.screenshot({ path: `${basePath}/${side}-full.png`, fullPage: true });
+async function captureStates(page, basePath, side, scheme) {
+  await page.emulateMedia({ colorScheme: scheme });
+  await page.screenshot({ path: `${basePath}/${side}-${scheme}-full.png`, fullPage: true });
 
   const count = await page.locator(selectors).count();
   for (let i = 0; i < count; i++) {
@@ -196,21 +213,21 @@ async function captureStates(page, basePath, side) {
 
     try {
       await loc.scrollIntoViewIfNeeded({ timeout: 3000 });
-      await loc.screenshot({ path: `${basePath}/${side}-el-${idx}-default.png` });
+      await loc.screenshot({ path: `${basePath}/${side}-${scheme}-el-${idx}-default.png` });
     } catch {
       continue;
     }
 
     try {
       await loc.focus({ timeout: 1500 });
-      await loc.screenshot({ path: `${basePath}/${side}-el-${idx}-focus.png` });
+      await loc.screenshot({ path: `${basePath}/${side}-${scheme}-el-${idx}-focus.png` });
     } catch {
       // no-op
     }
 
     try {
       await loc.hover({ timeout: 1500 });
-      await loc.screenshot({ path: `${basePath}/${side}-el-${idx}-hover.png` });
+      await loc.screenshot({ path: `${basePath}/${side}-${scheme}-el-${idx}-hover.png` });
     } catch {
       // no-op
     }
@@ -231,10 +248,7 @@ async function captureStates(page, basePath, side) {
   const browser = await chromium.launch({ headless: true });
   const routeStats = routes.map((route) => ({
     route,
-    baselineStatus: 0,
-    candidateStatus: 0,
-    baselineInteractives: 0,
-    candidateInteractives: 0,
+    schemes: {},
   }));
 
   async function captureSite(siteKey, base, statusField, countField) {
@@ -242,18 +256,26 @@ async function captureStates(page, basePath, side) {
     const page = await ctx.newPage();
     await login(page, base);
 
-    for (const stat of routeStats) {
-      const folder = path.join(outDir, slug(stat.route));
-      fs.mkdirSync(folder, { recursive: true });
+    for (const scheme of schemes) {
+      for (const stat of routeStats) {
+        const folder = path.join(outDir, slug(stat.route));
+        fs.mkdirSync(folder, { recursive: true });
+        stat.schemes[scheme] = stat.schemes[scheme] || {
+          baselineStatus: 0,
+          candidateStatus: 0,
+          baselineInteractives: 0,
+          candidateInteractives: 0,
+        };
 
-      const status = await gotoRoute(page, `${base}${stat.route}`).catch(() => 0);
-      stat[statusField] = status;
+        const status = await gotoRoute(page, `${base}${stat.route}`).catch(() => 0);
+        stat.schemes[scheme][statusField] = status;
 
-      if (status > 0 && status < 500) {
-        stat[countField] = await captureStates(page, folder, siteKey).catch(() => 0);
+        if (status > 0 && status < 500) {
+          stat.schemes[scheme][countField] = await captureStates(page, folder, siteKey, scheme).catch(() => 0);
+        }
+
+        console.log(`[${siteKey}:${scheme}] ${stat.route} status=${status} interactives=${stat.schemes[scheme][countField]}`);
       }
-
-      console.log(`[${siteKey}] ${stat.route} status=${status} interactives=${stat[countField]}`);
     }
 
     await ctx.close();
@@ -262,9 +284,17 @@ async function captureStates(page, basePath, side) {
   await captureSite('baseline', baselineUrl, 'baselineStatus', 'baselineInteractives');
   await captureSite('candidate', candidateUrl, 'candidateStatus', 'candidateInteractives');
 
-  const rows = ['route,baseline_status,candidate_status,baseline_interactives,candidate_interactives'];
+  const rows = ['route,color_mode,baseline_status,candidate_status,baseline_interactives,candidate_interactives'];
   for (const stat of routeStats) {
-    rows.push(`${stat.route},${stat.baselineStatus},${stat.candidateStatus},${stat.baselineInteractives},${stat.candidateInteractives}`);
+    for (const scheme of schemes) {
+      const s = stat.schemes[scheme] || {
+        baselineStatus: 0,
+        candidateStatus: 0,
+        baselineInteractives: 0,
+        candidateInteractives: 0,
+      };
+      rows.push(`${stat.route},${scheme},${s.baselineStatus},${s.candidateStatus},${s.baselineInteractives},${s.candidateInteractives}`);
+    }
   }
 
   fs.writeFileSync(statusFile, rows.join('\n') + '\n');
@@ -279,9 +309,9 @@ mkdir -p "$RUN_SCREENSHOT_DIR" "$RUN_REPORT_DIR/core-admin-coverage"
 (cd "$CANDIDATE_DIR" && ddev exec bash -lc "cat '/var/www/html/.ddev/drupal-admin-vrt/core-admin-route-status.csv'") > "$MISSING_FILE"
 
 TOTAL_ROWS="$(tail -n +2 "$MISSING_FILE" | wc -l | tr -d ' ')"
-MATCHED_ROWS="$(awk -F, 'NR>1 && $2 ~ /^2/ && $3 ~ /^2/ {c++} END{print c+0}' "$MISSING_FILE")"
-BASE_ONLY_ROWS="$(awk -F, 'NR>1 && $2 ~ /^2/ && $3 !~ /^2/ {c++} END{print c+0}' "$MISSING_FILE")"
-CAND_ONLY_ROWS="$(awk -F, 'NR>1 && $2 !~ /^2/ && $3 ~ /^2/ {c++} END{print c+0}' "$MISSING_FILE")"
+MATCHED_ROWS="$(awk -F, 'NR>1 && $3 ~ /^2/ && $4 ~ /^2/ {c++} END{print c+0}' "$MISSING_FILE")"
+BASE_ONLY_ROWS="$(awk -F, 'NR>1 && $3 ~ /^2/ && $4 !~ /^2/ {c++} END{print c+0}' "$MISSING_FILE")"
+CAND_ONLY_ROWS="$(awk -F, 'NR>1 && $3 !~ /^2/ && $4 ~ /^2/ {c++} END{print c+0}' "$MISSING_FILE")"
 
 {
   echo "# Core Admin Full Coverage Summary"
@@ -289,6 +319,7 @@ CAND_ONLY_ROWS="$(awk -F, 'NR>1 && $2 !~ /^2/ && $3 ~ /^2/ {c++} END{print c+0}'
   echo "- Run ID: $RUN_ID"
   echo "- Run label: $RUN_LABEL"
   echo "- Seed content: $SEED_CONTENT"
+  echo "- Color mode: $COLOR_MODE"
   echo "- Total discovered admin routes: $TOTAL_ROUTES"
   echo "- Routes processed: $TOTAL_ROWS"
   echo "- Routes with 2xx in both baseline and candidate: $MATCHED_ROWS"

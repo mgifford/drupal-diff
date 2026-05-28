@@ -11,14 +11,20 @@ ISSUE_EXPORT_SCRIPT="$ROOT_DIR/src/export-issue-report.sh"
 MODE="${1:-normal}"
 RUN_LABEL="${2:-manual}"
 REFRESH_BASELINE="${3:-false}"
+COLOR_MODE="${4:-both}"
 
 if [[ "$MODE" != "normal" && "$MODE" != "full" ]]; then
-  echo "Usage: $0 [normal|full] [run-label] [refresh-baseline:true|false]"
+  echo "Usage: $0 [normal|full] [run-label] [refresh-baseline:true|false] [light|dark|both]"
   exit 1
 fi
 
 if [[ "$REFRESH_BASELINE" != "true" && "$REFRESH_BASELINE" != "false" ]]; then
   echo "refresh-baseline must be true or false"
+  exit 1
+fi
+
+if [[ "$COLOR_MODE" != "light" && "$COLOR_MODE" != "dark" && "$COLOR_MODE" != "both" ]]; then
+  echo "color-mode must be one of: light, dark, both"
   exit 1
 fi
 
@@ -39,6 +45,7 @@ run_id: $RUN_ID
 run_label: $RUN_LABEL
 mode: $MODE
 refresh_baseline: $REFRESH_BASELINE
+color_mode: $COLOR_MODE
 baseline_project: $BASELINE_DIR
 baseline_revision: $BASELINE_REV
 baseline_admin_theme: ${BASELINE_THEME:-unknown}
@@ -102,7 +109,7 @@ fi
 echo "[8/10] Capturing interaction screenshots (focus/hover/modal probes)"
 if [[ -x "$INTERACTION_SCRIPT" ]]; then
   set +e
-  "$INTERACTION_SCRIPT" "$RUN_ID" "$RUN_SCREENSHOT_DIR"
+  "$INTERACTION_SCRIPT" "$RUN_ID" "$RUN_SCREENSHOT_DIR" "$COLOR_MODE"
   INTERACTION_EXIT_CODE=$?
   set -e
   if [[ $INTERACTION_EXIT_CODE -ne 0 ]]; then

@@ -3,9 +3,15 @@ set -euo pipefail
 
 RUN_ID="${1:-}"
 RUN_SCREENSHOT_DIR="${2:-}"
+COLOR_MODE="${3:-both}"
 
 if [[ -z "$RUN_ID" || -z "$RUN_SCREENSHOT_DIR" ]]; then
-  echo "Usage: $0 <run-id> <run-screenshot-dir>"
+  echo "Usage: $0 <run-id> <run-screenshot-dir> [light|dark|both]"
+  exit 1
+fi
+
+if [[ "$COLOR_MODE" != "light" && "$COLOR_MODE" != "dark" && "$COLOR_MODE" != "both" ]]; then
+  echo "color mode must be one of: light, dark, both"
   exit 1
 fi
 
@@ -23,10 +29,14 @@ capture_project() {
 
   mkdir -p "$host_out_dir"
 
+  (cd "$project_dir" && ddev exec -d /var/www/html/.ddev/drupal-admin-vrt npm install >/dev/null)
+  (cd "$project_dir" && ddev exec -d /var/www/html/.ddev/drupal-admin-vrt npx playwright install --with-deps chromium >/dev/null)
+
   set +e
   (cd "$project_dir" && ddev exec -d /var/www/html/.ddev/drupal-admin-vrt env \
     BASE_URL="$base_url" \
     OUT_DIR="$container_out_dir" \
+    COLOR_MODE="$COLOR_MODE" \
     DRUPAL_ADMIN_USER=admin \
     DRUPAL_ADMIN_PASS=adminadminadmin \
     node - <<'NODE'
@@ -37,8 +47,10 @@ const path = require('path');
 (async () => {
   const baseUrl = process.env.BASE_URL;
   const outDir = process.env.OUT_DIR;
+  const colorMode = process.env.COLOR_MODE || 'both';
   const username = process.env.DRUPAL_ADMIN_USER;
   const password = process.env.DRUPAL_ADMIN_PASS;
+  const schemes = colorMode === 'both' ? ['light', 'dark'] : [colorMode];
 
   fs.mkdirSync(outDir, { recursive: true });
 
@@ -63,50 +75,53 @@ const path = require('path');
   ];
 
   for (const route of routes) {
-    const item = { route: route.path, hover: false, focus: false, modal: false, notes: [] };
+    for (const scheme of schemes) {
+      const item = { route: route.path, colorMode: scheme, hover: false, focus: false, modal: false, notes: [] };
 
-    await page.goto(`${baseUrl}${route.path}`, { waitUntil: 'networkidle' });
-    await page.screenshot({ path: path.join(outDir, `${route.id}-default.png`), fullPage: true });
+      await page.emulateMedia({ colorScheme: scheme });
+      await page.goto(`${baseUrl}${route.path}`, { waitUntil: 'networkidle' });
+      await page.screenshot({ path: path.join(outDir, `${route.id}-${scheme}-default.png`), fullPage: true });
 
-    const interactable = page.locator('a, button, [role="button"], input, select, textarea').first();
-    if (await interactable.count()) {
-      await interactable.focus();
-      await page.screenshot({ path: path.join(outDir, `${route.id}-focus.png`), fullPage: true });
-      item.focus = true;
+      const interactable = page.locator('a, button, [role="button"], input, select, textarea').first();
+      if (await interactable.count()) {
+        await interactable.focus();
+        await page.screenshot({ path: path.join(outDir, `${route.id}-${scheme}-focus.png`), fullPage: true });
+        item.focus = true;
 
-      try {
-        await interactable.hover();
-        await page.screenshot({ path: path.join(outDir, `${route.id}-hover.png`), fullPage: true });
-        item.hover = true;
-      } catch {
-        item.notes.push('hover-not-available');
-      }
-    } else {
-      item.notes.push('no-interactable-element');
-    }
-
-    const modalTrigger = page.locator('[data-dialog-type="modal"], [aria-haspopup="dialog"], .use-ajax').first();
-    if (await modalTrigger.count()) {
-      try {
-        await modalTrigger.click({ timeout: 2000 });
-        await page.waitForTimeout(700);
-        const modal = page.locator('[role="dialog"], .ui-dialog, .ui-widget-overlay, .off-canvas, [data-drupal-dialog]');
-        if (await modal.count()) {
-          await page.screenshot({ path: path.join(outDir, `${route.id}-modal.png`), fullPage: true });
-          item.modal = true;
-          await page.keyboard.press('Escape');
-          await page.waitForTimeout(300);
-        } else {
-          item.notes.push('modal-triggered-but-not-detected');
+        try {
+          await interactable.hover();
+          await page.screenshot({ path: path.join(outDir, `${route.id}-${scheme}-hover.png`), fullPage: true });
+          item.hover = true;
+        } catch {
+          item.notes.push('hover-not-available');
         }
-      } catch {
-        item.notes.push('modal-trigger-click-failed');
+      } else {
+        item.notes.push('no-interactable-element');
       }
-    } else {
-      item.notes.push('no-modal-trigger-found');
-    }
 
-    summary.push(item);
+      const modalTrigger = page.locator('[data-dialog-type="modal"], [aria-haspopup="dialog"], .use-ajax').first();
+      if (await modalTrigger.count()) {
+        try {
+          await modalTrigger.click({ timeout: 2000 });
+          await page.waitForTimeout(700);
+          const modal = page.locator('[role="dialog"], .ui-dialog, .ui-widget-overlay, .off-canvas, [data-drupal-dialog]');
+          if (await modal.count()) {
+            await page.screenshot({ path: path.join(outDir, `${route.id}-${scheme}-modal.png`), fullPage: true });
+            item.modal = true;
+            await page.keyboard.press('Escape');
+            await page.waitForTimeout(300);
+          } else {
+            item.notes.push('modal-triggered-but-not-detected');
+          }
+        } catch {
+          item.notes.push('modal-trigger-click-failed');
+        }
+      } else {
+        item.notes.push('no-modal-trigger-found');
+      }
+
+      summary.push(item);
+    }
   }
 
   fs.writeFileSync(path.join(outDir, 'interaction-summary.json'), JSON.stringify(summary, null, 2));

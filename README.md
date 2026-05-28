@@ -115,7 +115,7 @@ If ports conflict, adjust `.ddev/config.yaml` in candidate project (for example 
 From repo root:
 
 ```bash
-./src/run-admin-vrt-compare.sh normal first-run false
+./src/run-admin-vrt-compare.sh normal first-run false both
 ```
 
 Arguments:
@@ -123,6 +123,7 @@ Arguments:
 1. `mode`: `normal` or `full`
 2. `run-label`: arbitrary text for traceability
 3. `refresh-baseline`: `true` or `false`
+4. `color-mode`: `light`, `dark`, or `both`
 
 Behavior:
 
@@ -140,7 +141,7 @@ Behavior:
 ### A) Compare current state
 
 ```bash
-./src/run-admin-vrt-compare.sh normal css-check false
+./src/run-admin-vrt-compare.sh normal css-check false both
 ```
 
 ### B) After applying a patch
@@ -149,10 +150,16 @@ Behavior:
 ./src/rerun-after-patch.sh normal patch-<ticket-or-branch>
 ```
 
+For light/dark interaction capture during rerun, run:
+
+```bash
+./src/capture-admin-interactions.sh <run-id> <run-screenshot-dir> both
+```
+
 ### C) Run full Core admin coverage (all discovered /admin routes)
 
 ```bash
-./src/run-core-admin-full-coverage.sh core-admin-full true 0
+./src/run-core-admin-full-coverage.sh core-admin-full true 0 both
 ```
 
 Arguments:
@@ -160,11 +167,12 @@ Arguments:
 1. `run-label`: text label for the run
 2. `seed-content`: `true|false` (seeds dummy content in both sites before capture)
 3. `max-pages`: `0` for unlimited crawl, or a positive integer cap
+4. `color-mode`: `light`, `dark`, or `both`
 
 This mode crawls the baseline admin UI, discovers reachable Core admin routes, then captures:
 
-1. Full-page screenshots per route (baseline and candidate)
-2. Per-element screenshots for interactive elements in default/focus/hover states
+1. Full-page screenshots per route (baseline and candidate) for selected color mode(s)
+2. Per-element screenshots for interactive elements in default/focus/hover states for selected color mode(s)
 3. Route-level status coverage CSV (2xx/non-2xx for baseline and candidate)
 
 ### D) Open viewers

@@ -3,6 +3,12 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 LATEST_RUN="$(find "$ROOT_DIR/report" -maxdepth 1 -mindepth 1 -type d -name '20*' | sort | tail -n 1)"
+COLOR_MODE="${1:-both}"
+
+if [[ "$COLOR_MODE" != "light" && "$COLOR_MODE" != "dark" && "$COLOR_MODE" != "both" ]]; then
+  echo "Usage: $0 [light|dark|both]"
+  exit 1
+fi
 
 if [[ -z "$LATEST_RUN" ]]; then
   echo "No run directories found in $ROOT_DIR/report"
@@ -21,6 +27,7 @@ cd "$ROOT_DIR/drupal-git"
 ddev exec -d /var/www/html/.ddev/drupal-admin-vrt env \
   BASELINE_URL="http://drupal-11.3.10.ddev.site" \
   CANDIDATE_URL="http://drupal-git.ddev.site:8080" \
+  COLOR_MODE="$COLOR_MODE" \
   DRUPAL_ADMIN_USER="admin" \
   DRUPAL_ADMIN_PASS="adminadminadmin" \
   OUT_DIR="$CONTAINER_OUT_DIR" \
@@ -31,11 +38,13 @@ const { chromium } = require('playwright');
 
 const baselineUrl = process.env.BASELINE_URL;
 const candidateUrl = process.env.CANDIDATE_URL;
+const colorMode = process.env.COLOR_MODE || 'both';
 const username = process.env.DRUPAL_ADMIN_USER;
 const password = process.env.DRUPAL_ADMIN_PASS;
 const outDir = process.env.OUT_DIR;
 const baselineLabel = 'Drupal 11 with Gin';
 const candidateLabel = 'Drupal 12 with Admin Theme';
+const schemes = colorMode === 'both' ? ['light', 'dark'] : [colorMode];
 
 const routes = [
   { id: 'appearance', path: '/admin/appearance', label: 'Appearance' },
@@ -250,65 +259,70 @@ function esc(s) {
   const rows = [];
 
   for (const route of routes) {
-    await baselinePage.goto(`${baselineUrl}${route.path}`, { waitUntil: 'networkidle' });
-    await candidatePage.goto(`${candidateUrl}${route.path}`, { waitUntil: 'networkidle' });
+    for (const scheme of schemes) {
+      await baselinePage.emulateMedia({ colorScheme: scheme });
+      await candidatePage.emulateMedia({ colorScheme: scheme });
+      await baselinePage.goto(`${baselineUrl}${route.path}`, { waitUntil: 'networkidle' });
+      await candidatePage.goto(`${candidateUrl}${route.path}`, { waitUntil: 'networkidle' });
 
-    for (const component of components) {
-      const baseMeasures = await measure(baselinePage, component.selector);
-      const candMeasures = await measure(candidatePage, component.selector);
-      const baseCssSources = await collectCssSources(baselinePage, component.selector);
-      const candCssSources = await collectCssSources(candidatePage, component.selector);
+      for (const component of components) {
+        const baseMeasures = await measure(baselinePage, component.selector);
+        const candMeasures = await measure(candidatePage, component.selector);
+        const baseCssSources = await collectCssSources(baselinePage, component.selector);
+        const candCssSources = await collectCssSources(candidatePage, component.selector);
 
-      const baseSummary = summarize(baseMeasures);
-      const candSummary = summarize(candMeasures);
-      const comparison = compareStats(baseSummary, candSummary);
-      const likelyCss = likelyCssFiles(baseCssSources, candCssSources);
+        const baseSummary = summarize(baseMeasures);
+        const candSummary = summarize(candMeasures);
+        const comparison = compareStats(baseSummary, candSummary);
+        const likelyCss = likelyCssFiles(baseCssSources, candCssSources);
 
-      const fileBase = `${route.id}__${component.id}`;
-      const baselineShot = `baseline/${fileBase}.png`;
-      const candidateShot = `candidate/${fileBase}.png`;
+        const fileBase = `${route.id}__${scheme}__${component.id}`;
+        const baselineShot = `baseline/${fileBase}.png`;
+        const candidateShot = `candidate/${fileBase}.png`;
 
-      const bLoc = baselinePage.locator(component.selector).first();
-      const cLoc = candidatePage.locator(component.selector).first();
+        const bLoc = baselinePage.locator(component.selector).first();
+        const cLoc = candidatePage.locator(component.selector).first();
 
-      if (await bLoc.count()) {
-        try {
-          if (await bLoc.isVisible()) {
-            await bLoc.scrollIntoViewIfNeeded({ timeout: 3000 });
-            await bLoc.screenshot({ path: path.join(outDir, baselineShot) });
+        if (await bLoc.count()) {
+          try {
+            if (await bLoc.isVisible()) {
+              await bLoc.scrollIntoViewIfNeeded({ timeout: 3000 });
+              await bLoc.screenshot({ path: path.join(outDir, baselineShot) });
+            }
+          } catch {
+            // Skip non-actionable baseline element screenshot.
           }
-        } catch {
-          // Skip non-actionable baseline element screenshot.
         }
-      }
-      if (await cLoc.count()) {
-        try {
-          if (await cLoc.isVisible()) {
-            await cLoc.scrollIntoViewIfNeeded({ timeout: 3000 });
-            await cLoc.screenshot({ path: path.join(outDir, candidateShot) });
+        if (await cLoc.count()) {
+          try {
+            if (await cLoc.isVisible()) {
+              await cLoc.scrollIntoViewIfNeeded({ timeout: 3000 });
+              await cLoc.screenshot({ path: path.join(outDir, candidateShot) });
+            }
+          } catch {
+            // Skip non-actionable candidate element screenshot.
           }
-        } catch {
-          // Skip non-actionable candidate element screenshot.
         }
-      }
 
-      rows.push({
-        route: route.label,
-        routePath: route.path,
-        baselineUrl: `${baselineUrl}${route.path}`,
-        candidateUrl: `${candidateUrl}${route.path}`,
-        component: component.label,
-        componentId: component.id,
-        selector: component.selector,
-        baseline: baseSummary,
-        candidate: candSummary,
-        comparison,
-        baselineCssSources: baseCssSources,
-        candidateCssSources: candCssSources,
-        likelyCssFiles: likelyCss,
-        baselineShot,
-        candidateShot,
-      });
+        rows.push({
+          route: route.label,
+          routePath: route.path,
+          colorMode: scheme,
+          baselineUrl: `${baselineUrl}${route.path}`,
+          candidateUrl: `${candidateUrl}${route.path}`,
+          component: component.label,
+          componentId: component.id,
+          selector: component.selector,
+          baseline: baseSummary,
+          candidate: candSummary,
+          comparison,
+          baselineCssSources: baseCssSources,
+          candidateCssSources: candCssSources,
+          likelyCssFiles: likelyCss,
+          baselineShot,
+          candidateShot,
+        });
+      }
     }
   }
 
@@ -356,9 +370,10 @@ function esc(s) {
     const cssMeta = cssSources.slice(0, 3).map((s) => esc(s)).join(' | ');
 
     return `
-      <tr class="${className}" data-route="${esc(row.route)}" data-component="${esc(row.component)}" data-significant="${sig > 0 ? 'yes' : 'no'}" data-css="${esc(cssKey)}">
+      <tr class="${className}" data-route="${esc(row.route)}" data-component="${esc(row.component)}" data-significant="${sig > 0 ? 'yes' : 'no'}" data-css="${esc(cssKey)}" data-mode="${esc(row.colorMode)}">
         <td>
           <div><strong>${esc(row.route)}</strong></div>
+          <div class="meta"><strong>Mode:</strong> ${esc(row.colorMode)}</div>
           <div>${esc(row.component)}</div>
           <div class="meta"><a href="${esc(row.baselineUrl)}" target="_blank" rel="noopener">${esc(baselineLabel)} URL</a></div>
           <div class="meta"><a href="${esc(row.candidateUrl)}" target="_blank" rel="noopener">${esc(candidateLabel)} URL</a></div>
@@ -406,7 +421,7 @@ function esc(s) {
   header { position: sticky; top: 0; background: #102a43; color: #fff; padding: 12px 16px; z-index: 10; }
   .sub { font-size: 13px; opacity: 0.9; }
   main { padding: 16px; }
-  .controls { display: grid; grid-template-columns: repeat(6, minmax(160px, 1fr)); gap: 8px; margin-bottom: 14px; }
+  .controls { display: grid; grid-template-columns: repeat(7, minmax(140px, 1fr)); gap: 8px; margin-bottom: 14px; }
   select, input { padding: 8px; border: 1px solid #bcccdc; border-radius: 6px; }
   table { width: 100%; border-collapse: collapse; background: #fff; }
   th, td { border: 1px solid #d9e2ec; padding: 8px; vertical-align: top; }
@@ -450,6 +465,7 @@ function esc(s) {
         <option value="">All rows</option>
         <option value="yes">Only flagged rows</option>
       </select>
+      <select id="modeFilter"><option value="">All modes</option></select>
       <select id="cssFilter"><option value="">All CSS files</option></select>
       <select id="sortOrder">
         <option value="route">Sort: Route</option>
@@ -480,12 +496,14 @@ function esc(s) {
   const routeFilter = document.getElementById('routeFilter');
   const componentFilter = document.getElementById('componentFilter');
   const signalFilter = document.getElementById('signalFilter');
+  const modeFilter = document.getElementById('modeFilter');
   const cssFilter = document.getElementById('cssFilter');
   const sortOrder = document.getElementById('sortOrder');
   const textFilter = document.getElementById('textFilter');
 
   const routes = [...new Set(rows.map(r => r.dataset.route))].sort();
   const components = [...new Set(rows.map(r => r.dataset.component))].sort();
+  const modes = [...new Set(rows.map(r => r.dataset.mode || 'light'))].sort();
   const cssSources = [...new Set(rows.map(r => r.dataset.css || 'unknown'))].sort();
 
   for (const r of routes) {
@@ -497,6 +515,11 @@ function esc(s) {
     const opt = document.createElement('option');
     opt.value = c; opt.textContent = c;
     componentFilter.appendChild(opt);
+  }
+  for (const mode of modes) {
+    const opt = document.createElement('option');
+    opt.value = mode; opt.textContent = mode;
+    modeFilter.appendChild(opt);
   }
   for (const css of cssSources) {
     const opt = document.createElement('option');
@@ -522,6 +545,7 @@ function esc(s) {
     const route = routeFilter.value;
     const comp = componentFilter.value;
     const sig = signalFilter.value;
+    const mode = modeFilter.value;
     const css = cssFilter.value;
     const txt = textFilter.value.toLowerCase().trim();
 
@@ -529,9 +553,10 @@ function esc(s) {
       const matchesRoute = !route || row.dataset.route === route;
       const matchesComp = !comp || row.dataset.component === comp;
       const matchesSig = !sig || row.dataset.significant === sig;
+      const matchesMode = !mode || row.dataset.mode === mode;
       const matchesCss = !css || row.dataset.css === css;
       const matchesTxt = !txt || row.textContent.toLowerCase().includes(txt);
-      row.style.display = (matchesRoute && matchesComp && matchesSig && matchesCss && matchesTxt) ? '' : 'none';
+      row.style.display = (matchesRoute && matchesComp && matchesSig && matchesMode && matchesCss && matchesTxt) ? '' : 'none';
     }
 
     sortRows(sortOrder.value);
@@ -540,6 +565,7 @@ function esc(s) {
   routeFilter.addEventListener('change', applyFilters);
   componentFilter.addEventListener('change', applyFilters);
   signalFilter.addEventListener('change', applyFilters);
+  modeFilter.addEventListener('change', applyFilters);
   cssFilter.addEventListener('change', applyFilters);
   sortOrder.addEventListener('change', applyFilters);
   textFilter.addEventListener('input', applyFilters);
@@ -554,13 +580,13 @@ function esc(s) {
   const bugDraftDir = path.join(outDir, 'bug-drafts');
   fs.mkdirSync(bugDraftDir, { recursive: true });
 
-  const csvLines = ['id,title,route,component,selector,baseline_url,candidate_url,key_deltas,likely_css_files,baseline_css_sources,candidate_css_sources,evidence_baseline,evidence_candidate'];
+  const csvLines = ['id,title,route,color_mode,component,selector,baseline_url,candidate_url,key_deltas,likely_css_files,baseline_css_sources,candidate_css_sources,evidence_baseline,evidence_candidate'];
   const indexLines = ['# Draft Bug Reports', '', `Generated: ${new Date().toISOString()}`, '', `Baseline: ${baselineLabel}`, `Candidate: ${candidateLabel}`, ''];
   const cssBuckets = {};
 
   let idx = 1;
   for (const row of flagged) {
-    const title = `[Admin Theme] ${row.route} - ${row.component} style regression vs Drupal 11 Gin`;
+    const title = `[Admin Theme][${row.colorMode}] ${row.route} - ${row.component} style regression vs Drupal 11 Gin`;
     const deltas = [];
     for (const d of row.comparison.deltas) {
       if (d.flagged) {
@@ -583,6 +609,7 @@ function esc(s) {
       '',
       '## Summary',
       `Potential CSS regression in **${row.component}** on **${row.route}** when comparing ${baselineLabel} to ${candidateLabel}.`,
+      `Color mode: **${row.colorMode}**`,
       '',
       '## Steps To Reproduce',
       `1. Open baseline page: ${row.baselineUrl}`,
@@ -620,6 +647,7 @@ function esc(s) {
       idx,
       title,
       row.route,
+      row.colorMode,
       row.component,
       row.selector,
       row.baselineUrl,
