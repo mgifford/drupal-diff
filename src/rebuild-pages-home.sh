@@ -16,6 +16,26 @@ run_has_valid_data() {
   return 1
 }
 
+preferred_run_link() {
+  local run_id="$1"
+  local run_dir="$REPORT_DIR/$run_id"
+
+  if [[ -f "$run_dir/element-compare/element-compare-dashboard.html" ]]; then
+    printf 'report/%s/element-compare/element-compare-dashboard.html' "$run_id"
+    return 0
+  fi
+  if [[ -f "$run_dir/issue-3592061-summary.md" ]]; then
+    printf 'report/%s/issue-3592061-summary.md' "$run_id"
+    return 0
+  fi
+  if [[ -f "$run_dir/playwright-report/index.html" ]]; then
+    printf 'report/%s/playwright-report/index.html' "$run_id"
+    return 0
+  fi
+
+  printf 'report/%s/' "$run_id"
+}
+
 latest_run=""
 mapfile_runs=()
 while IFS= read -r run_id; do
@@ -37,7 +57,8 @@ fi
 recent_items=""
 count=0
 for run_id in "${mapfile_runs[@]}"; do
-  recent_items+="        <li><a href=\"report/${run_id}/\">${run_id}</a></li>"
+  run_href="$(preferred_run_link "$run_id")"
+  recent_items+="        <li><a href=\"${run_href}\">${run_id}</a></li>"
   recent_items+=$'\n'
   count=$((count + 1))
   [[ $count -ge 8 ]] && break
@@ -47,6 +68,14 @@ latest_links=""
 latest_dir="$REPORT_DIR/$latest_run"
 if [[ -f "$latest_dir/element-compare/element-compare-dashboard.html" ]]; then
   latest_links+="        <li><a href=\"report/${latest_run}/element-compare/element-compare-dashboard.html\">Element Compare Dashboard</a></li>"
+  latest_links+=$'\n'
+fi
+if [[ -f "$latest_dir/element-compare/bug-drafts-index.md" ]]; then
+  latest_links+="        <li><a href=\"report/${latest_run}/element-compare/bug-drafts-index.md\">Bug Drafts Index</a></li>"
+  latest_links+=$'\n'
+fi
+if [[ -f "$latest_dir/element-compare/bug-drafts-by-css.md" ]]; then
+  latest_links+="        <li><a href=\"report/${latest_run}/element-compare/bug-drafts-by-css.md\">Bug Drafts by CSS</a></li>"
   latest_links+=$'\n'
 fi
 if [[ -f "$latest_dir/side-by-side-vrt-diffs.html" ]]; then

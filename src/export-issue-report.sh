@@ -82,7 +82,7 @@ fi
       diff_pub="$PUBLISHED_BASE/$diff_rel"
       actual_pub="$PUBLISHED_BASE/$actual_rel"
       expected_pub="$PUBLISHED_BASE/$expected_rel"
-      echo "| $route | $viewport | $change_type | $severity | $diff_pub | $actual_pub | $expected_pub |"
+      echo "| $route | $viewport | $change_type | $severity | [Diff]($diff_pub) | [Actual]($actual_pub) | [Expected]($expected_pub) |"
     done
     echo
   done
