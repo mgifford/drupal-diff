@@ -107,6 +107,77 @@ async function measure(page, selector, max = 8) {
   }, { selector, max });
 }
 
+async function collectCssSources(page, selector, maxMatches = 12) {
+  return await page.evaluate(({ selector, maxMatches }) => {
+    const target = document.querySelector(selector);
+    if (!target) return [];
+
+    const matches = [];
+    const seen = new Set();
+
+    const pushMatch = (href, selectorText) => {
+      const src = href || 'inline:<style>';
+      const key = `${src}::${selectorText}`;
+      if (seen.has(key)) return;
+      seen.add(key);
+      matches.push({ source: src, selector: selectorText });
+    };
+
+    const walkRules = (rules, href) => {
+      for (const rule of rules) {
+        if (matches.length >= maxMatches) return;
+        if (rule.type === CSSRule.STYLE_RULE && rule.selectorText) {
+          try {
+            if (target.matches(rule.selectorText)) {
+              pushMatch(href, rule.selectorText);
+            }
+          } catch {
+            // Ignore selectors unsupported by matches().
+          }
+        } else if (rule.cssRules) {
+          try {
+            walkRules(rule.cssRules, href);
+          } catch {
+            // Ignore nested rule parsing issues.
+          }
+        }
+      }
+    };
+
+    for (const sheet of Array.from(document.styleSheets)) {
+      if (matches.length >= maxMatches) break;
+      try {
+        walkRules(sheet.cssRules || [], sheet.href || 'inline:<style>');
+      } catch {
+        // Cross-origin stylesheets can throw SecurityError.
+      }
+    }
+
+    return matches;
+  }, { selector, maxMatches });
+}
+
+function normalizeCssSource(source) {
+  if (!source) return '';
+  try {
+    const u = new URL(source);
+    return `${u.origin}${u.pathname}`;
+  } catch {
+    return source;
+  }
+}
+
+function cssSourceList(sources) {
+  return [...new Set((sources || []).map((s) => normalizeCssSource(s.source)).filter(Boolean))];
+}
+
+function likelyCssFiles(baseSources, candSources) {
+  const base = new Set(cssSourceList(baseSources));
+  const cand = cssSourceList(candSources);
+  const overlap = cand.filter((src) => base.has(src));
+  return overlap.length ? overlap : cand;
+}
+
 function summarize(measures) {
   return {
     count: measures.length,
@@ -185,10 +256,13 @@ function esc(s) {
     for (const component of components) {
       const baseMeasures = await measure(baselinePage, component.selector);
       const candMeasures = await measure(candidatePage, component.selector);
+      const baseCssSources = await collectCssSources(baselinePage, component.selector);
+      const candCssSources = await collectCssSources(candidatePage, component.selector);
 
       const baseSummary = summarize(baseMeasures);
       const candSummary = summarize(candMeasures);
       const comparison = compareStats(baseSummary, candSummary);
+      const likelyCss = likelyCssFiles(baseCssSources, candCssSources);
 
       const fileBase = `${route.id}__${component.id}`;
       const baselineShot = `baseline/${fileBase}.png`;
@@ -229,6 +303,9 @@ function esc(s) {
         baseline: baseSummary,
         candidate: candSummary,
         comparison,
+        baselineCssSources: baseCssSources,
+        candidateCssSources: candCssSources,
+        likelyCssFiles: likelyCss,
         baselineShot,
         candidateShot,
       });
@@ -274,14 +351,19 @@ function esc(s) {
       diffs.push(`count: ${row.comparison.countDelta > 0 ? '+' : ''}${row.comparison.countDelta} (${row.comparison.countDeltaPct.toFixed(1)}%)`);
     }
 
+    const cssSources = row.likelyCssFiles.length ? row.likelyCssFiles : ['unknown'];
+    const cssKey = cssSources[0] || 'unknown';
+    const cssMeta = cssSources.slice(0, 3).map((s) => esc(s)).join(' | ');
+
     return `
-      <tr class="${className}" data-route="${esc(row.route)}" data-component="${esc(row.component)}" data-significant="${sig > 0 ? 'yes' : 'no'}">
+      <tr class="${className}" data-route="${esc(row.route)}" data-component="${esc(row.component)}" data-significant="${sig > 0 ? 'yes' : 'no'}" data-css="${esc(cssKey)}">
         <td>
           <div><strong>${esc(row.route)}</strong></div>
           <div>${esc(row.component)}</div>
           <div class="meta"><a href="${esc(row.baselineUrl)}" target="_blank" rel="noopener">${esc(baselineLabel)} URL</a></div>
           <div class="meta"><a href="${esc(row.candidateUrl)}" target="_blank" rel="noopener">${esc(candidateLabel)} URL</a></div>
           <div class="meta">${esc(row.selector)}</div>
+          <div class="meta"><strong>Likely CSS:</strong> ${cssMeta}</div>
         </td>
         <td>
           <div>count: ${row.baseline.count}</div>
@@ -324,7 +406,7 @@ function esc(s) {
   header { position: sticky; top: 0; background: #102a43; color: #fff; padding: 12px 16px; z-index: 10; }
   .sub { font-size: 13px; opacity: 0.9; }
   main { padding: 16px; }
-  .controls { display: grid; grid-template-columns: repeat(4, minmax(180px, 1fr)); gap: 8px; margin-bottom: 14px; }
+  .controls { display: grid; grid-template-columns: repeat(6, minmax(160px, 1fr)); gap: 8px; margin-bottom: 14px; }
   select, input { padding: 8px; border: 1px solid #bcccdc; border-radius: 6px; }
   table { width: 100%; border-collapse: collapse; background: #fff; }
   th, td { border: 1px solid #d9e2ec; padding: 8px; vertical-align: top; }
@@ -368,6 +450,13 @@ function esc(s) {
         <option value="">All rows</option>
         <option value="yes">Only flagged rows</option>
       </select>
+      <select id="cssFilter"><option value="">All CSS files</option></select>
+      <select id="sortOrder">
+        <option value="route">Sort: Route</option>
+        <option value="component">Sort: Component</option>
+        <option value="css">Sort: CSS source</option>
+        <option value="flagged">Sort: Flagged first</option>
+      </select>
     </div>
 
     <table id="resultsTable">
@@ -387,13 +476,17 @@ function esc(s) {
 </main>
 <script>
   const rows = [...document.querySelectorAll('#resultsTable tbody tr')];
+  const tbody = document.querySelector('#resultsTable tbody');
   const routeFilter = document.getElementById('routeFilter');
   const componentFilter = document.getElementById('componentFilter');
   const signalFilter = document.getElementById('signalFilter');
+  const cssFilter = document.getElementById('cssFilter');
+  const sortOrder = document.getElementById('sortOrder');
   const textFilter = document.getElementById('textFilter');
 
   const routes = [...new Set(rows.map(r => r.dataset.route))].sort();
   const components = [...new Set(rows.map(r => r.dataset.component))].sort();
+  const cssSources = [...new Set(rows.map(r => r.dataset.css || 'unknown'))].sort();
 
   for (const r of routes) {
     const opt = document.createElement('option');
@@ -405,26 +498,52 @@ function esc(s) {
     opt.value = c; opt.textContent = c;
     componentFilter.appendChild(opt);
   }
+  for (const css of cssSources) {
+    const opt = document.createElement('option');
+    opt.value = css; opt.textContent = css;
+    cssFilter.appendChild(opt);
+  }
+
+  function sortRows(order) {
+    const get = (r, key) => (r.dataset[key] || '').toLowerCase();
+    const sorted = [...rows].sort((a, b) => {
+      if (order === 'component') return get(a, 'component').localeCompare(get(b, 'component'));
+      if (order === 'css') return get(a, 'css').localeCompare(get(b, 'css'));
+      if (order === 'flagged') return get(b, 'significant').localeCompare(get(a, 'significant'));
+      return get(a, 'route').localeCompare(get(b, 'route'));
+    });
+
+    for (const row of sorted) {
+      tbody.appendChild(row);
+    }
+  }
 
   function applyFilters() {
     const route = routeFilter.value;
     const comp = componentFilter.value;
     const sig = signalFilter.value;
+    const css = cssFilter.value;
     const txt = textFilter.value.toLowerCase().trim();
 
     for (const row of rows) {
       const matchesRoute = !route || row.dataset.route === route;
       const matchesComp = !comp || row.dataset.component === comp;
       const matchesSig = !sig || row.dataset.significant === sig;
+      const matchesCss = !css || row.dataset.css === css;
       const matchesTxt = !txt || row.textContent.toLowerCase().includes(txt);
-      row.style.display = (matchesRoute && matchesComp && matchesSig && matchesTxt) ? '' : 'none';
+      row.style.display = (matchesRoute && matchesComp && matchesSig && matchesCss && matchesTxt) ? '' : 'none';
     }
+
+    sortRows(sortOrder.value);
   }
 
   routeFilter.addEventListener('change', applyFilters);
   componentFilter.addEventListener('change', applyFilters);
   signalFilter.addEventListener('change', applyFilters);
+  cssFilter.addEventListener('change', applyFilters);
+  sortOrder.addEventListener('change', applyFilters);
   textFilter.addEventListener('input', applyFilters);
+  applyFilters();
 </script>
 </body>
 </html>`;
@@ -435,8 +554,9 @@ function esc(s) {
   const bugDraftDir = path.join(outDir, 'bug-drafts');
   fs.mkdirSync(bugDraftDir, { recursive: true });
 
-  const csvLines = ['id,title,route,component,selector,baseline_url,candidate_url,key_deltas,evidence_baseline,evidence_candidate'];
+  const csvLines = ['id,title,route,component,selector,baseline_url,candidate_url,key_deltas,likely_css_files,baseline_css_sources,candidate_css_sources,evidence_baseline,evidence_candidate'];
   const indexLines = ['# Draft Bug Reports', '', `Generated: ${new Date().toISOString()}`, '', `Baseline: ${baselineLabel}`, `Candidate: ${candidateLabel}`, ''];
+  const cssBuckets = {};
 
   let idx = 1;
   for (const row of flagged) {
@@ -454,6 +574,9 @@ function esc(s) {
     const slug = `${String(idx).padStart(3, '0')}-${row.route.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${row.componentId}`;
     const mdName = `${slug}.md`;
     const mdPath = path.join(bugDraftDir, mdName);
+    const cssList = (row.likelyCssFiles && row.likelyCssFiles.length) ? row.likelyCssFiles : ['unknown'];
+    const baselineCssList = cssSourceList(row.baselineCssSources || []);
+    const candidateCssList = cssSourceList(row.candidateCssSources || []);
 
     const body = [
       `# ${title}`,
@@ -472,6 +595,12 @@ function esc(s) {
       '',
       '## Actual Result',
       deltas.length ? deltas.map((d) => `- ${d}`).join('\n') : '- Significant visual difference observed',
+      '',
+      '## Likely CSS Sources',
+      cssList.map((css) => `- ${css}`).join('\n'),
+      '',
+      '## Candidate Matched CSS Rules',
+      (row.candidateCssSources || []).length ? (row.candidateCssSources || []).map((m) => `- ${m.source} :: ${m.selector}`).join('\n') : '- No matched rules captured',
       '',
       '## Evidence',
       `- Baseline element screenshot: ${row.baselineShot}`,
@@ -496,16 +625,33 @@ function esc(s) {
       row.baselineUrl,
       row.candidateUrl,
       deltas.join(' | '),
+      cssList.join(' | '),
+      baselineCssList.join(' | '),
+      candidateCssList.join(' | '),
       row.baselineShot,
       row.candidateShot,
     ].map(csvEsc).join(','));
 
     indexLines.push(`${idx}. [${title}](bug-drafts/${mdName})`);
+    for (const cssFile of cssList) {
+      cssBuckets[cssFile] = cssBuckets[cssFile] || [];
+      cssBuckets[cssFile].push({ idx, title, mdName });
+    }
     idx += 1;
   }
 
   fs.writeFileSync(path.join(outDir, 'bug-drafts.csv'), `${csvLines.join('\n')}\n`);
   fs.writeFileSync(path.join(outDir, 'bug-drafts-index.md'), `${indexLines.join('\n')}\n`);
+
+  const cssIndex = ['# Draft Bug Reports Grouped By CSS Source', '', `Generated: ${new Date().toISOString()}`, ''];
+  for (const cssFile of Object.keys(cssBuckets).sort()) {
+    cssIndex.push(`## ${cssFile}`);
+    for (const item of cssBuckets[cssFile]) {
+      cssIndex.push(`- ${item.idx}. [${item.title}](bug-drafts/${item.mdName})`);
+    }
+    cssIndex.push('');
+  }
+  fs.writeFileSync(path.join(outDir, 'bug-drafts-by-css.md'), `${cssIndex.join('\n')}\n`);
   console.log('Generated element compare dashboard');
 })();
 NODE
@@ -521,6 +667,7 @@ ddev exec bash -lc "cd '$CONTAINER_OUT_DIR' && tar -cf - baseline candidate bug-
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/element-compare-dashboard.html'" > "$HOST_OUT_DIR/element-compare-dashboard.html"
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/element-compare.json'" > "$HOST_OUT_DIR/element-compare.json"
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts-index.md'" > "$HOST_OUT_DIR/bug-drafts-index.md"
+ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts-by-css.md'" > "$HOST_OUT_DIR/bug-drafts-by-css.md"
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts.csv'" > "$HOST_OUT_DIR/bug-drafts.csv"
 
 echo "Generated: $HOST_OUT_DIR/element-compare-dashboard.html"

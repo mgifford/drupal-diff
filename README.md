@@ -149,13 +149,45 @@ Behavior:
 ./src/rerun-after-patch.sh normal patch-<ticket-or-branch>
 ```
 
-### C) Open viewers
+### C) Run full Core admin coverage (all discovered /admin routes)
+
+```bash
+./src/run-core-admin-full-coverage.sh core-admin-full true 0
+```
+
+Arguments:
+
+1. `run-label`: text label for the run
+2. `seed-content`: `true|false` (seeds dummy content in both sites before capture)
+3. `max-pages`: `0` for unlimited crawl, or a positive integer cap
+
+This mode crawls the baseline admin UI, discovers reachable Core admin routes, then captures:
+
+1. Full-page screenshots per route (baseline and candidate)
+2. Per-element screenshots for interactive elements in default/focus/hover states
+3. Route-level status coverage CSV (2xx/non-2xx for baseline and candidate)
+
+### D) Open viewers
 
 ```bash
 ./src/open-latest-vrt-diff-viewer.sh
 ./src/open-latest-side-by-side.sh
 ./src/open-latest-element-compare.sh
 ```
+
+### E) Seed dummy content only
+
+```bash
+./src/seed-dummy-content.sh
+```
+
+### F) Enable Twig debug hints in both Drupal instances
+
+```bash
+./src/enable-twig-debug.sh
+```
+
+This enables template debug comments and disables Twig cache for easier source tracing while comparing UI output.
 
 ## Outputs and How to Read Them
 
@@ -172,9 +204,12 @@ Important files:
 4. `report/<run-id>/side-by-side-vrt-diffs.html`
 5. `report/<run-id>/element-compare/element-compare-dashboard.html`
 6. `report/<run-id>/element-compare/bug-drafts-index.md`
-7. `report/<run-id>/element-compare/bug-drafts/*.md`
-8. `screenshots/<run-id>/interactions/baseline`
-9. `screenshots/<run-id>/interactions/candidate`
+7. `report/<run-id>/element-compare/bug-drafts-by-css.md`
+8. `report/<run-id>/element-compare/bug-drafts/*.md`
+9. `report/<run-id>/core-admin-coverage-summary.md` (when full coverage script is used)
+10. `report/<run-id>/core-admin-route-status.csv` (when full coverage script is used)
+11. `screenshots/<run-id>/interactions/baseline`
+12. `screenshots/<run-id>/interactions/candidate`
 
 ## Replication Notes for Other Contributors
 
@@ -199,6 +234,7 @@ All of these are captured in run metadata.
 Element dashboard generation creates draft bugs for flagged deltas:
 
 - `report/<run-id>/element-compare/bug-drafts-index.md`
+- `report/<run-id>/element-compare/bug-drafts-by-css.md`
 - `report/<run-id>/element-compare/bug-drafts.csv`
 - `report/<run-id>/element-compare/bug-drafts/*.md`
 
@@ -209,6 +245,7 @@ Each draft includes:
 3. Selector under test
 4. Expected vs actual
 5. Evidence paths
+6. Likely CSS source files and matched candidate CSS selectors
 
 ## Publishing Updates
 
