@@ -1,0 +1,11 @@
+{
+  "name": "local/realistic_dummy_content",
+  "description": "Repository artifact for deterministic Drupal 11/12 dummy content seeding",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "autoload": {
+    "psr-4": {
+      "Drupal\\realistic_dummy_content\\": "src/"
+    }
+  }
+}

@@ -201,11 +201,32 @@ It also includes filters for:
 1. Viewport (`narrow`/mobile, `wide`/desktop, `mid`/tablet)
 2. Color mode (`light`, `dark`, `unknown`)
 
+Interaction capture is archetype-based (one representative element per interaction type per route/mode), not every individual element. This keeps coverage comprehensive but reviewable for complex UIs.
+
+Current interaction archetypes include:
+
+1. form control focus
+2. navigation link hover
+3. toggle with `aria-expanded`
+4. toggle with `aria-pressed`
+5. details/summary toggle
+6. contextual trigger open
+
 ### E) Seed dummy content only
 
 ```bash
 ./src/seed-dummy-content.sh
 ```
+
+Optional (Drupal 11/12): use the repo-tracked `realistic_dummy_content` artifact during seeding.
+
+```bash
+USE_REALISTIC_DUMMY_CONTENT=true ./src/seed-dummy-content.sh
+```
+
+The artifact lives at `artifacts/realistic_dummy_content` and includes a Drush command: `realistic-dummy-content:seed`.
+
+If artifact seeding fails for any reason, the script falls back to built-in API/UI seeding and still ensures content types/nodes exist.
 
 ### F) Enable Twig debug hints in both Drupal instances
 
@@ -274,6 +295,13 @@ Each draft includes:
 5. Evidence paths
 6. Likely CSS source files and matched candidate CSS selectors
 
+Interaction capture also explicitly probes these button patterns and records whether they were found/visible/clicked in `interaction-summary.json`:
+
+1. `button.toolbar-link.toolbar-link--system-admin-structure` (toolbar collapse/expand)
+2. `button.trigger.focusable` / contextual trigger buttons (pencil/config controls)
+
+Note: some contextual trigger buttons are intentionally visually hidden until specific hover/focus conditions; those may be recorded as found but not visible/clicked.
+
 ## Publishing Updates
 
 Use one command to stage only harness content (`src`, `report`, `screenshots`, `.gitignore`), commit, rebase, and push:
@@ -297,8 +325,16 @@ Or run + publish in one go:
 
 ### VRT auth failures
 
-- Ensure admin credentials are valid (`admin` / `adminadminadmin` by default in scripts)
+- Ensure admin credentials are valid (`admin` / `admin` by default in scripts)
 - Ensure `/user/login` works in both projects
+- Harness scripts now fail fast if login is still on `/user/login` after submit
+- Harness scripts fail fast on admin route `401/403` or `Access denied` page headings
+- If lockouts occur after failed attempts, clear flood tables in both projects:
+
+```bash
+cd drupal-11.3.10 && ddev mysql -e "TRUNCATE flood;"
+cd ../drupal-git && ddev mysql -e "TRUNCATE flood;"
+```
 
 ### Too many false positives
 
@@ -310,6 +346,42 @@ Or run + publish in one go:
 
 - This workflow primarily uses form-based auth fallback and Playwright flows
 - Drush compatibility can vary with Symfony/PHP in bleeding-edge branches
+
+### Cannot use `ddev drush uli` on `drupal-git`
+
+Use direct login credentials for this harness:
+
+- Username: `admin`
+- Password: `admin`
+- Login URL: `http://drupal-git.ddev.site:8080/user/login`
+
+If the password does not work, reset it from the project root:
+
+```bash
+cd drupal-git
+HASH=$(ddev exec php -r 'echo password_hash("admin", PASSWORD_DEFAULT);')
+ddev mysql -e "UPDATE users_field_data SET pass='${HASH}' WHERE uid=1;"
+```
+
+You can also request a one-time login email token from:
+
+- `http://drupal-git.ddev.site:8080/user/password`
+- default admin email in this setup: `admin@example.test`
+
+If you want one-time login links without email dependency, install Drush locally in `drupal-git`:
+
+```bash
+cd drupal-git
+ddev composer require drush/drush --no-interaction
+ddev drush uli --name=admin
+```
+
+If login attempts were rate-limited, clear Drupal flood control:
+
+```bash
+cd drupal-git
+ddev mysql -e "TRUNCATE flood;"
+```
 
 ## License
 

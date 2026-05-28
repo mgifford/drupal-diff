@@ -17,10 +17,15 @@ fi
 
 RUN_ID="$(basename "$LATEST_RUN")"
 HOST_OUT_DIR="$LATEST_RUN/element-compare"
+TMP_HOST_OUT_DIR="$LATEST_RUN/element-compare.tmp"
 CONTAINER_OUT_DIR="/var/www/html/.ddev/drupal-admin-vrt/element-compare-out"
 
-rm -rf "$HOST_OUT_DIR"
-mkdir -p "$HOST_OUT_DIR"
+rm -rf "$TMP_HOST_OUT_DIR"
+mkdir -p "$TMP_HOST_OUT_DIR"
+
+# Clear login flood lockouts in both projects before scripted auth.
+(cd "$ROOT_DIR/drupal-11.3.10" && ddev mysql -e "TRUNCATE flood;" >/dev/null 2>&1 || true)
+(cd "$ROOT_DIR/drupal-git" && ddev mysql -e "TRUNCATE flood;" >/dev/null 2>&1 || true)
 
 cd "$ROOT_DIR/drupal-git"
 
@@ -29,7 +34,7 @@ ddev exec -d /var/www/html/.ddev/drupal-admin-vrt env \
   CANDIDATE_URL="http://drupal-git.ddev.site:8080" \
   COLOR_MODE="$COLOR_MODE" \
   DRUPAL_ADMIN_USER="admin" \
-  DRUPAL_ADMIN_PASS="adminadminadmin" \
+  DRUPAL_ADMIN_PASS="admin" \
   OUT_DIR="$CONTAINER_OUT_DIR" \
   node - <<'NODE'
 const fs = require('fs');
@@ -65,6 +70,8 @@ const components = [
   { id: 'table-cell', label: 'Table Body Cell', selector: 'table tbody td' },
   { id: 'details-summary', label: 'Details Summary', selector: 'details > summary' },
   { id: 'label', label: 'Form Label', selector: 'label' },
+  { id: 'toolbar-structure-toggle', label: 'Toolbar Structure Toggle Button', selector: 'button.toolbar-link.toolbar-link--system-admin-structure' },
+  { id: 'contextual-config-trigger', label: 'Contextual Config Trigger Button', selector: 'button.trigger.focusable, button.trigger[aria-pressed], .contextual .trigger' },
 ];
 
 function num(val) {
@@ -89,15 +96,51 @@ async function login(page, baseUrl) {
   await page.getByLabel('Password').fill(password);
   await page.getByRole('button', { name: 'Log in' }).click();
   await page.waitForLoadState('networkidle');
+
+  const loginFailed = await page.locator('h1:has-text("Login failed")').count();
+  const stillLogin = page.url().includes('/user/login') && (await page.getByRole('button', { name: 'Log in' }).count()) > 0;
+  if (loginFailed || stillLogin) {
+    throw new Error(`Authentication failed for ${baseUrl}; current URL=${page.url()}`);
+  }
+}
+
+async function assertRouteAccessible(page, url, sideLabel, response) {
+  const status = response ? response.status() : 0;
+  const h1 = ((await page.locator('h1').first().textContent().catch(() => '')) || '').trim().toLowerCase();
+  if (status === 401 || status === 403 || h1 === 'access denied') {
+    throw new Error(`Access denied in ${sideLabel} while visiting ${url}`);
+  }
 }
 
 async function measure(page, selector, max = 8) {
   return await page.evaluate(({ selector, max }) => {
+    const toXPath = (node) => {
+      if (!node || node.nodeType !== Node.ELEMENT_NODE) return '';
+      if (node.id) {
+        return `//*[@id="${node.id}"]`;
+      }
+
+      const parts = [];
+      let cur = node;
+      while (cur && cur.nodeType === Node.ELEMENT_NODE) {
+        let idx = 1;
+        let sib = cur.previousElementSibling;
+        while (sib) {
+          if (sib.tagName === cur.tagName) idx += 1;
+          sib = sib.previousElementSibling;
+        }
+        parts.unshift(`${cur.tagName.toLowerCase()}[${idx}]`);
+        cur = cur.parentElement;
+      }
+      return `/${parts.join('/')}`;
+    };
+
     const nodes = Array.from(document.querySelectorAll(selector)).slice(0, max);
     return nodes.map((node) => {
       const style = getComputedStyle(node);
       const rect = node.getBoundingClientRect();
       const txt = (node.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80);
+      const html = (node.outerHTML || '').replace(/\s+/g, ' ').slice(0, 800);
       return {
         fontSize: style.fontSize,
         lineHeight: style.lineHeight,
@@ -111,6 +154,8 @@ async function measure(page, selector, max = 8) {
         width: `${rect.width}px`,
         height: `${rect.height}px`,
         text: txt,
+        xpath: toXPath(node),
+        html,
       };
     });
   }, { selector, max });
@@ -298,6 +343,52 @@ function esc(s) {
     .replace(/'/g, '&#39;');
 }
 
+function compactDomEvidence(measures) {
+  return (measures || []).slice(0, 2).map((m) => ({
+    xpath: m.xpath || '',
+    html: m.html || '',
+    text: m.text || '',
+  }));
+}
+
+function evidenceBlockHtml(title, evidence) {
+  if (!evidence || !evidence.length) {
+    return `<div class="meta"><strong>${esc(title)}:</strong> no matches captured</div>`;
+  }
+
+  return evidence.map((e, i) => {
+    const textLine = e.text ? `<div class="meta">text: ${esc(e.text)}</div>` : '';
+    return `
+      <div class="meta"><strong>${esc(title)} ${i + 1} XPath:</strong> <code>${esc(e.xpath || 'n/a')}</code></div>
+      ${textLine}
+      <pre>${esc(e.html || '')}</pre>`;
+  }).join('');
+}
+
+function mdEscCode(s) {
+  return String(s || '').replace(/```/g, '` ` `');
+}
+
+function evidenceMarkdown(title, evidence) {
+  if (!evidence || !evidence.length) {
+    return [`### ${title}`, '- No matching element captured', ''];
+  }
+
+  const lines = [`### ${title}`];
+  evidence.forEach((e, i) => {
+    lines.push(`${i + 1}. XPath: \`${e.xpath || 'n/a'}\``);
+    if (e.text) {
+      lines.push(`   - Text sample: ${e.text}`);
+    }
+    lines.push('');
+    lines.push('```html');
+    lines.push(mdEscCode(e.html || ''));
+    lines.push('```');
+    lines.push('');
+  });
+  return lines;
+}
+
 (async () => {
   fs.rmSync(outDir, { recursive: true, force: true });
   fs.mkdirSync(path.join(outDir, 'baseline'), { recursive: true });
@@ -320,8 +411,10 @@ function esc(s) {
     for (const scheme of schemes) {
       await baselinePage.emulateMedia({ colorScheme: scheme });
       await candidatePage.emulateMedia({ colorScheme: scheme });
-      await baselinePage.goto(`${baselineUrl}${route.path}`, { waitUntil: 'networkidle' });
-      await candidatePage.goto(`${candidateUrl}${route.path}`, { waitUntil: 'networkidle' });
+      const baselineResponse = await baselinePage.goto(`${baselineUrl}${route.path}`, { waitUntil: 'networkidle' });
+      const candidateResponse = await candidatePage.goto(`${candidateUrl}${route.path}`, { waitUntil: 'networkidle' });
+      await assertRouteAccessible(baselinePage, `${baselineUrl}${route.path}`, baselineLabel, baselineResponse);
+      await assertRouteAccessible(candidatePage, `${candidateUrl}${route.path}`, candidateLabel, candidateResponse);
 
       for (const component of components) {
         const baseMeasures = await measure(baselinePage, component.selector);
@@ -379,6 +472,8 @@ function esc(s) {
           likelyCssFiles: likelyCss,
           baselineShot,
           candidateShot,
+          baselineDomEvidence: compactDomEvidence(baseMeasures),
+          candidateDomEvidence: compactDomEvidence(candMeasures),
         };
 
         row.patchSuggestion = buildPatchSuggestion(row);
@@ -429,6 +524,8 @@ function esc(s) {
     const cssSources = row.likelyCssFiles.length ? row.likelyCssFiles : ['unknown'];
     const cssKey = cssSources[0] || 'unknown';
     const cssMeta = cssSources.slice(0, 3).map((s) => esc(s)).join(' | ');
+    const baselineEvidence = evidenceBlockHtml('Baseline', row.baselineDomEvidence || []);
+    const candidateEvidence = evidenceBlockHtml('Candidate', row.candidateDomEvidence || []);
 
     return `
       <tr class="${className}" data-route="${esc(row.route)}" data-component="${esc(row.component)}" data-significant="${sig > 0 ? 'yes' : 'no'}" data-css="${esc(cssKey)}" data-mode="${esc(row.colorMode)}">
@@ -440,6 +537,11 @@ function esc(s) {
           <div class="meta"><a href="${esc(row.candidateUrl)}" target="_blank" rel="noopener">${esc(candidateLabel)} URL</a></div>
           <div class="meta">${esc(row.selector)}</div>
           <div class="meta"><strong>Likely CSS:</strong> ${cssMeta}</div>
+          <details>
+            <summary>XPath and HTML snippets</summary>
+            ${baselineEvidence}
+            ${candidateEvidence}
+          </details>
         </td>
         <td>
           <div>count: ${row.baseline.count}</div>
@@ -489,6 +591,10 @@ function esc(s) {
   th { background: #e6edf5; text-align: left; }
   tr.flagged { background: #fff7e6; }
   .meta { font-size: 12px; color: #52606d; margin-top: 4px; }
+  details { margin-top: 8px; }
+  summary { cursor: pointer; color: #243b53; font-weight: 600; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #f8fafc; border: 1px solid #d9e2ec; border-radius: 4px; padding: 6px; font-size: 11px; color: #102a43; }
+  code { font-size: 11px; }
   img { max-width: 100%; border: 1px solid #cbd2d9; margin-top: 6px; }
   .agg { margin-bottom: 16px; }
   .agg table { width: auto; min-width: 420px; }
@@ -641,7 +747,7 @@ function esc(s) {
   const bugDraftDir = path.join(outDir, 'bug-drafts');
   fs.mkdirSync(bugDraftDir, { recursive: true });
 
-  const csvLines = ['id,title,route,color_mode,component,selector,baseline_url,candidate_url,key_deltas,likely_css_files,baseline_css_sources,candidate_css_sources,suggested_patch_confidence,suggested_css_selector,suggested_declarations,evidence_baseline,evidence_candidate'];
+  const csvLines = ['id,title,route,color_mode,component,selector,baseline_url,candidate_url,key_deltas,likely_css_files,baseline_css_sources,candidate_css_sources,suggested_patch_confidence,suggested_css_selector,suggested_declarations,baseline_xpath,baseline_html_snippet,candidate_xpath,candidate_html_snippet,evidence_baseline,evidence_candidate'];
   const indexLines = ['# Draft Bug Reports', '', `Generated: ${new Date().toISOString()}`, '', `Baseline: ${baselineLabel}`, `Candidate: ${candidateLabel}`, ''];
   const cssBuckets = {};
   const patchLines = ['# Suggested CSS Patch Ideas', '', `Generated: ${new Date().toISOString()}`, '', 'Only medium/high confidence suggestions are included.', ''];
@@ -667,6 +773,10 @@ function esc(s) {
     const baselineCssList = cssSourceList(row.baselineCssSources || []);
     const candidateCssList = cssSourceList(row.candidateCssSources || []);
     const suggestion = row.patchSuggestion;
+    const baselineEvidence = row.baselineDomEvidence || [];
+    const candidateEvidence = row.candidateDomEvidence || [];
+    const baselinePrimary = baselineEvidence[0] || {};
+    const candidatePrimary = candidateEvidence[0] || {};
 
     const body = [
       `# ${title}`,
@@ -703,6 +813,9 @@ function esc(s) {
       `- Candidate element screenshot: ${row.candidateShot}`,
       '- Dashboard: ../element-compare-dashboard.html',
       '',
+      '## DOM Evidence (XPath + HTML Snippets)',
+      ...evidenceMarkdown(`${baselineLabel}`, baselineEvidence),
+      ...evidenceMarkdown(`${candidateLabel}`, candidateEvidence),
       '## Notes',
       '- Validate whether this is planned design change or unplanned regression.',
       '- If unplanned, file as CSS parity issue for Drupal 12 Admin Theme.',
@@ -728,6 +841,10 @@ function esc(s) {
       suggestion ? suggestion.confidence : '',
       suggestion ? suggestion.selectorHint : '',
       suggestion ? suggestion.declarations.join(' | ') : '',
+      baselinePrimary.xpath || '',
+      baselinePrimary.html || '',
+      candidatePrimary.xpath || '',
+      candidatePrimary.html || '',
       row.baselineShot,
       row.candidateShot,
     ].map(csvEsc).join(','));
@@ -791,18 +908,20 @@ function esc(s) {
 NODE
 
 SRC_OUT_DIR="$ROOT_DIR/drupal-git/.ddev/drupal-admin-vrt/element-compare-out"
-rm -rf "$HOST_OUT_DIR/baseline" "$HOST_OUT_DIR/candidate" "$HOST_OUT_DIR/bug-drafts"
-mkdir -p "$HOST_OUT_DIR"
+mkdir -p "$TMP_HOST_OUT_DIR"
 
 # Copy recursively from container output to host output.
-ddev exec bash -lc "cd '$CONTAINER_OUT_DIR' && tar -cf - baseline candidate bug-drafts" | tar -xf - -C "$HOST_OUT_DIR"
+ddev exec bash -lc "cd '$CONTAINER_OUT_DIR' && tar -cf - baseline candidate bug-drafts" | tar -xf - -C "$TMP_HOST_OUT_DIR"
 
 # Copy dashboard metadata files directly from container to host.
-ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/element-compare-dashboard.html'" > "$HOST_OUT_DIR/element-compare-dashboard.html"
-ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/element-compare.json'" > "$HOST_OUT_DIR/element-compare.json"
-ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts-index.md'" > "$HOST_OUT_DIR/bug-drafts-index.md"
-ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts-by-css.md'" > "$HOST_OUT_DIR/bug-drafts-by-css.md"
-ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/suggested-css-patches.md'" > "$HOST_OUT_DIR/suggested-css-patches.md"
-ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts.csv'" > "$HOST_OUT_DIR/bug-drafts.csv"
+ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/element-compare-dashboard.html'" > "$TMP_HOST_OUT_DIR/element-compare-dashboard.html"
+ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/element-compare.json'" > "$TMP_HOST_OUT_DIR/element-compare.json"
+ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts-index.md'" > "$TMP_HOST_OUT_DIR/bug-drafts-index.md"
+ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts-by-css.md'" > "$TMP_HOST_OUT_DIR/bug-drafts-by-css.md"
+ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/suggested-css-patches.md'" > "$TMP_HOST_OUT_DIR/suggested-css-patches.md"
+ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts.csv'" > "$TMP_HOST_OUT_DIR/bug-drafts.csv"
+
+rm -rf "$HOST_OUT_DIR"
+mv "$TMP_HOST_OUT_DIR" "$HOST_OUT_DIR"
 
 echo "Generated: $HOST_OUT_DIR/element-compare-dashboard.html"

@@ -45,7 +45,7 @@ cat > "$HTML_OUT" <<EOF
 <body>
   <header>
     <div><strong>Drupal 11 (Gin) vs Drupal 12 (Core Admin)</strong></div>
-    <div class="meta">Run: $RUN_ID | Viewer: interactions (default/focus/hover/modal)</div>
+    <div class="meta">Run: $RUN_ID | Viewer: interactions (default + archetype-based states)</div>
   </header>
   <main>
     <table>

@@ -41,6 +41,10 @@ echo "[1/8] Starting DDEV projects"
 (cd "$BASELINE_DIR" && ddev start >/dev/null)
 (cd "$CANDIDATE_DIR" && ddev start >/dev/null)
 
+# Clear lockout state from prior failed login attempts.
+(cd "$BASELINE_DIR" && ddev mysql -e "TRUNCATE flood;" >/dev/null 2>&1 || true)
+(cd "$CANDIDATE_DIR" && ddev mysql -e "TRUNCATE flood;" >/dev/null 2>&1 || true)
+
 echo "[2/8] Ensuring admin VRT add-on and Playwright dependencies"
 if [[ ! -d "$BASELINE_DIR/.ddev/drupal-admin-vrt" ]]; then
   (cd "$BASELINE_DIR" && ddev add-on install https://github.com/mherchel/ddev-drupal-admin-vrt/tarball/main)
@@ -65,7 +69,7 @@ echo "[4/8] Discovering reachable /admin routes from baseline"
   BASE_URL="http://drupal-11.3.10.ddev.site" \
   OUT_FILE="/var/www/html/.ddev/drupal-admin-vrt/core-admin-routes.txt" \
   DRUPAL_ADMIN_USER="admin" \
-  DRUPAL_ADMIN_PASS="adminadminadmin" \
+  DRUPAL_ADMIN_PASS="admin" \
   COLOR_MODE="$COLOR_MODE" \
   MAX_PAGES="$MAX_PAGES" \
   node - <<'NODE'
@@ -79,6 +83,22 @@ const password = process.env.DRUPAL_ADMIN_PASS;
 const colorMode = process.env.COLOR_MODE || 'both';
 const schemes = colorMode === 'both' ? ['light', 'dark'] : [colorMode];
 const maxPages = Number(process.env.MAX_PAGES || '0');
+
+async function assertLoggedIn(page, base) {
+  const loginFailed = await page.locator('h1:has-text("Login failed")').count();
+  const stillLogin = page.url().includes('/user/login') && (await page.getByRole('button', { name: 'Log in' }).count()) > 0;
+  if (loginFailed || stillLogin) {
+    throw new Error(`Authentication failed for ${base}; current URL=${page.url()}`);
+  }
+}
+
+async function assertRouteAccessible(page, url, response) {
+  const status = response ? response.status() : 0;
+  const h1 = ((await page.locator('h1').first().textContent().catch(() => '')) || '').trim().toLowerCase();
+  if (status === 401 || status === 403 || h1 === 'access denied') {
+    throw new Error(`Access denied detected while crawling ${url}`);
+  }
+}
 
 function canonicalize(href, origin) {
   try {
@@ -102,6 +122,7 @@ function canonicalize(href, origin) {
   await page.getByLabel('Password').fill(password);
   await page.getByRole('button', { name: 'Log in' }).click();
   await page.waitForLoadState('networkidle');
+  await assertLoggedIn(page, baseUrl);
 
   const origin = new URL(baseUrl).origin;
   const queue = ['/admin'];
@@ -118,7 +139,8 @@ function canonicalize(href, origin) {
       if (maxPages > 0 && seen.size >= maxPages) break;
 
       try {
-        await page.goto(`${baseUrl}${route}`, { waitUntil: 'networkidle', timeout: 30000 });
+        const response = await page.goto(`${baseUrl}${route}`, { waitUntil: 'networkidle', timeout: 30000 });
+        await assertRouteAccessible(page, `${baseUrl}${route}`, response);
         const links = await page.$$eval('a[href]', (nodes) => nodes.map((n) => n.getAttribute('href')).filter(Boolean));
         for (const href of links) {
           const c = (function(h, o) {
@@ -158,7 +180,7 @@ echo "[5/8] Capturing full-page and interactive element states across all routes
   OUT_DIR="/var/www/html/.ddev/drupal-admin-vrt/core-admin-coverage-out" \
   STATUS_FILE="/var/www/html/.ddev/drupal-admin-vrt/core-admin-route-status.csv" \
   DRUPAL_ADMIN_USER="admin" \
-  DRUPAL_ADMIN_PASS="adminadminadmin" \
+  DRUPAL_ADMIN_PASS="admin" \
   COLOR_MODE="$COLOR_MODE" \
   node - <<'NODE'
 const fs = require('fs');
@@ -187,11 +209,22 @@ async function login(page, base) {
   await page.getByLabel('Password').fill(password);
   await page.getByRole('button', { name: 'Log in' }).click();
   await page.waitForLoadState('networkidle');
+
+  const loginFailed = await page.locator('h1:has-text("Login failed")').count();
+  const stillLogin = page.url().includes('/user/login') && (await page.getByRole('button', { name: 'Log in' }).count()) > 0;
+  if (loginFailed || stillLogin) {
+    throw new Error(`Authentication failed for ${base}; current URL=${page.url()}`);
+  }
 }
 
 async function gotoRoute(page, url) {
   const response = await page.goto(url, { waitUntil: 'networkidle', timeout: 45000 });
-  return response ? response.status() : 0;
+  const status = response ? response.status() : 0;
+  const h1 = ((await page.locator('h1').first().textContent().catch(() => '')) || '').trim().toLowerCase();
+  if (status === 401 || status === 403 || h1 === 'access denied') {
+    throw new Error(`Access denied detected at ${url}`);
+  }
+  return status;
 }
 
 async function captureStates(page, basePath, side, scheme) {

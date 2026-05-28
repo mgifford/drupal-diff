@@ -72,7 +72,10 @@ build_projects_args() {
   printf '%s\n' "${args[@]}"
 }
 
-mapfile -t PROJECT_ARGS < <(build_projects_args "$MODE" "$COLOR_MODE")
+PROJECT_ARGS=()
+while IFS= read -r project_arg; do
+  [[ -n "$project_arg" ]] && PROJECT_ARGS+=("$project_arg")
+done < <(build_projects_args "$MODE" "$COLOR_MODE")
 
 mkdir -p "$RUN_REPORT_DIR" "$RUN_SCREENSHOT_DIR"
 
@@ -121,9 +124,9 @@ echo "[3/7] Installing Node/Playwright dependencies in both projects"
 if [[ "$REFRESH_BASELINE" == "true" ]] || [[ ! -d "$BASELINE_DIR/__screenshots__" ]] || [[ -z "$(find "$BASELINE_DIR/__screenshots__" -name '*.png' -print -quit 2>/dev/null)" ]]; then
   echo "[4/7] Capturing baseline screenshots (Drupal 11 + Gin)"
   if [[ ${#PROJECT_ARGS[@]} -gt 0 ]]; then
-    (cd "$BASELINE_DIR" && TZ=UTC LANG=C.UTF-8 LC_ALL=C.UTF-8 DRUPAL_ADMIN_USER=admin DRUPAL_ADMIN_PASS=adminadminadmin ddev vrt-update "${PROJECT_ARGS[@]}")
+    (cd "$BASELINE_DIR" && TZ=UTC LANG=C.UTF-8 LC_ALL=C.UTF-8 DRUPAL_ADMIN_USER=admin DRUPAL_ADMIN_PASS=admin ddev vrt-update "${PROJECT_ARGS[@]}")
   else
-    (cd "$BASELINE_DIR" && TZ=UTC LANG=C.UTF-8 LC_ALL=C.UTF-8 DRUPAL_ADMIN_USER=admin DRUPAL_ADMIN_PASS=adminadminadmin ddev vrt-update "$MODE_FLAG")
+    (cd "$BASELINE_DIR" && TZ=UTC LANG=C.UTF-8 LC_ALL=C.UTF-8 DRUPAL_ADMIN_USER=admin DRUPAL_ADMIN_PASS=admin ddev vrt-update "$MODE_FLAG")
   fi
 else
   echo "[4/7] Using existing baseline screenshots (set refresh-baseline=true to regenerate)"
@@ -140,9 +143,9 @@ rsync -a --delete "$RUN_SCREENSHOT_DIR/baseline/" "$CANDIDATE_DIR/__screenshots_
 echo "[6/7] Running candidate comparison (Drupal 12 core admin)"
 set +e
 if [[ ${#PROJECT_ARGS[@]} -gt 0 ]]; then
-  (cd "$CANDIDATE_DIR" && TZ=UTC LANG=C.UTF-8 LC_ALL=C.UTF-8 DRUPAL_ADMIN_USER=admin DRUPAL_ADMIN_PASS=adminadminadmin ddev vrt "${PROJECT_ARGS[@]}" --no-bail)
+  (cd "$CANDIDATE_DIR" && TZ=UTC LANG=C.UTF-8 LC_ALL=C.UTF-8 DRUPAL_ADMIN_USER=admin DRUPAL_ADMIN_PASS=admin ddev vrt "${PROJECT_ARGS[@]}" --no-bail)
 else
-  (cd "$CANDIDATE_DIR" && TZ=UTC LANG=C.UTF-8 LC_ALL=C.UTF-8 DRUPAL_ADMIN_USER=admin DRUPAL_ADMIN_PASS=adminadminadmin ddev vrt "$MODE_FLAG" --no-bail)
+  (cd "$CANDIDATE_DIR" && TZ=UTC LANG=C.UTF-8 LC_ALL=C.UTF-8 DRUPAL_ADMIN_USER=admin DRUPAL_ADMIN_PASS=admin ddev vrt "$MODE_FLAG" --no-bail)
 fi
 VRT_EXIT_CODE=$?
 set -e

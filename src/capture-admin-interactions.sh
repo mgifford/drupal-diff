@@ -29,6 +29,9 @@ capture_project() {
 
   mkdir -p "$host_out_dir"
 
+  # Prevent lockout artifacts from previous failed attempts from invalidating runs.
+  (cd "$project_dir" && ddev mysql -e "TRUNCATE flood;" >/dev/null 2>&1 || true)
+
   (cd "$project_dir" && ddev exec -d /var/www/html/.ddev/drupal-admin-vrt npm install >/dev/null)
   (cd "$project_dir" && ddev exec -d /var/www/html/.ddev/drupal-admin-vrt npx playwright install --with-deps chromium >/dev/null)
 
@@ -38,11 +41,27 @@ capture_project() {
     OUT_DIR="$container_out_dir" \
     COLOR_MODE="$COLOR_MODE" \
     DRUPAL_ADMIN_USER=admin \
-    DRUPAL_ADMIN_PASS=adminadminadmin \
+    DRUPAL_ADMIN_PASS=admin \
     node - <<'NODE'
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
+
+async function assertLoggedIn(page, baseUrl) {
+  const loginFailed = await page.locator('h1:has-text("Login failed")').count();
+  const stillLogin = page.url().includes('/user/login') && (await page.getByRole('button', { name: 'Log in' }).count()) > 0;
+  if (loginFailed || stillLogin) {
+    throw new Error(`Authentication failed for ${baseUrl}; current URL=${page.url()}`);
+  }
+}
+
+async function assertRouteAccessible(page, url, response) {
+  const status = response ? response.status() : 0;
+  const h1 = ((await page.locator('h1').first().textContent().catch(() => '')) || '').trim().toLowerCase();
+  if (status === 401 || status === 403 || h1 === 'access denied') {
+    throw new Error(`Access denied detected at ${url}`);
+  }
+}
 
 (async () => {
   const baseUrl = process.env.BASE_URL;
@@ -65,6 +84,7 @@ const path = require('path');
   await page.getByLabel('Password').fill(password);
   await page.getByRole('button', { name: 'Log in' }).click();
   await page.waitForLoadState('networkidle');
+  await assertLoggedIn(page, baseUrl);
 
   const routes = [
     { id: 'content', path: '/admin/content' },
@@ -74,12 +94,94 @@ const path = require('path');
     { id: 'people', path: '/admin/people' },
   ];
 
+  const buttonProbes = [
+    {
+      id: 'toolbar-structure-toggle',
+      selector: 'button.toolbar-link.toolbar-link--system-admin-structure',
+    },
+    {
+      id: 'contextual-config-trigger',
+      selector: 'button.trigger.focusable, button.trigger[aria-pressed], .contextual .trigger',
+    },
+  ];
+
+  const interactionTypes = [
+    { id: 'focus-form-control', selector: 'input, textarea, select', action: 'focus' },
+    { id: 'hover-navigation-link', selector: 'a[href]', action: 'hover' },
+    { id: 'toggle-aria-expanded', selector: 'button[aria-expanded], [role="button"][aria-expanded]', action: 'click' },
+    { id: 'toggle-aria-pressed', selector: 'button[aria-pressed], [role="button"][aria-pressed]', action: 'click' },
+    { id: 'toggle-details-summary', selector: 'details > summary', action: 'click' },
+    { id: 'open-contextual-trigger', selector: 'button.trigger.focusable, .contextual .trigger', action: 'click' },
+  ];
+
+  async function captureInteractionType(page, routeId, scheme, type) {
+    const out = {
+      id: type.id,
+      selector: type.selector,
+      action: type.action,
+      found: false,
+      visible: false,
+      captured: false,
+      screenshot: null,
+      ariaExpandedBefore: null,
+      ariaExpandedAfter: null,
+      ariaPressedBefore: null,
+      ariaPressedAfter: null,
+      notes: [],
+    };
+
+    const target = page.locator(type.selector).first();
+    if (!(await target.count())) {
+      out.notes.push('not-found');
+      return out;
+    }
+    out.found = true;
+
+    try {
+      out.visible = await target.isVisible();
+    } catch {
+      out.visible = false;
+    }
+
+    out.ariaExpandedBefore = await target.getAttribute('aria-expanded');
+    out.ariaPressedBefore = await target.getAttribute('aria-pressed');
+
+    if (!out.visible) {
+      out.notes.push('not-visible');
+      return out;
+    }
+
+    try {
+      await target.scrollIntoViewIfNeeded();
+
+      if (type.action === 'focus') {
+        await target.focus();
+      } else if (type.action === 'hover') {
+        await target.hover();
+      } else {
+        await target.click({ timeout: 2000 });
+      }
+
+      await page.waitForTimeout(250);
+      out.ariaExpandedAfter = await target.getAttribute('aria-expanded');
+      out.ariaPressedAfter = await target.getAttribute('aria-pressed');
+      out.screenshot = `${routeId}-${scheme}-interaction-${type.id}.png`;
+      await page.screenshot({ path: path.join(outDir, out.screenshot), fullPage: true });
+      out.captured = true;
+    } catch {
+      out.notes.push('action-failed');
+    }
+
+    return out;
+  }
+
   for (const route of routes) {
     for (const scheme of schemes) {
-      const item = { route: route.path, colorMode: scheme, hover: false, focus: false, modal: false, notes: [] };
+      const item = { route: route.path, colorMode: scheme, hover: false, focus: false, modal: false, notes: [], buttonProbes: [], interactionTypes: [] };
 
       await page.emulateMedia({ colorScheme: scheme });
-      await page.goto(`${baseUrl}${route.path}`, { waitUntil: 'networkidle' });
+      const routeResponse = await page.goto(`${baseUrl}${route.path}`, { waitUntil: 'networkidle' });
+      await assertRouteAccessible(page, `${baseUrl}${route.path}`, routeResponse);
       await page.screenshot({ path: path.join(outDir, `${route.id}-${scheme}-default.png`), fullPage: true });
 
       const interactable = page.locator('a, button, [role="button"], input, select, textarea').first();
@@ -118,6 +220,61 @@ const path = require('path');
         }
       } else {
         item.notes.push('no-modal-trigger-found');
+      }
+
+      for (const probe of buttonProbes) {
+        const probeResult = {
+          id: probe.id,
+          selector: probe.selector,
+          found: false,
+          visible: false,
+          clicked: false,
+          ariaExpandedBefore: null,
+          ariaExpandedAfter: null,
+          ariaPressedBefore: null,
+          ariaPressedAfter: null,
+          screenshot: null,
+        };
+
+        const target = page.locator(probe.selector).first();
+        if (await target.count()) {
+          probeResult.found = true;
+          probeResult.ariaExpandedBefore = await target.getAttribute('aria-expanded');
+          probeResult.ariaPressedBefore = await target.getAttribute('aria-pressed');
+
+          try {
+            probeResult.visible = await target.isVisible();
+          } catch {
+            probeResult.visible = false;
+          }
+
+          if (probeResult.visible) {
+            try {
+              await target.scrollIntoViewIfNeeded();
+              await target.focus();
+              await target.click({ timeout: 2000 });
+              await page.waitForTimeout(350);
+              probeResult.clicked = true;
+              probeResult.ariaExpandedAfter = await target.getAttribute('aria-expanded');
+              probeResult.ariaPressedAfter = await target.getAttribute('aria-pressed');
+              probeResult.screenshot = `${route.id}-${scheme}-${probe.id}.png`;
+              await page.screenshot({ path: path.join(outDir, probeResult.screenshot), fullPage: true });
+            } catch {
+              item.notes.push(`${probe.id}-click-failed`);
+            }
+          } else {
+            item.notes.push(`${probe.id}-not-visible`);
+          }
+        } else {
+          item.notes.push(`${probe.id}-not-found`);
+        }
+
+        item.buttonProbes.push(probeResult);
+      }
+
+      for (const interactionType of interactionTypes) {
+        const interactionResult = await captureInteractionType(page, route.id, scheme, interactionType);
+        item.interactionTypes.push(interactionResult);
       }
 
       summary.push(item);

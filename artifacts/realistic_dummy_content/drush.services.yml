@@ -1,0 +1,6 @@
+services:
+  realistic_dummy_content.commands:
+    class: Drupal\realistic_dummy_content\Commands\RealisticDummyContentCommands
+    arguments: ['@entity_type.manager', '@datetime.time']
+    tags:
+      - { name: drush.command }

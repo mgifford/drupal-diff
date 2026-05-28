@@ -1,0 +1,5 @@
+name: Realistic Dummy Content
+type: module
+description: Provides deterministic content seeding for visual regression workflows.
+package: Development
+core_version_requirement: ^11 || ^12

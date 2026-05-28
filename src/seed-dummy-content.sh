@@ -3,6 +3,21 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 PROJECTS=("$ROOT_DIR/drupal-11.3.10" "$ROOT_DIR/drupal-git")
+USE_REALISTIC_DUMMY_CONTENT="${USE_REALISTIC_DUMMY_CONTENT:-false}"
+ARTIFACT_MODULE_DIR="$ROOT_DIR/artifacts/realistic_dummy_content"
+
+sync_artifact_module() {
+  local project_dir="$1"
+  local target_dir="$project_dir/modules/realistic_dummy_content"
+
+  if [[ ! -d "$ARTIFACT_MODULE_DIR" ]]; then
+    return 1
+  fi
+
+  mkdir -p "$target_dir"
+  rsync -a --delete "$ARTIFACT_MODULE_DIR/" "$target_dir/"
+  return 0
+}
 
 seed_with_playwright() {
   local project_dir="$1"
@@ -14,7 +29,7 @@ seed_with_playwright() {
   (cd "$project_dir" && ddev exec -d /var/www/html/.ddev/drupal-admin-vrt env \
     BASE_URL="$base_url" \
     DRUPAL_ADMIN_USER="admin" \
-    DRUPAL_ADMIN_PASS="adminadminadmin" \
+    DRUPAL_ADMIN_PASS="admin" \
     node - <<'NODE'
 const { chromium } = require('playwright');
 
@@ -27,7 +42,7 @@ async function maybeCreateContent(page, route, titlePrefix, bodyPrefix, count) {
     await page.goto(`${baseUrl}${route}`, { waitUntil: 'networkidle' });
 
     if (await page.getByText('Access denied', { exact: false }).count()) {
-      return;
+      throw new Error(`Access denied while trying to create content at ${route}`);
     }
 
     const title = page.getByLabel('Title');
@@ -61,6 +76,10 @@ async function maybeCreateContent(page, route, titlePrefix, bodyPrefix, count) {
   await page.getByRole('button', { name: 'Log in' }).click();
   await page.waitForLoadState('networkidle');
 
+  if ((await page.locator('h1:has-text("Login failed")').count()) || page.url().includes('/user/login')) {
+    throw new Error(`Authentication failed for ${baseUrl}; unable to seed dummy content`);
+  }
+
   await maybeCreateContent(page, '/node/add/article', 'Dummy Article UI', 'Generated via UI fallback article body', 12);
   await maybeCreateContent(page, '/node/add/page', 'Dummy Page UI', 'Generated via UI fallback page body', 8);
 
@@ -85,6 +104,7 @@ create_content_for_project() {
 
   echo "Seeding dummy content in $label"
   (cd "$project_dir" && ddev start >/dev/null)
+  (cd "$project_dir" && ddev mysql -e "TRUNCATE flood;" >/dev/null 2>&1 || true)
 
   if ! (cd "$project_dir" && ddev drush --version >/dev/null 2>&1); then
     echo "drush unavailable in $label, using Playwright UI fallback"
@@ -92,9 +112,24 @@ create_content_for_project() {
     return 0
   fi
 
+  if [[ "$USE_REALISTIC_DUMMY_CONTENT" == "true" ]]; then
+    if sync_artifact_module "$project_dir"; then
+      echo "Using repo artifact realistic_dummy_content module on $label"
+      if (cd "$project_dir" && ddev drush en -y realistic_dummy_content >/dev/null) && (cd "$project_dir" && ddev drush realistic-dummy-content:seed >/dev/null); then
+        (cd "$project_dir" && ddev drush cr >/dev/null)
+        echo "realistic_dummy_content artifact seeding completed on $label"
+        return 0
+      fi
+      echo "realistic_dummy_content artifact seeding failed on $label; continuing with built-in seeding"
+    else
+      echo "realistic_dummy_content artifact not found at $ARTIFACT_MODULE_DIR; continuing with built-in seeding"
+    fi
+  fi
+
   # Use Drupal APIs directly so this works without requiring optional generator modules.
   (cd "$project_dir" && ddev drush php:eval '
 use Drupal\user\Entity\User;
+use Drupal\node\Entity\NodeType;
 use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\node\Entity\Node;
@@ -103,10 +138,28 @@ $timestamp = \Drupal::time()->getRequestTime();
 $lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus, metus non cursus eleifend, lectus augue gravida nibh, ut blandit ipsum arcu in mauris.";
 
 if (!\Drupal::entityTypeManager()->getStorage("node_type")->load("article")) {
-  print "Skipping article generation (bundle missing).\n";
+  $articleType = NodeType::create([
+    "type" => "article",
+    "name" => "Article",
+    "description" => "Generated for visual regression seeding",
+    "new_revision" => TRUE,
+    "preview_mode" => 1,
+    "display_submitted" => TRUE,
+  ]);
+  $articleType->save();
+  print "Created content type: article\n";
 }
 if (!\Drupal::entityTypeManager()->getStorage("node_type")->load("page")) {
-  print "Skipping page generation (bundle missing).\n";
+  $pageType = NodeType::create([
+    "type" => "page",
+    "name" => "Basic page",
+    "description" => "Generated for visual regression seeding",
+    "new_revision" => TRUE,
+    "preview_mode" => 1,
+    "display_submitted" => FALSE,
+  ]);
+  $pageType->save();
+  print "Created content type: page\n";
 }
 
 $editor = user_load_by_name("editor1");
@@ -153,7 +206,7 @@ $articleCount = (int) \Drupal::entityQuery("node")
   ->count()
   ->execute();
 
-if ($articleCount < 30 && \Drupal::entityTypeManager()->getStorage("node_type")->load("article")) {
+if ($articleCount < 30) {
   for ($i = $articleCount + 1; $i <= 30; $i++) {
     $node = Node::create([
       "type" => "article",
@@ -161,11 +214,13 @@ if ($articleCount < 30 && \Drupal::entityTypeManager()->getStorage("node_type")-
       "uid" => 1,
       "status" => 1,
       "created" => $timestamp - ($i * 3600),
-      "body" => [
+    ]);
+    if ($node->hasField("body")) {
+      $node->set("body", [
         "value" => "$lorem\n\nDummy article body block $i.",
         "format" => "basic_html",
-      ],
-    ]);
+      ]);
+    }
     $node->save();
   }
   print "Ensured 30 articles exist\n";
@@ -177,7 +232,7 @@ $pageCount = (int) \Drupal::entityQuery("node")
   ->count()
   ->execute();
 
-if ($pageCount < 20 && \Drupal::entityTypeManager()->getStorage("node_type")->load("page")) {
+if ($pageCount < 20) {
   for ($i = $pageCount + 1; $i <= 20; $i++) {
     $node = Node::create([
       "type" => "page",
@@ -185,11 +240,13 @@ if ($pageCount < 20 && \Drupal::entityTypeManager()->getStorage("node_type")->lo
       "uid" => 1,
       "status" => 1,
       "created" => $timestamp - ($i * 5400),
-      "body" => [
+    ]);
+    if ($node->hasField("body")) {
+      $node->set("body", [
         "value" => "$lorem\n\nDummy page body block $i.",
         "format" => "basic_html",
-      ],
-    ]);
+      ]);
+    }
     $node->save();
   }
   print "Ensured 20 pages exist\n";
