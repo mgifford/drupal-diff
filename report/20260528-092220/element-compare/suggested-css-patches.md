@@ -1,6 +1,6 @@
 # Suggested CSS Patch Ideas
 
-Generated: 2026-05-28T17:38:09.042Z
+Generated: 2026-05-28T17:50:40.073Z
 
 Only medium/high confidence suggestions are included.
 
@@ -29,17 +29,6 @@ button, input, optgroup, select, textarea {
 ```
 
 ### 245. Admin Theme (light) Structure Content View - Button style regression vs Drupal 11 Gin
-Confidence: **medium**
-
-```css
-button, input, optgroup, select, textarea {
-  font-size: 13.3px; /* current ~14px */
-  padding-block: 12.8px; /* current ~20px */
-  padding-inline: 16.6px; /* current ~23px */
-}
-```
-
-### 253. Admin Theme (dark) Structure Content View - Button style regression vs Drupal 11 Gin
 Confidence: **medium**
 
 ```css
@@ -354,17 +343,6 @@ button, input, optgroup, select, textarea {
 ```
 
 ### 294. Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin
-Confidence: **medium**
-
-```css
-button, input, optgroup, select, textarea {
-  font-size: 13.3px; /* current ~14px */
-  padding-block: 12.8px; /* current ~20px */
-  padding-inline: 16.6px; /* current ~23px */
-}
-```
-
-### 349. Admin Theme (light) Reports Status - Button style regression vs Drupal 11 Gin
 Confidence: **medium**
 
 ```css

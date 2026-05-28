@@ -5,7 +5,7 @@ This endpoint may render as raw Markdown on GitHub Pages.
 If you need machine-readable data, use `bug-drafts.csv` in this same directory.
 ---
 # Draft Bug Reports
-Generated: 2026-05-28T17:38:09.042Z
+Generated: 2026-05-28T17:50:40.073Z
 Baseline: Drupal 11 with Gin
 Candidate: Drupal 12 with Admin Theme
 Run: 20260528-092220

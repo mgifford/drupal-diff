@@ -606,6 +606,17 @@ function bugDraftHtmlFileName(row) {
   return bugDraftFileName(row).replace(/\.md$/i, '.html');
 }
 
+function legacyDefaultBugDraftFileName(row) {
+  const scenarioSlug = slugify(row.scenarioId || row.scenario || 'default');
+  if (scenarioSlug !== 'default') {
+    return '';
+  }
+  const routeSlug = slugify(row.route);
+  const modeSlug = slugify(row.colorMode);
+  const componentSlug = slugify(row.componentId || row.component);
+  return `${routeSlug}-${modeSlug}-${componentSlug}.md`;
+}
+
 function summarize(measures) {
   return {
     count: measures.length,
@@ -955,6 +966,8 @@ function evidenceMarkdown(title, evidence, elementShotPath, elementShotGitHub, p
     const className = sig > 0 ? 'flagged' : '';
     const draftMdName = sig > 0 ? bugDraftFileName(row) : '';
     const draftHtmlName = sig > 0 ? bugDraftHtmlFileName(row) : '';
+    const draftLegacyMdName = sig > 0 ? legacyDefaultBugDraftFileName(row) : '';
+    const draftLegacyHtmlName = draftLegacyMdName ? draftLegacyMdName.replace(/\.md$/i, '.html') : '';
     const draftSource = draftMdName ? bugDraftSourceUrl(draftMdName) : '';
     const draftDirSource = bugDraftSourceDirUrl();
     const draftExists = draftMdName ? expectedDraftNames.has(draftMdName) : false;
@@ -985,7 +998,7 @@ function evidenceMarkdown(title, evidence, elementShotPath, elementShotGitHub, p
           <div class="meta"><a href="${esc(row.candidateUrl)}" target="_blank" rel="noopener">${esc(candidateLabel)} URL</a></div>
           <div class="meta">${esc(row.selector)}</div>
           <div class="meta"><strong>Likely CSS:</strong> ${cssMeta}</div>
-          ${draftMdName ? `<div class="meta"><strong>Draft Issue:</strong> ${draftExists ? `<a href="bug-drafts/${esc(draftMdName)}" target="_blank" rel="noopener">Open local draft</a>` : '<span>Local draft missing</span>'}${draftSource ? ` | <a href="${esc(draftSource)}" target="_blank" rel="noopener">GitHub Source</a>` : ''}${draftDirSource ? ` | <a href="${esc(draftDirSource)}" target="_blank" rel="noopener">All Drafts (GitHub)</a>` : ''}</div>` : ''}
+          ${draftMdName ? `<div class="meta"><strong>Draft Issue:</strong> ${draftExists ? `<a href="bug-drafts/${esc(draftHtmlName)}" target="_blank" rel="noopener">Open rendered draft (HTML)</a>` : '<span>Local draft missing</span>'}${draftSource ? ` | <a href="${esc(draftSource)}" target="_blank" rel="noopener">GitHub Source (Markdown)</a>` : ''}${draftLegacyHtmlName ? ` | <a href="bug-drafts/${esc(draftLegacyHtmlName)}" target="_blank" rel="noopener">Legacy URL</a>` : ''}${draftDirSource ? ` | <a href="${esc(draftDirSource)}" target="_blank" rel="noopener">All Drafts (GitHub)</a>` : ''}</div>` : ''}
           <details>
             <summary>XPath and HTML snippets</summary>
             ${baselineEvidence}
@@ -1365,6 +1378,39 @@ function evidenceMarkdown(title, evidence, elementShotPath, elementShotGitHub, p
 </body>
 </html>`;
     fs.writeFileSync(htmlPath, renderedHtml);
+
+    const legacyMdName = legacyDefaultBugDraftFileName(row);
+    if (legacyMdName && legacyMdName !== mdName) {
+      const legacyHtmlName = legacyMdName.replace(/\.md$/i, '.html');
+      const legacyMdPath = path.join(bugDraftDir, legacyMdName);
+      const legacyHtmlPath = path.join(bugDraftDir, legacyHtmlName);
+      const sourceUrl = bugDraftSourceUrl(mdName);
+      const legacyMd = [
+        '# Legacy Draft Redirect',
+        '',
+        `This legacy draft path now maps to the default scenario draft for **${title}**.`,
+        '',
+        `- Rendered HTML: ./${legacyHtmlName}`,
+        `- Canonical Markdown: ./${mdName}`,
+        sourceUrl ? `- GitHub Source (Canonical Markdown): ${sourceUrl}` : '',
+        '',
+      ].filter(Boolean).join('\n');
+      fs.writeFileSync(legacyMdPath, `${legacyMd}\n`);
+
+      const legacyHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Legacy Draft Redirect</title>
+<meta http-equiv="refresh" content="0; url=${esc(htmlName)}" />
+</head>
+<body>
+  <p>This legacy path now redirects to <a href="${esc(htmlName)}">${esc(htmlName)}</a>.</p>
+</body>
+</html>`;
+      fs.writeFileSync(legacyHtmlPath, legacyHtml);
+    }
 
     const csvEsc = (s) => `"${String(s).replace(/"/g, '""')}"`;
     csvLines.push([

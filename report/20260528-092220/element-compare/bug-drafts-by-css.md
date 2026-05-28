@@ -4,7 +4,7 @@ This endpoint may render as raw Markdown on GitHub Pages.
 - Published HTML report: https://mgifford.github.io/drupal-diff/report/20260528-092220/element-compare/bug-drafts-by-css.html
 ---
 # Draft Bug Reports Grouped By CSS Source
-Generated: 2026-05-28T17:38:09.096Z
+Generated: 2026-05-28T17:50:40.273Z
 ## core/themes/default_admin/css/base/elements.css (92)
 - 1. [Admin Theme (light) Appearance List - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/appearance-list-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/appearance-list-light-default-h2.md

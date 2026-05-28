@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T17:38:08.966Z",
+  "generatedAt": "2026-05-28T17:50:39.929Z",
   "baselineLabel": "Drupal 11 with Gin",
   "candidateLabel": "Drupal 12 with Admin Theme",
   "rows": [
@@ -140,7 +140,7 @@
         "paddingY": 10.666666666666666,
         "paddingX": 16,
         "marginY": 19.333333333333332,
-        "width": 372.96875,
+        "width": 374.7916666666667,
         "height": 22.4296875,
         "samples": [
           "Administrative sidebar",
@@ -180,8 +180,8 @@
           },
           {
             "key": "width",
-            "delta": 1512.7016299299046,
-            "abs": 1512.7016299299046,
+            "delta": 1520.5838470849874,
+            "abs": 1520.5838470849874,
             "threshold": 10,
             "flagged": true
           },
@@ -314,8 +314,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -2480,7 +2480,7 @@
         "paddingY": 10.666666666666666,
         "paddingX": 16,
         "marginY": 19.333333333333332,
-        "width": 372.96875,
+        "width": 395.6510416666667,
         "height": 22.4296875,
         "samples": [
           "Administrative sidebar",
@@ -2520,8 +2520,8 @@
           },
           {
             "key": "width",
-            "delta": 1512.7016299299046,
-            "abs": 1512.7016299299046,
+            "delta": 1610.7789319595756,
+            "abs": 1610.7789319595756,
             "threshold": 10,
             "flagged": true
           },
@@ -2655,8 +2655,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -4999,8 +4999,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -7008,8 +7008,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -9016,8 +9016,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -11373,8 +11373,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -13457,7 +13457,7 @@
         "paddingY": 0,
         "paddingX": 0,
         "marginY": 8,
-        "width": 1039.890625,
+        "width": 1155.15625,
         "height": 18,
         "samples": [
           "Site name",
@@ -13497,8 +13497,8 @@
           },
           {
             "key": "width",
-            "delta": 832.4631048010461,
-            "abs": 832.4631048010461,
+            "delta": 935.8210349336822,
+            "abs": 935.8210349336822,
             "threshold": 10,
             "flagged": true
           },
@@ -13833,8 +13833,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -16034,7 +16034,7 @@
         "paddingY": 0,
         "paddingX": 0,
         "marginY": 8,
-        "width": 1155.078125,
+        "width": 1119.609375,
         "height": 18,
         "samples": [
           "Site name",
@@ -16074,8 +16074,8 @@
           },
           {
             "key": "width",
-            "delta": 935.7509807584532,
-            "abs": 935.7509807584532,
+            "delta": 903.9463852045582,
+            "abs": 903.9463852045582,
             "threshold": 10,
             "flagged": true
           },
@@ -16410,8 +16410,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -18889,8 +18889,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -21941,8 +21941,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -25127,8 +25127,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -27704,7 +27704,7 @@
         "paddingY": 0,
         "paddingX": 0,
         "marginY": 8,
-        "width": 523.5078125,
+        "width": 526.2421875,
         "height": 9,
         "samples": [
           "Name",
@@ -27743,8 +27743,8 @@
           },
           {
             "key": "width",
-            "delta": 1906.2574850299402,
-            "abs": 1906.2574850299402,
+            "delta": 1916.736526946108,
+            "abs": 1916.736526946108,
             "threshold": 10,
             "flagged": true
           },
@@ -28117,8 +28117,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -30968,8 +30968,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -33307,8 +33307,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -35653,8 +35653,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -38849,8 +38849,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -40509,7 +40509,7 @@
         },
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[2]/td[7]/div[1]",
-          "html": "<div class=\"dropbutton-wrapper dropbutton-multiple\" data-drupal-ajax-container=\"\" data-once=\"dropbutton ginDropbutton\"> <div class=\"dropbutton-widget\"><ul class=\"dropbutton dropbutton--extrasmall dropbutton--multiple dropbutton--gin\"> <li class=\"edit dropbutton__item dropbutton-action\"><a href=\"/node/51/edit?destination=/admin/content\" aria-label=\"Edit test\" hreflang=\"en\">Edit</a></li><li class=\"dropbutton-toggle\"><button type=\"button\" class=\"dropbutton__toggle\"><span class=\"visually-hidden\">List additional actions</span></button></li> <li class=\"dropbutton__item dropbutton-action secondary-action\"> <ul class=\"dropbutton__items\" style=\"position: fixed; left: auto; right: -485px; top: 1316.12px;\"> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/node/51/delet",
+          "html": "<div class=\"dropbutton-wrapper dropbutton-multiple\" data-drupal-ajax-container=\"\" data-once=\"dropbutton ginDropbutton\"> <div class=\"dropbutton-widget\"><ul class=\"dropbutton dropbutton--extrasmall dropbutton--multiple dropbutton--gin\"> <li class=\"edit dropbutton__item dropbutton-action\"><a href=\"/node/51/edit?destination=/admin/content\" aria-label=\"Edit test\" hreflang=\"en\">Edit</a></li><li class=\"dropbutton-toggle\"><button type=\"button\" class=\"dropbutton__toggle\"><span class=\"visually-hidden\">List additional actions</span></button></li> <li class=\"dropbutton__item dropbutton-action secondary-action\"> <ul class=\"dropbutton__items\" style=\"position: fixed; left: auto; right: 75px; top: 480.203px;\"> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/node/51/delete?",
           "text": "EditList additional actions Delete View"
         }
       ],
@@ -41195,7 +41195,7 @@
         },
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[2]/td[7]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: auto; right: -485px; top: 1316.12px;\"> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/node/51/delete?destination=/admin/content\" aria-label=\"Delete test\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" hreflang=\"en\" data-once=\"ajax\">Delete</a></li> <li class=\"view dropbutton__item dropbutton-action secondary-action\"><a href=\"/node/51?destination=/admin/content\" aria-label=\"View test\" hreflang=\"en\">View</a></li> </ul>",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: auto; right: 75px; top: 480.203px;\"> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/node/51/delete?destination=/admin/content\" aria-label=\"Delete test\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" hreflang=\"en\" data-once=\"ajax\">Delete</a></li> <li class=\"view dropbutton__item dropbutton-action secondary-action\"><a href=\"/node/51?destination=/admin/content\" aria-label=\"View test\" hreflang=\"en\">View</a></li> </ul>",
           "text": "Delete View"
         }
       ],
@@ -42130,8 +42130,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -42588,7 +42588,7 @@
         },
         {
           "xpath": "//*[@id=\"edit-body-0-value\"]",
-          "html": "<textarea class=\"js-text-full text-full form-textarea resize-vertical form-element form-element--type-textarea form-element--api-textarea\" data-ckeditor5-host-entity-type=\"node\" data-ckeditor5-host-entity-bundle=\"article\" data-ckeditor5-host-entity-langcode=\"en\" data-drupal-selector=\"edit-body-0-value\" id=\"edit-body-0-value\" name=\"body[0][value]\" rows=\"9\" cols=\"60\" placeholder=\"\" data-editor-active-text-format=\"basic_html\" data-ckeditor5-id=\"3629742\" style=\"display: none;\"></textarea>",
+          "html": "<textarea class=\"js-text-full text-full form-textarea resize-vertical form-element form-element--type-textarea form-element--api-textarea\" data-ckeditor5-host-entity-type=\"node\" data-ckeditor5-host-entity-bundle=\"article\" data-ckeditor5-host-entity-langcode=\"en\" data-drupal-selector=\"edit-body-0-value\" id=\"edit-body-0-value\" name=\"body[0][value]\" rows=\"9\" cols=\"60\" placeholder=\"\" data-editor-active-text-format=\"basic_html\" data-ckeditor5-id=\"1657272\" style=\"display: none;\"></textarea>",
           "text": ""
         }
       ],
@@ -42600,7 +42600,7 @@
         },
         {
           "xpath": "//*[@id=\"edit-body-0-value\"]",
-          "html": "<textarea class=\"js-text-full text-full form-textarea resize-vertical form-element form-element--type-textarea form-element--api-textarea\" data-ckeditor5-host-entity-type=\"node\" data-ckeditor5-host-entity-bundle=\"article\" data-ckeditor5-host-entity-langcode=\"en\" data-drupal-selector=\"edit-body-0-value\" id=\"edit-body-0-value\" name=\"body[0][value]\" rows=\"9\" cols=\"60\" placeholder=\"\" data-editor-active-text-format=\"basic_html\" data-ckeditor5-id=\"1741109\" style=\"display: none;\"></textarea>",
+          "html": "<textarea class=\"js-text-full text-full form-textarea resize-vertical form-element form-element--type-textarea form-element--api-textarea\" data-ckeditor5-host-entity-type=\"node\" data-ckeditor5-host-entity-bundle=\"article\" data-ckeditor5-host-entity-langcode=\"en\" data-drupal-selector=\"edit-body-0-value\" id=\"edit-body-0-value\" name=\"body[0][value]\" rows=\"9\" cols=\"60\" placeholder=\"\" data-editor-active-text-format=\"basic_html\" data-ckeditor5-id=\"5312777\" style=\"display: none;\"></textarea>",
           "text": ""
         }
       ],
@@ -44912,8 +44912,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -45370,7 +45370,7 @@
         },
         {
           "xpath": "//*[@id=\"edit-body-0-value\"]",
-          "html": "<textarea class=\"js-text-full text-full form-textarea resize-vertical form-element form-element--type-textarea form-element--api-textarea\" data-ckeditor5-host-entity-type=\"node\" data-ckeditor5-host-entity-bundle=\"article\" data-ckeditor5-host-entity-langcode=\"en\" data-drupal-selector=\"edit-body-0-value\" id=\"edit-body-0-value\" name=\"body[0][value]\" rows=\"9\" cols=\"60\" placeholder=\"\" data-editor-active-text-format=\"basic_html\" data-ckeditor5-id=\"8947845\" style=\"display: none;\"></textarea>",
+          "html": "<textarea class=\"js-text-full text-full form-textarea resize-vertical form-element form-element--type-textarea form-element--api-textarea\" data-ckeditor5-host-entity-type=\"node\" data-ckeditor5-host-entity-bundle=\"article\" data-ckeditor5-host-entity-langcode=\"en\" data-drupal-selector=\"edit-body-0-value\" id=\"edit-body-0-value\" name=\"body[0][value]\" rows=\"9\" cols=\"60\" placeholder=\"\" data-editor-active-text-format=\"basic_html\" data-ckeditor5-id=\"9530160\" style=\"display: none;\"></textarea>",
           "text": ""
         }
       ],
@@ -45382,7 +45382,7 @@
         },
         {
           "xpath": "//*[@id=\"edit-body-0-value\"]",
-          "html": "<textarea class=\"js-text-full text-full form-textarea resize-vertical form-element form-element--type-textarea form-element--api-textarea\" data-ckeditor5-host-entity-type=\"node\" data-ckeditor5-host-entity-bundle=\"article\" data-ckeditor5-host-entity-langcode=\"en\" data-drupal-selector=\"edit-body-0-value\" id=\"edit-body-0-value\" name=\"body[0][value]\" rows=\"9\" cols=\"60\" placeholder=\"\" data-editor-active-text-format=\"basic_html\" data-ckeditor5-id=\"5285122\" style=\"display: none;\"></textarea>",
+          "html": "<textarea class=\"js-text-full text-full form-textarea resize-vertical form-element form-element--type-textarea form-element--api-textarea\" data-ckeditor5-host-entity-type=\"node\" data-ckeditor5-host-entity-bundle=\"article\" data-ckeditor5-host-entity-langcode=\"en\" data-drupal-selector=\"edit-body-0-value\" id=\"edit-body-0-value\" name=\"body[0][value]\" rows=\"9\" cols=\"60\" placeholder=\"\" data-editor-active-text-format=\"basic_html\" data-ckeditor5-id=\"7135084\" style=\"display: none;\"></textarea>",
           "text": ""
         }
       ],
@@ -47587,8 +47587,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -49595,8 +49595,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -51721,8 +51721,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -53485,7 +53485,7 @@
         },
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]",
-          "html": "<a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=pP4p34RISlcmVnFpigZAzTJY19WYqVdjAQnrWGECLug\">Disable</a>",
+          "html": "<a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=Red-4pBw4gfoPEIjbgMyx5-M64_0aqfMbUar-7tO47A\">Disable</a>",
           "text": "Disable"
         }
       ],
@@ -53497,7 +53497,7 @@
         },
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]",
-          "html": "<a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=BFsq8gQT81zWvAvcaSO1_uP94GCtkqSUnmcGINveKi8\">Disable</a>",
+          "html": "<a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=gfU1raMb0wJWiuzUo-U8UpwPnlPoCANh_pQsVqflMNE\">Disable</a>",
           "text": "Disable"
         }
       ],
@@ -53888,24 +53888,24 @@
       "baselineDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 465.297px;\"> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=pP4p34RISlcmVnFpigZAzTJY19WYqVdjAQnrWGECLug\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_site_branding/delete?destination=/admin/structure/block\" aria-label=\"Delete Site branding\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" data-once=\"ajax\">Remove</a></li> </ul>",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 465.297px;\"> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=Red-4pBw4gfoPEIjbgMyx5-M64_0aqfMbUar-7tO47A\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_site_branding/delete?destination=/admin/structure/block\" aria-label=\"Delete Site branding\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" data-once=\"ajax\">Remove</a></li> </ul>",
           "text": "Disable Remove"
         },
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[6]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: absolute; overflow-y: auto; top: auto; bottom: 100%; max-height: 421.5px;\"> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_search_form_narrow/disable?destination=/admin/structure/block&amp;token=do1KQMqpjOW2Q10E14wVqaQPuvaVQUdhHTbrHUz0EwY\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_search_form_narrow/delete?destination=/admin/structure/block\" aria-label=\"Delete Search form (narrow)\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" data-once=\"ajax\">Remove</a></li> </ul>",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: absolute; overflow-y: auto; top: auto; bottom: 100%; max-height: 421.5px;\"> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_search_form_narrow/disable?destination=/admin/structure/block&amp;token=yU7rJd9LwKKi8Byk0MF4-3AZtjAsUlKtCx8UaVmIvc8\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_search_form_narrow/delete?destination=/admin/structure/block\" aria-label=\"Delete Search form (narrow)\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" data-once=\"ajax\">Remove</a></li> </ul>",
           "text": "Disable Remove"
         }
       ],
       "candidateDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: 1145.38px; right: auto; top: 552.203px;\"> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=BFsq8gQT81zWvAvcaSO1_uP94GCtkqSUnmcGINveKi8\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_site_branding/delete?destination=/admin/structure/block\" aria-label=\"Delete Site branding\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" data-once=\"ajax\">Remove</a></li> </ul>",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: 1145.38px; right: auto; top: 552.203px;\"> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=gfU1raMb0wJWiuzUo-U8UpwPnlPoCANh_pQsVqflMNE\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_site_branding/delete?destination=/admin/structure/block\" aria-label=\"Delete Site branding\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" data-once=\"ajax\">Remove</a></li> </ul>",
           "text": "Disable Remove"
         },
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[6]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: 1088.73px; right: auto; top: 734.203px;\"> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_main_menu/disable?destination=/admin/structure/block&amp;token=Q4LSjU157O-n1kHVI92M9YUCtCpnRDAuB1Llgr4rjA0\">Disable</a></li> <li class=\"menu-edit dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/menu/manage/main\">Edit menu</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_main_menu/delete?destination=/admin/structure/block\" aria-label=\"Delete Main navigation\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" data-once=\"ajax\">Remov",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: 1088.73px; right: auto; top: 734.203px;\"> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_main_menu/disable?destination=/admin/structure/block&amp;token=dctMgsTX9_gakiUkQQiGMjoTl-gJu_jw2JKRHhre0jk\">Disable</a></li> <li class=\"menu-edit dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/menu/manage/main\">Edit menu</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_main_menu/delete?destination=/admin/structure/block\" aria-label=\"Delete Main navigation\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" data-once=\"ajax\">Remov",
           "text": "Disable Edit menu Remove"
         }
       ],
@@ -54137,7 +54137,7 @@
       "baselineDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]",
-          "html": "<a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=pP4p34RISlcmVnFpigZAzTJY19WYqVdjAQnrWGECLug\">Disable</a>",
+          "html": "<a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=Red-4pBw4gfoPEIjbgMyx5-M64_0aqfMbUar-7tO47A\">Disable</a>",
           "text": "Disable"
         },
         {
@@ -54149,7 +54149,7 @@
       "candidateDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]",
-          "html": "<a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=BFsq8gQT81zWvAvcaSO1_uP94GCtkqSUnmcGINveKi8\">Disable</a>",
+          "html": "<a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=gfU1raMb0wJWiuzUo-U8UpwPnlPoCANh_pQsVqflMNE\">Disable</a>",
           "text": "Disable"
         },
         {
@@ -54845,8 +54845,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -56609,7 +56609,7 @@
         },
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]",
-          "html": "<a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=pP4p34RISlcmVnFpigZAzTJY19WYqVdjAQnrWGECLug\">Disable</a>",
+          "html": "<a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=Red-4pBw4gfoPEIjbgMyx5-M64_0aqfMbUar-7tO47A\">Disable</a>",
           "text": "Disable"
         }
       ],
@@ -56621,7 +56621,7 @@
         },
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]",
-          "html": "<a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=BFsq8gQT81zWvAvcaSO1_uP94GCtkqSUnmcGINveKi8\">Disable</a>",
+          "html": "<a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=gfU1raMb0wJWiuzUo-U8UpwPnlPoCANh_pQsVqflMNE\">Disable</a>",
           "text": "Disable"
         }
       ],
@@ -57012,24 +57012,24 @@
       "baselineDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 465.297px;\"> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=pP4p34RISlcmVnFpigZAzTJY19WYqVdjAQnrWGECLug\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_site_branding/delete?destination=/admin/structure/block\" aria-label=\"Delete Site branding\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" data-once=\"ajax\">Remove</a></li> </ul>",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 465.297px;\"> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=Red-4pBw4gfoPEIjbgMyx5-M64_0aqfMbUar-7tO47A\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_site_branding/delete?destination=/admin/structure/block\" aria-label=\"Delete Site branding\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" data-once=\"ajax\">Remove</a></li> </ul>",
           "text": "Disable Remove"
         },
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[6]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: absolute; overflow-y: auto; top: auto; bottom: 100%; max-height: 421.5px;\"> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_search_form_narrow/disable?destination=/admin/structure/block&amp;token=do1KQMqpjOW2Q10E14wVqaQPuvaVQUdhHTbrHUz0EwY\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_search_form_narrow/delete?destination=/admin/structure/block\" aria-label=\"Delete Search form (narrow)\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" data-once=\"ajax\">Remove</a></li> </ul>",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: absolute; overflow-y: auto; top: auto; bottom: 100%; max-height: 421.5px;\"> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_search_form_narrow/disable?destination=/admin/structure/block&amp;token=yU7rJd9LwKKi8Byk0MF4-3AZtjAsUlKtCx8UaVmIvc8\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_search_form_narrow/delete?destination=/admin/structure/block\" aria-label=\"Delete Search form (narrow)\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" data-once=\"ajax\">Remove</a></li> </ul>",
           "text": "Disable Remove"
         }
       ],
       "candidateDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: 1145.38px; right: auto; top: 552.203px;\"> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=BFsq8gQT81zWvAvcaSO1_uP94GCtkqSUnmcGINveKi8\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_site_branding/delete?destination=/admin/structure/block\" aria-label=\"Delete Site branding\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" data-once=\"ajax\">Remove</a></li> </ul>",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: 1145.38px; right: auto; top: 552.203px;\"> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=gfU1raMb0wJWiuzUo-U8UpwPnlPoCANh_pQsVqflMNE\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_site_branding/delete?destination=/admin/structure/block\" aria-label=\"Delete Site branding\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" data-once=\"ajax\">Remove</a></li> </ul>",
           "text": "Disable Remove"
         },
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[6]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: 1088.73px; right: auto; top: 734.203px;\"> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_main_menu/disable?destination=/admin/structure/block&amp;token=Q4LSjU157O-n1kHVI92M9YUCtCpnRDAuB1Llgr4rjA0\">Disable</a></li> <li class=\"menu-edit dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/menu/manage/main\">Edit menu</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_main_menu/delete?destination=/admin/structure/block\" aria-label=\"Delete Main navigation\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" data-once=\"ajax\">Remov",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: 1088.73px; right: auto; top: 734.203px;\"> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_main_menu/disable?destination=/admin/structure/block&amp;token=dctMgsTX9_gakiUkQQiGMjoTl-gJu_jw2JKRHhre0jk\">Disable</a></li> <li class=\"menu-edit dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/menu/manage/main\">Edit menu</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/block/manage/olivero_main_menu/delete?destination=/admin/structure/block\" aria-label=\"Delete Main navigation\" class=\"use-ajax\" data-dialog-type=\"modal\" data-dialog-options=\"{&quot;width&quot;:880}\" data-once=\"ajax\">Remov",
           "text": "Disable Edit menu Remove"
         }
       ],
@@ -57261,7 +57261,7 @@
       "baselineDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]",
-          "html": "<a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=pP4p34RISlcmVnFpigZAzTJY19WYqVdjAQnrWGECLug\">Disable</a>",
+          "html": "<a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=Red-4pBw4gfoPEIjbgMyx5-M64_0aqfMbUar-7tO47A\">Disable</a>",
           "text": "Disable"
         },
         {
@@ -57273,7 +57273,7 @@
       "candidateDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]",
-          "html": "<a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=BFsq8gQT81zWvAvcaSO1_uP94GCtkqSUnmcGINveKi8\">Disable</a>",
+          "html": "<a href=\"/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=gfU1raMb0wJWiuzUo-U8UpwPnlPoCANh_pQsVqflMNE\">Disable</a>",
           "text": "Disable"
         },
         {
@@ -57854,8 +57854,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -60657,8 +60657,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -63184,7 +63184,7 @@
         "paddingY": 0,
         "paddingX": 0,
         "marginY": 8,
-        "width": 674.6666666666666,
+        "width": 651.0729166666666,
         "height": 12,
         "samples": [
           "Name",
@@ -63224,8 +63224,8 @@
           },
           {
             "key": "width",
-            "delta": 1087.9677182685252,
-            "abs": 1087.9677182685252,
+            "delta": 1046.4233308877476,
+            "abs": 1046.4233308877476,
             "threshold": 10,
             "flagged": true
           },
@@ -63563,8 +63563,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -65933,7 +65933,7 @@
         "paddingY": 0,
         "paddingX": 0,
         "marginY": 8,
-        "width": 674.7083333333334,
+        "width": 630,
         "height": 12,
         "samples": [
           "Name",
@@ -65973,8 +65973,8 @@
           },
           {
             "key": "width",
-            "delta": 1088.041085840059,
-            "abs": 1088.041085840059,
+            "delta": 1009.3176815847396,
+            "abs": 1009.3176815847396,
             "threshold": 10,
             "flagged": true
           },
@@ -66314,8 +66314,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -68966,8 +68966,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -71732,8 +71732,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -74507,8 +74507,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -75957,7 +75957,7 @@
         },
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]",
-          "html": "<div class=\"dropbutton-wrapper dropbutton-single\" data-drupal-ajax-container=\"\" data-once=\"dropbutton\"> <div class=\"dropbutton-widget\"><ul class=\"dropbutton dropbutton--extrasmall dropbutton--single dropbutton--gin\"> <li class=\"enable dropbutton__item dropbutton-action\"><a href=\"/admin/structure/types/manage/article/display/full/enable?token=6JwOhZ7lfxfSHgVCj8DnM3yIHvtDZgzsQAEV8HRp6us\">Enable <span class=\"visually-hidden\">(Full content)</span></a></li> </ul></div> </div>",
+          "html": "<div class=\"dropbutton-wrapper dropbutton-single\" data-drupal-ajax-container=\"\" data-once=\"dropbutton\"> <div class=\"dropbutton-widget\"><ul class=\"dropbutton dropbutton--extrasmall dropbutton--single dropbutton--gin\"> <li class=\"enable dropbutton__item dropbutton-action\"><a href=\"/admin/structure/types/manage/article/display/full/enable?token=IcqEBTwl7VM-OYzy1h-GFjOSsrkPOAmMOZuAIk34PWI\">Enable <span class=\"visually-hidden\">(Full content)</span></a></li> </ul></div> </div>",
           "text": "Enable (Full content)"
         }
       ],
@@ -76164,7 +76164,7 @@
         },
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[1]/ul[1]/li[1]/a[1]",
-          "html": "<a href=\"/admin/structure/types/manage/article/display/full/enable?token=6JwOhZ7lfxfSHgVCj8DnM3yIHvtDZgzsQAEV8HRp6us\">Enable <span class=\"visually-hidden\">(Full content)</span></a>",
+          "html": "<a href=\"/admin/structure/types/manage/article/display/full/enable?token=IcqEBTwl7VM-OYzy1h-GFjOSsrkPOAmMOZuAIk34PWI\">Enable <span class=\"visually-hidden\">(Full content)</span></a>",
           "text": "Enable (Full content)"
         }
       ],
@@ -77043,8 +77043,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -78497,7 +78497,7 @@
         },
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]",
-          "html": "<div class=\"dropbutton-wrapper dropbutton-single\" data-drupal-ajax-container=\"\" data-once=\"dropbutton\"> <div class=\"dropbutton-widget\"><ul class=\"dropbutton dropbutton--extrasmall dropbutton--single dropbutton--gin\"> <li class=\"enable dropbutton__item dropbutton-action\"><a href=\"/admin/structure/types/manage/article/display/full/enable?token=6JwOhZ7lfxfSHgVCj8DnM3yIHvtDZgzsQAEV8HRp6us\">Enable <span class=\"visually-hidden\">(Full content)</span></a></li> </ul></div> </div>",
+          "html": "<div class=\"dropbutton-wrapper dropbutton-single\" data-drupal-ajax-container=\"\" data-once=\"dropbutton\"> <div class=\"dropbutton-widget\"><ul class=\"dropbutton dropbutton--extrasmall dropbutton--single dropbutton--gin\"> <li class=\"enable dropbutton__item dropbutton-action\"><a href=\"/admin/structure/types/manage/article/display/full/enable?token=IcqEBTwl7VM-OYzy1h-GFjOSsrkPOAmMOZuAIk34PWI\">Enable <span class=\"visually-hidden\">(Full content)</span></a></li> </ul></div> </div>",
           "text": "Enable (Full content)"
         }
       ],
@@ -78705,7 +78705,7 @@
         },
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[1]/ul[1]/li[1]/a[1]",
-          "html": "<a href=\"/admin/structure/types/manage/article/display/full/enable?token=6JwOhZ7lfxfSHgVCj8DnM3yIHvtDZgzsQAEV8HRp6us\">Enable <span class=\"visually-hidden\">(Full content)</span></a>",
+          "html": "<a href=\"/admin/structure/types/manage/article/display/full/enable?token=IcqEBTwl7VM-OYzy1h-GFjOSsrkPOAmMOZuAIk34PWI\">Enable <span class=\"visually-hidden\">(Full content)</span></a>",
           "text": "Enable (Full content)"
         }
       ],
@@ -79582,8 +79582,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -82398,8 +82398,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -85317,8 +85317,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -88573,8 +88573,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -89995,10 +89995,10 @@
         "core/themes/default_admin/css/components/tables.css",
         "core/themes/default_admin/css/components/tables.pcss.css"
       ],
-      "baselineShot": "baseline/structure-menu-admin__default__dark__label.png",
+      "baselineShot": "",
       "candidateShot": "candidate/structure-menu-admin__default__dark__label.png",
-      "baselinePageShot": "baseline-pages/structure-menu-admin__default__dark__page.png",
-      "candidatePageShot": "candidate-pages/structure-menu-admin__default__dark__page.png",
+      "baselinePageShot": "",
+      "candidatePageShot": "",
       "baselineDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/label[1]",
@@ -90201,8 +90201,8 @@
       ],
       "baselineShot": "baseline/structure-menu-admin__default__dark__dropbutton-wrapper.png",
       "candidateShot": "candidate/structure-menu-admin__default__dark__dropbutton-wrapper.png",
-      "baselinePageShot": "baseline-pages/structure-menu-admin__default__dark__page.png",
-      "candidatePageShot": "candidate-pages/structure-menu-admin__default__dark__page.png",
+      "baselinePageShot": "",
+      "candidatePageShot": "",
       "baselineDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[4]/div[2]/table[1]/tbody[1]/tr[1]/td[4]/div[1]",
@@ -90465,8 +90465,8 @@
       ],
       "baselineShot": "baseline/structure-menu-admin__default__dark__dropbutton-primary-action.png",
       "candidateShot": "candidate/structure-menu-admin__default__dark__dropbutton-primary-action.png",
-      "baselinePageShot": "baseline-pages/structure-menu-admin__default__dark__page.png",
-      "candidatePageShot": "candidate-pages/structure-menu-admin__default__dark__page.png",
+      "baselinePageShot": "",
+      "candidatePageShot": "",
       "baselineDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[4]/div[2]/table[1]/tbody[1]/tr[1]/td[4]/div[1]/div[1]/ul[1]/li[1]/a[1]",
@@ -90709,8 +90709,8 @@
       ],
       "baselineShot": "baseline/structure-menu-admin__default__dark__dropbutton-toggle.png",
       "candidateShot": "candidate/structure-menu-admin__default__dark__dropbutton-toggle.png",
-      "baselinePageShot": "baseline-pages/structure-menu-admin__default__dark__page.png",
-      "candidatePageShot": "candidate-pages/structure-menu-admin__default__dark__page.png",
+      "baselinePageShot": "",
+      "candidatePageShot": "",
       "baselineDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[4]/div[2]/table[1]/tbody[1]/tr[1]/td[4]/div[1]/div[1]/ul[1]/li[2]/button[1]",
@@ -90881,8 +90881,8 @@
       ],
       "baselineShot": "",
       "candidateShot": "",
-      "baselinePageShot": "baseline-pages/structure-menu-admin__default__dark__page.png",
-      "candidatePageShot": "candidate-pages/structure-menu-admin__default__dark__page.png",
+      "baselinePageShot": "",
+      "candidatePageShot": "",
       "baselineDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[4]/div[2]/table[1]/tbody[1]/tr[1]/td[4]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
@@ -91127,8 +91127,8 @@
       ],
       "baselineShot": "",
       "candidateShot": "",
-      "baselinePageShot": "baseline-pages/structure-menu-admin__default__dark__page.png",
-      "candidatePageShot": "candidate-pages/structure-menu-admin__default__dark__page.png",
+      "baselinePageShot": "",
+      "candidatePageShot": "",
       "baselineDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[4]/div[2]/table[1]/tbody[1]/tr[1]/td[4]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]",
@@ -91300,8 +91300,8 @@
       "likelyCssFiles": [],
       "baselineShot": "baseline/structure-menu-admin__default__dark__toolbar-structure-toggle.png",
       "candidateShot": "",
-      "baselinePageShot": "baseline-pages/structure-menu-admin__default__dark__page.png",
-      "candidatePageShot": "candidate-pages/structure-menu-admin__default__dark__page.png",
+      "baselinePageShot": "",
+      "candidatePageShot": "",
       "baselineDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/aside[1]/nav[1]/div[4]/ul[1]/li[1]/button[1]",
@@ -91406,8 +91406,8 @@
       "likelyCssFiles": [],
       "baselineShot": "",
       "candidateShot": "",
-      "baselinePageShot": "baseline-pages/structure-menu-admin__default__dark__page.png",
-      "candidatePageShot": "candidate-pages/structure-menu-admin__default__dark__page.png",
+      "baselinePageShot": "",
+      "candidatePageShot": "",
       "baselineDomEvidence": [],
       "candidateDomEvidence": [],
       "patchSuggestion": null
@@ -91725,8 +91725,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -94488,8 +94488,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -97075,7 +97075,7 @@
         "paddingY": 0,
         "paddingX": 0,
         "marginY": 28,
-        "width": 452.625,
+        "width": 433.375,
         "height": 15.15625,
         "samples": [
           "Administrative sidebar",
@@ -97115,8 +97115,8 @@
           },
           {
             "key": "width",
-            "delta": 234.96762257169289,
-            "abs": 234.96762257169289,
+            "delta": 220.72155411655876,
+            "abs": 220.72155411655876,
             "threshold": 10,
             "flagged": true
           },
@@ -97253,8 +97253,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -99430,24 +99430,24 @@
       "baselineDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 524.609px;\"> <li class=\"duplicate dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/comment/duplicate\" data-drupal-selector=\"views-listing-comment\">Duplicate</a></li> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/comment/disable?token=NDK8YfhNLmAqHSOfg176S-kW99cKeMwx4n1r9EPtwRk\" class=\"use-ajax\" data-drupal-selector=\"views-listing-comment\" data-once=\"ajax\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/comment/delete?destination=/admin/structure/views\" aria-label=\"Delete Comments\" class=\"use-ajax\" data",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 524.609px;\"> <li class=\"duplicate dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/comment/duplicate\" data-drupal-selector=\"views-listing-comment\">Duplicate</a></li> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/comment/disable?token=Dv_9lu6NLIAXtrTUKLsoo_V-xpzuVTpDE5ECH2vzbAo\" class=\"use-ajax\" data-drupal-selector=\"views-listing-comment\" data-once=\"ajax\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/comment/delete?destination=/admin/structure/views\" aria-label=\"Delete Comments\" class=\"use-ajax\" data",
           "text": "Duplicate Disable Delete"
         },
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 435.609px;\"> <li class=\"duplicate dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/duplicate\" data-drupal-selector=\"views-listing-content\">Duplicate</a></li> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/disable?token=smYbzs7gfmT4g4WAuBI_E7zUG2LeqyPhhUWF_D5KjOA\" class=\"use-ajax\" data-drupal-selector=\"views-listing-content\" data-once=\"ajax\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/delete?destination=/admin/structure/views\" aria-label=\"Delete Content\" class=\"use-ajax\" data-",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 435.609px;\"> <li class=\"duplicate dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/duplicate\" data-drupal-selector=\"views-listing-content\">Duplicate</a></li> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/disable?token=Ki520FTBuA9Ya0TWyAwh4ZDGQZvACPfSBJpr_2TbIHo\" class=\"use-ajax\" data-drupal-selector=\"views-listing-content\" data-once=\"ajax\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/delete?destination=/admin/structure/views\" aria-label=\"Delete Content\" class=\"use-ajax\" data-",
           "text": "Duplicate Disable Delete"
         }
       ],
       "candidateDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: auto; right: 76.0156px; top: 438.594px;\"> <li class=\"duplicate dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/duplicate\" data-drupal-selector=\"views-listing-content\">Duplicate</a></li> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/disable?token=HrLUuy5JzqUHrQWMFZ82m2AjctLNSOO4IcfBf2oT4Dk\" class=\"use-ajax\" data-drupal-selector=\"views-listing-content\" data-once=\"ajax\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/delete?destination=/admin/structure/views\" aria-label=\"Delete Content\" class=\"use-ajax\" data-dialog-type=\"modal\" dat",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: auto; right: 76.0156px; top: 438.594px;\"> <li class=\"duplicate dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/duplicate\" data-drupal-selector=\"views-listing-content\">Duplicate</a></li> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/disable?token=tYH8tVXn7DaEQNadCgDsXceP7ZLYll5fZuilxiwUsqU\" class=\"use-ajax\" data-drupal-selector=\"views-listing-content\" data-once=\"ajax\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/delete?destination=/admin/structure/views\" aria-label=\"Delete Content\" class=\"use-ajax\" data-dialog-type=\"modal\" dat",
           "text": "Duplicate Disable Delete"
         },
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: auto; right: 97.625px; top: 503.594px;\"> <li class=\"duplicate dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/block_content/duplicate\" data-drupal-selector=\"views-listing-block_content\">Duplicate</a></li> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/block_content/disable?token=UrgvpnBejRgQ3p-yN86yf-FDGfdjN2Sr6uXBMAxA92c\" class=\"use-ajax\" data-drupal-selector=\"views-listing-block_content\" data-once=\"ajax\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/block_content/delete?destination=/admin/structure/views\" aria-label=\"Delete Content blocks\" class=\"us",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: auto; right: 97.625px; top: 503.594px;\"> <li class=\"duplicate dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/block_content/duplicate\" data-drupal-selector=\"views-listing-block_content\">Duplicate</a></li> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/block_content/disable?token=yCoeVzZhYrgoT55_XYEacRvQU1HbLqxi2PbabrobRbk\" class=\"use-ajax\" data-drupal-selector=\"views-listing-block_content\" data-once=\"ajax\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/block_content/delete?destination=/admin/structure/views\" aria-label=\"Delete Content blocks\" class=\"us",
           "text": "Duplicate Disable Delete"
         }
       ],
@@ -99680,7 +99680,7 @@
         },
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]",
-          "html": "<a href=\"/admin/structure/views/view/comment/disable?token=NDK8YfhNLmAqHSOfg176S-kW99cKeMwx4n1r9EPtwRk\" class=\"use-ajax\" data-drupal-selector=\"views-listing-comment\" data-once=\"ajax\">Disable</a>",
+          "html": "<a href=\"/admin/structure/views/view/comment/disable?token=Dv_9lu6NLIAXtrTUKLsoo_V-xpzuVTpDE5ECH2vzbAo\" class=\"use-ajax\" data-drupal-selector=\"views-listing-comment\" data-once=\"ajax\">Disable</a>",
           "text": "Disable"
         }
       ],
@@ -99692,7 +99692,7 @@
         },
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]",
-          "html": "<a href=\"/admin/structure/views/view/content/disable?token=HrLUuy5JzqUHrQWMFZ82m2AjctLNSOO4IcfBf2oT4Dk\" class=\"use-ajax\" data-drupal-selector=\"views-listing-content\" data-once=\"ajax\">Disable</a>",
+          "html": "<a href=\"/admin/structure/views/view/content/disable?token=tYH8tVXn7DaEQNadCgDsXceP7ZLYll5fZuilxiwUsqU\" class=\"use-ajax\" data-drupal-selector=\"views-listing-content\" data-once=\"ajax\">Disable</a>",
           "text": "Disable"
         }
       ],
@@ -100092,7 +100092,7 @@
         "paddingY": 0,
         "paddingX": 0,
         "marginY": 28,
-        "width": 441.85625,
+        "width": 427.58125,
         "height": 15.15625,
         "samples": [
           "Administrative sidebar",
@@ -100132,8 +100132,8 @@
           },
           {
             "key": "width",
-            "delta": 226.9981498612396,
-            "abs": 226.9981498612396,
+            "delta": 216.43385753931548,
+            "abs": 216.43385753931548,
             "threshold": 10,
             "flagged": true
           },
@@ -100271,8 +100271,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -102457,24 +102457,24 @@
       "baselineDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 524.609px;\"> <li class=\"duplicate dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/comment/duplicate\" data-drupal-selector=\"views-listing-comment\">Duplicate</a></li> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/comment/disable?token=NDK8YfhNLmAqHSOfg176S-kW99cKeMwx4n1r9EPtwRk\" class=\"use-ajax\" data-drupal-selector=\"views-listing-comment\" data-once=\"ajax\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/comment/delete?destination=/admin/structure/views\" aria-label=\"Delete Comments\" class=\"use-ajax\" data",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 524.609px;\"> <li class=\"duplicate dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/comment/duplicate\" data-drupal-selector=\"views-listing-comment\">Duplicate</a></li> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/comment/disable?token=Dv_9lu6NLIAXtrTUKLsoo_V-xpzuVTpDE5ECH2vzbAo\" class=\"use-ajax\" data-drupal-selector=\"views-listing-comment\" data-once=\"ajax\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/comment/delete?destination=/admin/structure/views\" aria-label=\"Delete Comments\" class=\"use-ajax\" data",
           "text": "Duplicate Disable Delete"
         },
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 435.609px;\"> <li class=\"duplicate dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/duplicate\" data-drupal-selector=\"views-listing-content\">Duplicate</a></li> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/disable?token=smYbzs7gfmT4g4WAuBI_E7zUG2LeqyPhhUWF_D5KjOA\" class=\"use-ajax\" data-drupal-selector=\"views-listing-content\" data-once=\"ajax\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/delete?destination=/admin/structure/views\" aria-label=\"Delete Content\" class=\"use-ajax\" data-",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 435.609px;\"> <li class=\"duplicate dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/duplicate\" data-drupal-selector=\"views-listing-content\">Duplicate</a></li> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/disable?token=Ki520FTBuA9Ya0TWyAwh4ZDGQZvACPfSBJpr_2TbIHo\" class=\"use-ajax\" data-drupal-selector=\"views-listing-content\" data-once=\"ajax\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/delete?destination=/admin/structure/views\" aria-label=\"Delete Content\" class=\"use-ajax\" data-",
           "text": "Duplicate Disable Delete"
         }
       ],
       "candidateDomEvidence": [
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: auto; right: 76.0156px; top: 438.594px;\"> <li class=\"duplicate dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/duplicate\" data-drupal-selector=\"views-listing-content\">Duplicate</a></li> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/disable?token=HrLUuy5JzqUHrQWMFZ82m2AjctLNSOO4IcfBf2oT4Dk\" class=\"use-ajax\" data-drupal-selector=\"views-listing-content\" data-once=\"ajax\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/delete?destination=/admin/structure/views\" aria-label=\"Delete Content\" class=\"use-ajax\" data-dialog-type=\"modal\" dat",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: auto; right: 76.0156px; top: 438.594px;\"> <li class=\"duplicate dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/duplicate\" data-drupal-selector=\"views-listing-content\">Duplicate</a></li> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/disable?token=tYH8tVXn7DaEQNadCgDsXceP7ZLYll5fZuilxiwUsqU\" class=\"use-ajax\" data-drupal-selector=\"views-listing-content\" data-once=\"ajax\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/content/delete?destination=/admin/structure/views\" aria-label=\"Delete Content\" class=\"use-ajax\" data-dialog-type=\"modal\" dat",
           "text": "Duplicate Disable Delete"
         },
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: auto; right: 97.625px; top: 503.594px;\"> <li class=\"duplicate dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/block_content/duplicate\" data-drupal-selector=\"views-listing-block_content\">Duplicate</a></li> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/block_content/disable?token=UrgvpnBejRgQ3p-yN86yf-FDGfdjN2Sr6uXBMAxA92c\" class=\"use-ajax\" data-drupal-selector=\"views-listing-block_content\" data-once=\"ajax\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/block_content/delete?destination=/admin/structure/views\" aria-label=\"Delete Content blocks\" class=\"us",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: auto; right: 97.625px; top: 503.594px;\"> <li class=\"duplicate dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/block_content/duplicate\" data-drupal-selector=\"views-listing-block_content\">Duplicate</a></li> <li class=\"disable dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/block_content/disable?token=yCoeVzZhYrgoT55_XYEacRvQU1HbLqxi2PbabrobRbk\" class=\"use-ajax\" data-drupal-selector=\"views-listing-block_content\" data-once=\"ajax\">Disable</a></li> <li class=\"delete dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/view/block_content/delete?destination=/admin/structure/views\" aria-label=\"Delete Content blocks\" class=\"us",
           "text": "Duplicate Disable Delete"
         }
       ],
@@ -102708,7 +102708,7 @@
         },
         {
           "xpath": "/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]",
-          "html": "<a href=\"/admin/structure/views/view/comment/disable?token=NDK8YfhNLmAqHSOfg176S-kW99cKeMwx4n1r9EPtwRk\" class=\"use-ajax\" data-drupal-selector=\"views-listing-comment\" data-once=\"ajax\">Disable</a>",
+          "html": "<a href=\"/admin/structure/views/view/comment/disable?token=Dv_9lu6NLIAXtrTUKLsoo_V-xpzuVTpDE5ECH2vzbAo\" class=\"use-ajax\" data-drupal-selector=\"views-listing-comment\" data-once=\"ajax\">Disable</a>",
           "text": "Disable"
         }
       ],
@@ -102720,7 +102720,7 @@
         },
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]",
-          "html": "<a href=\"/admin/structure/views/view/content/disable?token=HrLUuy5JzqUHrQWMFZ82m2AjctLNSOO4IcfBf2oT4Dk\" class=\"use-ajax\" data-drupal-selector=\"views-listing-content\" data-once=\"ajax\">Disable</a>",
+          "html": "<a href=\"/admin/structure/views/view/content/disable?token=tYH8tVXn7DaEQNadCgDsXceP7ZLYll5fZuilxiwUsqU\" class=\"use-ajax\" data-drupal-selector=\"views-listing-content\" data-once=\"ajax\">Disable</a>",
           "text": "Disable"
         }
       ],
@@ -103299,8 +103299,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -103514,8 +103514,8 @@
           "text": ""
         },
         {
-          "xpath": "//*[@id=\"edit-title--nnF5225eMKY\"]",
-          "html": "<input data-drupal-selector=\"edit-title\" type=\"text\" id=\"edit-title--nnF5225eMKY\" name=\"title\" value=\"\" size=\"30\" maxlength=\"128\" class=\"form-text form-element form-element--type-text form-element--api-textfield\" style=\"\">",
+          "xpath": "//*[@id=\"edit-title--mKJTCCssXJM\"]",
+          "html": "<input data-drupal-selector=\"edit-title\" type=\"text\" id=\"edit-title--mKJTCCssXJM\" name=\"title\" value=\"\" size=\"30\" maxlength=\"128\" class=\"form-text form-element form-element--type-text form-element--api-textfield\" style=\"\">",
           "text": ""
         }
       ],
@@ -103526,8 +103526,8 @@
           "text": ""
         },
         {
-          "xpath": "//*[@id=\"edit-title--RYF0uuhf_J0\"]",
-          "html": "<input data-drupal-selector=\"edit-title\" type=\"text\" id=\"edit-title--RYF0uuhf_J0\" name=\"title\" value=\"\" size=\"30\" maxlength=\"128\" class=\"form-text form-element form-element--type-text form-element--api-textfield\" style=\"\">",
+          "xpath": "//*[@id=\"edit-title--k1lM2njlV3I\"]",
+          "html": "<input data-drupal-selector=\"edit-title\" type=\"text\" id=\"edit-title--k1lM2njlV3I\" name=\"title\" value=\"\" size=\"30\" maxlength=\"128\" class=\"form-text form-element form-element--type-text form-element--api-textfield\" style=\"\">",
           "text": ""
         }
       ],
@@ -104322,8 +104322,8 @@
           "text": ""
         },
         {
-          "xpath": "//*[@id=\"view-title-table-column--XK_rei5w6ok\"]",
-          "html": "<th id=\"view-title-table-column--XK_rei5w6ok\" class=\"sortable-heading views-field views-field-title\" scope=\"col\" style=\"width: 179.484px;\"> <a href=\"/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc\" title=\"sort by Title\" rel=\"nofollow\" data-once=\"views-ajax\">Title</a></th>",
+          "xpath": "//*[@id=\"view-title-table-column--l56Kh_Ks1WA\"]",
+          "html": "<th id=\"view-title-table-column--l56Kh_Ks1WA\" class=\"sortable-heading views-field views-field-title\" scope=\"col\" style=\"width: 179.484px;\"> <a href=\"/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc\" title=\"sort by Title\" rel=\"nofollow\" data-once=\"views-ajax\">Title</a></th>",
           "text": "Title"
         }
       ],
@@ -104334,8 +104334,8 @@
           "text": ""
         },
         {
-          "xpath": "//*[@id=\"view-title-table-column--3336aXHu81E\"]",
-          "html": "<th id=\"view-title-table-column--3336aXHu81E\" class=\"sortable-heading views-field views-field-title\" scope=\"col\" style=\"width: 191.203px;\"> <a href=\"/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc\" title=\"sort by Title\" rel=\"nofollow\" data-once=\"views-ajax\">Title</a></th>",
+          "xpath": "//*[@id=\"view-title-table-column--19rNPA6BchQ\"]",
+          "html": "<th id=\"view-title-table-column--19rNPA6BchQ\" class=\"sortable-heading views-field views-field-title\" scope=\"col\" style=\"width: 191.203px;\"> <a href=\"/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc\" title=\"sort by Title\" rel=\"nofollow\" data-once=\"views-ajax\">Title</a></th>",
           "text": "Title"
         }
       ],
@@ -106319,18 +106319,18 @@
       "selector": "h2",
       "baseline": {
         "count": 8,
-        "fontSize": 21.25,
-        "lineHeight": 27.625000000000004,
-        "fontWeight": 475,
+        "fontSize": 28,
+        "lineHeight": 36.4,
+        "fontWeight": 400,
         "paddingY": 0,
-        "paddingX": 5.625,
-        "marginY": 29,
-        "width": 135.125,
-        "height": 5.298828125,
+        "paddingX": 0,
+        "marginY": 28,
+        "width": 0,
+        "height": 0,
         "samples": [
           "Toolbar items",
-          "Create Navigation",
-          "Content Navigation"
+          "Display modes",
+          "People"
         ]
       },
       "candidate": {
@@ -106353,17 +106353,17 @@
         "deltas": [
           {
             "key": "fontSize",
-            "delta": 31.76470588235294,
-            "abs": 31.76470588235294,
+            "delta": 0,
+            "abs": 0,
             "threshold": 5,
-            "flagged": true
+            "flagged": false
           },
           {
             "key": "lineHeight",
-            "delta": 31.764705882352917,
-            "abs": 31.764705882352917,
+            "delta": 0,
+            "abs": 0,
             "threshold": 5,
-            "flagged": true
+            "flagged": false
           },
           {
             "key": "paddingY",
@@ -106374,22 +106374,22 @@
           },
           {
             "key": "paddingX",
-            "delta": -100,
-            "abs": 100,
+            "delta": 0,
+            "abs": 0,
             "threshold": 8,
-            "flagged": true
+            "flagged": false
           },
           {
             "key": "width",
-            "delta": 94.26456984273821,
-            "abs": 94.26456984273821,
+            "delta": 100,
+            "abs": 100,
             "threshold": 10,
             "flagged": true
           },
           {
             "key": "height",
-            "delta": 85.84592701806119,
-            "abs": 85.84592701806119,
+            "delta": 100,
+            "abs": 100,
             "threshold": 10,
             "flagged": true
           }
@@ -106397,7 +106397,7 @@
         "countDelta": -4,
         "countDeltaPct": -50,
         "countFlagged": true,
-        "significant": 6
+        "significant": 3
       },
       "baselineCssSources": [
         {
@@ -106513,15 +106513,15 @@
           "text": "Toolbar items"
         },
         {
-          "xpath": "//*[@id=\"menu--create\"]",
-          "html": "<h2 id=\"menu--create\" class=\"toolbar-block__title visually-hidden focusable\">Create Navigation</h2>",
-          "text": "Create Navigation"
+          "xpath": "/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[1]/ul[1]/li[3]/ul[1]/li[6]/ul[1]/li[1]/h2[1]",
+          "html": "<h2 class=\"toolbar-menu__title\"> <a href=\"/admin/structure/display-modes\">Display modes</a> </h2>",
+          "text": "Display modes"
         }
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1205794849\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1205794849\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-659321067\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-659321067\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -106735,8 +106735,8 @@
           "text": ""
         },
         {
-          "xpath": "//*[@id=\"edit-title--2tULrjI0gYk\"]",
-          "html": "<input data-drupal-selector=\"edit-title\" type=\"text\" id=\"edit-title--2tULrjI0gYk\" name=\"title\" value=\"\" size=\"30\" maxlength=\"128\" class=\"form-text form-element form-element--type-text form-element--api-textfield\" style=\"\">",
+          "xpath": "//*[@id=\"edit-title--UcBNFfNr2aY\"]",
+          "html": "<input data-drupal-selector=\"edit-title\" type=\"text\" id=\"edit-title--UcBNFfNr2aY\" name=\"title\" value=\"\" size=\"30\" maxlength=\"128\" class=\"form-text form-element form-element--type-text form-element--api-textfield\" style=\"\">",
           "text": ""
         }
       ],
@@ -106747,8 +106747,8 @@
           "text": ""
         },
         {
-          "xpath": "//*[@id=\"edit-title--FtpBlY5F5eM\"]",
-          "html": "<input data-drupal-selector=\"edit-title\" type=\"text\" id=\"edit-title--FtpBlY5F5eM\" name=\"title\" value=\"\" size=\"30\" maxlength=\"128\" class=\"form-text form-element form-element--type-text form-element--api-textfield\" style=\"\">",
+          "xpath": "//*[@id=\"edit-title--5WXzWHez3nE\"]",
+          "html": "<input data-drupal-selector=\"edit-title\" type=\"text\" id=\"edit-title--5WXzWHez3nE\" name=\"title\" value=\"\" size=\"30\" maxlength=\"128\" class=\"form-text form-element form-element--type-text form-element--api-textfield\" style=\"\">",
           "text": ""
         }
       ],
@@ -106869,18 +106869,18 @@
       "selector": "button, input[type=\"submit\"], .button",
       "baseline": {
         "count": 8,
-        "fontSize": 13.25,
-        "lineHeight": 16.474999999999998,
-        "fontWeight": 421.875,
-        "paddingY": 12.75,
-        "paddingX": 16.6353625,
-        "marginY": 3.5,
-        "width": 59.75,
-        "height": 9.5,
+        "fontSize": 13,
+        "lineHeight": 18,
+        "fontWeight": 400,
+        "paddingY": 0,
+        "paddingX": 0,
+        "marginY": 0,
+        "width": 0,
+        "height": 0,
         "samples": [
-          "Vertical orientation",
-          "Edit",
-          "Extend Create"
+          "Extend Content",
+          "Extend Content",
+          "Collapse Structure"
         ]
       },
       "candidate": {
@@ -106903,43 +106903,43 @@
         "deltas": [
           {
             "key": "fontSize",
-            "delta": 5.660377358490567,
-            "abs": 5.660377358490567,
+            "delta": 7.6923076923076925,
+            "abs": 7.6923076923076925,
             "threshold": 5,
             "flagged": true
           },
           {
             "key": "lineHeight",
-            "delta": -2.8831562974203213,
-            "abs": 2.8831562974203213,
+            "delta": -11.11111111111111,
+            "abs": 11.11111111111111,
             "threshold": 5,
-            "flagged": false
+            "flagged": true
           },
           {
             "key": "paddingY",
-            "delta": 56.86274509803921,
-            "abs": 56.86274509803921,
+            "delta": 100,
+            "abs": 100,
             "threshold": 8,
             "flagged": true
           },
           {
             "key": "paddingX",
-            "delta": 38.25968625570979,
-            "abs": 38.25968625570979,
+            "delta": 100,
+            "abs": 100,
             "threshold": 8,
             "flagged": true
           },
           {
             "key": "width",
-            "delta": 138.49372384937237,
-            "abs": 138.49372384937237,
+            "delta": 100,
+            "abs": 100,
             "threshold": 10,
             "flagged": true
           },
           {
             "key": "height",
-            "delta": 163.1578947368421,
-            "abs": 163.1578947368421,
+            "delta": 100,
+            "abs": 100,
             "threshold": 10,
             "flagged": true
           }
@@ -106947,7 +106947,7 @@
         "countDelta": 0,
         "countDeltaPct": 0,
         "countFlagged": false,
-        "significant": 5
+        "significant": 6
       },
       "baselineCssSources": [
         {
@@ -106972,11 +106972,11 @@
         },
         {
           "source": "http://drupal-11.3.10.ddev.site/sites/default/files/css/css_fJLdpEnlSQ9_jNinhjdJwgyLryQ5WCQcHtDEVsFzdPY.css?delta=0&language=en&theme=gin&include=eJxtkGEKwyAMhS9k65EkVrGB1JQY222nn47K6NgPifl8Ce-5EAjbROyBpqJPwpzMwlnjQyuQDVJ3oPlLJmUmD9JEEsdzQCBOdyS8-6rK-YYVPMUgcIkzywaEr2gSZtuRy3BgAsU2-Ie5E3Xlqk7b-uaiS9r51J_JblRxN2Vl0aXqsDB6cyWxI1EtUYao32dssYs5MJ7FVbQQNszz9UlvBxd6fA",
-          "selector": ".toolbar .toolbar-toggle-orientation button"
+          "selector": ".toolbar .toolbar-tray-horizontal .toolbar-menu .toolbar-handle"
         },
         {
           "source": "http://drupal-11.3.10.ddev.site/sites/default/files/css/css_fJLdpEnlSQ9_jNinhjdJwgyLryQ5WCQcHtDEVsFzdPY.css?delta=0&language=en&theme=gin&include=eJxtkGEKwyAMhS9k65EkVrGB1JQY222nn47K6NgPifl8Ce-5EAjbROyBpqJPwpzMwlnjQyuQDVJ3oPlLJmUmD9JEEsdzQCBOdyS8-6rK-YYVPMUgcIkzywaEr2gSZtuRy3BgAsU2-Ie5E3Xlqk7b-uaiS9r51J_JblRxN2Vl0aXqsDB6cyWxI1EtUYao32dssYs5MJ7FVbQQNszz9UlvBxd6fA",
-          "selector": ".toolbar-horizontal .toolbar-tray > .toolbar-lining, .toolbar-horizontal .toolbar .toolbar-toggle-orientation .toolbar-icon"
+          "selector": ".toolbar .toolbar-icon.toolbar-handle"
         },
         {
           "source": "http://drupal-11.3.10.ddev.site/sites/default/files/css/css_fJLdpEnlSQ9_jNinhjdJwgyLryQ5WCQcHtDEVsFzdPY.css?delta=0&language=en&theme=gin&include=eJxtkGEKwyAMhS9k65EkVrGB1JQY222nn47K6NgPifl8Ce-5EAjbROyBpqJPwpzMwlnjQyuQDVJ3oPlLJmUmD9JEEsdzQCBOdyS8-6rK-YYVPMUgcIkzywaEr2gSZtuRy3BgAsU2-Ie5E3Xlqk7b-uaiS9r51J_JblRxN2Vl0aXqsDB6cyWxI1EtUYao32dssYs5MJ7FVbQQNszz9UlvBxd6fA",
@@ -106996,7 +106996,7 @@
         },
         {
           "source": "http://drupal-11.3.10.ddev.site/sites/default/files/css/css_CE7FiaAX6jKlr05eW3-2BmeQzUKTIox136iMilNj5cE.css?delta=1&language=en&theme=gin&include=eJxtkGEKwyAMhS9k65EkVrGB1JQY222nn47K6NgPifl8Ce-5EAjbROyBpqJPwpzMwlnjQyuQDVJ3oPlLJmUmD9JEEsdzQCBOdyS8-6rK-YYVPMUgcIkzywaEr2gSZtuRy3BgAsU2-Ie5E3Xlqk7b-uaiS9r51J_JblRxN2Vl0aXqsDB6cyWxI1EtUYao32dssYs5MJ7FVbQQNszz9UlvBxd6fA",
-          "selector": ".toolbar-tray-horizontal .toolbar-icon:not(.toolbar-handle), .toolbar-tray-horizontal .responsive-preview-icon:not(.toolbar-handle)"
+          "selector": ".toolbar-tray-horizontal .toolbar-menu .level-1 > .toolbar-box .toolbar-icon.toolbar-handle, .toolbar-tray-horizontal .toolbar-menu .level-1 > .toolbar-box .toolbar-handle.responsive-preview-icon"
         }
       ],
       "candidateCssSources": [
@@ -107055,14 +107055,14 @@
       "candidatePageShot": "candidate-pages/structure-view-content__default__dark__page.png",
       "baselineDomEvidence": [
         {
-          "xpath": "/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[2]/div[1]/button[1]",
-          "html": "<button class=\"toolbar-icon toolbar-icon-toggle-vertical\" type=\"button\" value=\"vertical\" title=\"Vertical orientation\">Vertical orientation</button>",
-          "text": "Vertical orientation"
+          "xpath": "/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[1]/ul[1]/li[2]/div[1]/button[1]",
+          "html": "<button class=\"toolbar-icon toolbar-handle\" style=\"opacity: 0;\"><span class=\"action\">Extend</span> <span class=\"label\">Content</span></button>",
+          "text": "Extend Content"
         },
         {
-          "xpath": "/html[1]/body[1]/div[1]/nav[1]/div[3]/div[1]/nav[1]/div[1]/div[1]/button[1]",
-          "html": "<button class=\"toolbar-icon toolbar-icon-toggle-vertical\" type=\"button\" title=\"Vertical orientation\"></button>",
-          "text": ""
+          "xpath": "/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[1]/ul[1]/li[2]/div[2]/button[1]",
+          "html": "<button class=\"toolbar-icon toolbar-handle\" style=\"\"><span class=\"action\">Extend</span> <span class=\"label\">Content</span></button>",
+          "text": "Extend Content"
         }
       ],
       "candidateDomEvidence": [
@@ -107077,16 +107077,7 @@
           "text": "Back"
         }
       ],
-      "patchSuggestion": {
-        "confidence": "medium",
-        "cssFile": "http://drupal-git.ddev.site:8080/sites/default/files/css/css_1jxw8wr9LSzHFCJwU8jtTj7WpFAe3qYSFZfYuljAXf0.css",
-        "selectorHint": "button, input, optgroup, select, textarea",
-        "declarations": [
-          "font-size: 13.3px; /* current ~14px */",
-          "padding-block: 12.8px; /* current ~20px */",
-          "padding-inline: 16.6px; /* current ~23px */"
-        ]
-      }
+      "patchSuggestion": null
     },
     {
       "route": "Structure Content View",
@@ -107543,8 +107534,8 @@
           "text": ""
         },
         {
-          "xpath": "//*[@id=\"view-title-table-column--GeDoRTqZA78\"]",
-          "html": "<th id=\"view-title-table-column--GeDoRTqZA78\" class=\"sortable-heading views-field views-field-title\" scope=\"col\" style=\"width: 179.484px;\"> <a href=\"/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc\" title=\"sort by Title\" rel=\"nofollow\" data-once=\"views-ajax\">Title</a></th>",
+          "xpath": "//*[@id=\"view-title-table-column--SAtI-fSLjjQ\"]",
+          "html": "<th id=\"view-title-table-column--SAtI-fSLjjQ\" class=\"sortable-heading views-field views-field-title\" scope=\"col\" style=\"width: 179.484px;\"> <a href=\"/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc\" title=\"sort by Title\" rel=\"nofollow\" data-once=\"views-ajax\">Title</a></th>",
           "text": "Title"
         }
       ],
@@ -107555,8 +107546,8 @@
           "text": ""
         },
         {
-          "xpath": "//*[@id=\"view-title-table-column--9xFkIiok_to\"]",
-          "html": "<th id=\"view-title-table-column--9xFkIiok_to\" class=\"sortable-heading views-field views-field-title\" scope=\"col\" style=\"width: 191.203px;\"> <a href=\"/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc\" title=\"sort by Title\" rel=\"nofollow\" data-once=\"views-ajax\">Title</a></th>",
+          "xpath": "//*[@id=\"view-title-table-column--1TBm4X9dxTk\"]",
+          "html": "<th id=\"view-title-table-column--1TBm4X9dxTk\" class=\"sortable-heading views-field views-field-title\" scope=\"col\" style=\"width: 191.203px;\"> <a href=\"/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc\" title=\"sort by Title\" rel=\"nofollow\" data-once=\"views-ajax\">Title</a></th>",
           "text": "Title"
         }
       ],
@@ -108913,7 +108904,7 @@
         },
         {
           "xpath": "/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/ul[1]",
-          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: 562px; right: auto; top: -1051.45px;\"> <li class=\"rearrange dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/nojs/rearrange/content/page_1/field\" class=\"compact rearrange views-ajax-link\" id=\"views-rearrange-field\" data-once=\"views-ajax\">Rearrange <span class=\"visually-hidden\">fields</span></a></li> </ul>",
+          "html": "<ul class=\"dropbutton__items\" style=\"position: fixed; left: 562px; right: auto; top: -457.453px;\"> <li class=\"rearrange dropbutton__item dropbutton-action secondary-action\"><a href=\"/admin/structure/views/nojs/rearrange/content/page_1/field\" class=\"compact rearrange views-ajax-link\" id=\"views-rearrange-field\" data-once=\"views-ajax\">Rearrange <span class=\"visually-hidden\">fields</span></a></li> </ul>",
           "text": "Rearrange fields"
         }
       ],
@@ -109736,8 +109727,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-542168326\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-542168326\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1888762229\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1888762229\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -112261,8 +112252,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-473765081\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-473765081\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1626717953\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1626717953\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -114786,8 +114777,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1288599670\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1288599670\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1281132109\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1281132109\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -117311,8 +117302,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1485495311\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1485495311\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1709699998\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1709699998\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -119836,8 +119827,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1231304464\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1231304464\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1499460441\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1499460441\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -122361,8 +122352,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1391119269\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1391119269\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1117520936\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1117520936\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -124886,8 +124877,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-986269633\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-986269633\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1257384010\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1257384010\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -127411,8 +127402,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-2047204102\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-2047204102\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1456420255\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1456420255\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -129936,8 +129927,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1333473921\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1333473921\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-590057713\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-590057713\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -132461,8 +132452,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-672427459\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-672427459\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1870059705\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1870059705\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -134986,8 +134977,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1211662083\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1211662083\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1003326318\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1003326318\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -137511,8 +137502,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-529699787\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-529699787\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1166683920\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1166683920\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -140038,8 +140029,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-529699787\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-529699787\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1166683920\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1166683920\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -142802,8 +142793,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-529699787\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-529699787\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1166683920\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1166683920\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -145571,8 +145562,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-529699787\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-529699787\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1166683920\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1166683920\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -148778,8 +148769,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-529699787\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-529699787\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1166683920\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1166683920\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -151986,8 +151977,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-529699787\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-529699787\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1166683920\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1166683920\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -155036,8 +155027,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-529699787\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-529699787\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1166683920\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1166683920\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -158092,8 +158083,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-529699787\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-529699787\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1166683920\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1166683920\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -160485,8 +160476,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-529699787\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-529699787\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1166683920\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1166683920\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -162685,18 +162676,18 @@
       "selector": "h2",
       "baseline": {
         "count": 8,
-        "fontSize": 18.75,
-        "lineHeight": 24.375000000000004,
-        "fontWeight": 518.75,
-        "paddingY": 8,
-        "paddingX": 17.625,
-        "marginY": 26,
-        "width": 267.75,
-        "height": 14.47265625,
+        "fontSize": 28,
+        "lineHeight": 36.4,
+        "fontWeight": 400,
+        "paddingY": 0,
+        "paddingX": 0,
+        "marginY": 28,
+        "width": 0,
+        "height": 0,
         "samples": [
           "Toolbar items",
-          "Create Navigation",
-          "Content Navigation"
+          "Display modes",
+          "People"
         ]
       },
       "candidate": {
@@ -162707,7 +162698,7 @@
         "paddingY": 16,
         "paddingX": 24,
         "marginY": 18,
-        "width": 542.2265625,
+        "width": 539.5,
         "height": 28.1953125,
         "samples": [
           "Administrative sidebar",
@@ -162719,15 +162710,15 @@
         "deltas": [
           {
             "key": "fontSize",
-            "delta": 22.666666666666664,
-            "abs": 22.666666666666664,
+            "delta": -17.857142857142858,
+            "abs": 17.857142857142858,
             "threshold": 5,
             "flagged": true
           },
           {
             "key": "lineHeight",
-            "delta": 22.666666666666643,
-            "abs": 22.666666666666643,
+            "delta": -17.857142857142858,
+            "abs": 17.857142857142858,
             "threshold": 5,
             "flagged": true
           },
@@ -162740,22 +162731,22 @@
           },
           {
             "key": "paddingX",
-            "delta": 36.17021276595745,
-            "abs": 36.17021276595745,
+            "delta": 100,
+            "abs": 100,
             "threshold": 8,
             "flagged": true
           },
           {
             "key": "width",
-            "delta": 102.51225490196079,
-            "abs": 102.51225490196079,
+            "delta": 100,
+            "abs": 100,
             "threshold": 10,
             "flagged": true
           },
           {
             "key": "height",
-            "delta": 94.8178137651822,
-            "abs": 94.8178137651822,
+            "delta": 100,
+            "abs": 100,
             "threshold": 10,
             "flagged": true
           }
@@ -162875,15 +162866,15 @@
           "text": "Toolbar items"
         },
         {
-          "xpath": "//*[@id=\"menu--create\"]",
-          "html": "<h2 id=\"menu--create\" class=\"toolbar-block__title visually-hidden focusable\">Create Navigation</h2>",
-          "text": "Create Navigation"
+          "xpath": "/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[1]/ul[1]/li[3]/ul[1]/li[6]/ul[1]/li[1]/h2[1]",
+          "html": "<h2 class=\"toolbar-menu__title\"> <a href=\"/admin/structure/display-modes\">Display modes</a> </h2>",
+          "text": "Display modes"
         }
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-529699787\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-529699787\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1166683920\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1166683920\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -163109,18 +163100,18 @@
       "selector": "button, input[type=\"submit\"], .button",
       "baseline": {
         "count": 8,
-        "fontSize": 13.25,
-        "lineHeight": 16.474999999999998,
-        "fontWeight": 421.875,
-        "paddingY": 12.75,
-        "paddingX": 16.6353625,
-        "marginY": 3.5,
-        "width": 59.75,
-        "height": 9.5,
+        "fontSize": 13,
+        "lineHeight": 18,
+        "fontWeight": 400,
+        "paddingY": 0,
+        "paddingX": 0,
+        "marginY": 0,
+        "width": 0,
+        "height": 0,
         "samples": [
-          "Vertical orientation",
-          "Edit",
-          "Extend Create"
+          "Extend Content",
+          "Extend Content",
+          "Extend Structure"
         ]
       },
       "candidate": {
@@ -163143,43 +163134,43 @@
         "deltas": [
           {
             "key": "fontSize",
-            "delta": 5.660377358490567,
-            "abs": 5.660377358490567,
+            "delta": 7.6923076923076925,
+            "abs": 7.6923076923076925,
             "threshold": 5,
             "flagged": true
           },
           {
             "key": "lineHeight",
-            "delta": -2.8831562974203213,
-            "abs": 2.8831562974203213,
+            "delta": -11.11111111111111,
+            "abs": 11.11111111111111,
             "threshold": 5,
-            "flagged": false
+            "flagged": true
           },
           {
             "key": "paddingY",
-            "delta": 56.86274509803921,
-            "abs": 56.86274509803921,
+            "delta": 100,
+            "abs": 100,
             "threshold": 8,
             "flagged": true
           },
           {
             "key": "paddingX",
-            "delta": 38.25968625570979,
-            "abs": 38.25968625570979,
+            "delta": 100,
+            "abs": 100,
             "threshold": 8,
             "flagged": true
           },
           {
             "key": "width",
-            "delta": 138.49372384937237,
-            "abs": 138.49372384937237,
+            "delta": 100,
+            "abs": 100,
             "threshold": 10,
             "flagged": true
           },
           {
             "key": "height",
-            "delta": 163.1578947368421,
-            "abs": 163.1578947368421,
+            "delta": 100,
+            "abs": 100,
             "threshold": 10,
             "flagged": true
           }
@@ -163187,7 +163178,7 @@
         "countDelta": 0,
         "countDeltaPct": 0,
         "countFlagged": false,
-        "significant": 5
+        "significant": 6
       },
       "baselineCssSources": [
         {
@@ -163212,11 +163203,11 @@
         },
         {
           "source": "http://drupal-11.3.10.ddev.site/sites/default/files/css/css_ZSWPcqw2uJ8TwO2JSDqVaNnG8j1lsv-5GNaHe27pT6c.css?delta=0&language=en&theme=gin&include=eJxtj2EKwzAIhS-UNkcqrgupYGPQl23d6deMhcHYD1E_nvpchUxjFr2QTI5DuOSwakF6oJHEq7VKMn_JBFW5kJ0iS7Go7ST8TCFziR0thW6cCazlH1vujE0bFmjtW7rkjHf-meyHwDX4poa1YXgZffDDkfboIDSfLdWTh4-9OGw2TzYmez3z-Yu_ACJHYU4",
-          "selector": ".toolbar .toolbar-toggle-orientation button"
+          "selector": ".toolbar .toolbar-tray-horizontal .toolbar-menu .toolbar-handle"
         },
         {
           "source": "http://drupal-11.3.10.ddev.site/sites/default/files/css/css_ZSWPcqw2uJ8TwO2JSDqVaNnG8j1lsv-5GNaHe27pT6c.css?delta=0&language=en&theme=gin&include=eJxtj2EKwzAIhS-UNkcqrgupYGPQl23d6deMhcHYD1E_nvpchUxjFr2QTI5DuOSwakF6oJHEq7VKMn_JBFW5kJ0iS7Go7ST8TCFziR0thW6cCazlH1vujE0bFmjtW7rkjHf-meyHwDX4poa1YXgZffDDkfboIDSfLdWTh4-9OGw2TzYmez3z-Yu_ACJHYU4",
-          "selector": ".toolbar-horizontal .toolbar-tray > .toolbar-lining, .toolbar-horizontal .toolbar .toolbar-toggle-orientation .toolbar-icon"
+          "selector": ".toolbar .toolbar-icon.toolbar-handle"
         },
         {
           "source": "http://drupal-11.3.10.ddev.site/sites/default/files/css/css_ZSWPcqw2uJ8TwO2JSDqVaNnG8j1lsv-5GNaHe27pT6c.css?delta=0&language=en&theme=gin&include=eJxtj2EKwzAIhS-UNkcqrgupYGPQl23d6deMhcHYD1E_nvpchUxjFr2QTI5DuOSwakF6oJHEq7VKMn_JBFW5kJ0iS7Go7ST8TCFziR0thW6cCazlH1vujE0bFmjtW7rkjHf-meyHwDX4poa1YXgZffDDkfboIDSfLdWTh4-9OGw2TzYmez3z-Yu_ACJHYU4",
@@ -163236,7 +163227,7 @@
         },
         {
           "source": "http://drupal-11.3.10.ddev.site/sites/default/files/css/css_kZDCSD97qogd8Js3yWkOqr7nblgbg_WodF2GiahVhIc.css?delta=1&language=en&theme=gin&include=eJxtj2EKwzAIhS-UNkcqrgupYGPQl23d6deMhcHYD1E_nvpchUxjFr2QTI5DuOSwakF6oJHEq7VKMn_JBFW5kJ0iS7Go7ST8TCFziR0thW6cCazlH1vujE0bFmjtW7rkjHf-meyHwDX4poa1YXgZffDDkfboIDSfLdWTh4-9OGw2TzYmez3z-Yu_ACJHYU4",
-          "selector": ".toolbar-tray-horizontal .toolbar-icon:not(.toolbar-handle), .toolbar-tray-horizontal .responsive-preview-icon:not(.toolbar-handle)"
+          "selector": ".toolbar-tray-horizontal .toolbar-menu .level-1 > .toolbar-box .toolbar-icon.toolbar-handle, .toolbar-tray-horizontal .toolbar-menu .level-1 > .toolbar-box .toolbar-handle.responsive-preview-icon"
         }
       ],
       "candidateCssSources": [
@@ -163291,14 +163282,14 @@
       "candidatePageShot": "candidate-pages/reports-status__default__light__page.png",
       "baselineDomEvidence": [
         {
-          "xpath": "/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[2]/div[1]/button[1]",
-          "html": "<button class=\"toolbar-icon toolbar-icon-toggle-vertical\" type=\"button\" value=\"vertical\" title=\"Vertical orientation\">Vertical orientation</button>",
-          "text": "Vertical orientation"
+          "xpath": "/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[1]/ul[1]/li[2]/div[1]/button[1]",
+          "html": "<button class=\"toolbar-icon toolbar-handle\" style=\"opacity: 0;\"><span class=\"action\">Extend</span> <span class=\"label\">Content</span></button>",
+          "text": "Extend Content"
         },
         {
-          "xpath": "/html[1]/body[1]/div[1]/nav[1]/div[3]/div[1]/nav[1]/div[1]/div[1]/button[1]",
-          "html": "<button class=\"toolbar-icon toolbar-icon-toggle-vertical\" type=\"button\" title=\"Vertical orientation\"></button>",
-          "text": ""
+          "xpath": "/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[1]/ul[1]/li[2]/div[2]/button[1]",
+          "html": "<button class=\"toolbar-icon toolbar-handle\" style=\"\"><span class=\"action\">Extend</span> <span class=\"label\">Content</span></button>",
+          "text": "Extend Content"
         }
       ],
       "candidateDomEvidence": [
@@ -163313,16 +163304,7 @@
           "text": "Back"
         }
       ],
-      "patchSuggestion": {
-        "confidence": "medium",
-        "cssFile": "http://drupal-git.ddev.site:8080/sites/default/files/css/css_KLhKWkd-10fItBI0yB5zU1NVxtsUcnqp3mnSsic0sXw.css",
-        "selectorHint": "button, input, optgroup, select, textarea",
-        "declarations": [
-          "font-size: 13.3px; /* current ~14px */",
-          "padding-block: 12.8px; /* current ~20px */",
-          "padding-inline: 16.6px; /* current ~23px */"
-        ]
-      }
+      "patchSuggestion": null
     },
     {
       "route": "Reports Status",
@@ -164885,7 +164867,7 @@
         "paddingY": 16,
         "paddingX": 24,
         "marginY": 18,
-        "width": 542.2265625,
+        "width": 539.5,
         "height": 28.1953125,
         "samples": [
           "Administrative sidebar",
@@ -164925,8 +164907,8 @@
           },
           {
             "key": "width",
-            "delta": 102.51225490196079,
-            "abs": 102.51225490196079,
+            "delta": 101.4939309056956,
+            "abs": 101.4939309056956,
             "threshold": 10,
             "flagged": true
           },
@@ -165060,8 +165042,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-529699787\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-529699787\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1166683920\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1166683920\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -167238,8 +167220,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-529699787\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-529699787\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1166683920\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1166683920\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {
@@ -169352,8 +169334,8 @@
       ],
       "candidateDomEvidence": [
         {
-          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-529699787\"]",
-          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-529699787\" class=\"visually-hidden\">Administrative sidebar</h2>",
+          "xpath": "//*[@id=\"admin-toolbar__scroll-wrapper-1166683920\"]",
+          "html": "<h2 id=\"admin-toolbar__scroll-wrapper-1166683920\" class=\"visually-hidden\">Administrative sidebar</h2>",
           "text": "Administrative sidebar"
         },
         {

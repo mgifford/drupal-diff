@@ -14,11 +14,12 @@ Color mode: **dark**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- fontSize: 5.7%
-- paddingY: 56.9%
-- paddingX: 38.3%
-- width: 138.5%
-- height: 163.2%
+- fontSize: 7.7%
+- lineHeight: -11.1%
+- paddingY: 100.0%
+- paddingX: 100.0%
+- width: 100.0%
+- height: 100.0%
 
 ## Likely CSS Sources
 - http://drupal-git.ddev.site:8080/sites/default/files/css/css_1jxw8wr9LSzHFCJwU8jtTj7WpFAe3qYSFZfYuljAXf0.css
@@ -52,15 +53,7 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 - views_ui/admin.styling
 
 ## Suggested CSS Patch (Confidence-Gated)
-Confidence: **medium**
-
-```css
-button, input, optgroup, select, textarea {
-  font-size: 13.3px; /* current ~14px */
-  padding-block: 12.8px; /* current ~20px */
-  padding-inline: 16.6px; /* current ~23px */
-}
-```
+No high-confidence automatic patch suggestion for this diff.
 
 ## Evidence
 - Baseline element screenshot: 
@@ -75,21 +68,22 @@ button, input, optgroup, select, textarea {
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
-1. XPath: `/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[2]/div[1]/button[1]`
-   - Text sample: Vertical orientation
+1. XPath: `/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[1]/ul[1]/li[2]/div[1]/button[1]`
+   - Text sample: Extend Content
    - Related page screenshot: baseline-pages/structure-view-content__default__dark__page.png
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-view-content__default__dark__page.png
 
 ```html
-<button class="toolbar-icon toolbar-icon-toggle-vertical" type="button" value="vertical" title="Vertical orientation">Vertical orientation</button>
+<button class="toolbar-icon toolbar-handle" style="opacity: 0;"><span class="action">Extend</span> <span class="label">Content</span></button>
 ```
 
-2. XPath: `/html[1]/body[1]/div[1]/nav[1]/div[3]/div[1]/nav[1]/div[1]/div[1]/button[1]`
+2. XPath: `/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[1]/ul[1]/li[2]/div[2]/button[1]`
+   - Text sample: Extend Content
    - Related page screenshot: baseline-pages/structure-view-content__default__dark__page.png
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-view-content__default__dark__page.png
 
 ```html
-<button class="toolbar-icon toolbar-icon-toggle-vertical" type="button" title="Vertical orientation"></button>
+<button class="toolbar-icon toolbar-handle" style=""><span class="action">Extend</span> <span class="label">Content</span></button>
 ```
 
 ### Drupal 12 with Admin Theme

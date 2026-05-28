@@ -61,12 +61,12 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/structure-menu-admin__default__dark__dropbutton-primary-action.png
 - Candidate element screenshot: candidate/structure-menu-admin__default__dark__dropbutton-primary-action.png
-- Baseline page screenshot: baseline-pages/structure-menu-admin__default__dark__page.png
-- Candidate page screenshot: candidate-pages/structure-menu-admin__default__dark__page.png
+- Baseline page screenshot: n/a
+- Candidate page screenshot: n/a
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-menu-admin__default__dark__dropbutton-primary-action.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-menu-admin__default__dark__dropbutton-primary-action.png
-- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-menu-admin__default__dark__page.png
-- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-menu-admin__default__dark__page.png
+
+
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
@@ -75,8 +75,6 @@ No high-confidence automatic patch suggestion for this diff.
    - Text sample: Edit
    - Related element screenshot: baseline/structure-menu-admin__default__dark__dropbutton-primary-action.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-menu-admin__default__dark__dropbutton-primary-action.png
-   - Related page screenshot: baseline-pages/structure-menu-admin__default__dark__page.png
-   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-menu-admin__default__dark__page.png
 
 ```html
 <a href="/admin/structure/menu/link/system.admin/edit?destination=/admin/structure/menu/manage/admin">Edit</a>
@@ -86,8 +84,6 @@ No high-confidence automatic patch suggestion for this diff.
    - Text sample: Add child
    - Related element screenshot: baseline/structure-menu-admin__default__dark__dropbutton-primary-action.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-menu-admin__default__dark__dropbutton-primary-action.png
-   - Related page screenshot: baseline-pages/structure-menu-admin__default__dark__page.png
-   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-menu-admin__default__dark__page.png
 
 ```html
 <a href="/admin/structure/menu/manage/admin/add?parent=system.admin&amp;destination=/admin/structure/menu/manage/admin">Add child</a>
@@ -98,8 +94,6 @@ No high-confidence automatic patch suggestion for this diff.
    - Text sample: Edit
    - Related element screenshot: candidate/structure-menu-admin__default__dark__dropbutton-primary-action.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-menu-admin__default__dark__dropbutton-primary-action.png
-   - Related page screenshot: candidate-pages/structure-menu-admin__default__dark__page.png
-   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-menu-admin__default__dark__page.png
 
 ```html
 <a href="/admin/structure/menu/link/system.admin/edit?destination=/admin/structure/menu/manage/admin">Edit</a>
@@ -109,8 +103,6 @@ No high-confidence automatic patch suggestion for this diff.
    - Text sample: Add child
    - Related element screenshot: candidate/structure-menu-admin__default__dark__dropbutton-primary-action.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-menu-admin__default__dark__dropbutton-primary-action.png
-   - Related page screenshot: candidate-pages/structure-menu-admin__default__dark__page.png
-   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-menu-admin__default__dark__page.png
 
 ```html
 <a href="/admin/structure/menu/manage/admin/add?parent=system.admin&amp;destination=/admin/structure/menu/manage/admin">Add child</a>

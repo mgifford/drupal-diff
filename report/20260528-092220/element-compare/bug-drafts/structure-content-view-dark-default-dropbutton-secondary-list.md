@@ -98,7 +98,7 @@ ul {
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-view-content__default__dark__page.png
 
 ```html
-<ul class="dropbutton__items" style="position: fixed; left: 562px; right: auto; top: -1051.45px;"> <li class="rearrange dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/nojs/rearrange/content/page_1/field" class="compact rearrange views-ajax-link" id="views-rearrange-field" data-once="views-ajax">Rearrange <span class="visually-hidden">fields</span></a></li> </ul>
+<ul class="dropbutton__items" style="position: fixed; left: 562px; right: auto; top: -457.453px;"> <li class="rearrange dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/nojs/rearrange/content/page_1/field" class="compact rearrange views-ajax-link" id="views-rearrange-field" data-once="views-ajax">Rearrange <span class="visually-hidden">fields</span></a></li> </ul>
 ```
 
 ## Notes

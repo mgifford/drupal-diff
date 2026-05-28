@@ -83,7 +83,7 @@ No high-confidence automatic patch suggestion for this diff.
 ```
 
 ### Drupal 12 with Admin Theme
-1. XPath: `//*[@id="admin-toolbar__scroll-wrapper-1205794849"]`
+1. XPath: `//*[@id="admin-toolbar__scroll-wrapper-659321067"]`
    - Text sample: Administrative sidebar
    - Related element screenshot: candidate/config-performance__default__light__h2.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/config-performance__default__light__h2.png
@@ -91,7 +91,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/config-performance__default__light__page.png
 
 ```html
-<h2 id="admin-toolbar__scroll-wrapper-1205794849" class="visually-hidden">Administrative sidebar</h2>
+<h2 id="admin-toolbar__scroll-wrapper-659321067" class="visually-hidden">Administrative sidebar</h2>
 ```
 
 2. XPath: `//*[@id="system-breadcrumb"]`

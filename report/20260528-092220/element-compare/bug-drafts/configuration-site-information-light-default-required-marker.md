@@ -14,7 +14,7 @@ Color mode: **light**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- width: 832.5%
+- width: 935.8%
 
 ## Likely CSS Sources
 - core/themes/default_admin/css/components/form.css

@@ -90,7 +90,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-type-article-display__default__dark__page.png
 
 ```html
-<div class="dropbutton-wrapper dropbutton-single" data-drupal-ajax-container="" data-once="dropbutton"> <div class="dropbutton-widget"><ul class="dropbutton dropbutton--extrasmall dropbutton--single dropbutton--gin"> <li class="enable dropbutton__item dropbutton-action"><a href="/admin/structure/types/manage/article/display/full/enable?token=6JwOhZ7lfxfSHgVCj8DnM3yIHvtDZgzsQAEV8HRp6us">Enable <span class="visually-hidden">(Full content)</span></a></li> </ul></div> </div>
+<div class="dropbutton-wrapper dropbutton-single" data-drupal-ajax-container="" data-once="dropbutton"> <div class="dropbutton-widget"><ul class="dropbutton dropbutton--extrasmall dropbutton--single dropbutton--gin"> <li class="enable dropbutton__item dropbutton-action"><a href="/admin/structure/types/manage/article/display/full/enable?token=IcqEBTwl7VM-OYzy1h-GFjOSsrkPOAmMOZuAIk34PWI">Enable <span class="visually-hidden">(Full content)</span></a></li> </ul></div> </div>
 ```
 
 ## Notes

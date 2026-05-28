@@ -100,7 +100,7 @@ ul {
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/content-overview__default__dark__page.png
 
 ```html
-<ul class="dropbutton__items" style="position: fixed; left: auto; right: -485px; top: 1316.12px;"> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/node/51/delete?destination=/admin/content" aria-label="Delete test" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" hreflang="en" data-once="ajax">Delete</a></li> <li class="view dropbutton__item dropbutton-action secondary-action"><a href="/node/51?destination=/admin/content" aria-label="View test" hreflang="en">View</a></li> </ul>
+<ul class="dropbutton__items" style="position: fixed; left: auto; right: 75px; top: 480.203px;"> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/node/51/delete?destination=/admin/content" aria-label="Delete test" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" hreflang="en" data-once="ajax">Delete</a></li> <li class="view dropbutton__item dropbutton-action secondary-action"><a href="/node/51?destination=/admin/content" aria-label="View test" hreflang="en">View</a></li> </ul>
 ```
 
 ## Notes

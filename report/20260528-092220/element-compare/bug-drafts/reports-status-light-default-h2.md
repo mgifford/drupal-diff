@@ -14,12 +14,12 @@ Color mode: **light**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- fontSize: 22.7%
-- lineHeight: 22.7%
+- fontSize: -17.9%
+- lineHeight: -17.9%
 - paddingY: 100.0%
-- paddingX: 36.2%
-- width: 102.5%
-- height: 94.8%
+- paddingX: 100.0%
+- width: 100.0%
+- height: 100.0%
 - count: -4 (-50.0%)
 
 ## Likely CSS Sources
@@ -75,17 +75,17 @@ No high-confidence automatic patch suggestion for this diff.
 <h2 class="visually-hidden">Toolbar items</h2>
 ```
 
-2. XPath: `//*[@id="menu--create"]`
-   - Text sample: Create Navigation
+2. XPath: `/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[1]/ul[1]/li[3]/ul[1]/li[6]/ul[1]/li[1]/h2[1]`
+   - Text sample: Display modes
    - Related page screenshot: baseline-pages/reports-status__default__light__page.png
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/reports-status__default__light__page.png
 
 ```html
-<h2 id="menu--create" class="toolbar-block__title visually-hidden focusable">Create Navigation</h2>
+<h2 class="toolbar-menu__title"> <a href="/admin/structure/display-modes">Display modes</a> </h2>
 ```
 
 ### Drupal 12 with Admin Theme
-1. XPath: `//*[@id="admin-toolbar__scroll-wrapper-529699787"]`
+1. XPath: `//*[@id="admin-toolbar__scroll-wrapper-1166683920"]`
    - Text sample: Administrative sidebar
    - Related element screenshot: candidate/reports-status__default__light__h2.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/reports-status__default__light__h2.png
@@ -93,7 +93,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/reports-status__default__light__page.png
 
 ```html
-<h2 id="admin-toolbar__scroll-wrapper-529699787" class="visually-hidden">Administrative sidebar</h2>
+<h2 id="admin-toolbar__scroll-wrapper-1166683920" class="visually-hidden">Administrative sidebar</h2>
 ```
 
 2. XPath: `//*[@id="system-breadcrumb"]`

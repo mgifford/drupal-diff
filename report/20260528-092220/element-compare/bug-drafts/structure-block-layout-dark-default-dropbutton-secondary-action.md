@@ -68,7 +68,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-block-layout__default__dark__page.png
 
 ```html
-<a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=pP4p34RISlcmVnFpigZAzTJY19WYqVdjAQnrWGECLug">Disable</a>
+<a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=Red-4pBw4gfoPEIjbgMyx5-M64_0aqfMbUar-7tO47A">Disable</a>
 ```
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]`
@@ -87,7 +87,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-block-layout__default__dark__page.png
 
 ```html
-<a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=BFsq8gQT81zWvAvcaSO1_uP94GCtkqSUnmcGINveKi8">Disable</a>
+<a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=gfU1raMb0wJWiuzUo-U8UpwPnlPoCANh_pQsVqflMNE">Disable</a>
 ```
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]`
