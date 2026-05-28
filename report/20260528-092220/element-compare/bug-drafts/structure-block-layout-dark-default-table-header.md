@@ -1,5 +1,8 @@
 # Admin Theme (dark) Structure Block Layout - Table Header Cell style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component height is noticeably taller: 48.0px vs 42.4px (+13.2%).
+
 ## Summary
 Potential CSS regression in **Table Header Cell** on **Structure Block Layout** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

@@ -1,5 +1,8 @@
 # Admin Theme (dark) Structure Content View - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component height is significantly taller: 73.8px vs 49.8px (+48.2%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Secondary Actions List** on **Structure Content View** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**
@@ -98,7 +101,7 @@ ul {
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-view-content__default__dark__page.png
 
 ```html
-<ul class="dropbutton__items" style="position: fixed; left: 562px; right: auto; top: -457.453px;"> <li class="rearrange dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/nojs/rearrange/content/page_1/field" class="compact rearrange views-ajax-link" id="views-rearrange-field" data-once="views-ajax">Rearrange <span class="visually-hidden">fields</span></a></li> </ul>
+<ul class="dropbutton__items" style="position: fixed; left: 386px; right: auto; top: 591.547px;"> <li class="rearrange dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/nojs/rearrange/content/page_1/field" class="compact rearrange views-ajax-link" id="views-rearrange-field" data-once="views-ajax">Rearrange <span class="visually-hidden">fields</span></a></li> </ul>
 ```
 
 ## Notes

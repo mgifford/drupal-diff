@@ -1,5 +1,9 @@
 # Admin Theme (light) Structure Admin Menu - Form Label style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is significantly wider: 262.1px vs 55.9px (+368.9%).
+- Component height is significantly shorter: 4.9px vs 27.0px (-81.9%).
+
 ## Summary
 Potential CSS regression in **Form Label** on **Structure Admin Menu** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**

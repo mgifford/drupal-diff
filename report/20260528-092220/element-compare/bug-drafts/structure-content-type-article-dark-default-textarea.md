@@ -1,5 +1,8 @@
 # Admin Theme (dark) Structure Content Type Article - Textarea style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is noticeably narrower: 629.0px vs 845.0px (-25.6%).
+
 ## Summary
 Potential CSS regression in **Textarea** on **Structure Content Type Article** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**
@@ -21,13 +24,13 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 - core/themes/default_admin/css/base/print.pcss.css
 
 ## Candidate Matched CSS Rules
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_CS7swrzbGj6MjwwsFRJvupOoasd-z8apUEfZc0XNtu4.css?delta=0&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: button, input, optgroup, select, textarea
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_CS7swrzbGj6MjwwsFRJvupOoasd-z8apUEfZc0XNtu4.css?delta=0&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: textarea
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_CS7swrzbGj6MjwwsFRJvupOoasd-z8apUEfZc0XNtu4.css?delta=0&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: .resize-vertical
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: *
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: input.form-autocomplete, input.form-text, input.form-tel, input.form-email, input.form-url, input.form-search, input.form-number, input.form-color, input.form-file, textarea.form-textarea, select.form-select
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: .form-element
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: :where(*), :is(#extra-specificity-hack, [data-drupal-admin-styles])
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_daO5PtRo-dk_ztN5hsECSgCJwgekee9oCBZSw8JOw98.css?delta=0&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: button, input, optgroup, select, textarea
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_daO5PtRo-dk_ztN5hsECSgCJwgekee9oCBZSw8JOw98.css?delta=0&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: textarea
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_daO5PtRo-dk_ztN5hsECSgCJwgekee9oCBZSw8JOw98.css?delta=0&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: .resize-vertical
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: *
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: input.form-autocomplete, input.form-text, input.form-tel, input.form-email, input.form-url, input.form-search, input.form-number, input.form-color, input.form-file, textarea.form-textarea, select.form-select
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: .form-element
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: :where(*), :is(#extra-specificity-hack, [data-drupal-admin-styles])
 
 ## Candidate Theme Source Matches (default_admin)
 - core/themes/default_admin/css/base/print.css (score: 11; selectors: input.form-autocomplete, input.form-text, input.form-tel, input.form-email)
@@ -38,7 +41,6 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 - core/components.navigation--toolbar-button
 - core/drupal.ajax
 - core/drupal.dialog
-- core/drupal.reset-appearance
 - core/drupal.textarea-resize
 - core/drupal.vertical-tabs
 - core/normalize

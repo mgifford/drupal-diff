@@ -1,5 +1,8 @@
 # Admin Theme (dark) Structure Block Layout - Form Item Wrapper style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component height is noticeably taller: 14.0px vs 12.3px (+13.8%).
+
 ## Summary
 Potential CSS regression in **Form Item Wrapper** on **Structure Block Layout** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

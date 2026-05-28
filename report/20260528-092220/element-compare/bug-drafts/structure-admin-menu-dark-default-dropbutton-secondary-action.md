@@ -1,5 +1,8 @@
 # Admin Theme (dark) Structure Admin Menu - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is noticeably wider: 119.0px vs 95.0px (+25.3%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Secondary Action Link** on **Structure Admin Menu** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**
@@ -56,18 +59,20 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: 
 - Candidate element screenshot: 
-- Baseline page screenshot: n/a
-- Candidate page screenshot: n/a
+- Baseline page screenshot: baseline-pages/structure-menu-admin__default__dark__page.png
+- Candidate page screenshot: candidate-pages/structure-menu-admin__default__dark__page.png
 
 
-
-
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-menu-admin__default__dark__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-menu-admin__default__dark__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[4]/div[2]/table[1]/tbody[1]/tr[1]/td[4]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
    - Text sample: Add child
+   - Related page screenshot: baseline-pages/structure-menu-admin__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-menu-admin__default__dark__page.png
 
 ```html
 <a href="/admin/structure/menu/manage/admin/add?parent=system.admin&amp;destination=/admin/structure/menu/manage/admin">Add child</a>
@@ -75,6 +80,8 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[4]/div[2]/table[1]/tbody[1]/tr[2]/td[4]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
    - Text sample: Add child
+   - Related page screenshot: baseline-pages/structure-menu-admin__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-menu-admin__default__dark__page.png
 
 ```html
 <a href="/admin/structure/menu/manage/admin/add?parent=system.admin_content&amp;destination=/admin/structure/menu/manage/admin">Add child</a>
@@ -83,6 +90,8 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[4]/div[2]/table[1]/tbody[1]/tr[1]/td[4]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
    - Text sample: Add child
+   - Related page screenshot: candidate-pages/structure-menu-admin__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-menu-admin__default__dark__page.png
 
 ```html
 <a href="/admin/structure/menu/manage/admin/add?parent=system.admin&amp;destination=/admin/structure/menu/manage/admin">Add child</a>
@@ -90,6 +99,8 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[4]/div[2]/table[1]/tbody[1]/tr[2]/td[4]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
    - Text sample: Add child
+   - Related page screenshot: candidate-pages/structure-menu-admin__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-menu-admin__default__dark__page.png
 
 ```html
 <a href="/admin/structure/menu/manage/admin/add?parent=system.admin_content&amp;destination=/admin/structure/menu/manage/admin">Add child</a>

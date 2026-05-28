@@ -1,5 +1,8 @@
 # Admin Theme (light) Content Add Article - Required Marker (*) style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is significantly wider: 702.0px vs 44.2px (+1488.7%).
+
 ## Summary
 Potential CSS regression in **Required Marker (*)** on **Content Add Article** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**

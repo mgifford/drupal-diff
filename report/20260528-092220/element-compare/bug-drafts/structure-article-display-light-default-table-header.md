@@ -1,5 +1,10 @@
 # Admin Theme (light) Structure Article Display - Table Header Cell style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is significantly wider: 354.0px vs 147.1px (+140.6%).
+- Component height is significantly taller: 53.0px vs 30.3px (+75.0%).
+- Horizontal padding is significantly (more): 32.0px vs 18.3px (+75.0%).
+
 ## Summary
 Potential CSS regression in **Table Header Cell** on **Structure Article Display** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**

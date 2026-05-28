@@ -1,5 +1,8 @@
 # Admin Theme (light) Structure Block Layout - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component height is significantly taller: 90.3px vs 58.3px (+54.9%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Secondary Actions List** on **Structure Block Layout** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**
@@ -66,7 +69,7 @@ ul {
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-block-layout__default__light__page.png
 
 ```html
-<ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 465.297px;"> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=Red-4pBw4gfoPEIjbgMyx5-M64_0aqfMbUar-7tO47A">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block/manage/olivero_site_branding/delete?destination=/admin/structure/block" aria-label="Delete Site branding" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" data-once="ajax">Remove</a></li> </ul>
+<ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 465.297px;"> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=wf93gnypdKfn8mW23U7pyeulKGzGvtu9gjXTdg6pXgk">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block/manage/olivero_site_branding/delete?destination=/admin/structure/block" aria-label="Delete Site branding" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" data-once="ajax">Remove</a></li> </ul>
 ```
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[6]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
@@ -75,7 +78,7 @@ ul {
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-block-layout__default__light__page.png
 
 ```html
-<ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: auto; bottom: 100%; max-height: 421.5px;"> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block/manage/olivero_search_form_narrow/disable?destination=/admin/structure/block&amp;token=yU7rJd9LwKKi8Byk0MF4-3AZtjAsUlKtCx8UaVmIvc8">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block/manage/olivero_search_form_narrow/delete?destination=/admin/structure/block" aria-label="Delete Search form (narrow)" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" data-once="ajax">Remove</a></li> </ul>
+<ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: auto; bottom: 100%; max-height: 421.5px;"> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block/manage/olivero_search_form_narrow/disable?destination=/admin/structure/block&amp;token=-OFPeEzcWxJoG6-Prj-sPUF3HTm-u3wnVc4n-kM-UOQ">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block/manage/olivero_search_form_narrow/delete?destination=/admin/structure/block" aria-label="Delete Search form (narrow)" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" data-once="ajax">Remove</a></li> </ul>
 ```
 
 ### Drupal 12 with Admin Theme
@@ -85,7 +88,7 @@ ul {
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-block-layout__default__light__page.png
 
 ```html
-<ul class="dropbutton__items" style="position: fixed; left: 1145.38px; right: auto; top: 552.203px;"> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=gfU1raMb0wJWiuzUo-U8UpwPnlPoCANh_pQsVqflMNE">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block/manage/olivero_site_branding/delete?destination=/admin/structure/block" aria-label="Delete Site branding" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" data-once="ajax">Remove</a></li> </ul>
+<ul class="dropbutton__items" style="position: fixed; left: 1145.38px; right: auto; top: 552.203px;"> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=L0wFGnlLZEU6tJDH6spfzn4Q5R0SORL3okH3THB2t0A">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block/manage/olivero_site_branding/delete?destination=/admin/structure/block" aria-label="Delete Site branding" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" data-once="ajax">Remove</a></li> </ul>
 ```
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[6]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
@@ -94,7 +97,7 @@ ul {
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-block-layout__default__light__page.png
 
 ```html
-<ul class="dropbutton__items" style="position: fixed; left: 1088.73px; right: auto; top: 734.203px;"> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block/manage/olivero_main_menu/disable?destination=/admin/structure/block&amp;token=dctMgsTX9_gakiUkQQiGMjoTl-gJu_jw2JKRHhre0jk">Disable</a></li> <li class="menu-edit dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/menu/manage/main">Edit menu</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block/manage/olivero_main_menu/delete?destination=/admin/structure/block" aria-label="Delete Main navigation" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" data-once="ajax">Remov
+<ul class="dropbutton__items" style="position: fixed; left: 1145.38px; right: auto; top: 735.203px;"> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block/manage/olivero_main_menu/disable?destination=/admin/structure/block&amp;token=ZQP958BsV9ZaYHyhsOhNz3q7UVKrAmWjIeIl38YbaIY">Disable</a></li> <li class="menu-edit dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/menu/manage/main">Edit menu</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block/manage/olivero_main_menu/delete?destination=/admin/structure/block" aria-label="Delete Main navigation" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" data-once="ajax">Remov
 ```
 
 ## Notes

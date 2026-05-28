@@ -1,5 +1,8 @@
 # Admin Theme (dark) Content Add Article - Text Input style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is noticeably narrower: 264.8px vs 324.3px (-18.4%).
+
 ## Summary
 Potential CSS regression in **Text Input** on **Content Add Article** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

@@ -1,5 +1,8 @@
 # Admin Theme (light) Structure Article Fields - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Matched element count is different: 3 fewer element(s) (-75.0%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Secondary Actions List** on **Structure Article Fields** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**

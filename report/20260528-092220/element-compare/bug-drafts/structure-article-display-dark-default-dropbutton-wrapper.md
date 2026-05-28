@@ -1,5 +1,12 @@
 # Admin Theme (dark) Structure Article Display - Dropbutton Wrapper style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Text size is significantly larger: 16.0px vs 0.0px (+100.0%).
+- Component width is significantly wider: 73.0px vs 0.0px (+100.0%).
+- Component height is significantly taller: 28.0px vs 0.0px (+100.0%).
+- Line height is significantly larger: 24.0px vs 0.0px (+100.0%).
+- Matched element count is different: 4 more element(s) (+100.0%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Wrapper** on **Structure Article Display** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**
@@ -90,7 +97,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-type-article-display__default__dark__page.png
 
 ```html
-<div class="dropbutton-wrapper dropbutton-single" data-drupal-ajax-container="" data-once="dropbutton"> <div class="dropbutton-widget"><ul class="dropbutton dropbutton--extrasmall dropbutton--single dropbutton--gin"> <li class="enable dropbutton__item dropbutton-action"><a href="/admin/structure/types/manage/article/display/full/enable?token=IcqEBTwl7VM-OYzy1h-GFjOSsrkPOAmMOZuAIk34PWI">Enable <span class="visually-hidden">(Full content)</span></a></li> </ul></div> </div>
+<div class="dropbutton-wrapper dropbutton-single" data-drupal-ajax-container="" data-once="dropbutton"> <div class="dropbutton-widget"><ul class="dropbutton dropbutton--extrasmall dropbutton--single dropbutton--gin"> <li class="enable dropbutton__item dropbutton-action"><a href="/admin/structure/types/manage/article/display/full/enable?token=xU97yopXbxtwN3J1IvtXCt2vPJtDjhcta078xTReSU0">Enable <span class="visually-hidden">(Full content)</span></a></li> </ul></div> </div>
 ```
 
 ## Notes

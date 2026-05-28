@@ -1,5 +1,9 @@
 # Admin Theme (dark) People List - Form Label style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is significantly wider: 136.4px vs 68.3px (+99.8%).
+- Component height is significantly shorter: 13.0px vs 33.3px (-60.9%).
+
 ## Summary
 Potential CSS regression in **Form Label** on **People List** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

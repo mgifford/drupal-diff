@@ -1,5 +1,9 @@
 # Admin Theme (light) Structure Article Fields - Dropbutton Primary Action Link style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Horizontal padding is noticeably (less): 26.0px vs 29.0px (-10.3%).
+- Matched element count is different: 6 fewer element(s) (-75.0%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Primary Action Link** on **Structure Article Fields** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**

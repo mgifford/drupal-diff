@@ -1,5 +1,14 @@
 # Admin Theme (dark) Reports Status - H2 Heading style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Text size is noticeably larger: 23.0px vs 18.8px (+22.7%).
+- Component width is significantly wider: 539.5px vs 267.8px (+101.5%).
+- Component height is significantly taller: 28.2px vs 14.5px (+94.8%).
+- Vertical padding is significantly (more): 16.0px vs 8.0px (+100.0%).
+- Horizontal padding is significantly (more): 24.0px vs 17.6px (+36.2%).
+- Line height is noticeably larger: 29.9px vs 24.4px (+22.7%).
+- Matched element count is different: 4 fewer element(s) (-50.0%).
+
 ## Summary
 Potential CSS regression in **H2 Heading** on **Reports Status** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**
@@ -85,7 +94,7 @@ No high-confidence automatic patch suggestion for this diff.
 ```
 
 ### Drupal 12 with Admin Theme
-1. XPath: `//*[@id="admin-toolbar__scroll-wrapper-1166683920"]`
+1. XPath: `//*[@id="admin-toolbar__scroll-wrapper-1819965754"]`
    - Text sample: Administrative sidebar
    - Related element screenshot: candidate/reports-status__default__dark__h2.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/reports-status__default__dark__h2.png
@@ -93,7 +102,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/reports-status__default__dark__page.png
 
 ```html
-<h2 id="admin-toolbar__scroll-wrapper-1166683920" class="visually-hidden">Administrative sidebar</h2>
+<h2 id="admin-toolbar__scroll-wrapper-1819965754" class="visually-hidden">Administrative sidebar</h2>
 ```
 
 2. XPath: `//*[@id="system-breadcrumb"]`

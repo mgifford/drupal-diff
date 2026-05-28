@@ -1,5 +1,8 @@
 # Admin Theme (light) People List - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is noticeably wider: 119.0px vs 95.0px (+25.3%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Secondary Action Link** on **People List** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**

@@ -1,5 +1,9 @@
 # Admin Theme (dark) People Roles - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is noticeably narrower: 160.0px vs 184.0px (-13.0%).
+- Component height is noticeably taller: 65.5px vs 57.5px (+13.9%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Secondary Actions List** on **People Roles** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

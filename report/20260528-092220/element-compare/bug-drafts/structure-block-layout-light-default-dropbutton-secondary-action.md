@@ -1,5 +1,8 @@
 # Admin Theme (light) Structure Block Layout - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is noticeably wider: 119.6px vs 107.5px (+11.3%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Secondary Action Link** on **Structure Block Layout** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**
@@ -68,7 +71,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-block-layout__default__light__page.png
 
 ```html
-<a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=Red-4pBw4gfoPEIjbgMyx5-M64_0aqfMbUar-7tO47A">Disable</a>
+<a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=wf93gnypdKfn8mW23U7pyeulKGzGvtu9gjXTdg6pXgk">Disable</a>
 ```
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]`
@@ -87,7 +90,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-block-layout__default__light__page.png
 
 ```html
-<a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=gfU1raMb0wJWiuzUo-U8UpwPnlPoCANh_pQsVqflMNE">Disable</a>
+<a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=L0wFGnlLZEU6tJDH6spfzn4Q5R0SORL3okH3THB2t0A">Disable</a>
 ```
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]`

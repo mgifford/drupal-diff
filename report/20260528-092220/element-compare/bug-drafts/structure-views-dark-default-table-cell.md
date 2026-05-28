@@ -1,5 +1,8 @@
 # Admin Theme (dark) Structure Views - Table Body Cell style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component height is noticeably shorter: 65.3px vs 95.3px (-31.5%).
+
 ## Summary
 Potential CSS regression in **Table Body Cell** on **Structure Views** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

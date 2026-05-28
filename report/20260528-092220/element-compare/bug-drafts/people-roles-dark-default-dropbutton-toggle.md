@@ -1,5 +1,8 @@
 # Admin Theme (dark) People Roles - Dropbutton Toggle Button style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Text size is noticeably smaller: 14.0px vs 16.0px (-12.5%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Toggle Button** on **People Roles** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

@@ -1,5 +1,9 @@
 # Admin Theme (dark) Structure Block Layout - Required Marker (*) style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is significantly narrower: 1.0px vs 60.9px (-98.4%).
+- Component height is significantly shorter: 1.0px vs 92.3px (-98.9%).
+
 ## Summary
 Potential CSS regression in **Required Marker (*)** on **Structure Block Layout** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

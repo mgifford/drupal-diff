@@ -1,5 +1,8 @@
 # Admin Theme (light) Configuration Basic HTML Format - Required Marker (*) style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is significantly wider: 523.5px vs 26.1px (+1906.2%).
+
 ## Summary
 Potential CSS regression in **Required Marker (*)** on **Configuration Basic HTML Format** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**

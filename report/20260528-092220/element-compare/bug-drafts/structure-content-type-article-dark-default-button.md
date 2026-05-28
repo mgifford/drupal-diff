@@ -1,5 +1,12 @@
 # Admin Theme (dark) Structure Content Type Article - Button style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Text size is slightly larger: 14.0px vs 13.3px (+5.7%).
+- Component width is significantly wider: 142.5px vs 59.8px (+138.5%).
+- Component height is significantly taller: 25.0px vs 9.5px (+163.2%).
+- Vertical padding is significantly (more): 20.0px vs 12.8px (+56.9%).
+- Horizontal padding is significantly (more): 23.0px vs 16.6px (+38.3%).
+
 ## Summary
 Potential CSS regression in **Button** on **Structure Content Type Article** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**
@@ -21,17 +28,17 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 - height: 163.2%
 
 ## Likely CSS Sources
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_CS7swrzbGj6MjwwsFRJvupOoasd-z8apUEfZc0XNtu4.css
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_daO5PtRo-dk_ztN5hsECSgCJwgekee9oCBZSw8JOw98.css
 - http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css
 
 ## Candidate Matched CSS Rules
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_CS7swrzbGj6MjwwsFRJvupOoasd-z8apUEfZc0XNtu4.css?delta=0&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: button, input, optgroup, select, textarea
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_CS7swrzbGj6MjwwsFRJvupOoasd-z8apUEfZc0XNtu4.css?delta=0&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: button, input
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_CS7swrzbGj6MjwwsFRJvupOoasd-z8apUEfZc0XNtu4.css?delta=0&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: button, select
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_CS7swrzbGj6MjwwsFRJvupOoasd-z8apUEfZc0XNtu4.css?delta=0&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: button, [type="button"], [type="reset"], [type="submit"]
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: *
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: button
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: :where(*), :is(#extra-specificity-hack, [data-drupal-admin-styles])
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_daO5PtRo-dk_ztN5hsECSgCJwgekee9oCBZSw8JOw98.css?delta=0&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: button, input, optgroup, select, textarea
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_daO5PtRo-dk_ztN5hsECSgCJwgekee9oCBZSw8JOw98.css?delta=0&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: button, input
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_daO5PtRo-dk_ztN5hsECSgCJwgekee9oCBZSw8JOw98.css?delta=0&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: button, select
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_daO5PtRo-dk_ztN5hsECSgCJwgekee9oCBZSw8JOw98.css?delta=0&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: button, [type="button"], [type="reset"], [type="submit"]
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: *
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: button
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: :where(*), :is(#extra-specificity-hack, [data-drupal-admin-styles])
 
 ## Candidate Theme Source Matches (default_admin)
 - No direct selector match found under core/themes/default_admin/css
@@ -41,7 +48,6 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 - core/components.navigation--toolbar-button
 - core/drupal.ajax
 - core/drupal.dialog
-- core/drupal.reset-appearance
 - core/drupal.textarea-resize
 - core/drupal.vertical-tabs
 - core/normalize

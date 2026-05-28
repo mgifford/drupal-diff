@@ -1,5 +1,8 @@
 # Admin Theme (dark) Configuration Basic HTML Format - Required Marker (*) style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is significantly wider: 523.5px vs 26.1px (+1906.2%).
+
 ## Summary
 Potential CSS regression in **Required Marker (*)** on **Configuration Basic HTML Format** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**
@@ -14,7 +17,7 @@ Color mode: **dark**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- width: 1916.7%
+- width: 1906.2%
 
 ## Likely CSS Sources
 - core/themes/default_admin/css/components/form.css

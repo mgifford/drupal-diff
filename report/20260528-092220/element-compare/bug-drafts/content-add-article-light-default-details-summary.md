@@ -1,5 +1,11 @@
 # Admin Theme (light) Content Add Article - Details Summary style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is noticeably narrower: 359.0px vs 410.5px (-12.5%).
+- Component height is noticeably taller: 88.0px vs 78.7px (+11.9%).
+- Line height is slightly larger: 24.0px vs 22.7px (+5.9%).
+- Matched element count is different: 3 fewer element(s) (-50.0%).
+
 ## Summary
 Potential CSS regression in **Details Summary** on **Content Add Article** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**

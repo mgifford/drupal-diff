@@ -1,5 +1,14 @@
 # Admin Theme (dark) Structure Admin Menu - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Text size is significantly smaller: 0.0px vs 14.0px (-100.0%).
+- Component width is significantly narrower: 0.0px vs 239.0px (-100.0%).
+- Component height is significantly shorter: 0.0px vs 38.0px (-100.0%).
+- Vertical padding is significantly (less): 0.0px vs 18.0px (-100.0%).
+- Horizontal padding is significantly (less): 0.0px vs 20.0px (-100.0%).
+- Line height is significantly smaller: 0.0px vs 16.8px (-100.0%).
+- Matched element count is different: 1 fewer element(s) (-100.0%).
+
 ## Summary
 Potential CSS regression in **Toolbar Structure Toggle Button** on **Structure Admin Menu** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**
@@ -40,12 +49,12 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/structure-menu-admin__default__dark__toolbar-structure-toggle.png
 - Candidate element screenshot: 
-- Baseline page screenshot: n/a
-- Candidate page screenshot: n/a
+- Baseline page screenshot: baseline-pages/structure-menu-admin__default__dark__page.png
+- Candidate page screenshot: candidate-pages/structure-menu-admin__default__dark__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-menu-admin__default__dark__toolbar-structure-toggle.png
 
-
-
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-menu-admin__default__dark__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-menu-admin__default__dark__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
@@ -54,6 +63,8 @@ No high-confidence automatic patch suggestion for this diff.
    - Text sample: Extend Structure
    - Related element screenshot: baseline/structure-menu-admin__default__dark__toolbar-structure-toggle.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-menu-admin__default__dark__toolbar-structure-toggle.png
+   - Related page screenshot: baseline-pages/structure-menu-admin__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-menu-admin__default__dark__page.png
 
 ```html
 <button class="toolbar-link toolbar-link--has-icon toolbar-link--system-admin-structure"> <span class="toolbar-link__action">Extend</span> <span class="toolbar-link__label">Structure</span> </button>

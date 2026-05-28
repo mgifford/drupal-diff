@@ -1,5 +1,8 @@
 # Admin Theme (light) Structure Block Layout - Form Item Wrapper style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component height is noticeably taller: 14.0px vs 12.3px (+13.8%).
+
 ## Summary
 Potential CSS regression in **Form Item Wrapper** on **Structure Block Layout** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**
@@ -91,7 +94,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-block-layout__default__light__page.png
 
 ```html
-<div class="js-form-item form-item js-form-type-select form-type--select js-form-item-blocks-olivero-site-branding-region form-item--blocks-olivero-site-branding-region form-item--no-label"> <label for="edit-blocks-olivero-site-branding-region" class="form-item__label visually-hidden js-form-required form-required">Region for Site branding block</label> <select class="block-region-select block-region-header form-select required form-element form-element--type-select form-element--extrasmall" data-drupal-selector="edit-blocks-olivero-site-branding-region" id="edit-blocks-olivero-site-branding-region" name="blocks[olivero_site_branding][region]" required="required" data-once="block-region-select"> <option value="header" selected="selected">Header</option> <option value="primary_menu">Primary
+<div class="js-form-item form-item js-form-type-select form-type--select js-form-item-blocks-olivero-site-branding-region form-item--blocks-olivero-site-branding-region form-item--no-label"> <label for="edit-blocks-olivero-site-branding-region" class="form-item__label visually-hidden js-form-required form-required">Region for Site branding block</label> <select class="block-region-select block-region-header form-select required form-element form-element--type-select form-element--extrasmall" data-drupal-selector="edit-blocks-olivero-site-branding-region" id="edit-blocks-olivero-site-branding-region" name="blocks[olivero_site_branding][region]" required="required"> <option value="header" selected="selected">Header</option> <option value="primary_menu">Primary menu</option> <option value="se
 ```
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[4]/div[1]`

@@ -1,5 +1,14 @@
 # Admin Theme (dark) Appearance List - H2 Heading style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Text size is noticeably larger: 22.7px vs 19.8px (+14.8%).
+- Component width is significantly wider: 373.0px vs 23.1px (+1512.7%).
+- Component height is significantly taller: 22.4px vs 3.3px (+569.6%).
+- Vertical padding is significantly (more): 10.7px vs 0.0px (+100.0%).
+- Horizontal padding is significantly (more): 16.0px vs 5.6px (+184.4%).
+- Line height is noticeably larger: 29.5px vs 25.7px (+14.8%).
+- Matched element count is different: 2 fewer element(s) (-25.0%).
+
 ## Summary
 Potential CSS regression in **H2 Heading** on **Appearance List** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**
@@ -18,7 +27,7 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 - lineHeight: 14.8%
 - paddingY: 100.0%
 - paddingX: 184.4%
-- width: 1610.8%
+- width: 1512.7%
 - height: 569.6%
 - count: -2 (-25.0%)
 
@@ -85,7 +94,7 @@ No high-confidence automatic patch suggestion for this diff.
 ```
 
 ### Drupal 12 with Admin Theme
-1. XPath: `//*[@id="admin-toolbar__scroll-wrapper-659321067"]`
+1. XPath: `//*[@id="admin-toolbar__scroll-wrapper-349167739"]`
    - Text sample: Administrative sidebar
    - Related element screenshot: candidate/appearance-list__default__dark__h2.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/appearance-list__default__dark__h2.png
@@ -93,7 +102,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/appearance-list__default__dark__page.png
 
 ```html
-<h2 id="admin-toolbar__scroll-wrapper-659321067" class="visually-hidden">Administrative sidebar</h2>
+<h2 id="admin-toolbar__scroll-wrapper-349167739" class="visually-hidden">Administrative sidebar</h2>
 ```
 
 2. XPath: `//*[@id="system-breadcrumb"]`

@@ -1,5 +1,12 @@
 # Admin Theme (dark) Content Add Article - Button style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Text size is slightly larger: 14.0px vs 13.3px (+5.7%).
+- Component width is significantly wider: 142.5px vs 59.8px (+138.5%).
+- Component height is significantly taller: 25.0px vs 9.5px (+163.2%).
+- Vertical padding is significantly (more): 20.0px vs 12.8px (+56.9%).
+- Horizontal padding is significantly (more): 23.0px vs 16.6px (+38.3%).
+
 ## Summary
 Potential CSS regression in **Button** on **Content Add Article** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

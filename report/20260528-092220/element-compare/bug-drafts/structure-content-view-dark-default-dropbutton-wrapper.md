@@ -1,5 +1,8 @@
 # Admin Theme (dark) Structure Content View - Dropbutton Wrapper style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is noticeably narrower: 105.8px vs 132.9px (-20.4%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Wrapper** on **Structure Content View** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

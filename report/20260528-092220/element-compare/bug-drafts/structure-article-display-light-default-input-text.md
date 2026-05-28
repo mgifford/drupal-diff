@@ -1,5 +1,12 @@
 # Admin Theme (light) Structure Article Display - Text Input style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Text size is significantly smaller: 0.0px vs 16.0px (-100.0%).
+- Vertical padding is significantly (less): 0.0px vs 14.0px (-100.0%).
+- Horizontal padding is significantly (less): 0.0px vs 24.0px (-100.0%).
+- Line height is significantly smaller: 0.0px vs 24.0px (-100.0%).
+- Matched element count is different: 5 fewer element(s) (-100.0%).
+
 ## Summary
 Potential CSS regression in **Text Input** on **Structure Article Display** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**

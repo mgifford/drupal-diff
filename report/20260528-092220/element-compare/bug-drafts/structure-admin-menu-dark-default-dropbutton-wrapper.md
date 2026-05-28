@@ -1,5 +1,8 @@
 # Admin Theme (dark) Structure Admin Menu - Dropbutton Wrapper style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is noticeably narrower: 78.0px vs 100.0px (-22.0%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Wrapper** on **Structure Admin Menu** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**
@@ -54,12 +57,12 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/structure-menu-admin__default__dark__dropbutton-wrapper.png
 - Candidate element screenshot: candidate/structure-menu-admin__default__dark__dropbutton-wrapper.png
-- Baseline page screenshot: n/a
-- Candidate page screenshot: n/a
+- Baseline page screenshot: baseline-pages/structure-menu-admin__default__dark__page.png
+- Candidate page screenshot: candidate-pages/structure-menu-admin__default__dark__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-menu-admin__default__dark__dropbutton-wrapper.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-menu-admin__default__dark__dropbutton-wrapper.png
-
-
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-menu-admin__default__dark__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-menu-admin__default__dark__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
@@ -68,6 +71,8 @@ No high-confidence automatic patch suggestion for this diff.
    - Text sample: EditList additional actions Add child
    - Related element screenshot: baseline/structure-menu-admin__default__dark__dropbutton-wrapper.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-menu-admin__default__dark__dropbutton-wrapper.png
+   - Related page screenshot: baseline-pages/structure-menu-admin__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-menu-admin__default__dark__page.png
 
 ```html
 <div class="dropbutton-wrapper dropbutton-multiple" data-drupal-ajax-container="" data-once="dropbutton ginDropbutton"> <div class="dropbutton-widget"><ul data-drupal-selector="edit-links-menu-plugin-idsystemadmin-operations" class="dropbutton dropbutton--extrasmall dropbutton--multiple dropbutton--gin"> <li class="edit dropbutton__item dropbutton-action"><a href="/admin/structure/menu/link/system.admin/edit?destination=/admin/structure/menu/manage/admin">Edit</a></li><li class="dropbutton-toggle"><button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button></li> <li class="dropbutton__item dropbutton-action secondary-action"> <ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-heig
@@ -77,6 +82,8 @@ No high-confidence automatic patch suggestion for this diff.
    - Text sample: EditList additional actions Add child
    - Related element screenshot: baseline/structure-menu-admin__default__dark__dropbutton-wrapper.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-menu-admin__default__dark__dropbutton-wrapper.png
+   - Related page screenshot: baseline-pages/structure-menu-admin__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-menu-admin__default__dark__page.png
 
 ```html
 <div class="dropbutton-wrapper dropbutton-multiple" data-drupal-ajax-container="" data-once="dropbutton ginDropbutton"> <div class="dropbutton-widget"><ul data-drupal-selector="edit-links-menu-plugin-idsystemadmin-content-operations" class="dropbutton dropbutton--extrasmall dropbutton--multiple dropbutton--gin"> <li class="edit dropbutton__item dropbutton-action"><a href="/admin/structure/menu/link/system.admin_content/edit?destination=/admin/structure/menu/manage/admin">Edit</a></li><li class="dropbutton-toggle"><button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button></li> <li class="dropbutton__item dropbutton-action secondary-action"> <ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom
@@ -87,6 +94,8 @@ No high-confidence automatic patch suggestion for this diff.
    - Text sample: EditList additional actions Add child
    - Related element screenshot: candidate/structure-menu-admin__default__dark__dropbutton-wrapper.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-menu-admin__default__dark__dropbutton-wrapper.png
+   - Related page screenshot: candidate-pages/structure-menu-admin__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-menu-admin__default__dark__page.png
 
 ```html
 <div class="dropbutton-wrapper dropbutton-multiple" data-drupal-ajax-container="" data-once="dropbutton ginDropbutton"> <div class="dropbutton-widget"><ul data-drupal-selector="edit-links-menu-plugin-idsystemadmin-operations" class="dropbutton dropbutton--extrasmall dropbutton--multiple dropbutton--gin"> <li class="edit dropbutton__item dropbutton-action"><a href="/admin/structure/menu/link/system.admin/edit?destination=/admin/structure/menu/manage/admin">Edit</a></li><li class="dropbutton-toggle"><button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button></li> <li class="dropbutton__item dropbutton-action secondary-action"> <ul class="dropbutton__items" style="position: fixed; left: 1152.48px; right: auto; top: 506px;"> <li class=
@@ -96,9 +105,11 @@ No high-confidence automatic patch suggestion for this diff.
    - Text sample: EditList additional actions Add child
    - Related element screenshot: candidate/structure-menu-admin__default__dark__dropbutton-wrapper.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-menu-admin__default__dark__dropbutton-wrapper.png
+   - Related page screenshot: candidate-pages/structure-menu-admin__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-menu-admin__default__dark__page.png
 
 ```html
-<div class="dropbutton-wrapper dropbutton-multiple" data-drupal-ajax-container="" data-once="dropbutton ginDropbutton"> <div class="dropbutton-widget"><ul data-drupal-selector="edit-links-menu-plugin-idsystemadmin-content-operations" class="dropbutton dropbutton--extrasmall dropbutton--multiple dropbutton--gin"> <li class="edit dropbutton__item dropbutton-action"><a href="/admin/structure/menu/link/system.admin_content/edit?destination=/admin/structure/menu/manage/admin">Edit</a></li><li class="dropbutton-toggle"><button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button></li> <li class="dropbutton__item dropbutton-action secondary-action"> <ul class="dropbutton__items" style="position: fixed; left: 1092.73px; right: auto; top: 582
+<div class="dropbutton-wrapper dropbutton-multiple" data-drupal-ajax-container="" data-once="dropbutton ginDropbutton"> <div class="dropbutton-widget"><ul data-drupal-selector="edit-links-menu-plugin-idsystemadmin-content-operations" class="dropbutton dropbutton--extrasmall dropbutton--multiple dropbutton--gin"> <li class="edit dropbutton__item dropbutton-action"><a href="/admin/structure/menu/link/system.admin_content/edit?destination=/admin/structure/menu/manage/admin">Edit</a></li><li class="dropbutton-toggle"><button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button></li> <li class="dropbutton__item dropbutton-action secondary-action"> <ul class="dropbutton__items" style="position: fixed; left: 1152.48px; right: auto; top: 583
 ```
 
 ## Notes

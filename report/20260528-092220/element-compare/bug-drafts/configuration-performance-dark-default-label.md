@@ -1,5 +1,8 @@
 # Admin Theme (dark) Configuration Performance - Form Label style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is significantly wider: 446.7px vs 200.7px (+122.6%).
+
 ## Summary
 Potential CSS regression in **Form Label** on **Configuration Performance** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

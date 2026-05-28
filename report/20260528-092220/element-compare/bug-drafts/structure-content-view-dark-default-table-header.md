@@ -1,5 +1,8 @@
 # Admin Theme (dark) Structure Content View - Table Header Cell style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Vertical padding is significantly (more): 24.0px vs 16.0px (+50.0%).
+
 ## Summary
 Potential CSS regression in **Table Header Cell** on **Structure Content View** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**
@@ -72,7 +75,7 @@ No high-confidence automatic patch suggestion for this diff.
 <th class="select-all views-field views-field-node-bulk-form gin--sticky-bulk-select" scope="col" style="width: 53px;"> <input type="checkbox" class="form-checkbox form-boolean form-boolean--type-checkbox" title="Select all rows in this table" style=""> </th>
 ```
 
-2. XPath: `//*[@id="view-title-table-column--SAtI-fSLjjQ"]`
+2. XPath: `//*[@id="view-title-table-column--G2X5FzDtK64"]`
    - Text sample: Title
    - Related element screenshot: baseline/structure-view-content__default__dark__table-header.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-view-content__default__dark__table-header.png
@@ -80,7 +83,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-view-content__default__dark__page.png
 
 ```html
-<th id="view-title-table-column--SAtI-fSLjjQ" class="sortable-heading views-field views-field-title" scope="col" style="width: 179.484px;"> <a href="/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc" title="sort by Title" rel="nofollow" data-once="views-ajax">Title</a></th>
+<th id="view-title-table-column--G2X5FzDtK64" class="sortable-heading views-field views-field-title" scope="col" style="width: 179.484px;"> <a href="/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc" title="sort by Title" rel="nofollow" data-once="views-ajax">Title</a></th>
 ```
 
 ### Drupal 12 with Admin Theme
@@ -94,7 +97,7 @@ No high-confidence automatic patch suggestion for this diff.
 <th class="select-all views-field views-field-node-bulk-form gin--sticky-bulk-select" scope="col" style="width: 53px;"> <input type="checkbox" class="form-checkbox form-boolean form-boolean--type-checkbox" title="Select all rows in this table" style=""> </th>
 ```
 
-2. XPath: `//*[@id="view-title-table-column--1TBm4X9dxTk"]`
+2. XPath: `//*[@id="view-title-table-column--_ue1EZholqQ"]`
    - Text sample: Title
    - Related element screenshot: candidate/structure-view-content__default__dark__table-header.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-view-content__default__dark__table-header.png
@@ -102,7 +105,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-view-content__default__dark__page.png
 
 ```html
-<th id="view-title-table-column--1TBm4X9dxTk" class="sortable-heading views-field views-field-title" scope="col" style="width: 191.203px;"> <a href="/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc" title="sort by Title" rel="nofollow" data-once="views-ajax">Title</a></th>
+<th id="view-title-table-column--_ue1EZholqQ" class="sortable-heading views-field views-field-title" scope="col" style="width: 191.203px;"> <a href="/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc" title="sort by Title" rel="nofollow" data-once="views-ajax">Title</a></th>
 ```
 
 ## Notes

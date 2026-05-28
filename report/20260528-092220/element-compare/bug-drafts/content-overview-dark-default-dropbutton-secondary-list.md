@@ -1,5 +1,8 @@
 # Admin Theme (dark) Content Overview - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component height is significantly taller: 82.0px vs 54.0px (+51.9%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Secondary Actions List** on **Content Overview** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

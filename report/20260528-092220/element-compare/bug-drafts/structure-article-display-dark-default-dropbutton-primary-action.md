@@ -1,5 +1,14 @@
 # Admin Theme (dark) Structure Article Display - Dropbutton Primary Action Link style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Text size is significantly larger: 13.0px vs 0.0px (+100.0%).
+- Component width is significantly wider: 69.0px vs 0.0px (+100.0%).
+- Component height is significantly taller: 24.0px vs 0.0px (+100.0%).
+- Vertical padding is significantly (more): 10.0px vs 0.0px (+100.0%).
+- Horizontal padding is significantly (more): 24.0px vs 0.0px (+100.0%).
+- Line height is significantly larger: 12.0px vs 0.0px (+100.0%).
+- Matched element count is different: 4 more element(s) (+100.0%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Primary Action Link** on **Structure Article Display** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**
@@ -99,7 +108,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-type-article-display__default__dark__page.png
 
 ```html
-<a href="/admin/structure/types/manage/article/display/full/enable?token=IcqEBTwl7VM-OYzy1h-GFjOSsrkPOAmMOZuAIk34PWI">Enable <span class="visually-hidden">(Full content)</span></a>
+<a href="/admin/structure/types/manage/article/display/full/enable?token=xU97yopXbxtwN3J1IvtXCt2vPJtDjhcta078xTReSU0">Enable <span class="visually-hidden">(Full content)</span></a>
 ```
 
 ## Notes

@@ -1,5 +1,8 @@
 # Admin Theme (light) Structure Views - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component height is significantly taller: 115.0px vs 59.0px (+94.9%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Secondary Actions List** on **Structure Views** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**
@@ -63,7 +66,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-views__default__light__page.png
 
 ```html
-<ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 524.609px;"> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/comment/duplicate" data-drupal-selector="views-listing-comment">Duplicate</a></li> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/comment/disable?token=Dv_9lu6NLIAXtrTUKLsoo_V-xpzuVTpDE5ECH2vzbAo" class="use-ajax" data-drupal-selector="views-listing-comment" data-once="ajax">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/comment/delete?destination=/admin/structure/views" aria-label="Delete Comments" class="use-ajax" data
+<ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 524.609px;"> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/comment/duplicate" data-drupal-selector="views-listing-comment">Duplicate</a></li> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/comment/disable?token=X22yR-IhFrrTjupN5rHKGzQZq0YEb0kjXnDXh9JYV1g" class="use-ajax" data-drupal-selector="views-listing-comment" data-once="ajax">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/comment/delete?destination=/admin/structure/views" aria-label="Delete Comments" class="use-ajax" data
 ```
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
@@ -72,7 +75,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-views__default__light__page.png
 
 ```html
-<ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 435.609px;"> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/duplicate" data-drupal-selector="views-listing-content">Duplicate</a></li> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/disable?token=Ki520FTBuA9Ya0TWyAwh4ZDGQZvACPfSBJpr_2TbIHo" class="use-ajax" data-drupal-selector="views-listing-content" data-once="ajax">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/delete?destination=/admin/structure/views" aria-label="Delete Content" class="use-ajax" data-
+<ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 435.609px;"> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/duplicate" data-drupal-selector="views-listing-content">Duplicate</a></li> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/disable?token=hexUZ0d5VXHGKndCBQ0SWoNoE3sSJstMk29fsy7HWqo" class="use-ajax" data-drupal-selector="views-listing-content" data-once="ajax">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/delete?destination=/admin/structure/views" aria-label="Delete Content" class="use-ajax" data-
 ```
 
 ### Drupal 12 with Admin Theme
@@ -82,7 +85,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-views__default__light__page.png
 
 ```html
-<ul class="dropbutton__items" style="position: fixed; left: auto; right: 76.0156px; top: 438.594px;"> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/duplicate" data-drupal-selector="views-listing-content">Duplicate</a></li> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/disable?token=tYH8tVXn7DaEQNadCgDsXceP7ZLYll5fZuilxiwUsqU" class="use-ajax" data-drupal-selector="views-listing-content" data-once="ajax">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/delete?destination=/admin/structure/views" aria-label="Delete Content" class="use-ajax" data-dialog-type="modal" dat
+<ul class="dropbutton__items" style="position: fixed; left: auto; right: 76.0156px; top: 438.594px;"> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/duplicate" data-drupal-selector="views-listing-content">Duplicate</a></li> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/disable?token=-7B3xOZYO_lq8DnrsIsftvkRi8yCEUaWbh_fV0WvvlM" class="use-ajax" data-drupal-selector="views-listing-content" data-once="ajax">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/delete?destination=/admin/structure/views" aria-label="Delete Content" class="use-ajax" data-dialog-type="modal" dat
 ```
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
@@ -91,7 +94,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-views__default__light__page.png
 
 ```html
-<ul class="dropbutton__items" style="position: fixed; left: auto; right: 97.625px; top: 503.594px;"> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/block_content/duplicate" data-drupal-selector="views-listing-block_content">Duplicate</a></li> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/block_content/disable?token=yCoeVzZhYrgoT55_XYEacRvQU1HbLqxi2PbabrobRbk" class="use-ajax" data-drupal-selector="views-listing-block_content" data-once="ajax">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/block_content/delete?destination=/admin/structure/views" aria-label="Delete Content blocks" class="us
+<ul class="dropbutton__items" style="position: fixed; left: auto; right: 97.625px; top: 503.594px;"> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/block_content/duplicate" data-drupal-selector="views-listing-block_content">Duplicate</a></li> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/block_content/disable?token=xcB3H6qWdh-wkFxKGPbnd7_yHuFN3r-rR1KcUsCJxts" class="use-ajax" data-drupal-selector="views-listing-block_content" data-once="ajax">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/block_content/delete?destination=/admin/structure/views" aria-label="Delete Content blocks" class="us
 ```
 
 ## Notes

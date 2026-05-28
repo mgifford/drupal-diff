@@ -1,5 +1,12 @@
 # Admin Theme (dark) Structure Content View - Button style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Text size is slightly larger: 14.0px vs 13.3px (+5.7%).
+- Component width is significantly wider: 142.5px vs 59.8px (+138.5%).
+- Component height is significantly taller: 25.0px vs 9.5px (+163.2%).
+- Vertical padding is significantly (more): 20.0px vs 12.8px (+56.9%).
+- Horizontal padding is significantly (more): 23.0px vs 16.6px (+38.3%).
+
 ## Summary
 Potential CSS regression in **Button** on **Structure Content View** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**
@@ -14,12 +21,11 @@ Color mode: **dark**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- fontSize: 7.7%
-- lineHeight: -11.1%
-- paddingY: 100.0%
-- paddingX: 100.0%
-- width: 100.0%
-- height: 100.0%
+- fontSize: 5.7%
+- paddingY: 56.9%
+- paddingX: 38.3%
+- width: 138.5%
+- height: 163.2%
 
 ## Likely CSS Sources
 - http://drupal-git.ddev.site:8080/sites/default/files/css/css_1jxw8wr9LSzHFCJwU8jtTj7WpFAe3qYSFZfYuljAXf0.css
@@ -53,7 +59,15 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 - views_ui/admin.styling
 
 ## Suggested CSS Patch (Confidence-Gated)
-No high-confidence automatic patch suggestion for this diff.
+Confidence: **medium**
+
+```css
+button, input, optgroup, select, textarea {
+  font-size: 13.3px; /* current ~14px */
+  padding-block: 12.8px; /* current ~20px */
+  padding-inline: 16.6px; /* current ~23px */
+}
+```
 
 ## Evidence
 - Baseline element screenshot: 
@@ -68,22 +82,21 @@ No high-confidence automatic patch suggestion for this diff.
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
-1. XPath: `/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[1]/ul[1]/li[2]/div[1]/button[1]`
-   - Text sample: Extend Content
+1. XPath: `/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[2]/div[1]/button[1]`
+   - Text sample: Vertical orientation
    - Related page screenshot: baseline-pages/structure-view-content__default__dark__page.png
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-view-content__default__dark__page.png
 
 ```html
-<button class="toolbar-icon toolbar-handle" style="opacity: 0;"><span class="action">Extend</span> <span class="label">Content</span></button>
+<button class="toolbar-icon toolbar-icon-toggle-vertical" type="button" value="vertical" title="Vertical orientation">Vertical orientation</button>
 ```
 
-2. XPath: `/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[1]/ul[1]/li[2]/div[2]/button[1]`
-   - Text sample: Extend Content
+2. XPath: `/html[1]/body[1]/div[1]/nav[1]/div[3]/div[1]/nav[1]/div[1]/div[1]/button[1]`
    - Related page screenshot: baseline-pages/structure-view-content__default__dark__page.png
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-view-content__default__dark__page.png
 
 ```html
-<button class="toolbar-icon toolbar-handle" style=""><span class="action">Extend</span> <span class="label">Content</span></button>
+<button class="toolbar-icon toolbar-icon-toggle-vertical" type="button" title="Vertical orientation"></button>
 ```
 
 ### Drupal 12 with Admin Theme

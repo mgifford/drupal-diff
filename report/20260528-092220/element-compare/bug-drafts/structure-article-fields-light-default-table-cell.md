@@ -1,5 +1,8 @@
 # Admin Theme (light) Structure Article Fields - Table Body Cell style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Matched element count is different: 5 fewer element(s) (-62.5%).
+
 ## Summary
 Potential CSS regression in **Table Body Cell** on **Structure Article Fields** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**

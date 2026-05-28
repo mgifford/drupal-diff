@@ -1,5 +1,9 @@
 # Admin Theme (light) Structure Content Types - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is noticeably narrower: 192.0px vs 216.0px (-11.1%).
+- Component height is significantly taller: 181.0px vs 117.0px (+54.7%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Secondary Actions List** on **Structure Content Types** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**

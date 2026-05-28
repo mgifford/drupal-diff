@@ -1,5 +1,9 @@
 # Admin Theme (dark) Reports Updates - Table Body Cell style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component height is significantly taller: 254.4px vs 187.7px (+35.5%).
+- Matched element count is different: 2 fewer element(s) (-66.7%).
+
 ## Summary
 Potential CSS regression in **Table Body Cell** on **Reports Updates** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

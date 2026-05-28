@@ -26,6 +26,13 @@
   </p>
 
   <section class="card">
+    <h2>What Changed (Human Summary)</h2>
+    <ul>
+      <li>Component width is significantly wider: 1.0px vs 0.0px (+100.0%).</li><li>Component height is significantly taller: 1.0px vs 0.0px (+100.0%).</li><li>Matched element count is different: 6 fewer element(s) (-75.0%).</li>
+    </ul>
+  </section>
+
+  <section class="card">
     <h2>Reproduction</h2>
     <ol>
       <li>Open baseline page: <a href="http://drupal-11.3.10.ddev.site/admin/config/content/formats/manage/basic_html" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/config/content/formats/manage/basic_html</a></li>
@@ -51,13 +58,13 @@
       <div class="meta"><strong>Drupal 11 with Gin 1 XPath:</strong> <code>/html[1]/body[1]/div[1]/nav[1]/h2[1]</code></div>
       <div class="meta">text: Toolbar items</div>
       <pre>&lt;h2 class=&quot;visually-hidden&quot;&gt;Toolbar items&lt;/h2&gt;</pre>
-      <div class="meta"><strong>Drupal 11 with Gin 2 XPath:</strong> <code>//*[@id=&quot;menu--create&quot;]</code></div>
-      <div class="meta">text: Create Navigation</div>
-      <pre>&lt;h2 id=&quot;menu--create&quot; class=&quot;toolbar-block__title visually-hidden focusable&quot;&gt;Create Navigation&lt;/h2&gt;</pre>
+      <div class="meta"><strong>Drupal 11 with Gin 2 XPath:</strong> <code>/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[1]/ul[1]/li[3]/ul[1]/li[6]/ul[1]/li[1]/h2[1]</code></div>
+      <div class="meta">text: Display modes</div>
+      <pre>&lt;h2 class=&quot;toolbar-menu__title&quot;&gt; &lt;a href=&quot;/admin/structure/display-modes&quot;&gt;Display modes&lt;/a&gt; &lt;/h2&gt;</pre>
     
-      <div class="meta"><strong>Drupal 12 with Admin Theme 1 XPath:</strong> <code>//*[@id=&quot;admin-toolbar__scroll-wrapper-659321067&quot;]</code></div>
+      <div class="meta"><strong>Drupal 12 with Admin Theme 1 XPath:</strong> <code>//*[@id=&quot;admin-toolbar__scroll-wrapper-349167739&quot;]</code></div>
       <div class="meta">text: Administrative sidebar</div>
-      <pre>&lt;h2 id=&quot;admin-toolbar__scroll-wrapper-659321067&quot; class=&quot;visually-hidden&quot;&gt;Administrative sidebar&lt;/h2&gt;</pre>
+      <pre>&lt;h2 id=&quot;admin-toolbar__scroll-wrapper-349167739&quot; class=&quot;visually-hidden&quot;&gt;Administrative sidebar&lt;/h2&gt;</pre>
       <div class="meta"><strong>Drupal 12 with Admin Theme 2 XPath:</strong> <code>//*[@id=&quot;system-breadcrumb&quot;]</code></div>
       <div class="meta">text: Breadcrumb</div>
       <pre>&lt;h2 id=&quot;system-breadcrumb&quot; class=&quot;visually-hidden&quot;&gt;Breadcrumb&lt;/h2&gt;</pre>

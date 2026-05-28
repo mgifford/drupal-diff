@@ -1,5 +1,8 @@
 # Admin Theme (light) Configuration Text Formats - Table Header Cell style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component height is noticeably taller: 50.0px vs 44.2px (+13.2%).
+
 ## Summary
 Potential CSS regression in **Table Header Cell** on **Configuration Text Formats** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**

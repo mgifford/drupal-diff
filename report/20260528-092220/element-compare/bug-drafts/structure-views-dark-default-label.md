@@ -1,5 +1,9 @@
 # Admin Theme (dark) Structure Views - Form Label style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is significantly narrower: 1.0px vs 36.0px (-97.2%).
+- Component height is significantly shorter: 1.0px vs 18.0px (-94.4%).
+
 ## Summary
 Potential CSS regression in **Form Label** on **Structure Views** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

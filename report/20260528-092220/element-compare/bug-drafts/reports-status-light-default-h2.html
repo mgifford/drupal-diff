@@ -26,6 +26,13 @@
   </p>
 
   <section class="card">
+    <h2>What Changed (Human Summary)</h2>
+    <ul>
+      <li>Text size is noticeably larger: 23.0px vs 18.8px (+22.7%).</li><li>Component width is significantly wider: 539.5px vs 267.8px (+101.5%).</li><li>Component height is significantly taller: 28.2px vs 14.5px (+94.8%).</li><li>Vertical padding is significantly (more): 16.0px vs 8.0px (+100.0%).</li><li>Horizontal padding is significantly (more): 24.0px vs 17.6px (+36.2%).</li><li>Line height is noticeably larger: 29.9px vs 24.4px (+22.7%).</li><li>Matched element count is different: 4 fewer element(s) (-50.0%).</li>
+    </ul>
+  </section>
+
+  <section class="card">
     <h2>Reproduction</h2>
     <ol>
       <li>Open baseline page: <a href="http://drupal-11.3.10.ddev.site/admin/reports/status" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/reports/status</a></li>
@@ -51,13 +58,13 @@
       <div class="meta"><strong>Drupal 11 with Gin 1 XPath:</strong> <code>/html[1]/body[1]/div[1]/nav[1]/h2[1]</code></div>
       <div class="meta">text: Toolbar items</div>
       <pre>&lt;h2 class=&quot;visually-hidden&quot;&gt;Toolbar items&lt;/h2&gt;</pre>
-      <div class="meta"><strong>Drupal 11 with Gin 2 XPath:</strong> <code>/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[1]/ul[1]/li[3]/ul[1]/li[6]/ul[1]/li[1]/h2[1]</code></div>
-      <div class="meta">text: Display modes</div>
-      <pre>&lt;h2 class=&quot;toolbar-menu__title&quot;&gt; &lt;a href=&quot;/admin/structure/display-modes&quot;&gt;Display modes&lt;/a&gt; &lt;/h2&gt;</pre>
+      <div class="meta"><strong>Drupal 11 with Gin 2 XPath:</strong> <code>//*[@id=&quot;menu--create&quot;]</code></div>
+      <div class="meta">text: Create Navigation</div>
+      <pre>&lt;h2 id=&quot;menu--create&quot; class=&quot;toolbar-block__title visually-hidden focusable&quot;&gt;Create Navigation&lt;/h2&gt;</pre>
     
-      <div class="meta"><strong>Drupal 12 with Admin Theme 1 XPath:</strong> <code>//*[@id=&quot;admin-toolbar__scroll-wrapper-1166683920&quot;]</code></div>
+      <div class="meta"><strong>Drupal 12 with Admin Theme 1 XPath:</strong> <code>//*[@id=&quot;admin-toolbar__scroll-wrapper-1819965754&quot;]</code></div>
       <div class="meta">text: Administrative sidebar</div>
-      <pre>&lt;h2 id=&quot;admin-toolbar__scroll-wrapper-1166683920&quot; class=&quot;visually-hidden&quot;&gt;Administrative sidebar&lt;/h2&gt;</pre>
+      <pre>&lt;h2 id=&quot;admin-toolbar__scroll-wrapper-1819965754&quot; class=&quot;visually-hidden&quot;&gt;Administrative sidebar&lt;/h2&gt;</pre>
       <div class="meta"><strong>Drupal 12 with Admin Theme 2 XPath:</strong> <code>//*[@id=&quot;system-breadcrumb&quot;]</code></div>
       <div class="meta">text: Breadcrumb</div>
       <pre>&lt;h2 id=&quot;system-breadcrumb&quot; class=&quot;visually-hidden&quot;&gt;Breadcrumb&lt;/h2&gt;</pre>

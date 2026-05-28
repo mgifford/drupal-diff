@@ -1,5 +1,9 @@
 # Admin Theme (light) Structure Menus - Dropbutton Primary Action Link style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is noticeably wider: 102.5px vs 93.0px (+10.2%).
+- Horizontal padding is noticeably (less): 26.0px vs 29.0px (-10.3%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Primary Action Link** on **Structure Menus** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**

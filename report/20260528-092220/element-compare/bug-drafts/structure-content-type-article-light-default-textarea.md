@@ -1,5 +1,8 @@
 # Admin Theme (light) Structure Content Type Article - Textarea style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is noticeably narrower: 629.0px vs 845.0px (-25.6%).
+
 ## Summary
 Potential CSS regression in **Textarea** on **Structure Content Type Article** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**

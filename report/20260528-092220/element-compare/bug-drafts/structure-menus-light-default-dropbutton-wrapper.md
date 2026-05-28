@@ -1,5 +1,8 @@
 # Admin Theme (light) Structure Menus - Dropbutton Wrapper style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Matched element count is different: 2 more element(s) (+40.0%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Wrapper** on **Structure Menus** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**

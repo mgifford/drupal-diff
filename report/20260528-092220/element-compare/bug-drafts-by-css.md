@@ -4,7 +4,7 @@ This endpoint may render as raw Markdown on GitHub Pages.
 - Published HTML report: https://mgifford.github.io/drupal-diff/report/20260528-092220/element-compare/bug-drafts-by-css.html
 ---
 # Draft Bug Reports Grouped By CSS Source
-Generated: 2026-05-28T17:50:40.273Z
+Generated: 2026-05-28T18:14:30.160Z
 ## core/themes/default_admin/css/base/elements.css (92)
 - 1. [Admin Theme (light) Appearance List - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/appearance-list-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/appearance-list-light-default-h2.md
@@ -63,226 +63,226 @@ Generated: 2026-05-28T17:50:40.273Z
 - 65. [Admin Theme (light) Content Overview - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/content-overview-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 72. [Admin Theme (light) Content Overview - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/content-overview-light-default-dropbutton-secondary-action.html)
+- 71. [Admin Theme (light) Content Overview - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/content-overview-light-default-dropbutton-secondary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-light-default-dropbutton-secondary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/base/print.css | core/themes/default_admin/css/base/print.pcss.css
-- 74. [Admin Theme (dark) Content Overview - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/content-overview-dark-default-h2.html)
+- 73. [Admin Theme (dark) Content Overview - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/content-overview-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 80. [Admin Theme (dark) Content Overview - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/content-overview-dark-default-dropbutton-secondary-action.html)
+- 79. [Admin Theme (dark) Content Overview - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/content-overview-dark-default-dropbutton-secondary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-dark-default-dropbutton-secondary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/base/print.css | core/themes/default_admin/css/base/print.pcss.css
-- 83. [Admin Theme (light) Content Add Article - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/content-add-article-light-default-h2.html)
+- 82. [Admin Theme (light) Content Add Article - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/content-add-article-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-add-article-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 90. [Admin Theme (dark) Content Add Article - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/content-add-article-dark-default-h2.html)
+- 89. [Admin Theme (dark) Content Add Article - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/content-add-article-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-add-article-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 96. [Admin Theme (light) Structure Overview - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-overview-light-default-h2.html)
+- 95. [Admin Theme (light) Structure Overview - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-overview-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-overview-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 99. [Admin Theme (dark) Structure Overview - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-overview-dark-default-h2.html)
+- 98. [Admin Theme (dark) Structure Overview - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-overview-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-overview-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 103. [Admin Theme (light) Structure Block Layout - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-h2.html)
+- 102. [Admin Theme (light) Structure Block Layout - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 110. [Admin Theme (light) Structure Block Layout - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-dropbutton-secondary-action.html)
+- 109. [Admin Theme (light) Structure Block Layout - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-dropbutton-secondary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-light-default-dropbutton-secondary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/base/print.css | core/themes/default_admin/css/base/print.pcss.css
-- 113. [Admin Theme (dark) Structure Block Layout - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-h2.html)
+- 112. [Admin Theme (dark) Structure Block Layout - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 120. [Admin Theme (dark) Structure Block Layout - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-dropbutton-secondary-action.html)
+- 119. [Admin Theme (dark) Structure Block Layout - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-dropbutton-secondary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-dark-default-dropbutton-secondary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/base/print.css | core/themes/default_admin/css/base/print.pcss.css
-- 122. [Admin Theme (light) Structure Content Types - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-light-default-h2.html)
+- 121. [Admin Theme (light) Structure Content Types - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-types-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 127. [Admin Theme (dark) Structure Content Types - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-dark-default-h2.html)
+- 126. [Admin Theme (dark) Structure Content Types - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-types-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 133. [Admin Theme (light) Structure Content Type Article - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-light-default-h2.html)
+- 132. [Admin Theme (light) Structure Content Type Article - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-type-article-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 139. [Admin Theme (dark) Structure Content Type Article - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-dark-default-h2.html)
+- 138. [Admin Theme (dark) Structure Content Type Article - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-type-article-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 144. [Admin Theme (light) Structure Article Fields - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-h2.html)
+- 143. [Admin Theme (light) Structure Article Fields - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 148. [Admin Theme (light) Structure Article Fields - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-dropbutton-primary-action.html)
+- 147. [Admin Theme (light) Structure Article Fields - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-dropbutton-primary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-light-default-dropbutton-primary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/components/dropbutton.css | core/themes/default_admin/css/components/dropbutton.pcss.css
-- 151. [Admin Theme (light) Structure Article Fields - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-dropbutton-secondary-action.html)
+- 150. [Admin Theme (light) Structure Article Fields - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-dropbutton-secondary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-light-default-dropbutton-secondary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/base/print.css | core/themes/default_admin/css/base/print.pcss.css
-- 153. [Admin Theme (dark) Structure Article Fields - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-h2.html)
+- 152. [Admin Theme (dark) Structure Article Fields - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 157. [Admin Theme (dark) Structure Article Fields - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-dropbutton-primary-action.html)
+- 156. [Admin Theme (dark) Structure Article Fields - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-dropbutton-primary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-dark-default-dropbutton-primary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/components/dropbutton.css | core/themes/default_admin/css/components/dropbutton.pcss.css
-- 160. [Admin Theme (dark) Structure Article Fields - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-dropbutton-secondary-action.html)
+- 159. [Admin Theme (dark) Structure Article Fields - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-dropbutton-secondary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-dark-default-dropbutton-secondary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/base/print.css | core/themes/default_admin/css/base/print.pcss.css
-- 162. [Admin Theme (light) Structure Article Display - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-h2.html)
+- 161. [Admin Theme (light) Structure Article Display - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 171. [Admin Theme (light) Structure Article Display - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-dropbutton-primary-action.html)
+- 170. [Admin Theme (light) Structure Article Display - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-dropbutton-primary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-light-default-dropbutton-primary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/components/dropbutton.css | core/themes/default_admin/css/components/dropbutton.pcss.css
-- 173. [Admin Theme (dark) Structure Article Display - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-h2.html)
+- 172. [Admin Theme (dark) Structure Article Display - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 182. [Admin Theme (dark) Structure Article Display - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-dropbutton-primary-action.html)
+- 181. [Admin Theme (dark) Structure Article Display - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-dropbutton-primary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-dark-default-dropbutton-primary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/components/dropbutton.css | core/themes/default_admin/css/components/dropbutton.pcss.css
-- 184. [Admin Theme (light) Structure Menus - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-menus-light-default-h2.html)
+- 183. [Admin Theme (light) Structure Menus - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-menus-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-menus-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 187. [Admin Theme (light) Structure Menus - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-menus-light-default-dropbutton-primary-action.html)
+- 186. [Admin Theme (light) Structure Menus - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-menus-light-default-dropbutton-primary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-menus-light-default-dropbutton-primary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/components/dropbutton.css | core/themes/default_admin/css/components/dropbutton.pcss.css
-- 190. [Admin Theme (light) Structure Menus - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-menus-light-default-dropbutton-secondary-action.html)
+- 189. [Admin Theme (light) Structure Menus - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-menus-light-default-dropbutton-secondary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-menus-light-default-dropbutton-secondary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/base/print.css | core/themes/default_admin/css/base/print.pcss.css
-- 192. [Admin Theme (dark) Structure Menus - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-menus-dark-default-h2.html)
+- 191. [Admin Theme (dark) Structure Menus - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-menus-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-menus-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 195. [Admin Theme (dark) Structure Menus - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-menus-dark-default-dropbutton-primary-action.html)
+- 194. [Admin Theme (dark) Structure Menus - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-menus-dark-default-dropbutton-primary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-menus-dark-default-dropbutton-primary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/components/dropbutton.css | core/themes/default_admin/css/components/dropbutton.pcss.css
-- 198. [Admin Theme (dark) Structure Menus - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-menus-dark-default-dropbutton-secondary-action.html)
+- 197. [Admin Theme (dark) Structure Menus - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-menus-dark-default-dropbutton-secondary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-menus-dark-default-dropbutton-secondary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/base/print.css | core/themes/default_admin/css/base/print.pcss.css
-- 201. [Admin Theme (light) Structure Admin Menu - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-h2.html)
+- 200. [Admin Theme (light) Structure Admin Menu - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 206. [Admin Theme (light) Structure Admin Menu - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-dropbutton-primary-action.html)
+- 205. [Admin Theme (light) Structure Admin Menu - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-dropbutton-primary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-light-default-dropbutton-primary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/components/dropbutton.css | core/themes/default_admin/css/components/dropbutton.pcss.css
-- 208. [Admin Theme (light) Structure Admin Menu - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-dropbutton-secondary-action.html)
+- 207. [Admin Theme (light) Structure Admin Menu - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-dropbutton-secondary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-light-default-dropbutton-secondary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/base/print.css | core/themes/default_admin/css/base/print.pcss.css
-- 211. [Admin Theme (dark) Structure Admin Menu - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-h2.html)
+- 210. [Admin Theme (dark) Structure Admin Menu - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 216. [Admin Theme (dark) Structure Admin Menu - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-dropbutton-primary-action.html)
+- 215. [Admin Theme (dark) Structure Admin Menu - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-dropbutton-primary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-dark-default-dropbutton-primary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/components/dropbutton.css | core/themes/default_admin/css/components/dropbutton.pcss.css
-- 218. [Admin Theme (dark) Structure Admin Menu - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-dropbutton-secondary-action.html)
+- 217. [Admin Theme (dark) Structure Admin Menu - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-dropbutton-secondary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-dark-default-dropbutton-secondary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/base/print.css | core/themes/default_admin/css/base/print.pcss.css
-- 220. [Admin Theme (light) Structure Taxonomy - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-taxonomy-light-default-h2.html)
+- 219. [Admin Theme (light) Structure Taxonomy - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-taxonomy-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-taxonomy-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 224. [Admin Theme (dark) Structure Taxonomy - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-taxonomy-dark-default-h2.html)
+- 223. [Admin Theme (dark) Structure Taxonomy - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-taxonomy-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-taxonomy-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 228. [Admin Theme (light) Structure Views - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-views-light-default-h2.html)
+- 227. [Admin Theme (light) Structure Views - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-views-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-views-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 236. [Admin Theme (dark) Structure Views - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-views-dark-default-h2.html)
+- 235. [Admin Theme (dark) Structure Views - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-views-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-views-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 244. [Admin Theme (light) Structure Content View - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-light-default-h2.html)
+- 243. [Admin Theme (light) Structure Content View - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-view-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 252. [Admin Theme (dark) Structure Content View - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-dark-default-h2.html)
+- 251. [Admin Theme (dark) Structure Content View - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-view-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 260. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-default-h2.html)
+- 259. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 263. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-density-compact-h2.html)
+- 262. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-density-compact-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-density-compact-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 266. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-density-comfortable-h2.html)
+- 265. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-density-comfortable-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-density-comfortable-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 269. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-increase-contrast-h2.html)
+- 268. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-increase-contrast-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-increase-contrast-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 272. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-form-descriptions-h2.html)
+- 271. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-form-descriptions-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-form-descriptions-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 275. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-contrast-and-descriptions-h2.html)
+- 274. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-contrast-and-descriptions-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-contrast-and-descriptions-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 278. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-default-h2.html)
+- 277. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 281. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-density-compact-h2.html)
+- 280. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-density-compact-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-density-compact-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 284. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-density-comfortable-h2.html)
+- 283. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-density-comfortable-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-density-comfortable-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 287. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-increase-contrast-h2.html)
+- 286. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-increase-contrast-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-increase-contrast-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 290. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-form-descriptions-h2.html)
+- 289. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-form-descriptions-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-form-descriptions-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 293. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-contrast-and-descriptions-h2.html)
+- 292. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-contrast-and-descriptions-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-contrast-and-descriptions-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 296. [Admin Theme (light) Block Content Types - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/block-content-types-light-default-h2.html)
+- 295. [Admin Theme (light) Block Content Types - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/block-content-types-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/block-content-types-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 301. [Admin Theme (dark) Block Content Types - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/block-content-types-dark-default-h2.html)
+- 300. [Admin Theme (dark) Block Content Types - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/block-content-types-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/block-content-types-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 306. [Admin Theme (light) People List - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-h2.html)
+- 305. [Admin Theme (light) People List - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 311. [Admin Theme (light) People List - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-dropbutton-primary-action.html)
+- 310. [Admin Theme (light) People List - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-dropbutton-primary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-light-default-dropbutton-primary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/components/dropbutton.css | core/themes/default_admin/css/components/dropbutton.pcss.css
-- 313. [Admin Theme (light) People List - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-dropbutton-secondary-action.html)
+- 312. [Admin Theme (light) People List - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-dropbutton-secondary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-light-default-dropbutton-secondary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/base/print.css | core/themes/default_admin/css/base/print.pcss.css
-- 315. [Admin Theme (dark) People List - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-h2.html)
+- 314. [Admin Theme (dark) People List - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 320. [Admin Theme (dark) People List - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-dropbutton-primary-action.html)
+- 319. [Admin Theme (dark) People List - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-dropbutton-primary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-dark-default-dropbutton-primary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/components/dropbutton.css | core/themes/default_admin/css/components/dropbutton.pcss.css
-- 322. [Admin Theme (dark) People List - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-dropbutton-secondary-action.html)
+- 321. [Admin Theme (dark) People List - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-dropbutton-secondary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-dark-default-dropbutton-secondary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/base/print.css | core/themes/default_admin/css/base/print.pcss.css
-- 324. [Admin Theme (light) People Roles - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/people-roles-light-default-h2.html)
+- 323. [Admin Theme (light) People Roles - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/people-roles-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-roles-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 328. [Admin Theme (light) People Roles - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/people-roles-light-default-dropbutton-primary-action.html)
+- 327. [Admin Theme (light) People Roles - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/people-roles-light-default-dropbutton-primary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-roles-light-default-dropbutton-primary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/components/dropbutton.css | core/themes/default_admin/css/components/dropbutton.pcss.css
-- 332. [Admin Theme (dark) People Roles - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/people-roles-dark-default-h2.html)
+- 331. [Admin Theme (dark) People Roles - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/people-roles-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-roles-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 336. [Admin Theme (dark) People Roles - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/people-roles-dark-default-dropbutton-primary-action.html)
+- 335. [Admin Theme (dark) People Roles - Dropbutton Primary Action Link style regression vs Drupal 11 Gin](bug-drafts/people-roles-dark-default-dropbutton-primary-action.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-roles-dark-default-dropbutton-primary-action.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css | core/themes/default_admin/css/components/dropbutton.css | core/themes/default_admin/css/components/dropbutton.pcss.css
-- 340. [Admin Theme (light) People Permissions - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/people-permissions-light-default-h2.html)
+- 339. [Admin Theme (light) People Permissions - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/people-permissions-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-permissions-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 344. [Admin Theme (dark) People Permissions - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/people-permissions-dark-default-h2.html)
+- 343. [Admin Theme (dark) People Permissions - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/people-permissions-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-permissions-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 348. [Admin Theme (light) Reports Status - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/reports-status-light-default-h2.html)
+- 347. [Admin Theme (light) Reports Status - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/reports-status-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-status-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 352. [Admin Theme (dark) Reports Status - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/reports-status-dark-default-h2.html)
+- 351. [Admin Theme (dark) Reports Status - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/reports-status-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-status-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 356. [Admin Theme (light) Reports Updates - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/reports-updates-light-default-h2.html)
+- 355. [Admin Theme (light) Reports Updates - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/reports-updates-light-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-updates-light-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-- 361. [Admin Theme (dark) Reports Updates - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/reports-updates-dark-default-h2.html)
+- 360. [Admin Theme (dark) Reports Updates - H2 Heading style regression vs Drupal 11 Gin](bug-drafts/reports-updates-dark-default-h2.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-updates-dark-default-h2.md
   - Secondary candidates: core/themes/default_admin/css/base/elements.pcss.css
-## unknown (77)
+## unknown (76)
 - 4. [Admin Theme (light) Appearance List - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/appearance-list-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/appearance-list-light-default-toolbar-structure-toggle.md
 - 8. [Admin Theme (dark) Appearance List - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/appearance-list-dark-default-toolbar-structure-toggle.html)
@@ -311,131 +311,129 @@ Generated: 2026-05-28T17:50:40.273Z
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/configuration-file-system-light-default-toolbar-structure-toggle.md
 - 64. [Admin Theme (dark) Configuration File System - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/configuration-file-system-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/configuration-file-system-dark-default-toolbar-structure-toggle.md
-- 67. [Admin Theme (light) Content Overview - Details Summary style regression vs Drupal 11 Gin](bug-drafts/content-overview-light-default-details-summary.html)
-  - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-light-default-details-summary.md
-- 73. [Admin Theme (light) Content Overview - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/content-overview-light-default-toolbar-structure-toggle.html)
+- 72. [Admin Theme (light) Content Overview - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/content-overview-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-light-default-toolbar-structure-toggle.md
-- 81. [Admin Theme (dark) Content Overview - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/content-overview-dark-default-toolbar-structure-toggle.html)
+- 80. [Admin Theme (dark) Content Overview - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/content-overview-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-dark-default-toolbar-structure-toggle.md
-- 88. [Admin Theme (light) Content Add Article - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/content-add-article-light-default-toolbar-structure-toggle.html)
+- 87. [Admin Theme (light) Content Add Article - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/content-add-article-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-add-article-light-default-toolbar-structure-toggle.md
-- 95. [Admin Theme (dark) Content Add Article - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/content-add-article-dark-default-toolbar-structure-toggle.html)
+- 94. [Admin Theme (dark) Content Add Article - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/content-add-article-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-add-article-dark-default-toolbar-structure-toggle.md
-- 98. [Admin Theme (light) Structure Overview - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-overview-light-default-toolbar-structure-toggle.html)
+- 97. [Admin Theme (light) Structure Overview - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-overview-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-overview-light-default-toolbar-structure-toggle.md
-- 101. [Admin Theme (dark) Structure Overview - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-overview-dark-default-toolbar-structure-toggle.html)
+- 100. [Admin Theme (dark) Structure Overview - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-overview-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-overview-dark-default-toolbar-structure-toggle.md
-- 111. [Admin Theme (light) Structure Block Layout - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-toolbar-structure-toggle.html)
+- 110. [Admin Theme (light) Structure Block Layout - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-light-default-toolbar-structure-toggle.md
-- 121. [Admin Theme (dark) Structure Block Layout - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-toolbar-structure-toggle.html)
+- 120. [Admin Theme (dark) Structure Block Layout - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-dark-default-toolbar-structure-toggle.md
-- 126. [Admin Theme (light) Structure Content Types - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-light-default-toolbar-structure-toggle.html)
+- 125. [Admin Theme (light) Structure Content Types - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-types-light-default-toolbar-structure-toggle.md
-- 131. [Admin Theme (dark) Structure Content Types - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-dark-default-toolbar-structure-toggle.html)
+- 130. [Admin Theme (dark) Structure Content Types - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-types-dark-default-toolbar-structure-toggle.md
-- 137. [Admin Theme (light) Structure Content Type Article - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-light-default-toolbar-structure-toggle.html)
+- 136. [Admin Theme (light) Structure Content Type Article - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-type-article-light-default-toolbar-structure-toggle.md
-- 143. [Admin Theme (dark) Structure Content Type Article - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-dark-default-toolbar-structure-toggle.html)
+- 142. [Admin Theme (dark) Structure Content Type Article - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-type-article-dark-default-toolbar-structure-toggle.md
-- 152. [Admin Theme (light) Structure Article Fields - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-toolbar-structure-toggle.html)
+- 151. [Admin Theme (light) Structure Article Fields - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-light-default-toolbar-structure-toggle.md
-- 161. [Admin Theme (dark) Structure Article Fields - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-toolbar-structure-toggle.html)
+- 160. [Admin Theme (dark) Structure Article Fields - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-dark-default-toolbar-structure-toggle.md
-- 163. [Admin Theme (light) Structure Article Display - Text Input style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-input-text.html)
+- 162. [Admin Theme (light) Structure Article Display - Text Input style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-input-text.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-light-default-input-text.md
-- 165. [Admin Theme (light) Structure Article Display - Form Item Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-form-item.html)
+- 164. [Admin Theme (light) Structure Article Display - Form Item Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-form-item.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-light-default-form-item.md
-- 168. [Admin Theme (light) Structure Article Display - Details Summary style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-details-summary.html)
+- 167. [Admin Theme (light) Structure Article Display - Details Summary style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-details-summary.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-light-default-details-summary.md
-- 169. [Admin Theme (light) Structure Article Display - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-label.html)
+- 168. [Admin Theme (light) Structure Article Display - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-light-default-label.md
-- 172. [Admin Theme (light) Structure Article Display - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-toolbar-structure-toggle.html)
+- 171. [Admin Theme (light) Structure Article Display - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-light-default-toolbar-structure-toggle.md
-- 174. [Admin Theme (dark) Structure Article Display - Text Input style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-input-text.html)
+- 173. [Admin Theme (dark) Structure Article Display - Text Input style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-input-text.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-dark-default-input-text.md
-- 176. [Admin Theme (dark) Structure Article Display - Form Item Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-form-item.html)
+- 175. [Admin Theme (dark) Structure Article Display - Form Item Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-form-item.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-dark-default-form-item.md
-- 179. [Admin Theme (dark) Structure Article Display - Details Summary style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-details-summary.html)
+- 178. [Admin Theme (dark) Structure Article Display - Details Summary style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-details-summary.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-dark-default-details-summary.md
-- 180. [Admin Theme (dark) Structure Article Display - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-label.html)
+- 179. [Admin Theme (dark) Structure Article Display - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-dark-default-label.md
-- 183. [Admin Theme (dark) Structure Article Display - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-toolbar-structure-toggle.html)
+- 182. [Admin Theme (dark) Structure Article Display - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-dark-default-toolbar-structure-toggle.md
-- 191. [Admin Theme (light) Structure Menus - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-menus-light-default-toolbar-structure-toggle.html)
+- 190. [Admin Theme (light) Structure Menus - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-menus-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-menus-light-default-toolbar-structure-toggle.md
-- 199. [Admin Theme (dark) Structure Menus - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-menus-dark-default-toolbar-structure-toggle.html)
+- 198. [Admin Theme (dark) Structure Menus - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-menus-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-menus-dark-default-toolbar-structure-toggle.md
-- 209. [Admin Theme (light) Structure Admin Menu - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-toolbar-structure-toggle.html)
+- 208. [Admin Theme (light) Structure Admin Menu - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-light-default-toolbar-structure-toggle.md
-- 219. [Admin Theme (dark) Structure Admin Menu - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-toolbar-structure-toggle.html)
+- 218. [Admin Theme (dark) Structure Admin Menu - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-dark-default-toolbar-structure-toggle.md
-- 223. [Admin Theme (light) Structure Taxonomy - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-taxonomy-light-default-toolbar-structure-toggle.html)
+- 222. [Admin Theme (light) Structure Taxonomy - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-taxonomy-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-taxonomy-light-default-toolbar-structure-toggle.md
-- 227. [Admin Theme (dark) Structure Taxonomy - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-taxonomy-dark-default-toolbar-structure-toggle.html)
+- 226. [Admin Theme (dark) Structure Taxonomy - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-taxonomy-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-taxonomy-dark-default-toolbar-structure-toggle.md
-- 235. [Admin Theme (light) Structure Views - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-views-light-default-toolbar-structure-toggle.html)
+- 234. [Admin Theme (light) Structure Views - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-views-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-views-light-default-toolbar-structure-toggle.md
-- 243. [Admin Theme (dark) Structure Views - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-views-dark-default-toolbar-structure-toggle.html)
+- 242. [Admin Theme (dark) Structure Views - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-views-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-views-dark-default-toolbar-structure-toggle.md
-- 251. [Admin Theme (light) Structure Content View - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-light-default-toolbar-structure-toggle.html)
+- 250. [Admin Theme (light) Structure Content View - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-view-light-default-toolbar-structure-toggle.md
-- 259. [Admin Theme (dark) Structure Content View - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-dark-default-toolbar-structure-toggle.html)
+- 258. [Admin Theme (dark) Structure Content View - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-view-dark-default-toolbar-structure-toggle.md
-- 262. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-default-toolbar-structure-toggle.html)
+- 261. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-default-toolbar-structure-toggle.md
-- 265. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-density-compact-toolbar-structure-toggle.html)
+- 264. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-density-compact-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-density-compact-toolbar-structure-toggle.md
-- 268. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-density-comfortable-toolbar-structure-toggle.html)
+- 267. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-density-comfortable-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-density-comfortable-toolbar-structure-toggle.md
-- 271. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-increase-contrast-toolbar-structure-toggle.html)
+- 270. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-increase-contrast-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-increase-contrast-toolbar-structure-toggle.md
-- 274. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-form-descriptions-toolbar-structure-toggle.html)
+- 273. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-form-descriptions-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-form-descriptions-toolbar-structure-toggle.md
-- 277. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-contrast-and-descriptions-toolbar-structure-toggle.html)
+- 276. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-contrast-and-descriptions-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-contrast-and-descriptions-toolbar-structure-toggle.md
-- 280. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-default-toolbar-structure-toggle.html)
+- 279. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-default-toolbar-structure-toggle.md
-- 283. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-density-compact-toolbar-structure-toggle.html)
+- 282. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-density-compact-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-density-compact-toolbar-structure-toggle.md
-- 286. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-density-comfortable-toolbar-structure-toggle.html)
+- 285. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-density-comfortable-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-density-comfortable-toolbar-structure-toggle.md
-- 289. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-increase-contrast-toolbar-structure-toggle.html)
+- 288. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-increase-contrast-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-increase-contrast-toolbar-structure-toggle.md
-- 292. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-form-descriptions-toolbar-structure-toggle.html)
+- 291. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-form-descriptions-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-form-descriptions-toolbar-structure-toggle.md
-- 295. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-contrast-and-descriptions-toolbar-structure-toggle.html)
+- 294. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-contrast-and-descriptions-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-contrast-and-descriptions-toolbar-structure-toggle.md
-- 300. [Admin Theme (light) Block Content Types - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/block-content-types-light-default-toolbar-structure-toggle.html)
+- 299. [Admin Theme (light) Block Content Types - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/block-content-types-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/block-content-types-light-default-toolbar-structure-toggle.md
-- 305. [Admin Theme (dark) Block Content Types - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/block-content-types-dark-default-toolbar-structure-toggle.html)
+- 304. [Admin Theme (dark) Block Content Types - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/block-content-types-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/block-content-types-dark-default-toolbar-structure-toggle.md
-- 308. [Admin Theme (light) People List - Details Summary style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-details-summary.html)
+- 307. [Admin Theme (light) People List - Details Summary style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-details-summary.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-light-default-details-summary.md
-- 314. [Admin Theme (light) People List - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-toolbar-structure-toggle.html)
+- 313. [Admin Theme (light) People List - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-light-default-toolbar-structure-toggle.md
-- 317. [Admin Theme (dark) People List - Details Summary style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-details-summary.html)
+- 316. [Admin Theme (dark) People List - Details Summary style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-details-summary.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-dark-default-details-summary.md
-- 323. [Admin Theme (dark) People List - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-toolbar-structure-toggle.html)
+- 322. [Admin Theme (dark) People List - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-dark-default-toolbar-structure-toggle.md
-- 331. [Admin Theme (light) People Roles - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-roles-light-default-toolbar-structure-toggle.html)
+- 330. [Admin Theme (light) People Roles - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-roles-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-roles-light-default-toolbar-structure-toggle.md
-- 339. [Admin Theme (dark) People Roles - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-roles-dark-default-toolbar-structure-toggle.html)
+- 338. [Admin Theme (dark) People Roles - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-roles-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-roles-dark-default-toolbar-structure-toggle.md
-- 343. [Admin Theme (light) People Permissions - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-permissions-light-default-toolbar-structure-toggle.html)
+- 342. [Admin Theme (light) People Permissions - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-permissions-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-permissions-light-default-toolbar-structure-toggle.md
-- 347. [Admin Theme (dark) People Permissions - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-permissions-dark-default-toolbar-structure-toggle.html)
+- 346. [Admin Theme (dark) People Permissions - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-permissions-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-permissions-dark-default-toolbar-structure-toggle.md
-- 351. [Admin Theme (light) Reports Status - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/reports-status-light-default-toolbar-structure-toggle.html)
+- 350. [Admin Theme (light) Reports Status - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/reports-status-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-status-light-default-toolbar-structure-toggle.md
-- 355. [Admin Theme (dark) Reports Status - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/reports-status-dark-default-toolbar-structure-toggle.html)
+- 354. [Admin Theme (dark) Reports Status - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/reports-status-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-status-dark-default-toolbar-structure-toggle.md
-- 359. [Admin Theme (light) Reports Updates - Details Summary style regression vs Drupal 11 Gin](bug-drafts/reports-updates-light-default-details-summary.html)
+- 358. [Admin Theme (light) Reports Updates - Details Summary style regression vs Drupal 11 Gin](bug-drafts/reports-updates-light-default-details-summary.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-updates-light-default-details-summary.md
-- 360. [Admin Theme (light) Reports Updates - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/reports-updates-light-default-toolbar-structure-toggle.html)
+- 359. [Admin Theme (light) Reports Updates - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/reports-updates-light-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-updates-light-default-toolbar-structure-toggle.md
-- 364. [Admin Theme (dark) Reports Updates - Details Summary style regression vs Drupal 11 Gin](bug-drafts/reports-updates-dark-default-details-summary.html)
+- 363. [Admin Theme (dark) Reports Updates - Details Summary style regression vs Drupal 11 Gin](bug-drafts/reports-updates-dark-default-details-summary.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-updates-dark-default-details-summary.md
-- 365. [Admin Theme (dark) Reports Updates - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/reports-updates-dark-default-toolbar-structure-toggle.html)
+- 364. [Admin Theme (dark) Reports Updates - Toolbar Structure Toggle Button style regression vs Drupal 11 Gin](bug-drafts/reports-updates-dark-default-toolbar-structure-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-updates-dark-default-toolbar-structure-toggle.md
 ## core/themes/default_admin/css/components/dropbutton.css (42)
 - 37. [Admin Theme (light) Configuration Text Formats - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/configuration-text-formats-light-default-dropbutton-toggle.html)
@@ -444,124 +442,124 @@ Generated: 2026-05-28T17:50:40.273Z
 - 44. [Admin Theme (dark) Configuration Text Formats - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/configuration-text-formats-dark-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/configuration-text-formats-dark-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 69. [Admin Theme (light) Content Overview - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/content-overview-light-default-dropbutton-wrapper.html)
+- 68. [Admin Theme (light) Content Overview - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/content-overview-light-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-light-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 70. [Admin Theme (light) Content Overview - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/content-overview-light-default-dropbutton-toggle.html)
+- 69. [Admin Theme (light) Content Overview - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/content-overview-light-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-light-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 77. [Admin Theme (dark) Content Overview - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/content-overview-dark-default-dropbutton-wrapper.html)
+- 76. [Admin Theme (dark) Content Overview - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/content-overview-dark-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-dark-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 78. [Admin Theme (dark) Content Overview - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/content-overview-dark-default-dropbutton-toggle.html)
+- 77. [Admin Theme (dark) Content Overview - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/content-overview-dark-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-dark-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 108. [Admin Theme (light) Structure Block Layout - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-dropbutton-toggle.html)
+- 107. [Admin Theme (light) Structure Block Layout - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-light-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 118. [Admin Theme (dark) Structure Block Layout - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-dropbutton-toggle.html)
+- 117. [Admin Theme (dark) Structure Block Layout - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-dark-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 124. [Admin Theme (light) Structure Content Types - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-light-default-dropbutton-toggle.html)
+- 123. [Admin Theme (light) Structure Content Types - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-light-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-types-light-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 129. [Admin Theme (dark) Structure Content Types - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-dark-default-dropbutton-toggle.html)
+- 128. [Admin Theme (dark) Structure Content Types - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-dark-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-types-dark-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 147. [Admin Theme (light) Structure Article Fields - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-dropbutton-wrapper.html)
+- 146. [Admin Theme (light) Structure Article Fields - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-light-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 149. [Admin Theme (light) Structure Article Fields - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-dropbutton-toggle.html)
+- 148. [Admin Theme (light) Structure Article Fields - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-light-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 156. [Admin Theme (dark) Structure Article Fields - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-dropbutton-wrapper.html)
+- 155. [Admin Theme (dark) Structure Article Fields - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-dark-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 158. [Admin Theme (dark) Structure Article Fields - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-dropbutton-toggle.html)
+- 157. [Admin Theme (dark) Structure Article Fields - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-dark-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 170. [Admin Theme (light) Structure Article Display - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-dropbutton-wrapper.html)
+- 169. [Admin Theme (light) Structure Article Display - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-light-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 181. [Admin Theme (dark) Structure Article Display - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-dropbutton-wrapper.html)
+- 180. [Admin Theme (dark) Structure Article Display - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-dark-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 186. [Admin Theme (light) Structure Menus - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-menus-light-default-dropbutton-wrapper.html)
+- 185. [Admin Theme (light) Structure Menus - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-menus-light-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-menus-light-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 188. [Admin Theme (light) Structure Menus - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-menus-light-default-dropbutton-toggle.html)
+- 187. [Admin Theme (light) Structure Menus - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-menus-light-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-menus-light-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 194. [Admin Theme (dark) Structure Menus - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-menus-dark-default-dropbutton-wrapper.html)
+- 193. [Admin Theme (dark) Structure Menus - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-menus-dark-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-menus-dark-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 196. [Admin Theme (dark) Structure Menus - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-menus-dark-default-dropbutton-toggle.html)
+- 195. [Admin Theme (dark) Structure Menus - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-menus-dark-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-menus-dark-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 205. [Admin Theme (light) Structure Admin Menu - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-dropbutton-wrapper.html)
+- 204. [Admin Theme (light) Structure Admin Menu - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-light-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 207. [Admin Theme (light) Structure Admin Menu - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-dropbutton-toggle.html)
+- 206. [Admin Theme (light) Structure Admin Menu - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-light-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 215. [Admin Theme (dark) Structure Admin Menu - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-dropbutton-wrapper.html)
+- 214. [Admin Theme (dark) Structure Admin Menu - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-dark-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 217. [Admin Theme (dark) Structure Admin Menu - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-dropbutton-toggle.html)
+- 216. [Admin Theme (dark) Structure Admin Menu - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-dark-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 222. [Admin Theme (light) Structure Taxonomy - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-taxonomy-light-default-dropbutton-toggle.html)
+- 221. [Admin Theme (light) Structure Taxonomy - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-taxonomy-light-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-taxonomy-light-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 226. [Admin Theme (dark) Structure Taxonomy - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-taxonomy-dark-default-dropbutton-toggle.html)
+- 225. [Admin Theme (dark) Structure Taxonomy - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-taxonomy-dark-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-taxonomy-dark-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 232. [Admin Theme (light) Structure Views - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-views-light-default-dropbutton-wrapper.html)
+- 231. [Admin Theme (light) Structure Views - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-views-light-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-views-light-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 233. [Admin Theme (light) Structure Views - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-views-light-default-dropbutton-toggle.html)
+- 232. [Admin Theme (light) Structure Views - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-views-light-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-views-light-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 240. [Admin Theme (dark) Structure Views - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-views-dark-default-dropbutton-wrapper.html)
+- 239. [Admin Theme (dark) Structure Views - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-views-dark-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-views-dark-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 241. [Admin Theme (dark) Structure Views - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-views-dark-default-dropbutton-toggle.html)
+- 240. [Admin Theme (dark) Structure Views - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-views-dark-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-views-dark-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 248. [Admin Theme (light) Structure Content View - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-light-default-dropbutton-wrapper.html)
+- 247. [Admin Theme (light) Structure Content View - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-light-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-view-light-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 256. [Admin Theme (dark) Structure Content View - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-dark-default-dropbutton-wrapper.html)
+- 255. [Admin Theme (dark) Structure Content View - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-dark-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-view-dark-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 298. [Admin Theme (light) Block Content Types - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/block-content-types-light-default-dropbutton-toggle.html)
+- 297. [Admin Theme (light) Block Content Types - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/block-content-types-light-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/block-content-types-light-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 303. [Admin Theme (dark) Block Content Types - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/block-content-types-dark-default-dropbutton-toggle.html)
+- 302. [Admin Theme (dark) Block Content Types - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/block-content-types-dark-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/block-content-types-dark-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 310. [Admin Theme (light) People List - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-dropbutton-wrapper.html)
+- 309. [Admin Theme (light) People List - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-light-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 312. [Admin Theme (light) People List - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-dropbutton-toggle.html)
+- 311. [Admin Theme (light) People List - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-light-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 319. [Admin Theme (dark) People List - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-dropbutton-wrapper.html)
+- 318. [Admin Theme (dark) People List - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-dark-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 321. [Admin Theme (dark) People List - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-dropbutton-toggle.html)
+- 320. [Admin Theme (dark) People List - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-dark-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 327. [Admin Theme (light) People Roles - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/people-roles-light-default-dropbutton-wrapper.html)
+- 326. [Admin Theme (light) People Roles - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/people-roles-light-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-roles-light-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 329. [Admin Theme (light) People Roles - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-roles-light-default-dropbutton-toggle.html)
+- 328. [Admin Theme (light) People Roles - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-roles-light-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-roles-light-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
-- 335. [Admin Theme (dark) People Roles - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/people-roles-dark-default-dropbutton-wrapper.html)
+- 334. [Admin Theme (dark) People Roles - Dropbutton Wrapper style regression vs Drupal 11 Gin](bug-drafts/people-roles-dark-default-dropbutton-wrapper.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-roles-dark-default-dropbutton-wrapper.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 337. [Admin Theme (dark) People Roles - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-roles-dark-default-dropbutton-toggle.html)
+- 336. [Admin Theme (dark) People Roles - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/people-roles-dark-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-roles-dark-default-dropbutton-toggle.md
   - Secondary candidates: core/themes/default_admin/css/components/dropbutton.pcss.css
 ## core/themes/default_admin/css/components/form.css (40)
@@ -607,88 +605,85 @@ Generated: 2026-05-28T17:50:40.273Z
 - 63. [Admin Theme (dark) Configuration File System - Form Label style regression vs Drupal 11 Gin](bug-drafts/configuration-file-system-dark-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/configuration-file-system-dark-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 68. [Admin Theme (light) Content Overview - Form Label style regression vs Drupal 11 Gin](bug-drafts/content-overview-light-default-label.html)
+- 67. [Admin Theme (light) Content Overview - Form Label style regression vs Drupal 11 Gin](bug-drafts/content-overview-light-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-light-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 76. [Admin Theme (dark) Content Overview - Form Label style regression vs Drupal 11 Gin](bug-drafts/content-overview-dark-default-label.html)
+- 75. [Admin Theme (dark) Content Overview - Form Label style regression vs Drupal 11 Gin](bug-drafts/content-overview-dark-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-dark-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 82. [Admin Theme (light) Content Add Article - Required Marker (*) style regression vs Drupal 11 Gin](bug-drafts/content-add-article-light-default-required-marker.html)
+- 81. [Admin Theme (light) Content Add Article - Required Marker (*) style regression vs Drupal 11 Gin](bug-drafts/content-add-article-light-default-required-marker.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-add-article-light-default-required-marker.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 87. [Admin Theme (light) Content Add Article - Form Label style regression vs Drupal 11 Gin](bug-drafts/content-add-article-light-default-label.html)
+- 86. [Admin Theme (light) Content Add Article - Form Label style regression vs Drupal 11 Gin](bug-drafts/content-add-article-light-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-add-article-light-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 89. [Admin Theme (dark) Content Add Article - Required Marker (*) style regression vs Drupal 11 Gin](bug-drafts/content-add-article-dark-default-required-marker.html)
+- 88. [Admin Theme (dark) Content Add Article - Required Marker (*) style regression vs Drupal 11 Gin](bug-drafts/content-add-article-dark-default-required-marker.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-add-article-dark-default-required-marker.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 94. [Admin Theme (dark) Content Add Article - Form Label style regression vs Drupal 11 Gin](bug-drafts/content-add-article-dark-default-label.html)
+- 93. [Admin Theme (dark) Content Add Article - Form Label style regression vs Drupal 11 Gin](bug-drafts/content-add-article-dark-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-add-article-dark-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 102. [Admin Theme (light) Structure Block Layout - Required Marker (*) style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-required-marker.html)
+- 101. [Admin Theme (light) Structure Block Layout - Required Marker (*) style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-required-marker.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-light-default-required-marker.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 107. [Admin Theme (light) Structure Block Layout - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-label.html)
+- 106. [Admin Theme (light) Structure Block Layout - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-light-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 112. [Admin Theme (dark) Structure Block Layout - Required Marker (*) style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-required-marker.html)
+- 111. [Admin Theme (dark) Structure Block Layout - Required Marker (*) style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-required-marker.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-dark-default-required-marker.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 117. [Admin Theme (dark) Structure Block Layout - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-label.html)
+- 116. [Admin Theme (dark) Structure Block Layout - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-dark-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 132. [Admin Theme (light) Structure Content Type Article - Required Marker (*) style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-light-default-required-marker.html)
+- 131. [Admin Theme (light) Structure Content Type Article - Required Marker (*) style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-light-default-required-marker.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-type-article-light-default-required-marker.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 136. [Admin Theme (light) Structure Content Type Article - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-light-default-label.html)
+- 135. [Admin Theme (light) Structure Content Type Article - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-light-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-type-article-light-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 138. [Admin Theme (dark) Structure Content Type Article - Required Marker (*) style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-dark-default-required-marker.html)
+- 137. [Admin Theme (dark) Structure Content Type Article - Required Marker (*) style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-dark-default-required-marker.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-type-article-dark-default-required-marker.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 142. [Admin Theme (dark) Structure Content Type Article - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-dark-default-label.html)
+- 141. [Admin Theme (dark) Structure Content Type Article - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-dark-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-type-article-dark-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 200. [Admin Theme (light) Structure Admin Menu - Required Marker (*) style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-required-marker.html)
+- 199. [Admin Theme (light) Structure Admin Menu - Required Marker (*) style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-required-marker.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-light-default-required-marker.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 204. [Admin Theme (light) Structure Admin Menu - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-label.html)
+- 203. [Admin Theme (light) Structure Admin Menu - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-light-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 210. [Admin Theme (dark) Structure Admin Menu - Required Marker (*) style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-required-marker.html)
+- 209. [Admin Theme (dark) Structure Admin Menu - Required Marker (*) style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-required-marker.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-dark-default-required-marker.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 214. [Admin Theme (dark) Structure Admin Menu - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-label.html)
+- 213. [Admin Theme (dark) Structure Admin Menu - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-dark-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 231. [Admin Theme (light) Structure Views - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-views-light-default-label.html)
+- 230. [Admin Theme (light) Structure Views - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-views-light-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-views-light-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 239. [Admin Theme (dark) Structure Views - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-views-dark-default-label.html)
+- 238. [Admin Theme (dark) Structure Views - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-views-dark-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-views-dark-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 247. [Admin Theme (light) Structure Content View - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-light-default-label.html)
+- 246. [Admin Theme (light) Structure Content View - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-light-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-view-light-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 255. [Admin Theme (dark) Structure Content View - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-dark-default-label.html)
+- 254. [Admin Theme (dark) Structure Content View - Form Label style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-dark-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-view-dark-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 309. [Admin Theme (light) People List - Form Label style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-label.html)
+- 308. [Admin Theme (light) People List - Form Label style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-light-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 318. [Admin Theme (dark) People List - Form Label style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-label.html)
+- 317. [Admin Theme (dark) People List - Form Label style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-dark-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 342. [Admin Theme (light) People Permissions - Form Label style regression vs Drupal 11 Gin](bug-drafts/people-permissions-light-default-label.html)
+- 341. [Admin Theme (light) People Permissions - Form Label style regression vs Drupal 11 Gin](bug-drafts/people-permissions-light-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-permissions-light-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-- 346. [Admin Theme (dark) People Permissions - Form Label style regression vs Drupal 11 Gin](bug-drafts/people-permissions-dark-default-label.html)
+- 345. [Admin Theme (dark) People Permissions - Form Label style regression vs Drupal 11 Gin](bug-drafts/people-permissions-dark-default-label.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-permissions-dark-default-label.md
   - Secondary candidates: core/themes/default_admin/css/components/form.pcss.css | core/themes/default_admin/css/components/tables.css | core/themes/default_admin/css/components/tables.pcss.css
-## http://drupal-git.ddev.site:8080/sites/default/files/css/css_KLhKWkd-10fItBI0yB5zU1NVxtsUcnqp3mnSsic0sXw.css (25)
-- 2. [Admin Theme (light) Appearance List - Button style regression vs Drupal 11 Gin](bug-drafts/appearance-list-light-default-button.html)
-  - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/appearance-list-light-default-button.md
-  - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_K3Pg-LHuUFEv7TIJIA-i3Ryvra2mm7HR2eK_YVACwPA.css
+## http://drupal-git.ddev.site:8080/sites/default/files/css/css_KLhKWkd-10fItBI0yB5zU1NVxtsUcnqp3mnSsic0sXw.css (24)
 - 10. [Admin Theme (light) Configuration Overview - Button style regression vs Drupal 11 Gin](bug-drafts/configuration-overview-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/configuration-overview-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_K3Pg-LHuUFEv7TIJIA-i3Ryvra2mm7HR2eK_YVACwPA.css
@@ -713,52 +708,52 @@ Generated: 2026-05-28T17:50:40.273Z
 - 62. [Admin Theme (dark) Configuration File System - Button style regression vs Drupal 11 Gin](bug-drafts/configuration-file-system-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/configuration-file-system-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_K3Pg-LHuUFEv7TIJIA-i3Ryvra2mm7HR2eK_YVACwPA.css
-- 97. [Admin Theme (light) Structure Overview - Button style regression vs Drupal 11 Gin](bug-drafts/structure-overview-light-default-button.html)
+- 96. [Admin Theme (light) Structure Overview - Button style regression vs Drupal 11 Gin](bug-drafts/structure-overview-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-overview-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_K3Pg-LHuUFEv7TIJIA-i3Ryvra2mm7HR2eK_YVACwPA.css
-- 100. [Admin Theme (dark) Structure Overview - Button style regression vs Drupal 11 Gin](bug-drafts/structure-overview-dark-default-button.html)
+- 99. [Admin Theme (dark) Structure Overview - Button style regression vs Drupal 11 Gin](bug-drafts/structure-overview-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-overview-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_K3Pg-LHuUFEv7TIJIA-i3Ryvra2mm7HR2eK_YVACwPA.css
-- 261. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-default-button.html)
+- 260. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_GN5Tewbuqx2hZ4cDy1Fmrt6Z9CNQhpSCp7ipv3GY7Ko.css
-- 264. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-density-compact-button.html)
+- 263. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-density-compact-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-density-compact-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_GN5Tewbuqx2hZ4cDy1Fmrt6Z9CNQhpSCp7ipv3GY7Ko.css
-- 267. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-density-comfortable-button.html)
+- 266. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-density-comfortable-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-density-comfortable-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_GN5Tewbuqx2hZ4cDy1Fmrt6Z9CNQhpSCp7ipv3GY7Ko.css
-- 270. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-increase-contrast-button.html)
+- 269. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-increase-contrast-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-increase-contrast-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_GN5Tewbuqx2hZ4cDy1Fmrt6Z9CNQhpSCp7ipv3GY7Ko.css
-- 273. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-form-descriptions-button.html)
+- 272. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-form-descriptions-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-form-descriptions-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_GN5Tewbuqx2hZ4cDy1Fmrt6Z9CNQhpSCp7ipv3GY7Ko.css
-- 276. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-contrast-and-descriptions-button.html)
+- 275. [Admin Theme (light) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-light-contrast-and-descriptions-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-contrast-and-descriptions-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_GN5Tewbuqx2hZ4cDy1Fmrt6Z9CNQhpSCp7ipv3GY7Ko.css
-- 279. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-default-button.html)
+- 278. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_GN5Tewbuqx2hZ4cDy1Fmrt6Z9CNQhpSCp7ipv3GY7Ko.css
-- 282. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-density-compact-button.html)
+- 281. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-density-compact-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-density-compact-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_GN5Tewbuqx2hZ4cDy1Fmrt6Z9CNQhpSCp7ipv3GY7Ko.css
-- 285. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-density-comfortable-button.html)
+- 284. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-density-comfortable-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-density-comfortable-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_GN5Tewbuqx2hZ4cDy1Fmrt6Z9CNQhpSCp7ipv3GY7Ko.css
-- 288. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-increase-contrast-button.html)
+- 287. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-increase-contrast-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-increase-contrast-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_GN5Tewbuqx2hZ4cDy1Fmrt6Z9CNQhpSCp7ipv3GY7Ko.css
-- 291. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-form-descriptions-button.html)
+- 290. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-form-descriptions-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-form-descriptions-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_GN5Tewbuqx2hZ4cDy1Fmrt6Z9CNQhpSCp7ipv3GY7Ko.css
-- 294. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-contrast-and-descriptions-button.html)
+- 293. [Admin Theme (dark) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin](bug-drafts/theme-settings-gin-vs-default-admin-dark-contrast-and-descriptions-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-dark-contrast-and-descriptions-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_GN5Tewbuqx2hZ4cDy1Fmrt6Z9CNQhpSCp7ipv3GY7Ko.css
-- 349. [Admin Theme (light) Reports Status - Button style regression vs Drupal 11 Gin](bug-drafts/reports-status-light-default-button.html)
+- 348. [Admin Theme (light) Reports Status - Button style regression vs Drupal 11 Gin](bug-drafts/reports-status-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-status-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_RGciPg516mF7_2NWodSROSPMu5G-uRGvZfhyglWW6nQ.css
-- 353. [Admin Theme (dark) Reports Status - Button style regression vs Drupal 11 Gin](bug-drafts/reports-status-dark-default-button.html)
+- 352. [Admin Theme (dark) Reports Status - Button style regression vs Drupal 11 Gin](bug-drafts/reports-status-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-status-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_RGciPg516mF7_2NWodSROSPMu5G-uRGvZfhyglWW6nQ.css
 ## core/themes/default_admin/css/components/tables.css (12)
@@ -768,202 +763,223 @@ Generated: 2026-05-28T17:50:40.273Z
 - 42. [Admin Theme (dark) Configuration Text Formats - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/configuration-text-formats-dark-default-table-header.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/configuration-text-formats-dark-default-table-header.md
   - Secondary candidates: core/themes/default_admin/css/components/tables.pcss.css
-- 106. [Admin Theme (light) Structure Block Layout - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-table-header.html)
+- 105. [Admin Theme (light) Structure Block Layout - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-table-header.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-light-default-table-header.md
   - Secondary candidates: core/themes/default_admin/css/components/tables.pcss.css
-- 116. [Admin Theme (dark) Structure Block Layout - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-table-header.html)
+- 115. [Admin Theme (dark) Structure Block Layout - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-table-header.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-dark-default-table-header.md
   - Secondary candidates: core/themes/default_admin/css/components/tables.pcss.css
-- 166. [Admin Theme (light) Structure Article Display - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-table-header.html)
+- 165. [Admin Theme (light) Structure Article Display - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-table-header.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-light-default-table-header.md
   - Secondary candidates: core/themes/default_admin/css/components/tables.pcss.css
-- 177. [Admin Theme (dark) Structure Article Display - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-table-header.html)
+- 176. [Admin Theme (dark) Structure Article Display - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-table-header.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-dark-default-table-header.md
   - Secondary candidates: core/themes/default_admin/css/components/tables.pcss.css
-- 203. [Admin Theme (light) Structure Admin Menu - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-table-header.html)
+- 202. [Admin Theme (light) Structure Admin Menu - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-table-header.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-light-default-table-header.md
   - Secondary candidates: core/themes/default_admin/css/components/tables.pcss.css
-- 213. [Admin Theme (dark) Structure Admin Menu - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-table-header.html)
+- 212. [Admin Theme (dark) Structure Admin Menu - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-table-header.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-dark-default-table-header.md
   - Secondary candidates: core/themes/default_admin/css/components/tables.pcss.css
-- 246. [Admin Theme (light) Structure Content View - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-light-default-table-header.html)
+- 245. [Admin Theme (light) Structure Content View - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-light-default-table-header.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-view-light-default-table-header.md
   - Secondary candidates: core/themes/default_admin/css/components/tables.pcss.css
-- 254. [Admin Theme (dark) Structure Content View - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-dark-default-table-header.html)
+- 253. [Admin Theme (dark) Structure Content View - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-dark-default-table-header.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-view-dark-default-table-header.md
   - Secondary candidates: core/themes/default_admin/css/components/tables.pcss.css
-- 326. [Admin Theme (light) People Roles - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/people-roles-light-default-table-header.html)
+- 325. [Admin Theme (light) People Roles - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/people-roles-light-default-table-header.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-roles-light-default-table-header.md
   - Secondary candidates: core/themes/default_admin/css/components/tables.pcss.css
-- 334. [Admin Theme (dark) People Roles - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/people-roles-dark-default-table-header.html)
+- 333. [Admin Theme (dark) People Roles - Table Header Cell style regression vs Drupal 11 Gin](bug-drafts/people-roles-dark-default-table-header.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-roles-dark-default-table-header.md
   - Secondary candidates: core/themes/default_admin/css/components/tables.pcss.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_SFzWad-OcQFszXrSs-4RuPgtLO8pLHTFFRrHqGeMGXU.css (7)
-- 123. [Admin Theme (light) Structure Content Types - Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-light-default-button.html)
+- 122. [Admin Theme (light) Structure Content Types - Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-types-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_TwkthHK5fMOLDBR92pYhSmHj4w5qy3QrqmDOnh7ZvMU.css
-- 128. [Admin Theme (dark) Structure Content Types - Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-dark-default-button.html)
+- 127. [Admin Theme (dark) Structure Content Types - Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-types-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_TwkthHK5fMOLDBR92pYhSmHj4w5qy3QrqmDOnh7ZvMU.css
-- 221. [Admin Theme (light) Structure Taxonomy - Button style regression vs Drupal 11 Gin](bug-drafts/structure-taxonomy-light-default-button.html)
+- 220. [Admin Theme (light) Structure Taxonomy - Button style regression vs Drupal 11 Gin](bug-drafts/structure-taxonomy-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-taxonomy-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_TwkthHK5fMOLDBR92pYhSmHj4w5qy3QrqmDOnh7ZvMU.css
-- 225. [Admin Theme (dark) Structure Taxonomy - Button style regression vs Drupal 11 Gin](bug-drafts/structure-taxonomy-dark-default-button.html)
+- 224. [Admin Theme (dark) Structure Taxonomy - Button style regression vs Drupal 11 Gin](bug-drafts/structure-taxonomy-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-taxonomy-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_TwkthHK5fMOLDBR92pYhSmHj4w5qy3QrqmDOnh7ZvMU.css
-- 297. [Admin Theme (light) Block Content Types - Button style regression vs Drupal 11 Gin](bug-drafts/block-content-types-light-default-button.html)
+- 296. [Admin Theme (light) Block Content Types - Button style regression vs Drupal 11 Gin](bug-drafts/block-content-types-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/block-content-types-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_TwkthHK5fMOLDBR92pYhSmHj4w5qy3QrqmDOnh7ZvMU.css
-- 302. [Admin Theme (dark) Block Content Types - Button style regression vs Drupal 11 Gin](bug-drafts/block-content-types-dark-default-button.html)
+- 301. [Admin Theme (dark) Block Content Types - Button style regression vs Drupal 11 Gin](bug-drafts/block-content-types-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/block-content-types-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_TwkthHK5fMOLDBR92pYhSmHj4w5qy3QrqmDOnh7ZvMU.css
-- 325. [Admin Theme (light) People Roles - Button style regression vs Drupal 11 Gin](bug-drafts/people-roles-light-default-button.html)
+- 324. [Admin Theme (light) People Roles - Button style regression vs Drupal 11 Gin](bug-drafts/people-roles-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-roles-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_LxgsxtyChIdi0pZuIoZxdfReWzQuwQSWNhF3N54e2KQ.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_TwkthHK5fMOLDBR92pYhSmHj4w5qy3QrqmDOnh7ZvMU.css (6)
-- 125. [Admin Theme (light) Structure Content Types - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-light-default-dropbutton-secondary-list.html)
+- 124. [Admin Theme (light) Structure Content Types - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-light-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-types-light-default-dropbutton-secondary-list.md
-- 130. [Admin Theme (dark) Structure Content Types - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-dark-default-dropbutton-secondary-list.html)
+- 129. [Admin Theme (dark) Structure Content Types - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-content-types-dark-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-types-dark-default-dropbutton-secondary-list.md
-- 189. [Admin Theme (light) Structure Menus - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-menus-light-default-dropbutton-secondary-list.html)
+- 188. [Admin Theme (light) Structure Menus - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-menus-light-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-menus-light-default-dropbutton-secondary-list.md
-- 197. [Admin Theme (dark) Structure Menus - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-menus-dark-default-dropbutton-secondary-list.html)
+- 196. [Admin Theme (dark) Structure Menus - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-menus-dark-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-menus-dark-default-dropbutton-secondary-list.md
-- 299. [Admin Theme (light) Block Content Types - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/block-content-types-light-default-dropbutton-secondary-list.html)
+- 298. [Admin Theme (light) Block Content Types - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/block-content-types-light-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/block-content-types-light-default-dropbutton-secondary-list.md
-- 304. [Admin Theme (dark) Block Content Types - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/block-content-types-dark-default-dropbutton-secondary-list.html)
+- 303. [Admin Theme (dark) Block Content Types - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/block-content-types-dark-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/block-content-types-dark-default-dropbutton-secondary-list.md
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_1jxw8wr9LSzHFCJwU8jtTj7WpFAe3qYSFZfYuljAXf0.css (5)
-- 229. [Admin Theme (light) Structure Views - Button style regression vs Drupal 11 Gin](bug-drafts/structure-views-light-default-button.html)
+- 228. [Admin Theme (light) Structure Views - Button style regression vs Drupal 11 Gin](bug-drafts/structure-views-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-views-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_QpvbzsFrbV7TKL2CBrx2MGTLS5uTJ9WSrn5z5OZoHto.css
-- 245. [Admin Theme (light) Structure Content View - Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-light-default-button.html)
+- 244. [Admin Theme (light) Structure Content View - Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-view-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_VyRURFsk5A_J2fvwxi3WuCHV6qALxNseigFoMiH1GzY.css
-- 249. [Admin Theme (light) Structure Content View - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-light-default-dropbutton-toggle.html)
+- 248. [Admin Theme (light) Structure Content View - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-light-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-view-light-default-dropbutton-toggle.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_VyRURFsk5A_J2fvwxi3WuCHV6qALxNseigFoMiH1GzY.css
-- 253. [Admin Theme (dark) Structure Content View - Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-dark-default-button.html)
+- 252. [Admin Theme (dark) Structure Content View - Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-view-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_VyRURFsk5A_J2fvwxi3WuCHV6qALxNseigFoMiH1GzY.css
-- 257. [Admin Theme (dark) Structure Content View - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-dark-default-dropbutton-toggle.html)
+- 256. [Admin Theme (dark) Structure Content View - Dropbutton Toggle Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-dark-default-dropbutton-toggle.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-view-dark-default-dropbutton-toggle.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_VyRURFsk5A_J2fvwxi3WuCHV6qALxNseigFoMiH1GzY.css
 ## core/themes/default_admin/css/base/print.css (4)
-- 84. [Admin Theme (light) Content Add Article - Text Input style regression vs Drupal 11 Gin](bug-drafts/content-add-article-light-default-input-text.html)
+- 83. [Admin Theme (light) Content Add Article - Text Input style regression vs Drupal 11 Gin](bug-drafts/content-add-article-light-default-input-text.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-add-article-light-default-input-text.md
   - Secondary candidates: core/themes/default_admin/css/base/print.pcss.css
-- 91. [Admin Theme (dark) Content Add Article - Text Input style regression vs Drupal 11 Gin](bug-drafts/content-add-article-dark-default-input-text.html)
+- 90. [Admin Theme (dark) Content Add Article - Text Input style regression vs Drupal 11 Gin](bug-drafts/content-add-article-dark-default-input-text.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-add-article-dark-default-input-text.md
   - Secondary candidates: core/themes/default_admin/css/base/print.pcss.css
-- 134. [Admin Theme (light) Structure Content Type Article - Textarea style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-light-default-textarea.html)
+- 133. [Admin Theme (light) Structure Content Type Article - Textarea style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-light-default-textarea.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-type-article-light-default-textarea.md
   - Secondary candidates: core/themes/default_admin/css/base/print.pcss.css
-- 140. [Admin Theme (dark) Structure Content Type Article - Textarea style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-dark-default-textarea.html)
+- 139. [Admin Theme (dark) Structure Content Type Article - Textarea style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-dark-default-textarea.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-type-article-dark-default-textarea.md
   - Secondary candidates: core/themes/default_admin/css/base/print.pcss.css
 ## core/themes/default_admin/css/components/details.css (4)
-- 86. [Admin Theme (light) Content Add Article - Details Summary style regression vs Drupal 11 Gin](bug-drafts/content-add-article-light-default-details-summary.html)
+- 85. [Admin Theme (light) Content Add Article - Details Summary style regression vs Drupal 11 Gin](bug-drafts/content-add-article-light-default-details-summary.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-add-article-light-default-details-summary.md
   - Secondary candidates: core/themes/default_admin/css/components/details.pcss.css | core/themes/default_admin/css/components/tabs.css | core/themes/default_admin/css/components/tabs.pcss.css
-- 93. [Admin Theme (dark) Content Add Article - Details Summary style regression vs Drupal 11 Gin](bug-drafts/content-add-article-dark-default-details-summary.html)
+- 92. [Admin Theme (dark) Content Add Article - Details Summary style regression vs Drupal 11 Gin](bug-drafts/content-add-article-dark-default-details-summary.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-add-article-dark-default-details-summary.md
   - Secondary candidates: core/themes/default_admin/css/components/details.pcss.css | core/themes/default_admin/css/components/tabs.css | core/themes/default_admin/css/components/tabs.pcss.css
-- 350. [Admin Theme (light) Reports Status - Details Summary style regression vs Drupal 11 Gin](bug-drafts/reports-status-light-default-details-summary.html)
+- 349. [Admin Theme (light) Reports Status - Details Summary style regression vs Drupal 11 Gin](bug-drafts/reports-status-light-default-details-summary.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-status-light-default-details-summary.md
   - Secondary candidates: core/themes/default_admin/css/components/details.pcss.css | core/themes/default_admin/css/components/system-status-report.css | core/themes/default_admin/css/components/system-status-report.pcss.css
-- 354. [Admin Theme (dark) Reports Status - Details Summary style regression vs Drupal 11 Gin](bug-drafts/reports-status-dark-default-details-summary.html)
+- 353. [Admin Theme (dark) Reports Status - Details Summary style regression vs Drupal 11 Gin](bug-drafts/reports-status-dark-default-details-summary.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-status-dark-default-details-summary.md
   - Secondary candidates: core/themes/default_admin/css/components/details.pcss.css | core/themes/default_admin/css/components/system-status-report.css | core/themes/default_admin/css/components/system-status-report.pcss.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_f6fuyBUH2SSbpm2wD0SPOzHxK6pEYShMasfk3B9sue4.css (4)
-- 146. [Admin Theme (light) Structure Article Fields - Table Body Cell style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-table-cell.html)
+- 145. [Admin Theme (light) Structure Article Fields - Table Body Cell style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-table-cell.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-light-default-table-cell.md
-- 150. [Admin Theme (light) Structure Article Fields - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-dropbutton-secondary-list.html)
+- 149. [Admin Theme (light) Structure Article Fields - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-light-default-dropbutton-secondary-list.md
-- 155. [Admin Theme (dark) Structure Article Fields - Table Body Cell style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-table-cell.html)
+- 154. [Admin Theme (dark) Structure Article Fields - Table Body Cell style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-table-cell.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-dark-default-table-cell.md
-- 159. [Admin Theme (dark) Structure Article Fields - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-dropbutton-secondary-list.html)
+- 158. [Admin Theme (dark) Structure Article Fields - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-dark-default-dropbutton-secondary-list.md
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_QBfhADn2w8dDrWVjuoq9WyDR7v36NJE-ThgH9YZ1haI.css (4)
-- 185. [Admin Theme (light) Structure Menus - Button style regression vs Drupal 11 Gin](bug-drafts/structure-menus-light-default-button.html)
+- 184. [Admin Theme (light) Structure Menus - Button style regression vs Drupal 11 Gin](bug-drafts/structure-menus-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-menus-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_TwkthHK5fMOLDBR92pYhSmHj4w5qy3QrqmDOnh7ZvMU.css
-- 193. [Admin Theme (dark) Structure Menus - Button style regression vs Drupal 11 Gin](bug-drafts/structure-menus-dark-default-button.html)
+- 192. [Admin Theme (dark) Structure Menus - Button style regression vs Drupal 11 Gin](bug-drafts/structure-menus-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-menus-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_TwkthHK5fMOLDBR92pYhSmHj4w5qy3QrqmDOnh7ZvMU.css
-- 202. [Admin Theme (light) Structure Admin Menu - Button style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-button.html)
+- 201. [Admin Theme (light) Structure Admin Menu - Button style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_LxgsxtyChIdi0pZuIoZxdfReWzQuwQSWNhF3N54e2KQ.css
-- 212. [Admin Theme (dark) Structure Admin Menu - Button style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-button.html)
+- 211. [Admin Theme (dark) Structure Admin Menu - Button style regression vs Drupal 11 Gin](bug-drafts/structure-admin-menu-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_LxgsxtyChIdi0pZuIoZxdfReWzQuwQSWNhF3N54e2KQ.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_QpvbzsFrbV7TKL2CBrx2MGTLS5uTJ9WSrn5z5OZoHto.css (4)
-- 230. [Admin Theme (light) Structure Views - Table Body Cell style regression vs Drupal 11 Gin](bug-drafts/structure-views-light-default-table-cell.html)
+- 229. [Admin Theme (light) Structure Views - Table Body Cell style regression vs Drupal 11 Gin](bug-drafts/structure-views-light-default-table-cell.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-views-light-default-table-cell.md
-- 234. [Admin Theme (light) Structure Views - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-views-light-default-dropbutton-secondary-list.html)
+- 233. [Admin Theme (light) Structure Views - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-views-light-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-views-light-default-dropbutton-secondary-list.md
-- 238. [Admin Theme (dark) Structure Views - Table Body Cell style regression vs Drupal 11 Gin](bug-drafts/structure-views-dark-default-table-cell.html)
+- 237. [Admin Theme (dark) Structure Views - Table Body Cell style regression vs Drupal 11 Gin](bug-drafts/structure-views-dark-default-table-cell.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-views-dark-default-table-cell.md
-- 242. [Admin Theme (dark) Structure Views - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-views-dark-default-dropbutton-secondary-list.html)
+- 241. [Admin Theme (dark) Structure Views - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-views-dark-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-views-dark-default-dropbutton-secondary-list.md
 ## core/themes/default_admin/css/components/views-exposed-form.css (2)
-- 105. [Admin Theme (light) Structure Block Layout - Form Item Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-form-item.html)
+- 104. [Admin Theme (light) Structure Block Layout - Form Item Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-form-item.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-light-default-form-item.md
   - Secondary candidates: core/themes/default_admin/css/components/views-exposed-form.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
-- 115. [Admin Theme (dark) Structure Block Layout - Form Item Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-form-item.html)
+- 114. [Admin Theme (dark) Structure Block Layout - Form Item Wrapper style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-form-item.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-dark-default-form-item.md
   - Secondary candidates: core/themes/default_admin/css/components/views-exposed-form.pcss.css | core/themes/default_admin/css/components/views-ui.css | core/themes/default_admin/css/components/views-ui.pcss.css
+## http://drupal-git.ddev.site:8080/sites/default/files/css/css_8nHfkIb2xyQNQi3nPzEp2UHZ4f47tL3j3zoLj2C14I4.css (2)
+- 144. [Admin Theme (light) Structure Article Fields - Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-button.html)
+  - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-light-default-button.md
+  - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_f6fuyBUH2SSbpm2wD0SPOzHxK6pEYShMasfk3B9sue4.css
+- 153. [Admin Theme (dark) Structure Article Fields - Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-button.html)
+  - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-dark-default-button.md
+  - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_f6fuyBUH2SSbpm2wD0SPOzHxK6pEYShMasfk3B9sue4.css
+## http://drupal-git.ddev.site:8080/sites/default/files/css/css_daO5PtRo-dk_ztN5hsECSgCJwgekee9oCBZSw8JOw98.css (2)
+- 134. [Admin Theme (light) Structure Content Type Article - Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-light-default-button.html)
+  - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-type-article-light-default-button.md
+  - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css
+- 140. [Admin Theme (dark) Structure Content Type Article - Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-dark-default-button.html)
+  - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-type-article-dark-default-button.md
+  - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_ifV_44lS__Q_b8x5Z0QT00a3hvuGXf8PzI8Rr5bm2D0.css (2)
-- 164. [Admin Theme (light) Structure Article Display - Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-button.html)
+- 163. [Admin Theme (light) Structure Article Display - Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_TwkthHK5fMOLDBR92pYhSmHj4w5qy3QrqmDOnh7ZvMU.css
-- 167. [Admin Theme (light) Structure Article Display - Table Body Cell style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-table-cell.html)
+- 166. [Admin Theme (light) Structure Article Display - Table Body Cell style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-light-default-table-cell.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-light-default-table-cell.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_TwkthHK5fMOLDBR92pYhSmHj4w5qy3QrqmDOnh7ZvMU.css
+## http://drupal-git.ddev.site:8080/sites/default/files/css/css_Jqmjn5cfMRdz66qR0MTQFuJB7zjvTCg4pzfGmBy-Gz4.css (2)
+- 2. [Admin Theme (light) Appearance List - Button style regression vs Drupal 11 Gin](bug-drafts/appearance-list-light-default-button.html)
+  - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/appearance-list-light-default-button.md
+  - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_K3Pg-LHuUFEv7TIJIA-i3Ryvra2mm7HR2eK_YVACwPA.css
+- 6. [Admin Theme (dark) Appearance List - Button style regression vs Drupal 11 Gin](bug-drafts/appearance-list-dark-default-button.html)
+  - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/appearance-list-dark-default-button.md
+  - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_K3Pg-LHuUFEv7TIJIA-i3Ryvra2mm7HR2eK_YVACwPA.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_LPhhND5v_oznqKgrvBJp_Z6LHOkAKdPL9_Tg83kCvo8.css (2)
-- 85. [Admin Theme (light) Content Add Article - Button style regression vs Drupal 11 Gin](bug-drafts/content-add-article-light-default-button.html)
+- 84. [Admin Theme (light) Content Add Article - Button style regression vs Drupal 11 Gin](bug-drafts/content-add-article-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-add-article-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_uTbkhno8Nr3mFyIvvqWZqKZcoQ0leV2s4BJCc-KGi_8.css
-- 92. [Admin Theme (dark) Content Add Article - Button style regression vs Drupal 11 Gin](bug-drafts/content-add-article-dark-default-button.html)
+- 91. [Admin Theme (dark) Content Add Article - Button style regression vs Drupal 11 Gin](bug-drafts/content-add-article-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-add-article-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_uTbkhno8Nr3mFyIvvqWZqKZcoQ0leV2s4BJCc-KGi_8.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_LSDC0mQSUYUe-MIxUavBq49SD8SI93myoZ4iAI6BEZk.css (2)
-- 71. [Admin Theme (light) Content Overview - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/content-overview-light-default-dropbutton-secondary-list.html)
+- 70. [Admin Theme (light) Content Overview - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/content-overview-light-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-light-default-dropbutton-secondary-list.md
-- 79. [Admin Theme (dark) Content Overview - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/content-overview-dark-default-dropbutton-secondary-list.html)
+- 78. [Admin Theme (dark) Content Overview - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/content-overview-dark-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-dark-default-dropbutton-secondary-list.md
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_LxgsxtyChIdi0pZuIoZxdfReWzQuwQSWNhF3N54e2KQ.css (2)
-- 330. [Admin Theme (light) People Roles - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/people-roles-light-default-dropbutton-secondary-list.html)
+- 329. [Admin Theme (light) People Roles - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/people-roles-light-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-roles-light-default-dropbutton-secondary-list.md
-- 338. [Admin Theme (dark) People Roles - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/people-roles-dark-default-dropbutton-secondary-list.html)
+- 337. [Admin Theme (dark) People Roles - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/people-roles-dark-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-roles-dark-default-dropbutton-secondary-list.md
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_rHge8RKVx8Vh0Fqvv4tkMxUPT5OBnlMFrAlyqdzDMKA.css (2)
-- 358. [Admin Theme (light) Reports Updates - Table Body Cell style regression vs Drupal 11 Gin](bug-drafts/reports-updates-light-default-table-cell.html)
+- 357. [Admin Theme (light) Reports Updates - Table Body Cell style regression vs Drupal 11 Gin](bug-drafts/reports-updates-light-default-table-cell.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-updates-light-default-table-cell.md
-- 363. [Admin Theme (dark) Reports Updates - Table Body Cell style regression vs Drupal 11 Gin](bug-drafts/reports-updates-dark-default-table-cell.html)
+- 362. [Admin Theme (dark) Reports Updates - Table Body Cell style regression vs Drupal 11 Gin](bug-drafts/reports-updates-dark-default-table-cell.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-updates-dark-default-table-cell.md
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_sI3bEWIp6mimNm2uhCgIp5ySxxrqJgLdZIHVZzUNPFU.css (2)
-- 104. [Admin Theme (light) Structure Block Layout - Button style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-button.html)
+- 103. [Admin Theme (light) Structure Block Layout - Button style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_SmEorym3UCGdaTpJg-JftpEuk3Z8NI0if_H2qH5C0O4.css
-- 114. [Admin Theme (dark) Structure Block Layout - Button style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-button.html)
+- 113. [Admin Theme (dark) Structure Block Layout - Button style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_SmEorym3UCGdaTpJg-JftpEuk3Z8NI0if_H2qH5C0O4.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_SmEorym3UCGdaTpJg-JftpEuk3Z8NI0if_H2qH5C0O4.css (2)
-- 109. [Admin Theme (light) Structure Block Layout - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-dropbutton-secondary-list.html)
+- 108. [Admin Theme (light) Structure Block Layout - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-light-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-light-default-dropbutton-secondary-list.md
-- 119. [Admin Theme (dark) Structure Block Layout - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-dropbutton-secondary-list.html)
+- 118. [Admin Theme (dark) Structure Block Layout - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-block-layout-dark-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-dark-default-dropbutton-secondary-list.md
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_VyRURFsk5A_J2fvwxi3WuCHV6qALxNseigFoMiH1GzY.css (2)
-- 250. [Admin Theme (light) Structure Content View - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-light-default-dropbutton-secondary-list.html)
+- 249. [Admin Theme (light) Structure Content View - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-light-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-view-light-default-dropbutton-secondary-list.md
-- 258. [Admin Theme (dark) Structure Content View - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-dark-default-dropbutton-secondary-list.html)
+- 257. [Admin Theme (dark) Structure Content View - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin](bug-drafts/structure-content-view-dark-default-dropbutton-secondary-list.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-view-dark-default-dropbutton-secondary-list.md
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_XlujyaecmFlvqpEfeNBQCCJeOhPd7zI2_iGDsoG1zWM.css (2)
-- 175. [Admin Theme (dark) Structure Article Display - Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-button.html)
+- 174. [Admin Theme (dark) Structure Article Display - Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_TwkthHK5fMOLDBR92pYhSmHj4w5qy3QrqmDOnh7ZvMU.css
-- 178. [Admin Theme (dark) Structure Article Display - Table Body Cell style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-table-cell.html)
+- 177. [Admin Theme (dark) Structure Article Display - Table Body Cell style regression vs Drupal 11 Gin](bug-drafts/structure-article-display-dark-default-table-cell.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-dark-default-table-cell.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_TwkthHK5fMOLDBR92pYhSmHj4w5qy3QrqmDOnh7ZvMU.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_Y2fRQNI2W3fWuksN_OOjRA2OMGffpy-g_o_oDh3cVWc.css (2)
@@ -973,6 +989,13 @@ Generated: 2026-05-28T17:50:40.273Z
 - 41. [Admin Theme (dark) Configuration Text Formats - Button style regression vs Drupal 11 Gin](bug-drafts/configuration-text-formats-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/configuration-text-formats-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_LxgsxtyChIdi0pZuIoZxdfReWzQuwQSWNhF3N54e2KQ.css
+## http://drupal-git.ddev.site:8080/sites/default/files/css/css_YB3zeQH423rLMxy8qEHR4JrTfS9DqS14pu-V0knlWdY.css (2)
+- 66. [Admin Theme (light) Content Overview - Button style regression vs Drupal 11 Gin](bug-drafts/content-overview-light-default-button.html)
+  - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-light-default-button.md
+  - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_LSDC0mQSUYUe-MIxUavBq49SD8SI93myoZ4iAI6BEZk.css
+- 74. [Admin Theme (dark) Content Overview - Button style regression vs Drupal 11 Gin](bug-drafts/content-overview-dark-default-button.html)
+  - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-dark-default-button.md
+  - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_LSDC0mQSUYUe-MIxUavBq49SD8SI93myoZ4iAI6BEZk.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_Z-cfWYMDY_4heTxbArGUcBbRz684ANdUAVpzIZoKvgs.css (2)
 - 49. [Admin Theme (light) Configuration Basic HTML Format - Button style regression vs Drupal 11 Gin](bug-drafts/configuration-basic-html-format-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/configuration-basic-html-format-light-default-button.md
@@ -981,62 +1004,34 @@ Generated: 2026-05-28T17:50:40.273Z
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/configuration-basic-html-format-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_STX0jO7bJqgQibgjvp-jVzlBy6sHmUY2FTr5RNMvoDI.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_-dexMKJ5QmTrmGlg3YOqjsINZIn3Z2hOWjo28BrDiaI.css (1)
-- 345. [Admin Theme (dark) People Permissions - Button style regression vs Drupal 11 Gin](bug-drafts/people-permissions-dark-default-button.html)
+- 344. [Admin Theme (dark) People Permissions - Button style regression vs Drupal 11 Gin](bug-drafts/people-permissions-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-permissions-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_97R8GJLnGADk-L0BPqJsWBZ1D2ijBQOg0XyHM32QKeE.css
-## http://drupal-git.ddev.site:8080/sites/default/files/css/css_8nHfkIb2xyQNQi3nPzEp2UHZ4f47tL3j3zoLj2C14I4.css (1)
-- 145. [Admin Theme (light) Structure Article Fields - Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-light-default-button.html)
-  - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-light-default-button.md
-  - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_f6fuyBUH2SSbpm2wD0SPOzHxK6pEYShMasfk3B9sue4.css
-## http://drupal-git.ddev.site:8080/sites/default/files/css/css_A3ff_9VtqWgN3DcBL3QHB4f5uy0xQcrfCWQl-Wx_KbI.css (1)
-- 66. [Admin Theme (light) Content Overview - Button style regression vs Drupal 11 Gin](bug-drafts/content-overview-light-default-button.html)
-  - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-light-default-button.md
-  - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_LSDC0mQSUYUe-MIxUavBq49SD8SI93myoZ4iAI6BEZk.css
-## http://drupal-git.ddev.site:8080/sites/default/files/css/css_Bs_C1L-4z9DWmyFC3SHfn8bg8y7jf2P2ttJ6QkT_RRo.css (1)
-- 154. [Admin Theme (dark) Structure Article Fields - Button style regression vs Drupal 11 Gin](bug-drafts/structure-article-fields-dark-default-button.html)
-  - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-fields-dark-default-button.md
-  - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_f6fuyBUH2SSbpm2wD0SPOzHxK6pEYShMasfk3B9sue4.css
-## http://drupal-git.ddev.site:8080/sites/default/files/css/css_CS7swrzbGj6MjwwsFRJvupOoasd-z8apUEfZc0XNtu4.css (1)
-- 141. [Admin Theme (dark) Structure Content Type Article - Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-dark-default-button.html)
-  - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-type-article-dark-default-button.md
-  - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css
-## http://drupal-git.ddev.site:8080/sites/default/files/css/css_daO5PtRo-dk_ztN5hsECSgCJwgekee9oCBZSw8JOw98.css (1)
-- 135. [Admin Theme (light) Structure Content Type Article - Button style regression vs Drupal 11 Gin](bug-drafts/structure-content-type-article-light-default-button.html)
-  - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-type-article-light-default-button.md
-  - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_heqdgrjIcYTGVF4EA0zASXBKFTbwnZLs8Ly2qDbmgbg.css (1)
-- 362. [Admin Theme (dark) Reports Updates - Button style regression vs Drupal 11 Gin](bug-drafts/reports-updates-dark-default-button.html)
+- 361. [Admin Theme (dark) Reports Updates - Button style regression vs Drupal 11 Gin](bug-drafts/reports-updates-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-updates-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_rHge8RKVx8Vh0Fqvv4tkMxUPT5OBnlMFrAlyqdzDMKA.css
-## http://drupal-git.ddev.site:8080/sites/default/files/css/css_Jqmjn5cfMRdz66qR0MTQFuJB7zjvTCg4pzfGmBy-Gz4.css (1)
-- 6. [Admin Theme (dark) Appearance List - Button style regression vs Drupal 11 Gin](bug-drafts/appearance-list-dark-default-button.html)
-  - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/appearance-list-dark-default-button.md
-  - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_K3Pg-LHuUFEv7TIJIA-i3Ryvra2mm7HR2eK_YVACwPA.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_nigtQVj6Dm9FTv5zMQ3XO7E6tmhB-17OvOLRwXc24JI.css (1)
-- 333. [Admin Theme (dark) People Roles - Button style regression vs Drupal 11 Gin](bug-drafts/people-roles-dark-default-button.html)
+- 332. [Admin Theme (dark) People Roles - Button style regression vs Drupal 11 Gin](bug-drafts/people-roles-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-roles-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_LxgsxtyChIdi0pZuIoZxdfReWzQuwQSWNhF3N54e2KQ.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_nPckB4DV-RFbxCpBvH64vRhNH8eHAMk_bPZn679lykQ.css (1)
-- 316. [Admin Theme (dark) People List - Button style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-button.html)
+- 315. [Admin Theme (dark) People List - Button style regression vs Drupal 11 Gin](bug-drafts/people-list-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_LSDC0mQSUYUe-MIxUavBq49SD8SI93myoZ4iAI6BEZk.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_pnRnNmyP0vDzW573AAgMprG-FTuQlUHYWqji-JgCesE.css (1)
-- 357. [Admin Theme (light) Reports Updates - Button style regression vs Drupal 11 Gin](bug-drafts/reports-updates-light-default-button.html)
+- 356. [Admin Theme (light) Reports Updates - Button style regression vs Drupal 11 Gin](bug-drafts/reports-updates-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-updates-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_rHge8RKVx8Vh0Fqvv4tkMxUPT5OBnlMFrAlyqdzDMKA.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_VXGYFfzgLhgAI_x_aaiEDS39VwTBW5zhmbThW43RvU0.css (1)
-- 307. [Admin Theme (light) People List - Button style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-button.html)
+- 306. [Admin Theme (light) People List - Button style regression vs Drupal 11 Gin](bug-drafts/people-list-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_LSDC0mQSUYUe-MIxUavBq49SD8SI93myoZ4iAI6BEZk.css
-## http://drupal-git.ddev.site:8080/sites/default/files/css/css_YB3zeQH423rLMxy8qEHR4JrTfS9DqS14pu-V0knlWdY.css (1)
-- 75. [Admin Theme (dark) Content Overview - Button style regression vs Drupal 11 Gin](bug-drafts/content-overview-dark-default-button.html)
-  - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-overview-dark-default-button.md
-  - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_LSDC0mQSUYUe-MIxUavBq49SD8SI93myoZ4iAI6BEZk.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_yhpDwMktZbZd_f0r0ONiLxUeyjNNx-oJa2r4FV6FgWE.css (1)
-- 237. [Admin Theme (dark) Structure Views - Button style regression vs Drupal 11 Gin](bug-drafts/structure-views-dark-default-button.html)
+- 236. [Admin Theme (dark) Structure Views - Button style regression vs Drupal 11 Gin](bug-drafts/structure-views-dark-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-views-dark-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_QpvbzsFrbV7TKL2CBrx2MGTLS5uTJ9WSrn5z5OZoHto.css
 ## http://drupal-git.ddev.site:8080/sites/default/files/css/css_Zck0B0WHIJko59e9mKer2JfwPPGPZjBY-5zUEqFk4BY.css (1)
-- 341. [Admin Theme (light) People Permissions - Button style regression vs Drupal 11 Gin](bug-drafts/people-permissions-light-default-button.html)
+- 340. [Admin Theme (light) People Permissions - Button style regression vs Drupal 11 Gin](bug-drafts/people-permissions-light-default-button.html)
   - GitHub source: https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-permissions-light-default-button.md
   - Secondary candidates: http://drupal-git.ddev.site:8080/sites/default/files/css/css_97R8GJLnGADk-L0BPqJsWBZ1D2ijBQOg0XyHM32QKeE.css

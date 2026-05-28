@@ -1,5 +1,8 @@
 # Admin Theme (light) Structure Content Type Article - Required Marker (*) style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is significantly wider: 612.1px vs 56.8px (+977.8%).
+
 ## Summary
 Potential CSS regression in **Required Marker (*)** on **Structure Content Type Article** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**
@@ -14,7 +17,7 @@ Color mode: **light**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- width: 1046.4%
+- width: 977.8%
 
 ## Likely CSS Sources
 - core/themes/default_admin/css/components/form.css

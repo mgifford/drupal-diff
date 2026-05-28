@@ -1,5 +1,12 @@
 # Admin Theme (dark) Structure Article Display - Form Label style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Text size is significantly smaller: 0.0px vs 14.0px (-100.0%).
+- Component width is significantly narrower: 0.0px vs 11.9px (-100.0%).
+- Component height is significantly shorter: 0.0px vs 15.8px (-100.0%).
+- Line height is significantly smaller: 0.0px vs 18.0px (-100.0%).
+- Matched element count is different: 8 fewer element(s) (-100.0%).
+
 ## Summary
 Potential CSS regression in **Form Label** on **Structure Article Display** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

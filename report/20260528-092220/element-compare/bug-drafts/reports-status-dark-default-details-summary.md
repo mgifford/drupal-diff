@@ -1,5 +1,8 @@
 # Admin Theme (dark) Reports Status - Details Summary style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Matched element count is different: 1 more element(s) (+50.0%).
+
 ## Summary
 Potential CSS regression in **Details Summary** on **Reports Status** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

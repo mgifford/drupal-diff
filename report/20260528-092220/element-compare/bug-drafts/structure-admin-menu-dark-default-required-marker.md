@@ -1,5 +1,8 @@
 # Admin Theme (dark) Structure Admin Menu - Required Marker (*) style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is significantly wider: 523.5px vs 22.1px (+2269.4%).
+
 ## Summary
 Potential CSS regression in **Required Marker (*)** on **Structure Admin Menu** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

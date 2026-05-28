@@ -1,5 +1,9 @@
 # Admin Theme (light) Structure Article Fields - Dropbutton Wrapper style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is noticeably narrower: 78.0px vs 100.0px (-22.0%).
+- Matched element count is different: 3 fewer element(s) (-75.0%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Wrapper** on **Structure Article Fields** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**

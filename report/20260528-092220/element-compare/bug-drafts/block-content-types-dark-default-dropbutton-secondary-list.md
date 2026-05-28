@@ -1,5 +1,8 @@
 # Admin Theme (dark) Block Content Types - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is noticeably narrower: 192.0px vs 216.0px (-11.1%).
+
 ## Summary
 Potential CSS regression in **Dropbutton Secondary Actions List** on **Block Content Types** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**

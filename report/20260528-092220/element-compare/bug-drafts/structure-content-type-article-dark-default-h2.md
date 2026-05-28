@@ -1,5 +1,13 @@
 # Admin Theme (dark) Structure Content Type Article - H2 Heading style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Text size is significantly larger: 28.0px vs 20.3px (+38.0%).
+- Component width is significantly narrower: 1.0px vs 7.3px (-86.3%).
+- Component height is noticeably taller: 1.0px vs 0.9px (+16.7%).
+- Horizontal padding is significantly (less): 0.0px vs 6.4px (-100.0%).
+- Line height is significantly larger: 36.4px vs 26.4px (+38.0%).
+- Matched element count is different: 4 fewer element(s) (-57.1%).
+
 ## Summary
 Potential CSS regression in **H2 Heading** on **Structure Content Type Article** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**
@@ -26,13 +34,13 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 - core/themes/default_admin/css/base/elements.pcss.css
 
 ## Candidate Matched CSS Rules
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_CS7swrzbGj6MjwwsFRJvupOoasd-z8apUEfZc0XNtu4.css?delta=0&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: .visually-hidden
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: h2, .heading-b
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: .visually-hidden
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: *
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: p, h2, h3
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: h2, h3
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlkNEOgjAMRX-IySeRy1ZJdbRL6Qjx6x2RSNDXc-_W00YVp80rcp-sFuRb_JKQWZ5LF9WojzoXFRJfboKVJzirhOCqeYSFsbqrfKrHP3hgu4DEyDpdkNFCHlAKwSCRLuFuASOE1uLXNVvJnGNTdIyHoajNyHsx0R01-4A0s_Sn7k-wuzuXP1qGtlF3Puu5HcSkTT3ZG6oKeRk :: :where(*), :is(#extra-specificity-hack, [data-drupal-admin-styles])
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_daO5PtRo-dk_ztN5hsECSgCJwgekee9oCBZSw8JOw98.css?delta=0&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: .visually-hidden
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: h2, .heading-b
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: .visually-hidden
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: *
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: p, h2, h3
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: h2, h3
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_j3pohmfn-A9Z1xJM6L40NPTKkSDSQXztO5AeIWT4_48.css?delta=1&language=en&theme=default_admin&include=eJxlj9EOgzAIRX_I2k8y2DLDhtAgNWZfv5oZjdvrucA9JBXHzStwzFYLcJ9OEpjktXRJDWPSuaig-NILrDSBk0oIrsojWBiru8p39LgDT9huIBOwTje0F4EhBMOF3njLVjSn1CwcxkNC1GbgfTDjAyr7AHkmiZfRT7DrOZU_WoYm3V1rkdrPJq31Yh-1km3_ :: :where(*), :is(#extra-specificity-hack, [data-drupal-admin-styles])
 
 ## Candidate Theme Source Matches (default_admin)
 - core/themes/default_admin/css/base/elements.css (score: 1; selectors: .heading-b)
@@ -43,7 +51,6 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 - core/components.navigation--toolbar-button
 - core/drupal.ajax
 - core/drupal.dialog
-- core/drupal.reset-appearance
 - core/drupal.textarea-resize
 - core/drupal.vertical-tabs
 - core/normalize
@@ -87,7 +94,7 @@ No high-confidence automatic patch suggestion for this diff.
 ```
 
 ### Drupal 12 with Admin Theme
-1. XPath: `//*[@id="admin-toolbar__scroll-wrapper-659321067"]`
+1. XPath: `//*[@id="admin-toolbar__scroll-wrapper-95914745"]`
    - Text sample: Administrative sidebar
    - Related element screenshot: candidate/structure-content-type-article__default__dark__h2.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-content-type-article__default__dark__h2.png
@@ -95,7 +102,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-type-article__default__dark__page.png
 
 ```html
-<h2 id="admin-toolbar__scroll-wrapper-659321067" class="visually-hidden">Administrative sidebar</h2>
+<h2 id="admin-toolbar__scroll-wrapper-95914745" class="visually-hidden">Administrative sidebar</h2>
 ```
 
 2. XPath: `//*[@id="system-breadcrumb"]`

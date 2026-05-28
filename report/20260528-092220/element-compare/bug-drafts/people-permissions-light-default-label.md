@@ -1,5 +1,9 @@
 # Admin Theme (light) People Permissions - Form Label style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is significantly wider: 133.6px vs 93.5px (+42.9%).
+- Component height is significantly shorter: 3.1px vs 78.8px (-96.0%).
+
 ## Summary
 Potential CSS regression in **Form Label** on **People Permissions** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **light**

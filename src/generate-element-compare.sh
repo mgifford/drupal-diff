@@ -754,6 +754,83 @@ function mdEscCode(s) {
   return String(s || '').replace(/```/g, '` ` `');
 }
 
+function deltaDirectionWord(delta, upWord, downWord) {
+  return delta >= 0 ? upWord : downWord;
+}
+
+function deltaMagnitudeWord(absPct) {
+  if (absPct < 10) return 'slightly';
+  if (absPct < 35) return 'noticeably';
+  return 'significantly';
+}
+
+function summarizeSingleDelta(row, key) {
+  const metric = (row.comparison.deltas || []).find((d) => d.key === key);
+  if (!metric) return '';
+
+  const baseVal = row.baseline[key];
+  const candVal = row.candidate[key];
+  const absPct = Math.abs(metric.delta);
+  const magnitude = deltaMagnitudeWord(absPct);
+
+  if (!Number.isFinite(baseVal) || !Number.isFinite(candVal)) {
+    return '';
+  }
+
+  if (key === 'fontSize') {
+    const trend = deltaDirectionWord(metric.delta, 'larger', 'smaller');
+    return `Text size is ${magnitude} ${trend}: ${candVal.toFixed(1)}px vs ${baseVal.toFixed(1)}px (${metric.delta >= 0 ? '+' : ''}${metric.delta.toFixed(1)}%).`;
+  }
+  if (key === 'lineHeight') {
+    const trend = deltaDirectionWord(metric.delta, 'larger', 'smaller');
+    return `Line height is ${magnitude} ${trend}: ${candVal.toFixed(1)}px vs ${baseVal.toFixed(1)}px (${metric.delta >= 0 ? '+' : ''}${metric.delta.toFixed(1)}%).`;
+  }
+  if (key === 'paddingY') {
+    const trend = deltaDirectionWord(metric.delta, 'more', 'less');
+    return `Vertical padding is ${magnitude} (${trend}): ${candVal.toFixed(1)}px vs ${baseVal.toFixed(1)}px (${metric.delta >= 0 ? '+' : ''}${metric.delta.toFixed(1)}%).`;
+  }
+  if (key === 'paddingX') {
+    const trend = deltaDirectionWord(metric.delta, 'more', 'less');
+    return `Horizontal padding is ${magnitude} (${trend}): ${candVal.toFixed(1)}px vs ${baseVal.toFixed(1)}px (${metric.delta >= 0 ? '+' : ''}${metric.delta.toFixed(1)}%).`;
+  }
+  if (key === 'width') {
+    const trend = deltaDirectionWord(metric.delta, 'wider', 'narrower');
+    return `Component width is ${magnitude} ${trend}: ${candVal.toFixed(1)}px vs ${baseVal.toFixed(1)}px (${metric.delta >= 0 ? '+' : ''}${metric.delta.toFixed(1)}%).`;
+  }
+  if (key === 'height') {
+    const trend = deltaDirectionWord(metric.delta, 'taller', 'shorter');
+    return `Component height is ${magnitude} ${trend}: ${candVal.toFixed(1)}px vs ${baseVal.toFixed(1)}px (${metric.delta >= 0 ? '+' : ''}${metric.delta.toFixed(1)}%).`;
+  }
+
+  return '';
+}
+
+function humanReadableSummaryLines(row) {
+  const deltaMap = new Map((row.comparison.deltas || []).map((d) => [d.key, d]));
+  const priorities = ['fontSize', 'width', 'height', 'paddingY', 'paddingX', 'lineHeight'];
+  const lines = [];
+
+  for (const key of priorities) {
+    const d = deltaMap.get(key);
+    if (!d || !d.flagged) continue;
+    const sentence = summarizeSingleDelta(row, key);
+    if (sentence) lines.push(sentence);
+  }
+
+  if (row.comparison.countFlagged) {
+    const countDelta = row.comparison.countDelta;
+    const countPct = row.comparison.countDeltaPct;
+    const countTrend = countDelta >= 0 ? 'more' : 'fewer';
+    lines.push(`Matched element count is different: ${Math.abs(countDelta)} ${countTrend} element(s) (${countDelta >= 0 ? '+' : ''}${countPct.toFixed(1)}%).`);
+  }
+
+  if (!lines.length) {
+    return ['Visual differences were detected, but no single metric crossed the reporting threshold.'];
+  }
+
+  return lines;
+}
+
 function evidenceMarkdown(title, evidence, elementShotPath, elementShotGitHub, pageShotPath, pageShotGitHub) {
   if (!evidence || !evidence.length) {
     return [`### ${title}`, '- No matching element captured', ''];
@@ -1259,9 +1336,13 @@ function evidenceMarkdown(title, evidence, elementShotPath, elementShotGitHub, p
     const candidateShotGitHub = githubElementShotUrl(row.candidateShot);
     const baselinePageShotGitHub = githubElementShotUrl(row.baselinePageShot);
     const candidatePageShotGitHub = githubElementShotUrl(row.candidatePageShot);
+    const humanSummaryLines = humanReadableSummaryLines(row);
 
     const body = [
       `# ${title}`,
+      '',
+      '## Human-Readable Change Summary',
+      ...humanSummaryLines.map((line) => `- ${line}`),
       '',
       '## Summary',
       `Potential CSS regression in **${row.component}** on **${row.route}** when comparing ${baselineLabel} to ${candidateLabel}.`,
@@ -1349,6 +1430,13 @@ function evidenceMarkdown(title, evidence, elementShotPath, elementShotGitHub, p
     ${bugDraftSourceUrl(mdName) ? `<a href="${esc(bugDraftSourceUrl(mdName))}" target="_blank" rel="noopener">GitHub Source (Markdown)</a>` : ''}
     <a href="../element-compare-dashboard.html" target="_blank" rel="noopener">Dashboard</a>
   </p>
+
+  <section class="card">
+    <h2>What Changed (Human Summary)</h2>
+    <ul>
+      ${humanSummaryLines.map((line) => `<li>${esc(line)}</li>`).join('')}
+    </ul>
+  </section>
 
   <section class="card">
     <h2>Reproduction</h2>

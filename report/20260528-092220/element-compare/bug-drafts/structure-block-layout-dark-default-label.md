@@ -1,5 +1,9 @@
 # Admin Theme (dark) Structure Block Layout - Form Label style regression vs Drupal 11 Gin
 
+## Human-Readable Change Summary
+- Component width is significantly narrower: 0.5px vs 31.3px (-98.4%).
+- Component height is significantly shorter: 0.5px vs 47.3px (-98.9%).
+
 ## Summary
 Potential CSS regression in **Form Label** on **Structure Block Layout** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
 Color mode: **dark**
