@@ -91,6 +91,13 @@ else
   echo "Skipping report index rebuild (script not executable): $ROOT_DIR/src/rebuild-report-index.sh"
 fi
 
+echo "[2.6/4] Rebuilding Pages home"
+if [[ -x "$ROOT_DIR/src/rebuild-pages-home.sh" ]]; then
+  "$ROOT_DIR/src/rebuild-pages-home.sh"
+else
+  echo "Skipping Pages home rebuild (script not executable): $ROOT_DIR/src/rebuild-pages-home.sh"
+fi
+
 cd "$ROOT_DIR"
 
 echo "[3/4] Staging publishable paths"

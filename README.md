@@ -73,6 +73,7 @@ Optional but recommended:
 - [src/export-issue-report.sh](src/export-issue-report.sh): CSV/Markdown issue summary export
 - [src/publish-report-updates.sh](src/publish-report-updates.sh): One-command commit/push of scripts/reports/screenshots
 - [src/rebuild-report-index.sh](src/rebuild-report-index.sh): Rebuilds [report/index.html](report/index.html) from completed runs with valid artifacts
+- [src/rebuild-pages-home.sh](src/rebuild-pages-home.sh): Rebuilds [index.html](index.html) so GitHub Pages home points to the latest completed run
 
 ## One-Time Environment Setup
 

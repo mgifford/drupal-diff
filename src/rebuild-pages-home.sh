@@ -1,0 +1,120 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+REPORT_DIR="$ROOT_DIR/report"
+OUT_HTML="$ROOT_DIR/index.html"
+
+run_has_valid_data() {
+  local run_dir="$1"
+  [[ -f "$run_dir/playwright-report/index.html" ]] && return 0
+  [[ -f "$run_dir/side-by-side-vrt-diffs.html" ]] && return 0
+  [[ -f "$run_dir/side-by-side-interactions.html" ]] && return 0
+  [[ -f "$run_dir/element-compare/element-compare-dashboard.html" ]] && return 0
+  [[ -f "$run_dir/issue-3592061-summary.md" ]] && return 0
+  [[ -f "$run_dir/issue-3592061-summary.csv" ]] && return 0
+  return 1
+}
+
+latest_run=""
+mapfile_runs=()
+while IFS= read -r run_id; do
+  [[ -n "$run_id" ]] || continue
+  run_dir="$REPORT_DIR/$run_id"
+  if run_has_valid_data "$run_dir"; then
+    mapfile_runs+=("$run_id")
+    if [[ -z "$latest_run" ]]; then
+      latest_run="$run_id"
+    fi
+  fi
+done < <(find "$REPORT_DIR" -maxdepth 1 -mindepth 1 -type d -name '20*' -exec basename {} \; | sort -r)
+
+if [[ -z "$latest_run" ]]; then
+  echo "No valid report runs found under $REPORT_DIR"
+  exit 1
+fi
+
+recent_items=""
+count=0
+for run_id in "${mapfile_runs[@]}"; do
+  recent_items+="        <li><a href=\"report/${run_id}/\">${run_id}</a></li>\n"
+  count=$((count + 1))
+  [[ $count -ge 8 ]] && break
+done
+
+latest_links=""
+latest_dir="$REPORT_DIR/$latest_run"
+[[ -f "$latest_dir/element-compare/element-compare-dashboard.html" ]] && latest_links+="        <li><a href=\"report/${latest_run}/element-compare/element-compare-dashboard.html\">Element Compare Dashboard</a></li>\n"
+[[ -f "$latest_dir/side-by-side-vrt-diffs.html" ]] && latest_links+="        <li><a href=\"report/${latest_run}/side-by-side-vrt-diffs.html\">Side-by-side VRT Diffs</a></li>\n"
+[[ -f "$latest_dir/side-by-side-interactions.html" ]] && latest_links+="        <li><a href=\"report/${latest_run}/side-by-side-interactions.html\">Side-by-side Interactions</a></li>\n"
+[[ -f "$latest_dir/playwright-report/index.html" ]] && latest_links+="        <li><a href=\"report/${latest_run}/playwright-report/index.html\">Playwright HTML Report</a></li>\n"
+[[ -f "$latest_dir/issue-3592061-summary.md" ]] && latest_links+="        <li><a href=\"report/${latest_run}/issue-3592061-summary.md\">Issue Summary (Markdown)</a></li>\n"
+[[ -f "$latest_dir/issue-3592061-summary.csv" ]] && latest_links+="        <li><a href=\"report/${latest_run}/issue-3592061-summary.csv\">Issue Summary (CSV)</a></li>\n"
+
+cat > "$OUT_HTML" <<HTML
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drupal Diff Reports</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --text: #1b1d24;
+      --muted: #5a6170;
+      --accent: #0b57d0;
+      --line: #d7dce7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #eef3ff 0%, var(--bg) 220px);
+    }
+    main { max-width: 920px; margin: 0 auto; padding: 32px 20px 56px; }
+    h1 { margin: 0 0 8px; font-size: 2rem; line-height: 1.2; }
+    p { margin: 0 0 16px; color: var(--muted); line-height: 1.5; }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin: 14px 0; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05); }
+    .card h2 { margin: 0 0 8px; font-size: 1.1rem; }
+    ul { margin: 8px 0 0; padding-left: 18px; }
+    li { margin: 8px 0; }
+    a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    a:hover, a:focus { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Drupal Admin Theme Visual Regression Reports</h1>
+    <p>
+      GitHub Pages entry point for published visual regression artifacts in this repository.
+    </p>
+
+    <section class="card">
+      <h2>Latest Run: ${latest_run}</h2>
+      <ul>
+${latest_links}      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Recent Completed Runs</h2>
+      <ul>
+${recent_items}      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Browse</h2>
+      <ul>
+        <li><a href="report/index.html">All HTML report links</a></li>
+        <li><a href="https://github.com/mgifford/drupal-diff">GitHub Project</a></li>
+        <li><a href="README.md">README</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
+HTML
+
+echo "Rebuilt: $OUT_HTML"
