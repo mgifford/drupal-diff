@@ -1,0 +1,1702 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Element Compare Dashboard</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; background: #f4f6f8; color: #1c2633; }
+  header { position: sticky; top: 0; background: #102a43; color: #fff; padding: 12px 16px; z-index: 10; }
+  .sub { font-size: 13px; opacity: 0.9; }
+  main { padding: 16px; }
+  .controls { display: grid; grid-template-columns: repeat(6, minmax(160px, 1fr)); gap: 8px; margin-bottom: 14px; }
+  select, input { padding: 8px; border: 1px solid #bcccdc; border-radius: 6px; }
+  table { width: 100%; border-collapse: collapse; background: #fff; }
+  th, td { border: 1px solid #d9e2ec; padding: 8px; vertical-align: top; }
+  th { background: #e6edf5; text-align: left; }
+  tr.flagged { background: #fff7e6; }
+  .meta { font-size: 12px; color: #52606d; margin-top: 4px; }
+  img { max-width: 100%; border: 1px solid #cbd2d9; margin-top: 6px; }
+  .agg { margin-bottom: 16px; }
+  .agg table { width: auto; min-width: 420px; }
+</style>
+</head>
+<body>
+<header>
+  <div><strong>System-Wide Element Comparison Dashboard</strong></div>
+  <div class="sub">Drupal 11 with Gin vs Drupal 12 with Admin Theme | Generated: 2026-05-28T00:27:15.313Z</div>
+</header>
+<main>
+  <section class="agg">
+    <h2>Component Delta Summary</h2>
+    <table>
+      <thead><tr><th>Component</th><th>Flagged Routes</th><th>Total Routes</th></tr></thead>
+      <tbody><tr><td>Required Marker (*)</td><td>0</td><td>5</td></tr><tr><td>H2 Heading</td><td>5</td><td>5</td></tr><tr><td>Text Input</td><td>2</td><td>5</td></tr><tr><td>Textarea</td><td>0</td><td>5</td></tr><tr><td>Button</td><td>5</td><td>5</td></tr><tr><td>Form Item Wrapper</td><td>2</td><td>5</td></tr><tr><td>Table Header Cell</td><td>2</td><td>5</td></tr><tr><td>Table Body Cell</td><td>2</td><td>5</td></tr><tr><td>Details Summary</td><td>2</td><td>5</td></tr><tr><td>Form Label</td><td>3</td><td>5</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="agg">
+    <h2>Test URLs Used</h2>
+    <table>
+      <thead><tr><th>Section</th><th>Route</th><th>Drupal 11 with Gin</th><th>Drupal 12 with Admin Theme</th></tr></thead>
+      <tbody><tr><td>Appearance</td><td>/admin/appearance</td><td><a href="http://drupal-11.3.10.ddev.site/admin/appearance" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/appearance</a></td><td><a href="http://drupal-git.ddev.site:8080/admin/appearance" target="_blank" rel="noopener">http://drupal-git.ddev.site:8080/admin/appearance</a></td></tr><tr><td>Configuration</td><td>/admin/config</td><td><a href="http://drupal-11.3.10.ddev.site/admin/config" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/config</a></td><td><a href="http://drupal-git.ddev.site:8080/admin/config" target="_blank" rel="noopener">http://drupal-git.ddev.site:8080/admin/config</a></td></tr><tr><td>Content</td><td>/admin/content</td><td><a href="http://drupal-11.3.10.ddev.site/admin/content" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/content</a></td><td><a href="http://drupal-git.ddev.site:8080/admin/content" target="_blank" rel="noopener">http://drupal-git.ddev.site:8080/admin/content</a></td></tr><tr><td>Structure</td><td>/admin/structure</td><td><a href="http://drupal-11.3.10.ddev.site/admin/structure" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/structure</a></td><td><a href="http://drupal-git.ddev.site:8080/admin/structure" target="_blank" rel="noopener">http://drupal-git.ddev.site:8080/admin/structure</a></td></tr><tr><td>People</td><td>/admin/people</td><td><a href="http://drupal-11.3.10.ddev.site/admin/people" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/people</a></td><td><a href="http://drupal-git.ddev.site:8080/admin/people" target="_blank" rel="noopener">http://drupal-git.ddev.site:8080/admin/people</a></td></tr></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Detailed Element Comparison</h2>
+    <div class="controls">
+      <input id="textFilter" placeholder="Search route/component/selector" />
+      <select id="routeFilter"><option value="">All routes</option></select>
+      <select id="componentFilter"><option value="">All components</option></select>
+      <select id="signalFilter">
+        <option value="">All rows</option>
+        <option value="yes">Only flagged rows</option>
+      </select>
+      <select id="cssFilter"><option value="">All CSS files</option></select>
+      <select id="sortOrder">
+        <option value="route">Sort: Route</option>
+        <option value="component">Sort: Component</option>
+        <option value="css">Sort: CSS source</option>
+        <option value="flagged">Sort: Flagged first</option>
+      </select>
+    </div>
+
+    <table id="resultsTable">
+      <thead>
+        <tr>
+          <th>Route / Component</th>
+          <th>Drupal 11 with Gin</th>
+          <th>Drupal 12 with Admin Theme</th>
+          <th>Key Deltas</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      <tr class="" data-route="Appearance" data-component="Required Marker (*)" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Appearance</strong></div>
+          <div>Required Marker (*)</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/appearance" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/appearance" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">label.form-required, .form-required</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/appearance__required-marker.png" alt="Baseline Required Marker (*) Appearance" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/appearance__required-marker.png" alt="Candidate Required Marker (*) Appearance" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="Appearance" data-component="H2 Heading" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_Jqmjn5cfMRdz66qR0MTQFuJB7zjvTCg4pzfGmBy-Gz4.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxFjVEOwyAMQy_UlDMZFiG0NEEhTNtOP6RO4td-fi4Ct1TFMoRGfKRpPYpp8DsmJD18dsi5E1rEcyzEORW7uilrjFPxahXRTInCTDKc8owwvdG_x3lwEHpnOLTwXar5BWlfPrYmtfXoujY7-wEG2kPJ">
+        <td>
+          <div><strong>Appearance</strong></div>
+          <div>H2 Heading</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/appearance" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/appearance" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">h2</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_Jqmjn5cfMRdz66qR0MTQFuJB7zjvTCg4pzfGmBy-Gz4.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxFjVEOwyAMQy_UlDMZFiG0NEEhTNtOP6RO4td-fi4Ct1TFMoRGfKRpPYpp8DsmJD18dsi5E1rEcyzEORW7uilrjFPxahXRTInCTDKc8owwvdG_x3lwEHpnOLTwXar5BWlfPrYmtfXoujY7-wEG2kPJ | http://drupal-git.ddev.site:8080/sites/default/files/css/css_4dC1SYlGUw9otHcSNVdS9JWBOtH33AKHMNwPEA-P2Mo.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxFjVEOwyAMQy_UlDMZFiG0NEEhTNtOP6RO4td-fi4Ct1TFMoRGfKRpPYpp8DsmJD18dsi5E1rEcyzEORW7uilrjFPxahXRTInCTDKc8owwvdG_x3lwEHpnOLTwXar5BWlfPrYmtfXoujY7-wEG2kPJ</div>
+        </td>
+        <td>
+          <div>count: 8</div>
+          <div>font-size: 19.8px</div>
+          <div>line-height: 25.7px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 23.1px</div>
+          <div class="meta">Toolbar items | Create Navigation | Content Navigation</div>
+          <img src="baseline/appearance__h2.png" alt="Baseline H2 Heading Appearance" />
+        </td>
+        <td>
+          <div>count: 6</div>
+          <div>font-size: 26.7px</div>
+          <div>line-height: 34.7px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 379.2px</div>
+          <div class="meta">Administrative sidebar | Breadcrumb | Primary tabs</div>
+          <img src="candidate/appearance__h2.png" alt="Candidate H2 Heading Appearance" />
+        </td>
+        <td>
+          <div>fontSize: 35.2%<br/>lineHeight: 35.2%<br/>paddingX: -100.0%<br/>width: 1539.5%<br/>height: 391.3%<br/>count: -2 (-25.0%)</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Appearance" data-component="Text Input" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Appearance</strong></div>
+          <div>Text Input</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/appearance" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/appearance" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">input[type=&quot;text&quot;], input.form-text</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/appearance__input-text.png" alt="Baseline Text Input Appearance" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/appearance__input-text.png" alt="Candidate Text Input Appearance" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Appearance" data-component="Textarea" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Appearance</strong></div>
+          <div>Textarea</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/appearance" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/appearance" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">textarea</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/appearance__textarea.png" alt="Baseline Textarea Appearance" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/appearance__textarea.png" alt="Candidate Textarea Appearance" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="Appearance" data-component="Button" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_Jqmjn5cfMRdz66qR0MTQFuJB7zjvTCg4pzfGmBy-Gz4.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxFjVEOwyAMQy_UlDMZFiG0NEEhTNtOP6RO4td-fi4Ct1TFMoRGfKRpPYpp8DsmJD18dsi5E1rEcyzEORW7uilrjFPxahXRTInCTDKc8owwvdG_x3lwEHpnOLTwXar5BWlfPrYmtfXoujY7-wEG2kPJ">
+        <td>
+          <div><strong>Appearance</strong></div>
+          <div>Button</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/appearance" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/appearance" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">button, input[type=&quot;submit&quot;], .button</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_Jqmjn5cfMRdz66qR0MTQFuJB7zjvTCg4pzfGmBy-Gz4.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxFjVEOwyAMQy_UlDMZFiG0NEEhTNtOP6RO4td-fi4Ct1TFMoRGfKRpPYpp8DsmJD18dsi5E1rEcyzEORW7uilrjFPxahXRTInCTDKc8owwvdG_x3lwEHpnOLTwXar5BWlfPrYmtfXoujY7-wEG2kPJ | http://drupal-git.ddev.site:8080/sites/default/files/css/css_4dC1SYlGUw9otHcSNVdS9JWBOtH33AKHMNwPEA-P2Mo.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxFjVEOwyAMQy_UlDMZFiG0NEEhTNtOP6RO4td-fi4Ct1TFMoRGfKRpPYpp8DsmJD18dsi5E1rEcyzEORW7uilrjFPxahXRTInCTDKc8owwvdG_x3lwEHpnOLTwXar5BWlfPrYmtfXoujY7-wEG2kPJ</div>
+        </td>
+        <td>
+          <div>count: 8</div>
+          <div>font-size: 13.3px</div>
+          <div>line-height: 16.5px</div>
+          <div>padding-y: 12.8px</div>
+          <div>width: 59.8px</div>
+          <div class="meta">Vertical orientation | Edit | Extend Create</div>
+          <img src="baseline/appearance__button.png" alt="Baseline Button Appearance" />
+        </td>
+        <td>
+          <div>count: 8</div>
+          <div>font-size: 14.0px</div>
+          <div>line-height: 16.0px</div>
+          <div>padding-y: 20.0px</div>
+          <div>width: 141.3px</div>
+          <div class="meta">Collapse sidebar | Back | Collapse sidebar</div>
+          <img src="candidate/appearance__button.png" alt="Candidate Button Appearance" />
+        </td>
+        <td>
+          <div>fontSize: 5.7%<br/>paddingY: 56.9%<br/>paddingX: 47.3%<br/>width: 136.4%<br/>height: 163.2%</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Appearance" data-component="Form Item Wrapper" data-significant="no" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_4dC1SYlGUw9otHcSNVdS9JWBOtH33AKHMNwPEA-P2Mo.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxFjVEOwyAMQy_UlDMZFiG0NEEhTNtOP6RO4td-fi4Ct1TFMoRGfKRpPYpp8DsmJD18dsi5E1rEcyzEORW7uilrjFPxahXRTInCTDKc8owwvdG_x3lwEHpnOLTwXar5BWlfPrYmtfXoujY7-wEG2kPJ">
+        <td>
+          <div><strong>Appearance</strong></div>
+          <div>Form Item Wrapper</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/appearance" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/appearance" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">.form-item</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_4dC1SYlGUw9otHcSNVdS9JWBOtH33AKHMNwPEA-P2Mo.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxFjVEOwyAMQy_UlDMZFiG0NEEhTNtOP6RO4td-fi4Ct1TFMoRGfKRpPYpp8DsmJD18dsi5E1rEcyzEORW7uilrjFPxahXRTInCTDKc8owwvdG_x3lwEHpnOLTwXar5BWlfPrYmtfXoujY7-wEG2kPJ</div>
+        </td>
+        <td>
+          <div>count: 2</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 22.4px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 988.0px</div>
+          <div class="meta">Administration theme Default theme Claro Gin Olivero Choose &quot;Default theme&quot; to a | Use the administration theme when editing or creating content Control which role</div>
+          <img src="baseline/appearance__form-item.png" alt="Baseline Form Item Wrapper Appearance" />
+        </td>
+        <td>
+          <div>count: 2</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 22.4px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 992.5px</div>
+          <div class="meta">Administration theme Default theme Claro Olivero Choose &quot;Default theme&quot; to alway | Use the administration theme when editing or creating content Control which role</div>
+          <img src="candidate/appearance__form-item.png" alt="Candidate Form Item Wrapper Appearance" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Appearance" data-component="Table Header Cell" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Appearance</strong></div>
+          <div>Table Header Cell</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/appearance" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/appearance" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">table thead th</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/appearance__table-header.png" alt="Baseline Table Header Cell Appearance" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/appearance__table-header.png" alt="Candidate Table Header Cell Appearance" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Appearance" data-component="Table Body Cell" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Appearance</strong></div>
+          <div>Table Body Cell</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/appearance" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/appearance" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">table tbody td</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/appearance__table-cell.png" alt="Baseline Table Body Cell Appearance" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/appearance__table-cell.png" alt="Candidate Table Body Cell Appearance" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="Appearance" data-component="Details Summary" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_Jqmjn5cfMRdz66qR0MTQFuJB7zjvTCg4pzfGmBy-Gz4.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxFjVEOwyAMQy_UlDMZFiG0NEEhTNtOP6RO4td-fi4Ct1TFMoRGfKRpPYpp8DsmJD18dsi5E1rEcyzEORW7uilrjFPxahXRTInCTDKc8owwvdG_x3lwEHpnOLTwXar5BWlfPrYmtfXoujY7-wEG2kPJ">
+        <td>
+          <div><strong>Appearance</strong></div>
+          <div>Details Summary</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/appearance" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/appearance" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">details &gt; summary</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_Jqmjn5cfMRdz66qR0MTQFuJB7zjvTCg4pzfGmBy-Gz4.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxFjVEOwyAMQy_UlDMZFiG0NEEhTNtOP6RO4td-fi4Ct1TFMoRGfKRpPYpp8DsmJD18dsi5E1rEcyzEORW7uilrjFPxahXRTInCTDKc8owwvdG_x3lwEHpnOLTwXar5BWlfPrYmtfXoujY7-wEG2kPJ | http://drupal-git.ddev.site:8080/sites/default/files/css/css_4dC1SYlGUw9otHcSNVdS9JWBOtH33AKHMNwPEA-P2Mo.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxFjVEOwyAMQy_UlDMZFiG0NEEhTNtOP6RO4td-fi4Ct1TFMoRGfKRpPYpp8DsmJD18dsi5E1rEcyzEORW7uilrjFPxahXRTInCTDKc8owwvdG_x3lwEHpnOLTwXar5BWlfPrYmtfXoujY7-wEG2kPJ</div>
+        </td>
+        <td>
+          <div>count: 1</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 16.0px</div>
+          <div>padding-y: 40.0px</div>
+          <div>width: 1028.0px</div>
+          <div class="meta">Administration theme</div>
+          <img src="baseline/appearance__details-summary.png" alt="Baseline Details Summary Appearance" />
+        </td>
+        <td>
+          <div>count: 1</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 16.0px</div>
+          <div>padding-y: 32.0px</div>
+          <div>width: 1078.0px</div>
+          <div class="meta">Administration theme</div>
+          <img src="candidate/appearance__details-summary.png" alt="Candidate Details Summary Appearance" />
+        </td>
+        <td>
+          <div>paddingY: -20.0%<br/>paddingX: -13.3%<br/>height: -14.3%</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="Appearance" data-component="Form Label" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_4dC1SYlGUw9otHcSNVdS9JWBOtH33AKHMNwPEA-P2Mo.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxFjVEOwyAMQy_UlDMZFiG0NEEhTNtOP6RO4td-fi4Ct1TFMoRGfKRpPYpp8DsmJD18dsi5E1rEcyzEORW7uilrjFPxahXRTInCTDKc8owwvdG_x3lwEHpnOLTwXar5BWlfPrYmtfXoujY7-wEG2kPJ">
+        <td>
+          <div><strong>Appearance</strong></div>
+          <div>Form Label</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/appearance" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/appearance" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">label</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_4dC1SYlGUw9otHcSNVdS9JWBOtH33AKHMNwPEA-P2Mo.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxFjVEOwyAMQy_UlDMZFiG0NEEhTNtOP6RO4td-fi4Ct1TFMoRGfKRpPYpp8DsmJD18dsi5E1rEcyzEORW7uilrjFPxahXRTInCTDKc8owwvdG_x3lwEHpnOLTwXar5BWlfPrYmtfXoujY7-wEG2kPJ</div>
+        </td>
+        <td>
+          <div>count: 2</div>
+          <div>font-size: 14.0px</div>
+          <div>line-height: 18.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 285.5px</div>
+          <div class="meta">Administration theme | Use the administration theme when editing or creating content</div>
+          <img src="baseline/appearance__label.png" alt="Baseline Form Label Appearance" />
+        </td>
+        <td>
+          <div>count: 2</div>
+          <div>font-size: 14.2px</div>
+          <div>line-height: 18.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 268.3px</div>
+          <div class="meta">Administration theme | Use the administration theme when editing or creating content</div>
+          <img src="candidate/appearance__label.png" alt="Candidate Form Label Appearance" />
+        </td>
+        <td>
+          <div>paddingX: -100.0%</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Configuration" data-component="Required Marker (*)" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Configuration</strong></div>
+          <div>Required Marker (*)</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/config" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/config" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">label.form-required, .form-required</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/config__required-marker.png" alt="Baseline Required Marker (*) Configuration" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/config__required-marker.png" alt="Candidate Required Marker (*) Configuration" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="Configuration" data-component="H2 Heading" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_KLhKWkd-10fItBI0yB5zU1NVxtsUcnqp3mnSsic0sXw.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxFzFEKxCAMRdENNXVN0YqEpnklxjLT1Y8wH_5eDrcoO1JTZFbq8VWxthVY1E8M1nT4uFn3VWiKs0_iNRVcN6xa9N34kcYhMKIANLNTHhGwPzX4xSpv3ZZMMqduc7_aDwZeOK8">
+        <td>
+          <div><strong>Configuration</strong></div>
+          <div>H2 Heading</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/config" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/config" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">h2</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_KLhKWkd-10fItBI0yB5zU1NVxtsUcnqp3mnSsic0sXw.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxFzFEKxCAMRdENNXVN0YqEpnklxjLT1Y8wH_5eDrcoO1JTZFbq8VWxthVY1E8M1nT4uFn3VWiKs0_iNRVcN6xa9N34kcYhMKIANLNTHhGwPzX4xSpv3ZZMMqduc7_aDwZeOK8 | http://drupal-git.ddev.site:8080/sites/default/files/css/css_4dC1SYlGUw9otHcSNVdS9JWBOtH33AKHMNwPEA-P2Mo.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxFzFEKxCAMRdENNXVN0YqEpnklxjLT1Y8wH_5eDrcoO1JTZFbq8VWxthVY1E8M1nT4uFn3VWiKs0_iNRVcN6xa9N34kcYhMKIANLNTHhGwPzX4xSpv3ZZMMqduc7_aDwZeOK8</div>
+        </td>
+        <td>
+          <div>count: 6</div>
+          <div>font-size: 19.0px</div>
+          <div>line-height: 24.7px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 8.3px</div>
+          <div class="meta">Toolbar items | Create Navigation | Content Navigation</div>
+          <img src="baseline/config__h2.png" alt="Baseline H2 Heading Configuration" />
+        </td>
+        <td>
+          <div>count: 3</div>
+          <div>font-size: 24.6px</div>
+          <div>line-height: 31.9px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 38.0px</div>
+          <div class="meta">Administrative sidebar | Breadcrumb | Error message</div>
+          <img src="candidate/config__h2.png" alt="Candidate H2 Heading Configuration" />
+        </td>
+        <td>
+          <div>fontSize: 29.2%<br/>lineHeight: 29.2%<br/>paddingX: -100.0%<br/>width: 356.2%<br/>height: 811.9%<br/>count: -3 (-50.0%)</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Configuration" data-component="Text Input" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Configuration</strong></div>
+          <div>Text Input</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/config" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/config" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">input[type=&quot;text&quot;], input.form-text</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/config__input-text.png" alt="Baseline Text Input Configuration" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/config__input-text.png" alt="Candidate Text Input Configuration" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Configuration" data-component="Textarea" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Configuration</strong></div>
+          <div>Textarea</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/config" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/config" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">textarea</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/config__textarea.png" alt="Baseline Textarea Configuration" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/config__textarea.png" alt="Candidate Textarea Configuration" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="Configuration" data-component="Button" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_KLhKWkd-10fItBI0yB5zU1NVxtsUcnqp3mnSsic0sXw.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxFzFEKxCAMRdENNXVN0YqEpnklxjLT1Y8wH_5eDrcoO1JTZFbq8VWxthVY1E8M1nT4uFn3VWiKs0_iNRVcN6xa9N34kcYhMKIANLNTHhGwPzX4xSpv3ZZMMqduc7_aDwZeOK8">
+        <td>
+          <div><strong>Configuration</strong></div>
+          <div>Button</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/config" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/config" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">button, input[type=&quot;submit&quot;], .button</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_KLhKWkd-10fItBI0yB5zU1NVxtsUcnqp3mnSsic0sXw.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxFzFEKxCAMRdENNXVN0YqEpnklxjLT1Y8wH_5eDrcoO1JTZFbq8VWxthVY1E8M1nT4uFn3VWiKs0_iNRVcN6xa9N34kcYhMKIANLNTHhGwPzX4xSpv3ZZMMqduc7_aDwZeOK8 | http://drupal-git.ddev.site:8080/sites/default/files/css/css_4dC1SYlGUw9otHcSNVdS9JWBOtH33AKHMNwPEA-P2Mo.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxFzFEKxCAMRdENNXVN0YqEpnklxjLT1Y8wH_5eDrcoO1JTZFbq8VWxthVY1E8M1nT4uFn3VWiKs0_iNRVcN6xa9N34kcYhMKIANLNTHhGwPzX4xSpv3ZZMMqduc7_aDwZeOK8</div>
+        </td>
+        <td>
+          <div>count: 8</div>
+          <div>font-size: 13.3px</div>
+          <div>line-height: 16.5px</div>
+          <div>padding-y: 12.8px</div>
+          <div>width: 59.8px</div>
+          <div class="meta">Vertical orientation | Edit | Extend Create</div>
+          <img src="baseline/config__button.png" alt="Baseline Button Configuration" />
+        </td>
+        <td>
+          <div>count: 8</div>
+          <div>font-size: 14.0px</div>
+          <div>line-height: 16.0px</div>
+          <div>padding-y: 20.0px</div>
+          <div>width: 141.3px</div>
+          <div class="meta">Collapse sidebar | Back | Collapse sidebar</div>
+          <img src="candidate/config__button.png" alt="Candidate Button Configuration" />
+        </td>
+        <td>
+          <div>fontSize: 5.7%<br/>paddingY: 56.9%<br/>paddingX: 47.3%<br/>width: 136.4%<br/>height: 163.2%</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Configuration" data-component="Form Item Wrapper" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Configuration</strong></div>
+          <div>Form Item Wrapper</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/config" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/config" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">.form-item</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/config__form-item.png" alt="Baseline Form Item Wrapper Configuration" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/config__form-item.png" alt="Candidate Form Item Wrapper Configuration" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Configuration" data-component="Table Header Cell" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Configuration</strong></div>
+          <div>Table Header Cell</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/config" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/config" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">table thead th</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/config__table-header.png" alt="Baseline Table Header Cell Configuration" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/config__table-header.png" alt="Candidate Table Header Cell Configuration" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Configuration" data-component="Table Body Cell" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Configuration</strong></div>
+          <div>Table Body Cell</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/config" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/config" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">table tbody td</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/config__table-cell.png" alt="Baseline Table Body Cell Configuration" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/config__table-cell.png" alt="Candidate Table Body Cell Configuration" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Configuration" data-component="Details Summary" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Configuration</strong></div>
+          <div>Details Summary</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/config" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/config" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">details &gt; summary</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/config__details-summary.png" alt="Baseline Details Summary Configuration" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/config__details-summary.png" alt="Candidate Details Summary Configuration" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Configuration" data-component="Form Label" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Configuration</strong></div>
+          <div>Form Label</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/config" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/config" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">label</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/config__label.png" alt="Baseline Form Label Configuration" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/config__label.png" alt="Candidate Form Label Configuration" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Content" data-component="Required Marker (*)" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Content</strong></div>
+          <div>Required Marker (*)</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/content" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/content" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">label.form-required, .form-required</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/content__required-marker.png" alt="Baseline Required Marker (*) Content" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/content__required-marker.png" alt="Candidate Required Marker (*) Content" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="Content" data-component="H2 Heading" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_p7oaJLzXhhsfibJzbJI0Ra-m5oxn2dy71jKShr5LIYg.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxljksOgzAMRC9EyJmcMKJRjR05Dv2cvlFBQlU3Xrx5mnFmMo0rayIOzV9cZJ2yiuPpnTgu1ivxfJEwjHsbiiFm3aoKxNsstJeVvKiE4KqcyELq7iqHevYYGjxQrSAjyfgJnRLjBlpg_7yp-UFFbSMub0zXaCzjP5MhX2zaCx4tfu-86dIZH1uqXOk">
+        <td>
+          <div><strong>Content</strong></div>
+          <div>H2 Heading</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/content" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/content" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">h2</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_p7oaJLzXhhsfibJzbJI0Ra-m5oxn2dy71jKShr5LIYg.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxljksOgzAMRC9EyJmcMKJRjR05Dv2cvlFBQlU3Xrx5mnFmMo0rayIOzV9cZJ2yiuPpnTgu1ivxfJEwjHsbiiFm3aoKxNsstJeVvKiE4KqcyELq7iqHevYYGjxQrSAjyfgJnRLjBlpg_7yp-UFFbSMub0zXaCzjP5MhX2zaCx4tfu-86dIZH1uqXOk | http://drupal-git.ddev.site:8080/sites/default/files/css/css_7_4nz4qqwIN9QvB5KqQokLhixB7EvcL2017oSSQXjtk.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxljksOgzAMRC9EyJmcMKJRjR05Dv2cvlFBQlU3Xrx5mnFmMo0rayIOzV9cZJ2yiuPpnTgu1ivxfJEwjHsbiiFm3aoKxNsstJeVvKiE4KqcyELq7iqHevYYGjxQrSAjyfgJnRLjBlpg_7yp-UFFbSMub0zXaCzjP5MhX2zaCx4tfu-86dIZH1uqXOk</div>
+        </td>
+        <td>
+          <div>count: 7</div>
+          <div>font-size: 20.3px</div>
+          <div>line-height: 26.4px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 7.3px</div>
+          <div class="meta">Toolbar items | Create Navigation | Content Navigation</div>
+          <img src="baseline/content__h2.png" alt="Baseline H2 Heading Content" />
+        </td>
+        <td>
+          <div>count: 3</div>
+          <div>font-size: 28.8px</div>
+          <div>line-height: 37.5px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 1.0px</div>
+          <div class="meta">Administrative sidebar | Breadcrumb | Primary tabs</div>
+          <img src="candidate/content__h2.png" alt="Candidate H2 Heading Content" />
+        </td>
+        <td>
+          <div>fontSize: 42.1%<br/>lineHeight: 42.1%<br/>paddingX: -100.0%<br/>width: -86.3%<br/>height: 16.7%<br/>count: -4 (-57.1%)</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="Content" data-component="Text Input" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_p7oaJLzXhhsfibJzbJI0Ra-m5oxn2dy71jKShr5LIYg.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxljksOgzAMRC9EyJmcMKJRjR05Dv2cvlFBQlU3Xrx5mnFmMo0rayIOzV9cZJ2yiuPpnTgu1ivxfJEwjHsbiiFm3aoKxNsstJeVvKiE4KqcyELq7iqHevYYGjxQrSAjyfgJnRLjBlpg_7yp-UFFbSMub0zXaCzjP5MhX2zaCx4tfu-86dIZH1uqXOk">
+        <td>
+          <div><strong>Content</strong></div>
+          <div>Text Input</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/content" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/content" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">input[type=&quot;text&quot;], input.form-text</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_p7oaJLzXhhsfibJzbJI0Ra-m5oxn2dy71jKShr5LIYg.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxljksOgzAMRC9EyJmcMKJRjR05Dv2cvlFBQlU3Xrx5mnFmMo0rayIOzV9cZJ2yiuPpnTgu1ivxfJEwjHsbiiFm3aoKxNsstJeVvKiE4KqcyELq7iqHevYYGjxQrSAjyfgJnRLjBlpg_7yp-UFFbSMub0zXaCzjP5MhX2zaCx4tfu-86dIZH1uqXOk | http://drupal-git.ddev.site:8080/sites/default/files/css/css_7_4nz4qqwIN9QvB5KqQokLhixB7EvcL2017oSSQXjtk.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxljksOgzAMRC9EyJmcMKJRjR05Dv2cvlFBQlU3Xrx5mnFmMo0rayIOzV9cZJ2yiuPpnTgu1ivxfJEwjHsbiiFm3aoKxNsstJeVvKiE4KqcyELq7iqHevYYGjxQrSAjyfgJnRLjBlpg_7yp-UFFbSMub0zXaCzjP5MhX2zaCx4tfu-86dIZH1uqXOk</div>
+        </td>
+        <td>
+          <div>count: 1</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 24.0px</div>
+          <div>padding-y: 14.0px</div>
+          <div>width: 382.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/content__input-text.png" alt="Baseline Text Input Content" />
+        </td>
+        <td>
+          <div>count: 1</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 24.0px</div>
+          <div>padding-y: 22.0px</div>
+          <div>width: 331.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/content__input-text.png" alt="Candidate Text Input Content" />
+        </td>
+        <td>
+          <div>paddingY: 57.1%<br/>paddingX: 25.0%<br/>width: -13.4%<br/>height: 20.0%</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Content" data-component="Textarea" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Content</strong></div>
+          <div>Textarea</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/content" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/content" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">textarea</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/content__textarea.png" alt="Baseline Textarea Content" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/content__textarea.png" alt="Candidate Textarea Content" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="Content" data-component="Button" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_p7oaJLzXhhsfibJzbJI0Ra-m5oxn2dy71jKShr5LIYg.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxljksOgzAMRC9EyJmcMKJRjR05Dv2cvlFBQlU3Xrx5mnFmMo0rayIOzV9cZJ2yiuPpnTgu1ivxfJEwjHsbiiFm3aoKxNsstJeVvKiE4KqcyELq7iqHevYYGjxQrSAjyfgJnRLjBlpg_7yp-UFFbSMub0zXaCzjP5MhX2zaCx4tfu-86dIZH1uqXOk">
+        <td>
+          <div><strong>Content</strong></div>
+          <div>Button</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/content" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/content" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">button, input[type=&quot;submit&quot;], .button</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_p7oaJLzXhhsfibJzbJI0Ra-m5oxn2dy71jKShr5LIYg.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxljksOgzAMRC9EyJmcMKJRjR05Dv2cvlFBQlU3Xrx5mnFmMo0rayIOzV9cZJ2yiuPpnTgu1ivxfJEwjHsbiiFm3aoKxNsstJeVvKiE4KqcyELq7iqHevYYGjxQrSAjyfgJnRLjBlpg_7yp-UFFbSMub0zXaCzjP5MhX2zaCx4tfu-86dIZH1uqXOk | http://drupal-git.ddev.site:8080/sites/default/files/css/css_7_4nz4qqwIN9QvB5KqQokLhixB7EvcL2017oSSQXjtk.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxljksOgzAMRC9EyJmcMKJRjR05Dv2cvlFBQlU3Xrx5mnFmMo0rayIOzV9cZJ2yiuPpnTgu1ivxfJEwjHsbiiFm3aoKxNsstJeVvKiE4KqcyELq7iqHevYYGjxQrSAjyfgJnRLjBlpg_7yp-UFFbSMub0zXaCzjP5MhX2zaCx4tfu-86dIZH1uqXOk</div>
+        </td>
+        <td>
+          <div>count: 8</div>
+          <div>font-size: 13.3px</div>
+          <div>line-height: 16.5px</div>
+          <div>padding-y: 12.8px</div>
+          <div>width: 59.8px</div>
+          <div class="meta">Vertical orientation | Edit | Extend Create</div>
+          <img src="baseline/content__button.png" alt="Baseline Button Content" />
+        </td>
+        <td>
+          <div>count: 8</div>
+          <div>font-size: 14.0px</div>
+          <div>line-height: 16.0px</div>
+          <div>padding-y: 20.0px</div>
+          <div>width: 141.3px</div>
+          <div class="meta">Collapse sidebar | Back | Collapse sidebar</div>
+          <img src="candidate/content__button.png" alt="Candidate Button Content" />
+        </td>
+        <td>
+          <div>fontSize: 5.7%<br/>paddingY: 56.9%<br/>paddingX: 47.3%<br/>width: 136.4%<br/>height: 163.2%</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="Content" data-component="Form Item Wrapper" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_7_4nz4qqwIN9QvB5KqQokLhixB7EvcL2017oSSQXjtk.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxljksOgzAMRC9EyJmcMKJRjR05Dv2cvlFBQlU3Xrx5mnFmMo0rayIOzV9cZJ2yiuPpnTgu1ivxfJEwjHsbiiFm3aoKxNsstJeVvKiE4KqcyELq7iqHevYYGjxQrSAjyfgJnRLjBlpg_7yp-UFFbSMub0zXaCzjP5MhX2zaCx4tfu-86dIZH1uqXOk">
+        <td>
+          <div><strong>Content</strong></div>
+          <div>Form Item Wrapper</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/content" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/content" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">.form-item</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_7_4nz4qqwIN9QvB5KqQokLhixB7EvcL2017oSSQXjtk.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxljksOgzAMRC9EyJmcMKJRjR05Dv2cvlFBQlU3Xrx5mnFmMo0rayIOzV9cZJ2yiuPpnTgu1ivxfJEwjHsbiiFm3aoKxNsstJeVvKiE4KqcyELq7iqHevYYGjxQrSAjyfgJnRLjBlpg_7yp-UFFbSMub0zXaCzjP5MhX2zaCx4tfu-86dIZH1uqXOk</div>
+        </td>
+        <td>
+          <div>count: 8</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 24.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 95.5px</div>
+          <div class="meta">Title | Content type - Any - Article Basic page | Published status - Any - Published Unpublished</div>
+          <img src="baseline/content__form-item.png" alt="Baseline Form Item Wrapper Content" />
+        </td>
+        <td>
+          <div>count: 3</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 24.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 188.0px</div>
+          <div class="meta">Title | Content type - Any - | Published status - Any - Published Unpublished</div>
+          <img src="candidate/content__form-item.png" alt="Candidate Form Item Wrapper Content" />
+        </td>
+        <td>
+          <div>width: 96.9%<br/>height: 95.4%<br/>count: -5 (-62.5%)</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="Content" data-component="Table Header Cell" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_7_4nz4qqwIN9QvB5KqQokLhixB7EvcL2017oSSQXjtk.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxljksOgzAMRC9EyJmcMKJRjR05Dv2cvlFBQlU3Xrx5mnFmMo0rayIOzV9cZJ2yiuPpnTgu1ivxfJEwjHsbiiFm3aoKxNsstJeVvKiE4KqcyELq7iqHevYYGjxQrSAjyfgJnRLjBlpg_7yp-UFFbSMub0zXaCzjP5MhX2zaCx4tfu-86dIZH1uqXOk">
+        <td>
+          <div><strong>Content</strong></div>
+          <div>Table Header Cell</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/content" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/content" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">table thead th</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_7_4nz4qqwIN9QvB5KqQokLhixB7EvcL2017oSSQXjtk.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxljksOgzAMRC9EyJmcMKJRjR05Dv2cvlFBQlU3Xrx5mnFmMo0rayIOzV9cZJ2yiuPpnTgu1ivxfJEwjHsbiiFm3aoKxNsstJeVvKiE4KqcyELq7iqHevYYGjxQrSAjyfgJnRLjBlpg_7yp-UFFbSMub0zXaCzjP5MhX2zaCx4tfu-86dIZH1uqXOk</div>
+        </td>
+        <td>
+          <div>count: 8</div>
+          <div>font-size: 14.0px</div>
+          <div>line-height: 20.0px</div>
+          <div>padding-y: 24.0px</div>
+          <div>width: 135.4px</div>
+          <div class="meta">Title | Content type | Author</div>
+          <img src="baseline/content__table-header.png" alt="Baseline Table Header Cell Content" />
+        </td>
+        <td>
+          <div>count: 7</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 20.0px</div>
+          <div>padding-y: 6.9px</div>
+          <div>width: 154.3px</div>
+          <div class="meta">Title | Content type | Author</div>
+          <img src="candidate/content__table-header.png" alt="Candidate Table Header Cell Content" />
+        </td>
+        <td>
+          <div>fontSize: 14.3%<br/>paddingY: -71.4%<br/>width: 14.0%<br/>height: -12.9%</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="Content" data-component="Table Body Cell" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_7_4nz4qqwIN9QvB5KqQokLhixB7EvcL2017oSSQXjtk.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxljksOgzAMRC9EyJmcMKJRjR05Dv2cvlFBQlU3Xrx5mnFmMo0rayIOzV9cZJ2yiuPpnTgu1ivxfJEwjHsbiiFm3aoKxNsstJeVvKiE4KqcyELq7iqHevYYGjxQrSAjyfgJnRLjBlpg_7yp-UFFbSMub0zXaCzjP5MhX2zaCx4tfu-86dIZH1uqXOk">
+        <td>
+          <div><strong>Content</strong></div>
+          <div>Table Body Cell</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/content" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/content" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">table tbody td</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_7_4nz4qqwIN9QvB5KqQokLhixB7EvcL2017oSSQXjtk.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxljksOgzAMRC9EyJmcMKJRjR05Dv2cvlFBQlU3Xrx5mnFmMo0rayIOzV9cZJ2yiuPpnTgu1ivxfJEwjHsbiiFm3aoKxNsstJeVvKiE4KqcyELq7iqHevYYGjxQrSAjyfgJnRLjBlpg_7yp-UFFbSMub0zXaCzjP5MhX2zaCx4tfu-86dIZH1uqXOk</div>
+        </td>
+        <td>
+          <div>count: 8</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 24.0px</div>
+          <div>padding-y: 32.0px</div>
+          <div>width: 135.4px</div>
+          <div class="meta">Update this item | Dummy Page 20 | Basic page</div>
+          <img src="baseline/content__table-cell.png" alt="Baseline Table Body Cell Content" />
+        </td>
+        <td>
+          <div>count: 1</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 24.0px</div>
+          <div>padding-y: 16.0px</div>
+          <div>width: 1080.0px</div>
+          <div class="meta">No content available.</div>
+          <img src="candidate/content__table-cell.png" alt="Candidate Table Body Cell Content" />
+        </td>
+        <td>
+          <div>paddingY: -50.0%<br/>width: 697.8%<br/>count: -7 (-87.5%)</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Content" data-component="Details Summary" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Content</strong></div>
+          <div>Details Summary</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/content" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/content" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">details &gt; summary</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/content__details-summary.png" alt="Baseline Details Summary Content" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/content__details-summary.png" alt="Candidate Details Summary Content" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="Content" data-component="Form Label" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_7_4nz4qqwIN9QvB5KqQokLhixB7EvcL2017oSSQXjtk.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxljksOgzAMRC9EyJmcMKJRjR05Dv2cvlFBQlU3Xrx5mnFmMo0rayIOzV9cZJ2yiuPpnTgu1ivxfJEwjHsbiiFm3aoKxNsstJeVvKiE4KqcyELq7iqHevYYGjxQrSAjyfgJnRLjBlpg_7yp-UFFbSMub0zXaCzjP5MhX2zaCx4tfu-86dIZH1uqXOk">
+        <td>
+          <div><strong>Content</strong></div>
+          <div>Form Label</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/content" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/content" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">label</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_7_4nz4qqwIN9QvB5KqQokLhixB7EvcL2017oSSQXjtk.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxljksOgzAMRC9EyJmcMKJRjR05Dv2cvlFBQlU3Xrx5mnFmMo0rayIOzV9cZJ2yiuPpnTgu1ivxfJEwjHsbiiFm3aoKxNsstJeVvKiE4KqcyELq7iqHevYYGjxQrSAjyfgJnRLjBlpg_7yp-UFFbSMub0zXaCzjP5MhX2zaCx4tfu-86dIZH1uqXOk</div>
+        </td>
+        <td>
+          <div>count: 8</div>
+          <div>font-size: 14.0px</div>
+          <div>line-height: 18.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 62.1px</div>
+          <div class="meta">Title | Content type | Published status</div>
+          <img src="baseline/content__label.png" alt="Baseline Form Label Content" />
+        </td>
+        <td>
+          <div>count: 3</div>
+          <div>font-size: 14.2px</div>
+          <div>line-height: 18.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 76.6px</div>
+          <div class="meta">Title | Content type | Published status</div>
+          <img src="candidate/content__label.png" alt="Candidate Form Label Content" />
+        </td>
+        <td>
+          <div>width: 23.2%<br/>height: -55.6%<br/>count: -5 (-62.5%)</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Structure" data-component="Required Marker (*)" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Structure</strong></div>
+          <div>Required Marker (*)</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/structure" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/structure" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">label.form-required, .form-required</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/structure__required-marker.png" alt="Baseline Required Marker (*) Structure" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/structure__required-marker.png" alt="Candidate Required Marker (*) Structure" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="Structure" data-component="H2 Heading" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_KLhKWkd-10fItBI0yB5zU1NVxtsUcnqp3mnSsic0sXw.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxFzFEKxCAMRdENNXVN0YqEpnklxjLT1Y8wH_5eDrcoO1JTZFbq8VWxthVY1E8M1nT4uFn3VWiKs0_iNRVcN6xa9N34kcYhMKIANLNTHhGwPzX4xSpv3ZZMMqduc7_aDwZeOK8">
+        <td>
+          <div><strong>Structure</strong></div>
+          <div>H2 Heading</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/structure" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/structure" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">h2</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_KLhKWkd-10fItBI0yB5zU1NVxtsUcnqp3mnSsic0sXw.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxFzFEKxCAMRdENNXVN0YqEpnklxjLT1Y8wH_5eDrcoO1JTZFbq8VWxthVY1E8M1nT4uFn3VWiKs0_iNRVcN6xa9N34kcYhMKIANLNTHhGwPzX4xSpv3ZZMMqduc7_aDwZeOK8 | http://drupal-git.ddev.site:8080/sites/default/files/css/css_4dC1SYlGUw9otHcSNVdS9JWBOtH33AKHMNwPEA-P2Mo.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxFzFEKxCAMRdENNXVN0YqEpnklxjLT1Y8wH_5eDrcoO1JTZFbq8VWxthVY1E8M1nT4uFn3VWiKs0_iNRVcN6xa9N34kcYhMKIANLNTHhGwPzX4xSpv3ZZMMqduc7_aDwZeOK8</div>
+        </td>
+        <td>
+          <div>count: 6</div>
+          <div>font-size: 19.0px</div>
+          <div>line-height: 24.7px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 8.3px</div>
+          <div class="meta">Toolbar items | Create Navigation | Content Navigation</div>
+          <img src="baseline/structure__h2.png" alt="Baseline H2 Heading Structure" />
+        </td>
+        <td>
+          <div>count: 2</div>
+          <div>font-size: 28.8px</div>
+          <div>line-height: 37.5px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 1.0px</div>
+          <div class="meta">Administrative sidebar | Breadcrumb</div>
+          <img src="candidate/structure__h2.png" alt="Candidate H2 Heading Structure" />
+        </td>
+        <td>
+          <div>fontSize: 51.7%<br/>lineHeight: 51.7%<br/>paddingX: -100.0%<br/>width: -88.0%<br/>height: 20.0%<br/>count: -4 (-66.7%)</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Structure" data-component="Text Input" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Structure</strong></div>
+          <div>Text Input</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/structure" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/structure" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">input[type=&quot;text&quot;], input.form-text</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/structure__input-text.png" alt="Baseline Text Input Structure" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/structure__input-text.png" alt="Candidate Text Input Structure" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Structure" data-component="Textarea" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Structure</strong></div>
+          <div>Textarea</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/structure" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/structure" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">textarea</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/structure__textarea.png" alt="Baseline Textarea Structure" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/structure__textarea.png" alt="Candidate Textarea Structure" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="Structure" data-component="Button" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_KLhKWkd-10fItBI0yB5zU1NVxtsUcnqp3mnSsic0sXw.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxFzFEKxCAMRdENNXVN0YqEpnklxjLT1Y8wH_5eDrcoO1JTZFbq8VWxthVY1E8M1nT4uFn3VWiKs0_iNRVcN6xa9N34kcYhMKIANLNTHhGwPzX4xSpv3ZZMMqduc7_aDwZeOK8">
+        <td>
+          <div><strong>Structure</strong></div>
+          <div>Button</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/structure" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/structure" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">button, input[type=&quot;submit&quot;], .button</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_KLhKWkd-10fItBI0yB5zU1NVxtsUcnqp3mnSsic0sXw.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxFzFEKxCAMRdENNXVN0YqEpnklxjLT1Y8wH_5eDrcoO1JTZFbq8VWxthVY1E8M1nT4uFn3VWiKs0_iNRVcN6xa9N34kcYhMKIANLNTHhGwPzX4xSpv3ZZMMqduc7_aDwZeOK8 | http://drupal-git.ddev.site:8080/sites/default/files/css/css_4dC1SYlGUw9otHcSNVdS9JWBOtH33AKHMNwPEA-P2Mo.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxFzFEKxCAMRdENNXVN0YqEpnklxjLT1Y8wH_5eDrcoO1JTZFbq8VWxthVY1E8M1nT4uFn3VWiKs0_iNRVcN6xa9N34kcYhMKIANLNTHhGwPzX4xSpv3ZZMMqduc7_aDwZeOK8</div>
+        </td>
+        <td>
+          <div>count: 8</div>
+          <div>font-size: 13.3px</div>
+          <div>line-height: 16.5px</div>
+          <div>padding-y: 12.8px</div>
+          <div>width: 59.8px</div>
+          <div class="meta">Vertical orientation | Edit | Extend Create</div>
+          <img src="baseline/structure__button.png" alt="Baseline Button Structure" />
+        </td>
+        <td>
+          <div>count: 8</div>
+          <div>font-size: 14.0px</div>
+          <div>line-height: 16.0px</div>
+          <div>padding-y: 20.0px</div>
+          <div>width: 141.3px</div>
+          <div class="meta">Collapse sidebar | Back | Collapse sidebar</div>
+          <img src="candidate/structure__button.png" alt="Candidate Button Structure" />
+        </td>
+        <td>
+          <div>fontSize: 5.7%<br/>paddingY: 56.9%<br/>paddingX: 47.3%<br/>width: 136.4%<br/>height: 163.2%</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Structure" data-component="Form Item Wrapper" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Structure</strong></div>
+          <div>Form Item Wrapper</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/structure" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/structure" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">.form-item</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/structure__form-item.png" alt="Baseline Form Item Wrapper Structure" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/structure__form-item.png" alt="Candidate Form Item Wrapper Structure" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Structure" data-component="Table Header Cell" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Structure</strong></div>
+          <div>Table Header Cell</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/structure" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/structure" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">table thead th</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/structure__table-header.png" alt="Baseline Table Header Cell Structure" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/structure__table-header.png" alt="Candidate Table Header Cell Structure" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Structure" data-component="Table Body Cell" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Structure</strong></div>
+          <div>Table Body Cell</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/structure" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/structure" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">table tbody td</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/structure__table-cell.png" alt="Baseline Table Body Cell Structure" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/structure__table-cell.png" alt="Candidate Table Body Cell Structure" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Structure" data-component="Details Summary" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Structure</strong></div>
+          <div>Details Summary</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/structure" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/structure" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">details &gt; summary</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/structure__details-summary.png" alt="Baseline Details Summary Structure" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/structure__details-summary.png" alt="Candidate Details Summary Structure" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="" data-route="Structure" data-component="Form Label" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>Structure</strong></div>
+          <div>Form Label</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/structure" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/structure" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">label</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/structure__label.png" alt="Baseline Form Label Structure" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/structure__label.png" alt="Candidate Form Label Structure" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="" data-route="People" data-component="Required Marker (*)" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>People</strong></div>
+          <div>Required Marker (*)</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/people" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/people" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">label.form-required, .form-required</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/people__required-marker.png" alt="Baseline Required Marker (*) People" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/people__required-marker.png" alt="Candidate Required Marker (*) People" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="People" data-component="H2 Heading" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css__qWmYdbOkPA31BuSmWSrh0rJMbv2V3BDViMdqclfHVU.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxtj0kOwzAIRS8Ux2fCDrJoCVgYp8Ppa7WRIkvdsHi8z5AZTGNhTcCh-YtJypJVHJ_egeNmvQKvFwnDuLehGMase1VB8bYKHFTASSUEV-UEFlJ3V_mp5xy4wXMCGwFrmZFp_RMlx30sbz5Rw4YeoFYEA8k4NR0SY1M7I6K2A9Mbl-vaSOMxkyFfbDkIHy1-67rr1hk_PsNyow">
+        <td>
+          <div><strong>People</strong></div>
+          <div>H2 Heading</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/people" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/people" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">h2</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css__qWmYdbOkPA31BuSmWSrh0rJMbv2V3BDViMdqclfHVU.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxtj0kOwzAIRS8Ux2fCDrJoCVgYp8Ppa7WRIkvdsHi8z5AZTGNhTcCh-YtJypJVHJ_egeNmvQKvFwnDuLehGMase1VB8bYKHFTASSUEV-UEFlJ3V_mp5xy4wXMCGwFrmZFp_RMlx30sbz5Rw4YeoFYEA8k4NR0SY1M7I6K2A9Mbl-vaSOMxkyFfbDkIHy1-67rr1hk_PsNyow | http://drupal-git.ddev.site:8080/sites/default/files/css/css_pQRgX_EV-XMy29dV1bnHvAzBBjIF2ApNw3NTqxRXjkM.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxtj0kOwzAIRS8Ux2fCDrJoCVgYp8Ppa7WRIkvdsHi8z5AZTGNhTcCh-YtJypJVHJ_egeNmvQKvFwnDuLehGMase1VB8bYKHFTASSUEV-UEFlJ3V_mp5xy4wXMCGwFrmZFp_RMlx30sbz5Rw4YeoFYEA8k4NR0SY1M7I6K2A9Mbl-vaSOMxkyFfbDkIHy1-67rr1hk_PsNyow</div>
+        </td>
+        <td>
+          <div>count: 8</div>
+          <div>font-size: 19.8px</div>
+          <div>line-height: 25.7px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 20.2px</div>
+          <div class="meta">Toolbar items | Create Navigation | Content Navigation</div>
+          <img src="baseline/people__h2.png" alt="Baseline H2 Heading People" />
+        </td>
+        <td>
+          <div>count: 3</div>
+          <div>font-size: 28.8px</div>
+          <div>line-height: 37.5px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 1.0px</div>
+          <div class="meta">Administrative sidebar | Breadcrumb | Primary tabs</div>
+          <img src="candidate/people__h2.png" alt="Candidate H2 Heading People" />
+        </td>
+        <td>
+          <div>fontSize: 46.0%<br/>lineHeight: 46.0%<br/>paddingX: -100.0%<br/>width: -95.1%<br/>height: -70.1%<br/>count: -5 (-62.5%)</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="People" data-component="Text Input" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css__qWmYdbOkPA31BuSmWSrh0rJMbv2V3BDViMdqclfHVU.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxtj0kOwzAIRS8Ux2fCDrJoCVgYp8Ppa7WRIkvdsHi8z5AZTGNhTcCh-YtJypJVHJ_egeNmvQKvFwnDuLehGMase1VB8bYKHFTASSUEV-UEFlJ3V_mp5xy4wXMCGwFrmZFp_RMlx30sbz5Rw4YeoFYEA8k4NR0SY1M7I6K2A9Mbl-vaSOMxkyFfbDkIHy1-67rr1hk_PsNyow">
+        <td>
+          <div><strong>People</strong></div>
+          <div>Text Input</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/people" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/people" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">input[type=&quot;text&quot;], input.form-text</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css__qWmYdbOkPA31BuSmWSrh0rJMbv2V3BDViMdqclfHVU.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxtj0kOwzAIRS8Ux2fCDrJoCVgYp8Ppa7WRIkvdsHi8z5AZTGNhTcCh-YtJypJVHJ_egeNmvQKvFwnDuLehGMase1VB8bYKHFTASSUEV-UEFlJ3V_mp5xy4wXMCGwFrmZFp_RMlx30sbz5Rw4YeoFYEA8k4NR0SY1M7I6K2A9Mbl-vaSOMxkyFfbDkIHy1-67rr1hk_PsNyow | http://drupal-git.ddev.site:8080/sites/default/files/css/css_pQRgX_EV-XMy29dV1bnHvAzBBjIF2ApNw3NTqxRXjkM.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxtj0kOwzAIRS8Ux2fCDrJoCVgYp8Ppa7WRIkvdsHi8z5AZTGNhTcCh-YtJypJVHJ_egeNmvQKvFwnDuLehGMase1VB8bYKHFTASSUEV-UEFlJ3V_mp5xy4wXMCGwFrmZFp_RMlx30sbz5Rw4YeoFYEA8k4NR0SY1M7I6K2A9Mbl-vaSOMxkyFfbDkIHy1-67rr1hk_PsNyow</div>
+        </td>
+        <td>
+          <div>count: 1</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 24.0px</div>
+          <div>padding-y: 14.0px</div>
+          <div>width: 382.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/people__input-text.png" alt="Baseline Text Input People" />
+        </td>
+        <td>
+          <div>count: 1</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 24.0px</div>
+          <div>padding-y: 22.0px</div>
+          <div>width: 331.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/people__input-text.png" alt="Candidate Text Input People" />
+        </td>
+        <td>
+          <div>paddingY: 57.1%<br/>paddingX: 25.0%<br/>width: -13.4%<br/>height: 20.0%</div>
+        </td>
+      </tr>
+      <tr class="" data-route="People" data-component="Textarea" data-significant="no" data-css="unknown">
+        <td>
+          <div><strong>People</strong></div>
+          <div>Textarea</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/people" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/people" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">textarea</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="baseline/people__textarea.png" alt="Baseline Textarea People" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/people__textarea.png" alt="Candidate Textarea People" />
+        </td>
+        <td>
+          <div>No major delta</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="People" data-component="Button" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css__qWmYdbOkPA31BuSmWSrh0rJMbv2V3BDViMdqclfHVU.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxtj0kOwzAIRS8Ux2fCDrJoCVgYp8Ppa7WRIkvdsHi8z5AZTGNhTcCh-YtJypJVHJ_egeNmvQKvFwnDuLehGMase1VB8bYKHFTASSUEV-UEFlJ3V_mp5xy4wXMCGwFrmZFp_RMlx30sbz5Rw4YeoFYEA8k4NR0SY1M7I6K2A9Mbl-vaSOMxkyFfbDkIHy1-67rr1hk_PsNyow">
+        <td>
+          <div><strong>People</strong></div>
+          <div>Button</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/people" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/people" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">button, input[type=&quot;submit&quot;], .button</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css__qWmYdbOkPA31BuSmWSrh0rJMbv2V3BDViMdqclfHVU.css?delta=0&amp;language=en&amp;theme=claro&amp;include=eJxtj0kOwzAIRS8Ux2fCDrJoCVgYp8Ppa7WRIkvdsHi8z5AZTGNhTcCh-YtJypJVHJ_egeNmvQKvFwnDuLehGMase1VB8bYKHFTASSUEV-UEFlJ3V_mp5xy4wXMCGwFrmZFp_RMlx30sbz5Rw4YeoFYEA8k4NR0SY1M7I6K2A9Mbl-vaSOMxkyFfbDkIHy1-67rr1hk_PsNyow | http://drupal-git.ddev.site:8080/sites/default/files/css/css_pQRgX_EV-XMy29dV1bnHvAzBBjIF2ApNw3NTqxRXjkM.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxtj0kOwzAIRS8Ux2fCDrJoCVgYp8Ppa7WRIkvdsHi8z5AZTGNhTcCh-YtJypJVHJ_egeNmvQKvFwnDuLehGMase1VB8bYKHFTASSUEV-UEFlJ3V_mp5xy4wXMCGwFrmZFp_RMlx30sbz5Rw4YeoFYEA8k4NR0SY1M7I6K2A9Mbl-vaSOMxkyFfbDkIHy1-67rr1hk_PsNyow</div>
+        </td>
+        <td>
+          <div>count: 8</div>
+          <div>font-size: 13.3px</div>
+          <div>line-height: 16.5px</div>
+          <div>padding-y: 12.8px</div>
+          <div>width: 59.8px</div>
+          <div class="meta">Vertical orientation | Edit | Extend Create</div>
+          <img src="baseline/people__button.png" alt="Baseline Button People" />
+        </td>
+        <td>
+          <div>count: 8</div>
+          <div>font-size: 14.0px</div>
+          <div>line-height: 16.0px</div>
+          <div>padding-y: 20.0px</div>
+          <div>width: 141.3px</div>
+          <div class="meta">Collapse sidebar | Back | Collapse sidebar</div>
+          <img src="candidate/people__button.png" alt="Candidate Button People" />
+        </td>
+        <td>
+          <div>fontSize: 5.7%<br/>paddingY: 56.9%<br/>paddingX: 47.3%<br/>width: 136.4%<br/>height: 163.2%</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="People" data-component="Form Item Wrapper" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_pQRgX_EV-XMy29dV1bnHvAzBBjIF2ApNw3NTqxRXjkM.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxtj0kOwzAIRS8Ux2fCDrJoCVgYp8Ppa7WRIkvdsHi8z5AZTGNhTcCh-YtJypJVHJ_egeNmvQKvFwnDuLehGMase1VB8bYKHFTASSUEV-UEFlJ3V_mp5xy4wXMCGwFrmZFp_RMlx30sbz5Rw4YeoFYEA8k4NR0SY1M7I6K2A9Mbl-vaSOMxkyFfbDkIHy1-67rr1hk_PsNyow">
+        <td>
+          <div><strong>People</strong></div>
+          <div>Form Item Wrapper</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/people" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/people" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">.form-item</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_pQRgX_EV-XMy29dV1bnHvAzBBjIF2ApNw3NTqxRXjkM.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxtj0kOwzAIRS8Ux2fCDrJoCVgYp8Ppa7WRIkvdsHi8z5AZTGNhTcCh-YtJypJVHJ_egeNmvQKvFwnDuLehGMase1VB8bYKHFTASSUEV-UEFlJ3V_mp5xy4wXMCGwFrmZFp_RMlx30sbz5Rw4YeoFYEA8k4NR0SY1M7I6K2A9Mbl-vaSOMxkyFfbDkIHy1-67rr1hk_PsNyow</div>
+        </td>
+        <td>
+          <div>count: 7</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 24.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 199.0px</div>
+          <div class="meta">Name or email contains | Status - Any - Active Blocked | Role - Any - Content editor Administrator</div>
+          <img src="baseline/people__form-item.png" alt="Baseline Form Item Wrapper People" />
+        </td>
+        <td>
+          <div>count: 6</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 24.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 240.6px</div>
+          <div class="meta">Name or email contains | Status - Any - Active Blocked | Role - Any - Content editor Administrator</div>
+          <img src="candidate/people__form-item.png" alt="Candidate Form Item Wrapper People" />
+        </td>
+        <td>
+          <div>width: 20.9%<br/>height: 21.5%</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="People" data-component="Table Header Cell" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_pQRgX_EV-XMy29dV1bnHvAzBBjIF2ApNw3NTqxRXjkM.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxtj0kOwzAIRS8Ux2fCDrJoCVgYp8Ppa7WRIkvdsHi8z5AZTGNhTcCh-YtJypJVHJ_egeNmvQKvFwnDuLehGMase1VB8bYKHFTASSUEV-UEFlJ3V_mp5xy4wXMCGwFrmZFp_RMlx30sbz5Rw4YeoFYEA8k4NR0SY1M7I6K2A9Mbl-vaSOMxkyFfbDkIHy1-67rr1hk_PsNyow">
+        <td>
+          <div><strong>People</strong></div>
+          <div>Table Header Cell</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/people" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/people" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">table thead th</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_pQRgX_EV-XMy29dV1bnHvAzBBjIF2ApNw3NTqxRXjkM.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxtj0kOwzAIRS8Ux2fCDrJoCVgYp8Ppa7WRIkvdsHi8z5AZTGNhTcCh-YtJypJVHJ_egeNmvQKvFwnDuLehGMase1VB8bYKHFTASSUEV-UEFlJ3V_mp5xy4wXMCGwFrmZFp_RMlx30sbz5Rw4YeoFYEA8k4NR0SY1M7I6K2A9Mbl-vaSOMxkyFfbDkIHy1-67rr1hk_PsNyow</div>
+        </td>
+        <td>
+          <div>count: 7</div>
+          <div>font-size: 14.0px</div>
+          <div>line-height: 20.0px</div>
+          <div>padding-y: 22.9px</div>
+          <div>width: 147.1px</div>
+          <div class="meta">Username | Status | Roles</div>
+          <img src="baseline/people__table-header.png" alt="Baseline Table Header Cell People" />
+        </td>
+        <td>
+          <div>count: 7</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 20.0px</div>
+          <div>padding-y: 6.9px</div>
+          <div>width: 154.3px</div>
+          <div class="meta">Username | Status | Roles</div>
+          <img src="candidate/people__table-header.png" alt="Candidate Table Header Cell People" />
+        </td>
+        <td>
+          <div>fontSize: 14.3%<br/>paddingY: -70.0%<br/>height: -14.3%</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="People" data-component="Table Body Cell" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_pQRgX_EV-XMy29dV1bnHvAzBBjIF2ApNw3NTqxRXjkM.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxtj0kOwzAIRS8Ux2fCDrJoCVgYp8Ppa7WRIkvdsHi8z5AZTGNhTcCh-YtJypJVHJ_egeNmvQKvFwnDuLehGMase1VB8bYKHFTASSUEV-UEFlJ3V_mp5xy4wXMCGwFrmZFp_RMlx30sbz5Rw4YeoFYEA8k4NR0SY1M7I6K2A9Mbl-vaSOMxkyFfbDkIHy1-67rr1hk_PsNyow">
+        <td>
+          <div><strong>People</strong></div>
+          <div>Table Body Cell</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/people" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/people" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">table tbody td</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_pQRgX_EV-XMy29dV1bnHvAzBBjIF2ApNw3NTqxRXjkM.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxtj0kOwzAIRS8Ux2fCDrJoCVgYp8Ppa7WRIkvdsHi8z5AZTGNhTcCh-YtJypJVHJ_egeNmvQKvFwnDuLehGMase1VB8bYKHFTASSUEV-UEFlJ3V_mp5xy4wXMCGwFrmZFp_RMlx30sbz5Rw4YeoFYEA8k4NR0SY1M7I6K2A9Mbl-vaSOMxkyFfbDkIHy1-67rr1hk_PsNyow</div>
+        </td>
+        <td>
+          <div>count: 8</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 24.0px</div>
+          <div>padding-y: 32.0px</div>
+          <div>width: 135.4px</div>
+          <div class="meta">Update the user editor1 | editor1 | Active</div>
+          <img src="baseline/people__table-cell.png" alt="Baseline Table Body Cell People" />
+        </td>
+        <td>
+          <div>count: 7</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 24.0px</div>
+          <div>padding-y: 16.0px</div>
+          <div>width: 154.3px</div>
+          <div class="meta">Update the user admin | admin | Active</div>
+          <img src="candidate/people__table-cell.png" alt="Candidate Table Body Cell People" />
+        </td>
+        <td>
+          <div>paddingY: -50.0%<br/>width: 14.0%</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="People" data-component="Details Summary" data-significant="yes" data-css="unknown">
+        <td>
+          <div><strong>People</strong></div>
+          <div>Details Summary</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/people" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/people" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">details &gt; summary</div>
+          <div class="meta"><strong>Likely CSS:</strong> unknown</div>
+        </td>
+        <td>
+          <div>count: 2</div>
+          <div>font-size: 16.0px</div>
+          <div>line-height: 20.7px</div>
+          <div>padding-y: 32.0px</div>
+          <div>width: 1010.0px</div>
+          <div class="meta">Deprecated function: Using null as an array offset is deprecated, use an empty s | Deprecated function: Using null as an array offset is deprecated, use an empty s</div>
+          <img src="baseline/people__details-summary.png" alt="Baseline Details Summary People" />
+        </td>
+        <td>
+          <div>count: 0</div>
+          <div>font-size: 0.0px</div>
+          <div>line-height: 0.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 0.0px</div>
+          <div class="meta"></div>
+          <img src="candidate/people__details-summary.png" alt="Candidate Details Summary People" />
+        </td>
+        <td>
+          <div>fontSize: -100.0%<br/>lineHeight: -100.0%<br/>paddingY: -100.0%<br/>paddingX: -100.0%<br/>width: -100.0%<br/>height: -100.0%<br/>count: -2 (-100.0%)</div>
+        </td>
+      </tr>
+      <tr class="flagged" data-route="People" data-component="Form Label" data-significant="yes" data-css="http://drupal-git.ddev.site:8080/sites/default/files/css/css_pQRgX_EV-XMy29dV1bnHvAzBBjIF2ApNw3NTqxRXjkM.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxtj0kOwzAIRS8Ux2fCDrJoCVgYp8Ppa7WRIkvdsHi8z5AZTGNhTcCh-YtJypJVHJ_egeNmvQKvFwnDuLehGMase1VB8bYKHFTASSUEV-UEFlJ3V_mp5xy4wXMCGwFrmZFp_RMlx30sbz5Rw4YeoFYEA8k4NR0SY1M7I6K2A9Mbl-vaSOMxkyFfbDkIHy1-67rr1hk_PsNyow">
+        <td>
+          <div><strong>People</strong></div>
+          <div>Form Label</div>
+          <div class="meta"><a href="http://drupal-11.3.10.ddev.site/admin/people" target="_blank" rel="noopener">Drupal 11 with Gin URL</a></div>
+          <div class="meta"><a href="http://drupal-git.ddev.site:8080/admin/people" target="_blank" rel="noopener">Drupal 12 with Admin Theme URL</a></div>
+          <div class="meta">label</div>
+          <div class="meta"><strong>Likely CSS:</strong> http://drupal-git.ddev.site:8080/sites/default/files/css/css_pQRgX_EV-XMy29dV1bnHvAzBBjIF2ApNw3NTqxRXjkM.css?delta=1&amp;language=en&amp;theme=claro&amp;include=eJxtj0kOwzAIRS8Ux2fCDrJoCVgYp8Ppa7WRIkvdsHi8z5AZTGNhTcCh-YtJypJVHJ_egeNmvQKvFwnDuLehGMase1VB8bYKHFTASSUEV-UEFlJ3V_mp5xy4wXMCGwFrmZFp_RMlx30sbz5Rw4YeoFYEA8k4NR0SY1M7I6K2A9Mbl-vaSOMxkyFfbDkIHy1-67rr1hk_PsNyow</div>
+        </td>
+        <td>
+          <div>count: 7</div>
+          <div>font-size: 14.0px</div>
+          <div>line-height: 18.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 68.3px</div>
+          <div class="meta">Name or email contains | Status | Role</div>
+          <img src="baseline/people__label.png" alt="Baseline Form Label People" />
+        </td>
+        <td>
+          <div>count: 6</div>
+          <div>font-size: 14.2px</div>
+          <div>line-height: 18.0px</div>
+          <div>padding-y: 0.0px</div>
+          <div>width: 69.3px</div>
+          <div class="meta">Name or email contains | Status | Role</div>
+          <img src="candidate/people__label.png" alt="Candidate Form Label People" />
+        </td>
+        <td>
+          <div>paddingX: 16.7%<br/>height: -19.9%</div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+<script>
+  const rows = [...document.querySelectorAll('#resultsTable tbody tr')];
+  const tbody = document.querySelector('#resultsTable tbody');
+  const routeFilter = document.getElementById('routeFilter');
+  const componentFilter = document.getElementById('componentFilter');
+  const signalFilter = document.getElementById('signalFilter');
+  const cssFilter = document.getElementById('cssFilter');
+  const sortOrder = document.getElementById('sortOrder');
+  const textFilter = document.getElementById('textFilter');
+
+  const routes = [...new Set(rows.map(r => r.dataset.route))].sort();
+  const components = [...new Set(rows.map(r => r.dataset.component))].sort();
+  const cssSources = [...new Set(rows.map(r => r.dataset.css || 'unknown'))].sort();
+
+  for (const r of routes) {
+    const opt = document.createElement('option');
+    opt.value = r; opt.textContent = r;
+    routeFilter.appendChild(opt);
+  }
+  for (const c of components) {
+    const opt = document.createElement('option');
+    opt.value = c; opt.textContent = c;
+    componentFilter.appendChild(opt);
+  }
+  for (const css of cssSources) {
+    const opt = document.createElement('option');
+    opt.value = css; opt.textContent = css;
+    cssFilter.appendChild(opt);
+  }
+
+  function sortRows(order) {
+    const get = (r, key) => (r.dataset[key] || '').toLowerCase();
+    const sorted = [...rows].sort((a, b) => {
+      if (order === 'component') return get(a, 'component').localeCompare(get(b, 'component'));
+      if (order === 'css') return get(a, 'css').localeCompare(get(b, 'css'));
+      if (order === 'flagged') return get(b, 'significant').localeCompare(get(a, 'significant'));
+      return get(a, 'route').localeCompare(get(b, 'route'));
+    });
+
+    for (const row of sorted) {
+      tbody.appendChild(row);
+    }
+  }
+
+  function applyFilters() {
+    const route = routeFilter.value;
+    const comp = componentFilter.value;
+    const sig = signalFilter.value;
+    const css = cssFilter.value;
+    const txt = textFilter.value.toLowerCase().trim();
+
+    for (const row of rows) {
+      const matchesRoute = !route || row.dataset.route === route;
+      const matchesComp = !comp || row.dataset.component === comp;
+      const matchesSig = !sig || row.dataset.significant === sig;
+      const matchesCss = !css || row.dataset.css === css;
+      const matchesTxt = !txt || row.textContent.toLowerCase().includes(txt);
+      row.style.display = (matchesRoute && matchesComp && matchesSig && matchesCss && matchesTxt) ? '' : 'none';
+    }
+
+    sortRows(sortOrder.value);
+  }
+
+  routeFilter.addEventListener('change', applyFilters);
+  componentFilter.addEventListener('change', applyFilters);
+  signalFilter.addEventListener('change', applyFilters);
+  cssFilter.addEventListener('change', applyFilters);
+  sortOrder.addEventListener('change', applyFilters);
+  textFilter.addEventListener('input', applyFilters);
+  applyFilters();
+</script>
+</body>
+</html>

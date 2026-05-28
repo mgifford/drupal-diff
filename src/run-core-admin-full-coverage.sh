@@ -159,7 +159,7 @@ const statusFile = process.env.STATUS_FILE;
 const username = process.env.DRUPAL_ADMIN_USER;
 const password = process.env.DRUPAL_ADMIN_PASS;
 
-const selectors = 'a, button, input, select, textarea, [role="button"], [role="link"], [tabindex]';
+const selectors = 'a, button, input, select, textarea, [role="button"], [role="link"]';
 
 function slug(route) {
   return route.replace(/^\//, '').replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'admin-root';
@@ -229,40 +229,45 @@ async function captureStates(page, basePath, side) {
   fs.mkdirSync(outDir, { recursive: true });
 
   const browser = await chromium.launch({ headless: true });
-  const baselineCtx = await browser.newContext({ viewport: { width: 1440, height: 1024 } });
-  const candidateCtx = await browser.newContext({ viewport: { width: 1440, height: 1024 } });
-  const baselinePage = await baselineCtx.newPage();
-  const candidatePage = await candidateCtx.newPage();
+  const routeStats = routes.map((route) => ({
+    route,
+    baselineStatus: 0,
+    candidateStatus: 0,
+    baselineInteractives: 0,
+    candidateInteractives: 0,
+  }));
 
-  await login(baselinePage, baselineUrl);
-  await login(candidatePage, candidateUrl);
+  async function captureSite(siteKey, base, statusField, countField) {
+    const ctx = await browser.newContext({ viewport: { width: 1440, height: 1024 } });
+    const page = await ctx.newPage();
+    await login(page, base);
+
+    for (const stat of routeStats) {
+      const folder = path.join(outDir, slug(stat.route));
+      fs.mkdirSync(folder, { recursive: true });
+
+      const status = await gotoRoute(page, `${base}${stat.route}`).catch(() => 0);
+      stat[statusField] = status;
+
+      if (status > 0 && status < 500) {
+        stat[countField] = await captureStates(page, folder, siteKey).catch(() => 0);
+      }
+
+      console.log(`[${siteKey}] ${stat.route} status=${status} interactives=${stat[countField]}`);
+    }
+
+    await ctx.close();
+  }
+
+  await captureSite('baseline', baselineUrl, 'baselineStatus', 'baselineInteractives');
+  await captureSite('candidate', candidateUrl, 'candidateStatus', 'candidateInteractives');
 
   const rows = ['route,baseline_status,candidate_status,baseline_interactives,candidate_interactives'];
-
-  for (const route of routes) {
-    const folder = path.join(outDir, slug(route));
-    fs.mkdirSync(folder, { recursive: true });
-
-    const baselineStatus = await gotoRoute(baselinePage, `${baselineUrl}${route}`).catch(() => 0);
-    const candidateStatus = await gotoRoute(candidatePage, `${candidateUrl}${route}`).catch(() => 0);
-
-    let baseCount = 0;
-    let candCount = 0;
-
-    if (baselineStatus > 0 && baselineStatus < 500) {
-      baseCount = await captureStates(baselinePage, folder, 'baseline').catch(() => 0);
-    }
-    if (candidateStatus > 0 && candidateStatus < 500) {
-      candCount = await captureStates(candidatePage, folder, 'candidate').catch(() => 0);
-    }
-
-    rows.push(`${route},${baselineStatus},${candidateStatus},${baseCount},${candCount}`);
+  for (const stat of routeStats) {
+    rows.push(`${stat.route},${stat.baselineStatus},${stat.candidateStatus},${stat.baselineInteractives},${stat.candidateInteractives}`);
   }
 
   fs.writeFileSync(statusFile, rows.join('\n') + '\n');
-
-  await baselineCtx.close();
-  await candidateCtx.close();
   await browser.close();
 })();
 NODE
@@ -270,7 +275,7 @@ NODE
 
 echo "[6/8] Copying artifacts to host report/screenshot folders"
 mkdir -p "$RUN_SCREENSHOT_DIR" "$RUN_REPORT_DIR/core-admin-coverage"
-rsync -a --delete "$CANDIDATE_DIR/.ddev/drupal-admin-vrt/core-admin-coverage-out/" "$RUN_SCREENSHOT_DIR/"
+(cd "$CANDIDATE_DIR" && ddev exec bash -lc "cd '/var/www/html/.ddev/drupal-admin-vrt/core-admin-coverage-out' && tar -cf - .") | tar -xf - -C "$RUN_SCREENSHOT_DIR"
 (cd "$CANDIDATE_DIR" && ddev exec bash -lc "cat '/var/www/html/.ddev/drupal-admin-vrt/core-admin-route-status.csv'") > "$MISSING_FILE"
 
 TOTAL_ROWS="$(tail -n +2 "$MISSING_FILE" | wc -l | tr -d ' ')"

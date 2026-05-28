@@ -1,0 +1,5 @@
+/admin
+/admin/appearance
+/admin/content
+/admin/modules
+/admin/structure
