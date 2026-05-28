@@ -43,6 +43,8 @@ summary {
 ## Evidence
 - Baseline element screenshot: baseline/appearance__dark__details-summary.png
 - Candidate element screenshot: candidate/appearance__dark__details-summary.png
+- Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260527-211449/element-compare/baseline/appearance__dark__details-summary.png
+- Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260527-211449/element-compare/candidate/appearance__dark__details-summary.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## Notes

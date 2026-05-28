@@ -84,6 +84,13 @@ else
   echo "[1/4] Skipping VRT run by request"
 fi
 
+echo "[2.5/4] Rebuilding published report index"
+if [[ -x "$ROOT_DIR/src/rebuild-report-index.sh" ]]; then
+  "$ROOT_DIR/src/rebuild-report-index.sh"
+else
+  echo "Skipping report index rebuild (script not executable): $ROOT_DIR/src/rebuild-report-index.sh"
+fi
+
 cd "$ROOT_DIR"
 
 echo "[3/4] Staging publishable paths"

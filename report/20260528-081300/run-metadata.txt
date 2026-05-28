@@ -1,0 +1,12 @@
+run_id: 20260528-081300
+run_label: dark-baseline-refresh
+mode: normal
+refresh_baseline: true
+color_mode: both
+baseline_project: /Users/mike.gifford/drupal-diff/drupal-11.3.10
+baseline_revision: 26adc3e4f17
+baseline_admin_theme: gin
+candidate_project: /Users/mike.gifford/drupal-diff/drupal-git
+candidate_revision: 68cf8d51cf0
+candidate_admin_theme: claro
+timestamp_utc: 2026-05-28T12:13:02Z

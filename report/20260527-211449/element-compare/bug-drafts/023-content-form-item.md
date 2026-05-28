@@ -32,6 +32,8 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/content__dark__form-item.png
 - Candidate element screenshot: candidate/content__dark__form-item.png
+- Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260527-211449/element-compare/baseline/content__dark__form-item.png
+- Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260527-211449/element-compare/candidate/content__dark__form-item.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## Notes

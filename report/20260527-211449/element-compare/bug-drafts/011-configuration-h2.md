@@ -38,6 +38,8 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/config__dark__h2.png
 - Candidate element screenshot: candidate/config__dark__h2.png
+- Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260527-211449/element-compare/baseline/config__dark__h2.png
+- Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260527-211449/element-compare/candidate/config__dark__h2.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## Notes

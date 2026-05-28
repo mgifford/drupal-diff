@@ -28,6 +28,8 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 ## Evidence
 - Baseline element screenshot: baseline/content__form-item.png
 - Candidate element screenshot: candidate/content__form-item.png
+- Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260527-203651/element-compare/baseline/content__form-item.png
+- Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260527-203651/element-compare/candidate/content__form-item.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## Notes

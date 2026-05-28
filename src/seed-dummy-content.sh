@@ -133,6 +133,8 @@ use Drupal\node\Entity\NodeType;
 use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\node\Entity\Node;
+use Drupal\block_content\Entity\BlockContent;
+use Drupal\Core\File\FileSystemInterface;
 
 $timestamp = \Drupal::time()->getRequestTime();
 $lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus, metus non cursus eleifend, lectus augue gravida nibh, ut blandit ipsum arcu in mauris.";
@@ -251,6 +253,100 @@ if ($pageCount < 20) {
   }
   print "Ensured 20 pages exist\n";
 }
+
+$blockCount = (int) \Drupal::entityQuery("block_content")
+  ->accessCheck(FALSE)
+  ->condition("type", "basic")
+  ->count()
+  ->execute();
+
+if ($blockCount < 15) {
+  for ($i = $blockCount + 1; $i <= 15; $i++) {
+    $block = BlockContent::create([
+      "type" => "basic",
+      "info" => "Seeded block $i",
+    ]);
+    if ($block->hasField("body")) {
+      $block->set("body", [
+        "value" => "$lorem\n\nSeeded reusable block body $i.",
+        "format" => "basic_html",
+      ]);
+    }
+    $block->save();
+  }
+  print "Ensured 15 reusable blocks exist\n";
+}
+
+$seedDirectory = "public://vrt-seed-files";
+\Drupal::service("file_system")->prepareDirectory(
+  $seedDirectory,
+  FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS
+);
+
+$fileRepository = \Drupal::service("file.repository");
+$replaceMode = class_exists("\\Drupal\\Core\\File\\FileExists")
+  ? \Drupal\Core\File\FileExists::Replace
+  : FileSystemInterface::EXISTS_REPLACE;
+$seedFiles = [
+  [
+    "name" => "seed-image-1.png",
+    "data" => base64_decode("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO7+K6sAAAAASUVORK5CYII="),
+    "label" => "valid png",
+  ],
+  [
+    "name" => "seed-image-2.jpg",
+    "data" => base64_decode("/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDwwMDQ4PEA8QEBITFBEVFx8YGBcYHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fH//2wBDARESEhgVGBgaGBoaHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fH//wAARCAAQABADASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAdEAABBAMBAQAAAAAAAAAAAAABAAIDBAUREiEx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAZEQADAQEBAAAAAAAAAAAAAAABAgMABDH/2gAMAwEAAhEDEQA/AK1wY3VC0jhn9Q8QfTt4xV6u2uk2x4ZpP/9k="),
+    "label" => "valid jpg",
+  ],
+  [
+    "name" => "seed-document.txt",
+    "data" => "Seeded text file for admin content/files coverage.\n",
+    "label" => "valid text",
+  ],
+  [
+    "name" => "seed-image-corrupt.jpg",
+    "data" => "not-a-real-jpeg",
+    "label" => "intentional malformed image payload",
+  ],
+  [
+    "name" => "seed-empty-image.png",
+    "data" => "",
+    "label" => "intentional zero-byte image payload",
+  ],
+];
+
+foreach ($seedFiles as $seedFile) {
+  $uri = $seedDirectory . "/" . $seedFile["name"];
+  $existing = \Drupal::entityTypeManager()->getStorage("file")
+    ->loadByProperties(["uri" => $uri]);
+
+  if ($existing) {
+    continue;
+  }
+
+  $data = $seedFile["data"];
+  if (is_string($data)) {
+    $raw = $data;
+  }
+  else {
+    $raw = "";
+  }
+
+  $file = $fileRepository->writeData($raw, $uri, $replaceMode);
+  if ($file) {
+    $file->setOwnerId(1);
+    $file->setPermanent();
+    $file->save();
+    print "Created managed file: {$seedFile["name"]} ({$seedFile["label"]})\n";
+  }
+}
+
+$managedSeedFileCount = (int) \Drupal::entityQuery("file")
+  ->accessCheck(FALSE)
+  ->condition("uri", "public://vrt-seed-files/%", "LIKE")
+  ->count()
+  ->execute();
+print "Seeded managed files under public://vrt-seed-files: $managedSeedFileCount\n";
 
 print "Done.\n";
 ')

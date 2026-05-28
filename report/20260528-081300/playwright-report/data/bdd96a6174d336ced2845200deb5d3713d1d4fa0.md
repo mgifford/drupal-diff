@@ -1,0 +1,1949 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: vrt/structure.spec.ts >> structure-views-content >> default state
+- Location: tests/vrt/generate-vrt-tests.ts:9:11
+
+# Error details
+
+```
+Error: expect(page).toHaveScreenshot(expected) failed
+
+  Expected an image 1280px by 6752px, received 1280px by 5691px. 253093 pixels (ratio 0.03 of all image pixels) are different.
+
+  Snapshot: structure-views-content.png
+
+Call log:
+  - Expect "toHaveScreenshot(structure-views-content.png)" with timeout 5000ms
+    - verifying given screenshot expectation
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - Expected an image 1280px by 6752px, received 1280px by 1639px. 151773 pixels (ratio 0.02 of all image pixels) are different.
+  - waiting 100ms before taking screenshot
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - Expected an image 1280px by 1639px, received 1280px by 5691px. 105827 pixels (ratio 0.02 of all image pixels) are different.
+  - waiting 250ms before taking screenshot
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - captured a stable screenshot
+  - Expected an image 1280px by 6752px, received 1280px by 5691px. 253093 pixels (ratio 0.03 of all image pixels) are different.
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - navigation "Administrative sidebar" [ref=e3]:
+    - heading "Administrative sidebar" [level=2] [ref=e4]
+    - generic [ref=e5]:
+      - link "Home page" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img [ref=e8]
+        - generic [ref=e11]: Home page
+      - generic [ref=e12]:
+        - heading "Content" [level=3] [ref=e13]
+        - list [ref=e14]:
+          - listitem [ref=e15]:
+            - button "Extend Create" [ref=e16] [cursor=pointer]:
+              - img [ref=e17]
+              - generic [ref=e19]: Extend
+              - generic [ref=e20]: Create
+              - img [ref=e21]
+            - generic [ref=e23]:
+              - link "Create" [ref=e24] [cursor=pointer]:
+                - /url: /node/add
+                - generic [ref=e25]: Create
+              - list [ref=e26]:
+                - listitem [ref=e27]:
+                  - link "Article" [ref=e28] [cursor=pointer]:
+                    - /url: /node/add/article
+                    - generic [ref=e29]: Article
+                - listitem [ref=e30]:
+                  - link "Basic page" [ref=e31] [cursor=pointer]:
+                    - /url: /node/add/page
+                    - generic [ref=e32]: Basic page
+          - listitem [ref=e33]:
+            - link "Blocks" [ref=e34] [cursor=pointer]:
+              - /url: /admin/content/block
+              - img [ref=e35]
+              - generic [ref=e37]: Blocks
+          - listitem [ref=e38]:
+            - link "Content" [ref=e39] [cursor=pointer]:
+              - /url: /admin/content
+              - img [ref=e40]
+              - generic [ref=e42]: Content
+          - listitem [ref=e43]:
+            - link "Files" [ref=e44] [cursor=pointer]:
+              - /url: /admin/content/files
+              - img [ref=e45]
+              - generic [ref=e47]: Files
+      - generic [ref=e48]:
+        - heading "Administration" [level=3] [ref=e49]
+        - list [ref=e50]:
+          - listitem [ref=e51]:
+            - button "Extend Structure" [ref=e52] [cursor=pointer]:
+              - img [ref=e53]
+              - generic [ref=e55]: Extend
+              - generic [ref=e56]: Structure
+              - img [ref=e57]
+            - generic [ref=e59]:
+              - link "Structure" [ref=e60] [cursor=pointer]:
+                - /url: /admin/structure
+                - generic [ref=e61]: Structure
+              - list [ref=e62]:
+                - listitem [ref=e63]:
+                  - link "Block layout" [ref=e64] [cursor=pointer]:
+                    - /url: /admin/structure/block
+                    - generic [ref=e65]: Block layout
+                - listitem [ref=e66]:
+                  - link "Block types" [ref=e67] [cursor=pointer]:
+                    - /url: /admin/structure/block-content
+                    - generic [ref=e68]: Block types
+                - listitem [ref=e69]:
+                  - link "Content types" [ref=e70] [cursor=pointer]:
+                    - /url: /admin/structure/types
+                    - generic [ref=e71]: Content types
+                - listitem [ref=e72]:
+                  - button "Display modes" [ref=e73] [cursor=pointer]:
+                    - generic [ref=e74]: Display modes
+                    - img [ref=e75]
+                - listitem [ref=e77]:
+                  - link "Menus" [ref=e78] [cursor=pointer]:
+                    - /url: /admin/structure/menu
+                    - generic [ref=e79]: Menus
+                - listitem [ref=e80]:
+                  - link "Taxonomy" [ref=e81] [cursor=pointer]:
+                    - /url: /admin/structure/taxonomy
+                    - generic [ref=e82]: Taxonomy
+                - listitem [ref=e83]:
+                  - link "Views" [ref=e84] [cursor=pointer]:
+                    - /url: /admin/structure/views
+                    - generic [ref=e85]: Views
+          - listitem [ref=e86]:
+            - link "Appearance" [ref=e87] [cursor=pointer]:
+              - /url: /admin/appearance
+              - img [ref=e88]
+              - generic [ref=e90]: Appearance
+          - listitem [ref=e91]:
+            - link "Extend" [ref=e92] [cursor=pointer]:
+              - /url: /admin/modules
+              - img [ref=e93]
+              - generic [ref=e95]: Extend
+          - listitem [ref=e96]:
+            - button "Extend Configuration" [ref=e97] [cursor=pointer]:
+              - img [ref=e98]
+              - generic [ref=e100]: Extend
+              - generic [ref=e101]: Configuration
+              - img [ref=e102]
+            - generic [ref=e104]:
+              - link "Configuration" [ref=e105] [cursor=pointer]:
+                - /url: /admin/config
+                - generic [ref=e106]: Configuration
+              - list [ref=e107]:
+                - listitem [ref=e108]:
+                  - button "People" [ref=e109] [cursor=pointer]:
+                    - generic [ref=e110]: People
+                    - img [ref=e111]
+                - listitem [ref=e113]:
+                  - button "System" [ref=e114] [cursor=pointer]:
+                    - generic [ref=e115]: System
+                    - img [ref=e116]
+                - listitem [ref=e118]:
+                  - button "Content authoring" [ref=e119] [cursor=pointer]:
+                    - generic [ref=e120]: Content authoring
+                    - img [ref=e121]
+                - listitem [ref=e123]:
+                  - button "User interface" [ref=e124] [cursor=pointer]:
+                    - generic [ref=e125]: User interface
+                    - img [ref=e126]
+                - listitem [ref=e128]:
+                  - button "Development" [ref=e129] [cursor=pointer]:
+                    - generic [ref=e130]: Development
+                    - img [ref=e131]
+                - listitem [ref=e133]:
+                  - button "Media" [ref=e134] [cursor=pointer]:
+                    - generic [ref=e135]: Media
+                    - img [ref=e136]
+                - listitem [ref=e138]:
+                  - button "Search and metadata" [ref=e139] [cursor=pointer]:
+                    - generic [ref=e140]: Search and metadata
+                    - img [ref=e141]
+                - listitem [ref=e143]:
+                  - button "Region and language" [ref=e144] [cursor=pointer]:
+                    - generic [ref=e145]: Region and language
+                    - img [ref=e146]
+                - listitem [ref=e148]:
+                  - button "Web services" [ref=e149] [cursor=pointer]:
+                    - generic [ref=e150]: Web services
+                    - img [ref=e151]
+          - listitem [ref=e153]:
+            - link "People" [ref=e154] [cursor=pointer]:
+              - /url: /admin/people
+              - img [ref=e155]
+              - generic [ref=e157]: People
+          - listitem [ref=e158]:
+            - button "Extend Reports" [ref=e159] [cursor=pointer]:
+              - img [ref=e160]
+              - generic [ref=e162]: Extend
+              - generic [ref=e163]: Reports
+              - img [ref=e164]
+            - generic [ref=e166]:
+              - link "Reports" [ref=e167] [cursor=pointer]:
+                - /url: /admin/reports
+                - generic [ref=e168]: Reports
+              - list [ref=e169]:
+                - listitem [ref=e170]:
+                  - link "Status report" [ref=e171] [cursor=pointer]:
+                    - /url: /admin/reports/status
+                    - generic [ref=e172]: Status report
+                - listitem [ref=e173]:
+                  - link "Available updates" [ref=e174] [cursor=pointer]:
+                    - /url: /admin/reports/updates
+                    - generic [ref=e175]: Available updates
+                - listitem [ref=e176]:
+                  - link "Recent log messages" [ref=e177] [cursor=pointer]:
+                    - /url: /admin/reports/dblog
+                    - generic [ref=e178]: Recent log messages
+                - listitem [ref=e179]:
+                  - link "Field list" [ref=e180] [cursor=pointer]:
+                    - /url: /admin/reports/fields
+                    - generic [ref=e181]: Field list
+                - listitem [ref=e182]:
+                  - link "Top 'access denied' errors" [ref=e183] [cursor=pointer]:
+                    - /url: /admin/reports/access-denied
+                    - generic [ref=e184]: Top 'access denied' errors
+                - listitem [ref=e185]:
+                  - link "Top 'page not found' errors" [ref=e186] [cursor=pointer]:
+                    - /url: /admin/reports/page-not-found
+                    - generic [ref=e187]: Top 'page not found' errors
+                - listitem [ref=e188]:
+                  - link "Views plugins" [ref=e189] [cursor=pointer]:
+                    - /url: /admin/reports/views-plugins
+                    - generic [ref=e190]: Views plugins
+          - listitem [ref=e191]:
+            - link "Announcements" [ref=e192] [cursor=pointer]:
+              - /url: /admin/announcements_feed
+              - img [ref=e193]
+              - generic [ref=e197]: Announcements
+    - generic [ref=e198]:
+      - generic [ref=e199]:
+        - heading "Help" [level=3] [ref=e200]
+        - list [ref=e201]:
+          - listitem [ref=e202]:
+            - link "Help" [ref=e203] [cursor=pointer]:
+              - /url: /admin/help
+              - img [ref=e204]
+              - generic [ref=e206]: Help
+      - generic [ref=e207]:
+        - heading "User" [level=3] [ref=e208]
+        - list [ref=e209]:
+          - listitem [ref=e210]:
+            - button "Extend admin" [ref=e211] [cursor=pointer]:
+              - img [ref=e212]
+              - generic [ref=e214]: Extend
+              - generic [ref=e215]: admin
+              - img [ref=e216]
+            - generic [ref=e218]:
+              - link "admin" [ref=e219] [cursor=pointer]:
+                - /url: /user
+                - generic [ref=e220]: admin
+              - list [ref=e221]:
+                - listitem [ref=e222]:
+                  - link "View profile" [ref=e223] [cursor=pointer]:
+                    - /url: /user
+                    - generic [ref=e224]: View profile
+                - listitem [ref=e225]:
+                  - link "Edit profile" [ref=e226] [cursor=pointer]:
+                    - /url: /user/edit
+                    - generic [ref=e227]: Edit profile
+                - listitem [ref=e228]:
+                  - link "Log out" [ref=e229] [cursor=pointer]:
+                    - /url: /user/logout?token=Yzzb-BjBXNcFnxuGskIoQB5phdaKZ_bySd8T9ReXAn8
+                    - generic [ref=e230]: Log out
+      - button "Collapse sidebar" [expanded] [ref=e231] [cursor=pointer]:
+        - img [ref=e232]
+        - generic [ref=e234]: Collapse sidebar
+  - main [ref=e236]:
+    - generic [ref=e239]:
+      - navigation "Breadcrumb" [ref=e242]:
+        - heading "Breadcrumb" [level=2] [ref=e243]
+        - list [ref=e244]:
+          - listitem [ref=e245]:
+            - link "Home" [ref=e246] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e247]:
+            - link "Administration" [ref=e248] [cursor=pointer]:
+              - /url: /admin
+          - listitem [ref=e249]:
+            - link "Structure" [ref=e250] [cursor=pointer]:
+              - /url: /admin/structure
+          - listitem [ref=e251]:
+            - link "Views" [ref=e252] [cursor=pointer]:
+              - /url: /admin/structure/views
+      - heading "Content (Content)" [level=1] [ref=e255]
+    - generic [ref=e259]:
+      - generic [ref=e261]:
+        - heading "Displays" [level=1] [ref=e262]
+        - generic [ref=e263]:
+          - generic [ref=e264]:
+            - heading "Secondary tabs" [level=2] [ref=e265]
+            - list [ref=e266]:
+              - listitem [ref=e267]:
+                - link "Page" [ref=e268] [cursor=pointer]:
+                  - /url: /admin/structure/views/view/content/edit/page_1
+              - listitem [ref=e269]:
+                - link "Add" [ref=e270] [cursor=pointer]:
+                  - /url: "#"
+            - list [ref=e274]:
+              - listitem [ref=e275]:
+                - link "Edit view name/description" [ref=e276] [cursor=pointer]:
+                  - /url: /admin/structure/views/nojs/edit-details/content/page_1
+              - listitem:
+                - button "List additional actions" [ref=e277]:
+                  - generic [ref=e278]: List additional actions
+          - generic [ref=e282]:
+            - generic [ref=e283]:
+              - generic [ref=e284]:
+                - generic [ref=e285]: "Display name:"
+                - link "Page" [ref=e286] [cursor=pointer]:
+                  - /url: /admin/structure/views/nojs/display/content/page_1/display_title
+              - list [ref=e289]:
+                - listitem [ref=e290]:
+                  - link "View Page" [ref=e291] [cursor=pointer]:
+                    - /url: /admin/content
+                - listitem:
+                  - button "List additional actions" [ref=e292]:
+                    - generic [ref=e293]: List additional actions
+            - generic [ref=e294]:
+              - generic [ref=e295]:
+                - generic [ref=e296]:
+                  - heading "Title" [level=3] [ref=e298]
+                  - generic [ref=e299]:
+                    - generic [ref=e300]: "Title:"
+                    - link "Content" [ref=e301] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/title
+                - generic [ref=e302]:
+                  - heading "Format" [level=3] [ref=e304]
+                  - generic [ref=e305]:
+                    - generic [ref=e306]: "Format:"
+                    - link "Table" [ref=e307] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/style
+                    - generic [ref=e308]: "|"
+                    - link "Settings" [ref=e309] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/style_options
+                - generic [ref=e310]:
+                  - generic [ref=e311]:
+                    - heading "Fields" [level=3] [ref=e312]
+                    - list [ref=e316]:
+                      - listitem [ref=e317]:
+                        - link "Add fields" [ref=e318] [cursor=pointer]:
+                          - /url: /admin/structure/views/nojs/add-handler/content/page_1/field
+                          - text: Add
+                          - generic [ref=e319]: fields
+                      - listitem:
+                        - button "List additional actions" [ref=e320]:
+                          - generic [ref=e321]: List additional actions
+                  - 'link "Content: Node operations bulk form" [ref=e323] [cursor=pointer]':
+                    - /url: /admin/structure/views/nojs/handler/content/page_1/field/node_bulk_form
+                  - 'link "Content: Title (Title)" [ref=e325] [cursor=pointer]':
+                    - /url: /admin/structure/views/nojs/handler/content/page_1/field/title
+                  - 'link "Content: Content type (Content type)" [ref=e327] [cursor=pointer]':
+                    - /url: /admin/structure/views/nojs/handler/content/page_1/field/type
+                  - 'link "(author) User: Name (Author)" [ref=e329] [cursor=pointer]':
+                    - /url: /admin/structure/views/nojs/handler/content/page_1/field/name
+                  - 'link "Content: Published (Status)" [ref=e331] [cursor=pointer]':
+                    - /url: /admin/structure/views/nojs/handler/content/page_1/field/status
+                  - 'link "Content: Changed (Updated)" [ref=e333] [cursor=pointer]':
+                    - /url: /admin/structure/views/nojs/handler/content/page_1/field/changed
+                  - 'link "Content: Translation language (Language)" [ref=e335] [cursor=pointer]':
+                    - /url: /admin/structure/views/nojs/handler/content/page_1/field/langcode
+                  - 'link "Content: Operations links (Operations)" [ref=e337] [cursor=pointer]':
+                    - /url: /admin/structure/views/nojs/handler/content/page_1/field/operations
+                - generic [ref=e338]:
+                  - generic [ref=e339]:
+                    - heading "Filter criteria" [level=3] [ref=e340]
+                    - list [ref=e344]:
+                      - listitem [ref=e345]:
+                        - link "Add filter criteria" [ref=e346] [cursor=pointer]:
+                          - /url: /admin/structure/views/nojs/add-handler/content/page_1/filter
+                          - text: Add
+                          - generic [ref=e347]: filter criteria
+                      - listitem:
+                        - button "List additional actions" [ref=e348]:
+                          - generic [ref=e349]: List additional actions
+                  - 'link "Content: Title (exposed)" [ref=e351] [cursor=pointer]':
+                    - /url: /admin/structure/views/nojs/handler/content/page_1/filter/title
+                  - 'link "Content: Content type (exposed)" [ref=e353] [cursor=pointer]':
+                    - /url: /admin/structure/views/nojs/handler/content/page_1/filter/type
+                  - 'link "Content: Published (grouped)" [ref=e355] [cursor=pointer]':
+                    - /url: /admin/structure/views/nojs/handler/content/page_1/filter/status
+                  - 'link "Content: Translation language (exposed)" [ref=e357] [cursor=pointer]':
+                    - /url: /admin/structure/views/nojs/handler/content/page_1/filter/langcode
+                  - 'link "Content: Published status or admin user" [ref=e359] [cursor=pointer]':
+                    - /url: /admin/structure/views/nojs/handler/content/page_1/filter/status_extra
+                - generic [ref=e361]:
+                  - heading "Sort criteria" [level=3] [ref=e362]
+                  - list [ref=e366]:
+                    - listitem [ref=e367]:
+                      - link "Add sort criteria" [ref=e368] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/add-handler/content/page_1/sort
+                        - text: Add
+                        - generic [ref=e369]: sort criteria
+              - generic [ref=e370]:
+                - generic [ref=e371]:
+                  - heading "Page settings" [level=3] [ref=e373]
+                  - generic [ref=e374]:
+                    - generic [ref=e375]: "Path:"
+                    - link "/admin/content/node" [ref=e376] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/path
+                  - generic [ref=e377]:
+                    - generic [ref=e378]: "Menu:"
+                    - 'link "Tab: Content" [ref=e379] [cursor=pointer]':
+                      - /url: /admin/structure/views/nojs/display/content/page_1/menu
+                    - generic [ref=e380]: "|"
+                    - link "Parent menu link" [ref=e381] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/tab_options
+                  - generic [ref=e382]:
+                    - generic [ref=e383]: "Administration theme:"
+                    - link "Yes (admin path)" [ref=e384] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/use_admin_theme
+                - generic [ref=e386]:
+                  - generic [ref=e387]: "Access:"
+                  - link "Permission" [ref=e388] [cursor=pointer]:
+                    - /url: /admin/structure/views/nojs/display/content/page_1/access
+                  - generic [ref=e389]: "|"
+                  - link "Access the Content overview page" [ref=e390] [cursor=pointer]:
+                    - /url: /admin/structure/views/nojs/display/content/page_1/access_options
+                - generic [ref=e392]:
+                  - heading "Header" [level=3] [ref=e393]
+                  - list [ref=e397]:
+                    - listitem [ref=e398]:
+                      - link "Add header" [ref=e399] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/add-handler/content/page_1/header
+                        - text: Add
+                        - generic [ref=e400]: header
+                - generic [ref=e402]:
+                  - heading "Footer" [level=3] [ref=e403]
+                  - list [ref=e407]:
+                    - listitem [ref=e408]:
+                      - link "Add footer" [ref=e409] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/add-handler/content/page_1/footer
+                        - text: Add
+                        - generic [ref=e410]: footer
+                - generic [ref=e411]:
+                  - generic [ref=e412]:
+                    - heading "No results behavior" [level=3] [ref=e413]
+                    - list [ref=e417]:
+                      - listitem [ref=e418]:
+                        - link "Add no results behavior" [ref=e419] [cursor=pointer]:
+                          - /url: /admin/structure/views/nojs/add-handler/content/page_1/empty
+                          - text: Add
+                          - generic [ref=e420]: no results behavior
+                      - listitem:
+                        - button "List additional actions" [ref=e421]:
+                          - generic [ref=e422]: List additional actions
+                  - 'link "Global: Unfiltered text (Global: Unfiltered text)" [ref=e424] [cursor=pointer]':
+                    - /url: /admin/structure/views/nojs/handler/content/page_1/empty/area_text_custom
+                - generic [ref=e425]:
+                  - heading "Pager" [level=3] [ref=e427]
+                  - generic [ref=e428]:
+                    - generic [ref=e429]: "Use pager:"
+                    - link "Full" [ref=e430] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/pager
+                    - generic [ref=e431]: "|"
+                    - link "Paged, 50 items" [ref=e432] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/pager_options
+                  - generic [ref=e433]:
+                    - generic [ref=e434]: "More link:"
+                    - link "No" [ref=e435] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/use_more
+              - generic [ref=e436]:
+                - generic [ref=e437]:
+                  - generic [ref=e438]:
+                    - heading "Relationships" [level=3] [ref=e439]
+                    - list [ref=e443]:
+                      - listitem [ref=e444]:
+                        - link "Add relationships" [ref=e445] [cursor=pointer]:
+                          - /url: /admin/structure/views/nojs/add-handler/content/page_1/relationship
+                          - text: Add
+                          - generic [ref=e446]: relationships
+                      - listitem:
+                        - button "List additional actions" [ref=e447]:
+                          - generic [ref=e448]: List additional actions
+                  - link "author" [ref=e450] [cursor=pointer]:
+                    - /url: /admin/structure/views/nojs/handler/content/page_1/relationship/uid
+                - generic [ref=e452]:
+                  - heading "Contextual filters" [level=3] [ref=e453]
+                  - list [ref=e457]:
+                    - listitem [ref=e458]:
+                      - link "Add contextual filters" [ref=e459] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/add-handler/content/page_1/argument
+                        - text: Add
+                        - generic [ref=e460]: contextual filters
+                - generic [ref=e461]:
+                  - heading "Exposed form" [level=3] [ref=e463]
+                  - generic [ref=e464]:
+                    - generic [ref=e465]: "Exposed form in block:"
+                    - link "No" [ref=e466] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/exposed_block
+                  - generic [ref=e467]:
+                    - generic [ref=e468]: "Exposed Form:"
+                    - link "Basic" [ref=e469] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/exposed_form
+                    - generic [ref=e470]: "|"
+                    - link "Settings" [ref=e471] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/exposed_form_options
+                - generic [ref=e472]:
+                  - heading "Other" [level=3] [ref=e474]
+                  - generic [ref=e475]:
+                    - generic [ref=e476]: "Machine Name:"
+                    - link "page_1" [ref=e477] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/display_id
+                  - generic [ref=e478]:
+                    - generic [ref=e479]: "Administrative comment:"
+                    - link "None" [ref=e480] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/display_comment
+                  - generic [ref=e481]:
+                    - generic [ref=e482]: "Use AJAX:"
+                    - link "No" [ref=e483] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/use_ajax
+                  - generic [ref=e484]:
+                    - generic [ref=e485]: "Hide attachments in summary:"
+                    - link "No" [ref=e486] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/hide_attachment_summary
+                  - generic [ref=e487]:
+                    - generic [ref=e488]: "Contextual links:"
+                    - link "Hidden" [ref=e489] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/show_admin_links
+                  - generic [ref=e490]:
+                    - generic [ref=e491]: "Use aggregation:"
+                    - link "No" [ref=e492] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/group_by
+                  - generic [ref=e493]:
+                    - generic [ref=e494]: "Query settings:"
+                    - link "Settings" [ref=e495] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/query
+                  - generic [ref=e496]:
+                    - generic [ref=e497]: "Caching:"
+                    - link "Tag based" [ref=e498] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/cache
+                  - generic [ref=e499]:
+                    - generic [ref=e500]: "CSS class:"
+                    - link "None" [ref=e501] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/css_class
+        - generic [ref=e502]:
+          - button "Save" [ref=e503] [cursor=pointer]
+          - button "Cancel" [ref=e504] [cursor=pointer]
+      - generic [ref=e506]:
+        - heading "Preview" [level=2] [ref=e507]
+        - generic [ref=e508]:
+          - checkbox "Auto preview" [checked] [ref=e509]
+          - text: Auto preview
+        - generic [ref=e510]:
+          - generic [ref=e511] [cursor=pointer]: "Preview with contextual filters:"
+          - textbox "Preview with contextual filters:" [ref=e512]
+          - generic [ref=e513]:
+            - text: Separate contextual filter values with a "/". For example,
+            - emphasis [ref=e514]: 40/12/10
+            - text: .
+        - button "Update preview" [ref=e516] [cursor=pointer]
+        - generic [ref=e517]:
+          - table [ref=e519]:
+            - rowgroup [ref=e520]:
+              - row "Title Content" [ref=e521]:
+                - cell "Title" [ref=e522]:
+                  - strong [ref=e523]: Title
+                - cell "Content" [ref=e524]
+              - row "Path /admin/content" [ref=e525]:
+                - cell "Path" [ref=e526]:
+                  - strong [ref=e527]: Path
+                - cell "/admin/content" [ref=e528]:
+                  - link "/admin/content" [ref=e529] [cursor=pointer]:
+                    - /url: /admin/content
+          - generic [ref=e530]:
+            - generic [ref=e531]:
+              - heading "Title" [level=1] [ref=e532]
+              - generic [ref=e533]: Content
+            - generic [ref=e535]:
+              - heading "Exposed Filters" [level=1] [ref=e536]
+              - generic [ref=e537]:
+                - generic [ref=e538]:
+                  - generic [ref=e539] [cursor=pointer]: Title
+                  - textbox "Title" [ref=e540]
+                - generic [ref=e541]:
+                  - generic [ref=e542] [cursor=pointer]: Content type
+                  - combobox "Content type" [ref=e543]:
+                    - option "- Any -" [selected]
+                    - option "Article"
+                    - option "Basic page"
+                - generic [ref=e544]:
+                  - generic [ref=e545] [cursor=pointer]: Published status
+                  - combobox "Published status" [ref=e546]:
+                    - option "- Any -" [selected]
+                    - option "Published"
+                    - option "Unpublished"
+                - button "Filter" [ref=e548] [cursor=pointer]
+            - generic [ref=e550]:
+              - heading "Content" [level=1] [ref=e551]
+              - generic [ref=e554]:
+                - table [ref=e555]:
+                  - rowgroup [ref=e556]:
+                    - row "Select all rows in this table Title Content type Author Status Updated Sort ascending Operations" [ref=e557]:
+                      - columnheader "Select all rows in this table" [ref=e558]:
+                        - checkbox "Select all rows in this table" [ref=e559]
+                      - columnheader "Title" [ref=e560]:
+                        - link "Title" [ref=e561] [cursor=pointer]:
+                          - /url: /admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&order=title&sort=asc
+                      - columnheader "Content type" [ref=e562]:
+                        - link "Content type" [ref=e563] [cursor=pointer]:
+                          - /url: /admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&order=type&sort=asc
+                      - columnheader "Author" [ref=e564]
+                      - columnheader "Status" [ref=e565]:
+                        - link "Status" [ref=e566] [cursor=pointer]:
+                          - /url: /admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&order=status&sort=asc
+                      - columnheader "Updated Sort ascending" [ref=e567]:
+                        - link "Updated Sort ascending" [ref=e568] [cursor=pointer]:
+                          - /url: /admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&order=changed&sort=asc
+                          - text: Updated
+                          - generic [ref=e570]: Sort ascending
+                      - columnheader "Operations" [ref=e571]
+                  - rowgroup [ref=e572]:
+                    - row "Update this item Dummy Page 20 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 20 List additional actions" [ref=e573]:
+                      - cell "Update this item" [ref=e574]:
+                        - generic [ref=e575]:
+                          - generic [ref=e576] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e577]
+                      - cell "Dummy Page 20" [ref=e578]:
+                        - link "Dummy Page 20" [ref=e579] [cursor=pointer]:
+                          - /url: /node/50
+                      - cell "Basic page" [ref=e580]
+                      - cell "admin" [ref=e581]:
+                        - link "admin" [ref=e582] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e583]
+                      - cell "28 May 2026 - 07:52" [ref=e584]:
+                        - time [ref=e585]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 20 List additional actions" [ref=e586]:
+                        - list [ref=e589]:
+                          - listitem [ref=e590]:
+                            - link "Edit Dummy Page 20" [ref=e591] [cursor=pointer]:
+                              - /url: /node/50/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e592]:
+                              - generic [ref=e593]: List additional actions
+                    - row "Update this item Dummy Page 6 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 6 List additional actions" [ref=e594]:
+                      - cell "Update this item" [ref=e595]:
+                        - generic [ref=e596]:
+                          - generic [ref=e597] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e598]
+                      - cell "Dummy Page 6" [ref=e599]:
+                        - link "Dummy Page 6" [ref=e600] [cursor=pointer]:
+                          - /url: /node/36
+                      - cell "Basic page" [ref=e601]
+                      - cell "admin" [ref=e602]:
+                        - link "admin" [ref=e603] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e604]
+                      - cell "28 May 2026 - 07:52" [ref=e605]:
+                        - time [ref=e606]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 6 List additional actions" [ref=e607]:
+                        - list [ref=e610]:
+                          - listitem [ref=e611]:
+                            - link "Edit Dummy Page 6" [ref=e612] [cursor=pointer]:
+                              - /url: /node/36/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e613]:
+                              - generic [ref=e614]: List additional actions
+                    - row "Update this item Dummy Page 5 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 5 List additional actions" [ref=e615]:
+                      - cell "Update this item" [ref=e616]:
+                        - generic [ref=e617]:
+                          - generic [ref=e618] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e619]
+                      - cell "Dummy Page 5" [ref=e620]:
+                        - link "Dummy Page 5" [ref=e621] [cursor=pointer]:
+                          - /url: /node/35
+                      - cell "Basic page" [ref=e622]
+                      - cell "admin" [ref=e623]:
+                        - link "admin" [ref=e624] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e625]
+                      - cell "28 May 2026 - 07:52" [ref=e626]:
+                        - time [ref=e627]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 5 List additional actions" [ref=e628]:
+                        - list [ref=e631]:
+                          - listitem [ref=e632]:
+                            - link "Edit Dummy Page 5" [ref=e633] [cursor=pointer]:
+                              - /url: /node/35/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e634]:
+                              - generic [ref=e635]: List additional actions
+                    - row "Update this item Dummy Page 4 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 4 List additional actions" [ref=e636]:
+                      - cell "Update this item" [ref=e637]:
+                        - generic [ref=e638]:
+                          - generic [ref=e639] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e640]
+                      - cell "Dummy Page 4" [ref=e641]:
+                        - link "Dummy Page 4" [ref=e642] [cursor=pointer]:
+                          - /url: /node/34
+                      - cell "Basic page" [ref=e643]
+                      - cell "admin" [ref=e644]:
+                        - link "admin" [ref=e645] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e646]
+                      - cell "28 May 2026 - 07:52" [ref=e647]:
+                        - time [ref=e648]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 4 List additional actions" [ref=e649]:
+                        - list [ref=e652]:
+                          - listitem [ref=e653]:
+                            - link "Edit Dummy Page 4" [ref=e654] [cursor=pointer]:
+                              - /url: /node/34/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e655]:
+                              - generic [ref=e656]: List additional actions
+                    - row "Update this item Dummy Page 3 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 3 List additional actions" [ref=e657]:
+                      - cell "Update this item" [ref=e658]:
+                        - generic [ref=e659]:
+                          - generic [ref=e660] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e661]
+                      - cell "Dummy Page 3" [ref=e662]:
+                        - link "Dummy Page 3" [ref=e663] [cursor=pointer]:
+                          - /url: /node/33
+                      - cell "Basic page" [ref=e664]
+                      - cell "admin" [ref=e665]:
+                        - link "admin" [ref=e666] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e667]
+                      - cell "28 May 2026 - 07:52" [ref=e668]:
+                        - time [ref=e669]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 3 List additional actions" [ref=e670]:
+                        - list [ref=e673]:
+                          - listitem [ref=e674]:
+                            - link "Edit Dummy Page 3" [ref=e675] [cursor=pointer]:
+                              - /url: /node/33/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e676]:
+                              - generic [ref=e677]: List additional actions
+                    - row "Update this item Dummy Page 2 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 2 List additional actions" [ref=e678]:
+                      - cell "Update this item" [ref=e679]:
+                        - generic [ref=e680]:
+                          - generic [ref=e681] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e682]
+                      - cell "Dummy Page 2" [ref=e683]:
+                        - link "Dummy Page 2" [ref=e684] [cursor=pointer]:
+                          - /url: /node/32
+                      - cell "Basic page" [ref=e685]
+                      - cell "admin" [ref=e686]:
+                        - link "admin" [ref=e687] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e688]
+                      - cell "28 May 2026 - 07:52" [ref=e689]:
+                        - time [ref=e690]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 2 List additional actions" [ref=e691]:
+                        - list [ref=e694]:
+                          - listitem [ref=e695]:
+                            - link "Edit Dummy Page 2" [ref=e696] [cursor=pointer]:
+                              - /url: /node/32/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e697]:
+                              - generic [ref=e698]: List additional actions
+                    - row "Update this item Dummy Page 1 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 1 List additional actions" [ref=e699]:
+                      - cell "Update this item" [ref=e700]:
+                        - generic [ref=e701]:
+                          - generic [ref=e702] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e703]
+                      - cell "Dummy Page 1" [ref=e704]:
+                        - link "Dummy Page 1" [ref=e705] [cursor=pointer]:
+                          - /url: /node/31
+                      - cell "Basic page" [ref=e706]
+                      - cell "admin" [ref=e707]:
+                        - link "admin" [ref=e708] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e709]
+                      - cell "28 May 2026 - 07:52" [ref=e710]:
+                        - time [ref=e711]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 1 List additional actions" [ref=e712]:
+                        - list [ref=e715]:
+                          - listitem [ref=e716]:
+                            - link "Edit Dummy Page 1" [ref=e717] [cursor=pointer]:
+                              - /url: /node/31/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e718]:
+                              - generic [ref=e719]: List additional actions
+                    - row "Update this item Dummy Article 30 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 30 List additional actions" [ref=e720]:
+                      - cell "Update this item" [ref=e721]:
+                        - generic [ref=e722]:
+                          - generic [ref=e723] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e724]
+                      - cell "Dummy Article 30" [ref=e725]:
+                        - link "Dummy Article 30" [ref=e726] [cursor=pointer]:
+                          - /url: /node/30
+                      - cell "Article" [ref=e727]
+                      - cell "admin" [ref=e728]:
+                        - link "admin" [ref=e729] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e730]
+                      - cell "28 May 2026 - 07:52" [ref=e731]:
+                        - time [ref=e732]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 30 List additional actions" [ref=e733]:
+                        - list [ref=e736]:
+                          - listitem [ref=e737]:
+                            - link "Edit Dummy Article 30" [ref=e738] [cursor=pointer]:
+                              - /url: /node/30/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e739]:
+                              - generic [ref=e740]: List additional actions
+                    - row "Update this item Dummy Article 29 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 29 List additional actions" [ref=e741]:
+                      - cell "Update this item" [ref=e742]:
+                        - generic [ref=e743]:
+                          - generic [ref=e744] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e745]
+                      - cell "Dummy Article 29" [ref=e746]:
+                        - link "Dummy Article 29" [ref=e747] [cursor=pointer]:
+                          - /url: /node/29
+                      - cell "Article" [ref=e748]
+                      - cell "admin" [ref=e749]:
+                        - link "admin" [ref=e750] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e751]
+                      - cell "28 May 2026 - 07:52" [ref=e752]:
+                        - time [ref=e753]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 29 List additional actions" [ref=e754]:
+                        - list [ref=e757]:
+                          - listitem [ref=e758]:
+                            - link "Edit Dummy Article 29" [ref=e759] [cursor=pointer]:
+                              - /url: /node/29/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e760]:
+                              - generic [ref=e761]: List additional actions
+                    - row "Update this item Dummy Article 28 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 28 List additional actions" [ref=e762]:
+                      - cell "Update this item" [ref=e763]:
+                        - generic [ref=e764]:
+                          - generic [ref=e765] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e766]
+                      - cell "Dummy Article 28" [ref=e767]:
+                        - link "Dummy Article 28" [ref=e768] [cursor=pointer]:
+                          - /url: /node/28
+                      - cell "Article" [ref=e769]
+                      - cell "admin" [ref=e770]:
+                        - link "admin" [ref=e771] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e772]
+                      - cell "28 May 2026 - 07:52" [ref=e773]:
+                        - time [ref=e774]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 28 List additional actions" [ref=e775]:
+                        - list [ref=e778]:
+                          - listitem [ref=e779]:
+                            - link "Edit Dummy Article 28" [ref=e780] [cursor=pointer]:
+                              - /url: /node/28/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e781]:
+                              - generic [ref=e782]: List additional actions
+                    - row "Update this item Dummy Article 27 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 27 List additional actions" [ref=e783]:
+                      - cell "Update this item" [ref=e784]:
+                        - generic [ref=e785]:
+                          - generic [ref=e786] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e787]
+                      - cell "Dummy Article 27" [ref=e788]:
+                        - link "Dummy Article 27" [ref=e789] [cursor=pointer]:
+                          - /url: /node/27
+                      - cell "Article" [ref=e790]
+                      - cell "admin" [ref=e791]:
+                        - link "admin" [ref=e792] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e793]
+                      - cell "28 May 2026 - 07:52" [ref=e794]:
+                        - time [ref=e795]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 27 List additional actions" [ref=e796]:
+                        - list [ref=e799]:
+                          - listitem [ref=e800]:
+                            - link "Edit Dummy Article 27" [ref=e801] [cursor=pointer]:
+                              - /url: /node/27/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e802]:
+                              - generic [ref=e803]: List additional actions
+                    - row "Update this item Dummy Page 7 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 7 List additional actions" [ref=e804]:
+                      - cell "Update this item" [ref=e805]:
+                        - generic [ref=e806]:
+                          - generic [ref=e807] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e808]
+                      - cell "Dummy Page 7" [ref=e809]:
+                        - link "Dummy Page 7" [ref=e810] [cursor=pointer]:
+                          - /url: /node/37
+                      - cell "Basic page" [ref=e811]
+                      - cell "admin" [ref=e812]:
+                        - link "admin" [ref=e813] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e814]
+                      - cell "28 May 2026 - 07:52" [ref=e815]:
+                        - time [ref=e816]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 7 List additional actions" [ref=e817]:
+                        - list [ref=e820]:
+                          - listitem [ref=e821]:
+                            - link "Edit Dummy Page 7" [ref=e822] [cursor=pointer]:
+                              - /url: /node/37/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e823]:
+                              - generic [ref=e824]: List additional actions
+                    - row "Update this item Dummy Page 8 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 8 List additional actions" [ref=e825]:
+                      - cell "Update this item" [ref=e826]:
+                        - generic [ref=e827]:
+                          - generic [ref=e828] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e829]
+                      - cell "Dummy Page 8" [ref=e830]:
+                        - link "Dummy Page 8" [ref=e831] [cursor=pointer]:
+                          - /url: /node/38
+                      - cell "Basic page" [ref=e832]
+                      - cell "admin" [ref=e833]:
+                        - link "admin" [ref=e834] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e835]
+                      - cell "28 May 2026 - 07:52" [ref=e836]:
+                        - time [ref=e837]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 8 List additional actions" [ref=e838]:
+                        - list [ref=e841]:
+                          - listitem [ref=e842]:
+                            - link "Edit Dummy Page 8" [ref=e843] [cursor=pointer]:
+                              - /url: /node/38/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e844]:
+                              - generic [ref=e845]: List additional actions
+                    - row "Update this item Dummy Page 9 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 9 List additional actions" [ref=e846]:
+                      - cell "Update this item" [ref=e847]:
+                        - generic [ref=e848]:
+                          - generic [ref=e849] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e850]
+                      - cell "Dummy Page 9" [ref=e851]:
+                        - link "Dummy Page 9" [ref=e852] [cursor=pointer]:
+                          - /url: /node/39
+                      - cell "Basic page" [ref=e853]
+                      - cell "admin" [ref=e854]:
+                        - link "admin" [ref=e855] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e856]
+                      - cell "28 May 2026 - 07:52" [ref=e857]:
+                        - time [ref=e858]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 9 List additional actions" [ref=e859]:
+                        - list [ref=e862]:
+                          - listitem [ref=e863]:
+                            - link "Edit Dummy Page 9" [ref=e864] [cursor=pointer]:
+                              - /url: /node/39/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e865]:
+                              - generic [ref=e866]: List additional actions
+                    - row "Update this item Dummy Page 19 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 19 List additional actions" [ref=e867]:
+                      - cell "Update this item" [ref=e868]:
+                        - generic [ref=e869]:
+                          - generic [ref=e870] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e871]
+                      - cell "Dummy Page 19" [ref=e872]:
+                        - link "Dummy Page 19" [ref=e873] [cursor=pointer]:
+                          - /url: /node/49
+                      - cell "Basic page" [ref=e874]
+                      - cell "admin" [ref=e875]:
+                        - link "admin" [ref=e876] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e877]
+                      - cell "28 May 2026 - 07:52" [ref=e878]:
+                        - time [ref=e879]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 19 List additional actions" [ref=e880]:
+                        - list [ref=e883]:
+                          - listitem [ref=e884]:
+                            - link "Edit Dummy Page 19" [ref=e885] [cursor=pointer]:
+                              - /url: /node/49/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e886]:
+                              - generic [ref=e887]: List additional actions
+                    - row "Update this item Dummy Page 18 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 18 List additional actions" [ref=e888]:
+                      - cell "Update this item" [ref=e889]:
+                        - generic [ref=e890]:
+                          - generic [ref=e891] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e892]
+                      - cell "Dummy Page 18" [ref=e893]:
+                        - link "Dummy Page 18" [ref=e894] [cursor=pointer]:
+                          - /url: /node/48
+                      - cell "Basic page" [ref=e895]
+                      - cell "admin" [ref=e896]:
+                        - link "admin" [ref=e897] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e898]
+                      - cell "28 May 2026 - 07:52" [ref=e899]:
+                        - time [ref=e900]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 18 List additional actions" [ref=e901]:
+                        - list [ref=e904]:
+                          - listitem [ref=e905]:
+                            - link "Edit Dummy Page 18" [ref=e906] [cursor=pointer]:
+                              - /url: /node/48/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e907]:
+                              - generic [ref=e908]: List additional actions
+                    - row "Update this item Dummy Page 17 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 17 List additional actions" [ref=e909]:
+                      - cell "Update this item" [ref=e910]:
+                        - generic [ref=e911]:
+                          - generic [ref=e912] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e913]
+                      - cell "Dummy Page 17" [ref=e914]:
+                        - link "Dummy Page 17" [ref=e915] [cursor=pointer]:
+                          - /url: /node/47
+                      - cell "Basic page" [ref=e916]
+                      - cell "admin" [ref=e917]:
+                        - link "admin" [ref=e918] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e919]
+                      - cell "28 May 2026 - 07:52" [ref=e920]:
+                        - time [ref=e921]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 17 List additional actions" [ref=e922]:
+                        - list [ref=e925]:
+                          - listitem [ref=e926]:
+                            - link "Edit Dummy Page 17" [ref=e927] [cursor=pointer]:
+                              - /url: /node/47/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e928]:
+                              - generic [ref=e929]: List additional actions
+                    - row "Update this item Dummy Page 16 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 16 List additional actions" [ref=e930]:
+                      - cell "Update this item" [ref=e931]:
+                        - generic [ref=e932]:
+                          - generic [ref=e933] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e934]
+                      - cell "Dummy Page 16" [ref=e935]:
+                        - link "Dummy Page 16" [ref=e936] [cursor=pointer]:
+                          - /url: /node/46
+                      - cell "Basic page" [ref=e937]
+                      - cell "admin" [ref=e938]:
+                        - link "admin" [ref=e939] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e940]
+                      - cell "28 May 2026 - 07:52" [ref=e941]:
+                        - time [ref=e942]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 16 List additional actions" [ref=e943]:
+                        - list [ref=e946]:
+                          - listitem [ref=e947]:
+                            - link "Edit Dummy Page 16" [ref=e948] [cursor=pointer]:
+                              - /url: /node/46/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e949]:
+                              - generic [ref=e950]: List additional actions
+                    - row "Update this item Dummy Page 15 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 15 List additional actions" [ref=e951]:
+                      - cell "Update this item" [ref=e952]:
+                        - generic [ref=e953]:
+                          - generic [ref=e954] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e955]
+                      - cell "Dummy Page 15" [ref=e956]:
+                        - link "Dummy Page 15" [ref=e957] [cursor=pointer]:
+                          - /url: /node/45
+                      - cell "Basic page" [ref=e958]
+                      - cell "admin" [ref=e959]:
+                        - link "admin" [ref=e960] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e961]
+                      - cell "28 May 2026 - 07:52" [ref=e962]:
+                        - time [ref=e963]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 15 List additional actions" [ref=e964]:
+                        - list [ref=e967]:
+                          - listitem [ref=e968]:
+                            - link "Edit Dummy Page 15" [ref=e969] [cursor=pointer]:
+                              - /url: /node/45/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e970]:
+                              - generic [ref=e971]: List additional actions
+                    - row "Update this item Dummy Page 14 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 14 List additional actions" [ref=e972]:
+                      - cell "Update this item" [ref=e973]:
+                        - generic [ref=e974]:
+                          - generic [ref=e975] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e976]
+                      - cell "Dummy Page 14" [ref=e977]:
+                        - link "Dummy Page 14" [ref=e978] [cursor=pointer]:
+                          - /url: /node/44
+                      - cell "Basic page" [ref=e979]
+                      - cell "admin" [ref=e980]:
+                        - link "admin" [ref=e981] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e982]
+                      - cell "28 May 2026 - 07:52" [ref=e983]:
+                        - time [ref=e984]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 14 List additional actions" [ref=e985]:
+                        - list [ref=e988]:
+                          - listitem [ref=e989]:
+                            - link "Edit Dummy Page 14" [ref=e990] [cursor=pointer]:
+                              - /url: /node/44/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e991]:
+                              - generic [ref=e992]: List additional actions
+                    - row "Update this item Dummy Page 13 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 13 List additional actions" [ref=e993]:
+                      - cell "Update this item" [ref=e994]:
+                        - generic [ref=e995]:
+                          - generic [ref=e996] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e997]
+                      - cell "Dummy Page 13" [ref=e998]:
+                        - link "Dummy Page 13" [ref=e999] [cursor=pointer]:
+                          - /url: /node/43
+                      - cell "Basic page" [ref=e1000]
+                      - cell "admin" [ref=e1001]:
+                        - link "admin" [ref=e1002] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1003]
+                      - cell "28 May 2026 - 07:52" [ref=e1004]:
+                        - time [ref=e1005]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 13 List additional actions" [ref=e1006]:
+                        - list [ref=e1009]:
+                          - listitem [ref=e1010]:
+                            - link "Edit Dummy Page 13" [ref=e1011] [cursor=pointer]:
+                              - /url: /node/43/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1012]:
+                              - generic [ref=e1013]: List additional actions
+                    - row "Update this item Dummy Page 12 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 12 List additional actions" [ref=e1014]:
+                      - cell "Update this item" [ref=e1015]:
+                        - generic [ref=e1016]:
+                          - generic [ref=e1017] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1018]
+                      - cell "Dummy Page 12" [ref=e1019]:
+                        - link "Dummy Page 12" [ref=e1020] [cursor=pointer]:
+                          - /url: /node/42
+                      - cell "Basic page" [ref=e1021]
+                      - cell "admin" [ref=e1022]:
+                        - link "admin" [ref=e1023] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1024]
+                      - cell "28 May 2026 - 07:52" [ref=e1025]:
+                        - time [ref=e1026]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 12 List additional actions" [ref=e1027]:
+                        - list [ref=e1030]:
+                          - listitem [ref=e1031]:
+                            - link "Edit Dummy Page 12" [ref=e1032] [cursor=pointer]:
+                              - /url: /node/42/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1033]:
+                              - generic [ref=e1034]: List additional actions
+                    - row "Update this item Dummy Page 11 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 11 List additional actions" [ref=e1035]:
+                      - cell "Update this item" [ref=e1036]:
+                        - generic [ref=e1037]:
+                          - generic [ref=e1038] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1039]
+                      - cell "Dummy Page 11" [ref=e1040]:
+                        - link "Dummy Page 11" [ref=e1041] [cursor=pointer]:
+                          - /url: /node/41
+                      - cell "Basic page" [ref=e1042]
+                      - cell "admin" [ref=e1043]:
+                        - link "admin" [ref=e1044] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1045]
+                      - cell "28 May 2026 - 07:52" [ref=e1046]:
+                        - time [ref=e1047]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 11 List additional actions" [ref=e1048]:
+                        - list [ref=e1051]:
+                          - listitem [ref=e1052]:
+                            - link "Edit Dummy Page 11" [ref=e1053] [cursor=pointer]:
+                              - /url: /node/41/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1054]:
+                              - generic [ref=e1055]: List additional actions
+                    - row "Update this item Dummy Page 10 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 10 List additional actions" [ref=e1056]:
+                      - cell "Update this item" [ref=e1057]:
+                        - generic [ref=e1058]:
+                          - generic [ref=e1059] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1060]
+                      - cell "Dummy Page 10" [ref=e1061]:
+                        - link "Dummy Page 10" [ref=e1062] [cursor=pointer]:
+                          - /url: /node/40
+                      - cell "Basic page" [ref=e1063]
+                      - cell "admin" [ref=e1064]:
+                        - link "admin" [ref=e1065] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1066]
+                      - cell "28 May 2026 - 07:52" [ref=e1067]:
+                        - time [ref=e1068]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Page 10 List additional actions" [ref=e1069]:
+                        - list [ref=e1072]:
+                          - listitem [ref=e1073]:
+                            - link "Edit Dummy Page 10" [ref=e1074] [cursor=pointer]:
+                              - /url: /node/40/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1075]:
+                              - generic [ref=e1076]: List additional actions
+                    - row "Update this item Dummy Article 26 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 26 List additional actions" [ref=e1077]:
+                      - cell "Update this item" [ref=e1078]:
+                        - generic [ref=e1079]:
+                          - generic [ref=e1080] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1081]
+                      - cell "Dummy Article 26" [ref=e1082]:
+                        - link "Dummy Article 26" [ref=e1083] [cursor=pointer]:
+                          - /url: /node/26
+                      - cell "Article" [ref=e1084]
+                      - cell "admin" [ref=e1085]:
+                        - link "admin" [ref=e1086] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1087]
+                      - cell "28 May 2026 - 07:52" [ref=e1088]:
+                        - time [ref=e1089]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 26 List additional actions" [ref=e1090]:
+                        - list [ref=e1093]:
+                          - listitem [ref=e1094]:
+                            - link "Edit Dummy Article 26" [ref=e1095] [cursor=pointer]:
+                              - /url: /node/26/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1096]:
+                              - generic [ref=e1097]: List additional actions
+                    - row "Update this item Dummy Article 25 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 25 List additional actions" [ref=e1098]:
+                      - cell "Update this item" [ref=e1099]:
+                        - generic [ref=e1100]:
+                          - generic [ref=e1101] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1102]
+                      - cell "Dummy Article 25" [ref=e1103]:
+                        - link "Dummy Article 25" [ref=e1104] [cursor=pointer]:
+                          - /url: /node/25
+                      - cell "Article" [ref=e1105]
+                      - cell "admin" [ref=e1106]:
+                        - link "admin" [ref=e1107] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1108]
+                      - cell "28 May 2026 - 07:52" [ref=e1109]:
+                        - time [ref=e1110]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 25 List additional actions" [ref=e1111]:
+                        - list [ref=e1114]:
+                          - listitem [ref=e1115]:
+                            - link "Edit Dummy Article 25" [ref=e1116] [cursor=pointer]:
+                              - /url: /node/25/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1117]:
+                              - generic [ref=e1118]: List additional actions
+                    - row "Update this item Dummy Article 11 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 11 List additional actions" [ref=e1119]:
+                      - cell "Update this item" [ref=e1120]:
+                        - generic [ref=e1121]:
+                          - generic [ref=e1122] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1123]
+                      - cell "Dummy Article 11" [ref=e1124]:
+                        - link "Dummy Article 11" [ref=e1125] [cursor=pointer]:
+                          - /url: /node/11
+                      - cell "Article" [ref=e1126]
+                      - cell "admin" [ref=e1127]:
+                        - link "admin" [ref=e1128] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1129]
+                      - cell "28 May 2026 - 07:52" [ref=e1130]:
+                        - time [ref=e1131]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 11 List additional actions" [ref=e1132]:
+                        - list [ref=e1135]:
+                          - listitem [ref=e1136]:
+                            - link "Edit Dummy Article 11" [ref=e1137] [cursor=pointer]:
+                              - /url: /node/11/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1138]:
+                              - generic [ref=e1139]: List additional actions
+                    - row "Update this item Dummy Article 10 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 10 List additional actions" [ref=e1140]:
+                      - cell "Update this item" [ref=e1141]:
+                        - generic [ref=e1142]:
+                          - generic [ref=e1143] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1144]
+                      - cell "Dummy Article 10" [ref=e1145]:
+                        - link "Dummy Article 10" [ref=e1146] [cursor=pointer]:
+                          - /url: /node/10
+                      - cell "Article" [ref=e1147]
+                      - cell "admin" [ref=e1148]:
+                        - link "admin" [ref=e1149] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1150]
+                      - cell "28 May 2026 - 07:52" [ref=e1151]:
+                        - time [ref=e1152]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 10 List additional actions" [ref=e1153]:
+                        - list [ref=e1156]:
+                          - listitem [ref=e1157]:
+                            - link "Edit Dummy Article 10" [ref=e1158] [cursor=pointer]:
+                              - /url: /node/10/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1159]:
+                              - generic [ref=e1160]: List additional actions
+                    - row "Update this item Dummy Article 9 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 9 List additional actions" [ref=e1161]:
+                      - cell "Update this item" [ref=e1162]:
+                        - generic [ref=e1163]:
+                          - generic [ref=e1164] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1165]
+                      - cell "Dummy Article 9" [ref=e1166]:
+                        - link "Dummy Article 9" [ref=e1167] [cursor=pointer]:
+                          - /url: /node/9
+                      - cell "Article" [ref=e1168]
+                      - cell "admin" [ref=e1169]:
+                        - link "admin" [ref=e1170] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1171]
+                      - cell "28 May 2026 - 07:52" [ref=e1172]:
+                        - time [ref=e1173]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 9 List additional actions" [ref=e1174]:
+                        - list [ref=e1177]:
+                          - listitem [ref=e1178]:
+                            - link "Edit Dummy Article 9" [ref=e1179] [cursor=pointer]:
+                              - /url: /node/9/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1180]:
+                              - generic [ref=e1181]: List additional actions
+                    - row "Update this item Dummy Article 8 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 8 List additional actions" [ref=e1182]:
+                      - cell "Update this item" [ref=e1183]:
+                        - generic [ref=e1184]:
+                          - generic [ref=e1185] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1186]
+                      - cell "Dummy Article 8" [ref=e1187]:
+                        - link "Dummy Article 8" [ref=e1188] [cursor=pointer]:
+                          - /url: /node/8
+                      - cell "Article" [ref=e1189]
+                      - cell "admin" [ref=e1190]:
+                        - link "admin" [ref=e1191] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1192]
+                      - cell "28 May 2026 - 07:52" [ref=e1193]:
+                        - time [ref=e1194]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 8 List additional actions" [ref=e1195]:
+                        - list [ref=e1198]:
+                          - listitem [ref=e1199]:
+                            - link "Edit Dummy Article 8" [ref=e1200] [cursor=pointer]:
+                              - /url: /node/8/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1201]:
+                              - generic [ref=e1202]: List additional actions
+                    - row "Update this item Dummy Article 7 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 7 List additional actions" [ref=e1203]:
+                      - cell "Update this item" [ref=e1204]:
+                        - generic [ref=e1205]:
+                          - generic [ref=e1206] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1207]
+                      - cell "Dummy Article 7" [ref=e1208]:
+                        - link "Dummy Article 7" [ref=e1209] [cursor=pointer]:
+                          - /url: /node/7
+                      - cell "Article" [ref=e1210]
+                      - cell "admin" [ref=e1211]:
+                        - link "admin" [ref=e1212] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1213]
+                      - cell "28 May 2026 - 07:52" [ref=e1214]:
+                        - time [ref=e1215]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 7 List additional actions" [ref=e1216]:
+                        - list [ref=e1219]:
+                          - listitem [ref=e1220]:
+                            - link "Edit Dummy Article 7" [ref=e1221] [cursor=pointer]:
+                              - /url: /node/7/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1222]:
+                              - generic [ref=e1223]: List additional actions
+                    - row "Update this item Dummy Article 6 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 6 List additional actions" [ref=e1224]:
+                      - cell "Update this item" [ref=e1225]:
+                        - generic [ref=e1226]:
+                          - generic [ref=e1227] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1228]
+                      - cell "Dummy Article 6" [ref=e1229]:
+                        - link "Dummy Article 6" [ref=e1230] [cursor=pointer]:
+                          - /url: /node/6
+                      - cell "Article" [ref=e1231]
+                      - cell "admin" [ref=e1232]:
+                        - link "admin" [ref=e1233] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1234]
+                      - cell "28 May 2026 - 07:52" [ref=e1235]:
+                        - time [ref=e1236]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 6 List additional actions" [ref=e1237]:
+                        - list [ref=e1240]:
+                          - listitem [ref=e1241]:
+                            - link "Edit Dummy Article 6" [ref=e1242] [cursor=pointer]:
+                              - /url: /node/6/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1243]:
+                              - generic [ref=e1244]: List additional actions
+                    - row "Update this item Dummy Article 5 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 5 List additional actions" [ref=e1245]:
+                      - cell "Update this item" [ref=e1246]:
+                        - generic [ref=e1247]:
+                          - generic [ref=e1248] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1249]
+                      - cell "Dummy Article 5" [ref=e1250]:
+                        - link "Dummy Article 5" [ref=e1251] [cursor=pointer]:
+                          - /url: /node/5
+                      - cell "Article" [ref=e1252]
+                      - cell "admin" [ref=e1253]:
+                        - link "admin" [ref=e1254] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1255]
+                      - cell "28 May 2026 - 07:52" [ref=e1256]:
+                        - time [ref=e1257]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 5 List additional actions" [ref=e1258]:
+                        - list [ref=e1261]:
+                          - listitem [ref=e1262]:
+                            - link "Edit Dummy Article 5" [ref=e1263] [cursor=pointer]:
+                              - /url: /node/5/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1264]:
+                              - generic [ref=e1265]: List additional actions
+                    - row "Update this item Dummy Article 4 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 4 List additional actions" [ref=e1266]:
+                      - cell "Update this item" [ref=e1267]:
+                        - generic [ref=e1268]:
+                          - generic [ref=e1269] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1270]
+                      - cell "Dummy Article 4" [ref=e1271]:
+                        - link "Dummy Article 4" [ref=e1272] [cursor=pointer]:
+                          - /url: /node/4
+                      - cell "Article" [ref=e1273]
+                      - cell "admin" [ref=e1274]:
+                        - link "admin" [ref=e1275] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1276]
+                      - cell "28 May 2026 - 07:52" [ref=e1277]:
+                        - time [ref=e1278]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 4 List additional actions" [ref=e1279]:
+                        - list [ref=e1282]:
+                          - listitem [ref=e1283]:
+                            - link "Edit Dummy Article 4" [ref=e1284] [cursor=pointer]:
+                              - /url: /node/4/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1285]:
+                              - generic [ref=e1286]: List additional actions
+                    - row "Update this item Dummy Article 3 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 3 List additional actions" [ref=e1287]:
+                      - cell "Update this item" [ref=e1288]:
+                        - generic [ref=e1289]:
+                          - generic [ref=e1290] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1291]
+                      - cell "Dummy Article 3" [ref=e1292]:
+                        - link "Dummy Article 3" [ref=e1293] [cursor=pointer]:
+                          - /url: /node/3
+                      - cell "Article" [ref=e1294]
+                      - cell "admin" [ref=e1295]:
+                        - link "admin" [ref=e1296] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1297]
+                      - cell "28 May 2026 - 07:52" [ref=e1298]:
+                        - time [ref=e1299]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 3 List additional actions" [ref=e1300]:
+                        - list [ref=e1303]:
+                          - listitem [ref=e1304]:
+                            - link "Edit Dummy Article 3" [ref=e1305] [cursor=pointer]:
+                              - /url: /node/3/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1306]:
+                              - generic [ref=e1307]: List additional actions
+                    - row "Update this item Dummy Article 2 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 2 List additional actions" [ref=e1308]:
+                      - cell "Update this item" [ref=e1309]:
+                        - generic [ref=e1310]:
+                          - generic [ref=e1311] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1312]
+                      - cell "Dummy Article 2" [ref=e1313]:
+                        - link "Dummy Article 2" [ref=e1314] [cursor=pointer]:
+                          - /url: /node/2
+                      - cell "Article" [ref=e1315]
+                      - cell "admin" [ref=e1316]:
+                        - link "admin" [ref=e1317] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1318]
+                      - cell "28 May 2026 - 07:52" [ref=e1319]:
+                        - time [ref=e1320]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 2 List additional actions" [ref=e1321]:
+                        - list [ref=e1324]:
+                          - listitem [ref=e1325]:
+                            - link "Edit Dummy Article 2" [ref=e1326] [cursor=pointer]:
+                              - /url: /node/2/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1327]:
+                              - generic [ref=e1328]: List additional actions
+                    - row "Update this item Dummy Article 12 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 12 List additional actions" [ref=e1329]:
+                      - cell "Update this item" [ref=e1330]:
+                        - generic [ref=e1331]:
+                          - generic [ref=e1332] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1333]
+                      - cell "Dummy Article 12" [ref=e1334]:
+                        - link "Dummy Article 12" [ref=e1335] [cursor=pointer]:
+                          - /url: /node/12
+                      - cell "Article" [ref=e1336]
+                      - cell "admin" [ref=e1337]:
+                        - link "admin" [ref=e1338] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1339]
+                      - cell "28 May 2026 - 07:52" [ref=e1340]:
+                        - time [ref=e1341]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 12 List additional actions" [ref=e1342]:
+                        - list [ref=e1345]:
+                          - listitem [ref=e1346]:
+                            - link "Edit Dummy Article 12" [ref=e1347] [cursor=pointer]:
+                              - /url: /node/12/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1348]:
+                              - generic [ref=e1349]: List additional actions
+                    - row "Update this item Dummy Article 13 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 13 List additional actions" [ref=e1350]:
+                      - cell "Update this item" [ref=e1351]:
+                        - generic [ref=e1352]:
+                          - generic [ref=e1353] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1354]
+                      - cell "Dummy Article 13" [ref=e1355]:
+                        - link "Dummy Article 13" [ref=e1356] [cursor=pointer]:
+                          - /url: /node/13
+                      - cell "Article" [ref=e1357]
+                      - cell "admin" [ref=e1358]:
+                        - link "admin" [ref=e1359] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1360]
+                      - cell "28 May 2026 - 07:52" [ref=e1361]:
+                        - time [ref=e1362]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 13 List additional actions" [ref=e1363]:
+                        - list [ref=e1366]:
+                          - listitem [ref=e1367]:
+                            - link "Edit Dummy Article 13" [ref=e1368] [cursor=pointer]:
+                              - /url: /node/13/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1369]:
+                              - generic [ref=e1370]: List additional actions
+                    - row "Update this item Dummy Article 14 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 14 List additional actions" [ref=e1371]:
+                      - cell "Update this item" [ref=e1372]:
+                        - generic [ref=e1373]:
+                          - generic [ref=e1374] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1375]
+                      - cell "Dummy Article 14" [ref=e1376]:
+                        - link "Dummy Article 14" [ref=e1377] [cursor=pointer]:
+                          - /url: /node/14
+                      - cell "Article" [ref=e1378]
+                      - cell "admin" [ref=e1379]:
+                        - link "admin" [ref=e1380] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1381]
+                      - cell "28 May 2026 - 07:52" [ref=e1382]:
+                        - time [ref=e1383]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 14 List additional actions" [ref=e1384]:
+                        - list [ref=e1387]:
+                          - listitem [ref=e1388]:
+                            - link "Edit Dummy Article 14" [ref=e1389] [cursor=pointer]:
+                              - /url: /node/14/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1390]:
+                              - generic [ref=e1391]: List additional actions
+                    - row "Update this item Dummy Article 24 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 24 List additional actions" [ref=e1392]:
+                      - cell "Update this item" [ref=e1393]:
+                        - generic [ref=e1394]:
+                          - generic [ref=e1395] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1396]
+                      - cell "Dummy Article 24" [ref=e1397]:
+                        - link "Dummy Article 24" [ref=e1398] [cursor=pointer]:
+                          - /url: /node/24
+                      - cell "Article" [ref=e1399]
+                      - cell "admin" [ref=e1400]:
+                        - link "admin" [ref=e1401] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1402]
+                      - cell "28 May 2026 - 07:52" [ref=e1403]:
+                        - time [ref=e1404]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 24 List additional actions" [ref=e1405]:
+                        - list [ref=e1408]:
+                          - listitem [ref=e1409]:
+                            - link "Edit Dummy Article 24" [ref=e1410] [cursor=pointer]:
+                              - /url: /node/24/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1411]:
+                              - generic [ref=e1412]: List additional actions
+                    - row "Update this item Dummy Article 23 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 23 List additional actions" [ref=e1413]:
+                      - cell "Update this item" [ref=e1414]:
+                        - generic [ref=e1415]:
+                          - generic [ref=e1416] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1417]
+                      - cell "Dummy Article 23" [ref=e1418]:
+                        - link "Dummy Article 23" [ref=e1419] [cursor=pointer]:
+                          - /url: /node/23
+                      - cell "Article" [ref=e1420]
+                      - cell "admin" [ref=e1421]:
+                        - link "admin" [ref=e1422] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1423]
+                      - cell "28 May 2026 - 07:52" [ref=e1424]:
+                        - time [ref=e1425]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 23 List additional actions" [ref=e1426]:
+                        - list [ref=e1429]:
+                          - listitem [ref=e1430]:
+                            - link "Edit Dummy Article 23" [ref=e1431] [cursor=pointer]:
+                              - /url: /node/23/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1432]:
+                              - generic [ref=e1433]: List additional actions
+                    - row "Update this item Dummy Article 22 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 22 List additional actions" [ref=e1434]:
+                      - cell "Update this item" [ref=e1435]:
+                        - generic [ref=e1436]:
+                          - generic [ref=e1437] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1438]
+                      - cell "Dummy Article 22" [ref=e1439]:
+                        - link "Dummy Article 22" [ref=e1440] [cursor=pointer]:
+                          - /url: /node/22
+                      - cell "Article" [ref=e1441]
+                      - cell "admin" [ref=e1442]:
+                        - link "admin" [ref=e1443] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1444]
+                      - cell "28 May 2026 - 07:52" [ref=e1445]:
+                        - time [ref=e1446]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 22 List additional actions" [ref=e1447]:
+                        - list [ref=e1450]:
+                          - listitem [ref=e1451]:
+                            - link "Edit Dummy Article 22" [ref=e1452] [cursor=pointer]:
+                              - /url: /node/22/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1453]:
+                              - generic [ref=e1454]: List additional actions
+                    - row "Update this item Dummy Article 21 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 21 List additional actions" [ref=e1455]:
+                      - cell "Update this item" [ref=e1456]:
+                        - generic [ref=e1457]:
+                          - generic [ref=e1458] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1459]
+                      - cell "Dummy Article 21" [ref=e1460]:
+                        - link "Dummy Article 21" [ref=e1461] [cursor=pointer]:
+                          - /url: /node/21
+                      - cell "Article" [ref=e1462]
+                      - cell "admin" [ref=e1463]:
+                        - link "admin" [ref=e1464] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1465]
+                      - cell "28 May 2026 - 07:52" [ref=e1466]:
+                        - time [ref=e1467]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 21 List additional actions" [ref=e1468]:
+                        - list [ref=e1471]:
+                          - listitem [ref=e1472]:
+                            - link "Edit Dummy Article 21" [ref=e1473] [cursor=pointer]:
+                              - /url: /node/21/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1474]:
+                              - generic [ref=e1475]: List additional actions
+                    - row "Update this item Dummy Article 20 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 20 List additional actions" [ref=e1476]:
+                      - cell "Update this item" [ref=e1477]:
+                        - generic [ref=e1478]:
+                          - generic [ref=e1479] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1480]
+                      - cell "Dummy Article 20" [ref=e1481]:
+                        - link "Dummy Article 20" [ref=e1482] [cursor=pointer]:
+                          - /url: /node/20
+                      - cell "Article" [ref=e1483]
+                      - cell "admin" [ref=e1484]:
+                        - link "admin" [ref=e1485] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1486]
+                      - cell "28 May 2026 - 07:52" [ref=e1487]:
+                        - time [ref=e1488]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 20 List additional actions" [ref=e1489]:
+                        - list [ref=e1492]:
+                          - listitem [ref=e1493]:
+                            - link "Edit Dummy Article 20" [ref=e1494] [cursor=pointer]:
+                              - /url: /node/20/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1495]:
+                              - generic [ref=e1496]: List additional actions
+                    - row "Update this item Dummy Article 19 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 19 List additional actions" [ref=e1497]:
+                      - cell "Update this item" [ref=e1498]:
+                        - generic [ref=e1499]:
+                          - generic [ref=e1500] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1501]
+                      - cell "Dummy Article 19" [ref=e1502]:
+                        - link "Dummy Article 19" [ref=e1503] [cursor=pointer]:
+                          - /url: /node/19
+                      - cell "Article" [ref=e1504]
+                      - cell "admin" [ref=e1505]:
+                        - link "admin" [ref=e1506] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1507]
+                      - cell "28 May 2026 - 07:52" [ref=e1508]:
+                        - time [ref=e1509]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 19 List additional actions" [ref=e1510]:
+                        - list [ref=e1513]:
+                          - listitem [ref=e1514]:
+                            - link "Edit Dummy Article 19" [ref=e1515] [cursor=pointer]:
+                              - /url: /node/19/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1516]:
+                              - generic [ref=e1517]: List additional actions
+                    - row "Update this item Dummy Article 18 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 18 List additional actions" [ref=e1518]:
+                      - cell "Update this item" [ref=e1519]:
+                        - generic [ref=e1520]:
+                          - generic [ref=e1521] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1522]
+                      - cell "Dummy Article 18" [ref=e1523]:
+                        - link "Dummy Article 18" [ref=e1524] [cursor=pointer]:
+                          - /url: /node/18
+                      - cell "Article" [ref=e1525]
+                      - cell "admin" [ref=e1526]:
+                        - link "admin" [ref=e1527] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1528]
+                      - cell "28 May 2026 - 07:52" [ref=e1529]:
+                        - time [ref=e1530]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 18 List additional actions" [ref=e1531]:
+                        - list [ref=e1534]:
+                          - listitem [ref=e1535]:
+                            - link "Edit Dummy Article 18" [ref=e1536] [cursor=pointer]:
+                              - /url: /node/18/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1537]:
+                              - generic [ref=e1538]: List additional actions
+                    - row "Update this item Dummy Article 17 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 17 List additional actions" [ref=e1539]:
+                      - cell "Update this item" [ref=e1540]:
+                        - generic [ref=e1541]:
+                          - generic [ref=e1542] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1543]
+                      - cell "Dummy Article 17" [ref=e1544]:
+                        - link "Dummy Article 17" [ref=e1545] [cursor=pointer]:
+                          - /url: /node/17
+                      - cell "Article" [ref=e1546]
+                      - cell "admin" [ref=e1547]:
+                        - link "admin" [ref=e1548] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1549]
+                      - cell "28 May 2026 - 07:52" [ref=e1550]:
+                        - time [ref=e1551]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 17 List additional actions" [ref=e1552]:
+                        - list [ref=e1555]:
+                          - listitem [ref=e1556]:
+                            - link "Edit Dummy Article 17" [ref=e1557] [cursor=pointer]:
+                              - /url: /node/17/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1558]:
+                              - generic [ref=e1559]: List additional actions
+                    - row "Update this item Dummy Article 16 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 16 List additional actions" [ref=e1560]:
+                      - cell "Update this item" [ref=e1561]:
+                        - generic [ref=e1562]:
+                          - generic [ref=e1563] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1564]
+                      - cell "Dummy Article 16" [ref=e1565]:
+                        - link "Dummy Article 16" [ref=e1566] [cursor=pointer]:
+                          - /url: /node/16
+                      - cell "Article" [ref=e1567]
+                      - cell "admin" [ref=e1568]:
+                        - link "admin" [ref=e1569] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1570]
+                      - cell "28 May 2026 - 07:52" [ref=e1571]:
+                        - time [ref=e1572]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 16 List additional actions" [ref=e1573]:
+                        - list [ref=e1576]:
+                          - listitem [ref=e1577]:
+                            - link "Edit Dummy Article 16" [ref=e1578] [cursor=pointer]:
+                              - /url: /node/16/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1579]:
+                              - generic [ref=e1580]: List additional actions
+                    - row "Update this item Dummy Article 15 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 15 List additional actions" [ref=e1581]:
+                      - cell "Update this item" [ref=e1582]:
+                        - generic [ref=e1583]:
+                          - generic [ref=e1584] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1585]
+                      - cell "Dummy Article 15" [ref=e1586]:
+                        - link "Dummy Article 15" [ref=e1587] [cursor=pointer]:
+                          - /url: /node/15
+                      - cell "Article" [ref=e1588]
+                      - cell "admin" [ref=e1589]:
+                        - link "admin" [ref=e1590] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1591]
+                      - cell "28 May 2026 - 07:52" [ref=e1592]:
+                        - time [ref=e1593]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 15 List additional actions" [ref=e1594]:
+                        - list [ref=e1597]:
+                          - listitem [ref=e1598]:
+                            - link "Edit Dummy Article 15" [ref=e1599] [cursor=pointer]:
+                              - /url: /node/15/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1600]:
+                              - generic [ref=e1601]: List additional actions
+                    - row "Update this item Dummy Article 1 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 1 List additional actions" [ref=e1602]:
+                      - cell "Update this item" [ref=e1603]:
+                        - generic [ref=e1604]:
+                          - generic [ref=e1605] [cursor=pointer]: Update this item
+                          - checkbox "Update this item" [ref=e1606]
+                      - cell "Dummy Article 1" [ref=e1607]:
+                        - link "Dummy Article 1" [ref=e1608] [cursor=pointer]:
+                          - /url: /node/1
+                      - cell "Article" [ref=e1609]
+                      - cell "admin" [ref=e1610]:
+                        - link "admin" [ref=e1611] [cursor=pointer]:
+                          - /url: /user/1
+                      - cell "Published" [ref=e1612]
+                      - cell "28 May 2026 - 07:52" [ref=e1613]:
+                        - time [ref=e1614]: 28 May 2026 - 07:52
+                      - cell "Edit Dummy Article 1 List additional actions" [ref=e1615]:
+                        - list [ref=e1618]:
+                          - listitem [ref=e1619]:
+                            - link "Edit Dummy Article 1" [ref=e1620] [cursor=pointer]:
+                              - /url: /node/1/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                              - text: Edit
+                          - listitem:
+                            - button "List additional actions" [ref=e1621]:
+                              - generic [ref=e1622]: List additional actions
+                - group "Perform actions on the selected items in the Content view" [ref=e1623]:
+                  - generic [ref=e1624]:
+                    - text: Perform actions on the selected items in the
+                    - emphasis [ref=e1625]: Content
+                    - text: view
+                  - generic [ref=e1626]: No items selected
+                  - generic [ref=e1627]:
+                    - text: "Action:"
+                    - combobox "Action:" [ref=e1628]:
+                      - option "- Select -" [selected]
+                      - option "Delete content"
+                      - option "Make content sticky"
+                      - option "Make content unsticky"
+                      - option "Promote content to front page"
+                      - option "Publish content"
+                      - option "Save content"
+                      - option "Remove content from front page"
+                      - option "Unpublish content"
+                  - button "Apply to selected items" [ref=e1630] [cursor=pointer]
+            - heading "Pager" [level=1] [ref=e1632]
+```
+
+# Test source
+
+```ts
+  1  | // #ddev-generated
+  2  | import { test, expect } from '@playwright/test';
+  3  | import fs from 'fs';
+  4  | import type { AdminPageDefinition } from '../../page-definitions/admin-pages.js';
+  5  | 
+  6  | export function generateVrtTests(pages: AdminPageDefinition[]) {
+  7  |   for (const pageDef of pages) {
+  8  |     test.describe(pageDef.id, () => {
+  9  |       test('default state', async ({ page }, testInfo) => {
+  10 |         if (pageDef.testTimeout) {
+  11 |           test.setTimeout(pageDef.testTimeout);
+  12 |         }
+  13 | 
+  14 |         if (testInfo.project.name.includes('dark')) {
+  15 |           await page.emulateMedia({ colorScheme: 'dark' });
+  16 |         }
+  17 |         else {
+  18 |           await page.emulateMedia({ colorScheme: 'light' });
+  19 |         }
+  20 | 
+  21 |         await page.goto(pageDef.path);
+  22 | 
+  23 |         if (testInfo.project.name.startsWith('rtl-')) {
+  24 |           await page.evaluate(() => {
+  25 |             document.documentElement.dir = 'rtl';
+  26 |           });
+  27 |         }
+  28 | 
+  29 |         if (pageDef.waitFor) {
+  30 |           await page.locator(pageDef.waitFor).waitFor();
+  31 |         }
+  32 | 
+  33 |         await page.waitForLoadState('load');
+  34 | 
+  35 |         const mask = (pageDef.maskSelectors || []).map((s) => page.locator(s));
+  36 | 
+> 37 |         await expect(page).toHaveScreenshot(`${pageDef.id}.png`, {
+     |                            ^ Error: expect(page).toHaveScreenshot(expected) failed
+  38 |           fullPage: pageDef.fullPage ?? false,
+  39 |           mask,
+  40 |           ...(pageDef.timeout ? { timeout: pageDef.timeout } : {}),
+  41 |         });
+  42 |         const snapshotPath = testInfo.snapshotPath(`${pageDef.id}.png`);
+  43 |         if (fs.existsSync(snapshotPath)) {
+  44 |           await testInfo.attach('screenshot', { body: fs.readFileSync(snapshotPath), contentType: 'image/png' });
+  45 |         }
+  46 |       });
+  47 | 
+  48 |       if (pageDef.interactions) {
+  49 |         for (const interaction of pageDef.interactions) {
+  50 |           test(`interaction: ${interaction.label}`, async ({ page }, testInfo) => {
+  51 |             if (pageDef.testTimeout) {
+  52 |               test.setTimeout(pageDef.testTimeout);
+  53 |             }
+  54 | 
+  55 |             if (testInfo.project.name.includes('dark')) {
+  56 |               await page.emulateMedia({ colorScheme: 'dark' });
+  57 |             }
+  58 |             else {
+  59 |               await page.emulateMedia({ colorScheme: 'light' });
+  60 |             }
+  61 | 
+  62 |             await page.goto(pageDef.path);
+  63 | 
+  64 |             if (testInfo.project.name.startsWith('rtl-')) {
+  65 |               await page.evaluate(() => {
+  66 |                 document.documentElement.dir = 'rtl';
+  67 |               });
+  68 |             }
+  69 | 
+  70 |             if (pageDef.waitFor) {
+  71 |               await page.locator(pageDef.waitFor).waitFor();
+  72 |             }
+  73 | 
+  74 |             await page.waitForLoadState('load');
+  75 |             await interaction.action(page);
+  76 | 
+  77 |             const mask = (pageDef.maskSelectors || []).map((s) => page.locator(s));
+  78 | 
+  79 |             await expect(page).toHaveScreenshot(
+  80 |               `${pageDef.id}--${interaction.label}.png`,
+  81 |               {
+  82 |                 fullPage: pageDef.fullPage ?? false,
+  83 |                 mask,
+  84 |                 ...(pageDef.timeout ? { timeout: pageDef.timeout } : {}),
+  85 |               }
+  86 |             );
+  87 |             const snapshotPath = testInfo.snapshotPath(`${pageDef.id}--${interaction.label}.png`);
+  88 |             if (fs.existsSync(snapshotPath)) {
+  89 |               await testInfo.attach('screenshot', { body: fs.readFileSync(snapshotPath), contentType: 'image/png' });
+  90 |             }
+  91 |           });
+  92 |         }
+  93 |       }
+  94 |     });
+  95 |   }
+  96 | }
+  97 | 
+```

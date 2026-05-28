@@ -46,6 +46,8 @@ button, input, optgroup, select, textarea {
 ## Evidence
 - Baseline element screenshot: baseline/people__light__button.png
 - Candidate element screenshot: candidate/people__light__button.png
+- Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260527-211449/element-compare/baseline/people__light__button.png
+- Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260527-211449/element-compare/candidate/people__light__button.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## Notes

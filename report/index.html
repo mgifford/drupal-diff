@@ -21,7 +21,7 @@
       background: var(--bg);
     }
     main {
-      max-width: 980px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 28px 20px 44px;
     }
@@ -38,6 +38,11 @@
       font-size: 1.05rem;
       margin: 0 0 8px;
     }
+    .meta {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
     ul { margin: 0; padding-left: 18px; }
     li { margin: 7px 0; }
     a { color: var(--accent); text-decoration: none; font-weight: 600; }
@@ -49,28 +54,76 @@
   <main>
     <h1>Published HTML Reports</h1>
     <p>
-      This page lists key HTML reports currently committed to the repository and served by GitHub Pages.
+      This page is generated from report folders that contain valid run artifacts.
+      Incomplete runs are excluded.
     </p>
+    <section class="run">
+      <h2>Run 20260528-081300</h2>
+      <div class="meta">label: dark-baseline-refresh mode: normal color: both</div>
+      <ul>
+        <li><a href="20260528-081300/element-compare/element-compare-dashboard.html">Element Compare Dashboard</a></li>
+        <li><a href="20260528-081300/element-compare/bug-drafts-index.md">Bug Drafts Index</a></li>
+        <li><a href="20260528-081300/element-compare/bug-drafts-by-css.md">Bug Drafts by CSS</a></li>
+        <li><a href="20260528-081300/playwright-report/index.html">Playwright HTML Report</a></li>
+        <li><a href="20260528-081300/issue-3592061-summary.md">Issue Summary (Markdown)</a></li>
+        <li><a href="20260528-081300/issue-3592061-summary.csv">Issue Summary (CSV)</a></li>
+      </ul>
+    </section>
+
+    <section class="run">
+      <h2>Run 20260527-211449</h2>
+      <ul>
+        <li><a href="20260527-211449/element-compare/element-compare-dashboard.html">Element Compare Dashboard</a></li>
+        <li><a href="20260527-211449/element-compare/bug-drafts-index.md">Bug Drafts Index</a></li>
+        <li><a href="20260527-211449/element-compare/bug-drafts-by-css.md">Bug Drafts by CSS</a></li>
+      </ul>
+    </section>
+
+    <section class="run">
+      <h2>Run 20260527-203651</h2>
+      <ul>
+        <li><a href="20260527-203651/element-compare/element-compare-dashboard.html">Element Compare Dashboard</a></li>
+        <li><a href="20260527-203651/element-compare/bug-drafts-index.md">Bug Drafts Index</a></li>
+        <li><a href="20260527-203651/element-compare/bug-drafts-by-css.md">Bug Drafts by CSS</a></li>
+      </ul>
+    </section>
+
+    <section class="run">
+      <h2>Run 20260527-201957</h2>
+      <ul>
+        <li><a href="20260527-201957/element-compare/element-compare-dashboard.html">Element Compare Dashboard</a></li>
+        <li><a href="20260527-201957/element-compare/bug-drafts-index.md">Bug Drafts Index</a></li>
+        <li><a href="20260527-201957/element-compare/bug-drafts-by-css.md">Bug Drafts by CSS</a></li>
+      </ul>
+    </section>
 
     <section class="run">
       <h2>Run 20260527-160939</h2>
+      <div class="meta">label: all-enhancements-validated mode: normal</div>
       <ul>
         <li><a href="20260527-160939/element-compare/element-compare-dashboard.html">Element Compare Dashboard</a></li>
+        <li><a href="20260527-160939/element-compare/bug-drafts-index.md">Bug Drafts Index</a></li>
         <li><a href="20260527-160939/side-by-side-vrt-diffs.html">Side-by-side VRT Diffs</a></li>
         <li><a href="20260527-160939/side-by-side-interactions.html">Side-by-side Interactions</a></li>
         <li><a href="20260527-160939/playwright-report/index.html">Playwright HTML Report</a></li>
+        <li><a href="20260527-160939/issue-3592061-summary.md">Issue Summary (Markdown)</a></li>
+        <li><a href="20260527-160939/issue-3592061-summary.csv">Issue Summary (CSV)</a></li>
       </ul>
     </section>
 
     <section class="run">
       <h2>Run 20260527-142145</h2>
+      <div class="meta">label: all-enhancements mode: normal</div>
       <ul>
         <li><a href="20260527-142145/playwright-report/index.html">Playwright HTML Report</a></li>
+        <li><a href="20260527-142145/issue-3592061-summary.md">Issue Summary (Markdown)</a></li>
+        <li><a href="20260527-142145/issue-3592061-summary.csv">Issue Summary (CSV)</a></li>
       </ul>
     </section>
 
     <section class="run">
       <h2>Run 20260527-140833</h2>
+      <div class="meta">label: freeze-baseline mode: normal</div>
       <ul>
         <li><a href="20260527-140833/playwright-report/index.html">Playwright HTML Report</a></li>
       </ul>

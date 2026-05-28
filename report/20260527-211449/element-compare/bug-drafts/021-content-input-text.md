@@ -46,6 +46,8 @@ button, input, optgroup, select, textarea {
 ## Evidence
 - Baseline element screenshot: baseline/content__dark__input-text.png
 - Candidate element screenshot: candidate/content__dark__input-text.png
+- Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260527-211449/element-compare/baseline/content__dark__input-text.png
+- Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260527-211449/element-compare/candidate/content__dark__input-text.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## Notes

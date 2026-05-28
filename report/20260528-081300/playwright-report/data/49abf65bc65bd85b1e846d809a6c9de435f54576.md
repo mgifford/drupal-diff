@@ -1,0 +1,3180 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: vrt/people.spec.ts >> people-permissions >> default state
+- Location: tests/vrt/generate-vrt-tests.ts:9:11
+
+# Error details
+
+```
+Error: expect(page).toHaveScreenshot(expected) failed
+
+  38215 pixels (ratio 0.04 of all image pixels) are different.
+
+  Snapshot: people-permissions.png
+
+Call log:
+  - Expect "toHaveScreenshot(people-permissions.png)" with timeout 30000ms
+    - verifying given screenshot expectation
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - 38215 pixels (ratio 0.04 of all image pixels) are different.
+  - waiting 100ms before taking screenshot
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - captured a stable screenshot
+  - 38215 pixels (ratio 0.04 of all image pixels) are different.
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - navigation "Administrative sidebar" [ref=e3]:
+    - heading "Administrative sidebar" [level=2] [ref=e4]
+    - generic [ref=e5]:
+      - link "Home page" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img [ref=e8]
+        - generic [ref=e11]: Home page
+      - generic [ref=e12]:
+        - heading "Content" [level=3] [ref=e13]
+        - list [ref=e14]:
+          - listitem [ref=e15]:
+            - button "Extend Create" [ref=e16] [cursor=pointer]:
+              - img [ref=e17]
+              - generic [ref=e19]: Extend
+              - generic [ref=e20]: Create
+              - img [ref=e21]
+            - generic [ref=e23]:
+              - link "Create" [ref=e24] [cursor=pointer]:
+                - /url: /node/add
+                - generic [ref=e25]: Create
+              - list [ref=e26]:
+                - listitem [ref=e27]:
+                  - link "Article" [ref=e28] [cursor=pointer]:
+                    - /url: /node/add/article
+                    - generic [ref=e29]: Article
+                - listitem [ref=e30]:
+                  - link "Basic page" [ref=e31] [cursor=pointer]:
+                    - /url: /node/add/page
+                    - generic [ref=e32]: Basic page
+          - listitem [ref=e33]:
+            - link "Blocks" [ref=e34] [cursor=pointer]:
+              - /url: /admin/content/block
+              - img [ref=e35]
+              - generic [ref=e37]: Blocks
+          - listitem [ref=e38]:
+            - link "Content" [ref=e39] [cursor=pointer]:
+              - /url: /admin/content
+              - img [ref=e40]
+              - generic [ref=e42]: Content
+          - listitem [ref=e43]:
+            - link "Files" [ref=e44] [cursor=pointer]:
+              - /url: /admin/content/files
+              - img [ref=e45]
+              - generic [ref=e47]: Files
+      - generic [ref=e48]:
+        - heading "Administration" [level=3] [ref=e49]
+        - list [ref=e50]:
+          - listitem [ref=e51]:
+            - button "Extend Structure" [ref=e52] [cursor=pointer]:
+              - img [ref=e53]
+              - generic [ref=e55]: Extend
+              - generic [ref=e56]: Structure
+              - img [ref=e57]
+            - generic [ref=e59]:
+              - link "Structure" [ref=e60] [cursor=pointer]:
+                - /url: /admin/structure
+                - generic [ref=e61]: Structure
+              - list [ref=e62]:
+                - listitem [ref=e63]:
+                  - link "Block layout" [ref=e64] [cursor=pointer]:
+                    - /url: /admin/structure/block
+                    - generic [ref=e65]: Block layout
+                - listitem [ref=e66]:
+                  - link "Block types" [ref=e67] [cursor=pointer]:
+                    - /url: /admin/structure/block-content
+                    - generic [ref=e68]: Block types
+                - listitem [ref=e69]:
+                  - link "Content types" [ref=e70] [cursor=pointer]:
+                    - /url: /admin/structure/types
+                    - generic [ref=e71]: Content types
+                - listitem [ref=e72]:
+                  - button "Display modes" [ref=e73] [cursor=pointer]:
+                    - generic [ref=e74]: Display modes
+                    - img [ref=e75]
+                - listitem [ref=e77]:
+                  - link "Menus" [ref=e78] [cursor=pointer]:
+                    - /url: /admin/structure/menu
+                    - generic [ref=e79]: Menus
+                - listitem [ref=e80]:
+                  - link "Taxonomy" [ref=e81] [cursor=pointer]:
+                    - /url: /admin/structure/taxonomy
+                    - generic [ref=e82]: Taxonomy
+                - listitem [ref=e83]:
+                  - link "Views" [ref=e84] [cursor=pointer]:
+                    - /url: /admin/structure/views
+                    - generic [ref=e85]: Views
+          - listitem [ref=e86]:
+            - link "Appearance" [ref=e87] [cursor=pointer]:
+              - /url: /admin/appearance
+              - img [ref=e88]
+              - generic [ref=e90]: Appearance
+          - listitem [ref=e91]:
+            - link "Extend" [ref=e92] [cursor=pointer]:
+              - /url: /admin/modules
+              - img [ref=e93]
+              - generic [ref=e95]: Extend
+          - listitem [ref=e96]:
+            - button "Extend Configuration" [ref=e97] [cursor=pointer]:
+              - img [ref=e98]
+              - generic [ref=e100]: Extend
+              - generic [ref=e101]: Configuration
+              - img [ref=e102]
+            - generic [ref=e104]:
+              - link "Configuration" [ref=e105] [cursor=pointer]:
+                - /url: /admin/config
+                - generic [ref=e106]: Configuration
+              - list [ref=e107]:
+                - listitem [ref=e108]:
+                  - button "People" [ref=e109] [cursor=pointer]:
+                    - generic [ref=e110]: People
+                    - img [ref=e111]
+                - listitem [ref=e113]:
+                  - button "System" [ref=e114] [cursor=pointer]:
+                    - generic [ref=e115]: System
+                    - img [ref=e116]
+                - listitem [ref=e118]:
+                  - button "Content authoring" [ref=e119] [cursor=pointer]:
+                    - generic [ref=e120]: Content authoring
+                    - img [ref=e121]
+                - listitem [ref=e123]:
+                  - button "User interface" [ref=e124] [cursor=pointer]:
+                    - generic [ref=e125]: User interface
+                    - img [ref=e126]
+                - listitem [ref=e128]:
+                  - button "Development" [ref=e129] [cursor=pointer]:
+                    - generic [ref=e130]: Development
+                    - img [ref=e131]
+                - listitem [ref=e133]:
+                  - button "Media" [ref=e134] [cursor=pointer]:
+                    - generic [ref=e135]: Media
+                    - img [ref=e136]
+                - listitem [ref=e138]:
+                  - button "Search and metadata" [ref=e139] [cursor=pointer]:
+                    - generic [ref=e140]: Search and metadata
+                    - img [ref=e141]
+                - listitem [ref=e143]:
+                  - button "Region and language" [ref=e144] [cursor=pointer]:
+                    - generic [ref=e145]: Region and language
+                    - img [ref=e146]
+                - listitem [ref=e148]:
+                  - button "Web services" [ref=e149] [cursor=pointer]:
+                    - generic [ref=e150]: Web services
+                    - img [ref=e151]
+          - listitem [ref=e153]:
+            - link "People" [ref=e154] [cursor=pointer]:
+              - /url: /admin/people
+              - img [ref=e155]
+              - generic [ref=e157]: People
+          - listitem [ref=e158]:
+            - button "Extend Reports" [ref=e159] [cursor=pointer]:
+              - img [ref=e160]
+              - generic [ref=e162]: Extend
+              - generic [ref=e163]: Reports
+              - img [ref=e164]
+            - generic [ref=e166]:
+              - link "Reports" [ref=e167] [cursor=pointer]:
+                - /url: /admin/reports
+                - generic [ref=e168]: Reports
+              - list [ref=e169]:
+                - listitem [ref=e170]:
+                  - link "Status report" [ref=e171] [cursor=pointer]:
+                    - /url: /admin/reports/status
+                    - generic [ref=e172]: Status report
+                - listitem [ref=e173]:
+                  - link "Available updates" [ref=e174] [cursor=pointer]:
+                    - /url: /admin/reports/updates
+                    - generic [ref=e175]: Available updates
+                - listitem [ref=e176]:
+                  - link "Recent log messages" [ref=e177] [cursor=pointer]:
+                    - /url: /admin/reports/dblog
+                    - generic [ref=e178]: Recent log messages
+                - listitem [ref=e179]:
+                  - link "Field list" [ref=e180] [cursor=pointer]:
+                    - /url: /admin/reports/fields
+                    - generic [ref=e181]: Field list
+                - listitem [ref=e182]:
+                  - link "Top 'access denied' errors" [ref=e183] [cursor=pointer]:
+                    - /url: /admin/reports/access-denied
+                    - generic [ref=e184]: Top 'access denied' errors
+                - listitem [ref=e185]:
+                  - link "Top 'page not found' errors" [ref=e186] [cursor=pointer]:
+                    - /url: /admin/reports/page-not-found
+                    - generic [ref=e187]: Top 'page not found' errors
+                - listitem [ref=e188]:
+                  - link "Views plugins" [ref=e189] [cursor=pointer]:
+                    - /url: /admin/reports/views-plugins
+                    - generic [ref=e190]: Views plugins
+          - listitem [ref=e191]:
+            - link "Announcements" [ref=e192] [cursor=pointer]:
+              - /url: /admin/announcements_feed
+              - img [ref=e193]
+              - generic [ref=e197]: Announcements
+    - generic [ref=e198]:
+      - generic [ref=e199]:
+        - heading "Help" [level=3] [ref=e200]
+        - list [ref=e201]:
+          - listitem [ref=e202]:
+            - link "Help" [ref=e203] [cursor=pointer]:
+              - /url: /admin/help
+              - img [ref=e204]
+              - generic [ref=e206]: Help
+      - generic [ref=e207]:
+        - heading "User" [level=3] [ref=e208]
+        - list [ref=e209]:
+          - listitem [ref=e210]:
+            - button "Extend admin" [ref=e211] [cursor=pointer]:
+              - img [ref=e212]
+              - generic [ref=e214]: Extend
+              - generic [ref=e215]: admin
+              - img [ref=e216]
+            - generic [ref=e218]:
+              - link "admin" [ref=e219] [cursor=pointer]:
+                - /url: /user
+                - generic [ref=e220]: admin
+              - list [ref=e221]:
+                - listitem [ref=e222]:
+                  - link "View profile" [ref=e223] [cursor=pointer]:
+                    - /url: /user
+                    - generic [ref=e224]: View profile
+                - listitem [ref=e225]:
+                  - link "Edit profile" [ref=e226] [cursor=pointer]:
+                    - /url: /user/edit
+                    - generic [ref=e227]: Edit profile
+                - listitem [ref=e228]:
+                  - link "Log out" [ref=e229] [cursor=pointer]:
+                    - /url: /user/logout?token=Yzzb-BjBXNcFnxuGskIoQB5phdaKZ_bySd8T9ReXAn8
+                    - generic [ref=e230]: Log out
+      - button "Collapse sidebar" [expanded] [ref=e231] [cursor=pointer]:
+        - img [ref=e232]
+        - generic [ref=e234]: Collapse sidebar
+  - main [ref=e236]:
+    - generic [ref=e239]:
+      - navigation "Breadcrumb" [ref=e242]:
+        - heading "Breadcrumb" [level=2] [ref=e243]
+        - list [ref=e244]:
+          - listitem [ref=e245]:
+            - link "Home" [ref=e246] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e247]:
+            - link "Administration" [ref=e248] [cursor=pointer]:
+              - /url: /admin
+          - listitem [ref=e249]:
+            - link "People" [ref=e250] [cursor=pointer]:
+              - /url: /admin/people
+      - generic [ref=e251]:
+        - heading "Permissions" [level=1] [ref=e253]
+        - generic [ref=e254]:
+          - heading "Primary tabs" [level=2] [ref=e255]
+          - navigation "Primary tabs" [ref=e256]:
+            - list [ref=e257]:
+              - listitem [ref=e258]:
+                - link "List" [ref=e259] [cursor=pointer]:
+                  - /url: /admin/people
+              - listitem [ref=e260]:
+                - link "Permissions" [ref=e261] [cursor=pointer]:
+                  - /url: /admin/people/permissions
+              - listitem [ref=e262]:
+                - link "Roles" [ref=e263] [cursor=pointer]:
+                  - /url: /admin/people/roles
+              - listitem [ref=e264]:
+                - link "Role settings" [ref=e265] [cursor=pointer]:
+                  - /url: /admin/people/role-settings
+    - generic [ref=e267]:
+      - complementary [ref=e270]:
+        - paragraph [ref=e271]:
+          - text: Permissions let you control what users can do and see on your site. You can define a specific set of permissions for each role. (See the
+          - link "Roles" [ref=e272] [cursor=pointer]:
+            - /url: /admin/people/roles
+          - text: page to create a role.) Any permissions granted to the Authenticated user role will be given to any user who is logged in to your site. On the
+          - link "Role settings" [ref=e273] [cursor=pointer]:
+            - /url: /admin/people/role-settings
+          - text: page, you can make any role into an Administrator role for the site, meaning that role will be granted all permissions. You should be careful to ensure that only trusted users are given this access and level of control of your site.
+      - generic [ref=e276]:
+        - link "Hide descriptions" [ref=e278] [cursor=pointer]:
+          - /url: /admin/compact/on?destination=/admin/people/permissions
+        - generic [ref=e280]:
+          - generic [ref=e281] [cursor=pointer]: Filter
+          - searchbox "Filter" [ref=e282]
+          - generic [ref=e283]: Enter permission name
+        - table [ref=e284]:
+          - rowgroup [ref=e285]:
+            - row "Permission Anonymous user Authenticated user Content editor Administrator" [ref=e286]:
+              - columnheader "Permission" [ref=e287]
+              - columnheader "Anonymous user" [ref=e288]
+              - columnheader "Authenticated user" [ref=e289]
+              - columnheader "Content editor" [ref=e290]
+              - columnheader "Administrator" [ref=e291]
+          - rowgroup [ref=e292]:
+            - row "Announcements" [ref=e293]:
+              - cell "Announcements" [ref=e294]
+            - 'row "View official announcements related to Drupal Anonymous user: View official announcements related to Drupal Authenticated user: View official announcements related to Drupal Content editor: View official announcements related to Drupal Administrator: View official announcements related to Drupal" [ref=e295]':
+              - cell "View official announcements related to Drupal" [ref=e296]:
+                - generic [ref=e297]: View official announcements related to Drupal
+              - 'cell "Anonymous user: View official announcements related to Drupal" [ref=e298]':
+                - generic [ref=e299]:
+                  - generic [ref=e300] [cursor=pointer]: "Anonymous user: View official announcements related to Drupal"
+                  - 'checkbox "Anonymous user: View official announcements related to Drupal" [ref=e301]'
+              - 'cell "Authenticated user: View official announcements related to Drupal" [ref=e302]':
+                - generic [ref=e303]:
+                  - generic [ref=e304] [cursor=pointer]: "Authenticated user: View official announcements related to Drupal"
+                  - 'checkbox "Authenticated user: View official announcements related to Drupal" [ref=e305]'
+              - 'cell "Content editor: View official announcements related to Drupal" [ref=e306]':
+                - generic [ref=e307]:
+                  - generic [ref=e308] [cursor=pointer]: "Content editor: View official announcements related to Drupal"
+                  - 'checkbox "Content editor: View official announcements related to Drupal" [ref=e309]'
+              - 'cell "Administrator: View official announcements related to Drupal" [ref=e310]':
+                - generic [ref=e311]:
+                  - generic [ref=e312]: "Administrator: View official announcements related to Drupal"
+                  - 'checkbox "Administrator: View official announcements related to Drupal" [checked] [disabled] [ref=e313]'
+            - row "Block" [ref=e314]:
+              - cell "Block" [ref=e315]
+            - 'row "Administer blocks Anonymous user: Administer blocks Authenticated user: Administer blocks Content editor: Administer blocks Administrator: Administer blocks" [ref=e316]':
+              - cell "Administer blocks" [ref=e317]:
+                - generic [ref=e318]: Administer blocks
+              - 'cell "Anonymous user: Administer blocks" [ref=e319]':
+                - generic [ref=e320]:
+                  - generic [ref=e321] [cursor=pointer]: "Anonymous user: Administer blocks"
+                  - 'checkbox "Anonymous user: Administer blocks" [ref=e322]'
+              - 'cell "Authenticated user: Administer blocks" [ref=e323]':
+                - generic [ref=e324]:
+                  - generic [ref=e325] [cursor=pointer]: "Authenticated user: Administer blocks"
+                  - 'checkbox "Authenticated user: Administer blocks" [ref=e326]'
+              - 'cell "Content editor: Administer blocks" [ref=e327]':
+                - generic [ref=e328]:
+                  - generic [ref=e329] [cursor=pointer]: "Content editor: Administer blocks"
+                  - 'checkbox "Content editor: Administer blocks" [ref=e330]'
+              - 'cell "Administrator: Administer blocks" [ref=e331]':
+                - generic [ref=e332]:
+                  - generic [ref=e333]: "Administrator: Administer blocks"
+                  - 'checkbox "Administrator: Administer blocks" [checked] [disabled] [ref=e334]'
+            - row "Block Content" [ref=e335]:
+              - cell "Block Content" [ref=e336]
+            - 'row "Basic block: Create new content block Anonymous user: Basic block: Create new content block Authenticated user: Basic block: Create new content block Content editor: Basic block: Create new content block Administrator: Basic block: Create new content block" [ref=e337]':
+              - 'cell "Basic block: Create new content block" [ref=e338]':
+                - generic [ref=e340]:
+                  - emphasis [ref=e341]: Basic block
+                  - text: ": Create new content block"
+              - 'cell "Anonymous user: Basic block: Create new content block" [ref=e342]':
+                - generic [ref=e343]:
+                  - generic [ref=e344] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e345]: Basic block
+                    - text: ": Create new content block"
+                  - 'checkbox "Anonymous user: Basic block: Create new content block" [ref=e346]'
+              - 'cell "Authenticated user: Basic block: Create new content block" [ref=e347]':
+                - generic [ref=e348]:
+                  - generic [ref=e349] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e350]: Basic block
+                    - text: ": Create new content block"
+                  - 'checkbox "Authenticated user: Basic block: Create new content block" [ref=e351]'
+              - 'cell "Content editor: Basic block: Create new content block" [ref=e352]':
+                - generic [ref=e353]:
+                  - generic [ref=e354] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e355]: Basic block
+                    - text: ": Create new content block"
+                  - 'checkbox "Content editor: Basic block: Create new content block" [ref=e356]'
+              - 'cell "Administrator: Basic block: Create new content block" [ref=e357]':
+                - generic [ref=e358]:
+                  - generic [ref=e359]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e360]: Basic block
+                    - text: ": Create new content block"
+                  - 'checkbox "Administrator: Basic block: Create new content block" [checked] [disabled] [ref=e361]'
+            - 'row "Basic block: Delete content block Anonymous user: Basic block: Delete content block Authenticated user: Basic block: Delete content block Content editor: Basic block: Delete content block Administrator: Basic block: Delete content block" [ref=e362]':
+              - 'cell "Basic block: Delete content block" [ref=e363]':
+                - generic [ref=e365]:
+                  - emphasis [ref=e366]: Basic block
+                  - text: ": Delete content block"
+              - 'cell "Anonymous user: Basic block: Delete content block" [ref=e367]':
+                - generic [ref=e368]:
+                  - generic [ref=e369] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e370]: Basic block
+                    - text: ": Delete content block"
+                  - 'checkbox "Anonymous user: Basic block: Delete content block" [ref=e371]'
+              - 'cell "Authenticated user: Basic block: Delete content block" [ref=e372]':
+                - generic [ref=e373]:
+                  - generic [ref=e374] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e375]: Basic block
+                    - text: ": Delete content block"
+                  - 'checkbox "Authenticated user: Basic block: Delete content block" [ref=e376]'
+              - 'cell "Content editor: Basic block: Delete content block" [ref=e377]':
+                - generic [ref=e378]:
+                  - generic [ref=e379] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e380]: Basic block
+                    - text: ": Delete content block"
+                  - 'checkbox "Content editor: Basic block: Delete content block" [ref=e381]'
+              - 'cell "Administrator: Basic block: Delete content block" [ref=e382]':
+                - generic [ref=e383]:
+                  - generic [ref=e384]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e385]: Basic block
+                    - text: ": Delete content block"
+                  - 'checkbox "Administrator: Basic block: Delete content block" [checked] [disabled] [ref=e386]'
+            - 'row "Basic block: Delete content block revisions Anonymous user: Basic block: Delete content block revisions Authenticated user: Basic block: Delete content block revisions Content editor: Basic block: Delete content block revisions Administrator: Basic block: Delete content block revisions" [ref=e387]':
+              - 'cell "Basic block: Delete content block revisions" [ref=e388]':
+                - generic [ref=e390]:
+                  - emphasis [ref=e391]: Basic block
+                  - text: ": Delete content block revisions"
+              - 'cell "Anonymous user: Basic block: Delete content block revisions" [ref=e392]':
+                - generic [ref=e393]:
+                  - generic [ref=e394] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e395]: Basic block
+                    - text: ": Delete content block revisions"
+                  - 'checkbox "Anonymous user: Basic block: Delete content block revisions" [ref=e396]'
+              - 'cell "Authenticated user: Basic block: Delete content block revisions" [ref=e397]':
+                - generic [ref=e398]:
+                  - generic [ref=e399] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e400]: Basic block
+                    - text: ": Delete content block revisions"
+                  - 'checkbox "Authenticated user: Basic block: Delete content block revisions" [ref=e401]'
+              - 'cell "Content editor: Basic block: Delete content block revisions" [ref=e402]':
+                - generic [ref=e403]:
+                  - generic [ref=e404] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e405]: Basic block
+                    - text: ": Delete content block revisions"
+                  - 'checkbox "Content editor: Basic block: Delete content block revisions" [ref=e406]'
+              - 'cell "Administrator: Basic block: Delete content block revisions" [ref=e407]':
+                - generic [ref=e408]:
+                  - generic [ref=e409]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e410]: Basic block
+                    - text: ": Delete content block revisions"
+                  - 'checkbox "Administrator: Basic block: Delete content block revisions" [checked] [disabled] [ref=e411]'
+            - 'row "Basic block: Edit content block Anonymous user: Basic block: Edit content block Authenticated user: Basic block: Edit content block Content editor: Basic block: Edit content block Administrator: Basic block: Edit content block" [ref=e412]':
+              - 'cell "Basic block: Edit content block" [ref=e413]':
+                - generic [ref=e415]:
+                  - emphasis [ref=e416]: Basic block
+                  - text: ": Edit content block"
+              - 'cell "Anonymous user: Basic block: Edit content block" [ref=e417]':
+                - generic [ref=e418]:
+                  - generic [ref=e419] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e420]: Basic block
+                    - text: ": Edit content block"
+                  - 'checkbox "Anonymous user: Basic block: Edit content block" [ref=e421]'
+              - 'cell "Authenticated user: Basic block: Edit content block" [ref=e422]':
+                - generic [ref=e423]:
+                  - generic [ref=e424] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e425]: Basic block
+                    - text: ": Edit content block"
+                  - 'checkbox "Authenticated user: Basic block: Edit content block" [ref=e426]'
+              - 'cell "Content editor: Basic block: Edit content block" [ref=e427]':
+                - generic [ref=e428]:
+                  - generic [ref=e429] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e430]: Basic block
+                    - text: ": Edit content block"
+                  - 'checkbox "Content editor: Basic block: Edit content block" [ref=e431]'
+              - 'cell "Administrator: Basic block: Edit content block" [ref=e432]':
+                - generic [ref=e433]:
+                  - generic [ref=e434]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e435]: Basic block
+                    - text: ": Edit content block"
+                  - 'checkbox "Administrator: Basic block: Edit content block" [checked] [disabled] [ref=e436]'
+            - 'row "Basic block: Revert content block revisions Anonymous user: Basic block: Revert content block revisions Authenticated user: Basic block: Revert content block revisions Content editor: Basic block: Revert content block revisions Administrator: Basic block: Revert content block revisions" [ref=e437]':
+              - 'cell "Basic block: Revert content block revisions" [ref=e438]':
+                - generic [ref=e440]:
+                  - emphasis [ref=e441]: Basic block
+                  - text: ": Revert content block revisions"
+              - 'cell "Anonymous user: Basic block: Revert content block revisions" [ref=e442]':
+                - generic [ref=e443]:
+                  - generic [ref=e444] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e445]: Basic block
+                    - text: ": Revert content block revisions"
+                  - 'checkbox "Anonymous user: Basic block: Revert content block revisions" [ref=e446]'
+              - 'cell "Authenticated user: Basic block: Revert content block revisions" [ref=e447]':
+                - generic [ref=e448]:
+                  - generic [ref=e449] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e450]: Basic block
+                    - text: ": Revert content block revisions"
+                  - 'checkbox "Authenticated user: Basic block: Revert content block revisions" [ref=e451]'
+              - 'cell "Content editor: Basic block: Revert content block revisions" [ref=e452]':
+                - generic [ref=e453]:
+                  - generic [ref=e454] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e455]: Basic block
+                    - text: ": Revert content block revisions"
+                  - 'checkbox "Content editor: Basic block: Revert content block revisions" [ref=e456]'
+              - 'cell "Administrator: Basic block: Revert content block revisions" [ref=e457]':
+                - generic [ref=e458]:
+                  - generic [ref=e459]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e460]: Basic block
+                    - text: ": Revert content block revisions"
+                  - 'checkbox "Administrator: Basic block: Revert content block revisions" [checked] [disabled] [ref=e461]'
+            - 'row "Basic block: View content block history pages Anonymous user: Basic block: View content block history pages Authenticated user: Basic block: View content block history pages Content editor: Basic block: View content block history pages Administrator: Basic block: View content block history pages" [ref=e462]':
+              - 'cell "Basic block: View content block history pages" [ref=e463]':
+                - generic [ref=e465]:
+                  - emphasis [ref=e466]: Basic block
+                  - text: ": View content block history pages"
+              - 'cell "Anonymous user: Basic block: View content block history pages" [ref=e467]':
+                - generic [ref=e468]:
+                  - generic [ref=e469] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e470]: Basic block
+                    - text: ": View content block history pages"
+                  - 'checkbox "Anonymous user: Basic block: View content block history pages" [ref=e471]'
+              - 'cell "Authenticated user: Basic block: View content block history pages" [ref=e472]':
+                - generic [ref=e473]:
+                  - generic [ref=e474] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e475]: Basic block
+                    - text: ": View content block history pages"
+                  - 'checkbox "Authenticated user: Basic block: View content block history pages" [ref=e476]'
+              - 'cell "Content editor: Basic block: View content block history pages" [ref=e477]':
+                - generic [ref=e478]:
+                  - generic [ref=e479] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e480]: Basic block
+                    - text: ": View content block history pages"
+                  - 'checkbox "Content editor: Basic block: View content block history pages" [ref=e481]'
+              - 'cell "Administrator: Basic block: View content block history pages" [ref=e482]':
+                - generic [ref=e483]:
+                  - generic [ref=e484]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e485]: Basic block
+                    - text: ": View content block history pages"
+                  - 'checkbox "Administrator: Basic block: View content block history pages" [checked] [disabled] [ref=e486]'
+            - 'row "Access the Content blocks overview page Get an overview of all content blocks. Anonymous user: Access the Content blocks overview page Authenticated user: Access the Content blocks overview page Content editor: Access the Content blocks overview page Administrator: Access the Content blocks overview page" [ref=e487]':
+              - cell "Access the Content blocks overview page Get an overview of all content blocks." [ref=e488]:
+                - generic [ref=e489]:
+                  - text: Access the Content blocks overview page
+                  - generic [ref=e490]: Get an overview of all content blocks.
+              - 'cell "Anonymous user: Access the Content blocks overview page" [ref=e491]':
+                - generic [ref=e492]:
+                  - generic [ref=e493] [cursor=pointer]: "Anonymous user: Access the Content blocks overview page"
+                  - 'checkbox "Anonymous user: Access the Content blocks overview page" [ref=e494]'
+              - 'cell "Authenticated user: Access the Content blocks overview page" [ref=e495]':
+                - generic [ref=e496]:
+                  - generic [ref=e497] [cursor=pointer]: "Authenticated user: Access the Content blocks overview page"
+                  - 'checkbox "Authenticated user: Access the Content blocks overview page" [ref=e498]'
+              - 'cell "Content editor: Access the Content blocks overview page" [ref=e499]':
+                - generic [ref=e500]:
+                  - generic [ref=e501] [cursor=pointer]: "Content editor: Access the Content blocks overview page"
+                  - 'checkbox "Content editor: Access the Content blocks overview page" [ref=e502]'
+              - 'cell "Administrator: Access the Content blocks overview page" [ref=e503]':
+                - generic [ref=e504]:
+                  - generic [ref=e505]: "Administrator: Access the Content blocks overview page"
+                  - 'checkbox "Administrator: Access the Content blocks overview page" [checked] [disabled] [ref=e506]'
+            - 'row "Administer block content Warning: Give to trusted roles only; this permission has security implications. View, edit and delete all block content regardless of permission restrictions. Anonymous user: Administer block content Authenticated user: Administer block content Content editor: Administer block content Administrator: Administer block content" [ref=e507]':
+              - 'cell "Administer block content Warning: Give to trusted roles only; this permission has security implications. View, edit and delete all block content regardless of permission restrictions." [ref=e508]':
+                - generic [ref=e509]:
+                  - text: Administer block content
+                  - generic [ref=e510]:
+                    - emphasis [ref=e511]: "Warning: Give to trusted roles only; this permission has security implications."
+                    - text: View, edit and delete all block content regardless of permission restrictions.
+              - 'cell "Anonymous user: Administer block content" [ref=e512]':
+                - generic [ref=e513]:
+                  - generic [ref=e514] [cursor=pointer]: "Anonymous user: Administer block content"
+                  - 'checkbox "Anonymous user: Administer block content" [ref=e515]'
+              - 'cell "Authenticated user: Administer block content" [ref=e516]':
+                - generic [ref=e517]:
+                  - generic [ref=e518] [cursor=pointer]: "Authenticated user: Administer block content"
+                  - 'checkbox "Authenticated user: Administer block content" [ref=e519]'
+              - 'cell "Content editor: Administer block content" [ref=e520]':
+                - generic [ref=e521]:
+                  - generic [ref=e522] [cursor=pointer]: "Content editor: Administer block content"
+                  - 'checkbox "Content editor: Administer block content" [ref=e523]'
+              - 'cell "Administrator: Administer block content" [ref=e524]':
+                - generic [ref=e525]:
+                  - generic [ref=e526]: "Administrator: Administer block content"
+                  - 'checkbox "Administrator: Administer block content" [checked] [disabled] [ref=e527]'
+            - 'row "Administer block types Warning: Give to trusted roles only; this permission has security implications. Maintain the block types of block content available and the fields that are associated with those types. Anonymous user: Administer block types Authenticated user: Administer block types Content editor: Administer block types Administrator: Administer block types" [ref=e528]':
+              - 'cell "Administer block types Warning: Give to trusted roles only; this permission has security implications. Maintain the block types of block content available and the fields that are associated with those types." [ref=e529]':
+                - generic [ref=e530]:
+                  - text: Administer block types
+                  - generic [ref=e531]:
+                    - emphasis [ref=e532]: "Warning: Give to trusted roles only; this permission has security implications."
+                    - text: Maintain the block types of block content available and the fields that are associated with those types.
+              - 'cell "Anonymous user: Administer block types" [ref=e533]':
+                - generic [ref=e534]:
+                  - generic [ref=e535] [cursor=pointer]: "Anonymous user: Administer block types"
+                  - 'checkbox "Anonymous user: Administer block types" [ref=e536]'
+              - 'cell "Authenticated user: Administer block types" [ref=e537]':
+                - generic [ref=e538]:
+                  - generic [ref=e539] [cursor=pointer]: "Authenticated user: Administer block types"
+                  - 'checkbox "Authenticated user: Administer block types" [ref=e540]'
+              - 'cell "Content editor: Administer block types" [ref=e541]':
+                - generic [ref=e542]:
+                  - generic [ref=e543] [cursor=pointer]: "Content editor: Administer block types"
+                  - 'checkbox "Content editor: Administer block types" [ref=e544]'
+              - 'cell "Administrator: Administer block types" [ref=e545]':
+                - generic [ref=e546]:
+                  - generic [ref=e547]: "Administrator: Administer block types"
+                  - 'checkbox "Administrator: Administer block types" [checked] [disabled] [ref=e548]'
+            - row "Configuration Manager" [ref=e549]:
+              - cell "Configuration Manager" [ref=e550]
+            - 'row "Export configuration Warning: Give to trusted roles only; this permission has security implications. Anonymous user: Export configuration Authenticated user: Export configuration Content editor: Export configuration Administrator: Export configuration" [ref=e551]':
+              - 'cell "Export configuration Warning: Give to trusted roles only; this permission has security implications." [ref=e552]':
+                - generic [ref=e553]:
+                  - text: Export configuration
+                  - emphasis [ref=e555]: "Warning: Give to trusted roles only; this permission has security implications."
+              - 'cell "Anonymous user: Export configuration" [ref=e556]':
+                - generic [ref=e557]:
+                  - generic [ref=e558] [cursor=pointer]: "Anonymous user: Export configuration"
+                  - 'checkbox "Anonymous user: Export configuration" [ref=e559]'
+              - 'cell "Authenticated user: Export configuration" [ref=e560]':
+                - generic [ref=e561]:
+                  - generic [ref=e562] [cursor=pointer]: "Authenticated user: Export configuration"
+                  - 'checkbox "Authenticated user: Export configuration" [ref=e563]'
+              - 'cell "Content editor: Export configuration" [ref=e564]':
+                - generic [ref=e565]:
+                  - generic [ref=e566] [cursor=pointer]: "Content editor: Export configuration"
+                  - 'checkbox "Content editor: Export configuration" [ref=e567]'
+              - 'cell "Administrator: Export configuration" [ref=e568]':
+                - generic [ref=e569]:
+                  - generic [ref=e570]: "Administrator: Export configuration"
+                  - 'checkbox "Administrator: Export configuration" [checked] [disabled] [ref=e571]'
+            - 'row "Import configuration Warning: Give to trusted roles only; this permission has security implications. Anonymous user: Import configuration Authenticated user: Import configuration Content editor: Import configuration Administrator: Import configuration" [ref=e572]':
+              - 'cell "Import configuration Warning: Give to trusted roles only; this permission has security implications." [ref=e573]':
+                - generic [ref=e574]:
+                  - text: Import configuration
+                  - emphasis [ref=e576]: "Warning: Give to trusted roles only; this permission has security implications."
+              - 'cell "Anonymous user: Import configuration" [ref=e577]':
+                - generic [ref=e578]:
+                  - generic [ref=e579] [cursor=pointer]: "Anonymous user: Import configuration"
+                  - 'checkbox "Anonymous user: Import configuration" [ref=e580]'
+              - 'cell "Authenticated user: Import configuration" [ref=e581]':
+                - generic [ref=e582]:
+                  - generic [ref=e583] [cursor=pointer]: "Authenticated user: Import configuration"
+                  - 'checkbox "Authenticated user: Import configuration" [ref=e584]'
+              - 'cell "Content editor: Import configuration" [ref=e585]':
+                - generic [ref=e586]:
+                  - generic [ref=e587] [cursor=pointer]: "Content editor: Import configuration"
+                  - 'checkbox "Content editor: Import configuration" [ref=e588]'
+              - 'cell "Administrator: Import configuration" [ref=e589]':
+                - generic [ref=e590]:
+                  - generic [ref=e591]: "Administrator: Import configuration"
+                  - 'checkbox "Administrator: Import configuration" [checked] [disabled] [ref=e592]'
+            - 'row "Synchronize configuration Warning: Give to trusted roles only; this permission has security implications. Anonymous user: Synchronize configuration Authenticated user: Synchronize configuration Content editor: Synchronize configuration Administrator: Synchronize configuration" [ref=e593]':
+              - 'cell "Synchronize configuration Warning: Give to trusted roles only; this permission has security implications." [ref=e594]':
+                - generic [ref=e595]:
+                  - text: Synchronize configuration
+                  - emphasis [ref=e597]: "Warning: Give to trusted roles only; this permission has security implications."
+              - 'cell "Anonymous user: Synchronize configuration" [ref=e598]':
+                - generic [ref=e599]:
+                  - generic [ref=e600] [cursor=pointer]: "Anonymous user: Synchronize configuration"
+                  - 'checkbox "Anonymous user: Synchronize configuration" [ref=e601]'
+              - 'cell "Authenticated user: Synchronize configuration" [ref=e602]':
+                - generic [ref=e603]:
+                  - generic [ref=e604] [cursor=pointer]: "Authenticated user: Synchronize configuration"
+                  - 'checkbox "Authenticated user: Synchronize configuration" [ref=e605]'
+              - 'cell "Content editor: Synchronize configuration" [ref=e606]':
+                - generic [ref=e607]:
+                  - generic [ref=e608] [cursor=pointer]: "Content editor: Synchronize configuration"
+                  - 'checkbox "Content editor: Synchronize configuration" [ref=e609]'
+              - 'cell "Administrator: Synchronize configuration" [ref=e610]':
+                - generic [ref=e611]:
+                  - generic [ref=e612]: "Administrator: Synchronize configuration"
+                  - 'checkbox "Administrator: Synchronize configuration" [checked] [disabled] [ref=e613]'
+            - row "Contextual Links" [ref=e614]:
+              - cell "Contextual Links" [ref=e615]
+            - 'row "Use contextual links Anonymous user: Use contextual links Authenticated user: Use contextual links Content editor: Use contextual links Administrator: Use contextual links" [ref=e616]':
+              - cell "Use contextual links" [ref=e617]:
+                - generic [ref=e618]: Use contextual links
+              - 'cell "Anonymous user: Use contextual links" [ref=e619]':
+                - generic [ref=e620]:
+                  - generic [ref=e621] [cursor=pointer]: "Anonymous user: Use contextual links"
+                  - 'checkbox "Anonymous user: Use contextual links" [ref=e622]'
+              - 'cell "Authenticated user: Use contextual links" [ref=e623]':
+                - generic [ref=e624]:
+                  - generic [ref=e625] [cursor=pointer]: "Authenticated user: Use contextual links"
+                  - 'checkbox "Authenticated user: Use contextual links" [ref=e626]'
+              - 'cell "Content editor: Use contextual links" [ref=e627]':
+                - generic [ref=e628]:
+                  - generic [ref=e629] [cursor=pointer]: "Content editor: Use contextual links"
+                  - 'checkbox "Content editor: Use contextual links" [checked] [ref=e630]'
+              - 'cell "Administrator: Use contextual links" [ref=e631]':
+                - generic [ref=e632]:
+                  - generic [ref=e633]: "Administrator: Use contextual links"
+                  - 'checkbox "Administrator: Use contextual links" [checked] [disabled] [ref=e634]'
+            - row "Field UI" [ref=e635]:
+              - cell "Field UI" [ref=e636]
+            - 'row "Content: Administer display Anonymous user: Content: Administer display Authenticated user: Content: Administer display Content editor: Content: Administer display Administrator: Content: Administer display" [ref=e637]':
+              - 'cell "Content: Administer display" [ref=e638]':
+                - generic [ref=e640]:
+                  - emphasis [ref=e641]: Content
+                  - text: ": Administer display"
+              - 'cell "Anonymous user: Content: Administer display" [ref=e642]':
+                - generic [ref=e643]:
+                  - generic [ref=e644] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e645]: Content
+                    - text: ": Administer display"
+                  - 'checkbox "Anonymous user: Content: Administer display" [ref=e646]'
+              - 'cell "Authenticated user: Content: Administer display" [ref=e647]':
+                - generic [ref=e648]:
+                  - generic [ref=e649] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e650]: Content
+                    - text: ": Administer display"
+                  - 'checkbox "Authenticated user: Content: Administer display" [ref=e651]'
+              - 'cell "Content editor: Content: Administer display" [ref=e652]':
+                - generic [ref=e653]:
+                  - generic [ref=e654] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e655]: Content
+                    - text: ": Administer display"
+                  - 'checkbox "Content editor: Content: Administer display" [ref=e656]'
+              - 'cell "Administrator: Content: Administer display" [ref=e657]':
+                - generic [ref=e658]:
+                  - generic [ref=e659]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e660]: Content
+                    - text: ": Administer display"
+                  - 'checkbox "Administrator: Content: Administer display" [checked] [disabled] [ref=e661]'
+            - 'row "Content block: Administer display Anonymous user: Content block: Administer display Authenticated user: Content block: Administer display Content editor: Content block: Administer display Administrator: Content block: Administer display" [ref=e662]':
+              - 'cell "Content block: Administer display" [ref=e663]':
+                - generic [ref=e665]:
+                  - emphasis [ref=e666]: Content block
+                  - text: ": Administer display"
+              - 'cell "Anonymous user: Content block: Administer display" [ref=e667]':
+                - generic [ref=e668]:
+                  - generic [ref=e669] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e670]: Content block
+                    - text: ": Administer display"
+                  - 'checkbox "Anonymous user: Content block: Administer display" [ref=e671]'
+              - 'cell "Authenticated user: Content block: Administer display" [ref=e672]':
+                - generic [ref=e673]:
+                  - generic [ref=e674] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e675]: Content block
+                    - text: ": Administer display"
+                  - 'checkbox "Authenticated user: Content block: Administer display" [ref=e676]'
+              - 'cell "Content editor: Content block: Administer display" [ref=e677]':
+                - generic [ref=e678]:
+                  - generic [ref=e679] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e680]: Content block
+                    - text: ": Administer display"
+                  - 'checkbox "Content editor: Content block: Administer display" [ref=e681]'
+              - 'cell "Administrator: Content block: Administer display" [ref=e682]':
+                - generic [ref=e683]:
+                  - generic [ref=e684]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e685]: Content block
+                    - text: ": Administer display"
+                  - 'checkbox "Administrator: Content block: Administer display" [checked] [disabled] [ref=e686]'
+            - 'row "Taxonomy term: Administer display Anonymous user: Taxonomy term: Administer display Authenticated user: Taxonomy term: Administer display Content editor: Taxonomy term: Administer display Administrator: Taxonomy term: Administer display" [ref=e687]':
+              - 'cell "Taxonomy term: Administer display" [ref=e688]':
+                - generic [ref=e690]:
+                  - emphasis [ref=e691]: Taxonomy term
+                  - text: ": Administer display"
+              - 'cell "Anonymous user: Taxonomy term: Administer display" [ref=e692]':
+                - generic [ref=e693]:
+                  - generic [ref=e694] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e695]: Taxonomy term
+                    - text: ": Administer display"
+                  - 'checkbox "Anonymous user: Taxonomy term: Administer display" [ref=e696]'
+              - 'cell "Authenticated user: Taxonomy term: Administer display" [ref=e697]':
+                - generic [ref=e698]:
+                  - generic [ref=e699] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e700]: Taxonomy term
+                    - text: ": Administer display"
+                  - 'checkbox "Authenticated user: Taxonomy term: Administer display" [ref=e701]'
+              - 'cell "Content editor: Taxonomy term: Administer display" [ref=e702]':
+                - generic [ref=e703]:
+                  - generic [ref=e704] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e705]: Taxonomy term
+                    - text: ": Administer display"
+                  - 'checkbox "Content editor: Taxonomy term: Administer display" [ref=e706]'
+              - 'cell "Administrator: Taxonomy term: Administer display" [ref=e707]':
+                - generic [ref=e708]:
+                  - generic [ref=e709]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e710]: Taxonomy term
+                    - text: ": Administer display"
+                  - 'checkbox "Administrator: Taxonomy term: Administer display" [checked] [disabled] [ref=e711]'
+            - 'row "User: Administer display Anonymous user: User: Administer display Authenticated user: User: Administer display Content editor: User: Administer display Administrator: User: Administer display" [ref=e712]':
+              - 'cell "User: Administer display" [ref=e713]':
+                - generic [ref=e715]:
+                  - emphasis [ref=e716]: User
+                  - text: ": Administer display"
+              - 'cell "Anonymous user: User: Administer display" [ref=e717]':
+                - generic [ref=e718]:
+                  - generic [ref=e719] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e720]: User
+                    - text: ": Administer display"
+                  - 'checkbox "Anonymous user: User: Administer display" [ref=e721]'
+              - 'cell "Authenticated user: User: Administer display" [ref=e722]':
+                - generic [ref=e723]:
+                  - generic [ref=e724] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e725]: User
+                    - text: ": Administer display"
+                  - 'checkbox "Authenticated user: User: Administer display" [ref=e726]'
+              - 'cell "Content editor: User: Administer display" [ref=e727]':
+                - generic [ref=e728]:
+                  - generic [ref=e729] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e730]: User
+                    - text: ": Administer display"
+                  - 'checkbox "Content editor: User: Administer display" [ref=e731]'
+              - 'cell "Administrator: User: Administer display" [ref=e732]':
+                - generic [ref=e733]:
+                  - generic [ref=e734]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e735]: User
+                    - text: ": Administer display"
+                  - 'checkbox "Administrator: User: Administer display" [checked] [disabled] [ref=e736]'
+            - 'row "Content: Administer fields Warning: Give to trusted roles only; this permission has security implications. Anonymous user: Content: Administer fields Authenticated user: Content: Administer fields Content editor: Content: Administer fields Administrator: Content: Administer fields" [ref=e737]':
+              - 'cell "Content: Administer fields Warning: Give to trusted roles only; this permission has security implications." [ref=e738]':
+                - generic [ref=e739]:
+                  - generic [ref=e740]:
+                    - emphasis [ref=e741]: Content
+                    - text: ": Administer fields"
+                  - emphasis [ref=e743]: "Warning: Give to trusted roles only; this permission has security implications."
+              - 'cell "Anonymous user: Content: Administer fields" [ref=e744]':
+                - generic [ref=e745]:
+                  - generic [ref=e746] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e747]: Content
+                    - text: ": Administer fields"
+                  - 'checkbox "Anonymous user: Content: Administer fields" [ref=e748]'
+              - 'cell "Authenticated user: Content: Administer fields" [ref=e749]':
+                - generic [ref=e750]:
+                  - generic [ref=e751] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e752]: Content
+                    - text: ": Administer fields"
+                  - 'checkbox "Authenticated user: Content: Administer fields" [ref=e753]'
+              - 'cell "Content editor: Content: Administer fields" [ref=e754]':
+                - generic [ref=e755]:
+                  - generic [ref=e756] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e757]: Content
+                    - text: ": Administer fields"
+                  - 'checkbox "Content editor: Content: Administer fields" [ref=e758]'
+              - 'cell "Administrator: Content: Administer fields" [ref=e759]':
+                - generic [ref=e760]:
+                  - generic [ref=e761]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e762]: Content
+                    - text: ": Administer fields"
+                  - 'checkbox "Administrator: Content: Administer fields" [checked] [disabled] [ref=e763]'
+            - 'row "Content block: Administer fields Warning: Give to trusted roles only; this permission has security implications. Anonymous user: Content block: Administer fields Authenticated user: Content block: Administer fields Content editor: Content block: Administer fields Administrator: Content block: Administer fields" [ref=e764]':
+              - 'cell "Content block: Administer fields Warning: Give to trusted roles only; this permission has security implications." [ref=e765]':
+                - generic [ref=e766]:
+                  - generic [ref=e767]:
+                    - emphasis [ref=e768]: Content block
+                    - text: ": Administer fields"
+                  - emphasis [ref=e770]: "Warning: Give to trusted roles only; this permission has security implications."
+              - 'cell "Anonymous user: Content block: Administer fields" [ref=e771]':
+                - generic [ref=e772]:
+                  - generic [ref=e773] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e774]: Content block
+                    - text: ": Administer fields"
+                  - 'checkbox "Anonymous user: Content block: Administer fields" [ref=e775]'
+              - 'cell "Authenticated user: Content block: Administer fields" [ref=e776]':
+                - generic [ref=e777]:
+                  - generic [ref=e778] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e779]: Content block
+                    - text: ": Administer fields"
+                  - 'checkbox "Authenticated user: Content block: Administer fields" [ref=e780]'
+              - 'cell "Content editor: Content block: Administer fields" [ref=e781]':
+                - generic [ref=e782]:
+                  - generic [ref=e783] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e784]: Content block
+                    - text: ": Administer fields"
+                  - 'checkbox "Content editor: Content block: Administer fields" [ref=e785]'
+              - 'cell "Administrator: Content block: Administer fields" [ref=e786]':
+                - generic [ref=e787]:
+                  - generic [ref=e788]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e789]: Content block
+                    - text: ": Administer fields"
+                  - 'checkbox "Administrator: Content block: Administer fields" [checked] [disabled] [ref=e790]'
+            - 'row "Taxonomy term: Administer fields Warning: Give to trusted roles only; this permission has security implications. Anonymous user: Taxonomy term: Administer fields Authenticated user: Taxonomy term: Administer fields Content editor: Taxonomy term: Administer fields Administrator: Taxonomy term: Administer fields" [ref=e791]':
+              - 'cell "Taxonomy term: Administer fields Warning: Give to trusted roles only; this permission has security implications." [ref=e792]':
+                - generic [ref=e793]:
+                  - generic [ref=e794]:
+                    - emphasis [ref=e795]: Taxonomy term
+                    - text: ": Administer fields"
+                  - emphasis [ref=e797]: "Warning: Give to trusted roles only; this permission has security implications."
+              - 'cell "Anonymous user: Taxonomy term: Administer fields" [ref=e798]':
+                - generic [ref=e799]:
+                  - generic [ref=e800] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e801]: Taxonomy term
+                    - text: ": Administer fields"
+                  - 'checkbox "Anonymous user: Taxonomy term: Administer fields" [ref=e802]'
+              - 'cell "Authenticated user: Taxonomy term: Administer fields" [ref=e803]':
+                - generic [ref=e804]:
+                  - generic [ref=e805] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e806]: Taxonomy term
+                    - text: ": Administer fields"
+                  - 'checkbox "Authenticated user: Taxonomy term: Administer fields" [ref=e807]'
+              - 'cell "Content editor: Taxonomy term: Administer fields" [ref=e808]':
+                - generic [ref=e809]:
+                  - generic [ref=e810] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e811]: Taxonomy term
+                    - text: ": Administer fields"
+                  - 'checkbox "Content editor: Taxonomy term: Administer fields" [ref=e812]'
+              - 'cell "Administrator: Taxonomy term: Administer fields" [ref=e813]':
+                - generic [ref=e814]:
+                  - generic [ref=e815]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e816]: Taxonomy term
+                    - text: ": Administer fields"
+                  - 'checkbox "Administrator: Taxonomy term: Administer fields" [checked] [disabled] [ref=e817]'
+            - 'row "User: Administer fields Warning: Give to trusted roles only; this permission has security implications. Anonymous user: User: Administer fields Authenticated user: User: Administer fields Content editor: User: Administer fields Administrator: User: Administer fields" [ref=e818]':
+              - 'cell "User: Administer fields Warning: Give to trusted roles only; this permission has security implications." [ref=e819]':
+                - generic [ref=e820]:
+                  - generic [ref=e821]:
+                    - emphasis [ref=e822]: User
+                    - text: ": Administer fields"
+                  - emphasis [ref=e824]: "Warning: Give to trusted roles only; this permission has security implications."
+              - 'cell "Anonymous user: User: Administer fields" [ref=e825]':
+                - generic [ref=e826]:
+                  - generic [ref=e827] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e828]: User
+                    - text: ": Administer fields"
+                  - 'checkbox "Anonymous user: User: Administer fields" [ref=e829]'
+              - 'cell "Authenticated user: User: Administer fields" [ref=e830]':
+                - generic [ref=e831]:
+                  - generic [ref=e832] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e833]: User
+                    - text: ": Administer fields"
+                  - 'checkbox "Authenticated user: User: Administer fields" [ref=e834]'
+              - 'cell "Content editor: User: Administer fields" [ref=e835]':
+                - generic [ref=e836]:
+                  - generic [ref=e837] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e838]: User
+                    - text: ": Administer fields"
+                  - 'checkbox "Content editor: User: Administer fields" [ref=e839]'
+              - 'cell "Administrator: User: Administer fields" [ref=e840]':
+                - generic [ref=e841]:
+                  - generic [ref=e842]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e843]: User
+                    - text: ": Administer fields"
+                  - 'checkbox "Administrator: User: Administer fields" [checked] [disabled] [ref=e844]'
+            - 'row "Content: Administer form display Anonymous user: Content: Administer form display Authenticated user: Content: Administer form display Content editor: Content: Administer form display Administrator: Content: Administer form display" [ref=e845]':
+              - 'cell "Content: Administer form display" [ref=e846]':
+                - generic [ref=e848]:
+                  - emphasis [ref=e849]: Content
+                  - text: ": Administer form display"
+              - 'cell "Anonymous user: Content: Administer form display" [ref=e850]':
+                - generic [ref=e851]:
+                  - generic [ref=e852] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e853]: Content
+                    - text: ": Administer form display"
+                  - 'checkbox "Anonymous user: Content: Administer form display" [ref=e854]'
+              - 'cell "Authenticated user: Content: Administer form display" [ref=e855]':
+                - generic [ref=e856]:
+                  - generic [ref=e857] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e858]: Content
+                    - text: ": Administer form display"
+                  - 'checkbox "Authenticated user: Content: Administer form display" [ref=e859]'
+              - 'cell "Content editor: Content: Administer form display" [ref=e860]':
+                - generic [ref=e861]:
+                  - generic [ref=e862] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e863]: Content
+                    - text: ": Administer form display"
+                  - 'checkbox "Content editor: Content: Administer form display" [ref=e864]'
+              - 'cell "Administrator: Content: Administer form display" [ref=e865]':
+                - generic [ref=e866]:
+                  - generic [ref=e867]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e868]: Content
+                    - text: ": Administer form display"
+                  - 'checkbox "Administrator: Content: Administer form display" [checked] [disabled] [ref=e869]'
+            - 'row "Content block: Administer form display Anonymous user: Content block: Administer form display Authenticated user: Content block: Administer form display Content editor: Content block: Administer form display Administrator: Content block: Administer form display" [ref=e870]':
+              - 'cell "Content block: Administer form display" [ref=e871]':
+                - generic [ref=e873]:
+                  - emphasis [ref=e874]: Content block
+                  - text: ": Administer form display"
+              - 'cell "Anonymous user: Content block: Administer form display" [ref=e875]':
+                - generic [ref=e876]:
+                  - generic [ref=e877] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e878]: Content block
+                    - text: ": Administer form display"
+                  - 'checkbox "Anonymous user: Content block: Administer form display" [ref=e879]'
+              - 'cell "Authenticated user: Content block: Administer form display" [ref=e880]':
+                - generic [ref=e881]:
+                  - generic [ref=e882] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e883]: Content block
+                    - text: ": Administer form display"
+                  - 'checkbox "Authenticated user: Content block: Administer form display" [ref=e884]'
+              - 'cell "Content editor: Content block: Administer form display" [ref=e885]':
+                - generic [ref=e886]:
+                  - generic [ref=e887] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e888]: Content block
+                    - text: ": Administer form display"
+                  - 'checkbox "Content editor: Content block: Administer form display" [ref=e889]'
+              - 'cell "Administrator: Content block: Administer form display" [ref=e890]':
+                - generic [ref=e891]:
+                  - generic [ref=e892]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e893]: Content block
+                    - text: ": Administer form display"
+                  - 'checkbox "Administrator: Content block: Administer form display" [checked] [disabled] [ref=e894]'
+            - 'row "Taxonomy term: Administer form display Anonymous user: Taxonomy term: Administer form display Authenticated user: Taxonomy term: Administer form display Content editor: Taxonomy term: Administer form display Administrator: Taxonomy term: Administer form display" [ref=e895]':
+              - 'cell "Taxonomy term: Administer form display" [ref=e896]':
+                - generic [ref=e898]:
+                  - emphasis [ref=e899]: Taxonomy term
+                  - text: ": Administer form display"
+              - 'cell "Anonymous user: Taxonomy term: Administer form display" [ref=e900]':
+                - generic [ref=e901]:
+                  - generic [ref=e902] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e903]: Taxonomy term
+                    - text: ": Administer form display"
+                  - 'checkbox "Anonymous user: Taxonomy term: Administer form display" [ref=e904]'
+              - 'cell "Authenticated user: Taxonomy term: Administer form display" [ref=e905]':
+                - generic [ref=e906]:
+                  - generic [ref=e907] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e908]: Taxonomy term
+                    - text: ": Administer form display"
+                  - 'checkbox "Authenticated user: Taxonomy term: Administer form display" [ref=e909]'
+              - 'cell "Content editor: Taxonomy term: Administer form display" [ref=e910]':
+                - generic [ref=e911]:
+                  - generic [ref=e912] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e913]: Taxonomy term
+                    - text: ": Administer form display"
+                  - 'checkbox "Content editor: Taxonomy term: Administer form display" [ref=e914]'
+              - 'cell "Administrator: Taxonomy term: Administer form display" [ref=e915]':
+                - generic [ref=e916]:
+                  - generic [ref=e917]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e918]: Taxonomy term
+                    - text: ": Administer form display"
+                  - 'checkbox "Administrator: Taxonomy term: Administer form display" [checked] [disabled] [ref=e919]'
+            - 'row "User: Administer form display Anonymous user: User: Administer form display Authenticated user: User: Administer form display Content editor: User: Administer form display Administrator: User: Administer form display" [ref=e920]':
+              - 'cell "User: Administer form display" [ref=e921]':
+                - generic [ref=e923]:
+                  - emphasis [ref=e924]: User
+                  - text: ": Administer form display"
+              - 'cell "Anonymous user: User: Administer form display" [ref=e925]':
+                - generic [ref=e926]:
+                  - generic [ref=e927] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e928]: User
+                    - text: ": Administer form display"
+                  - 'checkbox "Anonymous user: User: Administer form display" [ref=e929]'
+              - 'cell "Authenticated user: User: Administer form display" [ref=e930]':
+                - generic [ref=e931]:
+                  - generic [ref=e932] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e933]: User
+                    - text: ": Administer form display"
+                  - 'checkbox "Authenticated user: User: Administer form display" [ref=e934]'
+              - 'cell "Content editor: User: Administer form display" [ref=e935]':
+                - generic [ref=e936]:
+                  - generic [ref=e937] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e938]: User
+                    - text: ": Administer form display"
+                  - 'checkbox "Content editor: User: Administer form display" [ref=e939]'
+              - 'cell "Administrator: User: Administer form display" [ref=e940]':
+                - generic [ref=e941]:
+                  - generic [ref=e942]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e943]: User
+                    - text: ": Administer form display"
+                  - 'checkbox "Administrator: User: Administer form display" [checked] [disabled] [ref=e944]'
+            - 'row "Add, edit, and delete custom display modes. Anonymous user: Add, edit, and delete custom display modes. Authenticated user: Add, edit, and delete custom display modes. Content editor: Add, edit, and delete custom display modes. Administrator: Add, edit, and delete custom display modes." [ref=e945]':
+              - cell "Add, edit, and delete custom display modes." [ref=e946]:
+                - generic [ref=e947]: Add, edit, and delete custom display modes.
+              - 'cell "Anonymous user: Add, edit, and delete custom display modes." [ref=e948]':
+                - generic [ref=e949]:
+                  - generic [ref=e950] [cursor=pointer]: "Anonymous user: Add, edit, and delete custom display modes."
+                  - 'checkbox "Anonymous user: Add, edit, and delete custom display modes." [ref=e951]'
+              - 'cell "Authenticated user: Add, edit, and delete custom display modes." [ref=e952]':
+                - generic [ref=e953]:
+                  - generic [ref=e954] [cursor=pointer]: "Authenticated user: Add, edit, and delete custom display modes."
+                  - 'checkbox "Authenticated user: Add, edit, and delete custom display modes." [ref=e955]'
+              - 'cell "Content editor: Add, edit, and delete custom display modes." [ref=e956]':
+                - generic [ref=e957]:
+                  - generic [ref=e958] [cursor=pointer]: "Content editor: Add, edit, and delete custom display modes."
+                  - 'checkbox "Content editor: Add, edit, and delete custom display modes." [ref=e959]'
+              - 'cell "Administrator: Add, edit, and delete custom display modes." [ref=e960]':
+                - generic [ref=e961]:
+                  - generic [ref=e962]: "Administrator: Add, edit, and delete custom display modes."
+                  - 'checkbox "Administrator: Add, edit, and delete custom display modes." [checked] [disabled] [ref=e963]'
+            - row "File" [ref=e964]:
+              - cell "File" [ref=e965]
+            - 'row "Access the Files overview page Anonymous user: Access the Files overview page Authenticated user: Access the Files overview page Content editor: Access the Files overview page Administrator: Access the Files overview page" [ref=e966]':
+              - cell "Access the Files overview page" [ref=e967]:
+                - generic [ref=e968]: Access the Files overview page
+              - 'cell "Anonymous user: Access the Files overview page" [ref=e969]':
+                - generic [ref=e970]:
+                  - generic [ref=e971] [cursor=pointer]: "Anonymous user: Access the Files overview page"
+                  - 'checkbox "Anonymous user: Access the Files overview page" [ref=e972]'
+              - 'cell "Authenticated user: Access the Files overview page" [ref=e973]':
+                - generic [ref=e974]:
+                  - generic [ref=e975] [cursor=pointer]: "Authenticated user: Access the Files overview page"
+                  - 'checkbox "Authenticated user: Access the Files overview page" [ref=e976]'
+              - 'cell "Content editor: Access the Files overview page" [ref=e977]':
+                - generic [ref=e978]:
+                  - generic [ref=e979] [cursor=pointer]: "Content editor: Access the Files overview page"
+                  - 'checkbox "Content editor: Access the Files overview page" [checked] [ref=e980]'
+              - 'cell "Administrator: Access the Files overview page" [ref=e981]':
+                - generic [ref=e982]:
+                  - generic [ref=e983]: "Administrator: Access the Files overview page"
+                  - 'checkbox "Administrator: Access the Files overview page" [checked] [disabled] [ref=e984]'
+            - 'row "Delete any file Warning: Give to trusted roles only; this permission has security implications. Anonymous user: Delete any file Authenticated user: Delete any file Content editor: Delete any file Administrator: Delete any file" [ref=e985]':
+              - 'cell "Delete any file Warning: Give to trusted roles only; this permission has security implications." [ref=e986]':
+                - generic [ref=e987]:
+                  - text: Delete any file
+                  - emphasis [ref=e989]: "Warning: Give to trusted roles only; this permission has security implications."
+              - 'cell "Anonymous user: Delete any file" [ref=e990]':
+                - generic [ref=e991]:
+                  - generic [ref=e992] [cursor=pointer]: "Anonymous user: Delete any file"
+                  - 'checkbox "Anonymous user: Delete any file" [ref=e993]'
+              - 'cell "Authenticated user: Delete any file" [ref=e994]':
+                - generic [ref=e995]:
+                  - generic [ref=e996] [cursor=pointer]: "Authenticated user: Delete any file"
+                  - 'checkbox "Authenticated user: Delete any file" [ref=e997]'
+              - 'cell "Content editor: Delete any file" [ref=e998]':
+                - generic [ref=e999]:
+                  - generic [ref=e1000] [cursor=pointer]: "Content editor: Delete any file"
+                  - 'checkbox "Content editor: Delete any file" [ref=e1001]'
+              - 'cell "Administrator: Delete any file" [ref=e1002]':
+                - generic [ref=e1003]:
+                  - generic [ref=e1004]: "Administrator: Delete any file"
+                  - 'checkbox "Administrator: Delete any file" [checked] [disabled] [ref=e1005]'
+            - 'row "Delete own files Anonymous user: Delete own files Authenticated user: Delete own files Content editor: Delete own files Administrator: Delete own files" [ref=e1006]':
+              - cell "Delete own files" [ref=e1007]:
+                - generic [ref=e1008]: Delete own files
+              - 'cell "Anonymous user: Delete own files" [ref=e1009]':
+                - generic [ref=e1010]:
+                  - generic [ref=e1011] [cursor=pointer]: "Anonymous user: Delete own files"
+                  - 'checkbox "Anonymous user: Delete own files" [ref=e1012]'
+              - 'cell "Authenticated user: Delete own files" [ref=e1013]':
+                - generic [ref=e1014]:
+                  - generic [ref=e1015] [cursor=pointer]: "Authenticated user: Delete own files"
+                  - 'checkbox "Authenticated user: Delete own files" [checked] [ref=e1016]'
+              - 'cell "Content editor: Delete own files" [ref=e1017]':
+                - generic [ref=e1018]:
+                  - generic [ref=e1019] [cursor=pointer]: "Content editor: Delete own files"
+                  - 'checkbox "Content editor: Delete own files" [checked] [ref=e1020]'
+              - 'cell "Administrator: Delete own files" [ref=e1021]':
+                - generic [ref=e1022]:
+                  - generic [ref=e1023]: "Administrator: Delete own files"
+                  - 'checkbox "Administrator: Delete own files" [checked] [disabled] [ref=e1024]'
+            - row "Filter" [ref=e1025]:
+              - cell "Filter" [ref=e1026]
+            - 'row "Administer text formats and filters Warning: Give to trusted roles only; this permission has security implications. Define how text is handled by combining filters into text formats. Anonymous user: Administer text formats and filters Authenticated user: Administer text formats and filters Content editor: Administer text formats and filters Administrator: Administer text formats and filters" [ref=e1027]':
+              - 'cell "Administer text formats and filters Warning: Give to trusted roles only; this permission has security implications. Define how text is handled by combining filters into text formats." [ref=e1028]':
+                - generic [ref=e1029]:
+                  - text: Administer text formats and filters
+                  - generic [ref=e1030]:
+                    - emphasis [ref=e1031]: "Warning: Give to trusted roles only; this permission has security implications."
+                    - text: Define how text is handled by combining filters into text formats.
+              - 'cell "Anonymous user: Administer text formats and filters" [ref=e1032]':
+                - generic [ref=e1033]:
+                  - generic [ref=e1034] [cursor=pointer]: "Anonymous user: Administer text formats and filters"
+                  - 'checkbox "Anonymous user: Administer text formats and filters" [ref=e1035]'
+              - 'cell "Authenticated user: Administer text formats and filters" [ref=e1036]':
+                - generic [ref=e1037]:
+                  - generic [ref=e1038] [cursor=pointer]: "Authenticated user: Administer text formats and filters"
+                  - 'checkbox "Authenticated user: Administer text formats and filters" [ref=e1039]'
+              - 'cell "Content editor: Administer text formats and filters" [ref=e1040]':
+                - generic [ref=e1041]:
+                  - generic [ref=e1042] [cursor=pointer]: "Content editor: Administer text formats and filters"
+                  - 'checkbox "Content editor: Administer text formats and filters" [ref=e1043]'
+              - 'cell "Administrator: Administer text formats and filters" [ref=e1044]':
+                - generic [ref=e1045]:
+                  - generic [ref=e1046]: "Administrator: Administer text formats and filters"
+                  - 'checkbox "Administrator: Administer text formats and filters" [checked] [disabled] [ref=e1047]'
+            - 'row "Use the Basic HTML text format Warning: This permission may have security implications depending on how the text format is configured. Anonymous user: Use the Basic HTML text format Authenticated user: Use the Basic HTML text format Content editor: Use the Basic HTML text format Administrator: Use the Basic HTML text format" [ref=e1048]':
+              - 'cell "Use the Basic HTML text format Warning: This permission may have security implications depending on how the text format is configured." [ref=e1049]':
+                - generic [ref=e1050]:
+                  - generic [ref=e1051]:
+                    - text: Use the
+                    - link "Basic HTML" [ref=e1052] [cursor=pointer]:
+                      - /url: /admin/config/content/formats/manage/basic_html
+                    - text: text format
+                  - emphasis [ref=e1054]: "Warning: This permission may have security implications depending on how the text format is configured."
+              - 'cell "Anonymous user: Use the Basic HTML text format" [ref=e1055]':
+                - generic [ref=e1056]:
+                  - generic [ref=e1057] [cursor=pointer]:
+                    - text: "Anonymous user: Use the"
+                    - link "Basic HTML" [ref=e1058]:
+                      - /url: /admin/config/content/formats/manage/basic_html
+                    - text: text format
+                  - 'checkbox "Anonymous user: Use the Basic HTML text format" [ref=e1059]'
+              - 'cell "Authenticated user: Use the Basic HTML text format" [ref=e1060]':
+                - generic [ref=e1061]:
+                  - generic [ref=e1062] [cursor=pointer]:
+                    - text: "Authenticated user: Use the"
+                    - link "Basic HTML" [ref=e1063]:
+                      - /url: /admin/config/content/formats/manage/basic_html
+                    - text: text format
+                  - 'checkbox "Authenticated user: Use the Basic HTML text format" [checked] [ref=e1064]'
+              - 'cell "Content editor: Use the Basic HTML text format" [ref=e1065]':
+                - generic [ref=e1066]:
+                  - generic [ref=e1067] [cursor=pointer]:
+                    - text: "Content editor: Use the"
+                    - link "Basic HTML" [ref=e1068]:
+                      - /url: /admin/config/content/formats/manage/basic_html
+                    - text: text format
+                  - 'checkbox "Content editor: Use the Basic HTML text format" [ref=e1069]'
+              - 'cell "Administrator: Use the Basic HTML text format" [ref=e1070]':
+                - generic [ref=e1071]:
+                  - generic [ref=e1072]:
+                    - text: "Administrator: Use the"
+                    - link "Basic HTML" [ref=e1073] [cursor=pointer]:
+                      - /url: /admin/config/content/formats/manage/basic_html
+                    - text: text format
+                  - 'checkbox "Administrator: Use the Basic HTML text format" [checked] [disabled] [ref=e1074]'
+            - 'row "Use the Full HTML text format Warning: This permission may have security implications depending on how the text format is configured. Anonymous user: Use the Full HTML text format Authenticated user: Use the Full HTML text format Content editor: Use the Full HTML text format Administrator: Use the Full HTML text format" [ref=e1075]':
+              - 'cell "Use the Full HTML text format Warning: This permission may have security implications depending on how the text format is configured." [ref=e1076]':
+                - generic [ref=e1077]:
+                  - generic [ref=e1078]:
+                    - text: Use the
+                    - link "Full HTML" [ref=e1079] [cursor=pointer]:
+                      - /url: /admin/config/content/formats/manage/full_html
+                    - text: text format
+                  - emphasis [ref=e1081]: "Warning: This permission may have security implications depending on how the text format is configured."
+              - 'cell "Anonymous user: Use the Full HTML text format" [ref=e1082]':
+                - generic [ref=e1083]:
+                  - generic [ref=e1084] [cursor=pointer]:
+                    - text: "Anonymous user: Use the"
+                    - link "Full HTML" [ref=e1085]:
+                      - /url: /admin/config/content/formats/manage/full_html
+                    - text: text format
+                  - 'checkbox "Anonymous user: Use the Full HTML text format" [ref=e1086]'
+              - 'cell "Authenticated user: Use the Full HTML text format" [ref=e1087]':
+                - generic [ref=e1088]:
+                  - generic [ref=e1089] [cursor=pointer]:
+                    - text: "Authenticated user: Use the"
+                    - link "Full HTML" [ref=e1090]:
+                      - /url: /admin/config/content/formats/manage/full_html
+                    - text: text format
+                  - 'checkbox "Authenticated user: Use the Full HTML text format" [ref=e1091]'
+              - 'cell "Content editor: Use the Full HTML text format" [ref=e1092]':
+                - generic [ref=e1093]:
+                  - generic [ref=e1094] [cursor=pointer]:
+                    - text: "Content editor: Use the"
+                    - link "Full HTML" [ref=e1095]:
+                      - /url: /admin/config/content/formats/manage/full_html
+                    - text: text format
+                  - 'checkbox "Content editor: Use the Full HTML text format" [ref=e1096]'
+              - 'cell "Administrator: Use the Full HTML text format" [ref=e1097]':
+                - generic [ref=e1098]:
+                  - generic [ref=e1099]:
+                    - text: "Administrator: Use the"
+                    - link "Full HTML" [ref=e1100] [cursor=pointer]:
+                      - /url: /admin/config/content/formats/manage/full_html
+                    - text: text format
+                  - 'checkbox "Administrator: Use the Full HTML text format" [checked] [disabled] [ref=e1101]'
+            - 'row "Use the Restricted HTML text format Warning: This permission may have security implications depending on how the text format is configured. Anonymous user: Use the Restricted HTML text format Authenticated user: Use the Restricted HTML text format Content editor: Use the Restricted HTML text format Administrator: Use the Restricted HTML text format" [ref=e1102]':
+              - 'cell "Use the Restricted HTML text format Warning: This permission may have security implications depending on how the text format is configured." [ref=e1103]':
+                - generic [ref=e1104]:
+                  - generic [ref=e1105]:
+                    - text: Use the
+                    - link "Restricted HTML" [ref=e1106] [cursor=pointer]:
+                      - /url: /admin/config/content/formats/manage/restricted_html
+                    - text: text format
+                  - emphasis [ref=e1108]: "Warning: This permission may have security implications depending on how the text format is configured."
+              - 'cell "Anonymous user: Use the Restricted HTML text format" [ref=e1109]':
+                - generic [ref=e1110]:
+                  - generic [ref=e1111] [cursor=pointer]:
+                    - text: "Anonymous user: Use the"
+                    - link "Restricted HTML" [ref=e1112]:
+                      - /url: /admin/config/content/formats/manage/restricted_html
+                    - text: text format
+                  - 'checkbox "Anonymous user: Use the Restricted HTML text format" [checked] [ref=e1113]'
+              - 'cell "Authenticated user: Use the Restricted HTML text format" [ref=e1114]':
+                - generic [ref=e1115]:
+                  - generic [ref=e1116] [cursor=pointer]:
+                    - text: "Authenticated user: Use the"
+                    - link "Restricted HTML" [ref=e1117]:
+                      - /url: /admin/config/content/formats/manage/restricted_html
+                    - text: text format
+                  - 'checkbox "Authenticated user: Use the Restricted HTML text format" [ref=e1118]'
+              - 'cell "Content editor: Use the Restricted HTML text format" [ref=e1119]':
+                - generic [ref=e1120]:
+                  - generic [ref=e1121] [cursor=pointer]:
+                    - text: "Content editor: Use the"
+                    - link "Restricted HTML" [ref=e1122]:
+                      - /url: /admin/config/content/formats/manage/restricted_html
+                    - text: text format
+                  - 'checkbox "Content editor: Use the Restricted HTML text format" [ref=e1123]'
+              - 'cell "Administrator: Use the Restricted HTML text format" [ref=e1124]':
+                - generic [ref=e1125]:
+                  - generic [ref=e1126]:
+                    - text: "Administrator: Use the"
+                    - link "Restricted HTML" [ref=e1127] [cursor=pointer]:
+                      - /url: /admin/config/content/formats/manage/restricted_html
+                    - text: text format
+                  - 'checkbox "Administrator: Use the Restricted HTML text format" [checked] [disabled] [ref=e1128]'
+            - row "Help" [ref=e1129]:
+              - cell "Help" [ref=e1130]
+            - 'row "Use help pages Anonymous user: Use help pages Authenticated user: Use help pages Content editor: Use help pages Administrator: Use help pages" [ref=e1131]':
+              - cell "Use help pages" [ref=e1132]:
+                - generic [ref=e1133]: Use help pages
+              - 'cell "Anonymous user: Use help pages" [ref=e1134]':
+                - generic [ref=e1135]:
+                  - generic [ref=e1136] [cursor=pointer]: "Anonymous user: Use help pages"
+                  - 'checkbox "Anonymous user: Use help pages" [ref=e1137]'
+              - 'cell "Authenticated user: Use help pages" [ref=e1138]':
+                - generic [ref=e1139]:
+                  - generic [ref=e1140] [cursor=pointer]: "Authenticated user: Use help pages"
+                  - 'checkbox "Authenticated user: Use help pages" [ref=e1141]'
+              - 'cell "Content editor: Use help pages" [ref=e1142]':
+                - generic [ref=e1143]:
+                  - generic [ref=e1144] [cursor=pointer]: "Content editor: Use help pages"
+                  - 'checkbox "Content editor: Use help pages" [ref=e1145]'
+              - 'cell "Administrator: Use help pages" [ref=e1146]':
+                - generic [ref=e1147]:
+                  - generic [ref=e1148]: "Administrator: Use help pages"
+                  - 'checkbox "Administrator: Use help pages" [checked] [disabled] [ref=e1149]'
+            - row "Image" [ref=e1150]:
+              - cell "Image" [ref=e1151]
+            - 'row "Administer image styles Anonymous user: Administer image styles Authenticated user: Administer image styles Content editor: Administer image styles Administrator: Administer image styles" [ref=e1152]':
+              - cell "Administer image styles" [ref=e1153]:
+                - generic [ref=e1154]: Administer image styles
+              - 'cell "Anonymous user: Administer image styles" [ref=e1155]':
+                - generic [ref=e1156]:
+                  - generic [ref=e1157] [cursor=pointer]: "Anonymous user: Administer image styles"
+                  - 'checkbox "Anonymous user: Administer image styles" [ref=e1158]'
+              - 'cell "Authenticated user: Administer image styles" [ref=e1159]':
+                - generic [ref=e1160]:
+                  - generic [ref=e1161] [cursor=pointer]: "Authenticated user: Administer image styles"
+                  - 'checkbox "Authenticated user: Administer image styles" [ref=e1162]'
+              - 'cell "Content editor: Administer image styles" [ref=e1163]':
+                - generic [ref=e1164]:
+                  - generic [ref=e1165] [cursor=pointer]: "Content editor: Administer image styles"
+                  - 'checkbox "Content editor: Administer image styles" [ref=e1166]'
+              - 'cell "Administrator: Administer image styles" [ref=e1167]':
+                - generic [ref=e1168]:
+                  - generic [ref=e1169]: "Administrator: Administer image styles"
+                  - 'checkbox "Administrator: Administer image styles" [checked] [disabled] [ref=e1170]'
+            - row "Layout Builder" [ref=e1171]:
+              - cell "Layout Builder" [ref=e1172]
+            - 'row "Configure any layout Warning: Give to trusted roles only; this permission has security implications. Anonymous user: Configure any layout Authenticated user: Configure any layout Content editor: Configure any layout Administrator: Configure any layout" [ref=e1173]':
+              - 'cell "Configure any layout Warning: Give to trusted roles only; this permission has security implications." [ref=e1174]':
+                - generic [ref=e1175]:
+                  - text: Configure any layout
+                  - emphasis [ref=e1177]: "Warning: Give to trusted roles only; this permission has security implications."
+              - 'cell "Anonymous user: Configure any layout" [ref=e1178]':
+                - generic [ref=e1179]:
+                  - generic [ref=e1180] [cursor=pointer]: "Anonymous user: Configure any layout"
+                  - 'checkbox "Anonymous user: Configure any layout" [ref=e1181]'
+              - 'cell "Authenticated user: Configure any layout" [ref=e1182]':
+                - generic [ref=e1183]:
+                  - generic [ref=e1184] [cursor=pointer]: "Authenticated user: Configure any layout"
+                  - 'checkbox "Authenticated user: Configure any layout" [ref=e1185]'
+              - 'cell "Content editor: Configure any layout" [ref=e1186]':
+                - generic [ref=e1187]:
+                  - generic [ref=e1188] [cursor=pointer]: "Content editor: Configure any layout"
+                  - 'checkbox "Content editor: Configure any layout" [ref=e1189]'
+              - 'cell "Administrator: Configure any layout" [ref=e1190]':
+                - generic [ref=e1191]:
+                  - generic [ref=e1192]: "Administrator: Configure any layout"
+                  - 'checkbox "Administrator: Configure any layout" [checked] [disabled] [ref=e1193]'
+            - 'row "Create and edit content blocks Manage the single-use blocks within the Layout Builder Anonymous user: Create and edit content blocks Authenticated user: Create and edit content blocks Content editor: Create and edit content blocks Administrator: Create and edit content blocks" [ref=e1194]':
+              - cell "Create and edit content blocks Manage the single-use blocks within the Layout Builder" [ref=e1195]:
+                - generic [ref=e1196]:
+                  - text: Create and edit content blocks
+                  - generic [ref=e1197]: Manage the single-use blocks within the Layout Builder
+              - 'cell "Anonymous user: Create and edit content blocks" [ref=e1198]':
+                - generic [ref=e1199]:
+                  - generic [ref=e1200] [cursor=pointer]: "Anonymous user: Create and edit content blocks"
+                  - 'checkbox "Anonymous user: Create and edit content blocks" [ref=e1201]'
+              - 'cell "Authenticated user: Create and edit content blocks" [ref=e1202]':
+                - generic [ref=e1203]:
+                  - generic [ref=e1204] [cursor=pointer]: "Authenticated user: Create and edit content blocks"
+                  - 'checkbox "Authenticated user: Create and edit content blocks" [ref=e1205]'
+              - 'cell "Content editor: Create and edit content blocks" [ref=e1206]':
+                - generic [ref=e1207]:
+                  - generic [ref=e1208] [cursor=pointer]: "Content editor: Create and edit content blocks"
+                  - 'checkbox "Content editor: Create and edit content blocks" [ref=e1209]'
+              - 'cell "Administrator: Create and edit content blocks" [ref=e1210]':
+                - generic [ref=e1211]:
+                  - generic [ref=e1212]: "Administrator: Create and edit content blocks"
+                  - 'checkbox "Administrator: Create and edit content blocks" [checked] [disabled] [ref=e1213]'
+            - row "Navigation" [ref=e1214]:
+              - cell "Navigation" [ref=e1215]
+            - 'row "Access navigation bar Anonymous user: Access navigation bar Authenticated user: Access navigation bar Content editor: Access navigation bar Administrator: Access navigation bar" [ref=e1216]':
+              - cell "Access navigation bar" [ref=e1217]:
+                - generic [ref=e1218]: Access navigation bar
+              - 'cell "Anonymous user: Access navigation bar" [ref=e1219]':
+                - generic [ref=e1220]:
+                  - generic [ref=e1221] [cursor=pointer]: "Anonymous user: Access navigation bar"
+                  - 'checkbox "Anonymous user: Access navigation bar" [ref=e1222]'
+              - 'cell "Authenticated user: Access navigation bar" [ref=e1223]':
+                - generic [ref=e1224]:
+                  - generic [ref=e1225] [cursor=pointer]: "Authenticated user: Access navigation bar"
+                  - 'checkbox "Authenticated user: Access navigation bar" [ref=e1226]'
+              - 'cell "Content editor: Access navigation bar" [ref=e1227]':
+                - generic [ref=e1228]:
+                  - generic [ref=e1229] [cursor=pointer]: "Content editor: Access navigation bar"
+                  - 'checkbox "Content editor: Access navigation bar" [checked] [ref=e1230]'
+              - 'cell "Administrator: Access navigation bar" [ref=e1231]':
+                - generic [ref=e1232]:
+                  - generic [ref=e1233]: "Administrator: Access navigation bar"
+                  - 'checkbox "Administrator: Access navigation bar" [checked] [disabled] [ref=e1234]'
+            - 'row "Configure navigation layout Anonymous user: Configure navigation layout Authenticated user: Configure navigation layout Content editor: Configure navigation layout Administrator: Configure navigation layout" [ref=e1235]':
+              - cell "Configure navigation layout" [ref=e1236]:
+                - generic [ref=e1237]: Configure navigation layout
+              - 'cell "Anonymous user: Configure navigation layout" [ref=e1238]':
+                - generic [ref=e1239]:
+                  - generic [ref=e1240] [cursor=pointer]: "Anonymous user: Configure navigation layout"
+                  - 'checkbox "Anonymous user: Configure navigation layout" [ref=e1241]'
+              - 'cell "Authenticated user: Configure navigation layout" [ref=e1242]':
+                - generic [ref=e1243]:
+                  - generic [ref=e1244] [cursor=pointer]: "Authenticated user: Configure navigation layout"
+                  - 'checkbox "Authenticated user: Configure navigation layout" [ref=e1245]'
+              - 'cell "Content editor: Configure navigation layout" [ref=e1246]':
+                - generic [ref=e1247]:
+                  - generic [ref=e1248] [cursor=pointer]: "Content editor: Configure navigation layout"
+                  - 'checkbox "Content editor: Configure navigation layout" [ref=e1249]'
+              - 'cell "Administrator: Configure navigation layout" [ref=e1250]':
+                - generic [ref=e1251]:
+                  - generic [ref=e1252]: "Administrator: Configure navigation layout"
+                  - 'checkbox "Administrator: Configure navigation layout" [checked] [disabled] [ref=e1253]'
+            - row "Node" [ref=e1254]:
+              - cell "Node" [ref=e1255]
+            - 'row "Article: Create new content Anonymous user: Article: Create new content Authenticated user: Article: Create new content Content editor: Article: Create new content Administrator: Article: Create new content" [ref=e1256]':
+              - 'cell "Article: Create new content" [ref=e1257]':
+                - generic [ref=e1259]:
+                  - emphasis [ref=e1260]: Article
+                  - text: ": Create new content"
+              - 'cell "Anonymous user: Article: Create new content" [ref=e1261]':
+                - generic [ref=e1262]:
+                  - generic [ref=e1263] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e1264]: Article
+                    - text: ": Create new content"
+                  - 'checkbox "Anonymous user: Article: Create new content" [ref=e1265]'
+              - 'cell "Authenticated user: Article: Create new content" [ref=e1266]':
+                - generic [ref=e1267]:
+                  - generic [ref=e1268] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e1269]: Article
+                    - text: ": Create new content"
+                  - 'checkbox "Authenticated user: Article: Create new content" [ref=e1270]'
+              - 'cell "Content editor: Article: Create new content" [ref=e1271]':
+                - generic [ref=e1272]:
+                  - generic [ref=e1273] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e1274]: Article
+                    - text: ": Create new content"
+                  - 'checkbox "Content editor: Article: Create new content" [ref=e1275]'
+              - 'cell "Administrator: Article: Create new content" [ref=e1276]':
+                - generic [ref=e1277]:
+                  - generic [ref=e1278]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e1279]: Article
+                    - text: ": Create new content"
+                  - 'checkbox "Administrator: Article: Create new content" [checked] [disabled] [ref=e1280]'
+            - 'row "Basic page: Create new content Anonymous user: Basic page: Create new content Authenticated user: Basic page: Create new content Content editor: Basic page: Create new content Administrator: Basic page: Create new content" [ref=e1281]':
+              - 'cell "Basic page: Create new content" [ref=e1282]':
+                - generic [ref=e1284]:
+                  - emphasis [ref=e1285]: Basic page
+                  - text: ": Create new content"
+              - 'cell "Anonymous user: Basic page: Create new content" [ref=e1286]':
+                - generic [ref=e1287]:
+                  - generic [ref=e1288] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e1289]: Basic page
+                    - text: ": Create new content"
+                  - 'checkbox "Anonymous user: Basic page: Create new content" [ref=e1290]'
+              - 'cell "Authenticated user: Basic page: Create new content" [ref=e1291]':
+                - generic [ref=e1292]:
+                  - generic [ref=e1293] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e1294]: Basic page
+                    - text: ": Create new content"
+                  - 'checkbox "Authenticated user: Basic page: Create new content" [ref=e1295]'
+              - 'cell "Content editor: Basic page: Create new content" [ref=e1296]':
+                - generic [ref=e1297]:
+                  - generic [ref=e1298] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e1299]: Basic page
+                    - text: ": Create new content"
+                  - 'checkbox "Content editor: Basic page: Create new content" [ref=e1300]'
+              - 'cell "Administrator: Basic page: Create new content" [ref=e1301]':
+                - generic [ref=e1302]:
+                  - generic [ref=e1303]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e1304]: Basic page
+                    - text: ": Create new content"
+                  - 'checkbox "Administrator: Basic page: Create new content" [checked] [disabled] [ref=e1305]'
+            - 'row "Article: Delete any content Anonymous user: Article: Delete any content Authenticated user: Article: Delete any content Content editor: Article: Delete any content Administrator: Article: Delete any content" [ref=e1306]':
+              - 'cell "Article: Delete any content" [ref=e1307]':
+                - generic [ref=e1309]:
+                  - emphasis [ref=e1310]: Article
+                  - text: ": Delete any content"
+              - 'cell "Anonymous user: Article: Delete any content" [ref=e1311]':
+                - generic [ref=e1312]:
+                  - generic [ref=e1313] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e1314]: Article
+                    - text: ": Delete any content"
+                  - 'checkbox "Anonymous user: Article: Delete any content" [ref=e1315]'
+              - 'cell "Authenticated user: Article: Delete any content" [ref=e1316]':
+                - generic [ref=e1317]:
+                  - generic [ref=e1318] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e1319]: Article
+                    - text: ": Delete any content"
+                  - 'checkbox "Authenticated user: Article: Delete any content" [ref=e1320]'
+              - 'cell "Content editor: Article: Delete any content" [ref=e1321]':
+                - generic [ref=e1322]:
+                  - generic [ref=e1323] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e1324]: Article
+                    - text: ": Delete any content"
+                  - 'checkbox "Content editor: Article: Delete any content" [ref=e1325]'
+              - 'cell "Administrator: Article: Delete any content" [ref=e1326]':
+                - generic [ref=e1327]:
+                  - generic [ref=e1328]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e1329]: Article
+                    - text: ": Delete any content"
+                  - 'checkbox "Administrator: Article: Delete any content" [checked] [disabled] [ref=e1330]'
+            - 'row "Basic page: Delete any content Anonymous user: Basic page: Delete any content Authenticated user: Basic page: Delete any content Content editor: Basic page: Delete any content Administrator: Basic page: Delete any content" [ref=e1331]':
+              - 'cell "Basic page: Delete any content" [ref=e1332]':
+                - generic [ref=e1334]:
+                  - emphasis [ref=e1335]: Basic page
+                  - text: ": Delete any content"
+              - 'cell "Anonymous user: Basic page: Delete any content" [ref=e1336]':
+                - generic [ref=e1337]:
+                  - generic [ref=e1338] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e1339]: Basic page
+                    - text: ": Delete any content"
+                  - 'checkbox "Anonymous user: Basic page: Delete any content" [ref=e1340]'
+              - 'cell "Authenticated user: Basic page: Delete any content" [ref=e1341]':
+                - generic [ref=e1342]:
+                  - generic [ref=e1343] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e1344]: Basic page
+                    - text: ": Delete any content"
+                  - 'checkbox "Authenticated user: Basic page: Delete any content" [ref=e1345]'
+              - 'cell "Content editor: Basic page: Delete any content" [ref=e1346]':
+                - generic [ref=e1347]:
+                  - generic [ref=e1348] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e1349]: Basic page
+                    - text: ": Delete any content"
+                  - 'checkbox "Content editor: Basic page: Delete any content" [ref=e1350]'
+              - 'cell "Administrator: Basic page: Delete any content" [ref=e1351]':
+                - generic [ref=e1352]:
+                  - generic [ref=e1353]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e1354]: Basic page
+                    - text: ": Delete any content"
+                  - 'checkbox "Administrator: Basic page: Delete any content" [checked] [disabled] [ref=e1355]'
+            - 'row "Article: Delete own content Note that anonymous users with this permission are able to delete any content created by any anonymous user. Anonymous user: Article: Delete own content Authenticated user: Article: Delete own content Content editor: Article: Delete own content Administrator: Article: Delete own content" [ref=e1356]':
+              - 'cell "Article: Delete own content Note that anonymous users with this permission are able to delete any content created by any anonymous user." [ref=e1357]':
+                - generic [ref=e1358]:
+                  - generic [ref=e1359]:
+                    - emphasis [ref=e1360]: Article
+                    - text: ": Delete own content"
+                  - generic [ref=e1361]: Note that anonymous users with this permission are able to delete any content created by any anonymous user.
+              - 'cell "Anonymous user: Article: Delete own content" [ref=e1362]':
+                - generic [ref=e1363]:
+                  - generic [ref=e1364] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e1365]: Article
+                    - text: ": Delete own content"
+                  - 'checkbox "Anonymous user: Article: Delete own content" [ref=e1366]'
+              - 'cell "Authenticated user: Article: Delete own content" [ref=e1367]':
+                - generic [ref=e1368]:
+                  - generic [ref=e1369] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e1370]: Article
+                    - text: ": Delete own content"
+                  - 'checkbox "Authenticated user: Article: Delete own content" [ref=e1371]'
+              - 'cell "Content editor: Article: Delete own content" [ref=e1372]':
+                - generic [ref=e1373]:
+                  - generic [ref=e1374] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e1375]: Article
+                    - text: ": Delete own content"
+                  - 'checkbox "Content editor: Article: Delete own content" [ref=e1376]'
+              - 'cell "Administrator: Article: Delete own content" [ref=e1377]':
+                - generic [ref=e1378]:
+                  - generic [ref=e1379]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e1380]: Article
+                    - text: ": Delete own content"
+                  - 'checkbox "Administrator: Article: Delete own content" [checked] [disabled] [ref=e1381]'
+            - 'row "Basic page: Delete own content Note that anonymous users with this permission are able to delete any content created by any anonymous user. Anonymous user: Basic page: Delete own content Authenticated user: Basic page: Delete own content Content editor: Basic page: Delete own content Administrator: Basic page: Delete own content" [ref=e1382]':
+              - 'cell "Basic page: Delete own content Note that anonymous users with this permission are able to delete any content created by any anonymous user." [ref=e1383]':
+                - generic [ref=e1384]:
+                  - generic [ref=e1385]:
+                    - emphasis [ref=e1386]: Basic page
+                    - text: ": Delete own content"
+                  - generic [ref=e1387]: Note that anonymous users with this permission are able to delete any content created by any anonymous user.
+              - 'cell "Anonymous user: Basic page: Delete own content" [ref=e1388]':
+                - generic [ref=e1389]:
+                  - generic [ref=e1390] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e1391]: Basic page
+                    - text: ": Delete own content"
+                  - 'checkbox "Anonymous user: Basic page: Delete own content" [ref=e1392]'
+              - 'cell "Authenticated user: Basic page: Delete own content" [ref=e1393]':
+                - generic [ref=e1394]:
+                  - generic [ref=e1395] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e1396]: Basic page
+                    - text: ": Delete own content"
+                  - 'checkbox "Authenticated user: Basic page: Delete own content" [ref=e1397]'
+              - 'cell "Content editor: Basic page: Delete own content" [ref=e1398]':
+                - generic [ref=e1399]:
+                  - generic [ref=e1400] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e1401]: Basic page
+                    - text: ": Delete own content"
+                  - 'checkbox "Content editor: Basic page: Delete own content" [ref=e1402]'
+              - 'cell "Administrator: Basic page: Delete own content" [ref=e1403]':
+                - generic [ref=e1404]:
+                  - generic [ref=e1405]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e1406]: Basic page
+                    - text: ": Delete own content"
+                  - 'checkbox "Administrator: Basic page: Delete own content" [checked] [disabled] [ref=e1407]'
+            - 'row "Article: Delete revisions To delete a revision, you also need permission to delete the content item. Anonymous user: Article: Delete revisions Authenticated user: Article: Delete revisions Content editor: Article: Delete revisions Administrator: Article: Delete revisions" [ref=e1408]':
+              - 'cell "Article: Delete revisions To delete a revision, you also need permission to delete the content item." [ref=e1409]':
+                - generic [ref=e1410]:
+                  - generic [ref=e1411]:
+                    - emphasis [ref=e1412]: Article
+                    - text: ": Delete revisions"
+                  - generic [ref=e1413]: To delete a revision, you also need permission to delete the content item.
+              - 'cell "Anonymous user: Article: Delete revisions" [ref=e1414]':
+                - generic [ref=e1415]:
+                  - generic [ref=e1416] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e1417]: Article
+                    - text: ": Delete revisions"
+                  - 'checkbox "Anonymous user: Article: Delete revisions" [ref=e1418]'
+              - 'cell "Authenticated user: Article: Delete revisions" [ref=e1419]':
+                - generic [ref=e1420]:
+                  - generic [ref=e1421] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e1422]: Article
+                    - text: ": Delete revisions"
+                  - 'checkbox "Authenticated user: Article: Delete revisions" [ref=e1423]'
+              - 'cell "Content editor: Article: Delete revisions" [ref=e1424]':
+                - generic [ref=e1425]:
+                  - generic [ref=e1426] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e1427]: Article
+                    - text: ": Delete revisions"
+                  - 'checkbox "Content editor: Article: Delete revisions" [ref=e1428]'
+              - 'cell "Administrator: Article: Delete revisions" [ref=e1429]':
+                - generic [ref=e1430]:
+                  - generic [ref=e1431]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e1432]: Article
+                    - text: ": Delete revisions"
+                  - 'checkbox "Administrator: Article: Delete revisions" [checked] [disabled] [ref=e1433]'
+            - 'row "Basic page: Delete revisions To delete a revision, you also need permission to delete the content item. Anonymous user: Basic page: Delete revisions Authenticated user: Basic page: Delete revisions Content editor: Basic page: Delete revisions Administrator: Basic page: Delete revisions" [ref=e1434]':
+              - 'cell "Basic page: Delete revisions To delete a revision, you also need permission to delete the content item." [ref=e1435]':
+                - generic [ref=e1436]:
+                  - generic [ref=e1437]:
+                    - emphasis [ref=e1438]: Basic page
+                    - text: ": Delete revisions"
+                  - generic [ref=e1439]: To delete a revision, you also need permission to delete the content item.
+              - 'cell "Anonymous user: Basic page: Delete revisions" [ref=e1440]':
+                - generic [ref=e1441]:
+                  - generic [ref=e1442] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e1443]: Basic page
+                    - text: ": Delete revisions"
+                  - 'checkbox "Anonymous user: Basic page: Delete revisions" [ref=e1444]'
+              - 'cell "Authenticated user: Basic page: Delete revisions" [ref=e1445]':
+                - generic [ref=e1446]:
+                  - generic [ref=e1447] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e1448]: Basic page
+                    - text: ": Delete revisions"
+                  - 'checkbox "Authenticated user: Basic page: Delete revisions" [ref=e1449]'
+              - 'cell "Content editor: Basic page: Delete revisions" [ref=e1450]':
+                - generic [ref=e1451]:
+                  - generic [ref=e1452] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e1453]: Basic page
+                    - text: ": Delete revisions"
+                  - 'checkbox "Content editor: Basic page: Delete revisions" [ref=e1454]'
+              - 'cell "Administrator: Basic page: Delete revisions" [ref=e1455]':
+                - generic [ref=e1456]:
+                  - generic [ref=e1457]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e1458]: Basic page
+                    - text: ": Delete revisions"
+                  - 'checkbox "Administrator: Basic page: Delete revisions" [checked] [disabled] [ref=e1459]'
+            - 'row "Article: Edit any content Anonymous user: Article: Edit any content Authenticated user: Article: Edit any content Content editor: Article: Edit any content Administrator: Article: Edit any content" [ref=e1460]':
+              - 'cell "Article: Edit any content" [ref=e1461]':
+                - generic [ref=e1463]:
+                  - emphasis [ref=e1464]: Article
+                  - text: ": Edit any content"
+              - 'cell "Anonymous user: Article: Edit any content" [ref=e1465]':
+                - generic [ref=e1466]:
+                  - generic [ref=e1467] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e1468]: Article
+                    - text: ": Edit any content"
+                  - 'checkbox "Anonymous user: Article: Edit any content" [ref=e1469]'
+              - 'cell "Authenticated user: Article: Edit any content" [ref=e1470]':
+                - generic [ref=e1471]:
+                  - generic [ref=e1472] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e1473]: Article
+                    - text: ": Edit any content"
+                  - 'checkbox "Authenticated user: Article: Edit any content" [ref=e1474]'
+              - 'cell "Content editor: Article: Edit any content" [ref=e1475]':
+                - generic [ref=e1476]:
+                  - generic [ref=e1477] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e1478]: Article
+                    - text: ": Edit any content"
+                  - 'checkbox "Content editor: Article: Edit any content" [ref=e1479]'
+              - 'cell "Administrator: Article: Edit any content" [ref=e1480]':
+                - generic [ref=e1481]:
+                  - generic [ref=e1482]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e1483]: Article
+                    - text: ": Edit any content"
+                  - 'checkbox "Administrator: Article: Edit any content" [checked] [disabled] [ref=e1484]'
+            - 'row "Basic page: Edit any content Anonymous user: Basic page: Edit any content Authenticated user: Basic page: Edit any content Content editor: Basic page: Edit any content Administrator: Basic page: Edit any content" [ref=e1485]':
+              - 'cell "Basic page: Edit any content" [ref=e1486]':
+                - generic [ref=e1488]:
+                  - emphasis [ref=e1489]: Basic page
+                  - text: ": Edit any content"
+              - 'cell "Anonymous user: Basic page: Edit any content" [ref=e1490]':
+                - generic [ref=e1491]:
+                  - generic [ref=e1492] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e1493]: Basic page
+                    - text: ": Edit any content"
+                  - 'checkbox "Anonymous user: Basic page: Edit any content" [ref=e1494]'
+              - 'cell "Authenticated user: Basic page: Edit any content" [ref=e1495]':
+                - generic [ref=e1496]:
+                  - generic [ref=e1497] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e1498]: Basic page
+                    - text: ": Edit any content"
+                  - 'checkbox "Authenticated user: Basic page: Edit any content" [ref=e1499]'
+              - 'cell "Content editor: Basic page: Edit any content" [ref=e1500]':
+                - generic [ref=e1501]:
+                  - generic [ref=e1502] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e1503]: Basic page
+                    - text: ": Edit any content"
+                  - 'checkbox "Content editor: Basic page: Edit any content" [ref=e1504]'
+              - 'cell "Administrator: Basic page: Edit any content" [ref=e1505]':
+                - generic [ref=e1506]:
+                  - generic [ref=e1507]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e1508]: Basic page
+                    - text: ": Edit any content"
+                  - 'checkbox "Administrator: Basic page: Edit any content" [checked] [disabled] [ref=e1509]'
+            - 'row "Article: Edit own content Note that anonymous users with this permission are able to edit any content created by any anonymous user. Anonymous user: Article: Edit own content Authenticated user: Article: Edit own content Content editor: Article: Edit own content Administrator: Article: Edit own content" [ref=e1510]':
+              - 'cell "Article: Edit own content Note that anonymous users with this permission are able to edit any content created by any anonymous user." [ref=e1511]':
+                - generic [ref=e1512]:
+                  - generic [ref=e1513]:
+                    - emphasis [ref=e1514]: Article
+                    - text: ": Edit own content"
+                  - generic [ref=e1515]: Note that anonymous users with this permission are able to edit any content created by any anonymous user.
+              - 'cell "Anonymous user: Article: Edit own content" [ref=e1516]':
+                - generic [ref=e1517]:
+                  - generic [ref=e1518] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e1519]: Article
+                    - text: ": Edit own content"
+                  - 'checkbox "Anonymous user: Article: Edit own content" [ref=e1520]'
+              - 'cell "Authenticated user: Article: Edit own content" [ref=e1521]':
+                - generic [ref=e1522]:
+                  - generic [ref=e1523] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e1524]: Article
+                    - text: ": Edit own content"
+                  - 'checkbox "Authenticated user: Article: Edit own content" [ref=e1525]'
+              - 'cell "Content editor: Article: Edit own content" [ref=e1526]':
+                - generic [ref=e1527]:
+                  - generic [ref=e1528] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e1529]: Article
+                    - text: ": Edit own content"
+                  - 'checkbox "Content editor: Article: Edit own content" [ref=e1530]'
+              - 'cell "Administrator: Article: Edit own content" [ref=e1531]':
+                - generic [ref=e1532]:
+                  - generic [ref=e1533]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e1534]: Article
+                    - text: ": Edit own content"
+                  - 'checkbox "Administrator: Article: Edit own content" [checked] [disabled] [ref=e1535]'
+            - 'row "Basic page: Edit own content Note that anonymous users with this permission are able to edit any content created by any anonymous user. Anonymous user: Basic page: Edit own content Authenticated user: Basic page: Edit own content Content editor: Basic page: Edit own content Administrator: Basic page: Edit own content" [ref=e1536]':
+              - 'cell "Basic page: Edit own content Note that anonymous users with this permission are able to edit any content created by any anonymous user." [ref=e1537]':
+                - generic [ref=e1538]:
+                  - generic [ref=e1539]:
+                    - emphasis [ref=e1540]: Basic page
+                    - text: ": Edit own content"
+                  - generic [ref=e1541]: Note that anonymous users with this permission are able to edit any content created by any anonymous user.
+              - 'cell "Anonymous user: Basic page: Edit own content" [ref=e1542]':
+                - generic [ref=e1543]:
+                  - generic [ref=e1544] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e1545]: Basic page
+                    - text: ": Edit own content"
+                  - 'checkbox "Anonymous user: Basic page: Edit own content" [ref=e1546]'
+              - 'cell "Authenticated user: Basic page: Edit own content" [ref=e1547]':
+                - generic [ref=e1548]:
+                  - generic [ref=e1549] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e1550]: Basic page
+                    - text: ": Edit own content"
+                  - 'checkbox "Authenticated user: Basic page: Edit own content" [ref=e1551]'
+              - 'cell "Content editor: Basic page: Edit own content" [ref=e1552]':
+                - generic [ref=e1553]:
+                  - generic [ref=e1554] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e1555]: Basic page
+                    - text: ": Edit own content"
+                  - 'checkbox "Content editor: Basic page: Edit own content" [ref=e1556]'
+              - 'cell "Administrator: Basic page: Edit own content" [ref=e1557]':
+                - generic [ref=e1558]:
+                  - generic [ref=e1559]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e1560]: Basic page
+                    - text: ": Edit own content"
+                  - 'checkbox "Administrator: Basic page: Edit own content" [checked] [disabled] [ref=e1561]'
+            - 'row "Article: Revert revisions To revert a revision, you also need permission to edit the content item. Anonymous user: Article: Revert revisions Authenticated user: Article: Revert revisions Content editor: Article: Revert revisions Administrator: Article: Revert revisions" [ref=e1562]':
+              - 'cell "Article: Revert revisions To revert a revision, you also need permission to edit the content item." [ref=e1563]':
+                - generic [ref=e1564]:
+                  - generic [ref=e1565]:
+                    - emphasis [ref=e1566]: Article
+                    - text: ": Revert revisions"
+                  - generic [ref=e1567]: To revert a revision, you also need permission to edit the content item.
+              - 'cell "Anonymous user: Article: Revert revisions" [ref=e1568]':
+                - generic [ref=e1569]:
+                  - generic [ref=e1570] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e1571]: Article
+                    - text: ": Revert revisions"
+                  - 'checkbox "Anonymous user: Article: Revert revisions" [ref=e1572]'
+              - 'cell "Authenticated user: Article: Revert revisions" [ref=e1573]':
+                - generic [ref=e1574]:
+                  - generic [ref=e1575] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e1576]: Article
+                    - text: ": Revert revisions"
+                  - 'checkbox "Authenticated user: Article: Revert revisions" [ref=e1577]'
+              - 'cell "Content editor: Article: Revert revisions" [ref=e1578]':
+                - generic [ref=e1579]:
+                  - generic [ref=e1580] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e1581]: Article
+                    - text: ": Revert revisions"
+                  - 'checkbox "Content editor: Article: Revert revisions" [ref=e1582]'
+              - 'cell "Administrator: Article: Revert revisions" [ref=e1583]':
+                - generic [ref=e1584]:
+                  - generic [ref=e1585]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e1586]: Article
+                    - text: ": Revert revisions"
+                  - 'checkbox "Administrator: Article: Revert revisions" [checked] [disabled] [ref=e1587]'
+            - 'row "Basic page: Revert revisions To revert a revision, you also need permission to edit the content item. Anonymous user: Basic page: Revert revisions Authenticated user: Basic page: Revert revisions Content editor: Basic page: Revert revisions Administrator: Basic page: Revert revisions" [ref=e1588]':
+              - 'cell "Basic page: Revert revisions To revert a revision, you also need permission to edit the content item." [ref=e1589]':
+                - generic [ref=e1590]:
+                  - generic [ref=e1591]:
+                    - emphasis [ref=e1592]: Basic page
+                    - text: ": Revert revisions"
+                  - generic [ref=e1593]: To revert a revision, you also need permission to edit the content item.
+              - 'cell "Anonymous user: Basic page: Revert revisions" [ref=e1594]':
+                - generic [ref=e1595]:
+                  - generic [ref=e1596] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e1597]: Basic page
+                    - text: ": Revert revisions"
+                  - 'checkbox "Anonymous user: Basic page: Revert revisions" [ref=e1598]'
+              - 'cell "Authenticated user: Basic page: Revert revisions" [ref=e1599]':
+                - generic [ref=e1600]:
+                  - generic [ref=e1601] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e1602]: Basic page
+                    - text: ": Revert revisions"
+                  - 'checkbox "Authenticated user: Basic page: Revert revisions" [ref=e1603]'
+              - 'cell "Content editor: Basic page: Revert revisions" [ref=e1604]':
+                - generic [ref=e1605]:
+                  - generic [ref=e1606] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e1607]: Basic page
+                    - text: ": Revert revisions"
+                  - 'checkbox "Content editor: Basic page: Revert revisions" [ref=e1608]'
+              - 'cell "Administrator: Basic page: Revert revisions" [ref=e1609]':
+                - generic [ref=e1610]:
+                  - generic [ref=e1611]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e1612]: Basic page
+                    - text: ": Revert revisions"
+                  - 'checkbox "Administrator: Basic page: Revert revisions" [checked] [disabled] [ref=e1613]'
+            - 'row "Article: View revisions To view a revision, you also need permission to view the content item. Anonymous user: Article: View revisions Authenticated user: Article: View revisions Content editor: Article: View revisions Administrator: Article: View revisions" [ref=e1614]':
+              - 'cell "Article: View revisions To view a revision, you also need permission to view the content item." [ref=e1615]':
+                - generic [ref=e1616]:
+                  - generic [ref=e1617]:
+                    - emphasis [ref=e1618]: Article
+                    - text: ": View revisions"
+                  - generic [ref=e1619]: To view a revision, you also need permission to view the content item.
+              - 'cell "Anonymous user: Article: View revisions" [ref=e1620]':
+                - generic [ref=e1621]:
+                  - generic [ref=e1622] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e1623]: Article
+                    - text: ": View revisions"
+                  - 'checkbox "Anonymous user: Article: View revisions" [ref=e1624]'
+              - 'cell "Authenticated user: Article: View revisions" [ref=e1625]':
+                - generic [ref=e1626]:
+                  - generic [ref=e1627] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e1628]: Article
+                    - text: ": View revisions"
+                  - 'checkbox "Authenticated user: Article: View revisions" [ref=e1629]'
+              - 'cell "Content editor: Article: View revisions" [ref=e1630]':
+                - generic [ref=e1631]:
+                  - generic [ref=e1632] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e1633]: Article
+                    - text: ": View revisions"
+                  - 'checkbox "Content editor: Article: View revisions" [ref=e1634]'
+              - 'cell "Administrator: Article: View revisions" [ref=e1635]':
+                - generic [ref=e1636]:
+                  - generic [ref=e1637]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e1638]: Article
+                    - text: ": View revisions"
+                  - 'checkbox "Administrator: Article: View revisions" [checked] [disabled] [ref=e1639]'
+            - 'row "Basic page: View revisions To view a revision, you also need permission to view the content item. Anonymous user: Basic page: View revisions Authenticated user: Basic page: View revisions Content editor: Basic page: View revisions Administrator: Basic page: View revisions" [ref=e1640]':
+              - 'cell "Basic page: View revisions To view a revision, you also need permission to view the content item." [ref=e1641]':
+                - generic [ref=e1642]:
+                  - generic [ref=e1643]:
+                    - emphasis [ref=e1644]: Basic page
+                    - text: ": View revisions"
+                  - generic [ref=e1645]: To view a revision, you also need permission to view the content item.
+              - 'cell "Anonymous user: Basic page: View revisions" [ref=e1646]':
+                - generic [ref=e1647]:
+                  - generic [ref=e1648] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e1649]: Basic page
+                    - text: ": View revisions"
+                  - 'checkbox "Anonymous user: Basic page: View revisions" [ref=e1650]'
+              - 'cell "Authenticated user: Basic page: View revisions" [ref=e1651]':
+                - generic [ref=e1652]:
+                  - generic [ref=e1653] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e1654]: Basic page
+                    - text: ": View revisions"
+                  - 'checkbox "Authenticated user: Basic page: View revisions" [ref=e1655]'
+              - 'cell "Content editor: Basic page: View revisions" [ref=e1656]':
+                - generic [ref=e1657]:
+                  - generic [ref=e1658] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e1659]: Basic page
+                    - text: ": View revisions"
+                  - 'checkbox "Content editor: Basic page: View revisions" [ref=e1660]'
+              - 'cell "Administrator: Basic page: View revisions" [ref=e1661]':
+                - generic [ref=e1662]:
+                  - generic [ref=e1663]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e1664]: Basic page
+                    - text: ": View revisions"
+                  - 'checkbox "Administrator: Basic page: View revisions" [checked] [disabled] [ref=e1665]'
+            - 'row "Access the Content overview page Anonymous user: Access the Content overview page Authenticated user: Access the Content overview page Content editor: Access the Content overview page Administrator: Access the Content overview page" [ref=e1666]':
+              - cell "Access the Content overview page" [ref=e1667]:
+                - generic [ref=e1668]: Access the Content overview page
+              - 'cell "Anonymous user: Access the Content overview page" [ref=e1669]':
+                - generic [ref=e1670]:
+                  - generic [ref=e1671] [cursor=pointer]: "Anonymous user: Access the Content overview page"
+                  - 'checkbox "Anonymous user: Access the Content overview page" [ref=e1672]'
+              - 'cell "Authenticated user: Access the Content overview page" [ref=e1673]':
+                - generic [ref=e1674]:
+                  - generic [ref=e1675] [cursor=pointer]: "Authenticated user: Access the Content overview page"
+                  - 'checkbox "Authenticated user: Access the Content overview page" [ref=e1676]'
+              - 'cell "Content editor: Access the Content overview page" [ref=e1677]':
+                - generic [ref=e1678]:
+                  - generic [ref=e1679] [cursor=pointer]: "Content editor: Access the Content overview page"
+                  - 'checkbox "Content editor: Access the Content overview page" [checked] [ref=e1680]'
+              - 'cell "Administrator: Access the Content overview page" [ref=e1681]':
+                - generic [ref=e1682]:
+                  - generic [ref=e1683]: "Administrator: Access the Content overview page"
+                  - 'checkbox "Administrator: Access the Content overview page" [checked] [disabled] [ref=e1684]'
+            - 'row "Administer content Warning: Give to trusted roles only; this permission has security implications. Promote, change ownership, edit revisions, and perform other tasks across all content types. Anonymous user: Administer content Authenticated user: Administer content Content editor: Administer content Administrator: Administer content" [ref=e1685]':
+              - 'cell "Administer content Warning: Give to trusted roles only; this permission has security implications. Promote, change ownership, edit revisions, and perform other tasks across all content types." [ref=e1686]':
+                - generic [ref=e1687]:
+                  - text: Administer content
+                  - generic [ref=e1688]:
+                    - emphasis [ref=e1689]: "Warning: Give to trusted roles only; this permission has security implications."
+                    - text: Promote, change ownership, edit revisions, and perform other tasks across all content types.
+              - 'cell "Anonymous user: Administer content" [ref=e1690]':
+                - generic [ref=e1691]:
+                  - generic [ref=e1692] [cursor=pointer]: "Anonymous user: Administer content"
+                  - 'checkbox "Anonymous user: Administer content" [ref=e1693]'
+              - 'cell "Authenticated user: Administer content" [ref=e1694]':
+                - generic [ref=e1695]:
+                  - generic [ref=e1696] [cursor=pointer]: "Authenticated user: Administer content"
+                  - 'checkbox "Authenticated user: Administer content" [ref=e1697]'
+              - 'cell "Content editor: Administer content" [ref=e1698]':
+                - generic [ref=e1699]:
+                  - generic [ref=e1700] [cursor=pointer]: "Content editor: Administer content"
+                  - 'checkbox "Content editor: Administer content" [ref=e1701]'
+              - 'cell "Administrator: Administer content" [ref=e1702]':
+                - generic [ref=e1703]:
+                  - generic [ref=e1704]: "Administrator: Administer content"
+                  - 'checkbox "Administrator: Administer content" [checked] [disabled] [ref=e1705]'
+            - 'row "Administer content types Warning: Give to trusted roles only; this permission has security implications. Maintain the types of content available and the fields that are associated with those types. Anonymous user: Administer content types Authenticated user: Administer content types Content editor: Administer content types Administrator: Administer content types" [ref=e1706]':
+              - 'cell "Administer content types Warning: Give to trusted roles only; this permission has security implications. Maintain the types of content available and the fields that are associated with those types." [ref=e1707]':
+                - generic [ref=e1708]:
+                  - text: Administer content types
+                  - generic [ref=e1709]:
+                    - emphasis [ref=e1710]: "Warning: Give to trusted roles only; this permission has security implications."
+                    - text: Maintain the types of content available and the fields that are associated with those types.
+              - 'cell "Anonymous user: Administer content types" [ref=e1711]':
+                - generic [ref=e1712]:
+                  - generic [ref=e1713] [cursor=pointer]: "Anonymous user: Administer content types"
+                  - 'checkbox "Anonymous user: Administer content types" [ref=e1714]'
+              - 'cell "Authenticated user: Administer content types" [ref=e1715]':
+                - generic [ref=e1716]:
+                  - generic [ref=e1717] [cursor=pointer]: "Authenticated user: Administer content types"
+                  - 'checkbox "Authenticated user: Administer content types" [ref=e1718]'
+              - 'cell "Content editor: Administer content types" [ref=e1719]':
+                - generic [ref=e1720]:
+                  - generic [ref=e1721] [cursor=pointer]: "Content editor: Administer content types"
+                  - 'checkbox "Content editor: Administer content types" [ref=e1722]'
+              - 'cell "Administrator: Administer content types" [ref=e1723]':
+                - generic [ref=e1724]:
+                  - generic [ref=e1725]: "Administrator: Administer content types"
+                  - 'checkbox "Administrator: Administer content types" [checked] [disabled] [ref=e1726]'
+            - 'row "Administer node published status Warning: Give to trusted roles only; this permission has security implications. Edit the published status of a node across all content types. Anonymous user: Administer node published status Authenticated user: Administer node published status Content editor: Administer node published status Administrator: Administer node published status" [ref=e1727]':
+              - 'cell "Administer node published status Warning: Give to trusted roles only; this permission has security implications. Edit the published status of a node across all content types." [ref=e1728]':
+                - generic [ref=e1729]:
+                  - text: Administer node published status
+                  - generic [ref=e1730]:
+                    - emphasis [ref=e1731]: "Warning: Give to trusted roles only; this permission has security implications."
+                    - text: Edit the published status of a node across all content types.
+              - 'cell "Anonymous user: Administer node published status" [ref=e1732]':
+                - generic [ref=e1733]:
+                  - generic [ref=e1734] [cursor=pointer]: "Anonymous user: Administer node published status"
+                  - 'checkbox "Anonymous user: Administer node published status" [ref=e1735]'
+              - 'cell "Authenticated user: Administer node published status" [ref=e1736]':
+                - generic [ref=e1737]:
+                  - generic [ref=e1738] [cursor=pointer]: "Authenticated user: Administer node published status"
+                  - 'checkbox "Authenticated user: Administer node published status" [ref=e1739]'
+              - 'cell "Content editor: Administer node published status" [ref=e1740]':
+                - generic [ref=e1741]:
+                  - generic [ref=e1742] [cursor=pointer]: "Content editor: Administer node published status"
+                  - 'checkbox "Content editor: Administer node published status" [ref=e1743]'
+              - 'cell "Administrator: Administer node published status" [ref=e1744]':
+                - generic [ref=e1745]:
+                  - generic [ref=e1746]: "Administrator: Administer node published status"
+                  - 'checkbox "Administrator: Administer node published status" [checked] [disabled] [ref=e1747]'
+            - 'row "Bypass content access control Warning: Give to trusted roles only; this permission has security implications. View, edit and delete all content regardless of permission restrictions. Anonymous user: Bypass content access control Authenticated user: Bypass content access control Content editor: Bypass content access control Administrator: Bypass content access control" [ref=e1748]':
+              - 'cell "Bypass content access control Warning: Give to trusted roles only; this permission has security implications. View, edit and delete all content regardless of permission restrictions." [ref=e1749]':
+                - generic [ref=e1750]:
+                  - text: Bypass content access control
+                  - generic [ref=e1751]:
+                    - emphasis [ref=e1752]: "Warning: Give to trusted roles only; this permission has security implications."
+                    - text: View, edit and delete all content regardless of permission restrictions.
+              - 'cell "Anonymous user: Bypass content access control" [ref=e1753]':
+                - generic [ref=e1754]:
+                  - generic [ref=e1755] [cursor=pointer]: "Anonymous user: Bypass content access control"
+                  - 'checkbox "Anonymous user: Bypass content access control" [ref=e1756]'
+              - 'cell "Authenticated user: Bypass content access control" [ref=e1757]':
+                - generic [ref=e1758]:
+                  - generic [ref=e1759] [cursor=pointer]: "Authenticated user: Bypass content access control"
+                  - 'checkbox "Authenticated user: Bypass content access control" [ref=e1760]'
+              - 'cell "Content editor: Bypass content access control" [ref=e1761]':
+                - generic [ref=e1762]:
+                  - generic [ref=e1763] [cursor=pointer]: "Content editor: Bypass content access control"
+                  - 'checkbox "Content editor: Bypass content access control" [ref=e1764]'
+              - 'cell "Administrator: Bypass content access control" [ref=e1765]':
+                - generic [ref=e1766]:
+                  - generic [ref=e1767]: "Administrator: Bypass content access control"
+                  - 'checkbox "Administrator: Bypass content access control" [checked] [disabled] [ref=e1768]'
+            - 'row "Delete all revisions To delete a revision, you also need permission to delete the content item. Anonymous user: Delete all revisions Authenticated user: Delete all revisions Content editor: Delete all revisions Administrator: Delete all revisions" [ref=e1769]':
+              - cell "Delete all revisions To delete a revision, you also need permission to delete the content item." [ref=e1770]:
+                - generic [ref=e1771]:
+                  - text: Delete all revisions
+                  - generic [ref=e1772]: To delete a revision, you also need permission to delete the content item.
+              - 'cell "Anonymous user: Delete all revisions" [ref=e1773]':
+                - generic [ref=e1774]:
+                  - generic [ref=e1775] [cursor=pointer]: "Anonymous user: Delete all revisions"
+                  - 'checkbox "Anonymous user: Delete all revisions" [ref=e1776]'
+              - 'cell "Authenticated user: Delete all revisions" [ref=e1777]':
+                - generic [ref=e1778]:
+                  - generic [ref=e1779] [cursor=pointer]: "Authenticated user: Delete all revisions"
+                  - 'checkbox "Authenticated user: Delete all revisions" [ref=e1780]'
+              - 'cell "Content editor: Delete all revisions" [ref=e1781]':
+                - generic [ref=e1782]:
+                  - generic [ref=e1783] [cursor=pointer]: "Content editor: Delete all revisions"
+                  - 'checkbox "Content editor: Delete all revisions" [ref=e1784]'
+              - 'cell "Administrator: Delete all revisions" [ref=e1785]':
+                - generic [ref=e1786]:
+                  - generic [ref=e1787]: "Administrator: Delete all revisions"
+                  - 'checkbox "Administrator: Delete all revisions" [checked] [disabled] [ref=e1788]'
+            - 'row "Rebuild content access permissions Warning: Give to trusted roles only; this permission has security implications. Trigger a content access permission rebuild. This can be a potentially long and disruptive process. Anonymous user: Rebuild content access permissions Authenticated user: Rebuild content access permissions Content editor: Rebuild content access permissions Administrator: Rebuild content access permissions" [ref=e1789]':
+              - 'cell "Rebuild content access permissions Warning: Give to trusted roles only; this permission has security implications. Trigger a content access permission rebuild. This can be a potentially long and disruptive process." [ref=e1790]':
+                - generic [ref=e1791]:
+                  - text: Rebuild content access permissions
+                  - generic [ref=e1792]:
+                    - emphasis [ref=e1793]: "Warning: Give to trusted roles only; this permission has security implications."
+                    - text: Trigger a content access permission rebuild. This can be a potentially long and disruptive process.
+              - 'cell "Anonymous user: Rebuild content access permissions" [ref=e1794]':
+                - generic [ref=e1795]:
+                  - generic [ref=e1796] [cursor=pointer]: "Anonymous user: Rebuild content access permissions"
+                  - 'checkbox "Anonymous user: Rebuild content access permissions" [ref=e1797]'
+              - 'cell "Authenticated user: Rebuild content access permissions" [ref=e1798]':
+                - generic [ref=e1799]:
+                  - generic [ref=e1800] [cursor=pointer]: "Authenticated user: Rebuild content access permissions"
+                  - 'checkbox "Authenticated user: Rebuild content access permissions" [ref=e1801]'
+              - 'cell "Content editor: Rebuild content access permissions" [ref=e1802]':
+                - generic [ref=e1803]:
+                  - generic [ref=e1804] [cursor=pointer]: "Content editor: Rebuild content access permissions"
+                  - 'checkbox "Content editor: Rebuild content access permissions" [ref=e1805]'
+              - 'cell "Administrator: Rebuild content access permissions" [ref=e1806]':
+                - generic [ref=e1807]:
+                  - generic [ref=e1808]: "Administrator: Rebuild content access permissions"
+                  - 'checkbox "Administrator: Rebuild content access permissions" [checked] [disabled] [ref=e1809]'
+            - 'row "Revert all revisions To revert a revision, you also need permission to edit the content item. Anonymous user: Revert all revisions Authenticated user: Revert all revisions Content editor: Revert all revisions Administrator: Revert all revisions" [ref=e1810]':
+              - cell "Revert all revisions To revert a revision, you also need permission to edit the content item." [ref=e1811]:
+                - generic [ref=e1812]:
+                  - text: Revert all revisions
+                  - generic [ref=e1813]: To revert a revision, you also need permission to edit the content item.
+              - 'cell "Anonymous user: Revert all revisions" [ref=e1814]':
+                - generic [ref=e1815]:
+                  - generic [ref=e1816] [cursor=pointer]: "Anonymous user: Revert all revisions"
+                  - 'checkbox "Anonymous user: Revert all revisions" [ref=e1817]'
+              - 'cell "Authenticated user: Revert all revisions" [ref=e1818]':
+                - generic [ref=e1819]:
+                  - generic [ref=e1820] [cursor=pointer]: "Authenticated user: Revert all revisions"
+                  - 'checkbox "Authenticated user: Revert all revisions" [ref=e1821]'
+              - 'cell "Content editor: Revert all revisions" [ref=e1822]':
+                - generic [ref=e1823]:
+                  - generic [ref=e1824] [cursor=pointer]: "Content editor: Revert all revisions"
+                  - 'checkbox "Content editor: Revert all revisions" [checked] [ref=e1825]'
+              - 'cell "Administrator: Revert all revisions" [ref=e1826]':
+                - generic [ref=e1827]:
+                  - generic [ref=e1828]: "Administrator: Revert all revisions"
+                  - 'checkbox "Administrator: Revert all revisions" [checked] [disabled] [ref=e1829]'
+            - 'row "View all revisions To view a revision, you also need permission to view the content item. Anonymous user: View all revisions Authenticated user: View all revisions Content editor: View all revisions Administrator: View all revisions" [ref=e1830]':
+              - cell "View all revisions To view a revision, you also need permission to view the content item." [ref=e1831]:
+                - generic [ref=e1832]:
+                  - text: View all revisions
+                  - generic [ref=e1833]: To view a revision, you also need permission to view the content item.
+              - 'cell "Anonymous user: View all revisions" [ref=e1834]':
+                - generic [ref=e1835]:
+                  - generic [ref=e1836] [cursor=pointer]: "Anonymous user: View all revisions"
+                  - 'checkbox "Anonymous user: View all revisions" [ref=e1837]'
+              - 'cell "Authenticated user: View all revisions" [ref=e1838]':
+                - generic [ref=e1839]:
+                  - generic [ref=e1840] [cursor=pointer]: "Authenticated user: View all revisions"
+                  - 'checkbox "Authenticated user: View all revisions" [ref=e1841]'
+              - 'cell "Content editor: View all revisions" [ref=e1842]':
+                - generic [ref=e1843]:
+                  - generic [ref=e1844] [cursor=pointer]: "Content editor: View all revisions"
+                  - 'checkbox "Content editor: View all revisions" [checked] [ref=e1845]'
+              - 'cell "Administrator: View all revisions" [ref=e1846]':
+                - generic [ref=e1847]:
+                  - generic [ref=e1848]: "Administrator: View all revisions"
+                  - 'checkbox "Administrator: View all revisions" [checked] [disabled] [ref=e1849]'
+            - 'row "View published content Anonymous user: View published content Authenticated user: View published content Content editor: View published content Administrator: View published content" [ref=e1850]':
+              - cell "View published content" [ref=e1851]:
+                - generic [ref=e1852]: View published content
+              - 'cell "Anonymous user: View published content" [ref=e1853]':
+                - generic [ref=e1854]:
+                  - generic [ref=e1855] [cursor=pointer]: "Anonymous user: View published content"
+                  - 'checkbox "Anonymous user: View published content" [checked] [ref=e1856]'
+              - 'cell "Authenticated user: View published content" [ref=e1857]':
+                - generic [ref=e1858]:
+                  - generic [ref=e1859] [cursor=pointer]: "Authenticated user: View published content"
+                  - 'checkbox "Authenticated user: View published content" [checked] [ref=e1860]'
+              - 'cell "Content editor: View published content" [ref=e1861]':
+                - generic [ref=e1862]:
+                  - generic [ref=e1863] [cursor=pointer]: "Content editor: View published content"
+                  - 'checkbox "Content editor: View published content" [ref=e1864]'
+              - 'cell "Administrator: View published content" [ref=e1865]':
+                - generic [ref=e1866]:
+                  - generic [ref=e1867]: "Administrator: View published content"
+                  - 'checkbox "Administrator: View published content" [checked] [disabled] [ref=e1868]'
+            - 'row "View own unpublished content Anonymous user: View own unpublished content Authenticated user: View own unpublished content Content editor: View own unpublished content Administrator: View own unpublished content" [ref=e1869]':
+              - cell "View own unpublished content" [ref=e1870]:
+                - generic [ref=e1871]: View own unpublished content
+              - 'cell "Anonymous user: View own unpublished content" [ref=e1872]':
+                - generic [ref=e1873]:
+                  - generic [ref=e1874] [cursor=pointer]: "Anonymous user: View own unpublished content"
+                  - 'checkbox "Anonymous user: View own unpublished content" [ref=e1875]'
+              - 'cell "Authenticated user: View own unpublished content" [ref=e1876]':
+                - generic [ref=e1877]:
+                  - generic [ref=e1878] [cursor=pointer]: "Authenticated user: View own unpublished content"
+                  - 'checkbox "Authenticated user: View own unpublished content" [ref=e1879]'
+              - 'cell "Content editor: View own unpublished content" [ref=e1880]':
+                - generic [ref=e1881]:
+                  - generic [ref=e1882] [cursor=pointer]: "Content editor: View own unpublished content"
+                  - 'checkbox "Content editor: View own unpublished content" [checked] [ref=e1883]'
+              - 'cell "Administrator: View own unpublished content" [ref=e1884]':
+                - generic [ref=e1885]:
+                  - generic [ref=e1886]: "Administrator: View own unpublished content"
+                  - 'checkbox "Administrator: View own unpublished content" [checked] [disabled] [ref=e1887]'
+            - row "Path" [ref=e1888]:
+              - cell "Path" [ref=e1889]
+            - 'row "Administer URL aliases Anonymous user: Administer URL aliases Authenticated user: Administer URL aliases Content editor: Administer URL aliases Administrator: Administer URL aliases" [ref=e1890]':
+              - cell "Administer URL aliases" [ref=e1891]:
+                - generic [ref=e1892]: Administer URL aliases
+              - 'cell "Anonymous user: Administer URL aliases" [ref=e1893]':
+                - generic [ref=e1894]:
+                  - generic [ref=e1895] [cursor=pointer]: "Anonymous user: Administer URL aliases"
+                  - 'checkbox "Anonymous user: Administer URL aliases" [ref=e1896]'
+              - 'cell "Authenticated user: Administer URL aliases" [ref=e1897]':
+                - generic [ref=e1898]:
+                  - generic [ref=e1899] [cursor=pointer]: "Authenticated user: Administer URL aliases"
+                  - 'checkbox "Authenticated user: Administer URL aliases" [ref=e1900]'
+              - 'cell "Content editor: Administer URL aliases" [ref=e1901]':
+                - generic [ref=e1902]:
+                  - generic [ref=e1903] [cursor=pointer]: "Content editor: Administer URL aliases"
+                  - 'checkbox "Content editor: Administer URL aliases" [checked] [ref=e1904]'
+              - 'cell "Administrator: Administer URL aliases" [ref=e1905]':
+                - generic [ref=e1906]:
+                  - generic [ref=e1907]: "Administrator: Administer URL aliases"
+                  - 'checkbox "Administrator: Administer URL aliases" [checked] [disabled] [ref=e1908]'
+            - 'row "Create and edit URL aliases Anonymous user: Create and edit URL aliases Authenticated user: Create and edit URL aliases Content editor: Create and edit URL aliases Administrator: Create and edit URL aliases" [ref=e1909]':
+              - cell "Create and edit URL aliases" [ref=e1910]:
+                - generic [ref=e1911]: Create and edit URL aliases
+              - 'cell "Anonymous user: Create and edit URL aliases" [ref=e1912]':
+                - generic [ref=e1913]:
+                  - generic [ref=e1914] [cursor=pointer]: "Anonymous user: Create and edit URL aliases"
+                  - 'checkbox "Anonymous user: Create and edit URL aliases" [ref=e1915]'
+              - 'cell "Authenticated user: Create and edit URL aliases" [ref=e1916]':
+                - generic [ref=e1917]:
+                  - generic [ref=e1918] [cursor=pointer]: "Authenticated user: Create and edit URL aliases"
+                  - 'checkbox "Authenticated user: Create and edit URL aliases" [ref=e1919]'
+              - 'cell "Content editor: Create and edit URL aliases" [ref=e1920]':
+                - generic [ref=e1921]:
+                  - generic [ref=e1922] [cursor=pointer]: "Content editor: Create and edit URL aliases"
+                  - 'checkbox "Content editor: Create and edit URL aliases" [checked] [ref=e1923]'
+              - 'cell "Administrator: Create and edit URL aliases" [ref=e1924]':
+                - generic [ref=e1925]:
+                  - generic [ref=e1926]: "Administrator: Create and edit URL aliases"
+                  - 'checkbox "Administrator: Create and edit URL aliases" [checked] [disabled] [ref=e1927]'
+            - row "System" [ref=e1928]:
+              - cell "System" [ref=e1929]
+            - 'row "Administer actions Warning: Give to trusted roles only; this permission has security implications. Anonymous user: Administer actions Authenticated user: Administer actions Content editor: Administer actions Administrator: Administer actions" [ref=e1930]':
+              - 'cell "Administer actions Warning: Give to trusted roles only; this permission has security implications." [ref=e1931]':
+                - generic [ref=e1932]:
+                  - text: Administer actions
+                  - emphasis [ref=e1934]: "Warning: Give to trusted roles only; this permission has security implications."
+              - 'cell "Anonymous user: Administer actions" [ref=e1935]':
+                - generic [ref=e1936]:
+                  - generic [ref=e1937] [cursor=pointer]: "Anonymous user: Administer actions"
+                  - 'checkbox "Anonymous user: Administer actions" [ref=e1938]'
+              - 'cell "Authenticated user: Administer actions" [ref=e1939]':
+                - generic [ref=e1940]:
+                  - generic [ref=e1941] [cursor=pointer]: "Authenticated user: Administer actions"
+                  - 'checkbox "Authenticated user: Administer actions" [ref=e1942]'
+              - 'cell "Content editor: Administer actions" [ref=e1943]':
+                - generic [ref=e1944]:
+                  - generic [ref=e1945] [cursor=pointer]: "Content editor: Administer actions"
+                  - 'checkbox "Content editor: Administer actions" [ref=e1946]'
+              - 'cell "Administrator: Administer actions" [ref=e1947]':
+                - generic [ref=e1948]:
+                  - generic [ref=e1949]: "Administrator: Administer actions"
+                  - 'checkbox "Administrator: Administer actions" [checked] [disabled] [ref=e1950]'
+            - 'row "Administer menus and menu links Anonymous user: Administer menus and menu links Authenticated user: Administer menus and menu links Content editor: Administer menus and menu links Administrator: Administer menus and menu links" [ref=e1951]':
+              - cell "Administer menus and menu links" [ref=e1952]:
+                - generic [ref=e1953]: Administer menus and menu links
+              - 'cell "Anonymous user: Administer menus and menu links" [ref=e1954]':
+                - generic [ref=e1955]:
+                  - generic [ref=e1956] [cursor=pointer]: "Anonymous user: Administer menus and menu links"
+                  - 'checkbox "Anonymous user: Administer menus and menu links" [ref=e1957]'
+              - 'cell "Authenticated user: Administer menus and menu links" [ref=e1958]':
+                - generic [ref=e1959]:
+                  - generic [ref=e1960] [cursor=pointer]: "Authenticated user: Administer menus and menu links"
+                  - 'checkbox "Authenticated user: Administer menus and menu links" [ref=e1961]'
+              - 'cell "Content editor: Administer menus and menu links" [ref=e1962]':
+                - generic [ref=e1963]:
+                  - generic [ref=e1964] [cursor=pointer]: "Content editor: Administer menus and menu links"
+                  - 'checkbox "Content editor: Administer menus and menu links" [ref=e1965]'
+              - 'cell "Administrator: Administer menus and menu links" [ref=e1966]':
+                - generic [ref=e1967]:
+                  - generic [ref=e1968]: "Administrator: Administer menus and menu links"
+                  - 'checkbox "Administrator: Administer menus and menu links" [checked] [disabled] [ref=e1969]'
+            - 'row "Administer modules Anonymous user: Administer modules Authenticated user: Administer modules Content editor: Administer modules Administrator: Administer modules" [ref=e1970]':
+              - cell "Administer modules" [ref=e1971]:
+                - generic [ref=e1972]: Administer modules
+              - 'cell "Anonymous user: Administer modules" [ref=e1973]':
+                - generic [ref=e1974]:
+                  - generic [ref=e1975] [cursor=pointer]: "Anonymous user: Administer modules"
+                  - 'checkbox "Anonymous user: Administer modules" [ref=e1976]'
+              - 'cell "Authenticated user: Administer modules" [ref=e1977]':
+                - generic [ref=e1978]:
+                  - generic [ref=e1979] [cursor=pointer]: "Authenticated user: Administer modules"
+                  - 'checkbox "Authenticated user: Administer modules" [ref=e1980]'
+              - 'cell "Content editor: Administer modules" [ref=e1981]':
+                - generic [ref=e1982]:
+                  - generic [ref=e1983] [cursor=pointer]: "Content editor: Administer modules"
+                  - 'checkbox "Content editor: Administer modules" [ref=e1984]'
+              - 'cell "Administrator: Administer modules" [ref=e1985]':
+                - generic [ref=e1986]:
+                  - generic [ref=e1987]: "Administrator: Administer modules"
+                  - 'checkbox "Administrator: Administer modules" [checked] [disabled] [ref=e1988]'
+            - 'row "Administer site configuration Warning: Give to trusted roles only; this permission has security implications. Anonymous user: Administer site configuration Authenticated user: Administer site configuration Content editor: Administer site configuration Administrator: Administer site configuration" [ref=e1989]':
+              - 'cell "Administer site configuration Warning: Give to trusted roles only; this permission has security implications." [ref=e1990]':
+                - generic [ref=e1991]:
+                  - text: Administer site configuration
+                  - emphasis [ref=e1993]: "Warning: Give to trusted roles only; this permission has security implications."
+              - 'cell "Anonymous user: Administer site configuration" [ref=e1994]':
+                - generic [ref=e1995]:
+                  - generic [ref=e1996] [cursor=pointer]: "Anonymous user: Administer site configuration"
+                  - 'checkbox "Anonymous user: Administer site configuration" [ref=e1997]'
+              - 'cell "Authenticated user: Administer site configuration" [ref=e1998]':
+                - generic [ref=e1999]:
+                  - generic [ref=e2000] [cursor=pointer]: "Authenticated user: Administer site configuration"
+                  - 'checkbox "Authenticated user: Administer site configuration" [ref=e2001]'
+              - 'cell "Content editor: Administer site configuration" [ref=e2002]':
+                - generic [ref=e2003]:
+                  - generic [ref=e2004] [cursor=pointer]: "Content editor: Administer site configuration"
+                  - 'checkbox "Content editor: Administer site configuration" [ref=e2005]'
+              - 'cell "Administrator: Administer site configuration" [ref=e2006]':
+                - generic [ref=e2007]:
+                  - generic [ref=e2008]: "Administrator: Administer site configuration"
+                  - 'checkbox "Administrator: Administer site configuration" [checked] [disabled] [ref=e2009]'
+            - 'row "Administer software updates Warning: Give to trusted roles only; this permission has security implications. Anonymous user: Administer software updates Authenticated user: Administer software updates Content editor: Administer software updates Administrator: Administer software updates" [ref=e2010]':
+              - 'cell "Administer software updates Warning: Give to trusted roles only; this permission has security implications." [ref=e2011]':
+                - generic [ref=e2012]:
+                  - text: Administer software updates
+                  - emphasis [ref=e2014]: "Warning: Give to trusted roles only; this permission has security implications."
+              - 'cell "Anonymous user: Administer software updates" [ref=e2015]':
+                - generic [ref=e2016]:
+                  - generic [ref=e2017] [cursor=pointer]: "Anonymous user: Administer software updates"
+                  - 'checkbox "Anonymous user: Administer software updates" [ref=e2018]'
+              - 'cell "Authenticated user: Administer software updates" [ref=e2019]':
+                - generic [ref=e2020]:
+                  - generic [ref=e2021] [cursor=pointer]: "Authenticated user: Administer software updates"
+                  - 'checkbox "Authenticated user: Administer software updates" [ref=e2022]'
+              - 'cell "Content editor: Administer software updates" [ref=e2023]':
+                - generic [ref=e2024]:
+                  - generic [ref=e2025] [cursor=pointer]: "Content editor: Administer software updates"
+                  - 'checkbox "Content editor: Administer software updates" [ref=e2026]'
+              - 'cell "Administrator: Administer software updates" [ref=e2027]':
+                - generic [ref=e2028]:
+                  - generic [ref=e2029]: "Administrator: Administer software updates"
+                  - 'checkbox "Administrator: Administer software updates" [checked] [disabled] [ref=e2030]'
+            - 'row "Administer themes Warning: Give to trusted roles only; this permission has security implications. Anonymous user: Administer themes Authenticated user: Administer themes Content editor: Administer themes Administrator: Administer themes" [ref=e2031]':
+              - 'cell "Administer themes Warning: Give to trusted roles only; this permission has security implications." [ref=e2032]':
+                - generic [ref=e2033]:
+                  - text: Administer themes
+                  - emphasis [ref=e2035]: "Warning: Give to trusted roles only; this permission has security implications."
+              - 'cell "Anonymous user: Administer themes" [ref=e2036]':
+                - generic [ref=e2037]:
+                  - generic [ref=e2038] [cursor=pointer]: "Anonymous user: Administer themes"
+                  - 'checkbox "Anonymous user: Administer themes" [ref=e2039]'
+              - 'cell "Authenticated user: Administer themes" [ref=e2040]':
+                - generic [ref=e2041]:
+                  - generic [ref=e2042] [cursor=pointer]: "Authenticated user: Administer themes"
+                  - 'checkbox "Authenticated user: Administer themes" [ref=e2043]'
+              - 'cell "Content editor: Administer themes" [ref=e2044]':
+                - generic [ref=e2045]:
+                  - generic [ref=e2046] [cursor=pointer]: "Content editor: Administer themes"
+                  - 'checkbox "Content editor: Administer themes" [ref=e2047]'
+              - 'cell "Administrator: Administer themes" [ref=e2048]':
+                - generic [ref=e2049]:
+                  - generic [ref=e2050]: "Administrator: Administer themes"
+                  - 'checkbox "Administrator: Administer themes" [checked] [disabled] [ref=e2051]'
+            - 'row "Link to any page Warning: Give to trusted roles only; this permission has security implications. This allows to bypass access checking when linking to internal paths. Anonymous user: Link to any page Authenticated user: Link to any page Content editor: Link to any page Administrator: Link to any page" [ref=e2052]':
+              - 'cell "Link to any page Warning: Give to trusted roles only; this permission has security implications. This allows to bypass access checking when linking to internal paths." [ref=e2053]':
+                - generic [ref=e2054]:
+                  - text: Link to any page
+                  - generic [ref=e2055]:
+                    - emphasis [ref=e2056]: "Warning: Give to trusted roles only; this permission has security implications."
+                    - text: This allows to bypass access checking when linking to internal paths.
+              - 'cell "Anonymous user: Link to any page" [ref=e2057]':
+                - generic [ref=e2058]:
+                  - generic [ref=e2059] [cursor=pointer]: "Anonymous user: Link to any page"
+                  - 'checkbox "Anonymous user: Link to any page" [ref=e2060]'
+              - 'cell "Authenticated user: Link to any page" [ref=e2061]':
+                - generic [ref=e2062]:
+                  - generic [ref=e2063] [cursor=pointer]: "Authenticated user: Link to any page"
+                  - 'checkbox "Authenticated user: Link to any page" [ref=e2064]'
+              - 'cell "Content editor: Link to any page" [ref=e2065]':
+                - generic [ref=e2066]:
+                  - generic [ref=e2067] [cursor=pointer]: "Content editor: Link to any page"
+                  - 'checkbox "Content editor: Link to any page" [ref=e2068]'
+              - 'cell "Administrator: Link to any page" [ref=e2069]':
+                - generic [ref=e2070]:
+                  - generic [ref=e2071]: "Administrator: Link to any page"
+                  - 'checkbox "Administrator: Link to any page" [checked] [disabled] [ref=e2072]'
+            - 'row "Use the administration pages Anonymous user: Use the administration pages Authenticated user: Use the administration pages Content editor: Use the administration pages Administrator: Use the administration pages" [ref=e2073]':
+              - cell "Use the administration pages" [ref=e2074]:
+                - generic [ref=e2075]: Use the administration pages
+              - 'cell "Anonymous user: Use the administration pages" [ref=e2076]':
+                - generic [ref=e2077]:
+                  - generic [ref=e2078] [cursor=pointer]: "Anonymous user: Use the administration pages"
+                  - 'checkbox "Anonymous user: Use the administration pages" [ref=e2079]'
+              - 'cell "Authenticated user: Use the administration pages" [ref=e2080]':
+                - generic [ref=e2081]:
+                  - generic [ref=e2082] [cursor=pointer]: "Authenticated user: Use the administration pages"
+                  - 'checkbox "Authenticated user: Use the administration pages" [ref=e2083]'
+              - 'cell "Content editor: Use the administration pages" [ref=e2084]':
+                - generic [ref=e2085]:
+                  - generic [ref=e2086] [cursor=pointer]: "Content editor: Use the administration pages"
+                  - 'checkbox "Content editor: Use the administration pages" [checked] [ref=e2087]'
+              - 'cell "Administrator: Use the administration pages" [ref=e2088]':
+                - generic [ref=e2089]:
+                  - generic [ref=e2090]: "Administrator: Use the administration pages"
+                  - 'checkbox "Administrator: Use the administration pages" [checked] [disabled] [ref=e2091]'
+            - 'row "Use the site in maintenance mode Anonymous user: Use the site in maintenance mode Authenticated user: Use the site in maintenance mode Content editor: Use the site in maintenance mode Administrator: Use the site in maintenance mode" [ref=e2092]':
+              - cell "Use the site in maintenance mode" [ref=e2093]:
+                - generic [ref=e2094]: Use the site in maintenance mode
+              - 'cell "Anonymous user: Use the site in maintenance mode" [ref=e2095]':
+                - generic [ref=e2096]:
+                  - generic [ref=e2097] [cursor=pointer]: "Anonymous user: Use the site in maintenance mode"
+                  - 'checkbox "Anonymous user: Use the site in maintenance mode" [ref=e2098]'
+              - 'cell "Authenticated user: Use the site in maintenance mode" [ref=e2099]':
+                - generic [ref=e2100]:
+                  - generic [ref=e2101] [cursor=pointer]: "Authenticated user: Use the site in maintenance mode"
+                  - 'checkbox "Authenticated user: Use the site in maintenance mode" [ref=e2102]'
+              - 'cell "Content editor: Use the site in maintenance mode" [ref=e2103]':
+                - generic [ref=e2104]:
+                  - generic [ref=e2105] [cursor=pointer]: "Content editor: Use the site in maintenance mode"
+                  - 'checkbox "Content editor: Use the site in maintenance mode" [ref=e2106]'
+              - 'cell "Administrator: Use the site in maintenance mode" [ref=e2107]':
+                - generic [ref=e2108]:
+                  - generic [ref=e2109]: "Administrator: Use the site in maintenance mode"
+                  - 'checkbox "Administrator: Use the site in maintenance mode" [checked] [disabled] [ref=e2110]'
+            - 'row "View site reports Warning: Give to trusted roles only; this permission has security implications. Anonymous user: View site reports Authenticated user: View site reports Content editor: View site reports Administrator: View site reports" [ref=e2111]':
+              - 'cell "View site reports Warning: Give to trusted roles only; this permission has security implications." [ref=e2112]':
+                - generic [ref=e2113]:
+                  - text: View site reports
+                  - emphasis [ref=e2115]: "Warning: Give to trusted roles only; this permission has security implications."
+              - 'cell "Anonymous user: View site reports" [ref=e2116]':
+                - generic [ref=e2117]:
+                  - generic [ref=e2118] [cursor=pointer]: "Anonymous user: View site reports"
+                  - 'checkbox "Anonymous user: View site reports" [ref=e2119]'
+              - 'cell "Authenticated user: View site reports" [ref=e2120]':
+                - generic [ref=e2121]:
+                  - generic [ref=e2122] [cursor=pointer]: "Authenticated user: View site reports"
+                  - 'checkbox "Authenticated user: View site reports" [ref=e2123]'
+              - 'cell "Content editor: View site reports" [ref=e2124]':
+                - generic [ref=e2125]:
+                  - generic [ref=e2126] [cursor=pointer]: "Content editor: View site reports"
+                  - 'checkbox "Content editor: View site reports" [ref=e2127]'
+              - 'cell "Administrator: View site reports" [ref=e2128]':
+                - generic [ref=e2129]:
+                  - generic [ref=e2130]: "Administrator: View site reports"
+                  - 'checkbox "Administrator: View site reports" [checked] [disabled] [ref=e2131]'
+            - 'row "View the administration theme This is only used when the site is configured to use a separate administration theme on the Appearance page. Anonymous user: View the administration theme Authenticated user: View the administration theme Content editor: View the administration theme Administrator: View the administration theme" [ref=e2132]':
+              - cell "View the administration theme This is only used when the site is configured to use a separate administration theme on the Appearance page." [ref=e2133]:
+                - generic [ref=e2134]:
+                  - text: View the administration theme
+                  - generic [ref=e2135]: This is only used when the site is configured to use a separate administration theme on the Appearance page.
+              - 'cell "Anonymous user: View the administration theme" [ref=e2136]':
+                - generic [ref=e2137]:
+                  - generic [ref=e2138] [cursor=pointer]: "Anonymous user: View the administration theme"
+                  - 'checkbox "Anonymous user: View the administration theme" [ref=e2139]'
+              - 'cell "Authenticated user: View the administration theme" [ref=e2140]':
+                - generic [ref=e2141]:
+                  - generic [ref=e2142] [cursor=pointer]: "Authenticated user: View the administration theme"
+                  - 'checkbox "Authenticated user: View the administration theme" [ref=e2143]'
+              - 'cell "Content editor: View the administration theme" [ref=e2144]':
+                - generic [ref=e2145]:
+                  - generic [ref=e2146] [cursor=pointer]: "Content editor: View the administration theme"
+                  - 'checkbox "Content editor: View the administration theme" [checked] [ref=e2147]'
+              - 'cell "Administrator: View the administration theme" [ref=e2148]':
+                - generic [ref=e2149]:
+                  - generic [ref=e2150]: "Administrator: View the administration theme"
+                  - 'checkbox "Administrator: View the administration theme" [checked] [disabled] [ref=e2151]'
+            - row "Taxonomy" [ref=e2152]:
+              - cell "Taxonomy" [ref=e2153]
+            - 'row "Tags: Create terms Anonymous user: Tags: Create terms Authenticated user: Tags: Create terms Content editor: Tags: Create terms Administrator: Tags: Create terms" [ref=e2154]':
+              - 'cell "Tags: Create terms" [ref=e2155]':
+                - generic [ref=e2157]:
+                  - emphasis [ref=e2158]: Tags
+                  - text: ": Create terms"
+              - 'cell "Anonymous user: Tags: Create terms" [ref=e2159]':
+                - generic [ref=e2160]:
+                  - generic [ref=e2161] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e2162]: Tags
+                    - text: ": Create terms"
+                  - 'checkbox "Anonymous user: Tags: Create terms" [ref=e2163]'
+              - 'cell "Authenticated user: Tags: Create terms" [ref=e2164]':
+                - generic [ref=e2165]:
+                  - generic [ref=e2166] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e2167]: Tags
+                    - text: ": Create terms"
+                  - 'checkbox "Authenticated user: Tags: Create terms" [ref=e2168]'
+              - 'cell "Content editor: Tags: Create terms" [ref=e2169]':
+                - generic [ref=e2170]:
+                  - generic [ref=e2171] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e2172]: Tags
+                    - text: ": Create terms"
+                  - 'checkbox "Content editor: Tags: Create terms" [ref=e2173]'
+              - 'cell "Administrator: Tags: Create terms" [ref=e2174]':
+                - generic [ref=e2175]:
+                  - generic [ref=e2176]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e2177]: Tags
+                    - text: ": Create terms"
+                  - 'checkbox "Administrator: Tags: Create terms" [checked] [disabled] [ref=e2178]'
+            - 'row "Tags: Delete term revisions To delete a revision you also need permission to delete the taxonomy term. Anonymous user: Tags: Delete term revisions Authenticated user: Tags: Delete term revisions Content editor: Tags: Delete term revisions Administrator: Tags: Delete term revisions" [ref=e2179]':
+              - 'cell "Tags: Delete term revisions To delete a revision you also need permission to delete the taxonomy term." [ref=e2180]':
+                - generic [ref=e2181]:
+                  - generic [ref=e2182]:
+                    - emphasis [ref=e2183]: Tags
+                    - text: ": Delete term revisions"
+                  - generic [ref=e2184]: To delete a revision you also need permission to delete the taxonomy term.
+              - 'cell "Anonymous user: Tags: Delete term revisions" [ref=e2185]':
+                - generic [ref=e2186]:
+                  - generic [ref=e2187] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e2188]: Tags
+                    - text: ": Delete term revisions"
+                  - 'checkbox "Anonymous user: Tags: Delete term revisions" [ref=e2189]'
+              - 'cell "Authenticated user: Tags: Delete term revisions" [ref=e2190]':
+                - generic [ref=e2191]:
+                  - generic [ref=e2192] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e2193]: Tags
+                    - text: ": Delete term revisions"
+                  - 'checkbox "Authenticated user: Tags: Delete term revisions" [ref=e2194]'
+              - 'cell "Content editor: Tags: Delete term revisions" [ref=e2195]':
+                - generic [ref=e2196]:
+                  - generic [ref=e2197] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e2198]: Tags
+                    - text: ": Delete term revisions"
+                  - 'checkbox "Content editor: Tags: Delete term revisions" [ref=e2199]'
+              - 'cell "Administrator: Tags: Delete term revisions" [ref=e2200]':
+                - generic [ref=e2201]:
+                  - generic [ref=e2202]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e2203]: Tags
+                    - text: ": Delete term revisions"
+                  - 'checkbox "Administrator: Tags: Delete term revisions" [checked] [disabled] [ref=e2204]'
+            - 'row "Tags: Delete terms Anonymous user: Tags: Delete terms Authenticated user: Tags: Delete terms Content editor: Tags: Delete terms Administrator: Tags: Delete terms" [ref=e2205]':
+              - 'cell "Tags: Delete terms" [ref=e2206]':
+                - generic [ref=e2208]:
+                  - emphasis [ref=e2209]: Tags
+                  - text: ": Delete terms"
+              - 'cell "Anonymous user: Tags: Delete terms" [ref=e2210]':
+                - generic [ref=e2211]:
+                  - generic [ref=e2212] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e2213]: Tags
+                    - text: ": Delete terms"
+                  - 'checkbox "Anonymous user: Tags: Delete terms" [ref=e2214]'
+              - 'cell "Authenticated user: Tags: Delete terms" [ref=e2215]':
+                - generic [ref=e2216]:
+                  - generic [ref=e2217] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e2218]: Tags
+                    - text: ": Delete terms"
+                  - 'checkbox "Authenticated user: Tags: Delete terms" [ref=e2219]'
+              - 'cell "Content editor: Tags: Delete terms" [ref=e2220]':
+                - generic [ref=e2221]:
+                  - generic [ref=e2222] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e2223]: Tags
+                    - text: ": Delete terms"
+                  - 'checkbox "Content editor: Tags: Delete terms" [ref=e2224]'
+              - 'cell "Administrator: Tags: Delete terms" [ref=e2225]':
+                - generic [ref=e2226]:
+                  - generic [ref=e2227]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e2228]: Tags
+                    - text: ": Delete terms"
+                  - 'checkbox "Administrator: Tags: Delete terms" [checked] [disabled] [ref=e2229]'
+            - 'row "Tags: Edit terms Anonymous user: Tags: Edit terms Authenticated user: Tags: Edit terms Content editor: Tags: Edit terms Administrator: Tags: Edit terms" [ref=e2230]':
+              - 'cell "Tags: Edit terms" [ref=e2231]':
+                - generic [ref=e2233]:
+                  - emphasis [ref=e2234]: Tags
+                  - text: ": Edit terms"
+              - 'cell "Anonymous user: Tags: Edit terms" [ref=e2235]':
+                - generic [ref=e2236]:
+                  - generic [ref=e2237] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e2238]: Tags
+                    - text: ": Edit terms"
+                  - 'checkbox "Anonymous user: Tags: Edit terms" [ref=e2239]'
+              - 'cell "Authenticated user: Tags: Edit terms" [ref=e2240]':
+                - generic [ref=e2241]:
+                  - generic [ref=e2242] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e2243]: Tags
+                    - text: ": Edit terms"
+                  - 'checkbox "Authenticated user: Tags: Edit terms" [ref=e2244]'
+              - 'cell "Content editor: Tags: Edit terms" [ref=e2245]':
+                - generic [ref=e2246]:
+                  - generic [ref=e2247] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e2248]: Tags
+                    - text: ": Edit terms"
+                  - 'checkbox "Content editor: Tags: Edit terms" [ref=e2249]'
+              - 'cell "Administrator: Tags: Edit terms" [ref=e2250]':
+                - generic [ref=e2251]:
+                  - generic [ref=e2252]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e2253]: Tags
+                    - text: ": Edit terms"
+                  - 'checkbox "Administrator: Tags: Edit terms" [checked] [disabled] [ref=e2254]'
+            - 'row "Tags: Revert term revisions To revert a revision you also need permission to edit the taxonomy term. Anonymous user: Tags: Revert term revisions Authenticated user: Tags: Revert term revisions Content editor: Tags: Revert term revisions Administrator: Tags: Revert term revisions" [ref=e2255]':
+              - 'cell "Tags: Revert term revisions To revert a revision you also need permission to edit the taxonomy term." [ref=e2256]':
+                - generic [ref=e2257]:
+                  - generic [ref=e2258]:
+                    - emphasis [ref=e2259]: Tags
+                    - text: ": Revert term revisions"
+                  - generic [ref=e2260]: To revert a revision you also need permission to edit the taxonomy term.
+              - 'cell "Anonymous user: Tags: Revert term revisions" [ref=e2261]':
+                - generic [ref=e2262]:
+                  - generic [ref=e2263] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e2264]: Tags
+                    - text: ": Revert term revisions"
+                  - 'checkbox "Anonymous user: Tags: Revert term revisions" [ref=e2265]'
+              - 'cell "Authenticated user: Tags: Revert term revisions" [ref=e2266]':
+                - generic [ref=e2267]:
+                  - generic [ref=e2268] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e2269]: Tags
+                    - text: ": Revert term revisions"
+                  - 'checkbox "Authenticated user: Tags: Revert term revisions" [ref=e2270]'
+              - 'cell "Content editor: Tags: Revert term revisions" [ref=e2271]':
+                - generic [ref=e2272]:
+                  - generic [ref=e2273] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e2274]: Tags
+                    - text: ": Revert term revisions"
+                  - 'checkbox "Content editor: Tags: Revert term revisions" [ref=e2275]'
+              - 'cell "Administrator: Tags: Revert term revisions" [ref=e2276]':
+                - generic [ref=e2277]:
+                  - generic [ref=e2278]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e2279]: Tags
+                    - text: ": Revert term revisions"
+                  - 'checkbox "Administrator: Tags: Revert term revisions" [checked] [disabled] [ref=e2280]'
+            - 'row "Tags: View term revisions Anonymous user: Tags: View term revisions Authenticated user: Tags: View term revisions Content editor: Tags: View term revisions Administrator: Tags: View term revisions" [ref=e2281]':
+              - 'cell "Tags: View term revisions" [ref=e2282]':
+                - generic [ref=e2284]:
+                  - emphasis [ref=e2285]: Tags
+                  - text: ": View term revisions"
+              - 'cell "Anonymous user: Tags: View term revisions" [ref=e2286]':
+                - generic [ref=e2287]:
+                  - generic [ref=e2288] [cursor=pointer]:
+                    - text: "Anonymous user:"
+                    - emphasis [ref=e2289]: Tags
+                    - text: ": View term revisions"
+                  - 'checkbox "Anonymous user: Tags: View term revisions" [ref=e2290]'
+              - 'cell "Authenticated user: Tags: View term revisions" [ref=e2291]':
+                - generic [ref=e2292]:
+                  - generic [ref=e2293] [cursor=pointer]:
+                    - text: "Authenticated user:"
+                    - emphasis [ref=e2294]: Tags
+                    - text: ": View term revisions"
+                  - 'checkbox "Authenticated user: Tags: View term revisions" [ref=e2295]'
+              - 'cell "Content editor: Tags: View term revisions" [ref=e2296]':
+                - generic [ref=e2297]:
+                  - generic [ref=e2298] [cursor=pointer]:
+                    - text: "Content editor:"
+                    - emphasis [ref=e2299]: Tags
+                    - text: ": View term revisions"
+                  - 'checkbox "Content editor: Tags: View term revisions" [ref=e2300]'
+              - 'cell "Administrator: Tags: View term revisions" [ref=e2301]':
+                - generic [ref=e2302]:
+                  - generic [ref=e2303]:
+                    - text: "Administrator:"
+                    - emphasis [ref=e2304]: Tags
+                    - text: ": View term revisions"
+                  - 'checkbox "Administrator: Tags: View term revisions" [checked] [disabled] [ref=e2305]'
+            - 'row "Access the taxonomy vocabulary overview page Get an overview of all taxonomy vocabularies. Anonymous user: Access the taxonomy vocabulary overview page Authenticated user: Access the taxonomy vocabulary overview page Content editor: Access the taxonomy vocabulary overview page Administrator: Access the taxonomy vocabulary overview page" [ref=e2306]':
+              - cell "Access the taxonomy vocabulary overview page Get an overview of all taxonomy vocabularies." [ref=e2307]:
+                - generic [ref=e2308]:
+                  - text: Access the taxonomy vocabulary overview page
+                  - generic [ref=e2309]: Get an overview of all taxonomy vocabularies.
+              - 'cell "Anonymous user: Access the taxonomy vocabulary overview page" [ref=e2310]':
+                - generic [ref=e2311]:
+                  - generic [ref=e2312] [cursor=pointer]: "Anonymous user: Access the taxonomy vocabulary overview page"
+                  - 'checkbox "Anonymous user: Access the taxonomy vocabulary overview page" [ref=e2313]'
+              - 'cell "Authenticated user: Access the taxonomy vocabulary overview page" [ref=e2314]':
+                - generic [ref=e2315]:
+                  - generic [ref=e2316] [cursor=pointer]: "Authenticated user: Access the taxonomy vocabulary overview page"
+                  - 'checkbox "Authenticated user: Access the taxonomy vocabulary overview page" [ref=e2317]'
+              - 'cell "Content editor: Access the taxonomy vocabulary overview page" [ref=e2318]':
+                - generic [ref=e2319]:
+                  - generic [ref=e2320] [cursor=pointer]: "Content editor: Access the taxonomy vocabulary overview page"
+                  - 'checkbox "Content editor: Access the taxonomy vocabulary overview page" [ref=e2321]'
+              - 'cell "Administrator: Access the taxonomy vocabulary overview page" [ref=e2322]':
+                - generic [ref=e2323]:
+                  - generic [ref=e2324]: "Administrator: Access the taxonomy vocabulary overview page"
+                  - 'checkbox "Administrator: Access the taxonomy vocabulary overview page" [checked] [disabled] [ref=e2325]'
+            - 'row "Administer vocabularies and terms Anonymous user: Administer vocabularies and terms Authenticated user: Administer vocabularies and terms Content editor: Administer vocabularies and terms Administrator: Administer vocabularies and terms" [ref=e2326]':
+              - cell "Administer vocabularies and terms" [ref=e2327]:
+                - generic [ref=e2328]: Administer vocabularies and terms
+              - 'cell "Anonymous user: Administer vocabularies and terms" [ref=e2329]':
+                - generic [ref=e2330]:
+                  - generic [ref=e2331] [cursor=pointer]: "Anonymous user: Administer vocabularies and terms"
+                  - 'checkbox "Anonymous user: Administer vocabularies and terms" [ref=e2332]'
+              - 'cell "Authenticated user: Administer vocabularies and terms" [ref=e2333]':
+                - generic [ref=e2334]:
+                  - generic [ref=e2335] [cursor=pointer]: "Authenticated user: Administer vocabularies and terms"
+                  - 'checkbox "Authenticated user: Administer vocabularies and terms" [ref=e2336]'
+              - 'cell "Content editor: Administer vocabularies and terms" [ref=e2337]':
+                - generic [ref=e2338]:
+                  - generic [ref=e2339] [cursor=pointer]: "Content editor: Administer vocabularies and terms"
+                  - 'checkbox "Content editor: Administer vocabularies and terms" [ref=e2340]'
+              - 'cell "Administrator: Administer vocabularies and terms" [ref=e2341]':
+                - generic [ref=e2342]:
+                  - generic [ref=e2343]: "Administrator: Administer vocabularies and terms"
+                  - 'checkbox "Administrator: Administer vocabularies and terms" [checked] [disabled] [ref=e2344]'
+            - 'row "Delete all term revisions Anonymous user: Delete all term revisions Authenticated user: Delete all term revisions Content editor: Delete all term revisions Administrator: Delete all term revisions" [ref=e2345]':
+              - cell "Delete all term revisions" [ref=e2346]:
+                - generic [ref=e2347]: Delete all term revisions
+              - 'cell "Anonymous user: Delete all term revisions" [ref=e2348]':
+                - generic [ref=e2349]:
+                  - generic [ref=e2350] [cursor=pointer]: "Anonymous user: Delete all term revisions"
+                  - 'checkbox "Anonymous user: Delete all term revisions" [ref=e2351]'
+              - 'cell "Authenticated user: Delete all term revisions" [ref=e2352]':
+                - generic [ref=e2353]:
+                  - generic [ref=e2354] [cursor=pointer]: "Authenticated user: Delete all term revisions"
+                  - 'checkbox "Authenticated user: Delete all term revisions" [ref=e2355]'
+              - 'cell "Content editor: Delete all term revisions" [ref=e2356]':
+                - generic [ref=e2357]:
+                  - generic [ref=e2358] [cursor=pointer]: "Content editor: Delete all term revisions"
+                  - 'checkbox "Content editor: Delete all term revisions" [ref=e2359]'
+              - 'cell "Administrator: Delete all term revisions" [ref=e2360]':
+                - generic [ref=e2361]:
+                  - generic [ref=e2362]: "Administrator: Delete all term revisions"
+                  - 'checkbox "Administrator: Delete all term revisions" [checked] [disabled] [ref=e2363]'
+            - 'row "Revert all term revisions Anonymous user: Revert all term revisions Authenticated user: Revert all term revisions Content editor: Revert all term revisions Administrator: Revert all term revisions" [ref=e2364]':
+              - cell "Revert all term revisions" [ref=e2365]:
+                - generic [ref=e2366]: Revert all term revisions
+              - 'cell "Anonymous user: Revert all term revisions" [ref=e2367]':
+                - generic [ref=e2368]:
+                  - generic [ref=e2369] [cursor=pointer]: "Anonymous user: Revert all term revisions"
+                  - 'checkbox "Anonymous user: Revert all term revisions" [ref=e2370]'
+              - 'cell "Authenticated user: Revert all term revisions" [ref=e2371]':
+                - generic [ref=e2372]:
+                  - generic [ref=e2373] [cursor=pointer]: "Authenticated user: Revert all term revisions"
+                  - 'checkbox "Authenticated user: Revert all term revisions" [ref=e2374]'
+              - 'cell "Content editor: Revert all term revisions" [ref=e2375]':
+                - generic [ref=e2376]:
+                  - generic [ref=e2377] [cursor=pointer]: "Content editor: Revert all term revisions"
+                  - 'checkbox "Content editor: Revert all term revisions" [ref=e2378]'
+              - 'cell "Administrator: Revert all term revisions" [ref=e2379]':
+                - generic [ref=e2380]:
+                  - generic [ref=e2381]: "Administrator: Revert all term revisions"
+                  - 'checkbox "Administrator: Revert all term revisions" [checked] [disabled] [ref=e2382]'
+            - 'row "View all term revisions Anonymous user: View all term revisions Authenticated user: View all term revisions Content editor: View all term revisions Administrator: View all term revisions" [ref=e2383]':
+              - cell "View all term revisions" [ref=e2384]:
+                - generic [ref=e2385]: View all term revisions
+              - 'cell "Anonymous user: View all term revisions" [ref=e2386]':
+                - generic [ref=e2387]:
+                  - generic [ref=e2388] [cursor=pointer]: "Anonymous user: View all term revisions"
+                  - 'checkbox "Anonymous user: View all term revisions" [ref=e2389]'
+              - 'cell "Authenticated user: View all term revisions" [ref=e2390]':
+                - generic [ref=e2391]:
+                  - generic [ref=e2392] [cursor=pointer]: "Authenticated user: View all term revisions"
+                  - 'checkbox "Authenticated user: View all term revisions" [ref=e2393]'
+              - 'cell "Content editor: View all term revisions" [ref=e2394]':
+                - generic [ref=e2395]:
+                  - generic [ref=e2396] [cursor=pointer]: "Content editor: View all term revisions"
+                  - 'checkbox "Content editor: View all term revisions" [ref=e2397]'
+              - 'cell "Administrator: View all term revisions" [ref=e2398]':
+                - generic [ref=e2399]:
+                  - generic [ref=e2400]: "Administrator: View all term revisions"
+                  - 'checkbox "Administrator: View all term revisions" [checked] [disabled] [ref=e2401]'
+            - 'row "View vocabulary labels Anonymous user: View vocabulary labels Authenticated user: View vocabulary labels Content editor: View vocabulary labels Administrator: View vocabulary labels" [ref=e2402]':
+              - cell "View vocabulary labels" [ref=e2403]:
+                - generic [ref=e2404]: View vocabulary labels
+              - 'cell "Anonymous user: View vocabulary labels" [ref=e2405]':
+                - generic [ref=e2406]:
+                  - generic [ref=e2407] [cursor=pointer]: "Anonymous user: View vocabulary labels"
+                  - 'checkbox "Anonymous user: View vocabulary labels" [ref=e2408]'
+              - 'cell "Authenticated user: View vocabulary labels" [ref=e2409]':
+                - generic [ref=e2410]:
+                  - generic [ref=e2411] [cursor=pointer]: "Authenticated user: View vocabulary labels"
+                  - 'checkbox "Authenticated user: View vocabulary labels" [ref=e2412]'
+              - 'cell "Content editor: View vocabulary labels" [ref=e2413]':
+                - generic [ref=e2414]:
+                  - generic [ref=e2415] [cursor=pointer]: "Content editor: View vocabulary labels"
+                  - 'checkbox "Content editor: View vocabulary labels" [ref=e2416]'
+              - 'cell "Administrator: View vocabulary labels" [ref=e2417]':
+                - generic [ref=e2418]:
+                  - generic [ref=e2419]: "Administrator: View vocabulary labels"
+                  - 'checkbox "Administrator: View vocabulary labels" [checked] [disabled] [ref=e2420]'
+            - row "Update Status" [ref=e2421]:
+              - cell "Update Status" [ref=e2422]
+            - 'row "View software update notifications Ensure that site administrators have this permission so that security updates are applied promptly. Anonymous user: View software update notifications Authenticated user: View software update notifications Content editor: View software update notifications Administrator: View software update notifications" [ref=e2423]':
+              - cell "View software update notifications Ensure that site administrators have this permission so that security updates are applied promptly." [ref=e2424]:
+                - generic [ref=e2425]:
+                  - text: View software update notifications
+                  - generic [ref=e2426]: Ensure that site administrators have this permission so that security updates are applied promptly.
+              - 'cell "Anonymous user: View software update notifications" [ref=e2427]':
+                - generic [ref=e2428]:
+                  - generic [ref=e2429] [cursor=pointer]: "Anonymous user: View software update notifications"
+                  - 'checkbox "Anonymous user: View software update notifications" [ref=e2430]'
+              - 'cell "Authenticated user: View software update notifications" [ref=e2431]':
+                - generic [ref=e2432]:
+                  - generic [ref=e2433] [cursor=pointer]: "Authenticated user: View software update notifications"
+                  - 'checkbox "Authenticated user: View software update notifications" [ref=e2434]'
+              - 'cell "Content editor: View software update notifications" [ref=e2435]':
+                - generic [ref=e2436]:
+                  - generic [ref=e2437] [cursor=pointer]: "Content editor: View software update notifications"
+                  - 'checkbox "Content editor: View software update notifications" [ref=e2438]'
+              - 'cell "Administrator: View software update notifications" [ref=e2439]':
+                - generic [ref=e2440]:
+                  - generic [ref=e2441]: "Administrator: View software update notifications"
+                  - 'checkbox "Administrator: View software update notifications" [checked] [disabled] [ref=e2442]'
+            - row "User" [ref=e2443]:
+              - cell "User" [ref=e2444]
+            - 'row "Administer account settings Warning: Give to trusted roles only; this permission has security implications. Configure site-wide settings and behavior for user accounts and registration. This includes account cancellation methods, the content of user emails and fields attached to users. Anonymous user: Administer account settings Authenticated user: Administer account settings Content editor: Administer account settings Administrator: Administer account settings" [ref=e2445]':
+              - 'cell "Administer account settings Warning: Give to trusted roles only; this permission has security implications. Configure site-wide settings and behavior for user accounts and registration. This includes account cancellation methods, the content of user emails and fields attached to users." [ref=e2446]':
+                - generic [ref=e2447]:
+                  - text: Administer account settings
+                  - generic [ref=e2448]:
+                    - emphasis [ref=e2449]: "Warning: Give to trusted roles only; this permission has security implications."
+                    - text: Configure site-wide settings and behavior for user accounts and registration. This includes account cancellation methods, the content of user emails and fields attached to users.
+              - 'cell "Anonymous user: Administer account settings" [ref=e2450]':
+                - generic [ref=e2451]:
+                  - generic [ref=e2452] [cursor=pointer]: "Anonymous user: Administer account settings"
+                  - 'checkbox "Anonymous user: Administer account settings" [ref=e2453]'
+              - 'cell "Authenticated user: Administer account settings" [ref=e2454]':
+                - generic [ref=e2455]:
+                  - generic [ref=e2456] [cursor=pointer]: "Authenticated user: Administer account settings"
+                  - 'checkbox "Authenticated user: Administer account settings" [ref=e2457]'
+              - 'cell "Content editor: Administer account settings" [ref=e2458]':
+                - generic [ref=e2459]:
+                  - generic [ref=e2460] [cursor=pointer]: "Content editor: Administer account settings"
+                  - 'checkbox "Content editor: Administer account settings" [ref=e2461]'
+              - 'cell "Administrator: Administer account settings" [ref=e2462]':
+                - generic [ref=e2463]:
+                  - generic [ref=e2464]: "Administrator: Administer account settings"
+                  - 'checkbox "Administrator: Administer account settings" [checked] [disabled] [ref=e2465]'
+            - 'row "Administer roles and permissions Warning: Give to trusted roles only; this permission has security implications. Anonymous user: Administer roles and permissions Authenticated user: Administer roles and permissions Content editor: Administer roles and permissions Administrator: Administer roles and permissions" [ref=e2466]':
+              - 'cell "Administer roles and permissions Warning: Give to trusted roles only; this permission has security implications." [ref=e2467]':
+                - generic [ref=e2468]:
+                  - text: Administer roles and permissions
+                  - emphasis [ref=e2470]: "Warning: Give to trusted roles only; this permission has security implications."
+              - 'cell "Anonymous user: Administer roles and permissions" [ref=e2471]':
+                - generic [ref=e2472]:
+                  - generic [ref=e2473] [cursor=pointer]: "Anonymous user: Administer roles and permissions"
+                  - 'checkbox "Anonymous user: Administer roles and permissions" [ref=e2474]'
+              - 'cell "Authenticated user: Administer roles and permissions" [ref=e2475]':
+                - generic [ref=e2476]:
+                  - generic [ref=e2477] [cursor=pointer]: "Authenticated user: Administer roles and permissions"
+                  - 'checkbox "Authenticated user: Administer roles and permissions" [ref=e2478]'
+              - 'cell "Content editor: Administer roles and permissions" [ref=e2479]':
+                - generic [ref=e2480]:
+                  - generic [ref=e2481] [cursor=pointer]: "Content editor: Administer roles and permissions"
+                  - 'checkbox "Content editor: Administer roles and permissions" [ref=e2482]'
+              - 'cell "Administrator: Administer roles and permissions" [ref=e2483]':
+                - generic [ref=e2484]:
+                  - generic [ref=e2485]: "Administrator: Administer roles and permissions"
+                  - 'checkbox "Administrator: Administer roles and permissions" [checked] [disabled] [ref=e2486]'
+            - 'row "Administer users Warning: Give to trusted roles only; this permission has security implications. Manage all user accounts. This includes editing all user information, changes of email addresses and passwords, issuing emails to users and blocking and deleting user accounts. Anonymous user: Administer users Authenticated user: Administer users Content editor: Administer users Administrator: Administer users" [ref=e2487]':
+              - 'cell "Administer users Warning: Give to trusted roles only; this permission has security implications. Manage all user accounts. This includes editing all user information, changes of email addresses and passwords, issuing emails to users and blocking and deleting user accounts." [ref=e2488]':
+                - generic [ref=e2489]:
+                  - text: Administer users
+                  - generic [ref=e2490]:
+                    - emphasis [ref=e2491]: "Warning: Give to trusted roles only; this permission has security implications."
+                    - text: Manage all user accounts. This includes editing all user information, changes of email addresses and passwords, issuing emails to users and blocking and deleting user accounts.
+              - 'cell "Anonymous user: Administer users" [ref=e2492]':
+                - generic [ref=e2493]:
+                  - generic [ref=e2494] [cursor=pointer]: "Anonymous user: Administer users"
+                  - 'checkbox "Anonymous user: Administer users" [ref=e2495]'
+              - 'cell "Authenticated user: Administer users" [ref=e2496]':
+                - generic [ref=e2497]:
+                  - generic [ref=e2498] [cursor=pointer]: "Authenticated user: Administer users"
+                  - 'checkbox "Authenticated user: Administer users" [ref=e2499]'
+              - 'cell "Content editor: Administer users" [ref=e2500]':
+                - generic [ref=e2501]:
+                  - generic [ref=e2502] [cursor=pointer]: "Content editor: Administer users"
+                  - 'checkbox "Content editor: Administer users" [ref=e2503]'
+              - 'cell "Administrator: Administer users" [ref=e2504]':
+                - generic [ref=e2505]:
+                  - generic [ref=e2506]: "Administrator: Administer users"
+                  - 'checkbox "Administrator: Administer users" [checked] [disabled] [ref=e2507]'
+            - 'row "Cancel own user account Note: content may be kept, unpublished, deleted or transferred to the anonymous user depending on the configured user settings. Anonymous user: Cancel own user account Authenticated user: Cancel own user account Content editor: Cancel own user account Administrator: Cancel own user account" [ref=e2508]':
+              - 'cell "Cancel own user account Note: content may be kept, unpublished, deleted or transferred to the anonymous user depending on the configured user settings." [ref=e2509]':
+                - generic [ref=e2510]:
+                  - text: Cancel own user account
+                  - generic [ref=e2511]: "Note: content may be kept, unpublished, deleted or transferred to the anonymous user depending on the configured user settings."
+              - 'cell "Anonymous user: Cancel own user account" [ref=e2512]':
+                - generic [ref=e2513]:
+                  - generic [ref=e2514] [cursor=pointer]: "Anonymous user: Cancel own user account"
+                  - 'checkbox "Anonymous user: Cancel own user account" [ref=e2515]'
+              - 'cell "Authenticated user: Cancel own user account" [ref=e2516]':
+                - generic [ref=e2517]:
+                  - generic [ref=e2518] [cursor=pointer]: "Authenticated user: Cancel own user account"
+                  - 'checkbox "Authenticated user: Cancel own user account" [ref=e2519]'
+              - 'cell "Content editor: Cancel own user account" [ref=e2520]':
+                - generic [ref=e2521]:
+                  - generic [ref=e2522] [cursor=pointer]: "Content editor: Cancel own user account"
+                  - 'checkbox "Content editor: Cancel own user account" [ref=e2523]'
+              - 'cell "Administrator: Cancel own user account" [ref=e2524]':
+                - generic [ref=e2525]:
+                  - generic [ref=e2526]: "Administrator: Cancel own user account"
+                  - 'checkbox "Administrator: Cancel own user account" [checked] [disabled] [ref=e2527]'
+            - 'row "Change own username Anonymous user: Change own username Authenticated user: Change own username Content editor: Change own username Administrator: Change own username" [ref=e2528]':
+              - cell "Change own username" [ref=e2529]:
+                - generic [ref=e2530]: Change own username
+              - 'cell "Anonymous user: Change own username" [ref=e2531]':
+                - generic [ref=e2532]:
+                  - generic [ref=e2533] [cursor=pointer]: "Anonymous user: Change own username"
+                  - 'checkbox "Anonymous user: Change own username" [ref=e2534]'
+              - 'cell "Authenticated user: Change own username" [ref=e2535]':
+                - generic [ref=e2536]:
+                  - generic [ref=e2537] [cursor=pointer]: "Authenticated user: Change own username"
+                  - 'checkbox "Authenticated user: Change own username" [ref=e2538]'
+              - 'cell "Content editor: Change own username" [ref=e2539]':
+                - generic [ref=e2540]:
+                  - generic [ref=e2541] [cursor=pointer]: "Content editor: Change own username"
+                  - 'checkbox "Content editor: Change own username" [ref=e2542]'
+              - 'cell "Administrator: Change own username" [ref=e2543]':
+                - generic [ref=e2544]:
+                  - generic [ref=e2545]: "Administrator: Change own username"
+                  - 'checkbox "Administrator: Change own username" [checked] [disabled] [ref=e2546]'
+            - 'row "Select method for cancelling account Warning: Give to trusted roles only; this permission has security implications. Anonymous user: Select method for cancelling account Authenticated user: Select method for cancelling account Content editor: Select method for cancelling account Administrator: Select method for cancelling account" [ref=e2547]':
+              - 'cell "Select method for cancelling account Warning: Give to trusted roles only; this permission has security implications." [ref=e2548]':
+                - generic [ref=e2549]:
+                  - text: Select method for cancelling account
+                  - emphasis [ref=e2551]: "Warning: Give to trusted roles only; this permission has security implications."
+              - 'cell "Anonymous user: Select method for cancelling account" [ref=e2552]':
+                - generic [ref=e2553]:
+                  - generic [ref=e2554] [cursor=pointer]: "Anonymous user: Select method for cancelling account"
+                  - 'checkbox "Anonymous user: Select method for cancelling account" [ref=e2555]'
+              - 'cell "Authenticated user: Select method for cancelling account" [ref=e2556]':
+                - generic [ref=e2557]:
+                  - generic [ref=e2558] [cursor=pointer]: "Authenticated user: Select method for cancelling account"
+                  - 'checkbox "Authenticated user: Select method for cancelling account" [ref=e2559]'
+              - 'cell "Content editor: Select method for cancelling account" [ref=e2560]':
+                - generic [ref=e2561]:
+                  - generic [ref=e2562] [cursor=pointer]: "Content editor: Select method for cancelling account"
+                  - 'checkbox "Content editor: Select method for cancelling account" [ref=e2563]'
+              - 'cell "Administrator: Select method for cancelling account" [ref=e2564]':
+                - generic [ref=e2565]:
+                  - generic [ref=e2566]: "Administrator: Select method for cancelling account"
+                  - 'checkbox "Administrator: Select method for cancelling account" [checked] [disabled] [ref=e2567]'
+            - 'row "View user email addresses Users without this permission will not have access to email addresses on user pages or other places where they might be shown, such as Views and JSON:API responses. Anonymous user: View user email addresses Authenticated user: View user email addresses Content editor: View user email addresses Administrator: View user email addresses" [ref=e2568]':
+              - cell "View user email addresses Users without this permission will not have access to email addresses on user pages or other places where they might be shown, such as Views and JSON:API responses." [ref=e2569]:
+                - generic [ref=e2570]:
+                  - text: View user email addresses
+                  - generic [ref=e2571]: Users without this permission will not have access to email addresses on user pages or other places where they might be shown, such as Views and JSON:API responses.
+              - 'cell "Anonymous user: View user email addresses" [ref=e2572]':
+                - generic [ref=e2573]:
+                  - generic [ref=e2574] [cursor=pointer]: "Anonymous user: View user email addresses"
+                  - 'checkbox "Anonymous user: View user email addresses" [ref=e2575]'
+              - 'cell "Authenticated user: View user email addresses" [ref=e2576]':
+                - generic [ref=e2577]:
+                  - generic [ref=e2578] [cursor=pointer]: "Authenticated user: View user email addresses"
+                  - 'checkbox "Authenticated user: View user email addresses" [ref=e2579]'
+              - 'cell "Content editor: View user email addresses" [ref=e2580]':
+                - generic [ref=e2581]:
+                  - generic [ref=e2582] [cursor=pointer]: "Content editor: View user email addresses"
+                  - 'checkbox "Content editor: View user email addresses" [ref=e2583]'
+              - 'cell "Administrator: View user email addresses" [ref=e2584]':
+                - generic [ref=e2585]:
+                  - generic [ref=e2586]: "Administrator: View user email addresses"
+                  - 'checkbox "Administrator: View user email addresses" [checked] [disabled] [ref=e2587]'
+            - 'row "View user information Anonymous user: View user information Authenticated user: View user information Content editor: View user information Administrator: View user information" [ref=e2588]':
+              - cell "View user information" [ref=e2589]:
+                - generic [ref=e2590]: View user information
+              - 'cell "Anonymous user: View user information" [ref=e2591]':
+                - generic [ref=e2592]:
+                  - generic [ref=e2593] [cursor=pointer]: "Anonymous user: View user information"
+                  - 'checkbox "Anonymous user: View user information" [ref=e2594]'
+              - 'cell "Authenticated user: View user information" [ref=e2595]':
+                - generic [ref=e2596]:
+                  - generic [ref=e2597] [cursor=pointer]: "Authenticated user: View user information"
+                  - 'checkbox "Authenticated user: View user information" [ref=e2598]'
+              - 'cell "Content editor: View user information" [ref=e2599]':
+                - generic [ref=e2600]:
+                  - generic [ref=e2601] [cursor=pointer]: "Content editor: View user information"
+                  - 'checkbox "Content editor: View user information" [ref=e2602]'
+              - 'cell "Administrator: View user information" [ref=e2603]':
+                - generic [ref=e2604]:
+                  - generic [ref=e2605]: "Administrator: View user information"
+                  - 'checkbox "Administrator: View user information" [checked] [disabled] [ref=e2606]'
+            - row "Views UI" [ref=e2607]:
+              - cell "Views UI" [ref=e2608]
+            - 'row "Administer views Warning: Give to trusted roles only; this permission has security implications. Anonymous user: Administer views Authenticated user: Administer views Content editor: Administer views Administrator: Administer views" [ref=e2609]':
+              - 'cell "Administer views Warning: Give to trusted roles only; this permission has security implications." [ref=e2610]':
+                - generic [ref=e2611]:
+                  - text: Administer views
+                  - emphasis [ref=e2613]: "Warning: Give to trusted roles only; this permission has security implications."
+              - 'cell "Anonymous user: Administer views" [ref=e2614]':
+                - generic [ref=e2615]:
+                  - generic [ref=e2616] [cursor=pointer]: "Anonymous user: Administer views"
+                  - 'checkbox "Anonymous user: Administer views" [ref=e2617]'
+              - 'cell "Authenticated user: Administer views" [ref=e2618]':
+                - generic [ref=e2619]:
+                  - generic [ref=e2620] [cursor=pointer]: "Authenticated user: Administer views"
+                  - 'checkbox "Authenticated user: Administer views" [ref=e2621]'
+              - 'cell "Content editor: Administer views" [ref=e2622]':
+                - generic [ref=e2623]:
+                  - generic [ref=e2624] [cursor=pointer]: "Content editor: Administer views"
+                  - 'checkbox "Content editor: Administer views" [ref=e2625]'
+              - 'cell "Administrator: Administer views" [ref=e2626]':
+                - generic [ref=e2627]:
+                  - generic [ref=e2628]: "Administrator: Administer views"
+                  - 'checkbox "Administrator: Administer views" [checked] [disabled] [ref=e2629]'
+        - button "Save permissions" [ref=e2631] [cursor=pointer]
+```
+
+# Test source
+
+```ts
+  1  | // #ddev-generated
+  2  | import { test, expect } from '@playwright/test';
+  3  | import fs from 'fs';
+  4  | import type { AdminPageDefinition } from '../../page-definitions/admin-pages.js';
+  5  | 
+  6  | export function generateVrtTests(pages: AdminPageDefinition[]) {
+  7  |   for (const pageDef of pages) {
+  8  |     test.describe(pageDef.id, () => {
+  9  |       test('default state', async ({ page }, testInfo) => {
+  10 |         if (pageDef.testTimeout) {
+  11 |           test.setTimeout(pageDef.testTimeout);
+  12 |         }
+  13 | 
+  14 |         if (testInfo.project.name.includes('dark')) {
+  15 |           await page.emulateMedia({ colorScheme: 'dark' });
+  16 |         }
+  17 |         else {
+  18 |           await page.emulateMedia({ colorScheme: 'light' });
+  19 |         }
+  20 | 
+  21 |         await page.goto(pageDef.path);
+  22 | 
+  23 |         if (testInfo.project.name.startsWith('rtl-')) {
+  24 |           await page.evaluate(() => {
+  25 |             document.documentElement.dir = 'rtl';
+  26 |           });
+  27 |         }
+  28 | 
+  29 |         if (pageDef.waitFor) {
+  30 |           await page.locator(pageDef.waitFor).waitFor();
+  31 |         }
+  32 | 
+  33 |         await page.waitForLoadState('load');
+  34 | 
+  35 |         const mask = (pageDef.maskSelectors || []).map((s) => page.locator(s));
+  36 | 
+> 37 |         await expect(page).toHaveScreenshot(`${pageDef.id}.png`, {
+     |                            ^ Error: expect(page).toHaveScreenshot(expected) failed
+  38 |           fullPage: pageDef.fullPage ?? false,
+  39 |           mask,
+  40 |           ...(pageDef.timeout ? { timeout: pageDef.timeout } : {}),
+  41 |         });
+  42 |         const snapshotPath = testInfo.snapshotPath(`${pageDef.id}.png`);
+  43 |         if (fs.existsSync(snapshotPath)) {
+  44 |           await testInfo.attach('screenshot', { body: fs.readFileSync(snapshotPath), contentType: 'image/png' });
+  45 |         }
+  46 |       });
+  47 | 
+  48 |       if (pageDef.interactions) {
+  49 |         for (const interaction of pageDef.interactions) {
+  50 |           test(`interaction: ${interaction.label}`, async ({ page }, testInfo) => {
+  51 |             if (pageDef.testTimeout) {
+  52 |               test.setTimeout(pageDef.testTimeout);
+  53 |             }
+  54 | 
+  55 |             if (testInfo.project.name.includes('dark')) {
+  56 |               await page.emulateMedia({ colorScheme: 'dark' });
+  57 |             }
+  58 |             else {
+  59 |               await page.emulateMedia({ colorScheme: 'light' });
+  60 |             }
+  61 | 
+  62 |             await page.goto(pageDef.path);
+  63 | 
+  64 |             if (testInfo.project.name.startsWith('rtl-')) {
+  65 |               await page.evaluate(() => {
+  66 |                 document.documentElement.dir = 'rtl';
+  67 |               });
+  68 |             }
+  69 | 
+  70 |             if (pageDef.waitFor) {
+  71 |               await page.locator(pageDef.waitFor).waitFor();
+  72 |             }
+  73 | 
+  74 |             await page.waitForLoadState('load');
+  75 |             await interaction.action(page);
+  76 | 
+  77 |             const mask = (pageDef.maskSelectors || []).map((s) => page.locator(s));
+  78 | 
+  79 |             await expect(page).toHaveScreenshot(
+  80 |               `${pageDef.id}--${interaction.label}.png`,
+  81 |               {
+  82 |                 fullPage: pageDef.fullPage ?? false,
+  83 |                 mask,
+  84 |                 ...(pageDef.timeout ? { timeout: pageDef.timeout } : {}),
+  85 |               }
+  86 |             );
+  87 |             const snapshotPath = testInfo.snapshotPath(`${pageDef.id}--${interaction.label}.png`);
+  88 |             if (fs.existsSync(snapshotPath)) {
+  89 |               await testInfo.attach('screenshot', { body: fs.readFileSync(snapshotPath), contentType: 'image/png' });
+  90 |             }
+  91 |           });
+  92 |         }
+  93 |       }
+  94 |     });
+  95 |   }
+  96 | }
+  97 | 
+```

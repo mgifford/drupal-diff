@@ -72,6 +72,7 @@ Optional but recommended:
 - [src/apply-vrt-addon-overrides.sh](src/apply-vrt-addon-overrides.sh): Re-applies tracked dark-mode VRT overrides into local Drupal copies
 - [src/export-issue-report.sh](src/export-issue-report.sh): CSV/Markdown issue summary export
 - [src/publish-report-updates.sh](src/publish-report-updates.sh): One-command commit/push of scripts/reports/screenshots
+- [src/rebuild-report-index.sh](src/rebuild-report-index.sh): Rebuilds [report/index.html](report/index.html) from completed runs with valid artifacts
 
 ## One-Time Environment Setup
 
@@ -217,6 +218,12 @@ Current interaction archetypes include:
 ```bash
 ./src/seed-dummy-content.sh
 ```
+
+This now seeds additional admin-UI fixtures for regression coverage:
+
+1. reusable blocks for `/admin/content/block`
+2. managed files (including `.png`/`.jpg`) for `/admin/content/files`
+3. intentional malformed/zero-byte image payloads to exercise error-message rendering paths
 
 Optional (Drupal 11/12): use the repo-tracked `realistic_dummy_content` artifact during seeding.
 

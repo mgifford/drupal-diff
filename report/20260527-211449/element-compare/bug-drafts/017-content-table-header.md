@@ -40,6 +40,8 @@ Confidence: **medium**
 ## Evidence
 - Baseline element screenshot: baseline/content__light__table-header.png
 - Candidate element screenshot: candidate/content__light__table-header.png
+- Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260527-211449/element-compare/baseline/content__light__table-header.png
+- Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260527-211449/element-compare/candidate/content__light__table-header.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## Notes

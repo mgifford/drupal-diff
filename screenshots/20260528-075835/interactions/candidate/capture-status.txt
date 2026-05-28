@@ -1,0 +1,4 @@
+project=candidate
+base_url=http://drupal-git.ddev.site:8080
+capture_exit_code=0
+timestamp_utc=2026-05-28T12:12:46Z

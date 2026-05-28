@@ -36,6 +36,8 @@ Confidence: **medium**
 ## Evidence
 - Baseline element screenshot: baseline/people__dark__table-cell.png
 - Candidate element screenshot: candidate/people__dark__table-cell.png
+- Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260527-211449/element-compare/baseline/people__dark__table-cell.png
+- Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260527-211449/element-compare/candidate/people__dark__table-cell.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## Notes

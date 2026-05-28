@@ -36,9 +36,12 @@ ddev exec -d /var/www/html/.ddev/drupal-admin-vrt env \
   DRUPAL_ADMIN_USER="admin" \
   DRUPAL_ADMIN_PASS="admin" \
   OUT_DIR="$CONTAINER_OUT_DIR" \
+  RUN_ID="$RUN_ID" \
+  REPO_WEB_BASE="https://github.com/mgifford/drupal-diff/blob/main" \
   node - <<'NODE'
 const fs = require('fs');
 const path = require('path');
+const zlib = require('zlib');
 const { chromium } = require('playwright');
 
 const baselineUrl = process.env.BASELINE_URL;
@@ -49,7 +52,10 @@ const password = process.env.DRUPAL_ADMIN_PASS;
 const outDir = process.env.OUT_DIR;
 const baselineLabel = 'Drupal 11 with Gin';
 const candidateLabel = 'Drupal 12 with Admin Theme';
+const runId = process.env.RUN_ID || '';
+const repoWebBase = process.env.REPO_WEB_BASE || 'https://github.com/mgifford/drupal-diff/blob/main';
 const schemes = colorMode === 'both' ? ['light', 'dark'] : [colorMode];
+const defaultAdminCssRoot = '/var/www/html/core/themes/default_admin/css';
 
 const routes = [
   { id: 'appearance', path: '/admin/appearance', label: 'Appearance' },
@@ -221,6 +227,72 @@ function normalizeCssSource(source) {
   }
 }
 
+function decodeIncludeToken(sourceUrl) {
+  if (!sourceUrl) return [];
+  let token = '';
+  try {
+    const parsed = new URL(sourceUrl);
+    token = parsed.searchParams.get('include') || '';
+  } catch {
+    return [];
+  }
+
+  if (!token) return [];
+  try {
+    const pad = '='.repeat((4 - (token.length % 4)) % 4);
+    const b64 = token.replace(/-/g, '+').replace(/_/g, '/') + pad;
+    const bytes = Buffer.from(b64, 'base64');
+    const decoded = zlib.inflateSync(bytes).toString('utf8');
+    return decoded
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean);
+  } catch {
+    return [];
+  }
+}
+
+function listCssFiles(root) {
+  if (!fs.existsSync(root)) return [];
+  const out = [];
+
+  const walk = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(full);
+      } else if (entry.isFile() && full.endsWith('.css')) {
+        out.push(full);
+      }
+    }
+  };
+
+  walk(root);
+  return out;
+}
+
+const defaultAdminCssFiles = listCssFiles(defaultAdminCssRoot).map((fullPath) => ({
+  fullPath,
+  repoPath: fullPath.replace('/var/www/html/', ''),
+  content: fs.readFileSync(fullPath, 'utf8'),
+}));
+
+function findThemeSelectorMatches(cssSources) {
+  const selectors = [...new Set((cssSources || []).map((m) => (m.selector || '').trim()).filter(Boolean))]
+    .flatMap((selector) => selector.split(',').map((p) => p.trim()).filter(Boolean));
+
+  const hits = new Set();
+  for (const sel of selectors) {
+    for (const file of defaultAdminCssFiles) {
+      if (file.content.includes(sel)) {
+        hits.add(file.repoPath);
+      }
+    }
+  }
+
+  return [...hits].sort();
+}
+
 function cssSourceList(sources) {
   return [...new Set((sources || []).map((s) => normalizeCssSource(s.source)).filter(Boolean))];
 }
@@ -230,6 +302,11 @@ function likelyCssFiles(baseSources, candSources) {
   const cand = cssSourceList(candSources);
   const overlap = cand.filter((src) => base.has(src));
   return overlap.length ? overlap : cand;
+}
+
+function githubElementShotUrl(relativeShotPath) {
+  if (!runId || !relativeShotPath) return '';
+  return `${repoWebBase}/report/${runId}/element-compare/${relativeShotPath}`;
 }
 
 function summarize(measures) {
@@ -425,7 +502,10 @@ function evidenceMarkdown(title, evidence) {
         const baseSummary = summarize(baseMeasures);
         const candSummary = summarize(candMeasures);
         const comparison = compareStats(baseSummary, candSummary);
-        const likelyCss = likelyCssFiles(baseCssSources, candCssSources);
+        const themeMatches = findThemeSelectorMatches(candCssSources);
+        const aggregateLibraries = [...new Set((candCssSources || []).flatMap((m) => decodeIncludeToken(m.source || '')))].sort();
+        const runtimeLikelyCss = likelyCssFiles(baseCssSources, candCssSources);
+        const likelyCss = themeMatches.length ? themeMatches : runtimeLikelyCss;
 
         const fileBase = `${route.id}__${scheme}__${component.id}`;
         const baselineShot = `baseline/${fileBase}.png`;
@@ -469,6 +549,8 @@ function evidenceMarkdown(title, evidence) {
           comparison,
           baselineCssSources: baseCssSources,
           candidateCssSources: candCssSources,
+          candidateThemeMatches: themeMatches,
+          candidateAggregateLibraries: aggregateLibraries,
           likelyCssFiles: likelyCss,
           baselineShot,
           candidateShot,
@@ -778,6 +860,9 @@ function evidenceMarkdown(title, evidence) {
     const baselinePrimary = baselineEvidence[0] || {};
     const candidatePrimary = candidateEvidence[0] || {};
 
+    const baselineShotGitHub = githubElementShotUrl(row.baselineShot);
+    const candidateShotGitHub = githubElementShotUrl(row.candidateShot);
+
     const body = [
       `# ${title}`,
       '',
@@ -803,6 +888,12 @@ function evidenceMarkdown(title, evidence) {
       '## Candidate Matched CSS Rules',
       (row.candidateCssSources || []).length ? (row.candidateCssSources || []).map((m) => `- ${m.source} :: ${m.selector}`).join('\n') : '- No matched rules captured',
       '',
+      '## Candidate Theme Source Matches (default_admin)',
+      (row.candidateThemeMatches || []).length ? (row.candidateThemeMatches || []).map((m) => `- ${m}`).join('\n') : '- No direct selector match found under core/themes/default_admin/css',
+      '',
+      '## Candidate Aggregate Libraries (decoded include= token)',
+      (row.candidateAggregateLibraries || []).length ? (row.candidateAggregateLibraries || []).map((m) => `- ${m}`).join('\n') : '- No aggregate library list decoded',
+      '',
       '## Suggested CSS Patch (Confidence-Gated)',
       suggestion
         ? [`Confidence: **${suggestion.confidence}**`, '', '```css', `${suggestion.selectorHint} {`, ...suggestion.declarations.map((d) => `  ${d}`), '}', '```'].join('\n')
@@ -811,6 +902,8 @@ function evidenceMarkdown(title, evidence) {
       '## Evidence',
       `- Baseline element screenshot: ${row.baselineShot}`,
       `- Candidate element screenshot: ${row.candidateShot}`,
+      baselineShotGitHub ? `- Baseline element screenshot (GitHub): ${baselineShotGitHub}` : '',
+      candidateShotGitHub ? `- Candidate element screenshot (GitHub): ${candidateShotGitHub}` : '',
       '- Dashboard: ../element-compare-dashboard.html',
       '',
       '## DOM Evidence (XPath + HTML Snippets)',
