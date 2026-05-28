@@ -154,7 +154,7 @@ const settingsProfiles = [
 
 const components = [
   { id: 'required-marker', label: 'Required Marker (*)', selector: 'label.form-required, .form-required' },
-  { id: 'h2', label: 'H2 Heading', selector: 'h2' },
+  { id: 'page-title-heading', label: 'Page Title Heading (h1)', selector: 'h1.page-title, .page-title h1, .page-title' },
   { id: 'input-text', label: 'Text Input', selector: 'input[type="text"], input.form-text' },
   { id: 'textarea', label: 'Textarea', selector: 'textarea' },
   { id: 'button', label: 'Button', selector: 'button, input[type="submit"], .button' },
@@ -343,6 +343,18 @@ async function applyThemeSettingsProfile(page, profile) {
 
 async function measure(page, selector, max = 8) {
   return await page.evaluate(({ selector, max }) => {
+    const isVisibleForCapture = (node) => {
+      if (!node || node.nodeType !== Node.ELEMENT_NODE) return false;
+      const style = getComputedStyle(node);
+      if (style.display === 'none' || style.visibility === 'hidden') return false;
+      if (Number.parseFloat(style.opacity || '1') <= 0) return false;
+      const rect = node.getBoundingClientRect();
+      if (!Number.isFinite(rect.width) || !Number.isFinite(rect.height)) return false;
+      if (rect.width < 8 || rect.height < 8) return false;
+      if (rect.bottom < 0 || rect.right < 0) return false;
+      return true;
+    };
+
     const toXPath = (node) => {
       if (!node || node.nodeType !== Node.ELEMENT_NODE) return '';
       if (node.id) {
@@ -364,7 +376,9 @@ async function measure(page, selector, max = 8) {
       return `/${parts.join('/')}`;
     };
 
-    const nodes = Array.from(document.querySelectorAll(selector)).slice(0, max);
+    const nodes = Array.from(document.querySelectorAll(selector))
+      .filter((node) => isVisibleForCapture(node))
+      .slice(0, max);
     return nodes.map((node) => {
       const style = getComputedStyle(node);
       const rect = node.getBoundingClientRect();
@@ -388,6 +402,64 @@ async function measure(page, selector, max = 8) {
       };
     });
   }, { selector, max });
+}
+
+async function bestVisibleMatchIndex(page, selector, max = 20) {
+  return await page.evaluate(({ selector, max }) => {
+    const nodes = Array.from(document.querySelectorAll(selector)).slice(0, max);
+    let bestIdx = -1;
+    let bestScore = -1;
+
+    for (let i = 0; i < nodes.length; i += 1) {
+      const node = nodes[i];
+      const style = getComputedStyle(node);
+      if (style.display === 'none' || style.visibility === 'hidden') continue;
+      if (Number.parseFloat(style.opacity || '1') <= 0) continue;
+
+      const rect = node.getBoundingClientRect();
+      if (!Number.isFinite(rect.width) || !Number.isFinite(rect.height)) continue;
+      if (rect.width < 8 || rect.height < 8) continue;
+
+      const textLen = (node.textContent || '').trim().length;
+      const area = rect.width * rect.height;
+      const score = area + Math.min(textLen, 120) * 40;
+      if (score > bestScore) {
+        bestScore = score;
+        bestIdx = i;
+      }
+    }
+
+    return bestIdx;
+  }, { selector, max });
+}
+
+async function captureBestElementShot(page, selector, outputPath) {
+  const bestIdx = await bestVisibleMatchIndex(page, selector);
+  if (bestIdx < 0) {
+    return false;
+  }
+
+  const loc = page.locator(selector).nth(bestIdx);
+  try {
+    await loc.scrollIntoViewIfNeeded({ timeout: 3000 });
+    const box = await loc.boundingBox();
+    if (!box || box.width < 8 || box.height < 8) {
+      return false;
+    }
+
+    await loc.screenshot({ path: outputPath });
+    if (!fs.existsSync(outputPath)) {
+      return false;
+    }
+    const size = fs.statSync(outputPath).size;
+    if (size < 512) {
+      fs.rmSync(outputPath, { force: true });
+      return false;
+    }
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 async function collectCssSources(page, selector, maxMatches = 12) {
@@ -615,6 +687,40 @@ function legacyDefaultBugDraftFileName(row) {
   const modeSlug = slugify(row.colorMode);
   const componentSlug = slugify(row.componentId || row.component);
   return `${routeSlug}-${modeSlug}-${componentSlug}.md`;
+}
+
+function normalizeSelector(selector) {
+  return String(selector || '').replace(/\s+/g, ' ').trim();
+}
+
+function issueGroupKey(row) {
+  const routeSlug = slugify(row.route || 'route');
+  const scenarioSlug = slugify(row.scenarioId || row.scenario || 'default');
+  const componentSlug = slugify(row.componentId || row.component || 'component');
+  const selectorSlug = slugify(normalizeSelector(row.selector || '')).slice(0, 80) || 'selector';
+  return `${routeSlug}|${scenarioSlug}|${componentSlug}|${selectorSlug}`;
+}
+
+function selectorHash(selector) {
+  const input = normalizeSelector(selector || 'selector');
+  let hash = 0;
+  for (let i = 0; i < input.length; i += 1) {
+    hash = ((hash << 5) - hash) + input.charCodeAt(i);
+    hash |= 0;
+  }
+  return Math.abs(hash).toString(36).slice(0, 6) || 'sel';
+}
+
+function consolidatedBugDraftFileName(row) {
+  const routeSlug = slugify(row.route);
+  const scenarioSlug = slugify(row.scenarioId || row.scenario || 'default');
+  const componentSlug = slugify(row.componentId || row.component);
+  const selHash = selectorHash(row.selector);
+  return `${routeSlug}-${scenarioSlug}-${componentSlug}-${selHash}.md`;
+}
+
+function consolidatedBugDraftHtmlFileName(row) {
+  return consolidatedBugDraftFileName(row).replace(/\.md$/i, '.html');
 }
 
 function summarize(measures) {
@@ -960,29 +1066,8 @@ async function clearOutputDir(targetDir) {
         const baselineShot = `baseline/${fileBase}.png`;
         const candidateShot = `candidate/${fileBase}.png`;
 
-        const bLoc = baselinePage.locator(component.selector).first();
-        const cLoc = candidatePage.locator(component.selector).first();
-
-        if (await bLoc.count()) {
-          try {
-            if (await bLoc.isVisible()) {
-              await bLoc.scrollIntoViewIfNeeded({ timeout: 3000 });
-              await bLoc.screenshot({ path: path.join(outDir, baselineShot) });
-            }
-          } catch {
-            // Skip non-actionable baseline element screenshot.
-          }
-        }
-        if (await cLoc.count()) {
-          try {
-            if (await cLoc.isVisible()) {
-              await cLoc.scrollIntoViewIfNeeded({ timeout: 3000 });
-              await cLoc.screenshot({ path: path.join(outDir, candidateShot) });
-            }
-          } catch {
-            // Skip non-actionable candidate element screenshot.
-          }
-        }
+        await captureBestElementShot(baselinePage, component.selector, path.join(outDir, baselineShot));
+        await captureBestElementShot(candidatePage, component.selector, path.join(outDir, candidateShot));
 
         const row = {
           route: route.label,
@@ -1052,13 +1137,64 @@ async function clearOutputDir(targetDir) {
   const routeModeScenarioCombos = new Set(rows.map((r) => `${r.route}|${r.colorMode}|${r.scenarioId || 'default'}`)).size;
 
   const flaggedRows = rows.filter((r) => r.comparison.significant > 0);
-  const expectedDraftNames = new Set(flaggedRows.map((row) => bugDraftFileName(row)));
+  const groupedFlagged = new Map();
+  for (const row of flaggedRows) {
+    const key = issueGroupKey(row);
+    if (!groupedFlagged.has(key)) {
+      groupedFlagged.set(key, []);
+    }
+    groupedFlagged.get(key).push(row);
+  }
+
+  const confidenceRank = { high: 3, medium: 2, low: 1 };
+  const consolidatedIssues = Array.from(groupedFlagged.values()).map((groupRows) => {
+    const sortedRows = groupRows.slice().sort((a, b) => {
+      const aLight = String(a.colorMode || '').toLowerCase() === 'light' ? 1 : 0;
+      const bLight = String(b.colorMode || '').toLowerCase() === 'light' ? 1 : 0;
+      return bLight - aLight;
+    });
+    const primaryRow = sortedRows[0];
+    const modeSet = new Set(sortedRows.map((r) => String(r.colorMode || '').toLowerCase()));
+
+    const cssSet = new Set();
+    sortedRows.forEach((r) => {
+      (r.likelyCssFiles || []).forEach((cssFile) => {
+        if (cssFile) {
+          cssSet.add(cssFile);
+        }
+      });
+    });
+    if (!cssSet.size) {
+      cssSet.add('unknown');
+    }
+
+    const allSuggestions = sortedRows
+      .map((r) => r.patchSuggestion)
+      .filter(Boolean)
+      .sort((a, b) => (confidenceRank[b.confidence] || 0) - (confidenceRank[a.confidence] || 0));
+
+    return {
+      key: issueGroupKey(primaryRow),
+      rows: sortedRows,
+      primaryRow,
+      modes: Array.from(modeSet),
+      modeLabel: Array.from(modeSet).sort().join(' + '),
+      mergedCssList: Array.from(cssSet),
+      mergedPatchSuggestion: allSuggestions[0] || null,
+      mdName: consolidatedBugDraftFileName(primaryRow),
+      htmlName: consolidatedBugDraftHtmlFileName(primaryRow),
+    };
+  });
+
+  const draftNameByGroupKey = new Map(consolidatedIssues.map((issue) => [issue.key, issue.mdName]));
+  const draftHtmlByGroupKey = new Map(consolidatedIssues.map((issue) => [issue.key, issue.htmlName]));
+  const expectedDraftNames = new Set(consolidatedIssues.map((issue) => issue.mdName));
 
   const rowHtml = rows.map((row) => {
     const sig = row.comparison.significant;
     const className = sig > 0 ? 'flagged' : '';
-    const draftMdName = sig > 0 ? bugDraftFileName(row) : '';
-    const draftHtmlName = sig > 0 ? bugDraftHtmlFileName(row) : '';
+    const draftMdName = sig > 0 ? (draftNameByGroupKey.get(issueGroupKey(row)) || bugDraftFileName(row)) : '';
+    const draftHtmlName = sig > 0 ? (draftHtmlByGroupKey.get(issueGroupKey(row)) || bugDraftHtmlFileName(row)) : '';
     const draftLegacyMdName = sig > 0 ? legacyDefaultBugDraftFileName(row) : '';
     const draftLegacyHtmlName = draftLegacyMdName ? draftLegacyMdName.replace(/\.md$/i, '.html') : '';
     const draftSource = draftMdName ? bugDraftSourceUrl(draftMdName) : '';
@@ -1322,27 +1458,171 @@ async function clearOutputDir(targetDir) {
   const patchLines = ['# Suggested CSS Patch Ideas', '', `Generated: ${new Date().toISOString()}`, '', 'Only medium/high confidence suggestions are included.', ''];
   const patchBuckets = {};
 
-  let idx = 1;
-  for (const row of flaggedRows) {
-    const title = `Admin Theme (${row.colorMode}) ${row.route} - ${row.component} style regression vs Drupal 11 Gin`;
-    const deltas = [];
-    for (const d of row.comparison.deltas) {
-      if (d.flagged) {
-        deltas.push(`${d.key}: ${d.delta.toFixed(1)}%`);
-      }
+  const metricLabels = {
+    fontSize: 'font size',
+    lineHeight: 'line height',
+    paddingY: 'vertical padding',
+    paddingX: 'horizontal padding',
+    width: 'width',
+    height: 'height',
+  };
+
+  const metricPriorityWeight = {
+    fontSize: 3.2,
+    lineHeight: 2.6,
+    paddingY: 2.6,
+    paddingX: 2.0,
+    height: 1.8,
+    width: 1.0,
+  };
+
+  const normalizeToken = (value) => String(value || '').toLowerCase().trim();
+  const componentToken = (component) => normalizeToken(component).replace(/\s+/g, '-');
+  const labelFromValue = (value) => {
+    if (value === undefined || value === null) {
+      return '';
     }
-    if (row.comparison.countFlagged) {
-      deltas.push(`count: ${row.comparison.countDelta > 0 ? '+' : ''}${row.comparison.countDelta} (${row.comparison.countDeltaPct.toFixed(1)}%)`);
+    return String(value).trim();
+  };
+
+  const componentFrequency = new Map();
+  const routeComponentFrequency = new Map();
+  const routeComponentModes = new Map();
+
+  for (const issue of consolidatedIssues) {
+    const row = issue.primaryRow;
+    const compKey = componentToken(row.component);
+    const routeCompKey = `${normalizeToken(row.route)}::${compKey}`;
+    componentFrequency.set(compKey, (componentFrequency.get(compKey) || 0) + 1);
+    routeComponentFrequency.set(routeCompKey, (routeComponentFrequency.get(routeCompKey) || 0) + 1);
+    if (!routeComponentModes.has(routeCompKey)) {
+      routeComponentModes.set(routeCompKey, new Set());
+    }
+    for (const mode of issue.modes) {
+      routeComponentModes.get(routeCompKey).add(normalizeToken(mode));
+    }
+  }
+
+  function componentVisibilityWeight(component) {
+    const comp = normalizeToken(component);
+    if (/(button|input|select|textarea|checkbox|radio|switch|toggle|submit|required|label|field)/.test(comp)) return 18;
+    if (/(heading|title|h1|h2|h3|link|breadcrumb|menu|nav|tab|pager|table-header|table-cell|table-row)/.test(comp)) return 14;
+    if (/(message|alert|notice|status|description|help|summary)/.test(comp)) return 11;
+    return 8;
+  }
+
+  function priorityScoreForIssue(issue, suggestion, cssList) {
+    const row = issue.primaryRow;
+    let score = 0;
+    const reasons = [];
+    const caveats = [];
+
+    const compLabel = labelFromValue(row.component) || 'component';
+    const compKey = componentToken(compLabel);
+    const routeCompKey = `${normalizeToken(row.route)}::${compKey}`;
+    const compCount = componentFrequency.get(compKey) || 1;
+    const routeCompCount = routeComponentFrequency.get(routeCompKey) || 1;
+    const modeSpread = Math.max(issue.modes.length, (routeComponentModes.get(routeCompKey) || new Set()).size);
+
+    const commonnessScore = Math.min(26, Math.max(0, compCount - 1) * 4 + Math.max(0, routeCompCount - 1) * 3 + Math.max(0, modeSpread - 1) * 3);
+    if (commonnessScore > 0) {
+      score += commonnessScore;
+      reasons.push(`Commonly found: ${compCount} similar ${compLabel} diffs (${routeCompCount} on this route).`);
     }
 
-    const mdName = bugDraftFileName(row);
-    const htmlName = bugDraftHtmlFileName(row);
+    const visibilityBase = componentVisibilityWeight(compLabel);
+    score += visibilityBase;
+    reasons.push(`Easily visible surface: ${compLabel}.`);
+
+    const flaggedDeltas = (row.comparison.deltas || []).filter((d) => d.flagged);
+    let metricScore = 0;
+    for (const delta of flaggedDeltas) {
+      const weight = metricPriorityWeight[delta.key] || 1;
+      metricScore += Math.min(14, (Math.abs(delta.abs) / 10) * weight);
+    }
+    if (metricScore > 0) {
+      score += metricScore;
+      const topSignals = flaggedDeltas
+        .slice()
+        .sort((a, b) => b.abs - a.abs)
+        .slice(0, 2)
+        .map((d) => `${metricLabels[d.key] || d.key} (${d.delta >= 0 ? '+' : ''}${d.delta.toFixed(1)}%)`)
+        .join(' and ');
+      reasons.push(`Visible metric shift: ${topSignals}.`);
+    }
+
+    if (row.comparison.countFlagged) {
+      score += 4;
+    }
+
+    if (suggestion) {
+      const patchBonus = suggestion.confidence === 'high' ? 20 : 14;
+      score += patchBonus;
+      reasons.push(`Potential patch to review: ${suggestion.confidence} confidence suggestion.`);
+    }
+
+    if (cssList.length === 1 && cssList[0] !== 'unknown') {
+      score += 4;
+    }
+
+    if (cssList[0] === 'unknown') {
+      score -= 10;
+      caveats.push('Likely CSS source is unknown.');
+    }
+
+    if (flaggedDeltas.length === 1 && flaggedDeltas[0].key === 'width') {
+      score -= 6;
+      caveats.push('Width-only change may be less obvious in quick review.');
+    }
+
+    if (row.comparison.countFlagged && Math.abs(row.comparison.countDeltaPct) >= 95 && visibilityBase < 14) {
+      score -= 6;
+      caveats.push('Large count change may be selector noise; confirm before patching.');
+    }
+
+    const roundedScore = Math.max(0, Math.round(score));
+    const priorityLevel = roundedScore >= 60 ? 'high' : roundedScore >= 38 ? 'medium' : 'low';
+
+    return {
+      score: roundedScore,
+      level: priorityLevel,
+      reasons: reasons.slice(0, 3),
+      caveats: caveats.slice(0, 2),
+    };
+  }
+
+  function flaggedDeltaList(sourceRow) {
+    const items = [];
+    for (const d of sourceRow.comparison.deltas) {
+      if (d.flagged) {
+        items.push(`${d.key}: ${d.delta.toFixed(1)}%`);
+      }
+    }
+    if (sourceRow.comparison.countFlagged) {
+      items.push(`count: ${sourceRow.comparison.countDelta > 0 ? '+' : ''}${sourceRow.comparison.countDelta} (${sourceRow.comparison.countDeltaPct.toFixed(1)}%)`);
+    }
+    return items;
+  }
+
+  let idx = 1;
+  for (const issue of consolidatedIssues) {
+    const row = issue.primaryRow;
+    const title = `Admin Theme (${issue.modeLabel}) ${row.route} - ${row.component} style regression vs Drupal 11 Gin`;
+    const modeDeltaSummaries = issue.rows.map((modeRow) => {
+      const modeDeltas = flaggedDeltaList(modeRow);
+      const modeName = String(modeRow.colorMode || '').toLowerCase() || 'unknown';
+      return `${modeName}: ${modeDeltas.length ? modeDeltas.join(' | ') : 'Significant visual difference observed'}`;
+    });
+    const deltas = modeDeltaSummaries.length > 1 ? modeDeltaSummaries : flaggedDeltaList(row);
+
+    const mdName = issue.mdName;
+    const htmlName = issue.htmlName;
     const mdPath = path.join(bugDraftDir, mdName);
     const htmlPath = path.join(bugDraftDir, htmlName);
-    const cssList = (row.likelyCssFiles && row.likelyCssFiles.length) ? row.likelyCssFiles : ['unknown'];
+    const cssList = (issue.mergedCssList && issue.mergedCssList.length) ? issue.mergedCssList : ['unknown'];
     const baselineCssList = cssSourceList(row.baselineCssSources || []);
     const candidateCssList = cssSourceList(row.candidateCssSources || []);
-    const suggestion = row.patchSuggestion;
+    const suggestion = issue.mergedPatchSuggestion;
     const baselineEvidence = row.baselineDomEvidence || [];
     const candidateEvidence = row.candidateDomEvidence || [];
     const baselinePrimary = baselineEvidence[0] || {};
@@ -1352,7 +1632,15 @@ async function clearOutputDir(targetDir) {
     const candidateShotGitHub = githubElementShotUrl(row.candidateShot);
     const baselinePageShotGitHub = githubElementShotUrl(row.baselinePageShot);
     const candidatePageShotGitHub = githubElementShotUrl(row.candidatePageShot);
-    const humanSummaryLines = humanReadableSummaryLines(row);
+    const humanSummaryLines = [...humanReadableSummaryLines(row)];
+    if (issue.modes.includes('light') && issue.modes.includes('dark')) {
+      humanSummaryLines.push('This same issue was also identified in dark mode.');
+    }
+    const modeCoverageLines = issue.rows.map((modeRow) => {
+      const modeDeltas = flaggedDeltaList(modeRow);
+      const modeName = String(modeRow.colorMode || '').toLowerCase() || 'unknown';
+      return `- ${modeName}: ${modeDeltas.length ? modeDeltas.join(' | ') : 'Significant visual difference observed'}`;
+    });
 
     const body = [
       `# ${title}`,
@@ -1362,13 +1650,16 @@ async function clearOutputDir(targetDir) {
       '',
       '## Summary',
       `Potential CSS regression in **${row.component}** on **${row.route}** when comparing ${baselineLabel} to ${candidateLabel}.`,
-      `Color mode: **${row.colorMode}**`,
+      `Color mode coverage: **${issue.modeLabel}**`,
+      '',
+      '## Color Mode Coverage',
+      ...modeCoverageLines,
       '',
       '## Steps To Reproduce',
       `1. Open baseline page: ${row.baselineUrl}`,
       `2. Open candidate page: ${row.candidateUrl}`,
       `3. Inspect selector: ${row.selector}`,
-      '4. Compare typography, spacing, sizing, and marker presence.',
+      `4. Compare typography, spacing, sizing, and marker presence in: ${issue.modeLabel}.`,
       '',
       '## Expected Result',
       `${candidateLabel} should align with ${baselineLabel} for this component unless intentional and documented.`,
@@ -1440,7 +1731,7 @@ async function clearOutputDir(targetDir) {
 </head>
 <body>
   <h1>${htmlTitle}</h1>
-  <p class="meta">Potential CSS regression in <strong>${esc(row.component)}</strong> on <strong>${esc(row.route)}</strong> (${esc(row.colorMode)} mode).</p>
+  <p class="meta">Potential CSS regression in <strong>${esc(row.component)}</strong> on <strong>${esc(row.route)}</strong> (modes: ${esc(issue.modeLabel)}).</p>
   <p class="links">
     <a href="${esc(mdName)}" target="_blank" rel="noopener">Local Markdown</a>
     ${bugDraftSourceUrl(mdName) ? `<a href="${esc(bugDraftSourceUrl(mdName))}" target="_blank" rel="noopener">GitHub Source (Markdown)</a>` : ''}
@@ -1460,7 +1751,7 @@ async function clearOutputDir(targetDir) {
       <li>Open baseline page: <a href="${esc(row.baselineUrl)}" target="_blank" rel="noopener">${esc(row.baselineUrl)}</a></li>
       <li>Open candidate page: <a href="${esc(row.candidateUrl)}" target="_blank" rel="noopener">${esc(row.candidateUrl)}</a></li>
       <li>Inspect selector: <code>${esc(row.selector)}</code></li>
-      <li>Compare typography, spacing, sizing, and marker presence.</li>
+      <li>Compare typography, spacing, sizing, and marker presence in ${esc(issue.modeLabel)}.</li>
     </ol>
   </section>
 
@@ -1483,8 +1774,20 @@ async function clearOutputDir(targetDir) {
 </html>`;
     fs.writeFileSync(htmlPath, renderedHtml);
 
-    const legacyMdName = legacyDefaultBugDraftFileName(row);
-    if (legacyMdName && legacyMdName !== mdName) {
+    const legacyMdNames = new Set();
+    const primaryLegacyDefault = legacyDefaultBugDraftFileName(row);
+    if (primaryLegacyDefault) {
+      legacyMdNames.add(primaryLegacyDefault);
+    }
+    if (issue.modes.length > 1) {
+      const alternateModeRow = issue.rows.find((modeRow) => String(modeRow.colorMode || '').toLowerCase() !== String(row.colorMode || '').toLowerCase());
+      if (alternateModeRow) {
+        legacyMdNames.add(bugDraftFileName(alternateModeRow));
+      }
+    }
+
+    legacyMdNames.delete(mdName);
+    for (const legacyMdName of legacyMdNames) {
       const legacyHtmlName = legacyMdName.replace(/\.md$/i, '.html');
       const legacyMdPath = path.join(bugDraftDir, legacyMdName);
       const legacyHtmlPath = path.join(bugDraftDir, legacyHtmlName);
@@ -1492,9 +1795,9 @@ async function clearOutputDir(targetDir) {
       const legacyMd = [
         '# Legacy Draft Redirect',
         '',
-        `This legacy draft path now maps to the default scenario draft for **${title}**.`,
+        `This legacy draft path now maps to the consolidated draft for **${title}**.`,
         '',
-        `- Rendered HTML: ./${legacyHtmlName}`,
+        `- Rendered HTML: ./${htmlName}`,
         `- Canonical Markdown: ./${mdName}`,
         sourceUrl ? `- GitHub Source (Canonical Markdown): ${sourceUrl}` : '',
         '',
@@ -1521,7 +1824,7 @@ async function clearOutputDir(targetDir) {
       idx,
       title,
       row.route,
-      row.colorMode,
+      issue.modeLabel,
       row.component,
       row.selector,
       row.baselineUrl,
@@ -1551,22 +1854,37 @@ async function clearOutputDir(targetDir) {
     const patchSummary = suggestion
       ? `${suggestion.selectorHint} { ${suggestion.declarations.join(' ')} }`
       : 'No confidence-gated patch suggestion generated.';
+    const priority = priorityScoreForIssue(issue, suggestion, cssList);
     htmlIndexRows.push({
       idx,
       title,
+      mdName,
       route: row.route,
-      colorMode: row.colorMode,
+      colorMode: issue.modeLabel,
       component: row.component,
       localBugUrl: `bug-drafts/${htmlName}`,
       sourceBugUrl,
       cssSummary,
+      primaryCssFile: cssList[0] || 'unknown',
       patchSummary,
       deltas: deltas.join(' | ') || 'Significant visual difference observed',
+      priorityScore: priority.score,
+      priorityLevel: priority.level,
+      priorityReasons: priority.reasons,
+      priorityCaveats: priority.caveats,
     });
 
     const primaryCssFile = cssList[0] || 'unknown';
     cssBuckets[primaryCssFile] = cssBuckets[primaryCssFile] || [];
-    cssBuckets[primaryCssFile].push({ idx, title, mdName, secondary: cssList.slice(1) });
+    cssBuckets[primaryCssFile].push({
+      idx,
+      title,
+      mdName,
+      route: row.route,
+      component: row.component,
+      priorityScore: priority.score,
+      secondary: cssList.slice(1),
+    });
     if (suggestion) {
       patchBuckets[suggestion.cssFile] = patchBuckets[suggestion.cssFile] || [];
       patchBuckets[suggestion.cssFile].push({
@@ -1582,16 +1900,27 @@ async function clearOutputDir(targetDir) {
 
   fs.writeFileSync(path.join(outDir, 'bug-drafts.csv'), `${csvLines.join('\n')}\n`);
 
-  const htmlRows = htmlIndexRows.map((item) => {
+  htmlIndexRows.sort((a, b) => b.priorityScore - a.priorityScore || a.idx - b.idx);
+
+  const renderPriorityRows = (rowsToRender) => rowsToRender.map((item) => {
     const sourceLink = item.sourceBugUrl
       ? `<a href="${esc(item.sourceBugUrl)}" target="_blank" rel="noopener">GitHub Source</a>`
       : '<span class="muted">Source n/a</span>';
+    const reasonItems = (item.priorityReasons || []).map((reason) => `<li>${esc(reason)}</li>`).join('');
+    const caveatItems = (item.priorityCaveats || []).map((caveat) => `<li>${esc(caveat)}</li>`).join('');
+    const caveatSection = caveatItems
+      ? `<p class="meta"><strong>Review caveats:</strong></p><ul class="priority-reasons muted-list">${caveatItems}</ul>`
+      : '';
     return [
       '<li>',
       `<h2>${item.idx}. ${esc(item.title)}</h2>`,
+      `<p><strong>Priority:</strong> <span class="priority-badge ${esc(item.priorityLevel)}">${esc(item.priorityLevel.toUpperCase())}</span> <strong>Score:</strong> ${item.priorityScore}</p>`,
       `<p><strong>Route:</strong> ${esc(item.route)} | <strong>Mode:</strong> ${esc(item.colorMode)} | <strong>Component:</strong> ${esc(item.component)}</p>`,
       `<p><strong>Deltas:</strong> ${esc(item.deltas)}</p>`,
       `<p><strong>Likely CSS:</strong> ${esc(item.cssSummary)}</p>`,
+      '<p><strong>Why prioritized:</strong></p>',
+      `<ul class="priority-reasons">${reasonItems || '<li>No specific prioritization reason captured.</li>'}</ul>`,
+      caveatSection,
       `<pre>${esc(item.patchSummary)}</pre>`,
       '<p class="links">',
       `<a href="${esc(item.localBugUrl)}" target="_blank" rel="noopener">Rendered Draft (HTML)</a>`,
@@ -1600,6 +1929,61 @@ async function clearOutputDir(targetDir) {
       '</li>',
     ].join('');
   }).join('\n');
+
+  const topPriorityRows = renderPriorityRows(htmlIndexRows.slice(0, 25));
+  const htmlRows = renderPriorityRows(htmlIndexRows);
+  const signalFamilies = Object.values(htmlIndexRows.reduce((acc, item) => {
+    const familyKey = `${item.component}||${item.primaryCssFile || 'unknown'}`;
+    if (!acc[familyKey]) {
+      acc[familyKey] = {
+        key: familyKey,
+        component: item.component,
+        cssFile: item.primaryCssFile || 'unknown',
+        count: 0,
+        maxScore: 0,
+        routes: new Set(),
+        items: [],
+      };
+    }
+    const family = acc[familyKey];
+    family.count += 1;
+    family.maxScore = Math.max(family.maxScore, item.priorityScore || 0);
+    family.routes.add(item.route);
+    family.items.push(item);
+    return acc;
+  }, {}))
+    .map((family) => ({
+      ...family,
+      routeList: Array.from(family.routes).sort(),
+    }))
+    .sort((a, b) => b.count - a.count || b.maxScore - a.maxScore || a.component.localeCompare(b.component));
+  const signalFamilyRows = signalFamilies.slice(0, 20).map((family) => {
+    const routePreview = family.routeList.slice(0, 6).join(' | ');
+    const sampleLinks = family.items
+      .slice()
+      .sort((a, b) => b.priorityScore - a.priorityScore)
+      .slice(0, 3)
+      .map((item) => `<li><a href="${esc(item.localBugUrl)}" target="_blank" rel="noopener">${esc(item.title)}</a></li>`)
+      .join('');
+    return [
+      '<li>',
+      `<strong>${esc(family.component)}</strong> via <code>${esc(family.cssFile)}</code>: ${family.count} issue(s), highest priority ${family.maxScore}`,
+      `<div class="meta">Routes: ${esc(routePreview)}${family.routeList.length > 6 ? ` (+${family.routeList.length - 6} more)` : ''}</div>`,
+      `<ul class="family-samples">${sampleLinks}</ul>`,
+      '</li>',
+    ].join('');
+  }).join('');
+  const componentClusters = Object.entries(htmlIndexRows.reduce((acc, item) => {
+    if (!acc[item.component]) {
+      acc[item.component] = { count: 0, maxScore: 0 };
+    }
+    acc[item.component].count += 1;
+    acc[item.component].maxScore = Math.max(acc[item.component].maxScore, item.priorityScore || 0);
+    return acc;
+  }, {})).sort((a, b) => b[1].count - a[1].count || b[1].maxScore - a[1].maxScore || a[0].localeCompare(b[0]));
+  const componentClusterRows = componentClusters
+    .map(([component, stats]) => `<li><strong>${esc(component)}</strong>: ${stats.count} issue(s), highest priority score ${stats.maxScore}</li>`)
+    .join('');
 
   const htmlIndex = `<!DOCTYPE html>
 <html lang="en">
@@ -1611,6 +1995,7 @@ async function clearOutputDir(targetDir) {
   :root { color-scheme: light dark; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
   h1 { margin-bottom: 0.2rem; }
+  h2.section-title { margin-top: 1.5rem; }
   .meta { color: #666; margin: 0.2rem 0; }
   ol { padding-left: 1.25rem; }
   li { margin: 1rem 0 1.5rem; border: 1px solid #d0d7de; border-radius: 8px; padding: 0.9rem; }
@@ -1618,13 +2003,36 @@ async function clearOutputDir(targetDir) {
   pre { white-space: pre-wrap; margin: 0.45rem 0; background: #f6f8fa; padding: 0.65rem; border-radius: 6px; overflow-x: auto; }
   .links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
   .muted { color: #666; }
+  .priority-badge { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; }
+  .priority-badge.high { background: #fde7e9; color: #8f1d25; }
+  .priority-badge.medium { background: #fff4d8; color: #8a5b00; }
+  .priority-badge.low { background: #e9f3ff; color: #0b4a8f; }
+  .priority-reasons { margin-top: 0.2rem; margin-bottom: 0.2rem; }
+  .muted-list { color: #666; }
+  .cluster-list li { margin: 0.35rem 0; border: 0; padding: 0; }
+  .family-samples { margin-top: 0.3rem; }
+  .family-samples li { border: 0; padding: 0; margin: 0.2rem 0; }
 </style>
 </head>
 <body>
   <h1>Draft Bug Reports</h1>
   <p class="meta">Generated: ${esc(new Date().toISOString())}</p>
   <p class="meta">Baseline: ${esc(baselineLabel)} | Candidate: ${esc(candidateLabel)}${runId ? ` | Run: ${esc(runId)}` : ''}</p>
-  <p>This list is optimized for review. Use <strong>GitHub Source</strong> to inspect the draft markdown in the repository and <strong>Local Draft</strong> for the report-local file.</p>
+  <p>This list is sorted by impact to help triage what to review first: commonly found issues, easily visible changes, and drafts with potential patch suggestions.</p>
+  <h2 class="section-title">Signal Families (Top Repeated Patterns)</h2>
+  <ul class="cluster-list">
+    ${signalFamilyRows || '<li>No repeated issue families found for this run.</li>'}
+  </ul>
+  <h2 class="section-title">Common Issue Clusters (By Component)</h2>
+  <ul class="cluster-list">
+    ${componentClusterRows || '<li>No component clusters found for this run.</li>'}
+  </ul>
+  <p>Use <strong>GitHub Source</strong> to inspect the draft markdown in the repository and <strong>Rendered Draft (HTML)</strong> for the report-local file.</p>
+  <h2 class="section-title">Top 25 to Review First</h2>
+  <ol>
+    ${topPriorityRows || '<li><p>No flagged diffs found for this run.</p></li>'}
+  </ol>
+  <h2 class="section-title">All Drafts (Priority Sorted)</h2>
   <ol>
     ${htmlRows || '<li><p>No flagged diffs found for this run.</p></li>'}
   </ol>
@@ -1654,7 +2062,71 @@ async function clearOutputDir(targetDir) {
   const cssHtmlSections = [];
   for (const [cssFile, items] of cssEntries) {
     cssIndex.push(`## ${cssFile} (${items.length})`);
+    const perComponent = Object.entries(items.reduce((acc, item) => {
+      const key = item.component || 'Unknown component';
+      acc[key] = acc[key] || { count: 0, maxPriority: 0 };
+      acc[key].count += 1;
+      acc[key].maxPriority = Math.max(acc[key].maxPriority, item.priorityScore || 0);
+      return acc;
+    }, {})).sort((a, b) => b[1].count - a[1].count || b[1].maxPriority - a[1].maxPriority || a[0].localeCompare(b[0]));
+
+    const familyEntries = Object.entries(items.reduce((acc, item) => {
+      const key = item.component || 'Unknown component';
+      if (!acc[key]) {
+        acc[key] = {
+          count: 0,
+          maxPriority: 0,
+          routes: new Set(),
+          samples: [],
+        };
+      }
+      const family = acc[key];
+      family.count += 1;
+      family.maxPriority = Math.max(family.maxPriority, item.priorityScore || 0);
+      if (item.route) {
+        family.routes.add(item.route);
+      }
+      family.samples.push(item);
+      return acc;
+    }, {})).map(([component, data]) => ({
+      component,
+      count: data.count,
+      maxPriority: data.maxPriority,
+      routes: Array.from(data.routes).sort(),
+      samples: data.samples
+        .slice()
+        .sort((a, b) => (b.priorityScore || 0) - (a.priorityScore || 0))
+        .slice(0, 2),
+    })).sort((a, b) => b.count - a.count || b.maxPriority - a.maxPriority || a.component.localeCompare(b.component));
+
+    cssIndex.push('- Top repeated components in this CSS bucket:');
+    for (const [component, stats] of perComponent.slice(0, 6)) {
+      cssIndex.push(`  - ${component}: ${stats.count} issue(s), max priority ${stats.maxPriority}`);
+    }
+    cssIndex.push('- Issue families (high-level groups):');
+    for (const family of familyEntries.slice(0, 8)) {
+      const routePreview = family.routes.slice(0, 4).join(' | ');
+      cssIndex.push(`  - ${family.component}: ${family.count} issue(s), max priority ${family.maxPriority}${routePreview ? `, routes: ${routePreview}${family.routes.length > 4 ? ` (+${family.routes.length - 4} more)` : ''}` : ''}`);
+    }
+
     const cssHtmlItems = [];
+    const componentSummaryHtml = perComponent.slice(0, 6)
+      .map(([component, stats]) => `<li><strong>${esc(component)}</strong>: ${stats.count} issue(s), max priority ${stats.maxPriority}</li>`)
+      .join('');
+    const familySummaryHtml = familyEntries.slice(0, 12).map((family) => {
+      const routePreview = family.routes.slice(0, 4).join(' | ');
+      const sampleLinks = family.samples.map((sample) => {
+        const sampleHref = `bug-drafts/${sample.mdName.replace(/\.md$/i, '.html')}`;
+        return `<li><a href="${esc(sampleHref)}" target="_blank" rel="noopener">${esc(sample.title)}</a></li>`;
+      }).join('');
+      return [
+        '<li>',
+        `<strong>${esc(family.component)}</strong>: ${family.count} issue(s), max priority ${family.maxPriority}`,
+        routePreview ? `<div class="meta">Routes: ${esc(routePreview)}${family.routes.length > 4 ? ` (+${family.routes.length - 4} more)` : ''}</div>` : '',
+        sampleLinks ? `<ul class="family-samples">${sampleLinks}</ul>` : '',
+        '</li>',
+      ].join('');
+    }).join('');
     for (const item of items) {
       const sourceBugUrl = bugDraftSourceUrl(item.mdName);
       const htmlDraftName = item.mdName.replace(/\.md$/i, '.html');
@@ -1680,9 +2152,15 @@ async function clearOutputDir(targetDir) {
     cssHtmlSections.push([
       `<section>`,
       `<h2>${esc(cssFile)} (${items.length})</h2>`,
+      '<p class="meta"><strong>Issue families in this CSS bucket (grouped view):</strong></p>',
+      `<ul class="family-summary">${familySummaryHtml || '<li>No issue families available.</li>'}</ul>`,
+      '<p class="meta"><strong>Top repeated components snapshot:</strong></p>',
+      `<ul class="component-summary">${componentSummaryHtml || '<li>No component summary available.</li>'}</ul>`,
+      `<details class="issue-details"><summary>View individual draft entries (${items.length})</summary>`,
       '<ul>',
       cssHtmlItems.join('\n'),
       '</ul>',
+      '</details>',
       '</section>',
     ].join('\n'));
     cssIndex.push('');
@@ -1701,6 +2179,12 @@ async function clearOutputDir(targetDir) {
   section { border: 1px solid #d0d7de; border-radius: 8px; padding: 0.8rem 1rem; margin: 1rem 0; }
   ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
   li { margin: 0.3rem 0; }
+  .component-summary li { margin: 0.2rem 0; }
+  .family-summary li { margin: 0.5rem 0; }
+  .family-samples { margin-top: 0.3rem; }
+  .family-samples li { margin: 0.2rem 0; }
+  details.issue-details { margin-top: 0.6rem; }
+  details.issue-details summary { cursor: pointer; font-weight: 600; }
 </style>
 </head>
 <body>
