@@ -17,6 +17,51 @@ run_has_valid_data() {
   return 1
 }
 
+format_run_human_eastern() {
+  local run_id="$1"
+
+  python3 - "$run_id" <<'PY'
+from datetime import datetime
+from zoneinfo import ZoneInfo
+import sys
+
+run_id = sys.argv[1]
+tz = ZoneInfo("America/New_York")
+
+try:
+  run_dt = datetime.strptime(run_id, "%Y%m%d-%H%M%S").replace(tzinfo=tz)
+except ValueError:
+  print(run_id)
+  raise SystemExit(0)
+
+now = datetime.now(tz)
+delta_seconds = int((now - run_dt).total_seconds())
+
+if delta_seconds < 0:
+  relative = "in the future"
+elif delta_seconds < 60:
+  relative = "just now"
+elif delta_seconds < 3600:
+  minutes = delta_seconds // 60
+  unit = "minute" if minutes == 1 else "minutes"
+  relative = f"{minutes} {unit} ago"
+elif delta_seconds < 86400:
+  hours = delta_seconds // 3600
+  unit = "hour" if hours == 1 else "hours"
+  relative = f"{hours} {unit} ago"
+else:
+  days = delta_seconds // 86400
+  unit = "day" if days == 1 else "days"
+  relative = f"{days} {unit} ago"
+
+hour_12 = run_dt.hour % 12 or 12
+am_pm = "AM" if run_dt.hour < 12 else "PM"
+human = f"{run_dt.strftime('%B')} {run_dt.day}, {run_dt.year} at {hour_12}:{run_dt.minute:02d}:{run_dt.second:02d} {am_pm} ET"
+
+print(f"{human} ({relative})")
+PY
+}
+
 preferred_run_link() {
   local run_id="$1"
   local run_dir="$REPORT_DIR/$run_id"
@@ -58,6 +103,8 @@ if [[ -z "$latest_run" ]]; then
   echo "No valid report runs found under $REPORT_DIR"
   exit 1
 fi
+
+latest_run_human="$(format_run_human_eastern "$latest_run")"
 
 recent_items=""
 count=0
@@ -156,6 +203,7 @@ cat > "$OUT_HTML" <<HTML
 
     <section class="card">
       <h2>Latest Run: ${latest_run}</h2>
+      <p>${latest_run_human}</p>
       <ul>
 ${latest_links}      </ul>
     </section>
