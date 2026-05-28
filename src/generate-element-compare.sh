@@ -85,12 +85,67 @@ const routes = [
   { id: 'structure-taxonomy', path: '/admin/structure/taxonomy', label: 'Structure Taxonomy' },
   { id: 'structure-views', path: '/admin/structure/views', label: 'Structure Views' },
   { id: 'structure-view-content', path: '/admin/structure/views/view/content', label: 'Structure Content View' },
+  {
+    id: 'theme-settings',
+    path: '/admin/appearance/settings',
+    baselinePath: '/admin/appearance/settings/gin',
+    candidatePath: '/admin/appearance/settings/default_admin',
+    label: 'Theme Settings (Gin vs Default Admin)',
+    settingsProfiles: true,
+  },
   { id: 'block-content', path: '/admin/structure/block-content', label: 'Block Content Types' },
   { id: 'people-list', path: '/admin/people', label: 'People List' },
   { id: 'people-roles', path: '/admin/people/roles', label: 'People Roles' },
   { id: 'people-permissions', path: '/admin/people/permissions', label: 'People Permissions' },
   { id: 'reports-status', path: '/admin/reports/status', label: 'Reports Status' },
   { id: 'reports-updates', path: '/admin/reports/updates', label: 'Reports Updates' },
+];
+
+const defaultSettingsProfile = {
+  id: 'default',
+  label: 'Default',
+  density: ['default', 'normal', 'standard'],
+  increaseContrast: false,
+  formDescriptions: false,
+};
+
+const settingsProfiles = [
+  defaultSettingsProfile,
+  {
+    id: 'density-compact',
+    label: 'Density Compact',
+    density: ['compact'],
+    increaseContrast: false,
+    formDescriptions: false,
+  },
+  {
+    id: 'density-comfortable',
+    label: 'Density Comfortable',
+    density: ['comfortable', 'cozy', 'spacious'],
+    increaseContrast: false,
+    formDescriptions: false,
+  },
+  {
+    id: 'increase-contrast',
+    label: 'Increase Contrast On',
+    density: ['default', 'normal', 'standard'],
+    increaseContrast: true,
+    formDescriptions: false,
+  },
+  {
+    id: 'form-descriptions',
+    label: 'Form Descriptions On',
+    density: ['default', 'normal', 'standard'],
+    increaseContrast: false,
+    formDescriptions: true,
+  },
+  {
+    id: 'contrast-and-descriptions',
+    label: 'Contrast and Form Descriptions On',
+    density: ['default', 'normal', 'standard'],
+    increaseContrast: true,
+    formDescriptions: true,
+  },
 ];
 
 const components = [
@@ -177,6 +232,109 @@ async function assertRouteAccessible(page, url, sideLabel, response) {
   if (status === 401 || status === 403 || h1 === 'access denied') {
     throw new Error(`Access denied in ${sideLabel} while visiting ${url}`);
   }
+}
+
+async function applyThemeSettingsProfile(page, profile) {
+  const result = await page.evaluate((p) => {
+    const normalize = (text) => String(text || '').toLowerCase().replace(/\s+/g, ' ').trim();
+
+    const findCheckboxByMatchers = (matchers) => {
+      const labels = Array.from(document.querySelectorAll('label'));
+      for (const label of labels) {
+        const labelText = normalize(label.textContent || '');
+        if (!matchers.some((m) => m.test(labelText))) continue;
+
+        const forId = label.getAttribute('for');
+        if (forId) {
+          const input = document.getElementById(forId);
+          if (input && input.matches('input[type="checkbox"]')) return input;
+        }
+
+        const nested = label.querySelector('input[type="checkbox"]');
+        if (nested) return nested;
+      }
+
+      const checkboxes = Array.from(document.querySelectorAll('input[type="checkbox"]'));
+      for (const cb of checkboxes) {
+        const bag = normalize(`${cb.id || ''} ${cb.name || ''} ${cb.getAttribute('aria-label') || ''} ${cb.getAttribute('title') || ''}`);
+        if (matchers.some((m) => m.test(bag))) return cb;
+      }
+      return null;
+    };
+
+    const setCheckbox = (input, desired) => {
+      if (!input) return false;
+      if (Boolean(input.checked) !== Boolean(desired)) {
+        input.checked = Boolean(desired);
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+      return true;
+    };
+
+    const densitySelectCandidates = Array.from(document.querySelectorAll('select')).filter((sel) => {
+      const bag = normalize(`${sel.id || ''} ${sel.name || ''}`);
+      if (bag.includes('density')) return true;
+      const label = sel.id ? document.querySelector(`label[for="${sel.id}"]`) : null;
+      const labelText = normalize(label ? label.textContent : '');
+      return labelText.includes('density');
+    });
+
+    let densityApplied = false;
+    if (densitySelectCandidates.length && Array.isArray(p.density) && p.density.length) {
+      for (const sel of densitySelectCandidates) {
+        const options = Array.from(sel.options || []);
+        let chosen = options.find((opt) => {
+          const txt = normalize(`${opt.text} ${opt.value}`);
+          return p.density.some((needle) => txt.includes(normalize(needle)));
+        });
+
+        if (!chosen && p.id === 'default') {
+          chosen = options.find((opt) => {
+            const txt = normalize(`${opt.text} ${opt.value}`);
+            return txt.includes('default') || txt.includes('normal') || txt.includes('standard');
+          }) || options[0];
+        }
+
+        if (chosen) {
+          sel.value = chosen.value;
+          sel.dispatchEvent(new Event('input', { bubbles: true }));
+          sel.dispatchEvent(new Event('change', { bubbles: true }));
+          densityApplied = true;
+          break;
+        }
+      }
+    }
+
+    const contrastCheckbox = findCheckboxByMatchers([
+      /increase contrast/,
+      /high contrast/,
+      /contrast mode/,
+    ]);
+
+    const descriptionsCheckbox = findCheckboxByMatchers([
+      /form description/,
+      /show form description/,
+      /display form description/,
+    ]);
+
+    const contrastApplied = setCheckbox(contrastCheckbox, Boolean(p.increaseContrast));
+    const descriptionsApplied = setCheckbox(descriptionsCheckbox, Boolean(p.formDescriptions));
+
+    return {
+      densityApplied,
+      contrastApplied,
+      descriptionsApplied,
+    };
+  }, profile);
+
+  const saveButton = page.getByRole('button', { name: /save configuration|save/i }).first();
+  if (await saveButton.count()) {
+    await saveButton.click();
+    await page.waitForLoadState('networkidle');
+  }
+
+  return result;
 }
 
 async function measure(page, selector, max = 8) {
@@ -414,14 +572,14 @@ function githubElementShotUrl(relativeShotPath) {
   return `${repoWebBase}/report/${runId}/element-compare/${relativeShotPath}`;
 }
 
-function bugDraftPublishedUrl(mdName) {
-  if (!runId || !mdName) return '';
-  return `${repoPagesBase}/report/${runId}/element-compare/bug-drafts/${mdName}`;
-}
-
 function bugDraftSourceUrl(mdName) {
   if (!runId || !mdName) return '';
   return `${repoWebBase}/report/${runId}/element-compare/bug-drafts/${mdName}`;
+}
+
+function bugDraftSourceDirUrl() {
+  if (!runId) return '';
+  return `${repoWebBase.replace('/blob/main', '/tree/main')}/report/${runId}/element-compare/bug-drafts`;
 }
 
 function slugify(value) {
@@ -435,8 +593,9 @@ function slugify(value) {
 function bugDraftFileName(row) {
   const routeSlug = slugify(row.route);
   const modeSlug = slugify(row.colorMode);
+  const scenarioSlug = slugify(row.scenarioId || row.scenario || 'default');
   const componentSlug = slugify(row.componentId || row.component);
-  return `${routeSlug}-${modeSlug}-${componentSlug}.md`;
+  return `${routeSlug}-${modeSlug}-${scenarioSlug}-${componentSlug}.md`;
 }
 
 function summarize(measures) {
@@ -615,17 +774,35 @@ function evidenceMarkdown(title, evidence) {
   const rows = [];
 
   for (const route of routes) {
+    const profiles = route.settingsProfiles ? settingsProfiles : [defaultSettingsProfile];
     for (const scheme of schemes) {
-      await baselinePage.emulateMedia({ colorScheme: scheme });
-      await candidatePage.emulateMedia({ colorScheme: scheme });
-      const baselineResponse = await baselinePage.goto(`${baselineUrl}${route.path}`, { waitUntil: 'networkidle' });
-      const candidateResponse = await candidatePage.goto(`${candidateUrl}${route.path}`, { waitUntil: 'networkidle' });
-      await assertRouteAccessible(baselinePage, `${baselineUrl}${route.path}`, baselineLabel, baselineResponse);
-      await assertRouteAccessible(candidatePage, `${candidateUrl}${route.path}`, candidateLabel, candidateResponse);
-      await expandDropbuttons(baselinePage);
-      await expandDropbuttons(candidatePage);
+      for (const profile of profiles) {
+        const baselinePath = route.baselinePath || route.path;
+        const candidatePath = route.candidatePath || route.path;
 
-      for (const component of components) {
+        await baselinePage.emulateMedia({ colorScheme: scheme });
+        await candidatePage.emulateMedia({ colorScheme: scheme });
+        const baselineResponse = await baselinePage.goto(`${baselineUrl}${baselinePath}`, { waitUntil: 'networkidle' });
+        const candidateResponse = await candidatePage.goto(`${candidateUrl}${candidatePath}`, { waitUntil: 'networkidle' });
+        await assertRouteAccessible(baselinePage, `${baselineUrl}${baselinePath}`, baselineLabel, baselineResponse);
+        await assertRouteAccessible(candidatePage, `${candidateUrl}${candidatePath}`, candidateLabel, candidateResponse);
+
+        const baselineStatus = baselineResponse ? baselineResponse.status() : 0;
+        const candidateStatus = candidateResponse ? candidateResponse.status() : 0;
+        if (baselineStatus >= 400 || candidateStatus >= 400) {
+          console.warn(`Skipping ${route.label} [${profile.label}] ${scheme} due to HTTP status baseline=${baselineStatus} candidate=${candidateStatus}`);
+          continue;
+        }
+
+        if (route.settingsProfiles) {
+          await applyThemeSettingsProfile(baselinePage, profile);
+          await applyThemeSettingsProfile(candidatePage, profile);
+        }
+
+        await expandDropbuttons(baselinePage);
+        await expandDropbuttons(candidatePage);
+
+        for (const component of components) {
         const baseMeasures = await measure(baselinePage, component.selector);
         const candMeasures = await measure(candidatePage, component.selector);
         const baseCssSources = await collectCssSources(baselinePage, component.selector);
@@ -639,7 +816,7 @@ function evidenceMarkdown(title, evidence) {
         const runtimeLikelyCss = likelyCssFiles(baseCssSources, candCssSources);
         const likelyCss = themeMatches.length ? themeMatches.map((m) => m.file) : runtimeLikelyCss.slice(0, 5);
 
-        const fileBase = `${route.id}__${scheme}__${component.id}`;
+        const fileBase = `${route.id}__${profile.id}__${scheme}__${component.id}`;
         const baselineShot = `baseline/${fileBase}.png`;
         const candidateShot = `candidate/${fileBase}.png`;
 
@@ -669,10 +846,14 @@ function evidenceMarkdown(title, evidence) {
 
         const row = {
           route: route.label,
-          routePath: route.path,
+          routePath: baselinePath,
+          baselineRoutePath: baselinePath,
+          candidateRoutePath: candidatePath,
+          scenario: profile.label,
+          scenarioId: profile.id,
           colorMode: scheme,
-          baselineUrl: `${baselineUrl}${route.path}`,
-          candidateUrl: `${candidateUrl}${route.path}`,
+          baselineUrl: `${baselineUrl}${baselinePath}`,
+          candidateUrl: `${candidateUrl}${candidatePath}`,
           component: component.label,
           componentId: component.id,
           selector: component.selector,
@@ -692,6 +873,7 @@ function evidenceMarkdown(title, evidence) {
 
         row.patchSuggestion = buildPatchSuggestion(row);
         rows.push(row);
+      }
       }
     }
   }
@@ -723,13 +905,20 @@ function evidenceMarkdown(title, evidence) {
     .join('');
   const uniqueRouteCount = new Set(rows.map((r) => r.route)).size;
   const uniqueModeCount = new Set(rows.map((r) => r.colorMode)).size;
+  const uniqueScenarioCount = new Set(rows.map((r) => r.scenarioId || 'default')).size;
   const routeModeCombos = uniqueRouteCount * uniqueModeCount;
+  const routeModeScenarioCombos = new Set(rows.map((r) => `${r.route}|${r.colorMode}|${r.scenarioId || 'default'}`)).size;
+
+  const flaggedRows = rows.filter((r) => r.comparison.significant > 0);
+  const expectedDraftNames = new Set(flaggedRows.map((row) => bugDraftFileName(row)));
 
   const rowHtml = rows.map((row) => {
     const sig = row.comparison.significant;
     const className = sig > 0 ? 'flagged' : '';
     const draftMdName = sig > 0 ? bugDraftFileName(row) : '';
-    const draftPublished = draftMdName ? bugDraftPublishedUrl(draftMdName) : '';
+    const draftSource = draftMdName ? bugDraftSourceUrl(draftMdName) : '';
+    const draftDirSource = bugDraftSourceDirUrl();
+    const draftExists = draftMdName ? expectedDraftNames.has(draftMdName) : false;
     const diffs = [];
     for (const d of row.comparison.deltas) {
       if (d.flagged) {
@@ -750,13 +939,14 @@ function evidenceMarkdown(title, evidence) {
       <tr class="${className}" data-route="${esc(row.route)}" data-component="${esc(row.component)}" data-significant="${sig > 0 ? 'yes' : 'no'}" data-css="${esc(cssKey)}" data-mode="${esc(row.colorMode)}">
         <td>
           <div><strong>${esc(row.route)}</strong></div>
+          <div class="meta"><strong>Scenario:</strong> ${esc(row.scenario || 'Default')}</div>
           <div class="meta"><strong>Mode:</strong> ${esc(row.colorMode)}</div>
           <div>${esc(row.component)}</div>
           <div class="meta"><a href="${esc(row.baselineUrl)}" target="_blank" rel="noopener">${esc(baselineLabel)} URL</a></div>
           <div class="meta"><a href="${esc(row.candidateUrl)}" target="_blank" rel="noopener">${esc(candidateLabel)} URL</a></div>
           <div class="meta">${esc(row.selector)}</div>
           <div class="meta"><strong>Likely CSS:</strong> ${cssMeta}</div>
-          ${draftMdName ? `<div class="meta"><strong>Draft Issue:</strong> <a href="bug-drafts/${esc(draftMdName)}" target="_blank" rel="noopener">Open local draft</a>${draftPublished ? ` | <a href="${esc(draftPublished)}" target="_blank" rel="noopener">Published</a>` : ''}</div>` : ''}
+          ${draftMdName ? `<div class="meta"><strong>Draft Issue:</strong> ${draftExists ? `<a href="bug-drafts/${esc(draftMdName)}" target="_blank" rel="noopener">Open local draft</a>` : '<span>Local draft missing</span>'}${draftSource ? ` | <a href="${esc(draftSource)}" target="_blank" rel="noopener">GitHub Source</a>` : ''}${draftDirSource ? ` | <a href="${esc(draftDirSource)}" target="_blank" rel="noopener">All Drafts (GitHub)</a>` : ''}</div>` : ''}
           <details>
             <summary>XPath and HTML snippets</summary>
             ${baselineEvidence}
@@ -788,9 +978,12 @@ function evidenceMarkdown(title, evidence) {
   }).join('');
 
   const routeLinksHtml = routes.map((r) => {
-    const b = `${baselineUrl}${r.path}`;
-    const c = `${candidateUrl}${r.path}`;
-    return `<tr><td>${esc(r.label)}</td><td>${esc(r.path)}</td><td><a href="${esc(b)}" target="_blank" rel="noopener">${esc(b)}</a></td><td><a href="${esc(c)}" target="_blank" rel="noopener">${esc(c)}</a></td></tr>`;
+    const bPath = r.baselinePath || r.path;
+    const cPath = r.candidatePath || r.path;
+    const b = `${baselineUrl}${bPath}`;
+    const c = `${candidateUrl}${cPath}`;
+    const displayPath = bPath === cPath ? bPath : `${bPath} -> ${cPath}`;
+    return `<tr><td>${esc(r.label)}</td><td>${esc(displayPath)}</td><td><a href="${esc(b)}" target="_blank" rel="noopener">${esc(b)}</a></td><td><a href="${esc(c)}" target="_blank" rel="noopener">${esc(c)}</a></td></tr>`;
   }).join('');
 
   const html = `<!doctype html>
@@ -823,7 +1016,7 @@ function evidenceMarkdown(title, evidence) {
 <body>
 <header>
   <div><strong>System-Wide Element Comparison Dashboard</strong></div>
-  <div class="sub">${esc(data.baselineLabel)} vs ${esc(data.candidateLabel)} | Generated: ${esc(data.generatedAt)} | Routes: ${uniqueRouteCount} | Modes: ${uniqueModeCount} | Route x Mode: ${routeModeCombos}</div>
+  <div class="sub">${esc(data.baselineLabel)} vs ${esc(data.candidateLabel)} | Generated: ${esc(data.generatedAt)} | Routes: ${uniqueRouteCount} | Modes: ${uniqueModeCount} | Scenarios: ${uniqueScenarioCount} | Route x Mode: ${routeModeCombos} | Route x Mode x Scenario: ${routeModeScenarioCombos}</div>
 </header>
 <main>
   <section class="agg">
@@ -964,7 +1157,6 @@ function evidenceMarkdown(title, evidence) {
 
   fs.writeFileSync(path.join(outDir, 'element-compare-dashboard.html'), html);
 
-  const flagged = rows.filter((r) => r.comparison.significant > 0);
   const bugDraftDir = path.join(outDir, 'bug-drafts');
   fs.mkdirSync(bugDraftDir, { recursive: true });
 
@@ -986,7 +1178,7 @@ function evidenceMarkdown(title, evidence) {
   const patchBuckets = {};
 
   let idx = 1;
-  for (const row of flagged) {
+  for (const row of flaggedRows) {
     const title = `Admin Theme (${row.colorMode}) ${row.route} - ${row.component} style regression vs Drupal 11 Gin`;
     const deltas = [];
     for (const d of row.comparison.deltas) {
@@ -1093,13 +1285,10 @@ function evidenceMarkdown(title, evidence) {
       row.candidateShot,
     ].map(csvEsc).join(','));
 
-    const publishedBugUrl = bugDraftPublishedUrl(mdName);
     const sourceBugUrl = bugDraftSourceUrl(mdName);
-    if (publishedBugUrl) {
-      indexLines.push(`${idx}. [${title}](bug-drafts/${mdName})`);
-      indexLines.push(`   Published: ${publishedBugUrl}`);
-    } else {
-      indexLines.push(`${idx}. [${title}](bug-drafts/${mdName})`);
+    indexLines.push(`${idx}. [${title}](bug-drafts/${mdName})`);
+    if (sourceBugUrl) {
+      indexLines.push(`   GitHub source: ${sourceBugUrl}`);
     }
 
     const cssSummary = cssList.slice(0, 3).join(' | ');
@@ -1113,7 +1302,6 @@ function evidenceMarkdown(title, evidence) {
       colorMode: row.colorMode,
       component: row.component,
       localBugUrl: `bug-drafts/${mdName}`,
-      publishedBugUrl,
       sourceBugUrl,
       cssSummary,
       patchSummary,
@@ -1139,9 +1327,6 @@ function evidenceMarkdown(title, evidence) {
   fs.writeFileSync(path.join(outDir, 'bug-drafts.csv'), `${csvLines.join('\n')}\n`);
 
   const htmlRows = htmlIndexRows.map((item) => {
-    const publishedLink = item.publishedBugUrl
-      ? `<a href="${esc(item.publishedBugUrl)}" target="_blank" rel="noopener">Published</a>`
-      : '<span class="muted">Published n/a</span>';
     const sourceLink = item.sourceBugUrl
       ? `<a href="${esc(item.sourceBugUrl)}" target="_blank" rel="noopener">GitHub Source</a>`
       : '<span class="muted">Source n/a</span>';
@@ -1154,7 +1339,6 @@ function evidenceMarkdown(title, evidence) {
       `<pre>${esc(item.patchSummary)}</pre>`,
       '<p class="links">',
       `<a href="${esc(item.localBugUrl)}" target="_blank" rel="noopener">Local Draft</a>`,
-      publishedLink,
       sourceLink,
       '</p>',
       '</li>',
@@ -1216,11 +1400,10 @@ function evidenceMarkdown(title, evidence) {
     cssIndex.push(`## ${cssFile} (${items.length})`);
     const cssHtmlItems = [];
     for (const item of items) {
-      const publishedBugUrl = bugDraftPublishedUrl(item.mdName);
       const sourceBugUrl = bugDraftSourceUrl(item.mdName);
       cssIndex.push(`- ${item.idx}. [${item.title}](bug-drafts/${item.mdName})`);
-      if (publishedBugUrl) {
-        cssIndex.push(`  - Published: ${publishedBugUrl}`);
+      if (sourceBugUrl) {
+        cssIndex.push(`  - GitHub source: ${sourceBugUrl}`);
       }
       if (item.secondary && item.secondary.length) {
         cssIndex.push(`  - Secondary candidates: ${item.secondary.slice(0, 3).join(' | ')}`);
@@ -1232,7 +1415,6 @@ function evidenceMarkdown(title, evidence) {
       cssHtmlItems.push([
         '<li>',
         `<a href="bug-drafts/${esc(item.mdName)}" target="_blank" rel="noopener">${item.idx}. ${esc(item.title)}</a>`,
-        publishedBugUrl ? ` <a href="${esc(publishedBugUrl)}" target="_blank" rel="noopener">Published</a>` : '',
         sourceBugUrl ? ` <a href="${esc(sourceBugUrl)}" target="_blank" rel="noopener">GitHub Source</a>` : '',
         secondary,
         '</li>',
