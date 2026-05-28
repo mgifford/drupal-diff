@@ -135,6 +135,10 @@ use Drupal\taxonomy\Entity\Term;
 use Drupal\node\Entity\Node;
 use Drupal\block_content\Entity\BlockContent;
 use Drupal\Core\File\FileSystemInterface;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\Core\Entity\Entity\EntityFormDisplay;
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
 
 $timestamp = \Drupal::time()->getRequestTime();
 $lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus, metus non cursus eleifend, lectus augue gravida nibh, ut blandit ipsum arcu in mauris.";
@@ -162,6 +166,57 @@ if (!\Drupal::entityTypeManager()->getStorage("node_type")->load("page")) {
   ]);
   $pageType->save();
   print "Created content type: page\n";
+}
+
+if (!FieldStorageConfig::loadByName("node", "body")) {
+  FieldStorageConfig::create([
+    "field_name" => "body",
+    "entity_type" => "node",
+    "type" => "text_with_summary",
+    "cardinality" => 1,
+    "translatable" => TRUE,
+  ])->save();
+}
+
+foreach (["article", "page"] as $bundle) {
+  if (!FieldConfig::loadByName("node", $bundle, "body")) {
+    FieldConfig::create([
+      "field_name" => "body",
+      "entity_type" => "node",
+      "bundle" => $bundle,
+      "label" => "Body",
+      "required" => FALSE,
+      "translatable" => TRUE,
+      "settings" => ["display_summary" => TRUE],
+    ])->save();
+    print "Attached body field to content type: $bundle\n";
+  }
+
+  $formDisplay = EntityFormDisplay::load("node.$bundle.default") ?: EntityFormDisplay::create([
+    "targetEntityType" => "node",
+    "bundle" => $bundle,
+    "mode" => "default",
+    "status" => TRUE,
+  ]);
+  $formDisplay->setComponent("body", [
+    "type" => "text_textarea_with_summary",
+    "weight" => 5,
+    "settings" => ["rows" => 9],
+  ]);
+  $formDisplay->save();
+
+  $viewDisplay = EntityViewDisplay::load("node.$bundle.default") ?: EntityViewDisplay::create([
+    "targetEntityType" => "node",
+    "bundle" => $bundle,
+    "mode" => "default",
+    "status" => TRUE,
+  ]);
+  $viewDisplay->setComponent("body", [
+    "type" => "text_default",
+    "label" => "hidden",
+    "weight" => 5,
+  ]);
+  $viewDisplay->save();
 }
 
 $editor = user_load_by_name("editor1");

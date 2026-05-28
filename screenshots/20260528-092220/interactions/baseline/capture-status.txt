@@ -1,0 +1,4 @@
+project=baseline
+base_url=http://drupal-11.3.10.ddev.site
+capture_exit_code=137
+timestamp_utc=2026-05-28T13:34:00Z

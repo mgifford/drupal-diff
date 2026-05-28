@@ -107,7 +107,7 @@ Candidate (Drupal 12):
 
 1. Use Drupal 12 branch (`main`/12.x-dev equivalent in your clone)
 2. Install dependencies in DDEV
-3. Use core admin theme (currently `claro` unless your branch changes it)
+3. Use core admin theme `default_admin` (the compare runner enforces this automatically)
 
 ### 3. Ensure both projects run concurrently in DDEV
 

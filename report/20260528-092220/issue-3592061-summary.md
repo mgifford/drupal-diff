@@ -1,0 +1,134 @@
+# Issue 3592061 Visual Diff Summary
+
+Generated from: /Users/mike.gifford/drupal-diff/report/20260528-092220
+
+## Content (8)
+
+| Route | Viewport | Change Type | Severity | Diff Artifact |
+|---|---|---|---|---|
+| content/content/overview | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-content-content-overview-default-state-narrow-dark/content-overview-diff.png |
+| content/content/overview | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-content-content-overview-default-state-narrow/content-overview-diff.png |
+| content/content/overview | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-content-content-overview-default-state-wide-dark/content-overview-diff.png |
+| content/content/overview | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-content-content-overview-default-state-wide/content-overview-diff.png |
+| content/node/add/article | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-content-node-add-article-default-state-narrow-dark/node-add-article-diff.png |
+| content/node/add/article | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-content-node-add-article-default-state-narrow/node-add-article-diff.png |
+| content/node/add/article | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-content-node-add-article-default-state-wide-dark/node-add-article-diff.png |
+| content/node/add/article | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-content-node-add-article-default-state-wide/node-add-article-diff.png |
+
+## Structure (44)
+
+| Route | Viewport | Change Type | Severity | Diff Artifact |
+|---|---|---|---|---|
+| structure/structure/block/layout | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-block-layout-default-state-narrow-dark/structure-block-layout-diff.png |
+| structure/structure/block/layout | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-block-layout-default-state-narrow/structure-block-layout-diff.png |
+| structure/structure/block/layout | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-block-layout-default-state-wide-dark/structure-block-layout-diff.png |
+| structure/structure/block/layout | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-block-layout-default-state-wide/structure-block-layout-diff.png |
+| structure/structure/co/1c9c0/ticle/display | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-co-1c9c0-ticle-display-default-state-narrow-dark/structure-content-types-article-display-diff.png |
+| structure/structure/co/1c9c0/ticle/display | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-co-1c9c0-ticle-display-default-state-narrow/structure-content-types-article-display-diff.png |
+| structure/structure/co/1c9c0/ticle/display | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-co-1c9c0-ticle-display-default-state-wide-dark/structure-content-types-article-display-diff.png |
+| structure/structure/co/1c9c0/ticle/display | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-co-1c9c0-ticle-display-default-state-wide/structure-content-types-article-display-diff.png |
+| structure/structure/co/22e68/rticle/fields | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-co-22e68-rticle-fields-default-state-narrow-dark/structure-content-types-article-fields-diff.png |
+| structure/structure/co/22e68/rticle/fields | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-co-22e68-rticle-fields-default-state-narrow/structure-content-types-article-fields-diff.png |
+| structure/structure/co/22e68/rticle/fields | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-co-22e68-rticle-fields-default-state-wide-dark/structure-content-types-article-fields-diff.png |
+| structure/structure/co/22e68/rticle/fields | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-co-22e68-rticle-fields-default-state-wide/structure-content-types-article-fields-diff.png |
+| structure/structure/content/types/article | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-content-types-article-default-state-narrow-dark/structure-content-types-article-diff.png |
+| structure/structure/content/types/article | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-content-types-article-default-state-narrow/structure-content-types-article-diff.png |
+| structure/structure/content/types/article | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-content-types-article-default-state-wide-dark/structure-content-types-article-diff.png |
+| structure/structure/content/types/article | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-content-types-article-default-state-wide/structure-content-types-article-diff.png |
+| structure/structure/content/types | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-content-types-default-state-narrow-dark/structure-content-types-diff.png |
+| structure/structure/content/types | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-content-types-default-state-narrow/structure-content-types-diff.png |
+| structure/structure/content/types | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-content-types-default-state-wide-dark/structure-content-types-diff.png |
+| structure/structure/content/types | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-content-types-default-state-wide/structure-content-types-diff.png |
+| structure/structure/menu/admin | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-menu-admin-default-state-narrow-dark/structure-menu-admin-diff.png |
+| structure/structure/menu/admin | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-menu-admin-default-state-narrow/structure-menu-admin-diff.png |
+| structure/structure/menu/admin | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-menu-admin-default-state-wide-dark/structure-menu-admin-diff.png |
+| structure/structure/menu/admin | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-menu-admin-default-state-wide/structure-menu-admin-diff.png |
+| structure/structure/menus | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-menus-default-state-narrow-dark/structure-menus-diff.png |
+| structure/structure/menus | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-menus-default-state-narrow/structure-menus-diff.png |
+| structure/structure/menus | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-menus-default-state-wide-dark/structure-menus-diff.png |
+| structure/structure/menus | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-menus-default-state-wide/structure-menus-diff.png |
+| structure/structure/overview | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-overview-default-state-narrow-dark/structure-overview-diff.png |
+| structure/structure/overview | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-overview-default-state-narrow/structure-overview-diff.png |
+| structure/structure/overview | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-overview-default-state-wide-dark/structure-overview-diff.png |
+| structure/structure/overview | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-overview-default-state-wide/structure-overview-diff.png |
+| structure/structure/taxonomy | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-taxonomy-default-state-narrow-dark/structure-taxonomy-diff.png |
+| structure/structure/taxonomy | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-taxonomy-default-state-narrow/structure-taxonomy-diff.png |
+| structure/structure/taxonomy | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-taxonomy-default-state-wide-dark/structure-taxonomy-diff.png |
+| structure/structure/taxonomy | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-taxonomy-default-state-wide/structure-taxonomy-diff.png |
+| structure/structure/views/content | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-views-content-default-state-narrow-dark/structure-views-content-diff.png |
+| structure/structure/views/content | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-views-content-default-state-narrow/structure-views-content-diff.png |
+| structure/structure/views/content | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-views-content-default-state-wide-dark/structure-views-content-diff.png |
+| structure/structure/views/content | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-views-content-default-state-wide/structure-views-content-diff.png |
+| structure/structure/views | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-views-default-state-narrow-dark/structure-views-diff.png |
+| structure/structure/views | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-views-default-state-narrow/structure-views-diff.png |
+| structure/structure/views | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-views-default-state-wide-dark/structure-views-diff.png |
+| structure/structure/views | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-structure-structure-views-default-state-wide/structure-views-diff.png |
+
+## Appearance (4)
+
+| Route | Viewport | Change Type | Severity | Diff Artifact |
+|---|---|---|---|---|
+| appearance/appearance/list | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-appearance-appearance-list-default-state-narrow-dark/appearance-list-diff.png |
+| appearance/appearance/list | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-appearance-appearance-list-default-state-narrow/appearance-list-diff.png |
+| appearance/appearance/list | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-appearance-appearance-list-default-state-wide-dark/appearance-list-diff.png |
+| appearance/appearance/list | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-appearance-appearance-list-default-state-wide/appearance-list-diff.png |
+
+## Configuration (24)
+
+| Route | Viewport | Change Type | Severity | Diff Artifact |
+|---|---|---|---|---|
+| config/config/media/file/system | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-media-file-system-default-state-narrow-dark/config-media-file-system-diff.png |
+| config/config/media/file/system | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-media-file-system-default-state-narrow/config-media-file-system-diff.png |
+| config/config/media/file/system | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-media-file-system-default-state-wide-dark/config-media-file-system-diff.png |
+| config/config/media/file/system | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-media-file-system-default-state-wide/config-media-file-system-diff.png |
+| config/config/overview | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-overview-default-state-narrow-dark/config-overview-diff.png |
+| config/config/overview | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-overview-default-state-narrow/config-overview-diff.png |
+| config/config/overview | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-overview-default-state-wide-dark/config-overview-diff.png |
+| config/config/overview | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-overview-default-state-wide/config-overview-diff.png |
+| config/config/performance | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-performance-default-state-narrow-dark/config-performance-diff.png |
+| config/config/performance | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-performance-default-state-narrow/config-performance-diff.png |
+| config/config/performance | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-performance-default-state-wide-dark/config-performance-diff.png |
+| config/config/performance | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-performance-default-state-wide/config-performance-diff.png |
+| config/config/site/info | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-site-info-default-state-narrow-dark/config-site-info-diff.png |
+| config/config/site/info | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-site-info-default-state-narrow/config-site-info-diff.png |
+| config/config/site/info | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-site-info-default-state-wide-dark/config-site-info-diff.png |
+| config/config/site/info | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-site-info-default-state-wide/config-site-info-diff.png |
+| config/config/text/formats/basic/html | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-text-formats-basic-html-default-state-narrow-dark/config-text-formats-basic-html-diff.png |
+| config/config/text/formats/basic/html | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-text-formats-basic-html-default-state-narrow/config-text-formats-basic-html-diff.png |
+| config/config/text/formats/basic/html | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-text-formats-basic-html-default-state-wide-dark/config-text-formats-basic-html-diff.png |
+| config/config/text/formats/basic/html | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-text-formats-basic-html-default-state-wide/config-text-formats-basic-html-diff.png |
+| config/config/text/formats | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-text-formats-default-state-narrow-dark/config-text-formats-diff.png |
+| config/config/text/formats | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-text-formats-default-state-narrow/config-text-formats-diff.png |
+| config/config/text/formats | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-text-formats-default-state-wide-dark/config-text-formats-diff.png |
+| config/config/text/formats | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-config-config-text-formats-default-state-wide/config-text-formats-diff.png |
+
+## People (12)
+
+| Route | Viewport | Change Type | Severity | Diff Artifact |
+|---|---|---|---|---|
+| people/people/list | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-people-people-list-default-state-narrow-dark/people-list-diff.png |
+| people/people/list | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-people-people-list-default-state-narrow/people-list-diff.png |
+| people/people/list | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-people-people-list-default-state-wide-dark/people-list-diff.png |
+| people/people/list | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-people-people-list-default-state-wide/people-list-diff.png |
+| people/people/permissions | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-people-people-permissions-default-state-narrow-dark/people-permissions-diff.png |
+| people/people/permissions | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-people-people-permissions-default-state-narrow/people-permissions-diff.png |
+| people/people/permissions | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-people-people-permissions-default-state-wide-dark/people-permissions-diff.png |
+| people/people/permissions | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-people-people-permissions-default-state-wide/people-permissions-diff.png |
+| people/people/roles | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-people-people-roles-default-state-narrow-dark/people-roles-diff.png |
+| people/people/roles | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-people-people-roles-default-state-narrow/people-roles-diff.png |
+| people/people/roles | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-people-people-roles-default-state-wide-dark/people-roles-diff.png |
+| people/people/roles | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-people-people-roles-default-state-wide/people-roles-diff.png |
+
+## Reports (8)
+
+| Route | Viewport | Change Type | Severity | Diff Artifact |
+|---|---|---|---|---|
+| reports/reports/status | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-reports-reports-status-default-state-narrow-dark/reports-status-diff.png |
+| reports/reports/status | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-reports-reports-status-default-state-narrow/reports-status-diff.png |
+| reports/reports/status | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-reports-reports-status-default-state-wide-dark/reports-status-diff.png |
+| reports/reports/status | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-reports-reports-status-default-state-wide/reports-status-diff.png |
+| reports/reports/updates | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-reports-reports-updates-default-state-narrow-dark/reports-updates-diff.png |
+| reports/reports/updates | narrow | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-reports-reports-updates-default-state-narrow/reports-updates-diff.png |
+| reports/reports/updates | unknown | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-reports-reports-updates-default-state-wide-dark/reports-updates-diff.png |
+| reports/reports/updates | wide | visual-regression | medium | /Users/mike.gifford/drupal-diff/report/20260528-092220/test-results/vrt-reports-reports-updates-default-state-wide/reports-updates-diff.png |
+

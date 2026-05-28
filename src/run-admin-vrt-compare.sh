@@ -98,6 +98,14 @@ echo "[1/7] Starting DDEV projects"
 (cd "$BASELINE_DIR" && ddev start >/dev/null)
 (cd "$CANDIDATE_DIR" && ddev start >/dev/null)
 
+echo "[1.5/7] Enforcing admin themes (baseline=gin, candidate=default_admin)"
+(cd "$BASELINE_DIR" && ddev drush theme:enable gin -y >/dev/null)
+(cd "$BASELINE_DIR" && ddev drush config:set system.theme admin gin -y >/dev/null)
+(cd "$CANDIDATE_DIR" && ddev drush theme:enable default_admin -y >/dev/null)
+(cd "$CANDIDATE_DIR" && ddev drush config:set system.theme admin default_admin -y >/dev/null)
+(cd "$BASELINE_DIR" && ddev drush cr >/dev/null)
+(cd "$CANDIDATE_DIR" && ddev drush cr >/dev/null)
+
 echo "[2/7] Ensuring admin VRT add-on is installed"
 if [[ ! -d "$BASELINE_DIR/.ddev/drupal-admin-vrt" ]]; then
   (cd "$BASELINE_DIR" && ddev add-on install https://github.com/mherchel/ddev-drupal-admin-vrt/tarball/main)

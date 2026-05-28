@@ -1,0 +1,2292 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: vrt/content.spec.ts >> content-overview >> default state
+- Location: tests/vrt/generate-vrt-tests.ts:9:11
+
+# Error details
+
+```
+Error: expect(page).toHaveScreenshot(expected) failed
+
+Timeout: 5000ms
+  Timeout 5000ms exceeded.
+
+  Snapshot: content-overview.png
+
+Call log:
+  - Expect "toHaveScreenshot(content-overview.png)" with timeout 5000ms
+    - verifying given screenshot expectation
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - Expected an image 1280px by 4640px, received 1280px by 8998px. 160367 pixels (ratio 0.02 of all image pixels) are different.
+  - waiting 100ms before taking screenshot
+  - Timeout 5000ms exceeded.
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - navigation "Administrative sidebar" [ref=e3]:
+    - heading "Administrative sidebar" [level=2] [ref=e4]
+    - generic [ref=e5]:
+      - link "Home page" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img [ref=e8]
+        - generic [ref=e11]: Home page
+      - generic [ref=e12]:
+        - heading "Content" [level=3] [ref=e13]
+        - list [ref=e14]:
+          - listitem [ref=e15]:
+            - button "Extend Create" [ref=e16] [cursor=pointer]:
+              - img [ref=e17]
+              - generic [ref=e19]: Extend
+              - generic [ref=e20]: Create
+              - img [ref=e21]
+            - generic [ref=e23]:
+              - link "Create" [ref=e24] [cursor=pointer]:
+                - /url: /node/add
+                - generic [ref=e25]: Create
+              - list [ref=e26]:
+                - listitem [ref=e27]:
+                  - link "Article" [ref=e28] [cursor=pointer]:
+                    - /url: /node/add/article
+                    - generic [ref=e29]: Article
+                - listitem [ref=e30]:
+                  - link "Basic page" [ref=e31] [cursor=pointer]:
+                    - /url: /node/add/page
+                    - generic [ref=e32]: Basic page
+          - listitem [ref=e33]:
+            - link "Blocks" [ref=e34] [cursor=pointer]:
+              - /url: /admin/content/block
+              - img [ref=e35]
+              - generic [ref=e37]: Blocks
+          - listitem [ref=e38]:
+            - link "Content" [ref=e39] [cursor=pointer]:
+              - /url: /admin/content
+              - img [ref=e40]
+              - generic [ref=e42]: Content
+          - listitem [ref=e43]:
+            - link "Files" [ref=e44] [cursor=pointer]:
+              - /url: /admin/content/files
+              - img [ref=e45]
+              - generic [ref=e47]: Files
+      - generic [ref=e48]:
+        - heading "Administration" [level=3] [ref=e49]
+        - list [ref=e50]:
+          - listitem [ref=e51]:
+            - button "Extend Structure" [ref=e52] [cursor=pointer]:
+              - img [ref=e53]
+              - generic [ref=e55]: Extend
+              - generic [ref=e56]: Structure
+              - img [ref=e57]
+            - generic [ref=e59]:
+              - link "Structure" [ref=e60] [cursor=pointer]:
+                - /url: /admin/structure
+                - generic [ref=e61]: Structure
+              - list [ref=e62]:
+                - listitem [ref=e63]:
+                  - link "Block layout" [ref=e64] [cursor=pointer]:
+                    - /url: /admin/structure/block
+                    - generic [ref=e65]: Block layout
+                - listitem [ref=e66]:
+                  - link "Block types" [ref=e67] [cursor=pointer]:
+                    - /url: /admin/structure/block-content
+                    - generic [ref=e68]: Block types
+                - listitem [ref=e69]:
+                  - link "Content types" [ref=e70] [cursor=pointer]:
+                    - /url: /admin/structure/types
+                    - generic [ref=e71]: Content types
+                - listitem [ref=e72]:
+                  - button "Display modes" [ref=e73] [cursor=pointer]:
+                    - generic [ref=e74]: Display modes
+                    - img [ref=e75]
+                - listitem [ref=e77]:
+                  - link "Menus" [ref=e78] [cursor=pointer]:
+                    - /url: /admin/structure/menu
+                    - generic [ref=e79]: Menus
+                - listitem [ref=e80]:
+                  - link "Taxonomy" [ref=e81] [cursor=pointer]:
+                    - /url: /admin/structure/taxonomy
+                    - generic [ref=e82]: Taxonomy
+                - listitem [ref=e83]:
+                  - link "Views" [ref=e84] [cursor=pointer]:
+                    - /url: /admin/structure/views
+                    - generic [ref=e85]: Views
+          - listitem [ref=e86]:
+            - link "Appearance" [ref=e87] [cursor=pointer]:
+              - /url: /admin/appearance
+              - img [ref=e88]
+              - generic [ref=e90]: Appearance
+          - listitem [ref=e91]:
+            - link "Extend" [ref=e92] [cursor=pointer]:
+              - /url: /admin/modules
+              - img [ref=e93]
+              - generic [ref=e95]: Extend
+          - listitem [ref=e96]:
+            - button "Extend Configuration" [ref=e97] [cursor=pointer]:
+              - img [ref=e98]
+              - generic [ref=e100]: Extend
+              - generic [ref=e101]: Configuration
+              - img [ref=e102]
+            - generic [ref=e104]:
+              - link "Configuration" [ref=e105] [cursor=pointer]:
+                - /url: /admin/config
+                - generic [ref=e106]: Configuration
+              - list [ref=e107]:
+                - listitem [ref=e108]:
+                  - button "People" [ref=e109] [cursor=pointer]:
+                    - generic [ref=e110]: People
+                    - img [ref=e111]
+                - listitem [ref=e113]:
+                  - button "System" [ref=e114] [cursor=pointer]:
+                    - generic [ref=e115]: System
+                    - img [ref=e116]
+                - listitem [ref=e118]:
+                  - button "Content authoring" [ref=e119] [cursor=pointer]:
+                    - generic [ref=e120]: Content authoring
+                    - img [ref=e121]
+                - listitem [ref=e123]:
+                  - button "User interface" [ref=e124] [cursor=pointer]:
+                    - generic [ref=e125]: User interface
+                    - img [ref=e126]
+                - listitem [ref=e128]:
+                  - button "Development" [ref=e129] [cursor=pointer]:
+                    - generic [ref=e130]: Development
+                    - img [ref=e131]
+                - listitem [ref=e133]:
+                  - button "Media" [ref=e134] [cursor=pointer]:
+                    - generic [ref=e135]: Media
+                    - img [ref=e136]
+                - listitem [ref=e138]:
+                  - button "Search and metadata" [ref=e139] [cursor=pointer]:
+                    - generic [ref=e140]: Search and metadata
+                    - img [ref=e141]
+                - listitem [ref=e143]:
+                  - button "Region and language" [ref=e144] [cursor=pointer]:
+                    - generic [ref=e145]: Region and language
+                    - img [ref=e146]
+                - listitem [ref=e148]:
+                  - button "Web services" [ref=e149] [cursor=pointer]:
+                    - generic [ref=e150]: Web services
+                    - img [ref=e151]
+          - listitem [ref=e153]:
+            - link "People" [ref=e154] [cursor=pointer]:
+              - /url: /admin/people
+              - img [ref=e155]
+              - generic [ref=e157]: People
+          - listitem [ref=e158]:
+            - button "Extend Reports" [ref=e159] [cursor=pointer]:
+              - img [ref=e160]
+              - generic [ref=e162]: Extend
+              - generic [ref=e163]: Reports
+              - img [ref=e164]
+            - generic [ref=e166]:
+              - link "Reports" [ref=e167] [cursor=pointer]:
+                - /url: /admin/reports
+                - generic [ref=e168]: Reports
+              - list [ref=e169]:
+                - listitem [ref=e170]:
+                  - link "Status report" [ref=e171] [cursor=pointer]:
+                    - /url: /admin/reports/status
+                    - generic [ref=e172]: Status report
+                - listitem [ref=e173]:
+                  - link "Available updates" [ref=e174] [cursor=pointer]:
+                    - /url: /admin/reports/updates
+                    - generic [ref=e175]: Available updates
+                - listitem [ref=e176]:
+                  - link "Recent log messages" [ref=e177] [cursor=pointer]:
+                    - /url: /admin/reports/dblog
+                    - generic [ref=e178]: Recent log messages
+                - listitem [ref=e179]:
+                  - link "Field list" [ref=e180] [cursor=pointer]:
+                    - /url: /admin/reports/fields
+                    - generic [ref=e181]: Field list
+                - listitem [ref=e182]:
+                  - link "Top 'access denied' errors" [ref=e183] [cursor=pointer]:
+                    - /url: /admin/reports/access-denied
+                    - generic [ref=e184]: Top 'access denied' errors
+                - listitem [ref=e185]:
+                  - link "Top 'page not found' errors" [ref=e186] [cursor=pointer]:
+                    - /url: /admin/reports/page-not-found
+                    - generic [ref=e187]: Top 'page not found' errors
+                - listitem [ref=e188]:
+                  - link "Views plugins" [ref=e189] [cursor=pointer]:
+                    - /url: /admin/reports/views-plugins
+                    - generic [ref=e190]: Views plugins
+          - listitem [ref=e191]:
+            - link "Announcements" [ref=e192] [cursor=pointer]:
+              - /url: /admin/announcements_feed
+              - img [ref=e193]
+              - generic [ref=e197]: Announcements
+    - generic [ref=e198]:
+      - generic [ref=e199]:
+        - heading "Help" [level=3] [ref=e200]
+        - list [ref=e201]:
+          - listitem [ref=e202]:
+            - link "Help" [ref=e203] [cursor=pointer]:
+              - /url: /admin/help
+              - img [ref=e204]
+              - generic [ref=e206]: Help
+      - generic [ref=e207]:
+        - heading "User" [level=3] [ref=e208]
+        - list [ref=e209]:
+          - listitem [ref=e210]:
+            - button "Extend admin" [ref=e211] [cursor=pointer]:
+              - img [ref=e212]
+              - generic [ref=e214]: Extend
+              - generic [ref=e215]: admin
+              - img [ref=e216]
+            - generic [ref=e218]:
+              - link "admin" [ref=e219] [cursor=pointer]:
+                - /url: /user
+                - generic [ref=e220]: admin
+              - list [ref=e221]:
+                - listitem [ref=e222]:
+                  - link "View profile" [ref=e223] [cursor=pointer]:
+                    - /url: /user
+                    - generic [ref=e224]: View profile
+                - listitem [ref=e225]:
+                  - link "Edit profile" [ref=e226] [cursor=pointer]:
+                    - /url: /user/edit
+                    - generic [ref=e227]: Edit profile
+                - listitem [ref=e228]:
+                  - link "Log out" [ref=e229] [cursor=pointer]:
+                    - /url: /user/logout?token=I-8dwIAZNAi4NSqeYWX8wIaVVlyoFcDs-0tsQ5K_lHY
+                    - generic [ref=e230]: Log out
+      - button "Collapse sidebar" [expanded] [ref=e231] [cursor=pointer]:
+        - img [ref=e232]
+        - generic [ref=e234]: Collapse sidebar
+  - generic [ref=e236]:
+    - navigation "Breadcrumb" [ref=e238]:
+      - heading "Breadcrumb" [level=2] [ref=e239]
+      - list [ref=e240]:
+        - listitem:
+          - link "Back to site" [ref=e241] [cursor=pointer]:
+            - /url: /
+        - listitem:
+          - link "Administration" [ref=e242] [cursor=pointer]:
+            - /url: /admin
+    - list [ref=e244]:
+      - listitem [ref=e245]:
+        - link "+Add content" [ref=e246] [cursor=pointer]:
+          - /url: /node/add
+  - generic [ref=e247]:
+    - banner [ref=e248]:
+      - heading "Content" [level=1] [ref=e252]
+    - generic [ref=e256]:
+      - heading "Primary tabs" [level=2] [ref=e257]
+      - navigation "Primary tabs" [ref=e258]:
+        - list [ref=e259]:
+          - listitem [ref=e260]:
+            - link "Content" [ref=e261] [cursor=pointer]:
+              - /url: /admin/content
+          - listitem [ref=e262]:
+            - link "Blocks" [ref=e263] [cursor=pointer]:
+              - /url: /admin/content/block
+          - listitem [ref=e264]:
+            - link "Files" [ref=e265] [cursor=pointer]:
+              - /url: /admin/content/files
+    - main [ref=e267]:
+      - contentinfo "Error message" [ref=e272]:
+        - heading "Error message" [level=2] [ref=e274]
+        - list [ref=e276]:
+          - listitem [ref=e277]:
+            - group [ref=e278]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e279]':
+                - emphasis [ref=e280]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e281]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e282]: "984"
+                - text: of
+                - emphasis [ref=e283]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e284]:
+            - group [ref=e285]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e286]':
+                - emphasis [ref=e287]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e288]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e289]: "984"
+                - text: of
+                - emphasis [ref=e290]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e291]:
+            - group [ref=e292]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e293]':
+                - emphasis [ref=e294]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e295]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e296]: "984"
+                - text: of
+                - emphasis [ref=e297]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e298]:
+            - group [ref=e299]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e300]':
+                - emphasis [ref=e301]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e302]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e303]: "984"
+                - text: of
+                - emphasis [ref=e304]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e305]:
+            - group [ref=e306]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e307]':
+                - emphasis [ref=e308]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e309]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e310]: "984"
+                - text: of
+                - emphasis [ref=e311]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e312]:
+            - group [ref=e313]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e314]':
+                - emphasis [ref=e315]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e316]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e317]: "984"
+                - text: of
+                - emphasis [ref=e318]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e319]:
+            - group [ref=e320]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e321]':
+                - emphasis [ref=e322]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e323]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e324]: "984"
+                - text: of
+                - emphasis [ref=e325]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e326]:
+            - group [ref=e327]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e328]':
+                - emphasis [ref=e329]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e330]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e331]: "984"
+                - text: of
+                - emphasis [ref=e332]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e333]:
+            - group [ref=e334]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e335]':
+                - emphasis [ref=e336]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e337]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e338]: "984"
+                - text: of
+                - emphasis [ref=e339]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e340]:
+            - group [ref=e341]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e342]':
+                - emphasis [ref=e343]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e344]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e345]: "984"
+                - text: of
+                - emphasis [ref=e346]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e347]:
+            - group [ref=e348]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e349]':
+                - emphasis [ref=e350]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e351]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e352]: "984"
+                - text: of
+                - emphasis [ref=e353]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e354]:
+            - group [ref=e355]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e356]':
+                - emphasis [ref=e357]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e358]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e359]: "984"
+                - text: of
+                - emphasis [ref=e360]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e361]:
+            - group [ref=e362]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e363]':
+                - emphasis [ref=e364]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e365]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e366]: "984"
+                - text: of
+                - emphasis [ref=e367]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e368]:
+            - group [ref=e369]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e370]':
+                - emphasis [ref=e371]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e372]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e373]: "984"
+                - text: of
+                - emphasis [ref=e374]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e375]:
+            - group [ref=e376]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e377]':
+                - emphasis [ref=e378]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e379]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e380]: "984"
+                - text: of
+                - emphasis [ref=e381]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e382]:
+            - group [ref=e383]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e384]':
+                - emphasis [ref=e385]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e386]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e387]: "984"
+                - text: of
+                - emphasis [ref=e388]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e389]:
+            - group [ref=e390]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e391]':
+                - emphasis [ref=e392]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e393]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e394]: "984"
+                - text: of
+                - emphasis [ref=e395]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e396]:
+            - group [ref=e397]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e398]':
+                - emphasis [ref=e399]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e400]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e401]: "984"
+                - text: of
+                - emphasis [ref=e402]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e403]:
+            - group [ref=e404]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e405]':
+                - emphasis [ref=e406]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e407]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e408]: "984"
+                - text: of
+                - emphasis [ref=e409]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e410]:
+            - group [ref=e411]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e412]':
+                - emphasis [ref=e413]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e414]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e415]: "984"
+                - text: of
+                - emphasis [ref=e416]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e417]:
+            - group [ref=e418]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e419]':
+                - emphasis [ref=e420]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e421]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e422]: "984"
+                - text: of
+                - emphasis [ref=e423]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e424]:
+            - group [ref=e425]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e426]':
+                - emphasis [ref=e427]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e428]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e429]: "984"
+                - text: of
+                - emphasis [ref=e430]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e431]:
+            - group [ref=e432]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e433]':
+                - emphasis [ref=e434]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e435]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e436]: "984"
+                - text: of
+                - emphasis [ref=e437]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e438]:
+            - group [ref=e439]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e440]':
+                - emphasis [ref=e441]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e442]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e443]: "984"
+                - text: of
+                - emphasis [ref=e444]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e445]:
+            - group [ref=e446]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e447]':
+                - emphasis [ref=e448]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e449]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e450]: "984"
+                - text: of
+                - emphasis [ref=e451]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e452]:
+            - group [ref=e453]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e454]':
+                - emphasis [ref=e455]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e456]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e457]: "984"
+                - text: of
+                - emphasis [ref=e458]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e459]:
+            - group [ref=e460]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e461]':
+                - emphasis [ref=e462]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e463]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e464]: "984"
+                - text: of
+                - emphasis [ref=e465]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e466]:
+            - group [ref=e467]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e468]':
+                - emphasis [ref=e469]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e470]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e471]: "984"
+                - text: of
+                - emphasis [ref=e472]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e473]:
+            - group [ref=e474]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e475]':
+                - emphasis [ref=e476]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e477]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e478]: "984"
+                - text: of
+                - emphasis [ref=e479]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e480]:
+            - group [ref=e481]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e482]':
+                - emphasis [ref=e483]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e484]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e485]: "984"
+                - text: of
+                - emphasis [ref=e486]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e487]:
+            - group [ref=e488]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e489]':
+                - emphasis [ref=e490]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e491]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e492]: "984"
+                - text: of
+                - emphasis [ref=e493]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e494]:
+            - group [ref=e495]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e496]':
+                - emphasis [ref=e497]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e498]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e499]: "984"
+                - text: of
+                - emphasis [ref=e500]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e501]:
+            - group [ref=e502]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e503]':
+                - emphasis [ref=e504]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e505]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e506]: "984"
+                - text: of
+                - emphasis [ref=e507]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e508]:
+            - group [ref=e509]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e510]':
+                - emphasis [ref=e511]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e512]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e513]: "984"
+                - text: of
+                - emphasis [ref=e514]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e515]:
+            - group [ref=e516]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e517]':
+                - emphasis [ref=e518]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e519]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e520]: "984"
+                - text: of
+                - emphasis [ref=e521]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e522]:
+            - group [ref=e523]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e524]':
+                - emphasis [ref=e525]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e526]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e527]: "984"
+                - text: of
+                - emphasis [ref=e528]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e529]:
+            - group [ref=e530]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e531]':
+                - emphasis [ref=e532]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e533]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e534]: "984"
+                - text: of
+                - emphasis [ref=e535]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e536]:
+            - group [ref=e537]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e538]':
+                - emphasis [ref=e539]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e540]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e541]: "984"
+                - text: of
+                - emphasis [ref=e542]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e543]:
+            - group [ref=e544]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e545]':
+                - emphasis [ref=e546]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e547]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e548]: "984"
+                - text: of
+                - emphasis [ref=e549]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e550]:
+            - group [ref=e551]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e552]':
+                - emphasis [ref=e553]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e554]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e555]: "984"
+                - text: of
+                - emphasis [ref=e556]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e557]:
+            - group [ref=e558]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e559]':
+                - emphasis [ref=e560]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e561]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e562]: "984"
+                - text: of
+                - emphasis [ref=e563]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e564]:
+            - group [ref=e565]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e566]':
+                - emphasis [ref=e567]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e568]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e569]: "984"
+                - text: of
+                - emphasis [ref=e570]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e571]:
+            - group [ref=e572]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e573]':
+                - emphasis [ref=e574]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e575]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e576]: "984"
+                - text: of
+                - emphasis [ref=e577]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e578]:
+            - group [ref=e579]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e580]':
+                - emphasis [ref=e581]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e582]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e583]: "984"
+                - text: of
+                - emphasis [ref=e584]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e585]:
+            - group [ref=e586]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e587]':
+                - emphasis [ref=e588]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e589]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e590]: "984"
+                - text: of
+                - emphasis [ref=e591]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e592]:
+            - group [ref=e593]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e594]':
+                - emphasis [ref=e595]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e596]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e597]: "984"
+                - text: of
+                - emphasis [ref=e598]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e599]:
+            - group [ref=e600]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e601]':
+                - emphasis [ref=e602]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e603]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e604]: "984"
+                - text: of
+                - emphasis [ref=e605]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e606]:
+            - group [ref=e607]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e608]':
+                - emphasis [ref=e609]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e610]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e611]: "984"
+                - text: of
+                - emphasis [ref=e612]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e613]:
+            - group [ref=e614]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e615]':
+                - emphasis [ref=e616]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e617]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e618]: "984"
+                - text: of
+                - emphasis [ref=e619]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+          - listitem [ref=e620]:
+            - group [ref=e621]:
+              - 'generic "Deprecated function: Using null as an array offset is deprecated, use an empty string instead in Drupal\\Core\\Entity\\ContentEntityBase->hasTranslation() (line 984 of core/lib/Drupal/Core/Entity/ContentEntityBase.php)." [ref=e622]':
+                - emphasis [ref=e623]: Deprecated function
+                - text: ": Using null as an array offset is deprecated, use an empty string instead in"
+                - emphasis [ref=e624]: Drupal\Core\Entity\ContentEntityBase->hasTranslation()
+                - text: (line
+                - emphasis [ref=e625]: "984"
+                - text: of
+                - emphasis [ref=e626]: core/lib/Drupal/Core/Entity/ContentEntityBase.php
+                - text: ).
+        - button "Hide" [ref=e627] [cursor=pointer]: Hide
+      - generic [ref=e632]:
+        - form "Filter the contents of the Content view" [ref=e634]:
+          - generic [ref=e635]:
+            - generic [ref=e636] [cursor=pointer]: Title
+            - textbox "Title" [ref=e637]
+          - generic [ref=e638]:
+            - generic [ref=e639] [cursor=pointer]: Content type
+            - combobox "Content type" [ref=e640]:
+              - option "- Any -" [selected]
+              - option "Article"
+              - option "Basic page"
+          - generic [ref=e641]:
+            - generic [ref=e642] [cursor=pointer]: Published status
+            - combobox "Published status" [ref=e643]:
+              - option "- Any -" [selected]
+              - option "Published"
+              - option "Unpublished"
+          - button "Filter" [ref=e645] [cursor=pointer]
+        - generic [ref=e648]:
+          - table [ref=e649]:
+            - rowgroup [ref=e650]:
+              - row "Select all rows in this table Title Content type Author Status Updated Sort ascending Operations" [ref=e651]:
+                - columnheader "Select all rows in this table" [ref=e652]:
+                  - checkbox "Select all rows in this table" [ref=e653]
+                - columnheader "Title" [ref=e654]:
+                  - link "Title" [ref=e655] [cursor=pointer]:
+                    - /url: "?order=title&sort=asc"
+                - columnheader "Content type" [ref=e656]:
+                  - link "Content type" [ref=e657] [cursor=pointer]:
+                    - /url: "?order=type&sort=asc"
+                - columnheader "Author" [ref=e658]
+                - columnheader "Status" [ref=e659]:
+                  - link "Status" [ref=e660] [cursor=pointer]:
+                    - /url: "?order=status&sort=asc"
+                - columnheader "Updated Sort ascending" [ref=e661]:
+                  - link "Updated Sort ascending" [ref=e662] [cursor=pointer]:
+                    - /url: "?order=changed&sort=asc"
+                    - text: Updated
+                    - generic [ref=e664]: Sort ascending
+                - columnheader "Operations" [ref=e665]
+          - table [ref=e667]:
+            - rowgroup:
+              - row "Select all rows in this table Title Content type Author Status Updated Sort ascending Operations":
+                - columnheader "Select all rows in this table":
+                  - checkbox "Select all rows in this table"
+                - columnheader "Title":
+                  - link "Title":
+                    - /url: "?order=title&sort=asc"
+                - columnheader "Content type":
+                  - link "Content type":
+                    - /url: "?order=type&sort=asc"
+                - columnheader "Author"
+                - columnheader "Status":
+                  - link "Status":
+                    - /url: "?order=status&sort=asc"
+                - columnheader "Updated Sort ascending":
+                  - link "Updated Sort ascending":
+                    - /url: "?order=changed&sort=asc"
+                    - text: Updated
+                    - generic:
+                      - generic: Sort ascending
+                - columnheader "Operations"
+            - rowgroup [ref=e668]:
+              - row "Update this item Dummy Page 20 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 20 List additional actions" [ref=e669]:
+                - cell "Update this item" [ref=e670]:
+                  - generic [ref=e671]:
+                    - generic [ref=e672] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e673]
+                - cell "Dummy Page 20" [ref=e674]:
+                  - link "Dummy Page 20" [ref=e675] [cursor=pointer]:
+                    - /url: /node/50
+                - cell "Basic page" [ref=e676]
+                - cell "admin" [ref=e677]:
+                  - link "admin" [ref=e678] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e679]:
+                  - generic [ref=e680]: Published
+                - cell "28 May 2026 - 07:52" [ref=e681]:
+                  - time [ref=e682]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 20 List additional actions" [ref=e683]:
+                  - list [ref=e686]:
+                    - listitem [ref=e687]:
+                      - link "Edit Dummy Page 20" [ref=e688] [cursor=pointer]:
+                        - /url: /node/50/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e689]:
+                        - generic [ref=e690]: List additional actions
+              - row "Update this item Dummy Page 6 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 6 List additional actions" [ref=e691]:
+                - cell "Update this item" [ref=e692]:
+                  - generic [ref=e693]:
+                    - generic [ref=e694] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e695]
+                - cell "Dummy Page 6" [ref=e696]:
+                  - link "Dummy Page 6" [ref=e697] [cursor=pointer]:
+                    - /url: /node/36
+                - cell "Basic page" [ref=e698]
+                - cell "admin" [ref=e699]:
+                  - link "admin" [ref=e700] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e701]:
+                  - generic [ref=e702]: Published
+                - cell "28 May 2026 - 07:52" [ref=e703]:
+                  - time [ref=e704]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 6 List additional actions" [ref=e705]:
+                  - list [ref=e708]:
+                    - listitem [ref=e709]:
+                      - link "Edit Dummy Page 6" [ref=e710] [cursor=pointer]:
+                        - /url: /node/36/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e711]:
+                        - generic [ref=e712]: List additional actions
+              - row "Update this item Dummy Page 5 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 5 List additional actions" [ref=e713]:
+                - cell "Update this item" [ref=e714]:
+                  - generic [ref=e715]:
+                    - generic [ref=e716] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e717]
+                - cell "Dummy Page 5" [ref=e718]:
+                  - link "Dummy Page 5" [ref=e719] [cursor=pointer]:
+                    - /url: /node/35
+                - cell "Basic page" [ref=e720]
+                - cell "admin" [ref=e721]:
+                  - link "admin" [ref=e722] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e723]:
+                  - generic [ref=e724]: Published
+                - cell "28 May 2026 - 07:52" [ref=e725]:
+                  - time [ref=e726]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 5 List additional actions" [ref=e727]:
+                  - list [ref=e730]:
+                    - listitem [ref=e731]:
+                      - link "Edit Dummy Page 5" [ref=e732] [cursor=pointer]:
+                        - /url: /node/35/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e733]:
+                        - generic [ref=e734]: List additional actions
+              - row "Update this item Dummy Page 4 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 4 List additional actions" [ref=e735]:
+                - cell "Update this item" [ref=e736]:
+                  - generic [ref=e737]:
+                    - generic [ref=e738] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e739]
+                - cell "Dummy Page 4" [ref=e740]:
+                  - link "Dummy Page 4" [ref=e741] [cursor=pointer]:
+                    - /url: /node/34
+                - cell "Basic page" [ref=e742]
+                - cell "admin" [ref=e743]:
+                  - link "admin" [ref=e744] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e745]:
+                  - generic [ref=e746]: Published
+                - cell "28 May 2026 - 07:52" [ref=e747]:
+                  - time [ref=e748]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 4 List additional actions" [ref=e749]:
+                  - list [ref=e752]:
+                    - listitem [ref=e753]:
+                      - link "Edit Dummy Page 4" [ref=e754] [cursor=pointer]:
+                        - /url: /node/34/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e755]:
+                        - generic [ref=e756]: List additional actions
+              - row "Update this item Dummy Page 3 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 3 List additional actions" [ref=e757]:
+                - cell "Update this item" [ref=e758]:
+                  - generic [ref=e759]:
+                    - generic [ref=e760] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e761]
+                - cell "Dummy Page 3" [ref=e762]:
+                  - link "Dummy Page 3" [ref=e763] [cursor=pointer]:
+                    - /url: /node/33
+                - cell "Basic page" [ref=e764]
+                - cell "admin" [ref=e765]:
+                  - link "admin" [ref=e766] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e767]:
+                  - generic [ref=e768]: Published
+                - cell "28 May 2026 - 07:52" [ref=e769]:
+                  - time [ref=e770]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 3 List additional actions" [ref=e771]:
+                  - list [ref=e774]:
+                    - listitem [ref=e775]:
+                      - link "Edit Dummy Page 3" [ref=e776] [cursor=pointer]:
+                        - /url: /node/33/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e777]:
+                        - generic [ref=e778]: List additional actions
+              - row "Update this item Dummy Page 2 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 2 List additional actions" [ref=e779]:
+                - cell "Update this item" [ref=e780]:
+                  - generic [ref=e781]:
+                    - generic [ref=e782] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e783]
+                - cell "Dummy Page 2" [ref=e784]:
+                  - link "Dummy Page 2" [ref=e785] [cursor=pointer]:
+                    - /url: /node/32
+                - cell "Basic page" [ref=e786]
+                - cell "admin" [ref=e787]:
+                  - link "admin" [ref=e788] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e789]:
+                  - generic [ref=e790]: Published
+                - cell "28 May 2026 - 07:52" [ref=e791]:
+                  - time [ref=e792]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 2 List additional actions" [ref=e793]:
+                  - list [ref=e796]:
+                    - listitem [ref=e797]:
+                      - link "Edit Dummy Page 2" [ref=e798] [cursor=pointer]:
+                        - /url: /node/32/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e799]:
+                        - generic [ref=e800]: List additional actions
+              - row "Update this item Dummy Page 1 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 1 List additional actions" [ref=e801]:
+                - cell "Update this item" [ref=e802]:
+                  - generic [ref=e803]:
+                    - generic [ref=e804] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e805]
+                - cell "Dummy Page 1" [ref=e806]:
+                  - link "Dummy Page 1" [ref=e807] [cursor=pointer]:
+                    - /url: /node/31
+                - cell "Basic page" [ref=e808]
+                - cell "admin" [ref=e809]:
+                  - link "admin" [ref=e810] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e811]:
+                  - generic [ref=e812]: Published
+                - cell "28 May 2026 - 07:52" [ref=e813]:
+                  - time [ref=e814]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 1 List additional actions" [ref=e815]:
+                  - list [ref=e818]:
+                    - listitem [ref=e819]:
+                      - link "Edit Dummy Page 1" [ref=e820] [cursor=pointer]:
+                        - /url: /node/31/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e821]:
+                        - generic [ref=e822]: List additional actions
+              - row "Update this item Dummy Article 30 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 30 List additional actions" [ref=e823]:
+                - cell "Update this item" [ref=e824]:
+                  - generic [ref=e825]:
+                    - generic [ref=e826] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e827]
+                - cell "Dummy Article 30" [ref=e828]:
+                  - link "Dummy Article 30" [ref=e829] [cursor=pointer]:
+                    - /url: /node/30
+                - cell "Article" [ref=e830]
+                - cell "admin" [ref=e831]:
+                  - link "admin" [ref=e832] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e833]:
+                  - generic [ref=e834]: Published
+                - cell "28 May 2026 - 07:52" [ref=e835]:
+                  - time [ref=e836]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 30 List additional actions" [ref=e837]:
+                  - list [ref=e840]:
+                    - listitem [ref=e841]:
+                      - link "Edit Dummy Article 30" [ref=e842] [cursor=pointer]:
+                        - /url: /node/30/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e843]:
+                        - generic [ref=e844]: List additional actions
+              - row "Update this item Dummy Article 29 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 29 List additional actions" [ref=e845]:
+                - cell "Update this item" [ref=e846]:
+                  - generic [ref=e847]:
+                    - generic [ref=e848] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e849]
+                - cell "Dummy Article 29" [ref=e850]:
+                  - link "Dummy Article 29" [ref=e851] [cursor=pointer]:
+                    - /url: /node/29
+                - cell "Article" [ref=e852]
+                - cell "admin" [ref=e853]:
+                  - link "admin" [ref=e854] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e855]:
+                  - generic [ref=e856]: Published
+                - cell "28 May 2026 - 07:52" [ref=e857]:
+                  - time [ref=e858]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 29 List additional actions" [ref=e859]:
+                  - list [ref=e862]:
+                    - listitem [ref=e863]:
+                      - link "Edit Dummy Article 29" [ref=e864] [cursor=pointer]:
+                        - /url: /node/29/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e865]:
+                        - generic [ref=e866]: List additional actions
+              - row "Update this item Dummy Article 28 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 28 List additional actions" [ref=e867]:
+                - cell "Update this item" [ref=e868]:
+                  - generic [ref=e869]:
+                    - generic [ref=e870] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e871]
+                - cell "Dummy Article 28" [ref=e872]:
+                  - link "Dummy Article 28" [ref=e873] [cursor=pointer]:
+                    - /url: /node/28
+                - cell "Article" [ref=e874]
+                - cell "admin" [ref=e875]:
+                  - link "admin" [ref=e876] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e877]:
+                  - generic [ref=e878]: Published
+                - cell "28 May 2026 - 07:52" [ref=e879]:
+                  - time [ref=e880]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 28 List additional actions" [ref=e881]:
+                  - list [ref=e884]:
+                    - listitem [ref=e885]:
+                      - link "Edit Dummy Article 28" [ref=e886] [cursor=pointer]:
+                        - /url: /node/28/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e887]:
+                        - generic [ref=e888]: List additional actions
+              - row "Update this item Dummy Article 27 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 27 List additional actions" [ref=e889]:
+                - cell "Update this item" [ref=e890]:
+                  - generic [ref=e891]:
+                    - generic [ref=e892] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e893]
+                - cell "Dummy Article 27" [ref=e894]:
+                  - link "Dummy Article 27" [ref=e895] [cursor=pointer]:
+                    - /url: /node/27
+                - cell "Article" [ref=e896]
+                - cell "admin" [ref=e897]:
+                  - link "admin" [ref=e898] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e899]:
+                  - generic [ref=e900]: Published
+                - cell "28 May 2026 - 07:52" [ref=e901]:
+                  - time [ref=e902]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 27 List additional actions" [ref=e903]:
+                  - list [ref=e906]:
+                    - listitem [ref=e907]:
+                      - link "Edit Dummy Article 27" [ref=e908] [cursor=pointer]:
+                        - /url: /node/27/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e909]:
+                        - generic [ref=e910]: List additional actions
+              - row "Update this item Dummy Page 7 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 7 List additional actions" [ref=e911]:
+                - cell "Update this item" [ref=e912]:
+                  - generic [ref=e913]:
+                    - generic [ref=e914] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e915]
+                - cell "Dummy Page 7" [ref=e916]:
+                  - link "Dummy Page 7" [ref=e917] [cursor=pointer]:
+                    - /url: /node/37
+                - cell "Basic page" [ref=e918]
+                - cell "admin" [ref=e919]:
+                  - link "admin" [ref=e920] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e921]:
+                  - generic [ref=e922]: Published
+                - cell "28 May 2026 - 07:52" [ref=e923]:
+                  - time [ref=e924]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 7 List additional actions" [ref=e925]:
+                  - list [ref=e928]:
+                    - listitem [ref=e929]:
+                      - link "Edit Dummy Page 7" [ref=e930] [cursor=pointer]:
+                        - /url: /node/37/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e931]:
+                        - generic [ref=e932]: List additional actions
+              - row "Update this item Dummy Page 8 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 8 List additional actions" [ref=e933]:
+                - cell "Update this item" [ref=e934]:
+                  - generic [ref=e935]:
+                    - generic [ref=e936] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e937]
+                - cell "Dummy Page 8" [ref=e938]:
+                  - link "Dummy Page 8" [ref=e939] [cursor=pointer]:
+                    - /url: /node/38
+                - cell "Basic page" [ref=e940]
+                - cell "admin" [ref=e941]:
+                  - link "admin" [ref=e942] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e943]:
+                  - generic [ref=e944]: Published
+                - cell "28 May 2026 - 07:52" [ref=e945]:
+                  - time [ref=e946]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 8 List additional actions" [ref=e947]:
+                  - list [ref=e950]:
+                    - listitem [ref=e951]:
+                      - link "Edit Dummy Page 8" [ref=e952] [cursor=pointer]:
+                        - /url: /node/38/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e953]:
+                        - generic [ref=e954]: List additional actions
+              - row "Update this item Dummy Page 9 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 9 List additional actions" [ref=e955]:
+                - cell "Update this item" [ref=e956]:
+                  - generic [ref=e957]:
+                    - generic [ref=e958] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e959]
+                - cell "Dummy Page 9" [ref=e960]:
+                  - link "Dummy Page 9" [ref=e961] [cursor=pointer]:
+                    - /url: /node/39
+                - cell "Basic page" [ref=e962]
+                - cell "admin" [ref=e963]:
+                  - link "admin" [ref=e964] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e965]:
+                  - generic [ref=e966]: Published
+                - cell "28 May 2026 - 07:52" [ref=e967]:
+                  - time [ref=e968]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 9 List additional actions" [ref=e969]:
+                  - list [ref=e972]:
+                    - listitem [ref=e973]:
+                      - link "Edit Dummy Page 9" [ref=e974] [cursor=pointer]:
+                        - /url: /node/39/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e975]:
+                        - generic [ref=e976]: List additional actions
+              - row "Update this item Dummy Page 19 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 19 List additional actions" [ref=e977]:
+                - cell "Update this item" [ref=e978]:
+                  - generic [ref=e979]:
+                    - generic [ref=e980] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e981]
+                - cell "Dummy Page 19" [ref=e982]:
+                  - link "Dummy Page 19" [ref=e983] [cursor=pointer]:
+                    - /url: /node/49
+                - cell "Basic page" [ref=e984]
+                - cell "admin" [ref=e985]:
+                  - link "admin" [ref=e986] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e987]:
+                  - generic [ref=e988]: Published
+                - cell "28 May 2026 - 07:52" [ref=e989]:
+                  - time [ref=e990]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 19 List additional actions" [ref=e991]:
+                  - list [ref=e994]:
+                    - listitem [ref=e995]:
+                      - link "Edit Dummy Page 19" [ref=e996] [cursor=pointer]:
+                        - /url: /node/49/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e997]:
+                        - generic [ref=e998]: List additional actions
+              - row "Update this item Dummy Page 18 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 18 List additional actions" [ref=e999]:
+                - cell "Update this item" [ref=e1000]:
+                  - generic [ref=e1001]:
+                    - generic [ref=e1002] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1003]
+                - cell "Dummy Page 18" [ref=e1004]:
+                  - link "Dummy Page 18" [ref=e1005] [cursor=pointer]:
+                    - /url: /node/48
+                - cell "Basic page" [ref=e1006]
+                - cell "admin" [ref=e1007]:
+                  - link "admin" [ref=e1008] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1009]:
+                  - generic [ref=e1010]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1011]:
+                  - time [ref=e1012]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 18 List additional actions" [ref=e1013]:
+                  - list [ref=e1016]:
+                    - listitem [ref=e1017]:
+                      - link "Edit Dummy Page 18" [ref=e1018] [cursor=pointer]:
+                        - /url: /node/48/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1019]:
+                        - generic [ref=e1020]: List additional actions
+              - row "Update this item Dummy Page 17 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 17 List additional actions" [ref=e1021]:
+                - cell "Update this item" [ref=e1022]:
+                  - generic [ref=e1023]:
+                    - generic [ref=e1024] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1025]
+                - cell "Dummy Page 17" [ref=e1026]:
+                  - link "Dummy Page 17" [ref=e1027] [cursor=pointer]:
+                    - /url: /node/47
+                - cell "Basic page" [ref=e1028]
+                - cell "admin" [ref=e1029]:
+                  - link "admin" [ref=e1030] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1031]:
+                  - generic [ref=e1032]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1033]:
+                  - time [ref=e1034]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 17 List additional actions" [ref=e1035]:
+                  - list [ref=e1038]:
+                    - listitem [ref=e1039]:
+                      - link "Edit Dummy Page 17" [ref=e1040] [cursor=pointer]:
+                        - /url: /node/47/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1041]:
+                        - generic [ref=e1042]: List additional actions
+              - row "Update this item Dummy Page 16 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 16 List additional actions" [ref=e1043]:
+                - cell "Update this item" [ref=e1044]:
+                  - generic [ref=e1045]:
+                    - generic [ref=e1046] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1047]
+                - cell "Dummy Page 16" [ref=e1048]:
+                  - link "Dummy Page 16" [ref=e1049] [cursor=pointer]:
+                    - /url: /node/46
+                - cell "Basic page" [ref=e1050]
+                - cell "admin" [ref=e1051]:
+                  - link "admin" [ref=e1052] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1053]:
+                  - generic [ref=e1054]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1055]:
+                  - time [ref=e1056]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 16 List additional actions" [ref=e1057]:
+                  - list [ref=e1060]:
+                    - listitem [ref=e1061]:
+                      - link "Edit Dummy Page 16" [ref=e1062] [cursor=pointer]:
+                        - /url: /node/46/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1063]:
+                        - generic [ref=e1064]: List additional actions
+              - row "Update this item Dummy Page 15 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 15 List additional actions" [ref=e1065]:
+                - cell "Update this item" [ref=e1066]:
+                  - generic [ref=e1067]:
+                    - generic [ref=e1068] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1069]
+                - cell "Dummy Page 15" [ref=e1070]:
+                  - link "Dummy Page 15" [ref=e1071] [cursor=pointer]:
+                    - /url: /node/45
+                - cell "Basic page" [ref=e1072]
+                - cell "admin" [ref=e1073]:
+                  - link "admin" [ref=e1074] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1075]:
+                  - generic [ref=e1076]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1077]:
+                  - time [ref=e1078]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 15 List additional actions" [ref=e1079]:
+                  - list [ref=e1082]:
+                    - listitem [ref=e1083]:
+                      - link "Edit Dummy Page 15" [ref=e1084] [cursor=pointer]:
+                        - /url: /node/45/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1085]:
+                        - generic [ref=e1086]: List additional actions
+              - row "Update this item Dummy Page 14 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 14 List additional actions" [ref=e1087]:
+                - cell "Update this item" [ref=e1088]:
+                  - generic [ref=e1089]:
+                    - generic [ref=e1090] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1091]
+                - cell "Dummy Page 14" [ref=e1092]:
+                  - link "Dummy Page 14" [ref=e1093] [cursor=pointer]:
+                    - /url: /node/44
+                - cell "Basic page" [ref=e1094]
+                - cell "admin" [ref=e1095]:
+                  - link "admin" [ref=e1096] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1097]:
+                  - generic [ref=e1098]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1099]:
+                  - time [ref=e1100]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 14 List additional actions" [ref=e1101]:
+                  - list [ref=e1104]:
+                    - listitem [ref=e1105]:
+                      - link "Edit Dummy Page 14" [ref=e1106] [cursor=pointer]:
+                        - /url: /node/44/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1107]:
+                        - generic [ref=e1108]: List additional actions
+              - row "Update this item Dummy Page 13 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 13 List additional actions" [ref=e1109]:
+                - cell "Update this item" [ref=e1110]:
+                  - generic [ref=e1111]:
+                    - generic [ref=e1112] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1113]
+                - cell "Dummy Page 13" [ref=e1114]:
+                  - link "Dummy Page 13" [ref=e1115] [cursor=pointer]:
+                    - /url: /node/43
+                - cell "Basic page" [ref=e1116]
+                - cell "admin" [ref=e1117]:
+                  - link "admin" [ref=e1118] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1119]:
+                  - generic [ref=e1120]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1121]:
+                  - time [ref=e1122]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 13 List additional actions" [ref=e1123]:
+                  - list [ref=e1126]:
+                    - listitem [ref=e1127]:
+                      - link "Edit Dummy Page 13" [ref=e1128] [cursor=pointer]:
+                        - /url: /node/43/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1129]:
+                        - generic [ref=e1130]: List additional actions
+              - row "Update this item Dummy Page 12 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 12 List additional actions" [ref=e1131]:
+                - cell "Update this item" [ref=e1132]:
+                  - generic [ref=e1133]:
+                    - generic [ref=e1134] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1135]
+                - cell "Dummy Page 12" [ref=e1136]:
+                  - link "Dummy Page 12" [ref=e1137] [cursor=pointer]:
+                    - /url: /node/42
+                - cell "Basic page" [ref=e1138]
+                - cell "admin" [ref=e1139]:
+                  - link "admin" [ref=e1140] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1141]:
+                  - generic [ref=e1142]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1143]:
+                  - time [ref=e1144]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 12 List additional actions" [ref=e1145]:
+                  - list [ref=e1148]:
+                    - listitem [ref=e1149]:
+                      - link "Edit Dummy Page 12" [ref=e1150] [cursor=pointer]:
+                        - /url: /node/42/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1151]:
+                        - generic [ref=e1152]: List additional actions
+              - row "Update this item Dummy Page 11 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 11 List additional actions" [ref=e1153]:
+                - cell "Update this item" [ref=e1154]:
+                  - generic [ref=e1155]:
+                    - generic [ref=e1156] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1157]
+                - cell "Dummy Page 11" [ref=e1158]:
+                  - link "Dummy Page 11" [ref=e1159] [cursor=pointer]:
+                    - /url: /node/41
+                - cell "Basic page" [ref=e1160]
+                - cell "admin" [ref=e1161]:
+                  - link "admin" [ref=e1162] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1163]:
+                  - generic [ref=e1164]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1165]:
+                  - time [ref=e1166]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 11 List additional actions" [ref=e1167]:
+                  - list [ref=e1170]:
+                    - listitem [ref=e1171]:
+                      - link "Edit Dummy Page 11" [ref=e1172] [cursor=pointer]:
+                        - /url: /node/41/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1173]:
+                        - generic [ref=e1174]: List additional actions
+              - row "Update this item Dummy Page 10 Basic page admin Published 28 May 2026 - 07:52 Edit Dummy Page 10 List additional actions" [ref=e1175]:
+                - cell "Update this item" [ref=e1176]:
+                  - generic [ref=e1177]:
+                    - generic [ref=e1178] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1179]
+                - cell "Dummy Page 10" [ref=e1180]:
+                  - link "Dummy Page 10" [ref=e1181] [cursor=pointer]:
+                    - /url: /node/40
+                - cell "Basic page" [ref=e1182]
+                - cell "admin" [ref=e1183]:
+                  - link "admin" [ref=e1184] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1185]:
+                  - generic [ref=e1186]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1187]:
+                  - time [ref=e1188]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Page 10 List additional actions" [ref=e1189]:
+                  - list [ref=e1192]:
+                    - listitem [ref=e1193]:
+                      - link "Edit Dummy Page 10" [ref=e1194] [cursor=pointer]:
+                        - /url: /node/40/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1195]:
+                        - generic [ref=e1196]: List additional actions
+              - row "Update this item Dummy Article 26 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 26 List additional actions" [ref=e1197]:
+                - cell "Update this item" [ref=e1198]:
+                  - generic [ref=e1199]:
+                    - generic [ref=e1200] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1201]
+                - cell "Dummy Article 26" [ref=e1202]:
+                  - link "Dummy Article 26" [ref=e1203] [cursor=pointer]:
+                    - /url: /node/26
+                - cell "Article" [ref=e1204]
+                - cell "admin" [ref=e1205]:
+                  - link "admin" [ref=e1206] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1207]:
+                  - generic [ref=e1208]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1209]:
+                  - time [ref=e1210]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 26 List additional actions" [ref=e1211]:
+                  - list [ref=e1214]:
+                    - listitem [ref=e1215]:
+                      - link "Edit Dummy Article 26" [ref=e1216] [cursor=pointer]:
+                        - /url: /node/26/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1217]:
+                        - generic [ref=e1218]: List additional actions
+              - row "Update this item Dummy Article 25 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 25 List additional actions" [ref=e1219]:
+                - cell "Update this item" [ref=e1220]:
+                  - generic [ref=e1221]:
+                    - generic [ref=e1222] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1223]
+                - cell "Dummy Article 25" [ref=e1224]:
+                  - link "Dummy Article 25" [ref=e1225] [cursor=pointer]:
+                    - /url: /node/25
+                - cell "Article" [ref=e1226]
+                - cell "admin" [ref=e1227]:
+                  - link "admin" [ref=e1228] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1229]:
+                  - generic [ref=e1230]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1231]:
+                  - time [ref=e1232]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 25 List additional actions" [ref=e1233]:
+                  - list [ref=e1236]:
+                    - listitem [ref=e1237]:
+                      - link "Edit Dummy Article 25" [ref=e1238] [cursor=pointer]:
+                        - /url: /node/25/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1239]:
+                        - generic [ref=e1240]: List additional actions
+              - row "Update this item Dummy Article 11 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 11 List additional actions" [ref=e1241]:
+                - cell "Update this item" [ref=e1242]:
+                  - generic [ref=e1243]:
+                    - generic [ref=e1244] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1245]
+                - cell "Dummy Article 11" [ref=e1246]:
+                  - link "Dummy Article 11" [ref=e1247] [cursor=pointer]:
+                    - /url: /node/11
+                - cell "Article" [ref=e1248]
+                - cell "admin" [ref=e1249]:
+                  - link "admin" [ref=e1250] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1251]:
+                  - generic [ref=e1252]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1253]:
+                  - time [ref=e1254]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 11 List additional actions" [ref=e1255]:
+                  - list [ref=e1258]:
+                    - listitem [ref=e1259]:
+                      - link "Edit Dummy Article 11" [ref=e1260] [cursor=pointer]:
+                        - /url: /node/11/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1261]:
+                        - generic [ref=e1262]: List additional actions
+              - row "Update this item Dummy Article 10 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 10 List additional actions" [ref=e1263]:
+                - cell "Update this item" [ref=e1264]:
+                  - generic [ref=e1265]:
+                    - generic [ref=e1266] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1267]
+                - cell "Dummy Article 10" [ref=e1268]:
+                  - link "Dummy Article 10" [ref=e1269] [cursor=pointer]:
+                    - /url: /node/10
+                - cell "Article" [ref=e1270]
+                - cell "admin" [ref=e1271]:
+                  - link "admin" [ref=e1272] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1273]:
+                  - generic [ref=e1274]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1275]:
+                  - time [ref=e1276]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 10 List additional actions" [ref=e1277]:
+                  - list [ref=e1280]:
+                    - listitem [ref=e1281]:
+                      - link "Edit Dummy Article 10" [ref=e1282] [cursor=pointer]:
+                        - /url: /node/10/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1283]:
+                        - generic [ref=e1284]: List additional actions
+              - row "Update this item Dummy Article 9 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 9 List additional actions" [ref=e1285]:
+                - cell "Update this item" [ref=e1286]:
+                  - generic [ref=e1287]:
+                    - generic [ref=e1288] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1289]
+                - cell "Dummy Article 9" [ref=e1290]:
+                  - link "Dummy Article 9" [ref=e1291] [cursor=pointer]:
+                    - /url: /node/9
+                - cell "Article" [ref=e1292]
+                - cell "admin" [ref=e1293]:
+                  - link "admin" [ref=e1294] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1295]:
+                  - generic [ref=e1296]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1297]:
+                  - time [ref=e1298]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 9 List additional actions" [ref=e1299]:
+                  - list [ref=e1302]:
+                    - listitem [ref=e1303]:
+                      - link "Edit Dummy Article 9" [ref=e1304] [cursor=pointer]:
+                        - /url: /node/9/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1305]:
+                        - generic [ref=e1306]: List additional actions
+              - row "Update this item Dummy Article 8 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 8 List additional actions" [ref=e1307]:
+                - cell "Update this item" [ref=e1308]:
+                  - generic [ref=e1309]:
+                    - generic [ref=e1310] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1311]
+                - cell "Dummy Article 8" [ref=e1312]:
+                  - link "Dummy Article 8" [ref=e1313] [cursor=pointer]:
+                    - /url: /node/8
+                - cell "Article" [ref=e1314]
+                - cell "admin" [ref=e1315]:
+                  - link "admin" [ref=e1316] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1317]:
+                  - generic [ref=e1318]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1319]:
+                  - time [ref=e1320]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 8 List additional actions" [ref=e1321]:
+                  - list [ref=e1324]:
+                    - listitem [ref=e1325]:
+                      - link "Edit Dummy Article 8" [ref=e1326] [cursor=pointer]:
+                        - /url: /node/8/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1327]:
+                        - generic [ref=e1328]: List additional actions
+              - row "Update this item Dummy Article 7 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 7 List additional actions" [ref=e1329]:
+                - cell "Update this item" [ref=e1330]:
+                  - generic [ref=e1331]:
+                    - generic [ref=e1332] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1333]
+                - cell "Dummy Article 7" [ref=e1334]:
+                  - link "Dummy Article 7" [ref=e1335] [cursor=pointer]:
+                    - /url: /node/7
+                - cell "Article" [ref=e1336]
+                - cell "admin" [ref=e1337]:
+                  - link "admin" [ref=e1338] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1339]:
+                  - generic [ref=e1340]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1341]:
+                  - time [ref=e1342]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 7 List additional actions" [ref=e1343]:
+                  - list [ref=e1346]:
+                    - listitem [ref=e1347]:
+                      - link "Edit Dummy Article 7" [ref=e1348] [cursor=pointer]:
+                        - /url: /node/7/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1349]:
+                        - generic [ref=e1350]: List additional actions
+              - row "Update this item Dummy Article 6 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 6 List additional actions" [ref=e1351]:
+                - cell "Update this item" [ref=e1352]:
+                  - generic [ref=e1353]:
+                    - generic [ref=e1354] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1355]
+                - cell "Dummy Article 6" [ref=e1356]:
+                  - link "Dummy Article 6" [ref=e1357] [cursor=pointer]:
+                    - /url: /node/6
+                - cell "Article" [ref=e1358]
+                - cell "admin" [ref=e1359]:
+                  - link "admin" [ref=e1360] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1361]:
+                  - generic [ref=e1362]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1363]:
+                  - time [ref=e1364]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 6 List additional actions" [ref=e1365]:
+                  - list [ref=e1368]:
+                    - listitem [ref=e1369]:
+                      - link "Edit Dummy Article 6" [ref=e1370] [cursor=pointer]:
+                        - /url: /node/6/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1371]:
+                        - generic [ref=e1372]: List additional actions
+              - row "Update this item Dummy Article 5 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 5 List additional actions" [ref=e1373]:
+                - cell "Update this item" [ref=e1374]:
+                  - generic [ref=e1375]:
+                    - generic [ref=e1376] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1377]
+                - cell "Dummy Article 5" [ref=e1378]:
+                  - link "Dummy Article 5" [ref=e1379] [cursor=pointer]:
+                    - /url: /node/5
+                - cell "Article" [ref=e1380]
+                - cell "admin" [ref=e1381]:
+                  - link "admin" [ref=e1382] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1383]:
+                  - generic [ref=e1384]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1385]:
+                  - time [ref=e1386]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 5 List additional actions" [ref=e1387]:
+                  - list [ref=e1390]:
+                    - listitem [ref=e1391]:
+                      - link "Edit Dummy Article 5" [ref=e1392] [cursor=pointer]:
+                        - /url: /node/5/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1393]:
+                        - generic [ref=e1394]: List additional actions
+              - row "Update this item Dummy Article 4 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 4 List additional actions" [ref=e1395]:
+                - cell "Update this item" [ref=e1396]:
+                  - generic [ref=e1397]:
+                    - generic [ref=e1398] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1399]
+                - cell "Dummy Article 4" [ref=e1400]:
+                  - link "Dummy Article 4" [ref=e1401] [cursor=pointer]:
+                    - /url: /node/4
+                - cell "Article" [ref=e1402]
+                - cell "admin" [ref=e1403]:
+                  - link "admin" [ref=e1404] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1405]:
+                  - generic [ref=e1406]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1407]:
+                  - time [ref=e1408]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 4 List additional actions" [ref=e1409]:
+                  - list [ref=e1412]:
+                    - listitem [ref=e1413]:
+                      - link "Edit Dummy Article 4" [ref=e1414] [cursor=pointer]:
+                        - /url: /node/4/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1415]:
+                        - generic [ref=e1416]: List additional actions
+              - row "Update this item Dummy Article 3 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 3 List additional actions" [ref=e1417]:
+                - cell "Update this item" [ref=e1418]:
+                  - generic [ref=e1419]:
+                    - generic [ref=e1420] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1421]
+                - cell "Dummy Article 3" [ref=e1422]:
+                  - link "Dummy Article 3" [ref=e1423] [cursor=pointer]:
+                    - /url: /node/3
+                - cell "Article" [ref=e1424]
+                - cell "admin" [ref=e1425]:
+                  - link "admin" [ref=e1426] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1427]:
+                  - generic [ref=e1428]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1429]:
+                  - time [ref=e1430]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 3 List additional actions" [ref=e1431]:
+                  - list [ref=e1434]:
+                    - listitem [ref=e1435]:
+                      - link "Edit Dummy Article 3" [ref=e1436] [cursor=pointer]:
+                        - /url: /node/3/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1437]:
+                        - generic [ref=e1438]: List additional actions
+              - row "Update this item Dummy Article 2 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 2 List additional actions" [ref=e1439]:
+                - cell "Update this item" [ref=e1440]:
+                  - generic [ref=e1441]:
+                    - generic [ref=e1442] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1443]
+                - cell "Dummy Article 2" [ref=e1444]:
+                  - link "Dummy Article 2" [ref=e1445] [cursor=pointer]:
+                    - /url: /node/2
+                - cell "Article" [ref=e1446]
+                - cell "admin" [ref=e1447]:
+                  - link "admin" [ref=e1448] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1449]:
+                  - generic [ref=e1450]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1451]:
+                  - time [ref=e1452]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 2 List additional actions" [ref=e1453]:
+                  - list [ref=e1456]:
+                    - listitem [ref=e1457]:
+                      - link "Edit Dummy Article 2" [ref=e1458] [cursor=pointer]:
+                        - /url: /node/2/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1459]:
+                        - generic [ref=e1460]: List additional actions
+              - row "Update this item Dummy Article 12 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 12 List additional actions" [ref=e1461]:
+                - cell "Update this item" [ref=e1462]:
+                  - generic [ref=e1463]:
+                    - generic [ref=e1464] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1465]
+                - cell "Dummy Article 12" [ref=e1466]:
+                  - link "Dummy Article 12" [ref=e1467] [cursor=pointer]:
+                    - /url: /node/12
+                - cell "Article" [ref=e1468]
+                - cell "admin" [ref=e1469]:
+                  - link "admin" [ref=e1470] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1471]:
+                  - generic [ref=e1472]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1473]:
+                  - time [ref=e1474]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 12 List additional actions" [ref=e1475]:
+                  - list [ref=e1478]:
+                    - listitem [ref=e1479]:
+                      - link "Edit Dummy Article 12" [ref=e1480] [cursor=pointer]:
+                        - /url: /node/12/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1481]:
+                        - generic [ref=e1482]: List additional actions
+              - row "Update this item Dummy Article 13 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 13 List additional actions" [ref=e1483]:
+                - cell "Update this item" [ref=e1484]:
+                  - generic [ref=e1485]:
+                    - generic [ref=e1486] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1487]
+                - cell "Dummy Article 13" [ref=e1488]:
+                  - link "Dummy Article 13" [ref=e1489] [cursor=pointer]:
+                    - /url: /node/13
+                - cell "Article" [ref=e1490]
+                - cell "admin" [ref=e1491]:
+                  - link "admin" [ref=e1492] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1493]:
+                  - generic [ref=e1494]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1495]:
+                  - time [ref=e1496]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 13 List additional actions" [ref=e1497]:
+                  - list [ref=e1500]:
+                    - listitem [ref=e1501]:
+                      - link "Edit Dummy Article 13" [ref=e1502] [cursor=pointer]:
+                        - /url: /node/13/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1503]:
+                        - generic [ref=e1504]: List additional actions
+              - row "Update this item Dummy Article 14 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 14 List additional actions" [ref=e1505]:
+                - cell "Update this item" [ref=e1506]:
+                  - generic [ref=e1507]:
+                    - generic [ref=e1508] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1509]
+                - cell "Dummy Article 14" [ref=e1510]:
+                  - link "Dummy Article 14" [ref=e1511] [cursor=pointer]:
+                    - /url: /node/14
+                - cell "Article" [ref=e1512]
+                - cell "admin" [ref=e1513]:
+                  - link "admin" [ref=e1514] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1515]:
+                  - generic [ref=e1516]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1517]:
+                  - time [ref=e1518]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 14 List additional actions" [ref=e1519]:
+                  - list [ref=e1522]:
+                    - listitem [ref=e1523]:
+                      - link "Edit Dummy Article 14" [ref=e1524] [cursor=pointer]:
+                        - /url: /node/14/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1525]:
+                        - generic [ref=e1526]: List additional actions
+              - row "Update this item Dummy Article 24 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 24 List additional actions" [ref=e1527]:
+                - cell "Update this item" [ref=e1528]:
+                  - generic [ref=e1529]:
+                    - generic [ref=e1530] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1531]
+                - cell "Dummy Article 24" [ref=e1532]:
+                  - link "Dummy Article 24" [ref=e1533] [cursor=pointer]:
+                    - /url: /node/24
+                - cell "Article" [ref=e1534]
+                - cell "admin" [ref=e1535]:
+                  - link "admin" [ref=e1536] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1537]:
+                  - generic [ref=e1538]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1539]:
+                  - time [ref=e1540]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 24 List additional actions" [ref=e1541]:
+                  - list [ref=e1544]:
+                    - listitem [ref=e1545]:
+                      - link "Edit Dummy Article 24" [ref=e1546] [cursor=pointer]:
+                        - /url: /node/24/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1547]:
+                        - generic [ref=e1548]: List additional actions
+              - row "Update this item Dummy Article 23 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 23 List additional actions" [ref=e1549]:
+                - cell "Update this item" [ref=e1550]:
+                  - generic [ref=e1551]:
+                    - generic [ref=e1552] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1553]
+                - cell "Dummy Article 23" [ref=e1554]:
+                  - link "Dummy Article 23" [ref=e1555] [cursor=pointer]:
+                    - /url: /node/23
+                - cell "Article" [ref=e1556]
+                - cell "admin" [ref=e1557]:
+                  - link "admin" [ref=e1558] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1559]:
+                  - generic [ref=e1560]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1561]:
+                  - time [ref=e1562]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 23 List additional actions" [ref=e1563]:
+                  - list [ref=e1566]:
+                    - listitem [ref=e1567]:
+                      - link "Edit Dummy Article 23" [ref=e1568] [cursor=pointer]:
+                        - /url: /node/23/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1569]:
+                        - generic [ref=e1570]: List additional actions
+              - row "Update this item Dummy Article 22 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 22 List additional actions" [ref=e1571]:
+                - cell "Update this item" [ref=e1572]:
+                  - generic [ref=e1573]:
+                    - generic [ref=e1574] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1575]
+                - cell "Dummy Article 22" [ref=e1576]:
+                  - link "Dummy Article 22" [ref=e1577] [cursor=pointer]:
+                    - /url: /node/22
+                - cell "Article" [ref=e1578]
+                - cell "admin" [ref=e1579]:
+                  - link "admin" [ref=e1580] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1581]:
+                  - generic [ref=e1582]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1583]:
+                  - time [ref=e1584]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 22 List additional actions" [ref=e1585]:
+                  - list [ref=e1588]:
+                    - listitem [ref=e1589]:
+                      - link "Edit Dummy Article 22" [ref=e1590] [cursor=pointer]:
+                        - /url: /node/22/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1591]:
+                        - generic [ref=e1592]: List additional actions
+              - row "Update this item Dummy Article 21 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 21 List additional actions" [ref=e1593]:
+                - cell "Update this item" [ref=e1594]:
+                  - generic [ref=e1595]:
+                    - generic [ref=e1596] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1597]
+                - cell "Dummy Article 21" [ref=e1598]:
+                  - link "Dummy Article 21" [ref=e1599] [cursor=pointer]:
+                    - /url: /node/21
+                - cell "Article" [ref=e1600]
+                - cell "admin" [ref=e1601]:
+                  - link "admin" [ref=e1602] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1603]:
+                  - generic [ref=e1604]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1605]:
+                  - time [ref=e1606]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 21 List additional actions" [ref=e1607]:
+                  - list [ref=e1610]:
+                    - listitem [ref=e1611]:
+                      - link "Edit Dummy Article 21" [ref=e1612] [cursor=pointer]:
+                        - /url: /node/21/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1613]:
+                        - generic [ref=e1614]: List additional actions
+              - row "Update this item Dummy Article 20 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 20 List additional actions" [ref=e1615]:
+                - cell "Update this item" [ref=e1616]:
+                  - generic [ref=e1617]:
+                    - generic [ref=e1618] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1619]
+                - cell "Dummy Article 20" [ref=e1620]:
+                  - link "Dummy Article 20" [ref=e1621] [cursor=pointer]:
+                    - /url: /node/20
+                - cell "Article" [ref=e1622]
+                - cell "admin" [ref=e1623]:
+                  - link "admin" [ref=e1624] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1625]:
+                  - generic [ref=e1626]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1627]:
+                  - time [ref=e1628]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 20 List additional actions" [ref=e1629]:
+                  - list [ref=e1632]:
+                    - listitem [ref=e1633]:
+                      - link "Edit Dummy Article 20" [ref=e1634] [cursor=pointer]:
+                        - /url: /node/20/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1635]:
+                        - generic [ref=e1636]: List additional actions
+              - row "Update this item Dummy Article 19 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 19 List additional actions" [ref=e1637]:
+                - cell "Update this item" [ref=e1638]:
+                  - generic [ref=e1639]:
+                    - generic [ref=e1640] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1641]
+                - cell "Dummy Article 19" [ref=e1642]:
+                  - link "Dummy Article 19" [ref=e1643] [cursor=pointer]:
+                    - /url: /node/19
+                - cell "Article" [ref=e1644]
+                - cell "admin" [ref=e1645]:
+                  - link "admin" [ref=e1646] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1647]:
+                  - generic [ref=e1648]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1649]:
+                  - time [ref=e1650]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 19 List additional actions" [ref=e1651]:
+                  - list [ref=e1654]:
+                    - listitem [ref=e1655]:
+                      - link "Edit Dummy Article 19" [ref=e1656] [cursor=pointer]:
+                        - /url: /node/19/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1657]:
+                        - generic [ref=e1658]: List additional actions
+              - row "Update this item Dummy Article 18 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 18 List additional actions" [ref=e1659]:
+                - cell "Update this item" [ref=e1660]:
+                  - generic [ref=e1661]:
+                    - generic [ref=e1662] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1663]
+                - cell "Dummy Article 18" [ref=e1664]:
+                  - link "Dummy Article 18" [ref=e1665] [cursor=pointer]:
+                    - /url: /node/18
+                - cell "Article" [ref=e1666]
+                - cell "admin" [ref=e1667]:
+                  - link "admin" [ref=e1668] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1669]:
+                  - generic [ref=e1670]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1671]:
+                  - time [ref=e1672]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 18 List additional actions" [ref=e1673]:
+                  - list [ref=e1676]:
+                    - listitem [ref=e1677]:
+                      - link "Edit Dummy Article 18" [ref=e1678] [cursor=pointer]:
+                        - /url: /node/18/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1679]:
+                        - generic [ref=e1680]: List additional actions
+              - row "Update this item Dummy Article 17 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 17 List additional actions" [ref=e1681]:
+                - cell "Update this item" [ref=e1682]:
+                  - generic [ref=e1683]:
+                    - generic [ref=e1684] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1685]
+                - cell "Dummy Article 17" [ref=e1686]:
+                  - link "Dummy Article 17" [ref=e1687] [cursor=pointer]:
+                    - /url: /node/17
+                - cell "Article" [ref=e1688]
+                - cell "admin" [ref=e1689]:
+                  - link "admin" [ref=e1690] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1691]:
+                  - generic [ref=e1692]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1693]:
+                  - time [ref=e1694]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 17 List additional actions" [ref=e1695]:
+                  - list [ref=e1698]:
+                    - listitem [ref=e1699]:
+                      - link "Edit Dummy Article 17" [ref=e1700] [cursor=pointer]:
+                        - /url: /node/17/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1701]:
+                        - generic [ref=e1702]: List additional actions
+              - row "Update this item Dummy Article 16 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 16 List additional actions" [ref=e1703]:
+                - cell "Update this item" [ref=e1704]:
+                  - generic [ref=e1705]:
+                    - generic [ref=e1706] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1707]
+                - cell "Dummy Article 16" [ref=e1708]:
+                  - link "Dummy Article 16" [ref=e1709] [cursor=pointer]:
+                    - /url: /node/16
+                - cell "Article" [ref=e1710]
+                - cell "admin" [ref=e1711]:
+                  - link "admin" [ref=e1712] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1713]:
+                  - generic [ref=e1714]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1715]:
+                  - time [ref=e1716]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 16 List additional actions" [ref=e1717]:
+                  - list [ref=e1720]:
+                    - listitem [ref=e1721]:
+                      - link "Edit Dummy Article 16" [ref=e1722] [cursor=pointer]:
+                        - /url: /node/16/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1723]:
+                        - generic [ref=e1724]: List additional actions
+              - row "Update this item Dummy Article 15 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 15 List additional actions" [ref=e1725]:
+                - cell "Update this item" [ref=e1726]:
+                  - generic [ref=e1727]:
+                    - generic [ref=e1728] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1729]
+                - cell "Dummy Article 15" [ref=e1730]:
+                  - link "Dummy Article 15" [ref=e1731] [cursor=pointer]:
+                    - /url: /node/15
+                - cell "Article" [ref=e1732]
+                - cell "admin" [ref=e1733]:
+                  - link "admin" [ref=e1734] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1735]:
+                  - generic [ref=e1736]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1737]:
+                  - time [ref=e1738]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 15 List additional actions" [ref=e1739]:
+                  - list [ref=e1742]:
+                    - listitem [ref=e1743]:
+                      - link "Edit Dummy Article 15" [ref=e1744] [cursor=pointer]:
+                        - /url: /node/15/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1745]:
+                        - generic [ref=e1746]: List additional actions
+              - row "Update this item Dummy Article 1 Article admin Published 28 May 2026 - 07:52 Edit Dummy Article 1 List additional actions" [ref=e1747]:
+                - cell "Update this item" [ref=e1748]:
+                  - generic [ref=e1749]:
+                    - generic [ref=e1750] [cursor=pointer]: Update this item
+                    - checkbox "Update this item" [ref=e1751]
+                - cell "Dummy Article 1" [ref=e1752]:
+                  - link "Dummy Article 1" [ref=e1753] [cursor=pointer]:
+                    - /url: /node/1
+                - cell "Article" [ref=e1754]
+                - cell "admin" [ref=e1755]:
+                  - link "admin" [ref=e1756] [cursor=pointer]:
+                    - /url: /user/1
+                - cell "Published" [ref=e1757]:
+                  - generic [ref=e1758]: Published
+                - cell "28 May 2026 - 07:52" [ref=e1759]:
+                  - time [ref=e1760]: 28 May 2026 - 07:52
+                - cell "Edit Dummy Article 1 List additional actions" [ref=e1761]:
+                  - list [ref=e1764]:
+                    - listitem [ref=e1765]:
+                      - link "Edit Dummy Article 1" [ref=e1766] [cursor=pointer]:
+                        - /url: /node/1/edit?destination=/admin/content
+                        - text: Edit
+                    - listitem:
+                      - button "List additional actions" [ref=e1767]:
+                        - generic [ref=e1768]: List additional actions
+          - group "Perform actions on the selected items in the Content view" [ref=e1769]:
+            - generic [ref=e1770]:
+              - text: Perform actions on the selected items in the
+              - emphasis [ref=e1771]: Content
+              - text: view
+            - generic [ref=e1772]: No items selected
+            - generic [ref=e1773]:
+              - text: "Action:"
+              - combobox "Action:" [ref=e1774]:
+                - option "- Select -" [selected]
+                - option "Delete content"
+                - option "Make content sticky"
+                - option "Make content unsticky"
+                - option "Promote content to front page"
+                - option "Publish content"
+                - option "Save content"
+                - option "Remove content from front page"
+                - option "Unpublish content"
+            - button "Apply to selected items" [ref=e1776] [cursor=pointer]
+  - generic [ref=e1777]: No items selected
+```
+
+# Test source
+
+```ts
+  1  | // #ddev-generated
+  2  | import { test, expect } from '@playwright/test';
+  3  | import fs from 'fs';
+  4  | import type { AdminPageDefinition } from '../../page-definitions/admin-pages.js';
+  5  | 
+  6  | export function generateVrtTests(pages: AdminPageDefinition[]) {
+  7  |   for (const pageDef of pages) {
+  8  |     test.describe(pageDef.id, () => {
+  9  |       test('default state', async ({ page }, testInfo) => {
+  10 |         if (pageDef.testTimeout) {
+  11 |           test.setTimeout(pageDef.testTimeout);
+  12 |         }
+  13 | 
+  14 |         if (testInfo.project.name.includes('dark')) {
+  15 |           await page.emulateMedia({ colorScheme: 'dark' });
+  16 |         }
+  17 |         else {
+  18 |           await page.emulateMedia({ colorScheme: 'light' });
+  19 |         }
+  20 | 
+  21 |         await page.goto(pageDef.path);
+  22 | 
+  23 |         if (testInfo.project.name.startsWith('rtl-')) {
+  24 |           await page.evaluate(() => {
+  25 |             document.documentElement.dir = 'rtl';
+  26 |           });
+  27 |         }
+  28 | 
+  29 |         if (pageDef.waitFor) {
+  30 |           await page.locator(pageDef.waitFor).waitFor();
+  31 |         }
+  32 | 
+  33 |         await page.waitForLoadState('load');
+  34 | 
+  35 |         const mask = (pageDef.maskSelectors || []).map((s) => page.locator(s));
+  36 | 
+> 37 |         await expect(page).toHaveScreenshot(`${pageDef.id}.png`, {
+     |                            ^ Error: expect(page).toHaveScreenshot(expected) failed
+  38 |           fullPage: pageDef.fullPage ?? false,
+  39 |           mask,
+  40 |           ...(pageDef.timeout ? { timeout: pageDef.timeout } : {}),
+  41 |         });
+  42 |         const snapshotPath = testInfo.snapshotPath(`${pageDef.id}.png`);
+  43 |         if (fs.existsSync(snapshotPath)) {
+  44 |           await testInfo.attach('screenshot', { body: fs.readFileSync(snapshotPath), contentType: 'image/png' });
+  45 |         }
+  46 |       });
+  47 | 
+  48 |       if (pageDef.interactions) {
+  49 |         for (const interaction of pageDef.interactions) {
+  50 |           test(`interaction: ${interaction.label}`, async ({ page }, testInfo) => {
+  51 |             if (pageDef.testTimeout) {
+  52 |               test.setTimeout(pageDef.testTimeout);
+  53 |             }
+  54 | 
+  55 |             if (testInfo.project.name.includes('dark')) {
+  56 |               await page.emulateMedia({ colorScheme: 'dark' });
+  57 |             }
+  58 |             else {
+  59 |               await page.emulateMedia({ colorScheme: 'light' });
+  60 |             }
+  61 | 
+  62 |             await page.goto(pageDef.path);
+  63 | 
+  64 |             if (testInfo.project.name.startsWith('rtl-')) {
+  65 |               await page.evaluate(() => {
+  66 |                 document.documentElement.dir = 'rtl';
+  67 |               });
+  68 |             }
+  69 | 
+  70 |             if (pageDef.waitFor) {
+  71 |               await page.locator(pageDef.waitFor).waitFor();
+  72 |             }
+  73 | 
+  74 |             await page.waitForLoadState('load');
+  75 |             await interaction.action(page);
+  76 | 
+  77 |             const mask = (pageDef.maskSelectors || []).map((s) => page.locator(s));
+  78 | 
+  79 |             await expect(page).toHaveScreenshot(
+  80 |               `${pageDef.id}--${interaction.label}.png`,
+  81 |               {
+  82 |                 fullPage: pageDef.fullPage ?? false,
+  83 |                 mask,
+  84 |                 ...(pageDef.timeout ? { timeout: pageDef.timeout } : {}),
+  85 |               }
+  86 |             );
+  87 |             const snapshotPath = testInfo.snapshotPath(`${pageDef.id}--${interaction.label}.png`);
+  88 |             if (fs.existsSync(snapshotPath)) {
+  89 |               await testInfo.attach('screenshot', { body: fs.readFileSync(snapshotPath), contentType: 'image/png' });
+  90 |             }
+  91 |           });
+  92 |         }
+  93 |       }
+  94 |     });
+  95 |   }
+  96 | }
+  97 | 
+```

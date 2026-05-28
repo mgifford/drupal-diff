@@ -1,0 +1,1537 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: vrt/structure.spec.ts >> structure-views-content >> default state
+- Location: tests/vrt/generate-vrt-tests.ts:9:11
+
+# Error details
+
+```
+Error: expect(page).toHaveScreenshot(expected) failed
+
+  Expected an image 445px by 9427px, received 375px by 9545px. 150494 pixels (ratio 0.04 of all image pixels) are different.
+
+  Snapshot: structure-views-content.png
+
+Call log:
+  - Expect "toHaveScreenshot(structure-views-content.png)" with timeout 5000ms
+    - verifying given screenshot expectation
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - Expected an image 445px by 9427px, received 375px by 3492px. 115470 pixels (ratio 0.03 of all image pixels) are different.
+  - waiting 100ms before taking screenshot
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - Expected an image 375px by 3492px, received 375px by 9545px. 36229 pixels (ratio 0.02 of all image pixels) are different.
+  - waiting 250ms before taking screenshot
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - captured a stable screenshot
+  - Expected an image 445px by 9427px, received 375px by 9545px. 150494 pixels (ratio 0.04 of all image pixels) are different.
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - button "Expand sidebar" [ref=e5] [cursor=pointer]:
+    - img [ref=e6]
+    - generic [ref=e8]: Expand sidebar
+  - navigation "Breadcrumb" [ref=e12]:
+    - heading "Breadcrumb" [level=2] [ref=e13]
+    - list [ref=e14]:
+      - listitem:
+        - link "Back to site" [ref=e15] [cursor=pointer]:
+          - /url: /
+      - listitem:
+        - link "Administration" [ref=e16] [cursor=pointer]:
+          - /url: /admin
+      - listitem:
+        - text: /
+        - link "Structure" [ref=e17] [cursor=pointer]:
+          - /url: /admin/structure
+      - listitem:
+        - text: /
+        - link "Views" [ref=e18] [cursor=pointer]:
+          - /url: /admin/structure/views
+  - generic [ref=e19]:
+    - banner [ref=e20]:
+      - heading "Content (Content)" [level=1] [ref=e24]
+    - main [ref=e26]:
+      - generic [ref=e29]:
+        - generic [ref=e31]:
+          - heading "Displays" [level=1] [ref=e32]
+          - generic [ref=e33]:
+            - generic [ref=e34]:
+              - heading "Secondary tabs" [level=2] [ref=e35]
+              - list [ref=e36]:
+                - listitem [ref=e37]:
+                  - link "Page" [ref=e38] [cursor=pointer]:
+                    - /url: /admin/structure/views/view/content/edit/page_1
+                - listitem [ref=e39]:
+                  - link "Add" [ref=e40] [cursor=pointer]:
+                    - /url: "#"
+                    - text: + Add
+              - list [ref=e44]:
+                - listitem [ref=e45]:
+                  - link "Edit view name/description" [ref=e46] [cursor=pointer]:
+                    - /url: /admin/structure/views/nojs/edit-details/content/page_1
+                - listitem:
+                  - button "List additional actions" [ref=e47]:
+                    - generic [ref=e48]: List additional actions
+            - generic [ref=e52]:
+              - generic [ref=e53]:
+                - generic [ref=e54]:
+                  - generic [ref=e55]: "Display name:"
+                  - link "Page" [ref=e56] [cursor=pointer]:
+                    - /url: /admin/structure/views/nojs/display/content/page_1/display_title
+                - list [ref=e59]:
+                  - listitem [ref=e60]:
+                    - link "View Page" [ref=e61] [cursor=pointer]:
+                      - /url: /admin/content
+                  - listitem:
+                    - button "List additional actions" [ref=e62]:
+                      - generic [ref=e63]: List additional actions
+              - generic [ref=e64]:
+                - generic [ref=e65]:
+                  - generic [ref=e66]:
+                    - heading "Title" [level=3] [ref=e68]
+                    - generic [ref=e69]:
+                      - generic [ref=e70]: "Title:"
+                      - link "Content" [ref=e71] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/title
+                  - generic [ref=e72]:
+                    - heading "Format" [level=3] [ref=e74]
+                    - generic [ref=e75]:
+                      - generic [ref=e76]: "Format:"
+                      - link "Table" [ref=e77] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/style
+                      - generic [ref=e78]: "|"
+                      - link "Settings" [ref=e79] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/style_options
+                  - generic [ref=e80]:
+                    - generic [ref=e81]:
+                      - heading "Fields" [level=3] [ref=e82]
+                      - list [ref=e86]:
+                        - listitem [ref=e87]:
+                          - link "Add fields" [ref=e88] [cursor=pointer]:
+                            - /url: /admin/structure/views/nojs/add-handler/content/page_1/field
+                            - text: Add
+                            - generic [ref=e89]: fields
+                        - listitem:
+                          - button "List additional actions" [ref=e90]:
+                            - generic [ref=e91]: List additional actions
+                    - 'link "Content: Node operations bulk form" [ref=e93] [cursor=pointer]':
+                      - /url: /admin/structure/views/nojs/handler/content/page_1/field/node_bulk_form
+                    - 'link "Content: Title (Title)" [ref=e95] [cursor=pointer]':
+                      - /url: /admin/structure/views/nojs/handler/content/page_1/field/title
+                    - 'link "Content: Content type (Content type)" [ref=e97] [cursor=pointer]':
+                      - /url: /admin/structure/views/nojs/handler/content/page_1/field/type
+                    - 'link "(author) User: Name (Author)" [ref=e99] [cursor=pointer]':
+                      - /url: /admin/structure/views/nojs/handler/content/page_1/field/name
+                    - 'link "Content: Published (Status)" [ref=e101] [cursor=pointer]':
+                      - /url: /admin/structure/views/nojs/handler/content/page_1/field/status
+                    - 'link "Content: Changed (Updated)" [ref=e103] [cursor=pointer]':
+                      - /url: /admin/structure/views/nojs/handler/content/page_1/field/changed
+                    - 'link "Content: Translation language (Language)" [ref=e105] [cursor=pointer]':
+                      - /url: /admin/structure/views/nojs/handler/content/page_1/field/langcode
+                    - 'link "Content: Operations links (Operations)" [ref=e107] [cursor=pointer]':
+                      - /url: /admin/structure/views/nojs/handler/content/page_1/field/operations
+                  - generic [ref=e108]:
+                    - generic [ref=e109]:
+                      - heading "Filter criteria" [level=3] [ref=e110]
+                      - list [ref=e114]:
+                        - listitem [ref=e115]:
+                          - link "Add filter criteria" [ref=e116] [cursor=pointer]:
+                            - /url: /admin/structure/views/nojs/add-handler/content/page_1/filter
+                            - text: Add
+                            - generic [ref=e117]: filter criteria
+                        - listitem:
+                          - button "List additional actions" [ref=e118]:
+                            - generic [ref=e119]: List additional actions
+                    - 'link "Content: Title (exposed)" [ref=e121] [cursor=pointer]':
+                      - /url: /admin/structure/views/nojs/handler/content/page_1/filter/title
+                    - 'link "Content: Content type (exposed)" [ref=e123] [cursor=pointer]':
+                      - /url: /admin/structure/views/nojs/handler/content/page_1/filter/type
+                    - 'link "Content: Published (grouped)" [ref=e125] [cursor=pointer]':
+                      - /url: /admin/structure/views/nojs/handler/content/page_1/filter/status
+                    - 'link "Content: Translation language (exposed)" [ref=e127] [cursor=pointer]':
+                      - /url: /admin/structure/views/nojs/handler/content/page_1/filter/langcode
+                    - 'link "Content: Published status or admin user" [ref=e129] [cursor=pointer]':
+                      - /url: /admin/structure/views/nojs/handler/content/page_1/filter/status_extra
+                  - generic [ref=e131]:
+                    - heading "Sort criteria" [level=3] [ref=e132]
+                    - list [ref=e136]:
+                      - listitem [ref=e137]:
+                        - link "Add sort criteria" [ref=e138] [cursor=pointer]:
+                          - /url: /admin/structure/views/nojs/add-handler/content/page_1/sort
+                          - text: Add
+                          - generic [ref=e139]: sort criteria
+                - generic [ref=e140]:
+                  - generic [ref=e141]:
+                    - heading "Page settings" [level=3] [ref=e143]
+                    - generic [ref=e144]:
+                      - generic [ref=e145]: "Path:"
+                      - link "/admin/content/node" [ref=e146] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/path
+                    - generic [ref=e147]:
+                      - generic [ref=e148]: "Menu:"
+                      - 'link "Tab: Content" [ref=e149] [cursor=pointer]':
+                        - /url: /admin/structure/views/nojs/display/content/page_1/menu
+                      - generic [ref=e150]: "|"
+                      - link "Parent menu link" [ref=e151] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/tab_options
+                    - generic [ref=e152]:
+                      - generic [ref=e153]: "Administration theme:"
+                      - link "Yes (admin path)" [ref=e154] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/use_admin_theme
+                  - generic [ref=e156]:
+                    - generic [ref=e157]: "Access:"
+                    - link "Permission" [ref=e158] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/access
+                    - generic [ref=e159]: "|"
+                    - link "Access the Content overview page" [ref=e160] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/display/content/page_1/access_options
+                  - generic [ref=e162]:
+                    - heading "Header" [level=3] [ref=e163]
+                    - list [ref=e167]:
+                      - listitem [ref=e168]:
+                        - link "Add header" [ref=e169] [cursor=pointer]:
+                          - /url: /admin/structure/views/nojs/add-handler/content/page_1/header
+                          - text: Add
+                          - generic [ref=e170]: header
+                  - generic [ref=e172]:
+                    - heading "Footer" [level=3] [ref=e173]
+                    - list [ref=e177]:
+                      - listitem [ref=e178]:
+                        - link "Add footer" [ref=e179] [cursor=pointer]:
+                          - /url: /admin/structure/views/nojs/add-handler/content/page_1/footer
+                          - text: Add
+                          - generic [ref=e180]: footer
+                  - generic [ref=e181]:
+                    - generic [ref=e182]:
+                      - heading "No results behavior" [level=3] [ref=e183]
+                      - list [ref=e187]:
+                        - listitem [ref=e188]:
+                          - link "Add no results behavior" [ref=e189] [cursor=pointer]:
+                            - /url: /admin/structure/views/nojs/add-handler/content/page_1/empty
+                            - text: Add
+                            - generic [ref=e190]: no results behavior
+                        - listitem:
+                          - button "List additional actions" [ref=e191]:
+                            - generic [ref=e192]: List additional actions
+                    - 'link "Global: Unfiltered text (Global: Unfiltered text)" [ref=e194] [cursor=pointer]':
+                      - /url: /admin/structure/views/nojs/handler/content/page_1/empty/area_text_custom
+                  - generic [ref=e195]:
+                    - heading "Pager" [level=3] [ref=e197]
+                    - generic [ref=e198]:
+                      - generic [ref=e199]: "Use pager:"
+                      - link "Full" [ref=e200] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/pager
+                      - generic [ref=e201]: "|"
+                      - link "Paged, 50 items" [ref=e202] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/pager_options
+                    - generic [ref=e203]:
+                      - generic [ref=e204]: "More link:"
+                      - link "No" [ref=e205] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/use_more
+                - generic [ref=e206]:
+                  - generic [ref=e207]:
+                    - generic [ref=e208]:
+                      - heading "Relationships" [level=3] [ref=e209]
+                      - list [ref=e213]:
+                        - listitem [ref=e214]:
+                          - link "Add relationships" [ref=e215] [cursor=pointer]:
+                            - /url: /admin/structure/views/nojs/add-handler/content/page_1/relationship
+                            - text: Add
+                            - generic [ref=e216]: relationships
+                        - listitem:
+                          - button "List additional actions" [ref=e217]:
+                            - generic [ref=e218]: List additional actions
+                    - link "author" [ref=e220] [cursor=pointer]:
+                      - /url: /admin/structure/views/nojs/handler/content/page_1/relationship/uid
+                  - generic [ref=e222]:
+                    - heading "Contextual filters" [level=3] [ref=e223]
+                    - list [ref=e227]:
+                      - listitem [ref=e228]:
+                        - link "Add contextual filters" [ref=e229] [cursor=pointer]:
+                          - /url: /admin/structure/views/nojs/add-handler/content/page_1/argument
+                          - text: Add
+                          - generic [ref=e230]: contextual filters
+                  - generic [ref=e231]:
+                    - heading "Exposed form" [level=3] [ref=e233]
+                    - generic [ref=e234]:
+                      - generic [ref=e235]: "Exposed form in block:"
+                      - link "No" [ref=e236] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/exposed_block
+                    - generic [ref=e237]:
+                      - generic [ref=e238]: "Exposed Form:"
+                      - link "Basic" [ref=e239] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/exposed_form
+                      - generic [ref=e240]: "|"
+                      - link "Settings" [ref=e241] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/exposed_form_options
+                  - generic [ref=e242]:
+                    - heading "Other" [level=3] [ref=e244]
+                    - generic [ref=e245]:
+                      - generic [ref=e246]: "Machine Name:"
+                      - link "page_1" [ref=e247] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/display_id
+                    - generic [ref=e248]:
+                      - generic [ref=e249]: "Administrative comment:"
+                      - link "None" [ref=e250] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/display_comment
+                    - generic [ref=e251]:
+                      - generic [ref=e252]: "Use AJAX:"
+                      - link "No" [ref=e253] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/use_ajax
+                    - generic [ref=e254]:
+                      - generic [ref=e255]: "Hide attachments in summary:"
+                      - link "No" [ref=e256] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/hide_attachment_summary
+                    - generic [ref=e257]:
+                      - generic [ref=e258]: "Contextual links:"
+                      - link "Hidden" [ref=e259] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/show_admin_links
+                    - generic [ref=e260]:
+                      - generic [ref=e261]: "Use aggregation:"
+                      - link "No" [ref=e262] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/group_by
+                    - generic [ref=e263]:
+                      - generic [ref=e264]: "Query settings:"
+                      - link "Settings" [ref=e265] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/query
+                    - generic [ref=e266]:
+                      - generic [ref=e267]: "Caching:"
+                      - link "Tag based" [ref=e268] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/cache
+                    - generic [ref=e269]:
+                      - generic [ref=e270]: "CSS class:"
+                      - link "None" [ref=e271] [cursor=pointer]:
+                        - /url: /admin/structure/views/nojs/display/content/page_1/css_class
+          - generic [ref=e272]:
+            - button "Save" [ref=e273] [cursor=pointer]
+            - button "Cancel" [ref=e274] [cursor=pointer]
+        - generic [ref=e276]:
+          - heading "Preview" [level=2] [ref=e277]
+          - generic [ref=e278]:
+            - checkbox "Auto preview" [checked] [ref=e279] [cursor=pointer]
+            - text: Auto preview
+          - generic [ref=e280]:
+            - generic [ref=e281] [cursor=pointer]: "Preview with contextual filters:"
+            - textbox "Preview with contextual filters:" [ref=e282]
+            - generic [ref=e283]:
+              - text: Separate contextual filter values with a "/". For example,
+              - emphasis [ref=e284]: 40/12/10
+              - text: .
+          - button "Update preview" [ref=e286] [cursor=pointer]
+          - generic [ref=e287]:
+            - table [ref=e290]:
+              - rowgroup [ref=e291]:
+                - row "Title Content" [ref=e292]:
+                  - cell "Title" [ref=e293]:
+                    - strong [ref=e294]: Title
+                  - cell "Content" [ref=e295]
+                - row "Path /admin/content" [ref=e296]:
+                  - cell "Path" [ref=e297]:
+                    - strong [ref=e298]: Path
+                  - cell "/admin/content" [ref=e299]:
+                    - link "/admin/content" [ref=e300] [cursor=pointer]:
+                      - /url: /admin/content
+            - generic [ref=e301]:
+              - generic [ref=e302]:
+                - heading "Title" [level=1] [ref=e303]
+                - generic [ref=e304]: Content
+              - generic [ref=e306]:
+                - heading "Exposed Filters" [level=1] [ref=e307]
+                - generic [ref=e308]:
+                  - generic [ref=e309]:
+                    - generic [ref=e310] [cursor=pointer]: Title
+                    - textbox "Title" [ref=e311]
+                  - generic [ref=e312]:
+                    - generic [ref=e313] [cursor=pointer]: Content type
+                    - combobox "Content type" [ref=e314]:
+                      - option "- Any -" [selected]
+                      - option "Article"
+                      - option "Basic page"
+                  - generic [ref=e315]:
+                    - generic [ref=e316] [cursor=pointer]: Published status
+                    - combobox "Published status" [ref=e317]:
+                      - option "- Any -" [selected]
+                      - option "Published"
+                      - option "Unpublished"
+                  - button "Filter" [ref=e319] [cursor=pointer]
+              - generic [ref=e321]:
+                - heading "Content" [level=1] [ref=e322]
+                - generic [ref=e325]:
+                  - table [ref=e326]:
+                    - rowgroup [ref=e327]:
+                      - row "Select all rows in this table Title Content type Status Operations" [ref=e328]:
+                        - columnheader "Select all rows in this table" [ref=e329]:
+                          - checkbox "Select all rows in this table" [ref=e330]
+                        - columnheader "Title" [ref=e331]:
+                          - link "Title" [ref=e332] [cursor=pointer]:
+                            - /url: /admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&order=title&sort=asc
+                        - columnheader "Content type" [ref=e333]:
+                          - link "Content type" [ref=e334] [cursor=pointer]:
+                            - /url: /admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&order=type&sort=asc
+                        - columnheader "Status" [ref=e335]:
+                          - link "Status" [ref=e336] [cursor=pointer]:
+                            - /url: /admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&order=status&sort=asc
+                        - columnheader "Operations" [ref=e337]
+                  - generic [ref=e338]:
+                    - button "Show all columns" [ref=e340] [cursor=pointer]
+                    - table [ref=e341]:
+                      - rowgroup:
+                        - row "Select all rows in this table Title Content type Status Operations":
+                          - columnheader "Select all rows in this table":
+                            - checkbox "Select all rows in this table"
+                          - columnheader "Title":
+                            - link "Title":
+                              - /url: /admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&order=title&sort=asc
+                          - columnheader "Content type":
+                            - link "Content type":
+                              - /url: /admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&order=type&sort=asc
+                          - columnheader "Status":
+                            - link "Status":
+                              - /url: /admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&order=status&sort=asc
+                          - columnheader "Operations"
+                      - rowgroup [ref=e342]:
+                        - row "Update this item Dummy Page 20 Basic page Published Edit Dummy Page 20 List additional actions" [ref=e343]:
+                          - cell "Update this item" [ref=e344]:
+                            - generic [ref=e345]:
+                              - generic [ref=e346] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e347]
+                          - cell "Dummy Page 20" [ref=e348]:
+                            - link "Dummy Page 20" [ref=e349] [cursor=pointer]:
+                              - /url: /node/50
+                          - cell "Basic page" [ref=e350]
+                          - cell "Published" [ref=e351]:
+                            - generic [ref=e352]: Published
+                          - cell "Edit Dummy Page 20 List additional actions" [ref=e353]:
+                            - list [ref=e356]:
+                              - listitem [ref=e357]:
+                                - link "Edit Dummy Page 20" [ref=e358] [cursor=pointer]:
+                                  - /url: /node/50/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e359]:
+                                  - generic [ref=e360]: List additional actions
+                        - row "Update this item Dummy Page 6 Basic page Published Edit Dummy Page 6 List additional actions" [ref=e361]:
+                          - cell "Update this item" [ref=e362]:
+                            - generic [ref=e363]:
+                              - generic [ref=e364] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e365]
+                          - cell "Dummy Page 6" [ref=e366]:
+                            - link "Dummy Page 6" [ref=e367] [cursor=pointer]:
+                              - /url: /node/36
+                          - cell "Basic page" [ref=e368]
+                          - cell "Published" [ref=e369]:
+                            - generic [ref=e370]: Published
+                          - cell "Edit Dummy Page 6 List additional actions" [ref=e371]:
+                            - list [ref=e374]:
+                              - listitem [ref=e375]:
+                                - link "Edit Dummy Page 6" [ref=e376] [cursor=pointer]:
+                                  - /url: /node/36/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e377]:
+                                  - generic [ref=e378]: List additional actions
+                        - row "Update this item Dummy Page 5 Basic page Published Edit Dummy Page 5 List additional actions" [ref=e379]:
+                          - cell "Update this item" [ref=e380]:
+                            - generic [ref=e381]:
+                              - generic [ref=e382] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e383]
+                          - cell "Dummy Page 5" [ref=e384]:
+                            - link "Dummy Page 5" [ref=e385] [cursor=pointer]:
+                              - /url: /node/35
+                          - cell "Basic page" [ref=e386]
+                          - cell "Published" [ref=e387]:
+                            - generic [ref=e388]: Published
+                          - cell "Edit Dummy Page 5 List additional actions" [ref=e389]:
+                            - list [ref=e392]:
+                              - listitem [ref=e393]:
+                                - link "Edit Dummy Page 5" [ref=e394] [cursor=pointer]:
+                                  - /url: /node/35/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e395]:
+                                  - generic [ref=e396]: List additional actions
+                        - row "Update this item Dummy Page 4 Basic page Published Edit Dummy Page 4 List additional actions" [ref=e397]:
+                          - cell "Update this item" [ref=e398]:
+                            - generic [ref=e399]:
+                              - generic [ref=e400] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e401]
+                          - cell "Dummy Page 4" [ref=e402]:
+                            - link "Dummy Page 4" [ref=e403] [cursor=pointer]:
+                              - /url: /node/34
+                          - cell "Basic page" [ref=e404]
+                          - cell "Published" [ref=e405]:
+                            - generic [ref=e406]: Published
+                          - cell "Edit Dummy Page 4 List additional actions" [ref=e407]:
+                            - list [ref=e410]:
+                              - listitem [ref=e411]:
+                                - link "Edit Dummy Page 4" [ref=e412] [cursor=pointer]:
+                                  - /url: /node/34/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e413]:
+                                  - generic [ref=e414]: List additional actions
+                        - row "Update this item Dummy Page 3 Basic page Published Edit Dummy Page 3 List additional actions" [ref=e415]:
+                          - cell "Update this item" [ref=e416]:
+                            - generic [ref=e417]:
+                              - generic [ref=e418] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e419]
+                          - cell "Dummy Page 3" [ref=e420]:
+                            - link "Dummy Page 3" [ref=e421] [cursor=pointer]:
+                              - /url: /node/33
+                          - cell "Basic page" [ref=e422]
+                          - cell "Published" [ref=e423]:
+                            - generic [ref=e424]: Published
+                          - cell "Edit Dummy Page 3 List additional actions" [ref=e425]:
+                            - list [ref=e428]:
+                              - listitem [ref=e429]:
+                                - link "Edit Dummy Page 3" [ref=e430] [cursor=pointer]:
+                                  - /url: /node/33/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e431]:
+                                  - generic [ref=e432]: List additional actions
+                        - row "Update this item Dummy Page 2 Basic page Published Edit Dummy Page 2 List additional actions" [ref=e433]:
+                          - cell "Update this item" [ref=e434]:
+                            - generic [ref=e435]:
+                              - generic [ref=e436] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e437]
+                          - cell "Dummy Page 2" [ref=e438]:
+                            - link "Dummy Page 2" [ref=e439] [cursor=pointer]:
+                              - /url: /node/32
+                          - cell "Basic page" [ref=e440]
+                          - cell "Published" [ref=e441]:
+                            - generic [ref=e442]: Published
+                          - cell "Edit Dummy Page 2 List additional actions" [ref=e443]:
+                            - list [ref=e446]:
+                              - listitem [ref=e447]:
+                                - link "Edit Dummy Page 2" [ref=e448] [cursor=pointer]:
+                                  - /url: /node/32/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e449]:
+                                  - generic [ref=e450]: List additional actions
+                        - row "Update this item Dummy Page 1 Basic page Published Edit Dummy Page 1 List additional actions" [ref=e451]:
+                          - cell "Update this item" [ref=e452]:
+                            - generic [ref=e453]:
+                              - generic [ref=e454] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e455]
+                          - cell "Dummy Page 1" [ref=e456]:
+                            - link "Dummy Page 1" [ref=e457] [cursor=pointer]:
+                              - /url: /node/31
+                          - cell "Basic page" [ref=e458]
+                          - cell "Published" [ref=e459]:
+                            - generic [ref=e460]: Published
+                          - cell "Edit Dummy Page 1 List additional actions" [ref=e461]:
+                            - list [ref=e464]:
+                              - listitem [ref=e465]:
+                                - link "Edit Dummy Page 1" [ref=e466] [cursor=pointer]:
+                                  - /url: /node/31/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e467]:
+                                  - generic [ref=e468]: List additional actions
+                        - row "Update this item Dummy Article 30 Article Published Edit Dummy Article 30 List additional actions" [ref=e469]:
+                          - cell "Update this item" [ref=e470]:
+                            - generic [ref=e471]:
+                              - generic [ref=e472] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e473]
+                          - cell "Dummy Article 30" [ref=e474]:
+                            - link "Dummy Article 30" [ref=e475] [cursor=pointer]:
+                              - /url: /node/30
+                          - cell "Article" [ref=e476]
+                          - cell "Published" [ref=e477]:
+                            - generic [ref=e478]: Published
+                          - cell "Edit Dummy Article 30 List additional actions" [ref=e479]:
+                            - list [ref=e482]:
+                              - listitem [ref=e483]:
+                                - link "Edit Dummy Article 30" [ref=e484] [cursor=pointer]:
+                                  - /url: /node/30/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e485]:
+                                  - generic [ref=e486]: List additional actions
+                        - row "Update this item Dummy Article 29 Article Published Edit Dummy Article 29 List additional actions" [ref=e487]:
+                          - cell "Update this item" [ref=e488]:
+                            - generic [ref=e489]:
+                              - generic [ref=e490] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e491]
+                          - cell "Dummy Article 29" [ref=e492]:
+                            - link "Dummy Article 29" [ref=e493] [cursor=pointer]:
+                              - /url: /node/29
+                          - cell "Article" [ref=e494]
+                          - cell "Published" [ref=e495]:
+                            - generic [ref=e496]: Published
+                          - cell "Edit Dummy Article 29 List additional actions" [ref=e497]:
+                            - list [ref=e500]:
+                              - listitem [ref=e501]:
+                                - link "Edit Dummy Article 29" [ref=e502] [cursor=pointer]:
+                                  - /url: /node/29/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e503]:
+                                  - generic [ref=e504]: List additional actions
+                        - row "Update this item Dummy Article 28 Article Published Edit Dummy Article 28 List additional actions" [ref=e505]:
+                          - cell "Update this item" [ref=e506]:
+                            - generic [ref=e507]:
+                              - generic [ref=e508] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e509]
+                          - cell "Dummy Article 28" [ref=e510]:
+                            - link "Dummy Article 28" [ref=e511] [cursor=pointer]:
+                              - /url: /node/28
+                          - cell "Article" [ref=e512]
+                          - cell "Published" [ref=e513]:
+                            - generic [ref=e514]: Published
+                          - cell "Edit Dummy Article 28 List additional actions" [ref=e515]:
+                            - list [ref=e518]:
+                              - listitem [ref=e519]:
+                                - link "Edit Dummy Article 28" [ref=e520] [cursor=pointer]:
+                                  - /url: /node/28/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e521]:
+                                  - generic [ref=e522]: List additional actions
+                        - row "Update this item Dummy Article 27 Article Published Edit Dummy Article 27 List additional actions" [ref=e523]:
+                          - cell "Update this item" [ref=e524]:
+                            - generic [ref=e525]:
+                              - generic [ref=e526] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e527]
+                          - cell "Dummy Article 27" [ref=e528]:
+                            - link "Dummy Article 27" [ref=e529] [cursor=pointer]:
+                              - /url: /node/27
+                          - cell "Article" [ref=e530]
+                          - cell "Published" [ref=e531]:
+                            - generic [ref=e532]: Published
+                          - cell "Edit Dummy Article 27 List additional actions" [ref=e533]:
+                            - list [ref=e536]:
+                              - listitem [ref=e537]:
+                                - link "Edit Dummy Article 27" [ref=e538] [cursor=pointer]:
+                                  - /url: /node/27/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e539]:
+                                  - generic [ref=e540]: List additional actions
+                        - row "Update this item Dummy Page 7 Basic page Published Edit Dummy Page 7 List additional actions" [ref=e541]:
+                          - cell "Update this item" [ref=e542]:
+                            - generic [ref=e543]:
+                              - generic [ref=e544] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e545]
+                          - cell "Dummy Page 7" [ref=e546]:
+                            - link "Dummy Page 7" [ref=e547] [cursor=pointer]:
+                              - /url: /node/37
+                          - cell "Basic page" [ref=e548]
+                          - cell "Published" [ref=e549]:
+                            - generic [ref=e550]: Published
+                          - cell "Edit Dummy Page 7 List additional actions" [ref=e551]:
+                            - list [ref=e554]:
+                              - listitem [ref=e555]:
+                                - link "Edit Dummy Page 7" [ref=e556] [cursor=pointer]:
+                                  - /url: /node/37/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e557]:
+                                  - generic [ref=e558]: List additional actions
+                        - row "Update this item Dummy Page 8 Basic page Published Edit Dummy Page 8 List additional actions" [ref=e559]:
+                          - cell "Update this item" [ref=e560]:
+                            - generic [ref=e561]:
+                              - generic [ref=e562] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e563]
+                          - cell "Dummy Page 8" [ref=e564]:
+                            - link "Dummy Page 8" [ref=e565] [cursor=pointer]:
+                              - /url: /node/38
+                          - cell "Basic page" [ref=e566]
+                          - cell "Published" [ref=e567]:
+                            - generic [ref=e568]: Published
+                          - cell "Edit Dummy Page 8 List additional actions" [ref=e569]:
+                            - list [ref=e572]:
+                              - listitem [ref=e573]:
+                                - link "Edit Dummy Page 8" [ref=e574] [cursor=pointer]:
+                                  - /url: /node/38/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e575]:
+                                  - generic [ref=e576]: List additional actions
+                        - row "Update this item Dummy Page 9 Basic page Published Edit Dummy Page 9 List additional actions" [ref=e577]:
+                          - cell "Update this item" [ref=e578]:
+                            - generic [ref=e579]:
+                              - generic [ref=e580] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e581]
+                          - cell "Dummy Page 9" [ref=e582]:
+                            - link "Dummy Page 9" [ref=e583] [cursor=pointer]:
+                              - /url: /node/39
+                          - cell "Basic page" [ref=e584]
+                          - cell "Published" [ref=e585]:
+                            - generic [ref=e586]: Published
+                          - cell "Edit Dummy Page 9 List additional actions" [ref=e587]:
+                            - list [ref=e590]:
+                              - listitem [ref=e591]:
+                                - link "Edit Dummy Page 9" [ref=e592] [cursor=pointer]:
+                                  - /url: /node/39/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e593]:
+                                  - generic [ref=e594]: List additional actions
+                        - row "Update this item Dummy Page 19 Basic page Published Edit Dummy Page 19 List additional actions" [ref=e595]:
+                          - cell "Update this item" [ref=e596]:
+                            - generic [ref=e597]:
+                              - generic [ref=e598] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e599]
+                          - cell "Dummy Page 19" [ref=e600]:
+                            - link "Dummy Page 19" [ref=e601] [cursor=pointer]:
+                              - /url: /node/49
+                          - cell "Basic page" [ref=e602]
+                          - cell "Published" [ref=e603]:
+                            - generic [ref=e604]: Published
+                          - cell "Edit Dummy Page 19 List additional actions" [ref=e605]:
+                            - list [ref=e608]:
+                              - listitem [ref=e609]:
+                                - link "Edit Dummy Page 19" [ref=e610] [cursor=pointer]:
+                                  - /url: /node/49/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e611]:
+                                  - generic [ref=e612]: List additional actions
+                        - row "Update this item Dummy Page 18 Basic page Published Edit Dummy Page 18 List additional actions" [ref=e613]:
+                          - cell "Update this item" [ref=e614]:
+                            - generic [ref=e615]:
+                              - generic [ref=e616] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e617]
+                          - cell "Dummy Page 18" [ref=e618]:
+                            - link "Dummy Page 18" [ref=e619] [cursor=pointer]:
+                              - /url: /node/48
+                          - cell "Basic page" [ref=e620]
+                          - cell "Published" [ref=e621]:
+                            - generic [ref=e622]: Published
+                          - cell "Edit Dummy Page 18 List additional actions" [ref=e623]:
+                            - list [ref=e626]:
+                              - listitem [ref=e627]:
+                                - link "Edit Dummy Page 18" [ref=e628] [cursor=pointer]:
+                                  - /url: /node/48/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e629]:
+                                  - generic [ref=e630]: List additional actions
+                        - row "Update this item Dummy Page 17 Basic page Published Edit Dummy Page 17 List additional actions" [ref=e631]:
+                          - cell "Update this item" [ref=e632]:
+                            - generic [ref=e633]:
+                              - generic [ref=e634] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e635]
+                          - cell "Dummy Page 17" [ref=e636]:
+                            - link "Dummy Page 17" [ref=e637] [cursor=pointer]:
+                              - /url: /node/47
+                          - cell "Basic page" [ref=e638]
+                          - cell "Published" [ref=e639]:
+                            - generic [ref=e640]: Published
+                          - cell "Edit Dummy Page 17 List additional actions" [ref=e641]:
+                            - list [ref=e644]:
+                              - listitem [ref=e645]:
+                                - link "Edit Dummy Page 17" [ref=e646] [cursor=pointer]:
+                                  - /url: /node/47/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e647]:
+                                  - generic [ref=e648]: List additional actions
+                        - row "Update this item Dummy Page 16 Basic page Published Edit Dummy Page 16 List additional actions" [ref=e649]:
+                          - cell "Update this item" [ref=e650]:
+                            - generic [ref=e651]:
+                              - generic [ref=e652] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e653]
+                          - cell "Dummy Page 16" [ref=e654]:
+                            - link "Dummy Page 16" [ref=e655] [cursor=pointer]:
+                              - /url: /node/46
+                          - cell "Basic page" [ref=e656]
+                          - cell "Published" [ref=e657]:
+                            - generic [ref=e658]: Published
+                          - cell "Edit Dummy Page 16 List additional actions" [ref=e659]:
+                            - list [ref=e662]:
+                              - listitem [ref=e663]:
+                                - link "Edit Dummy Page 16" [ref=e664] [cursor=pointer]:
+                                  - /url: /node/46/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e665]:
+                                  - generic [ref=e666]: List additional actions
+                        - row "Update this item Dummy Page 15 Basic page Published Edit Dummy Page 15 List additional actions" [ref=e667]:
+                          - cell "Update this item" [ref=e668]:
+                            - generic [ref=e669]:
+                              - generic [ref=e670] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e671]
+                          - cell "Dummy Page 15" [ref=e672]:
+                            - link "Dummy Page 15" [ref=e673] [cursor=pointer]:
+                              - /url: /node/45
+                          - cell "Basic page" [ref=e674]
+                          - cell "Published" [ref=e675]:
+                            - generic [ref=e676]: Published
+                          - cell "Edit Dummy Page 15 List additional actions" [ref=e677]:
+                            - list [ref=e680]:
+                              - listitem [ref=e681]:
+                                - link "Edit Dummy Page 15" [ref=e682] [cursor=pointer]:
+                                  - /url: /node/45/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e683]:
+                                  - generic [ref=e684]: List additional actions
+                        - row "Update this item Dummy Page 14 Basic page Published Edit Dummy Page 14 List additional actions" [ref=e685]:
+                          - cell "Update this item" [ref=e686]:
+                            - generic [ref=e687]:
+                              - generic [ref=e688] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e689]
+                          - cell "Dummy Page 14" [ref=e690]:
+                            - link "Dummy Page 14" [ref=e691] [cursor=pointer]:
+                              - /url: /node/44
+                          - cell "Basic page" [ref=e692]
+                          - cell "Published" [ref=e693]:
+                            - generic [ref=e694]: Published
+                          - cell "Edit Dummy Page 14 List additional actions" [ref=e695]:
+                            - list [ref=e698]:
+                              - listitem [ref=e699]:
+                                - link "Edit Dummy Page 14" [ref=e700] [cursor=pointer]:
+                                  - /url: /node/44/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e701]:
+                                  - generic [ref=e702]: List additional actions
+                        - row "Update this item Dummy Page 13 Basic page Published Edit Dummy Page 13 List additional actions" [ref=e703]:
+                          - cell "Update this item" [ref=e704]:
+                            - generic [ref=e705]:
+                              - generic [ref=e706] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e707]
+                          - cell "Dummy Page 13" [ref=e708]:
+                            - link "Dummy Page 13" [ref=e709] [cursor=pointer]:
+                              - /url: /node/43
+                          - cell "Basic page" [ref=e710]
+                          - cell "Published" [ref=e711]:
+                            - generic [ref=e712]: Published
+                          - cell "Edit Dummy Page 13 List additional actions" [ref=e713]:
+                            - list [ref=e716]:
+                              - listitem [ref=e717]:
+                                - link "Edit Dummy Page 13" [ref=e718] [cursor=pointer]:
+                                  - /url: /node/43/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e719]:
+                                  - generic [ref=e720]: List additional actions
+                        - row "Update this item Dummy Page 12 Basic page Published Edit Dummy Page 12 List additional actions" [ref=e721]:
+                          - cell "Update this item" [ref=e722]:
+                            - generic [ref=e723]:
+                              - generic [ref=e724] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e725]
+                          - cell "Dummy Page 12" [ref=e726]:
+                            - link "Dummy Page 12" [ref=e727] [cursor=pointer]:
+                              - /url: /node/42
+                          - cell "Basic page" [ref=e728]
+                          - cell "Published" [ref=e729]:
+                            - generic [ref=e730]: Published
+                          - cell "Edit Dummy Page 12 List additional actions" [ref=e731]:
+                            - list [ref=e734]:
+                              - listitem [ref=e735]:
+                                - link "Edit Dummy Page 12" [ref=e736] [cursor=pointer]:
+                                  - /url: /node/42/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e737]:
+                                  - generic [ref=e738]: List additional actions
+                        - row "Update this item Dummy Page 11 Basic page Published Edit Dummy Page 11 List additional actions" [ref=e739]:
+                          - cell "Update this item" [ref=e740]:
+                            - generic [ref=e741]:
+                              - generic [ref=e742] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e743]
+                          - cell "Dummy Page 11" [ref=e744]:
+                            - link "Dummy Page 11" [ref=e745] [cursor=pointer]:
+                              - /url: /node/41
+                          - cell "Basic page" [ref=e746]
+                          - cell "Published" [ref=e747]:
+                            - generic [ref=e748]: Published
+                          - cell "Edit Dummy Page 11 List additional actions" [ref=e749]:
+                            - list [ref=e752]:
+                              - listitem [ref=e753]:
+                                - link "Edit Dummy Page 11" [ref=e754] [cursor=pointer]:
+                                  - /url: /node/41/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e755]:
+                                  - generic [ref=e756]: List additional actions
+                        - row "Update this item Dummy Page 10 Basic page Published Edit Dummy Page 10 List additional actions" [ref=e757]:
+                          - cell "Update this item" [ref=e758]:
+                            - generic [ref=e759]:
+                              - generic [ref=e760] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e761]
+                          - cell "Dummy Page 10" [ref=e762]:
+                            - link "Dummy Page 10" [ref=e763] [cursor=pointer]:
+                              - /url: /node/40
+                          - cell "Basic page" [ref=e764]
+                          - cell "Published" [ref=e765]:
+                            - generic [ref=e766]: Published
+                          - cell "Edit Dummy Page 10 List additional actions" [ref=e767]:
+                            - list [ref=e770]:
+                              - listitem [ref=e771]:
+                                - link "Edit Dummy Page 10" [ref=e772] [cursor=pointer]:
+                                  - /url: /node/40/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e773]:
+                                  - generic [ref=e774]: List additional actions
+                        - row "Update this item Dummy Article 26 Article Published Edit Dummy Article 26 List additional actions" [ref=e775]:
+                          - cell "Update this item" [ref=e776]:
+                            - generic [ref=e777]:
+                              - generic [ref=e778] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e779]
+                          - cell "Dummy Article 26" [ref=e780]:
+                            - link "Dummy Article 26" [ref=e781] [cursor=pointer]:
+                              - /url: /node/26
+                          - cell "Article" [ref=e782]
+                          - cell "Published" [ref=e783]:
+                            - generic [ref=e784]: Published
+                          - cell "Edit Dummy Article 26 List additional actions" [ref=e785]:
+                            - list [ref=e788]:
+                              - listitem [ref=e789]:
+                                - link "Edit Dummy Article 26" [ref=e790] [cursor=pointer]:
+                                  - /url: /node/26/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e791]:
+                                  - generic [ref=e792]: List additional actions
+                        - row "Update this item Dummy Article 25 Article Published Edit Dummy Article 25 List additional actions" [ref=e793]:
+                          - cell "Update this item" [ref=e794]:
+                            - generic [ref=e795]:
+                              - generic [ref=e796] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e797]
+                          - cell "Dummy Article 25" [ref=e798]:
+                            - link "Dummy Article 25" [ref=e799] [cursor=pointer]:
+                              - /url: /node/25
+                          - cell "Article" [ref=e800]
+                          - cell "Published" [ref=e801]:
+                            - generic [ref=e802]: Published
+                          - cell "Edit Dummy Article 25 List additional actions" [ref=e803]:
+                            - list [ref=e806]:
+                              - listitem [ref=e807]:
+                                - link "Edit Dummy Article 25" [ref=e808] [cursor=pointer]:
+                                  - /url: /node/25/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e809]:
+                                  - generic [ref=e810]: List additional actions
+                        - row "Update this item Dummy Article 11 Article Published Edit Dummy Article 11 List additional actions" [ref=e811]:
+                          - cell "Update this item" [ref=e812]:
+                            - generic [ref=e813]:
+                              - generic [ref=e814] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e815]
+                          - cell "Dummy Article 11" [ref=e816]:
+                            - link "Dummy Article 11" [ref=e817] [cursor=pointer]:
+                              - /url: /node/11
+                          - cell "Article" [ref=e818]
+                          - cell "Published" [ref=e819]:
+                            - generic [ref=e820]: Published
+                          - cell "Edit Dummy Article 11 List additional actions" [ref=e821]:
+                            - list [ref=e824]:
+                              - listitem [ref=e825]:
+                                - link "Edit Dummy Article 11" [ref=e826] [cursor=pointer]:
+                                  - /url: /node/11/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e827]:
+                                  - generic [ref=e828]: List additional actions
+                        - row "Update this item Dummy Article 10 Article Published Edit Dummy Article 10 List additional actions" [ref=e829]:
+                          - cell "Update this item" [ref=e830]:
+                            - generic [ref=e831]:
+                              - generic [ref=e832] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e833]
+                          - cell "Dummy Article 10" [ref=e834]:
+                            - link "Dummy Article 10" [ref=e835] [cursor=pointer]:
+                              - /url: /node/10
+                          - cell "Article" [ref=e836]
+                          - cell "Published" [ref=e837]:
+                            - generic [ref=e838]: Published
+                          - cell "Edit Dummy Article 10 List additional actions" [ref=e839]:
+                            - list [ref=e842]:
+                              - listitem [ref=e843]:
+                                - link "Edit Dummy Article 10" [ref=e844] [cursor=pointer]:
+                                  - /url: /node/10/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e845]:
+                                  - generic [ref=e846]: List additional actions
+                        - row "Update this item Dummy Article 9 Article Published Edit Dummy Article 9 List additional actions" [ref=e847]:
+                          - cell "Update this item" [ref=e848]:
+                            - generic [ref=e849]:
+                              - generic [ref=e850] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e851]
+                          - cell "Dummy Article 9" [ref=e852]:
+                            - link "Dummy Article 9" [ref=e853] [cursor=pointer]:
+                              - /url: /node/9
+                          - cell "Article" [ref=e854]
+                          - cell "Published" [ref=e855]:
+                            - generic [ref=e856]: Published
+                          - cell "Edit Dummy Article 9 List additional actions" [ref=e857]:
+                            - list [ref=e860]:
+                              - listitem [ref=e861]:
+                                - link "Edit Dummy Article 9" [ref=e862] [cursor=pointer]:
+                                  - /url: /node/9/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e863]:
+                                  - generic [ref=e864]: List additional actions
+                        - row "Update this item Dummy Article 8 Article Published Edit Dummy Article 8 List additional actions" [ref=e865]:
+                          - cell "Update this item" [ref=e866]:
+                            - generic [ref=e867]:
+                              - generic [ref=e868] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e869]
+                          - cell "Dummy Article 8" [ref=e870]:
+                            - link "Dummy Article 8" [ref=e871] [cursor=pointer]:
+                              - /url: /node/8
+                          - cell "Article" [ref=e872]
+                          - cell "Published" [ref=e873]:
+                            - generic [ref=e874]: Published
+                          - cell "Edit Dummy Article 8 List additional actions" [ref=e875]:
+                            - list [ref=e878]:
+                              - listitem [ref=e879]:
+                                - link "Edit Dummy Article 8" [ref=e880] [cursor=pointer]:
+                                  - /url: /node/8/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e881]:
+                                  - generic [ref=e882]: List additional actions
+                        - row "Update this item Dummy Article 7 Article Published Edit Dummy Article 7 List additional actions" [ref=e883]:
+                          - cell "Update this item" [ref=e884]:
+                            - generic [ref=e885]:
+                              - generic [ref=e886] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e887]
+                          - cell "Dummy Article 7" [ref=e888]:
+                            - link "Dummy Article 7" [ref=e889] [cursor=pointer]:
+                              - /url: /node/7
+                          - cell "Article" [ref=e890]
+                          - cell "Published" [ref=e891]:
+                            - generic [ref=e892]: Published
+                          - cell "Edit Dummy Article 7 List additional actions" [ref=e893]:
+                            - list [ref=e896]:
+                              - listitem [ref=e897]:
+                                - link "Edit Dummy Article 7" [ref=e898] [cursor=pointer]:
+                                  - /url: /node/7/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e899]:
+                                  - generic [ref=e900]: List additional actions
+                        - row "Update this item Dummy Article 6 Article Published Edit Dummy Article 6 List additional actions" [ref=e901]:
+                          - cell "Update this item" [ref=e902]:
+                            - generic [ref=e903]:
+                              - generic [ref=e904] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e905]
+                          - cell "Dummy Article 6" [ref=e906]:
+                            - link "Dummy Article 6" [ref=e907] [cursor=pointer]:
+                              - /url: /node/6
+                          - cell "Article" [ref=e908]
+                          - cell "Published" [ref=e909]:
+                            - generic [ref=e910]: Published
+                          - cell "Edit Dummy Article 6 List additional actions" [ref=e911]:
+                            - list [ref=e914]:
+                              - listitem [ref=e915]:
+                                - link "Edit Dummy Article 6" [ref=e916] [cursor=pointer]:
+                                  - /url: /node/6/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e917]:
+                                  - generic [ref=e918]: List additional actions
+                        - row "Update this item Dummy Article 5 Article Published Edit Dummy Article 5 List additional actions" [ref=e919]:
+                          - cell "Update this item" [ref=e920]:
+                            - generic [ref=e921]:
+                              - generic [ref=e922] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e923]
+                          - cell "Dummy Article 5" [ref=e924]:
+                            - link "Dummy Article 5" [ref=e925] [cursor=pointer]:
+                              - /url: /node/5
+                          - cell "Article" [ref=e926]
+                          - cell "Published" [ref=e927]:
+                            - generic [ref=e928]: Published
+                          - cell "Edit Dummy Article 5 List additional actions" [ref=e929]:
+                            - list [ref=e932]:
+                              - listitem [ref=e933]:
+                                - link "Edit Dummy Article 5" [ref=e934] [cursor=pointer]:
+                                  - /url: /node/5/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e935]:
+                                  - generic [ref=e936]: List additional actions
+                        - row "Update this item Dummy Article 4 Article Published Edit Dummy Article 4 List additional actions" [ref=e937]:
+                          - cell "Update this item" [ref=e938]:
+                            - generic [ref=e939]:
+                              - generic [ref=e940] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e941]
+                          - cell "Dummy Article 4" [ref=e942]:
+                            - link "Dummy Article 4" [ref=e943] [cursor=pointer]:
+                              - /url: /node/4
+                          - cell "Article" [ref=e944]
+                          - cell "Published" [ref=e945]:
+                            - generic [ref=e946]: Published
+                          - cell "Edit Dummy Article 4 List additional actions" [ref=e947]:
+                            - list [ref=e950]:
+                              - listitem [ref=e951]:
+                                - link "Edit Dummy Article 4" [ref=e952] [cursor=pointer]:
+                                  - /url: /node/4/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e953]:
+                                  - generic [ref=e954]: List additional actions
+                        - row "Update this item Dummy Article 3 Article Published Edit Dummy Article 3 List additional actions" [ref=e955]:
+                          - cell "Update this item" [ref=e956]:
+                            - generic [ref=e957]:
+                              - generic [ref=e958] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e959]
+                          - cell "Dummy Article 3" [ref=e960]:
+                            - link "Dummy Article 3" [ref=e961] [cursor=pointer]:
+                              - /url: /node/3
+                          - cell "Article" [ref=e962]
+                          - cell "Published" [ref=e963]:
+                            - generic [ref=e964]: Published
+                          - cell "Edit Dummy Article 3 List additional actions" [ref=e965]:
+                            - list [ref=e968]:
+                              - listitem [ref=e969]:
+                                - link "Edit Dummy Article 3" [ref=e970] [cursor=pointer]:
+                                  - /url: /node/3/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e971]:
+                                  - generic [ref=e972]: List additional actions
+                        - row "Update this item Dummy Article 2 Article Published Edit Dummy Article 2 List additional actions" [ref=e973]:
+                          - cell "Update this item" [ref=e974]:
+                            - generic [ref=e975]:
+                              - generic [ref=e976] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e977]
+                          - cell "Dummy Article 2" [ref=e978]:
+                            - link "Dummy Article 2" [ref=e979] [cursor=pointer]:
+                              - /url: /node/2
+                          - cell "Article" [ref=e980]
+                          - cell "Published" [ref=e981]:
+                            - generic [ref=e982]: Published
+                          - cell "Edit Dummy Article 2 List additional actions" [ref=e983]:
+                            - list [ref=e986]:
+                              - listitem [ref=e987]:
+                                - link "Edit Dummy Article 2" [ref=e988] [cursor=pointer]:
+                                  - /url: /node/2/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e989]:
+                                  - generic [ref=e990]: List additional actions
+                        - row "Update this item Dummy Article 12 Article Published Edit Dummy Article 12 List additional actions" [ref=e991]:
+                          - cell "Update this item" [ref=e992]:
+                            - generic [ref=e993]:
+                              - generic [ref=e994] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e995]
+                          - cell "Dummy Article 12" [ref=e996]:
+                            - link "Dummy Article 12" [ref=e997] [cursor=pointer]:
+                              - /url: /node/12
+                          - cell "Article" [ref=e998]
+                          - cell "Published" [ref=e999]:
+                            - generic [ref=e1000]: Published
+                          - cell "Edit Dummy Article 12 List additional actions" [ref=e1001]:
+                            - list [ref=e1004]:
+                              - listitem [ref=e1005]:
+                                - link "Edit Dummy Article 12" [ref=e1006] [cursor=pointer]:
+                                  - /url: /node/12/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e1007]:
+                                  - generic [ref=e1008]: List additional actions
+                        - row "Update this item Dummy Article 13 Article Published Edit Dummy Article 13 List additional actions" [ref=e1009]:
+                          - cell "Update this item" [ref=e1010]:
+                            - generic [ref=e1011]:
+                              - generic [ref=e1012] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e1013]
+                          - cell "Dummy Article 13" [ref=e1014]:
+                            - link "Dummy Article 13" [ref=e1015] [cursor=pointer]:
+                              - /url: /node/13
+                          - cell "Article" [ref=e1016]
+                          - cell "Published" [ref=e1017]:
+                            - generic [ref=e1018]: Published
+                          - cell "Edit Dummy Article 13 List additional actions" [ref=e1019]:
+                            - list [ref=e1022]:
+                              - listitem [ref=e1023]:
+                                - link "Edit Dummy Article 13" [ref=e1024] [cursor=pointer]:
+                                  - /url: /node/13/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e1025]:
+                                  - generic [ref=e1026]: List additional actions
+                        - row "Update this item Dummy Article 14 Article Published Edit Dummy Article 14 List additional actions" [ref=e1027]:
+                          - cell "Update this item" [ref=e1028]:
+                            - generic [ref=e1029]:
+                              - generic [ref=e1030] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e1031]
+                          - cell "Dummy Article 14" [ref=e1032]:
+                            - link "Dummy Article 14" [ref=e1033] [cursor=pointer]:
+                              - /url: /node/14
+                          - cell "Article" [ref=e1034]
+                          - cell "Published" [ref=e1035]:
+                            - generic [ref=e1036]: Published
+                          - cell "Edit Dummy Article 14 List additional actions" [ref=e1037]:
+                            - list [ref=e1040]:
+                              - listitem [ref=e1041]:
+                                - link "Edit Dummy Article 14" [ref=e1042] [cursor=pointer]:
+                                  - /url: /node/14/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e1043]:
+                                  - generic [ref=e1044]: List additional actions
+                        - row "Update this item Dummy Article 24 Article Published Edit Dummy Article 24 List additional actions" [ref=e1045]:
+                          - cell "Update this item" [ref=e1046]:
+                            - generic [ref=e1047]:
+                              - generic [ref=e1048] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e1049]
+                          - cell "Dummy Article 24" [ref=e1050]:
+                            - link "Dummy Article 24" [ref=e1051] [cursor=pointer]:
+                              - /url: /node/24
+                          - cell "Article" [ref=e1052]
+                          - cell "Published" [ref=e1053]:
+                            - generic [ref=e1054]: Published
+                          - cell "Edit Dummy Article 24 List additional actions" [ref=e1055]:
+                            - list [ref=e1058]:
+                              - listitem [ref=e1059]:
+                                - link "Edit Dummy Article 24" [ref=e1060] [cursor=pointer]:
+                                  - /url: /node/24/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e1061]:
+                                  - generic [ref=e1062]: List additional actions
+                        - row "Update this item Dummy Article 23 Article Published Edit Dummy Article 23 List additional actions" [ref=e1063]:
+                          - cell "Update this item" [ref=e1064]:
+                            - generic [ref=e1065]:
+                              - generic [ref=e1066] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e1067]
+                          - cell "Dummy Article 23" [ref=e1068]:
+                            - link "Dummy Article 23" [ref=e1069] [cursor=pointer]:
+                              - /url: /node/23
+                          - cell "Article" [ref=e1070]
+                          - cell "Published" [ref=e1071]:
+                            - generic [ref=e1072]: Published
+                          - cell "Edit Dummy Article 23 List additional actions" [ref=e1073]:
+                            - list [ref=e1076]:
+                              - listitem [ref=e1077]:
+                                - link "Edit Dummy Article 23" [ref=e1078] [cursor=pointer]:
+                                  - /url: /node/23/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e1079]:
+                                  - generic [ref=e1080]: List additional actions
+                        - row "Update this item Dummy Article 22 Article Published Edit Dummy Article 22 List additional actions" [ref=e1081]:
+                          - cell "Update this item" [ref=e1082]:
+                            - generic [ref=e1083]:
+                              - generic [ref=e1084] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e1085]
+                          - cell "Dummy Article 22" [ref=e1086]:
+                            - link "Dummy Article 22" [ref=e1087] [cursor=pointer]:
+                              - /url: /node/22
+                          - cell "Article" [ref=e1088]
+                          - cell "Published" [ref=e1089]:
+                            - generic [ref=e1090]: Published
+                          - cell "Edit Dummy Article 22 List additional actions" [ref=e1091]:
+                            - list [ref=e1094]:
+                              - listitem [ref=e1095]:
+                                - link "Edit Dummy Article 22" [ref=e1096] [cursor=pointer]:
+                                  - /url: /node/22/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e1097]:
+                                  - generic [ref=e1098]: List additional actions
+                        - row "Update this item Dummy Article 21 Article Published Edit Dummy Article 21 List additional actions" [ref=e1099]:
+                          - cell "Update this item" [ref=e1100]:
+                            - generic [ref=e1101]:
+                              - generic [ref=e1102] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e1103]
+                          - cell "Dummy Article 21" [ref=e1104]:
+                            - link "Dummy Article 21" [ref=e1105] [cursor=pointer]:
+                              - /url: /node/21
+                          - cell "Article" [ref=e1106]
+                          - cell "Published" [ref=e1107]:
+                            - generic [ref=e1108]: Published
+                          - cell "Edit Dummy Article 21 List additional actions" [ref=e1109]:
+                            - list [ref=e1112]:
+                              - listitem [ref=e1113]:
+                                - link "Edit Dummy Article 21" [ref=e1114] [cursor=pointer]:
+                                  - /url: /node/21/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e1115]:
+                                  - generic [ref=e1116]: List additional actions
+                        - row "Update this item Dummy Article 20 Article Published Edit Dummy Article 20 List additional actions" [ref=e1117]:
+                          - cell "Update this item" [ref=e1118]:
+                            - generic [ref=e1119]:
+                              - generic [ref=e1120] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e1121]
+                          - cell "Dummy Article 20" [ref=e1122]:
+                            - link "Dummy Article 20" [ref=e1123] [cursor=pointer]:
+                              - /url: /node/20
+                          - cell "Article" [ref=e1124]
+                          - cell "Published" [ref=e1125]:
+                            - generic [ref=e1126]: Published
+                          - cell "Edit Dummy Article 20 List additional actions" [ref=e1127]:
+                            - list [ref=e1130]:
+                              - listitem [ref=e1131]:
+                                - link "Edit Dummy Article 20" [ref=e1132] [cursor=pointer]:
+                                  - /url: /node/20/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e1133]:
+                                  - generic [ref=e1134]: List additional actions
+                        - row "Update this item Dummy Article 19 Article Published Edit Dummy Article 19 List additional actions" [ref=e1135]:
+                          - cell "Update this item" [ref=e1136]:
+                            - generic [ref=e1137]:
+                              - generic [ref=e1138] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e1139]
+                          - cell "Dummy Article 19" [ref=e1140]:
+                            - link "Dummy Article 19" [ref=e1141] [cursor=pointer]:
+                              - /url: /node/19
+                          - cell "Article" [ref=e1142]
+                          - cell "Published" [ref=e1143]:
+                            - generic [ref=e1144]: Published
+                          - cell "Edit Dummy Article 19 List additional actions" [ref=e1145]:
+                            - list [ref=e1148]:
+                              - listitem [ref=e1149]:
+                                - link "Edit Dummy Article 19" [ref=e1150] [cursor=pointer]:
+                                  - /url: /node/19/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e1151]:
+                                  - generic [ref=e1152]: List additional actions
+                        - row "Update this item Dummy Article 18 Article Published Edit Dummy Article 18 List additional actions" [ref=e1153]:
+                          - cell "Update this item" [ref=e1154]:
+                            - generic [ref=e1155]:
+                              - generic [ref=e1156] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e1157]
+                          - cell "Dummy Article 18" [ref=e1158]:
+                            - link "Dummy Article 18" [ref=e1159] [cursor=pointer]:
+                              - /url: /node/18
+                          - cell "Article" [ref=e1160]
+                          - cell "Published" [ref=e1161]:
+                            - generic [ref=e1162]: Published
+                          - cell "Edit Dummy Article 18 List additional actions" [ref=e1163]:
+                            - list [ref=e1166]:
+                              - listitem [ref=e1167]:
+                                - link "Edit Dummy Article 18" [ref=e1168] [cursor=pointer]:
+                                  - /url: /node/18/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e1169]:
+                                  - generic [ref=e1170]: List additional actions
+                        - row "Update this item Dummy Article 17 Article Published Edit Dummy Article 17 List additional actions" [ref=e1171]:
+                          - cell "Update this item" [ref=e1172]:
+                            - generic [ref=e1173]:
+                              - generic [ref=e1174] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e1175]
+                          - cell "Dummy Article 17" [ref=e1176]:
+                            - link "Dummy Article 17" [ref=e1177] [cursor=pointer]:
+                              - /url: /node/17
+                          - cell "Article" [ref=e1178]
+                          - cell "Published" [ref=e1179]:
+                            - generic [ref=e1180]: Published
+                          - cell "Edit Dummy Article 17 List additional actions" [ref=e1181]:
+                            - list [ref=e1184]:
+                              - listitem [ref=e1185]:
+                                - link "Edit Dummy Article 17" [ref=e1186] [cursor=pointer]:
+                                  - /url: /node/17/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e1187]:
+                                  - generic [ref=e1188]: List additional actions
+                        - row "Update this item Dummy Article 16 Article Published Edit Dummy Article 16 List additional actions" [ref=e1189]:
+                          - cell "Update this item" [ref=e1190]:
+                            - generic [ref=e1191]:
+                              - generic [ref=e1192] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e1193]
+                          - cell "Dummy Article 16" [ref=e1194]:
+                            - link "Dummy Article 16" [ref=e1195] [cursor=pointer]:
+                              - /url: /node/16
+                          - cell "Article" [ref=e1196]
+                          - cell "Published" [ref=e1197]:
+                            - generic [ref=e1198]: Published
+                          - cell "Edit Dummy Article 16 List additional actions" [ref=e1199]:
+                            - list [ref=e1202]:
+                              - listitem [ref=e1203]:
+                                - link "Edit Dummy Article 16" [ref=e1204] [cursor=pointer]:
+                                  - /url: /node/16/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e1205]:
+                                  - generic [ref=e1206]: List additional actions
+                        - row "Update this item Dummy Article 15 Article Published Edit Dummy Article 15 List additional actions" [ref=e1207]:
+                          - cell "Update this item" [ref=e1208]:
+                            - generic [ref=e1209]:
+                              - generic [ref=e1210] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e1211]
+                          - cell "Dummy Article 15" [ref=e1212]:
+                            - link "Dummy Article 15" [ref=e1213] [cursor=pointer]:
+                              - /url: /node/15
+                          - cell "Article" [ref=e1214]
+                          - cell "Published" [ref=e1215]:
+                            - generic [ref=e1216]: Published
+                          - cell "Edit Dummy Article 15 List additional actions" [ref=e1217]:
+                            - list [ref=e1220]:
+                              - listitem [ref=e1221]:
+                                - link "Edit Dummy Article 15" [ref=e1222] [cursor=pointer]:
+                                  - /url: /node/15/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e1223]:
+                                  - generic [ref=e1224]: List additional actions
+                        - row "Update this item Dummy Article 1 Article Published Edit Dummy Article 1 List additional actions" [ref=e1225]:
+                          - cell "Update this item" [ref=e1226]:
+                            - generic [ref=e1227]:
+                              - generic [ref=e1228] [cursor=pointer]: Update this item
+                              - checkbox "Update this item" [ref=e1229]
+                          - cell "Dummy Article 1" [ref=e1230]:
+                            - link "Dummy Article 1" [ref=e1231] [cursor=pointer]:
+                              - /url: /node/1
+                          - cell "Article" [ref=e1232]
+                          - cell "Published" [ref=e1233]:
+                            - generic [ref=e1234]: Published
+                          - cell "Edit Dummy Article 1 List additional actions" [ref=e1235]:
+                            - list [ref=e1238]:
+                              - listitem [ref=e1239]:
+                                - link "Edit Dummy Article 1" [ref=e1240] [cursor=pointer]:
+                                  - /url: /node/1/edit?destination=/admin/structure/views/view/content/preview/page_1%3F_wrapper_format%3Ddrupal_ajax
+                                  - text: Edit
+                              - listitem:
+                                - button "List additional actions" [ref=e1241]:
+                                  - generic [ref=e1242]: List additional actions
+                  - group "Perform actions on the selected items in the Content view" [ref=e1243]:
+                    - generic [ref=e1244]:
+                      - text: Perform actions on the selected items in the
+                      - emphasis [ref=e1245]: Content
+                      - text: view
+                    - generic [ref=e1246]: No items selected
+                    - generic [ref=e1247]:
+                      - text: "Action:"
+                      - combobox "Action:" [ref=e1248]:
+                        - option "- Select -" [selected]
+                        - option "Delete content"
+                        - option "Make content sticky"
+                        - option "Make content unsticky"
+                        - option "Promote content to front page"
+                        - option "Publish content"
+                        - option "Save content"
+                        - option "Remove content from front page"
+                        - option "Unpublish content"
+                    - button "Apply to selected items" [ref=e1250] [cursor=pointer]
+              - heading "Pager" [level=1] [ref=e1252]
+```
+
+# Test source
+
+```ts
+  1  | // #ddev-generated
+  2  | import { test, expect } from '@playwright/test';
+  3  | import fs from 'fs';
+  4  | import type { AdminPageDefinition } from '../../page-definitions/admin-pages.js';
+  5  | 
+  6  | export function generateVrtTests(pages: AdminPageDefinition[]) {
+  7  |   for (const pageDef of pages) {
+  8  |     test.describe(pageDef.id, () => {
+  9  |       test('default state', async ({ page }, testInfo) => {
+  10 |         if (pageDef.testTimeout) {
+  11 |           test.setTimeout(pageDef.testTimeout);
+  12 |         }
+  13 | 
+  14 |         if (testInfo.project.name.includes('dark')) {
+  15 |           await page.emulateMedia({ colorScheme: 'dark' });
+  16 |         }
+  17 |         else {
+  18 |           await page.emulateMedia({ colorScheme: 'light' });
+  19 |         }
+  20 | 
+  21 |         await page.goto(pageDef.path);
+  22 | 
+  23 |         if (testInfo.project.name.startsWith('rtl-')) {
+  24 |           await page.evaluate(() => {
+  25 |             document.documentElement.dir = 'rtl';
+  26 |           });
+  27 |         }
+  28 | 
+  29 |         if (pageDef.waitFor) {
+  30 |           await page.locator(pageDef.waitFor).waitFor();
+  31 |         }
+  32 | 
+  33 |         await page.waitForLoadState('load');
+  34 | 
+  35 |         const mask = (pageDef.maskSelectors || []).map((s) => page.locator(s));
+  36 | 
+> 37 |         await expect(page).toHaveScreenshot(`${pageDef.id}.png`, {
+     |                            ^ Error: expect(page).toHaveScreenshot(expected) failed
+  38 |           fullPage: pageDef.fullPage ?? false,
+  39 |           mask,
+  40 |           ...(pageDef.timeout ? { timeout: pageDef.timeout } : {}),
+  41 |         });
+  42 |         const snapshotPath = testInfo.snapshotPath(`${pageDef.id}.png`);
+  43 |         if (fs.existsSync(snapshotPath)) {
+  44 |           await testInfo.attach('screenshot', { body: fs.readFileSync(snapshotPath), contentType: 'image/png' });
+  45 |         }
+  46 |       });
+  47 | 
+  48 |       if (pageDef.interactions) {
+  49 |         for (const interaction of pageDef.interactions) {
+  50 |           test(`interaction: ${interaction.label}`, async ({ page }, testInfo) => {
+  51 |             if (pageDef.testTimeout) {
+  52 |               test.setTimeout(pageDef.testTimeout);
+  53 |             }
+  54 | 
+  55 |             if (testInfo.project.name.includes('dark')) {
+  56 |               await page.emulateMedia({ colorScheme: 'dark' });
+  57 |             }
+  58 |             else {
+  59 |               await page.emulateMedia({ colorScheme: 'light' });
+  60 |             }
+  61 | 
+  62 |             await page.goto(pageDef.path);
+  63 | 
+  64 |             if (testInfo.project.name.startsWith('rtl-')) {
+  65 |               await page.evaluate(() => {
+  66 |                 document.documentElement.dir = 'rtl';
+  67 |               });
+  68 |             }
+  69 | 
+  70 |             if (pageDef.waitFor) {
+  71 |               await page.locator(pageDef.waitFor).waitFor();
+  72 |             }
+  73 | 
+  74 |             await page.waitForLoadState('load');
+  75 |             await interaction.action(page);
+  76 | 
+  77 |             const mask = (pageDef.maskSelectors || []).map((s) => page.locator(s));
+  78 | 
+  79 |             await expect(page).toHaveScreenshot(
+  80 |               `${pageDef.id}--${interaction.label}.png`,
+  81 |               {
+  82 |                 fullPage: pageDef.fullPage ?? false,
+  83 |                 mask,
+  84 |                 ...(pageDef.timeout ? { timeout: pageDef.timeout } : {}),
+  85 |               }
+  86 |             );
+  87 |             const snapshotPath = testInfo.snapshotPath(`${pageDef.id}--${interaction.label}.png`);
+  88 |             if (fs.existsSync(snapshotPath)) {
+  89 |               await testInfo.attach('screenshot', { body: fs.readFileSync(snapshotPath), contentType: 'image/png' });
+  90 |             }
+  91 |           });
+  92 |         }
+  93 |       }
+  94 |     });
+  95 |   }
+  96 | }
+  97 | 
+```

@@ -6,6 +6,10 @@ namespace Drupal\realistic_dummy_content\Commands;
 
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Entity\Entity\EntityFormDisplay;
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
 use Drupal\taxonomy\Entity\Term;
@@ -65,6 +69,60 @@ final class RealisticDummyContentCommands extends DrushCommands {
       ])->save();
       $this->logger()->notice('Created content type: page');
     }
+
+    $this->ensureBodyField('article');
+    $this->ensureBodyField('page');
+  }
+
+  private function ensureBodyField(string $bundle): void {
+    if (!FieldStorageConfig::loadByName('node', 'body')) {
+      FieldStorageConfig::create([
+        'field_name' => 'body',
+        'entity_type' => 'node',
+        'type' => 'text_with_summary',
+        'cardinality' => 1,
+        'translatable' => TRUE,
+      ])->save();
+    }
+
+    if (!FieldConfig::loadByName('node', $bundle, 'body')) {
+      FieldConfig::create([
+        'field_name' => 'body',
+        'entity_type' => 'node',
+        'bundle' => $bundle,
+        'label' => 'Body',
+        'required' => FALSE,
+        'translatable' => TRUE,
+        'settings' => ['display_summary' => TRUE],
+      ])->save();
+      $this->logger()->notice("Attached body field to content type: $bundle");
+    }
+
+    $formDisplay = EntityFormDisplay::load("node.$bundle.default") ?: EntityFormDisplay::create([
+      'targetEntityType' => 'node',
+      'bundle' => $bundle,
+      'mode' => 'default',
+      'status' => TRUE,
+    ]);
+    $formDisplay->setComponent('body', [
+      'type' => 'text_textarea_with_summary',
+      'weight' => 5,
+      'settings' => ['rows' => 9],
+    ]);
+    $formDisplay->save();
+
+    $viewDisplay = EntityViewDisplay::load("node.$bundle.default") ?: EntityViewDisplay::create([
+      'targetEntityType' => 'node',
+      'bundle' => $bundle,
+      'mode' => 'default',
+      'status' => TRUE,
+    ]);
+    $viewDisplay->setComponent('body', [
+      'type' => 'text_default',
+      'label' => 'hidden',
+      'weight' => 5,
+    ]);
+    $viewDisplay->save();
   }
 
   private function ensureEditorUser(): void {

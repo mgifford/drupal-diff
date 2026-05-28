@@ -80,6 +80,14 @@ const components = [
   { id: 'contextual-config-trigger', label: 'Contextual Config Trigger Button', selector: 'button.trigger.focusable, button.trigger[aria-pressed], .contextual .trigger' },
 ];
 
+const broadSelectors = new Set([
+  '*', 'html', 'body', ':root',
+  'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+  'p', 'a', 'ul', 'ol', 'li',
+  'table', 'thead', 'tbody', 'tr', 'th', 'td',
+  'button', 'input', 'textarea', 'label', 'summary', 'details',
+]);
+
 function num(val) {
   const n = parseFloat(String(val || '').replace('px', ''));
   return Number.isFinite(n) ? n : 0;
@@ -271,26 +279,70 @@ function listCssFiles(root) {
   return out;
 }
 
+function normalizeSelector(selector) {
+  return String(selector || '').replace(/\s+/g, ' ').trim();
+}
+
+function extractSelectorSet(cssText) {
+  const selectors = new Set();
+  const ruleRegex = /([^{}]+)\{/g;
+  let match;
+
+  while ((match = ruleRegex.exec(cssText)) !== null) {
+    const raw = (match[1] || '').trim();
+    if (!raw || raw.startsWith('@')) continue;
+
+    for (const part of raw.split(',')) {
+      const normalized = normalizeSelector(part);
+      if (normalized) selectors.add(normalized);
+    }
+  }
+
+  return selectors;
+}
+
+function isBroadSelector(selector) {
+  const sel = normalizeSelector(selector);
+  if (!sel) return true;
+  if (broadSelectors.has(sel)) return true;
+  if (/^[a-z][a-z0-9-]*$/i.test(sel)) return true;
+  if (sel.length < 3) return true;
+  return false;
+}
+
 const defaultAdminCssFiles = listCssFiles(defaultAdminCssRoot).map((fullPath) => ({
   fullPath,
   repoPath: fullPath.replace('/var/www/html/', ''),
-  content: fs.readFileSync(fullPath, 'utf8'),
+  selectorSet: extractSelectorSet(fs.readFileSync(fullPath, 'utf8')),
 }));
 
 function findThemeSelectorMatches(cssSources) {
-  const selectors = [...new Set((cssSources || []).map((m) => (m.selector || '').trim()).filter(Boolean))]
-    .flatMap((selector) => selector.split(',').map((p) => p.trim()).filter(Boolean));
+  const selectors = [...new Set((cssSources || [])
+    .flatMap((m) => String(m.selector || '').split(','))
+    .map((s) => normalizeSelector(s))
+    .filter((s) => s && !isBroadSelector(s)))];
 
-  const hits = new Set();
+  const scoreByFile = new Map();
+  const selectorsByFile = new Map();
+
   for (const sel of selectors) {
     for (const file of defaultAdminCssFiles) {
-      if (file.content.includes(sel)) {
-        hits.add(file.repoPath);
+      if (file.selectorSet.has(sel)) {
+        scoreByFile.set(file.repoPath, (scoreByFile.get(file.repoPath) || 0) + 1);
+        if (!selectorsByFile.has(file.repoPath)) selectorsByFile.set(file.repoPath, new Set());
+        selectorsByFile.get(file.repoPath).add(sel);
       }
     }
   }
 
-  return [...hits].sort();
+  return [...scoreByFile.entries()]
+    .map(([file, score]) => ({
+      file,
+      score,
+      selectors: [...(selectorsByFile.get(file) || [])].slice(0, 4),
+    }))
+    .sort((a, b) => b.score - a.score || a.file.localeCompare(b.file))
+    .slice(0, 8);
 }
 
 function cssSourceList(sources) {
@@ -505,7 +557,7 @@ function evidenceMarkdown(title, evidence) {
         const themeMatches = findThemeSelectorMatches(candCssSources);
         const aggregateLibraries = [...new Set((candCssSources || []).flatMap((m) => decodeIncludeToken(m.source || '')))].sort();
         const runtimeLikelyCss = likelyCssFiles(baseCssSources, candCssSources);
-        const likelyCss = themeMatches.length ? themeMatches : runtimeLikelyCss;
+        const likelyCss = themeMatches.length ? themeMatches.map((m) => m.file) : runtimeLikelyCss.slice(0, 5);
 
         const fileBase = `${route.id}__${scheme}__${component.id}`;
         const baselineShot = `baseline/${fileBase}.png`;
@@ -889,7 +941,9 @@ function evidenceMarkdown(title, evidence) {
       (row.candidateCssSources || []).length ? (row.candidateCssSources || []).map((m) => `- ${m.source} :: ${m.selector}`).join('\n') : '- No matched rules captured',
       '',
       '## Candidate Theme Source Matches (default_admin)',
-      (row.candidateThemeMatches || []).length ? (row.candidateThemeMatches || []).map((m) => `- ${m}`).join('\n') : '- No direct selector match found under core/themes/default_admin/css',
+      (row.candidateThemeMatches || []).length
+        ? (row.candidateThemeMatches || []).map((m) => `- ${m.file} (score: ${m.score}; selectors: ${m.selectors.join(', ') || 'n/a'})`).join('\n')
+        : '- No direct selector match found under core/themes/default_admin/css',
       '',
       '## Candidate Aggregate Libraries (decoded include= token)',
       (row.candidateAggregateLibraries || []).length ? (row.candidateAggregateLibraries || []).map((m) => `- ${m}`).join('\n') : '- No aggregate library list decoded',
@@ -943,10 +997,9 @@ function evidenceMarkdown(title, evidence) {
     ].map(csvEsc).join(','));
 
     indexLines.push(`${idx}. [${title}](bug-drafts/${mdName})`);
-    for (const cssFile of cssList) {
-      cssBuckets[cssFile] = cssBuckets[cssFile] || [];
-      cssBuckets[cssFile].push({ idx, title, mdName });
-    }
+    const primaryCssFile = cssList[0] || 'unknown';
+    cssBuckets[primaryCssFile] = cssBuckets[primaryCssFile] || [];
+    cssBuckets[primaryCssFile].push({ idx, title, mdName, secondary: cssList.slice(1) });
     if (suggestion) {
       patchBuckets[suggestion.cssFile] = patchBuckets[suggestion.cssFile] || [];
       patchBuckets[suggestion.cssFile].push({
@@ -964,10 +1017,14 @@ function evidenceMarkdown(title, evidence) {
   fs.writeFileSync(path.join(outDir, 'bug-drafts-index.md'), `${indexLines.join('\n')}\n`);
 
   const cssIndex = ['# Draft Bug Reports Grouped By CSS Source', '', `Generated: ${new Date().toISOString()}`, ''];
-  for (const cssFile of Object.keys(cssBuckets).sort()) {
-    cssIndex.push(`## ${cssFile}`);
-    for (const item of cssBuckets[cssFile]) {
+  const cssEntries = Object.entries(cssBuckets).sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]));
+  for (const [cssFile, items] of cssEntries) {
+    cssIndex.push(`## ${cssFile} (${items.length})`);
+    for (const item of items) {
       cssIndex.push(`- ${item.idx}. [${item.title}](bug-drafts/${item.mdName})`);
+      if (item.secondary && item.secondary.length) {
+        cssIndex.push(`  - Secondary candidates: ${item.secondary.slice(0, 3).join(' | ')}`);
+      }
     }
     cssIndex.push('');
   }
