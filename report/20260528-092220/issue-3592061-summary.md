@@ -1,5 +1,14 @@
 # Issue 3592061 Visual Diff Summary
 
+This endpoint may render as raw Markdown on GitHub Pages.
+
+- Open the browsable HTML report: [issue-3592061-summary.html](./issue-3592061-summary.html)
+- Published HTML report: https://mgifford.github.io/drupal-diff/report/20260528-092220/issue-3592061-summary.html
+
+---
+
+# Issue 3592061 Visual Diff Summary
+
 Generated from: report/20260528-092220
 Published run base: https://mgifford.github.io/drupal-diff/report/20260528-092220
 

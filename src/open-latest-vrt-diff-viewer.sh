@@ -13,6 +13,7 @@ fi
 RUN_ID="$(basename "$LATEST_RUN")"
 TEST_RESULTS_DIR="$LATEST_RUN/test-results"
 HTML_OUT="$LATEST_RUN/side-by-side-vrt-diffs.html"
+SUMMARY_HTML="$LATEST_RUN/issue-3592061-summary.html"
 SUMMARY_MD="$LATEST_RUN/issue-3592061-summary.md"
 
 if [[ ! -d "$TEST_RESULTS_DIR" ]]; then
@@ -172,9 +173,15 @@ cat >> "$HTML_OUT" <<EOF
 EOF
 
 open "$HTML_OUT"
-if [[ -f "$SUMMARY_MD" ]]; then
+if [[ -f "$SUMMARY_HTML" ]]; then
+  open "$SUMMARY_HTML"
+elif [[ -f "$SUMMARY_MD" ]]; then
   open "$SUMMARY_MD"
 fi
 
 echo "Opened VRT side-by-side diff viewer: $HTML_OUT"
-echo "Opened grouped issue summary: $SUMMARY_MD"
+if [[ -f "$SUMMARY_HTML" ]]; then
+  echo "Opened grouped issue summary: $SUMMARY_HTML"
+else
+  echo "Opened grouped issue summary: $SUMMARY_MD"
+fi

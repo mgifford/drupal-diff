@@ -11,6 +11,7 @@ run_has_valid_data() {
   [[ -f "$run_dir/side-by-side-vrt-diffs.html" ]] && return 0
   [[ -f "$run_dir/side-by-side-interactions.html" ]] && return 0
   [[ -f "$run_dir/element-compare/element-compare-dashboard.html" ]] && return 0
+  [[ -f "$run_dir/issue-3592061-summary.html" ]] && return 0
   [[ -f "$run_dir/issue-3592061-summary.md" ]] && return 0
   [[ -f "$run_dir/issue-3592061-summary.csv" ]] && return 0
   return 1
@@ -22,6 +23,10 @@ preferred_run_link() {
 
   if [[ -f "$run_dir/element-compare/element-compare-dashboard.html" ]]; then
     printf 'report/%s/element-compare/element-compare-dashboard.html' "$run_id"
+    return 0
+  fi
+  if [[ -f "$run_dir/issue-3592061-summary.html" ]]; then
+    printf 'report/%s/issue-3592061-summary.html' "$run_id"
     return 0
   fi
   if [[ -f "$run_dir/issue-3592061-summary.md" ]]; then
@@ -70,11 +75,17 @@ if [[ -f "$latest_dir/element-compare/element-compare-dashboard.html" ]]; then
   latest_links+="        <li><a href=\"report/${latest_run}/element-compare/element-compare-dashboard.html\">Element Compare Dashboard</a></li>"
   latest_links+=$'\n'
 fi
-if [[ -f "$latest_dir/element-compare/bug-drafts-index.md" ]]; then
+if [[ -f "$latest_dir/element-compare/bug-drafts-index.html" ]]; then
+  latest_links+="        <li><a href=\"report/${latest_run}/element-compare/bug-drafts-index.html\">Bug Drafts Index (HTML)</a></li>"
+  latest_links+=$'\n'
+elif [[ -f "$latest_dir/element-compare/bug-drafts-index.md" ]]; then
   latest_links+="        <li><a href=\"report/${latest_run}/element-compare/bug-drafts-index.md\">Bug Drafts Index</a></li>"
   latest_links+=$'\n'
 fi
-if [[ -f "$latest_dir/element-compare/bug-drafts-by-css.md" ]]; then
+if [[ -f "$latest_dir/element-compare/bug-drafts-by-css.html" ]]; then
+  latest_links+="        <li><a href=\"report/${latest_run}/element-compare/bug-drafts-by-css.html\">Bug Drafts by CSS (HTML)</a></li>"
+  latest_links+=$'\n'
+elif [[ -f "$latest_dir/element-compare/bug-drafts-by-css.md" ]]; then
   latest_links+="        <li><a href=\"report/${latest_run}/element-compare/bug-drafts-by-css.md\">Bug Drafts by CSS</a></li>"
   latest_links+=$'\n'
 fi
@@ -90,7 +101,10 @@ if [[ -f "$latest_dir/playwright-report/index.html" ]]; then
   latest_links+="        <li><a href=\"report/${latest_run}/playwright-report/index.html\">Playwright HTML Report</a></li>"
   latest_links+=$'\n'
 fi
-if [[ -f "$latest_dir/issue-3592061-summary.md" ]]; then
+if [[ -f "$latest_dir/issue-3592061-summary.html" ]]; then
+  latest_links+="        <li><a href=\"report/${latest_run}/issue-3592061-summary.html\">Issue Summary (HTML)</a></li>"
+  latest_links+=$'\n'
+elif [[ -f "$latest_dir/issue-3592061-summary.md" ]]; then
   latest_links+="        <li><a href=\"report/${latest_run}/issue-3592061-summary.md\">Issue Summary (Markdown)</a></li>"
   latest_links+=$'\n'
 fi

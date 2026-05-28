@@ -12,8 +12,10 @@ if [[ -z "$LATEST_RUN" ]]; then
 fi
 
 DASHBOARD="$LATEST_RUN/element-compare/element-compare-dashboard.html"
-SUMMARY="$LATEST_RUN/issue-3592061-summary.md"
-BUG_INDEX="$LATEST_RUN/element-compare/bug-drafts-index.md"
+SUMMARY_HTML="$LATEST_RUN/issue-3592061-summary.html"
+SUMMARY_MD="$LATEST_RUN/issue-3592061-summary.md"
+BUG_INDEX_HTML="$LATEST_RUN/element-compare/bug-drafts-index.html"
+BUG_INDEX_MD="$LATEST_RUN/element-compare/bug-drafts-index.md"
 
 if [[ -f "$DASHBOARD" ]]; then
   open "$DASHBOARD"
@@ -23,12 +25,18 @@ else
   exit 1
 fi
 
-if [[ -f "$SUMMARY" ]]; then
-  open "$SUMMARY"
-  echo "Opened: $SUMMARY"
+if [[ -f "$SUMMARY_HTML" ]]; then
+  open "$SUMMARY_HTML"
+  echo "Opened: $SUMMARY_HTML"
+elif [[ -f "$SUMMARY_MD" ]]; then
+  open "$SUMMARY_MD"
+  echo "Opened: $SUMMARY_MD"
 fi
 
-if [[ -f "$BUG_INDEX" ]]; then
-  open "$BUG_INDEX"
-  echo "Opened: $BUG_INDEX"
+if [[ -f "$BUG_INDEX_HTML" ]]; then
+  open "$BUG_INDEX_HTML"
+  echo "Opened: $BUG_INDEX_HTML"
+elif [[ -f "$BUG_INDEX_MD" ]]; then
+  open "$BUG_INDEX_MD"
+  echo "Opened: $BUG_INDEX_MD"
 fi

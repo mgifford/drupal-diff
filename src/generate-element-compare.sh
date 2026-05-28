@@ -54,16 +54,43 @@ const baselineLabel = 'Drupal 11 with Gin';
 const candidateLabel = 'Drupal 12 with Admin Theme';
 const runId = process.env.RUN_ID || '';
 const repoWebBase = process.env.REPO_WEB_BASE || 'https://github.com/mgifford/drupal-diff/blob/main';
+const repoPagesBase = (() => {
+  const gh = repoWebBase.match(/^https?:\/\/github\.com\/([^/]+)\/([^/]+)/);
+  if (gh) {
+    return `https://${gh[1]}.github.io/${gh[2]}`;
+  }
+  return repoWebBase.replace('/blob/main', '');
+})();
 const schemes = colorMode === 'both' ? ['light', 'dark'] : [colorMode];
 const defaultAdminCssRoot = '/var/www/html/core/themes/default_admin/css';
 
 const routes = [
-  { id: 'appearance', path: '/admin/appearance', label: 'Appearance' },
-  { id: 'config', path: '/admin/config', label: 'Configuration' },
-  { id: 'content', path: '/admin/content', label: 'Content' },
-  { id: 'structure', path: '/admin/structure', label: 'Structure' },
+  { id: 'appearance-list', path: '/admin/appearance', label: 'Appearance List' },
+  { id: 'config-overview', path: '/admin/config', label: 'Configuration Overview' },
+  { id: 'config-performance', path: '/admin/config/development/performance', label: 'Configuration Performance' },
+  { id: 'config-site-info', path: '/admin/config/system/site-information', label: 'Configuration Site Information' },
+  { id: 'config-text-formats', path: '/admin/config/content/formats', label: 'Configuration Text Formats' },
+  { id: 'config-text-format-basic-html', path: '/admin/config/content/formats/manage/basic_html', label: 'Configuration Basic HTML Format' },
+  { id: 'config-file-system', path: '/admin/config/media/file-system', label: 'Configuration File System' },
+  { id: 'content-overview', path: '/admin/content', label: 'Content Overview' },
+  { id: 'content-add-article', path: '/node/add/article', label: 'Content Add Article' },
+  { id: 'structure-overview', path: '/admin/structure', label: 'Structure Overview' },
+  { id: 'structure-block-layout', path: '/admin/structure/block', label: 'Structure Block Layout' },
+  { id: 'structure-content-types', path: '/admin/structure/types', label: 'Structure Content Types' },
+  { id: 'structure-content-type-article', path: '/admin/structure/types/manage/article', label: 'Structure Content Type Article' },
+  { id: 'structure-content-type-article-fields', path: '/admin/structure/types/manage/article/fields', label: 'Structure Article Fields' },
+  { id: 'structure-content-type-article-display', path: '/admin/structure/types/manage/article/display', label: 'Structure Article Display' },
+  { id: 'structure-menus', path: '/admin/structure/menu', label: 'Structure Menus' },
+  { id: 'structure-menu-admin', path: '/admin/structure/menu/manage/admin', label: 'Structure Admin Menu' },
+  { id: 'structure-taxonomy', path: '/admin/structure/taxonomy', label: 'Structure Taxonomy' },
+  { id: 'structure-views', path: '/admin/structure/views', label: 'Structure Views' },
+  { id: 'structure-view-content', path: '/admin/structure/views/view/content', label: 'Structure Content View' },
   { id: 'block-content', path: '/admin/structure/block-content', label: 'Block Content Types' },
-  { id: 'people', path: '/admin/people', label: 'People' },
+  { id: 'people-list', path: '/admin/people', label: 'People List' },
+  { id: 'people-roles', path: '/admin/people/roles', label: 'People Roles' },
+  { id: 'people-permissions', path: '/admin/people/permissions', label: 'People Permissions' },
+  { id: 'reports-status', path: '/admin/reports/status', label: 'Reports Status' },
+  { id: 'reports-updates', path: '/admin/reports/updates', label: 'Reports Updates' },
 ];
 
 const components = [
@@ -389,7 +416,27 @@ function githubElementShotUrl(relativeShotPath) {
 
 function bugDraftPublishedUrl(mdName) {
   if (!runId || !mdName) return '';
-  return `${repoWebBase.replace('/blob/main', '')}/report/${runId}/element-compare/bug-drafts/${mdName}`;
+  return `${repoPagesBase}/report/${runId}/element-compare/bug-drafts/${mdName}`;
+}
+
+function bugDraftSourceUrl(mdName) {
+  if (!runId || !mdName) return '';
+  return `${repoWebBase}/report/${runId}/element-compare/bug-drafts/${mdName}`;
+}
+
+function slugify(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .replace(/-{2,}/g, '-');
+}
+
+function bugDraftFileName(row) {
+  const routeSlug = slugify(row.route);
+  const modeSlug = slugify(row.colorMode);
+  const componentSlug = slugify(row.componentId || row.component);
+  return `${routeSlug}-${modeSlug}-${componentSlug}.md`;
 }
 
 function summarize(measures) {
@@ -637,8 +684,8 @@ function evidenceMarkdown(title, evidence) {
           candidateThemeMatches: themeMatches,
           candidateAggregateLibraries: aggregateLibraries,
           likelyCssFiles: likelyCss,
-          baselineShot,
-          candidateShot,
+          baselineShot: fs.existsSync(path.join(outDir, baselineShot)) ? baselineShot : '',
+          candidateShot: fs.existsSync(path.join(outDir, candidateShot)) ? candidateShot : '',
           baselineDomEvidence: compactDomEvidence(baseMeasures),
           candidateDomEvidence: compactDomEvidence(candMeasures),
         };
@@ -674,10 +721,15 @@ function evidenceMarkdown(title, evidence) {
   const aggRows = Object.entries(componentAgg)
     .map(([name, s]) => `<tr><td>${esc(name)}</td><td>${s.flagged}</td><td>${s.total}</td></tr>`)
     .join('');
+  const uniqueRouteCount = new Set(rows.map((r) => r.route)).size;
+  const uniqueModeCount = new Set(rows.map((r) => r.colorMode)).size;
+  const routeModeCombos = uniqueRouteCount * uniqueModeCount;
 
   const rowHtml = rows.map((row) => {
     const sig = row.comparison.significant;
     const className = sig > 0 ? 'flagged' : '';
+    const draftMdName = sig > 0 ? bugDraftFileName(row) : '';
+    const draftPublished = draftMdName ? bugDraftPublishedUrl(draftMdName) : '';
     const diffs = [];
     for (const d of row.comparison.deltas) {
       if (d.flagged) {
@@ -704,6 +756,7 @@ function evidenceMarkdown(title, evidence) {
           <div class="meta"><a href="${esc(row.candidateUrl)}" target="_blank" rel="noopener">${esc(candidateLabel)} URL</a></div>
           <div class="meta">${esc(row.selector)}</div>
           <div class="meta"><strong>Likely CSS:</strong> ${cssMeta}</div>
+          ${draftMdName ? `<div class="meta"><strong>Draft Issue:</strong> <a href="bug-drafts/${esc(draftMdName)}" target="_blank" rel="noopener">Open local draft</a>${draftPublished ? ` | <a href="${esc(draftPublished)}" target="_blank" rel="noopener">Published</a>` : ''}</div>` : ''}
           <details>
             <summary>XPath and HTML snippets</summary>
             ${baselineEvidence}
@@ -770,7 +823,7 @@ function evidenceMarkdown(title, evidence) {
 <body>
 <header>
   <div><strong>System-Wide Element Comparison Dashboard</strong></div>
-  <div class="sub">${esc(data.baselineLabel)} vs ${esc(data.candidateLabel)} | Generated: ${esc(data.generatedAt)}</div>
+  <div class="sub">${esc(data.baselineLabel)} vs ${esc(data.candidateLabel)} | Generated: ${esc(data.generatedAt)} | Routes: ${uniqueRouteCount} | Modes: ${uniqueModeCount} | Route x Mode: ${routeModeCombos}</div>
 </header>
 <main>
   <section class="agg">
@@ -783,6 +836,7 @@ function evidenceMarkdown(title, evidence) {
 
   <section class="agg">
     <h2>Test URLs Used</h2>
+    <div class="meta">Configured routes: ${uniqueRouteCount}; generated route/mode combinations: ${routeModeCombos}.</div>
     <table>
       <thead><tr><th>Section</th><th>Route</th><th>${esc(baselineLabel)}</th><th>${esc(candidateLabel)}</th></tr></thead>
       <tbody>${routeLinksHtml}</tbody>
@@ -926,6 +980,7 @@ function evidenceMarkdown(title, evidence) {
     runId ? `Dashboard: ${repoWebBase.replace('/blob/main', '')}/report/${runId}/element-compare/element-compare-dashboard.html` : '',
     '',
   ].filter(Boolean);
+  const htmlIndexRows = [];
   const cssBuckets = {};
   const patchLines = ['# Suggested CSS Patch Ideas', '', `Generated: ${new Date().toISOString()}`, '', 'Only medium/high confidence suggestions are included.', ''];
   const patchBuckets = {};
@@ -943,8 +998,7 @@ function evidenceMarkdown(title, evidence) {
       deltas.push(`count: ${row.comparison.countDelta > 0 ? '+' : ''}${row.comparison.countDelta} (${row.comparison.countDeltaPct.toFixed(1)}%)`);
     }
 
-    const slug = `${String(idx).padStart(3, '0')}-${row.route.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${row.componentId}`;
-    const mdName = `${slug}.md`;
+    const mdName = bugDraftFileName(row);
     const mdPath = path.join(bugDraftDir, mdName);
     const cssList = (row.likelyCssFiles && row.likelyCssFiles.length) ? row.likelyCssFiles : ['unknown'];
     const baselineCssList = cssSourceList(row.baselineCssSources || []);
@@ -1040,12 +1094,32 @@ function evidenceMarkdown(title, evidence) {
     ].map(csvEsc).join(','));
 
     const publishedBugUrl = bugDraftPublishedUrl(mdName);
+    const sourceBugUrl = bugDraftSourceUrl(mdName);
     if (publishedBugUrl) {
       indexLines.push(`${idx}. [${title}](bug-drafts/${mdName})`);
       indexLines.push(`   Published: ${publishedBugUrl}`);
     } else {
       indexLines.push(`${idx}. [${title}](bug-drafts/${mdName})`);
     }
+
+    const cssSummary = cssList.slice(0, 3).join(' | ');
+    const patchSummary = suggestion
+      ? `${suggestion.selectorHint} { ${suggestion.declarations.join(' ')} }`
+      : 'No confidence-gated patch suggestion generated.';
+    htmlIndexRows.push({
+      idx,
+      title,
+      route: row.route,
+      colorMode: row.colorMode,
+      component: row.component,
+      localBugUrl: `bug-drafts/${mdName}`,
+      publishedBugUrl,
+      sourceBugUrl,
+      cssSummary,
+      patchSummary,
+      deltas: deltas.join(' | ') || 'Significant visual difference observed',
+    });
+
     const primaryCssFile = cssList[0] || 'unknown';
     cssBuckets[primaryCssFile] = cssBuckets[primaryCssFile] || [];
     cssBuckets[primaryCssFile].push({ idx, title, mdName, secondary: cssList.slice(1) });
@@ -1063,14 +1137,87 @@ function evidenceMarkdown(title, evidence) {
   }
 
   fs.writeFileSync(path.join(outDir, 'bug-drafts.csv'), `${csvLines.join('\n')}\n`);
-  fs.writeFileSync(path.join(outDir, 'bug-drafts-index.md'), `${indexLines.join('\n')}\n`);
+
+  const htmlRows = htmlIndexRows.map((item) => {
+    const publishedLink = item.publishedBugUrl
+      ? `<a href="${esc(item.publishedBugUrl)}" target="_blank" rel="noopener">Published</a>`
+      : '<span class="muted">Published n/a</span>';
+    const sourceLink = item.sourceBugUrl
+      ? `<a href="${esc(item.sourceBugUrl)}" target="_blank" rel="noopener">GitHub Source</a>`
+      : '<span class="muted">Source n/a</span>';
+    return [
+      '<li>',
+      `<h2>${item.idx}. ${esc(item.title)}</h2>`,
+      `<p><strong>Route:</strong> ${esc(item.route)} | <strong>Mode:</strong> ${esc(item.colorMode)} | <strong>Component:</strong> ${esc(item.component)}</p>`,
+      `<p><strong>Deltas:</strong> ${esc(item.deltas)}</p>`,
+      `<p><strong>Likely CSS:</strong> ${esc(item.cssSummary)}</p>`,
+      `<pre>${esc(item.patchSummary)}</pre>`,
+      '<p class="links">',
+      `<a href="${esc(item.localBugUrl)}" target="_blank" rel="noopener">Local Draft</a>`,
+      publishedLink,
+      sourceLink,
+      '</p>',
+      '</li>',
+    ].join('');
+  }).join('\n');
+
+  const htmlIndex = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Draft Bug Reports</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
+  h1 { margin-bottom: 0.2rem; }
+  .meta { color: #666; margin: 0.2rem 0; }
+  ol { padding-left: 1.25rem; }
+  li { margin: 1rem 0 1.5rem; border: 1px solid #d0d7de; border-radius: 8px; padding: 0.9rem; }
+  li h2 { margin: 0 0 0.35rem; font-size: 1rem; }
+  pre { white-space: pre-wrap; margin: 0.45rem 0; background: #f6f8fa; padding: 0.65rem; border-radius: 6px; overflow-x: auto; }
+  .links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .muted { color: #666; }
+</style>
+</head>
+<body>
+  <h1>Draft Bug Reports</h1>
+  <p class="meta">Generated: ${esc(new Date().toISOString())}</p>
+  <p class="meta">Baseline: ${esc(baselineLabel)} | Candidate: ${esc(candidateLabel)}${runId ? ` | Run: ${esc(runId)}` : ''}</p>
+  <p>This list is optimized for review. Use <strong>GitHub Source</strong> to inspect the draft markdown in the repository and <strong>Local Draft</strong> for the report-local file.</p>
+  <ol>
+    ${htmlRows || '<li><p>No flagged diffs found for this run.</p></li>'}
+  </ol>
+</body>
+</html>`;
+
+  fs.writeFileSync(path.join(outDir, 'bug-drafts-index.html'), htmlIndex);
+
+  const bugIndexMarkdown = [
+    '# Draft Bug Reports',
+    '',
+    'This endpoint may render as raw Markdown on GitHub Pages.',
+    '',
+    '- Open the browsable HTML index: [bug-drafts-index.html](./bug-drafts-index.html)',
+    runId ? `- Published HTML index: ${repoPagesBase}/report/${runId}/element-compare/bug-drafts-index.html` : '',
+    '',
+    'If you need machine-readable data, use `bug-drafts.csv` in this same directory.',
+    '',
+    '---',
+    '',
+    ...indexLines,
+  ].filter(Boolean).join('\n');
+  fs.writeFileSync(path.join(outDir, 'bug-drafts-index.md'), `${bugIndexMarkdown}\n`);
 
   const cssIndex = ['# Draft Bug Reports Grouped By CSS Source', '', `Generated: ${new Date().toISOString()}`, ''];
   const cssEntries = Object.entries(cssBuckets).sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]));
+  const cssHtmlSections = [];
   for (const [cssFile, items] of cssEntries) {
     cssIndex.push(`## ${cssFile} (${items.length})`);
+    const cssHtmlItems = [];
     for (const item of items) {
       const publishedBugUrl = bugDraftPublishedUrl(item.mdName);
+      const sourceBugUrl = bugDraftSourceUrl(item.mdName);
       cssIndex.push(`- ${item.idx}. [${item.title}](bug-drafts/${item.mdName})`);
       if (publishedBugUrl) {
         cssIndex.push(`  - Published: ${publishedBugUrl}`);
@@ -1078,10 +1225,66 @@ function evidenceMarkdown(title, evidence) {
       if (item.secondary && item.secondary.length) {
         cssIndex.push(`  - Secondary candidates: ${item.secondary.slice(0, 3).join(' | ')}`);
       }
+
+      const secondary = item.secondary && item.secondary.length
+        ? `<div class="meta">Secondary candidates: ${esc(item.secondary.slice(0, 3).join(' | '))}</div>`
+        : '';
+      cssHtmlItems.push([
+        '<li>',
+        `<a href="bug-drafts/${esc(item.mdName)}" target="_blank" rel="noopener">${item.idx}. ${esc(item.title)}</a>`,
+        publishedBugUrl ? ` <a href="${esc(publishedBugUrl)}" target="_blank" rel="noopener">Published</a>` : '',
+        sourceBugUrl ? ` <a href="${esc(sourceBugUrl)}" target="_blank" rel="noopener">GitHub Source</a>` : '',
+        secondary,
+        '</li>',
+      ].join(''));
     }
+    cssHtmlSections.push([
+      `<section>`,
+      `<h2>${esc(cssFile)} (${items.length})</h2>`,
+      '<ul>',
+      cssHtmlItems.join('\n'),
+      '</ul>',
+      '</section>',
+    ].join('\n'));
     cssIndex.push('');
   }
-  fs.writeFileSync(path.join(outDir, 'bug-drafts-by-css.md'), `${cssIndex.join('\n')}\n`);
+
+  const cssHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Draft Bug Reports Grouped By CSS</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
+  h1 { margin-bottom: 0.2rem; }
+  .meta { color: #666; margin-top: 0.2rem; }
+  section { border: 1px solid #d0d7de; border-radius: 8px; padding: 0.8rem 1rem; margin: 1rem 0; }
+  ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+  li { margin: 0.3rem 0; }
+</style>
+</head>
+<body>
+  <h1>Draft Bug Reports Grouped By CSS Source</h1>
+  <p class="meta">Generated: ${esc(new Date().toISOString())}</p>
+  ${cssHtmlSections.length ? cssHtmlSections.join('\n') : '<p>No grouped CSS draft entries found.</p>'}
+</body>
+</html>`;
+  fs.writeFileSync(path.join(outDir, 'bug-drafts-by-css.html'), cssHtml);
+
+  const cssMarkdownBridge = [
+    '# Draft Bug Reports Grouped By CSS Source',
+    '',
+    'This endpoint may render as raw Markdown on GitHub Pages.',
+    '',
+    '- Open the browsable HTML report: [bug-drafts-by-css.html](./bug-drafts-by-css.html)',
+    runId ? `- Published HTML report: ${repoPagesBase}/report/${runId}/element-compare/bug-drafts-by-css.html` : '',
+    '',
+    '---',
+    '',
+    ...cssIndex,
+  ].filter(Boolean).join('\n');
+  fs.writeFileSync(path.join(outDir, 'bug-drafts-by-css.md'), `${cssMarkdownBridge}\n`);
 
   for (const cssFile of Object.keys(patchBuckets).sort()) {
     patchLines.push(`## ${cssFile}`);
@@ -1119,7 +1322,9 @@ ddev exec bash -lc "cd '$CONTAINER_OUT_DIR' && tar -cf - baseline candidate bug-
 # Copy dashboard metadata files directly from container to host.
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/element-compare-dashboard.html'" > "$TMP_HOST_OUT_DIR/element-compare-dashboard.html"
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/element-compare.json'" > "$TMP_HOST_OUT_DIR/element-compare.json"
+ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts-index.html'" > "$TMP_HOST_OUT_DIR/bug-drafts-index.html"
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts-index.md'" > "$TMP_HOST_OUT_DIR/bug-drafts-index.md"
+ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts-by-css.html'" > "$TMP_HOST_OUT_DIR/bug-drafts-by-css.html"
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts-by-css.md'" > "$TMP_HOST_OUT_DIR/bug-drafts-by-css.md"
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/suggested-css-patches.md'" > "$TMP_HOST_OUT_DIR/suggested-css-patches.md"
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts.csv'" > "$TMP_HOST_OUT_DIR/bug-drafts.csv"

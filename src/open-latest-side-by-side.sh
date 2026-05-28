@@ -15,6 +15,7 @@ RUN_ID="$(basename "$LATEST_RUN")"
 BASELINE_INT="$SCREENSHOT_DIR/$RUN_ID/interactions/baseline"
 CANDIDATE_INT="$SCREENSHOT_DIR/$RUN_ID/interactions/candidate"
 HTML_OUT="$LATEST_RUN/side-by-side-interactions.html"
+HTML_SUMMARY="$LATEST_RUN/issue-3592061-summary.html"
 MD_SUMMARY="$LATEST_RUN/issue-3592061-summary.md"
 
 if [[ ! -d "$BASELINE_INT" || ! -d "$CANDIDATE_INT" ]]; then
@@ -95,9 +96,15 @@ cat >> "$HTML_OUT" <<EOF
 EOF
 
 open "$HTML_OUT"
-if [[ -f "$MD_SUMMARY" ]]; then
+if [[ -f "$HTML_SUMMARY" ]]; then
+  open "$HTML_SUMMARY"
+elif [[ -f "$MD_SUMMARY" ]]; then
   open "$MD_SUMMARY"
 fi
 
 echo "Opened side-by-side viewer: $HTML_OUT"
-echo "Opened issue summary: $MD_SUMMARY"
+if [[ -f "$HTML_SUMMARY" ]]; then
+  echo "Opened issue summary: $HTML_SUMMARY"
+else
+  echo "Opened issue summary: $MD_SUMMARY"
+fi

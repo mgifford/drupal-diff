@@ -25,6 +25,7 @@ run_has_valid_data() {
   [[ -f "$run_dir/side-by-side-vrt-diffs.html" ]] && return 0
   [[ -f "$run_dir/side-by-side-interactions.html" ]] && return 0
   [[ -f "$run_dir/element-compare/element-compare-dashboard.html" ]] && return 0
+  [[ -f "$run_dir/issue-3592061-summary.html" ]] && return 0
   [[ -f "$run_dir/issue-3592061-summary.md" ]] && return 0
   [[ -f "$run_dir/issue-3592061-summary.csv" ]] && return 0
   return 1
@@ -129,13 +130,25 @@ HTML_TOP
     printf '      <ul>\n'
 
     [[ -f "$run_dir/element-compare/element-compare-dashboard.html" ]] && printf '        <li><a href="%s/element-compare/element-compare-dashboard.html">Element Compare Dashboard</a></li>\n' "$run_id"
-    [[ -f "$run_dir/element-compare/bug-drafts-index.md" ]] && printf '        <li><a href="%s/element-compare/bug-drafts-index.md">Bug Drafts Index</a></li>\n' "$run_id"
-    [[ -f "$run_dir/element-compare/bug-drafts-by-css.md" ]] && printf '        <li><a href="%s/element-compare/bug-drafts-by-css.md">Bug Drafts by CSS</a></li>\n' "$run_id"
+    if [[ -f "$run_dir/element-compare/bug-drafts-index.html" ]]; then
+      printf '        <li><a href="%s/element-compare/bug-drafts-index.html">Bug Drafts Index (HTML)</a></li>\n' "$run_id"
+    elif [[ -f "$run_dir/element-compare/bug-drafts-index.md" ]]; then
+      printf '        <li><a href="%s/element-compare/bug-drafts-index.md">Bug Drafts Index</a></li>\n' "$run_id"
+    fi
+    if [[ -f "$run_dir/element-compare/bug-drafts-by-css.html" ]]; then
+      printf '        <li><a href="%s/element-compare/bug-drafts-by-css.html">Bug Drafts by CSS (HTML)</a></li>\n' "$run_id"
+    elif [[ -f "$run_dir/element-compare/bug-drafts-by-css.md" ]]; then
+      printf '        <li><a href="%s/element-compare/bug-drafts-by-css.md">Bug Drafts by CSS</a></li>\n' "$run_id"
+    fi
     [[ -f "$run_dir/suggested-css-patches.md" ]] && printf '        <li><a href="%s/suggested-css-patches.md">Suggested CSS Patches</a></li>\n' "$run_id"
     [[ -f "$run_dir/side-by-side-vrt-diffs.html" ]] && printf '        <li><a href="%s/side-by-side-vrt-diffs.html">Side-by-side VRT Diffs</a></li>\n' "$run_id"
     [[ -f "$run_dir/side-by-side-interactions.html" ]] && printf '        <li><a href="%s/side-by-side-interactions.html">Side-by-side Interactions</a></li>\n' "$run_id"
     [[ -f "$run_dir/playwright-report/index.html" ]] && printf '        <li><a href="%s/playwright-report/index.html">Playwright HTML Report</a></li>\n' "$run_id"
-    [[ -f "$run_dir/issue-3592061-summary.md" ]] && printf '        <li><a href="%s/issue-3592061-summary.md">Issue Summary (Markdown)</a></li>\n' "$run_id"
+    if [[ -f "$run_dir/issue-3592061-summary.html" ]]; then
+      printf '        <li><a href="%s/issue-3592061-summary.html">Issue Summary (HTML)</a></li>\n' "$run_id"
+    elif [[ -f "$run_dir/issue-3592061-summary.md" ]]; then
+      printf '        <li><a href="%s/issue-3592061-summary.md">Issue Summary (Markdown)</a></li>\n' "$run_id"
+    fi
     [[ -f "$run_dir/issue-3592061-summary.csv" ]] && printf '        <li><a href="%s/issue-3592061-summary.csv">Issue Summary (CSV)</a></li>\n' "$run_id"
 
     printf '      </ul>\n'

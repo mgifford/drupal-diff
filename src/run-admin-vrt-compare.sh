@@ -208,6 +208,7 @@ Baseline screenshots: $RUN_SCREENSHOT_DIR/baseline
 Diff artifacts: $RUN_REPORT_DIR
 Run metadata: $RUN_REPORT_DIR/run-metadata.txt
 Issue CSV: $RUN_REPORT_DIR/issue-3592061-summary.csv
+Issue HTML: $RUN_REPORT_DIR/issue-3592061-summary.html
 Issue Markdown: $RUN_REPORT_DIR/issue-3592061-summary.md
 Run index: $RUN_INDEX_FILE
 Open interactive report from candidate project with:
