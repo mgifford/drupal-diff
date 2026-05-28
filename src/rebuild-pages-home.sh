@@ -37,19 +37,38 @@ fi
 recent_items=""
 count=0
 for run_id in "${mapfile_runs[@]}"; do
-  recent_items+="        <li><a href=\"report/${run_id}/\">${run_id}</a></li>\n"
+  recent_items+="        <li><a href=\"report/${run_id}/\">${run_id}</a></li>"
+  recent_items+=$'\n'
   count=$((count + 1))
   [[ $count -ge 8 ]] && break
 done
 
 latest_links=""
 latest_dir="$REPORT_DIR/$latest_run"
-[[ -f "$latest_dir/element-compare/element-compare-dashboard.html" ]] && latest_links+="        <li><a href=\"report/${latest_run}/element-compare/element-compare-dashboard.html\">Element Compare Dashboard</a></li>\n"
-[[ -f "$latest_dir/side-by-side-vrt-diffs.html" ]] && latest_links+="        <li><a href=\"report/${latest_run}/side-by-side-vrt-diffs.html\">Side-by-side VRT Diffs</a></li>\n"
-[[ -f "$latest_dir/side-by-side-interactions.html" ]] && latest_links+="        <li><a href=\"report/${latest_run}/side-by-side-interactions.html\">Side-by-side Interactions</a></li>\n"
-[[ -f "$latest_dir/playwright-report/index.html" ]] && latest_links+="        <li><a href=\"report/${latest_run}/playwright-report/index.html\">Playwright HTML Report</a></li>\n"
-[[ -f "$latest_dir/issue-3592061-summary.md" ]] && latest_links+="        <li><a href=\"report/${latest_run}/issue-3592061-summary.md\">Issue Summary (Markdown)</a></li>\n"
-[[ -f "$latest_dir/issue-3592061-summary.csv" ]] && latest_links+="        <li><a href=\"report/${latest_run}/issue-3592061-summary.csv\">Issue Summary (CSV)</a></li>\n"
+if [[ -f "$latest_dir/element-compare/element-compare-dashboard.html" ]]; then
+  latest_links+="        <li><a href=\"report/${latest_run}/element-compare/element-compare-dashboard.html\">Element Compare Dashboard</a></li>"
+  latest_links+=$'\n'
+fi
+if [[ -f "$latest_dir/side-by-side-vrt-diffs.html" ]]; then
+  latest_links+="        <li><a href=\"report/${latest_run}/side-by-side-vrt-diffs.html\">Side-by-side VRT Diffs</a></li>"
+  latest_links+=$'\n'
+fi
+if [[ -f "$latest_dir/side-by-side-interactions.html" ]]; then
+  latest_links+="        <li><a href=\"report/${latest_run}/side-by-side-interactions.html\">Side-by-side Interactions</a></li>"
+  latest_links+=$'\n'
+fi
+if [[ -f "$latest_dir/playwright-report/index.html" ]]; then
+  latest_links+="        <li><a href=\"report/${latest_run}/playwright-report/index.html\">Playwright HTML Report</a></li>"
+  latest_links+=$'\n'
+fi
+if [[ -f "$latest_dir/issue-3592061-summary.md" ]]; then
+  latest_links+="        <li><a href=\"report/${latest_run}/issue-3592061-summary.md\">Issue Summary (Markdown)</a></li>"
+  latest_links+=$'\n'
+fi
+if [[ -f "$latest_dir/issue-3592061-summary.csv" ]]; then
+  latest_links+="        <li><a href=\"report/${latest_run}/issue-3592061-summary.csv\">Issue Summary (CSV)</a></li>"
+  latest_links+=$'\n'
+fi
 
 cat > "$OUT_HTML" <<HTML
 <!doctype html>
