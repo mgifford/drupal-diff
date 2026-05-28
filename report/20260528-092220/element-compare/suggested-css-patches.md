@@ -1,6 +1,6 @@
 # Suggested CSS Patch Ideas
 
-Generated: 2026-05-28T17:14:46.033Z
+Generated: 2026-05-28T17:38:09.042Z
 
 Only medium/high confidence suggestions are included.
 
@@ -395,17 +395,6 @@ button, input, optgroup, select, textarea {
   font-size: 13.3px; /* current ~14px */
   padding-block: 12.8px; /* current ~20px */
   padding-inline: 16.6px; /* current ~23px */
-}
-```
-
-### 86. Admin Theme (light) Content Add Article - Details Summary style regression vs Drupal 11 Gin
-Confidence: **medium**
-
-```css
-summary {
-  font-size: 14.3px; /* current ~15.1px */
-  padding-block: 40px; /* current ~35.4px */
-  padding-inline: 70px; /* current ~49.1px */
 }
 ```
 

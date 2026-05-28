@@ -57,14 +57,22 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/people-list__default__dark__dropbutton-wrapper.png
 - Candidate element screenshot: candidate/people-list__default__dark__dropbutton-wrapper.png
+- Baseline page screenshot: baseline-pages/people-list__default__dark__page.png
+- Candidate page screenshot: candidate-pages/people-list__default__dark__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/people-list__default__dark__dropbutton-wrapper.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/people-list__default__dark__dropbutton-wrapper.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/people-list__default__dark__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/people-list__default__dark__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[7]/div[1]`
    - Text sample: EditList additional actions View
+   - Related element screenshot: baseline/people-list__default__dark__dropbutton-wrapper.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/people-list__default__dark__dropbutton-wrapper.png
+   - Related page screenshot: baseline-pages/people-list__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/people-list__default__dark__page.png
 
 ```html
 <div class="dropbutton-wrapper dropbutton-multiple open" data-drupal-ajax-container="" data-once="dropbutton ginDropbutton"> <div class="dropbutton-widget"><ul class="dropbutton dropbutton--extrasmall dropbutton--multiple dropbutton--gin"> <li class="edit dropbutton__item dropbutton-action"><a href="/user/2/edit?destination=/admin/people" aria-label="Edit editor1" hreflang="en">Edit</a></li><li class="dropbutton-toggle"><button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button></li> <li class="dropbutton__item dropbutton-action secondary-action"> <ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 405.766px;"> <li class="view dropbutton__item dropbutton-action secondary-a
@@ -72,6 +80,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[2]/td[7]/div[1]`
    - Text sample: EditList additional actions View
+   - Related element screenshot: baseline/people-list__default__dark__dropbutton-wrapper.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/people-list__default__dark__dropbutton-wrapper.png
+   - Related page screenshot: baseline-pages/people-list__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/people-list__default__dark__page.png
 
 ```html
 <div class="dropbutton-wrapper dropbutton-multiple" data-drupal-ajax-container="" data-once="dropbutton ginDropbutton"> <div class="dropbutton-widget"><ul class="dropbutton dropbutton--extrasmall dropbutton--multiple dropbutton--gin"> <li class="edit dropbutton__item dropbutton-action"><a href="/user/1/edit?destination=/admin/people" aria-label="Edit admin" hreflang="en">Edit</a></li><li class="dropbutton-toggle"><button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button></li> <li class="dropbutton__item dropbutton-action secondary-action"> <ul class="dropbutton__items"> <li class="view dropbutton__item dropbutton-action secondary-action"><a href="/user/1?destination=/admin/people" aria-label="View admin" hreflang="en">View</a></li
@@ -80,6 +92,10 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[7]/div[1]`
    - Text sample: EditList additional actions View
+   - Related element screenshot: candidate/people-list__default__dark__dropbutton-wrapper.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/people-list__default__dark__dropbutton-wrapper.png
+   - Related page screenshot: candidate-pages/people-list__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/people-list__default__dark__page.png
 
 ```html
 <div class="dropbutton-wrapper dropbutton-multiple open" data-drupal-ajax-container="" data-once="dropbutton ginDropbutton"> <div class="dropbutton-widget"><ul class="dropbutton dropbutton--extrasmall dropbutton--multiple dropbutton--gin"> <li class="edit dropbutton__item dropbutton-action"><a href="/user/2/edit?destination=/admin/people" aria-label="Edit editor1" hreflang="en">Edit</a></li><li class="dropbutton-toggle"><button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button></li> <li class="dropbutton__item dropbutton-action secondary-action"> <ul class="dropbutton__items" style="position: fixed; left: auto; right: 75px; top: 420.203px;"> <li class="view dropbutton__item dropbutton-action secondary-action"><a href="/user/2?dest
@@ -87,6 +103,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[2]/td[7]/div[1]`
    - Text sample: EditList additional actions View
+   - Related element screenshot: candidate/people-list__default__dark__dropbutton-wrapper.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/people-list__default__dark__dropbutton-wrapper.png
+   - Related page screenshot: candidate-pages/people-list__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/people-list__default__dark__page.png
 
 ```html
 <div class="dropbutton-wrapper dropbutton-multiple" data-drupal-ajax-container="" data-once="dropbutton ginDropbutton"> <div class="dropbutton-widget"><ul class="dropbutton dropbutton--extrasmall dropbutton--multiple dropbutton--gin"> <li class="edit dropbutton__item dropbutton-action"><a href="/user/1/edit?destination=/admin/people" aria-label="Edit admin" hreflang="en">Edit</a></li><li class="dropbutton-toggle"><button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button></li> <li class="dropbutton__item dropbutton-action secondary-action"> <ul class="dropbutton__items"> <li class="view dropbutton__item dropbutton-action secondary-action"><a href="/user/1?destination=/admin/people" aria-label="View admin" hreflang="en">View</a></li

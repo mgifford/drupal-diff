@@ -602,6 +602,10 @@ function bugDraftFileName(row) {
   return `${routeSlug}-${modeSlug}-${scenarioSlug}-${componentSlug}.md`;
 }
 
+function bugDraftHtmlFileName(row) {
+  return bugDraftFileName(row).replace(/\.md$/i, '.html');
+}
+
 function summarize(measures) {
   return {
     count: measures.length,
@@ -739,7 +743,7 @@ function mdEscCode(s) {
   return String(s || '').replace(/```/g, '` ` `');
 }
 
-function evidenceMarkdown(title, evidence) {
+function evidenceMarkdown(title, evidence, elementShotPath, elementShotGitHub, pageShotPath, pageShotGitHub) {
   if (!evidence || !evidence.length) {
     return [`### ${title}`, '- No matching element captured', ''];
   }
@@ -749,6 +753,18 @@ function evidenceMarkdown(title, evidence) {
     lines.push(`${i + 1}. XPath: \`${e.xpath || 'n/a'}\``);
     if (e.text) {
       lines.push(`   - Text sample: ${e.text}`);
+    }
+    if (elementShotPath) {
+      lines.push(`   - Related element screenshot: ${elementShotPath}`);
+    }
+    if (elementShotGitHub) {
+      lines.push(`   - Related element screenshot (GitHub): ${elementShotGitHub}`);
+    }
+    if (pageShotPath) {
+      lines.push(`   - Related page screenshot: ${pageShotPath}`);
+    }
+    if (pageShotGitHub) {
+      lines.push(`   - Related page screenshot (GitHub): ${pageShotGitHub}`);
     }
     lines.push('');
     lines.push('```html');
@@ -763,6 +779,8 @@ function evidenceMarkdown(title, evidence) {
   fs.rmSync(outDir, { recursive: true, force: true });
   fs.mkdirSync(path.join(outDir, 'baseline'), { recursive: true });
   fs.mkdirSync(path.join(outDir, 'candidate'), { recursive: true });
+  fs.mkdirSync(path.join(outDir, 'baseline-pages'), { recursive: true });
+  fs.mkdirSync(path.join(outDir, 'candidate-pages'), { recursive: true });
 
   const browser = await chromium.launch({ headless: true });
 
@@ -805,6 +823,20 @@ function evidenceMarkdown(title, evidence) {
 
         await expandDropbuttons(baselinePage);
         await expandDropbuttons(candidatePage);
+
+        const pageShotBase = `${route.id}__${profile.id}__${scheme}__page.png`;
+        const baselinePageShot = `baseline-pages/${pageShotBase}`;
+        const candidatePageShot = `candidate-pages/${pageShotBase}`;
+        try {
+          await baselinePage.screenshot({ path: path.join(outDir, baselinePageShot), fullPage: true });
+        } catch {
+          // Skip non-actionable baseline page screenshot.
+        }
+        try {
+          await candidatePage.screenshot({ path: path.join(outDir, candidatePageShot), fullPage: true });
+        } catch {
+          // Skip non-actionable candidate page screenshot.
+        }
 
         for (const component of components) {
         const baseMeasures = await measure(baselinePage, component.selector);
@@ -871,6 +903,8 @@ function evidenceMarkdown(title, evidence) {
           likelyCssFiles: likelyCss,
           baselineShot: fs.existsSync(path.join(outDir, baselineShot)) ? baselineShot : '',
           candidateShot: fs.existsSync(path.join(outDir, candidateShot)) ? candidateShot : '',
+          baselinePageShot: fs.existsSync(path.join(outDir, baselinePageShot)) ? baselinePageShot : '',
+          candidatePageShot: fs.existsSync(path.join(outDir, candidatePageShot)) ? candidatePageShot : '',
           baselineDomEvidence: compactDomEvidence(baseMeasures),
           candidateDomEvidence: compactDomEvidence(candMeasures),
         };
@@ -920,6 +954,7 @@ function evidenceMarkdown(title, evidence) {
     const sig = row.comparison.significant;
     const className = sig > 0 ? 'flagged' : '';
     const draftMdName = sig > 0 ? bugDraftFileName(row) : '';
+    const draftHtmlName = sig > 0 ? bugDraftHtmlFileName(row) : '';
     const draftSource = draftMdName ? bugDraftSourceUrl(draftMdName) : '';
     const draftDirSource = bugDraftSourceDirUrl();
     const draftExists = draftMdName ? expectedDraftNames.has(draftMdName) : false;
@@ -1195,7 +1230,9 @@ function evidenceMarkdown(title, evidence) {
     }
 
     const mdName = bugDraftFileName(row);
+    const htmlName = bugDraftHtmlFileName(row);
     const mdPath = path.join(bugDraftDir, mdName);
+    const htmlPath = path.join(bugDraftDir, htmlName);
     const cssList = (row.likelyCssFiles && row.likelyCssFiles.length) ? row.likelyCssFiles : ['unknown'];
     const baselineCssList = cssSourceList(row.baselineCssSources || []);
     const candidateCssList = cssSourceList(row.candidateCssSources || []);
@@ -1207,6 +1244,8 @@ function evidenceMarkdown(title, evidence) {
 
     const baselineShotGitHub = githubElementShotUrl(row.baselineShot);
     const candidateShotGitHub = githubElementShotUrl(row.candidateShot);
+    const baselinePageShotGitHub = githubElementShotUrl(row.baselinePageShot);
+    const candidatePageShotGitHub = githubElementShotUrl(row.candidatePageShot);
 
     const body = [
       `# ${title}`,
@@ -1249,13 +1288,17 @@ function evidenceMarkdown(title, evidence) {
       '## Evidence',
       `- Baseline element screenshot: ${row.baselineShot}`,
       `- Candidate element screenshot: ${row.candidateShot}`,
+      `- Baseline page screenshot: ${row.baselinePageShot || 'n/a'}`,
+      `- Candidate page screenshot: ${row.candidatePageShot || 'n/a'}`,
       baselineShotGitHub ? `- Baseline element screenshot (GitHub): ${baselineShotGitHub}` : '',
       candidateShotGitHub ? `- Candidate element screenshot (GitHub): ${candidateShotGitHub}` : '',
+      baselinePageShotGitHub ? `- Baseline page screenshot (GitHub): ${baselinePageShotGitHub}` : '',
+      candidatePageShotGitHub ? `- Candidate page screenshot (GitHub): ${candidatePageShotGitHub}` : '',
       '- Dashboard: ../element-compare-dashboard.html',
       '',
       '## DOM Evidence (XPath + HTML Snippets)',
-      ...evidenceMarkdown(`${baselineLabel}`, baselineEvidence),
-      ...evidenceMarkdown(`${candidateLabel}`, candidateEvidence),
+      ...evidenceMarkdown(`${baselineLabel}`, baselineEvidence, row.baselineShot, baselineShotGitHub, row.baselinePageShot, baselinePageShotGitHub),
+      ...evidenceMarkdown(`${candidateLabel}`, candidateEvidence, row.candidateShot, candidateShotGitHub, row.candidatePageShot, candidatePageShotGitHub),
       '## Notes',
       '- Validate whether this is planned design change or unplanned regression.',
       '- If unplanned, file as CSS parity issue for Drupal 12 Admin Theme.',
@@ -1263,6 +1306,65 @@ function evidenceMarkdown(title, evidence) {
     ].join('\n');
 
     fs.writeFileSync(mdPath, body);
+
+    const htmlTitle = esc(title);
+    const baselineEvidenceHtml = evidenceBlockHtml(`${baselineLabel}`, baselineEvidence);
+    const candidateEvidenceHtml = evidenceBlockHtml(`${candidateLabel}`, candidateEvidence);
+    const renderedHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>${htmlTitle}</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
+  h1 { margin-bottom: 0.4rem; }
+  .meta { color: #4a5568; }
+  .links a { margin-right: 0.8rem; }
+  .card { border: 1px solid #d0d7de; border-radius: 8px; padding: 0.8rem 1rem; margin: 0.9rem 0; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 0.7rem; }
+  code { font-size: 0.95em; }
+  img { max-width: 100%; border: 1px solid #d0d7de; border-radius: 4px; margin-top: 0.5rem; }
+  ul { margin-top: 0.4rem; }
+</style>
+</head>
+<body>
+  <h1>${htmlTitle}</h1>
+  <p class="meta">Potential CSS regression in <strong>${esc(row.component)}</strong> on <strong>${esc(row.route)}</strong> (${esc(row.colorMode)} mode).</p>
+  <p class="links">
+    <a href="${esc(mdName)}" target="_blank" rel="noopener">Local Markdown</a>
+    ${bugDraftSourceUrl(mdName) ? `<a href="${esc(bugDraftSourceUrl(mdName))}" target="_blank" rel="noopener">GitHub Source (Markdown)</a>` : ''}
+    <a href="../element-compare-dashboard.html" target="_blank" rel="noopener">Dashboard</a>
+  </p>
+
+  <section class="card">
+    <h2>Reproduction</h2>
+    <ol>
+      <li>Open baseline page: <a href="${esc(row.baselineUrl)}" target="_blank" rel="noopener">${esc(row.baselineUrl)}</a></li>
+      <li>Open candidate page: <a href="${esc(row.candidateUrl)}" target="_blank" rel="noopener">${esc(row.candidateUrl)}</a></li>
+      <li>Inspect selector: <code>${esc(row.selector)}</code></li>
+      <li>Compare typography, spacing, sizing, and marker presence.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Screenshots</h2>
+    <ul>
+      <li>Baseline element: ${row.baselineShot ? `<a href="../${esc(row.baselineShot)}" target="_blank" rel="noopener">${esc(row.baselineShot)}</a>` : 'n/a'} ${baselineShotGitHub ? `| <a href="${esc(baselineShotGitHub)}" target="_blank" rel="noopener">GitHub</a>` : ''}</li>
+      <li>Candidate element: ${row.candidateShot ? `<a href="../${esc(row.candidateShot)}" target="_blank" rel="noopener">${esc(row.candidateShot)}</a>` : 'n/a'} ${candidateShotGitHub ? `| <a href="${esc(candidateShotGitHub)}" target="_blank" rel="noopener">GitHub</a>` : ''}</li>
+      <li>Baseline page: ${row.baselinePageShot ? `<a href="../${esc(row.baselinePageShot)}" target="_blank" rel="noopener">${esc(row.baselinePageShot)}</a>` : 'n/a'} ${baselinePageShotGitHub ? `| <a href="${esc(baselinePageShotGitHub)}" target="_blank" rel="noopener">GitHub</a>` : ''}</li>
+      <li>Candidate page: ${row.candidatePageShot ? `<a href="../${esc(row.candidatePageShot)}" target="_blank" rel="noopener">${esc(row.candidatePageShot)}</a>` : 'n/a'} ${candidatePageShotGitHub ? `| <a href="${esc(candidatePageShotGitHub)}" target="_blank" rel="noopener">GitHub</a>` : ''}</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>DOM Evidence (XPath + HTML)</h2>
+    ${baselineEvidenceHtml}
+    ${candidateEvidenceHtml}
+  </section>
+</body>
+</html>`;
+    fs.writeFileSync(htmlPath, renderedHtml);
 
     const csvEsc = (s) => `"${String(s).replace(/"/g, '""')}"`;
     csvLines.push([
@@ -1290,7 +1392,7 @@ function evidenceMarkdown(title, evidence) {
     ].map(csvEsc).join(','));
 
     const sourceBugUrl = bugDraftSourceUrl(mdName);
-    indexLines.push(`${idx}. [${title}](bug-drafts/${mdName})`);
+    indexLines.push(`${idx}. [${title}](bug-drafts/${htmlName})`);
     if (sourceBugUrl) {
       indexLines.push(`   GitHub source: ${sourceBugUrl}`);
     }
@@ -1305,7 +1407,7 @@ function evidenceMarkdown(title, evidence) {
       route: row.route,
       colorMode: row.colorMode,
       component: row.component,
-      localBugUrl: `bug-drafts/${mdName}`,
+      localBugUrl: `bug-drafts/${htmlName}`,
       sourceBugUrl,
       cssSummary,
       patchSummary,
@@ -1342,7 +1444,7 @@ function evidenceMarkdown(title, evidence) {
       `<p><strong>Likely CSS:</strong> ${esc(item.cssSummary)}</p>`,
       `<pre>${esc(item.patchSummary)}</pre>`,
       '<p class="links">',
-      `<a href="${esc(item.localBugUrl)}" target="_blank" rel="noopener">Local Draft</a>`,
+      `<a href="${esc(item.localBugUrl)}" target="_blank" rel="noopener">Rendered Draft (HTML)</a>`,
       sourceLink,
       '</p>',
       '</li>',
@@ -1405,7 +1507,8 @@ function evidenceMarkdown(title, evidence) {
     const cssHtmlItems = [];
     for (const item of items) {
       const sourceBugUrl = bugDraftSourceUrl(item.mdName);
-      cssIndex.push(`- ${item.idx}. [${item.title}](bug-drafts/${item.mdName})`);
+      const htmlDraftName = item.mdName.replace(/\.md$/i, '.html');
+      cssIndex.push(`- ${item.idx}. [${item.title}](bug-drafts/${htmlDraftName})`);
       if (sourceBugUrl) {
         cssIndex.push(`  - GitHub source: ${sourceBugUrl}`);
       }
@@ -1418,7 +1521,7 @@ function evidenceMarkdown(title, evidence) {
         : '';
       cssHtmlItems.push([
         '<li>',
-        `<a href="bug-drafts/${esc(item.mdName)}" target="_blank" rel="noopener">${item.idx}. ${esc(item.title)}</a>`,
+        `<a href="bug-drafts/${esc(item.mdName.replace(/\.md$/i, '.html'))}" target="_blank" rel="noopener">${item.idx}. ${esc(item.title)}</a>`,
         sourceBugUrl ? ` <a href="${esc(sourceBugUrl)}" target="_blank" rel="noopener">GitHub Source</a>` : '',
         secondary,
         '</li>',
@@ -1503,7 +1606,7 @@ SRC_OUT_DIR="$ROOT_DIR/drupal-git/.ddev/drupal-admin-vrt/element-compare-out"
 mkdir -p "$TMP_HOST_OUT_DIR"
 
 # Copy recursively from container output to host output.
-ddev exec bash -lc "cd '$CONTAINER_OUT_DIR' && tar -cf - baseline candidate bug-drafts" | tar -xf - -C "$TMP_HOST_OUT_DIR"
+ddev exec bash -lc "cd '$CONTAINER_OUT_DIR' && tar -cf - baseline candidate baseline-pages candidate-pages bug-drafts" | tar -xf - -C "$TMP_HOST_OUT_DIR"
 
 # Copy dashboard metadata files directly from container to host.
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/element-compare-dashboard.html'" > "$TMP_HOST_OUT_DIR/element-compare-dashboard.html"

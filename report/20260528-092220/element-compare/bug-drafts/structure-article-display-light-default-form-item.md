@@ -38,21 +38,29 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: 
 - Candidate element screenshot: 
+- Baseline page screenshot: baseline-pages/structure-content-type-article-display__default__light__page.png
+- Candidate page screenshot: candidate-pages/structure-content-type-article-display__default__light__page.png
 
 
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-type-article-display__default__light__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-type-article-display__default__light__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[3]/div[1]`
    - Text sample: Weight for Image
+   - Related page screenshot: baseline-pages/structure-content-type-article-display__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-type-article-display__default__light__page.png
 
 ```html
-<div class="js-form-item form-item js-form-type-textfield form-type--textfield js-form-item-fields-field-image-weight form-item--fields-field-image-weight form-item--no-label"> <label for="edit-fields-field-image-weight" class="form-item__label visually-hidden">Weight for Image</label> <input class="field-weight form-text form-element form-element--type-text form-element--api-textfield" data-drupal-selector="edit-fields-field-image-weight" type="text" id="edit-fields-field-image-weight" name="fields[field_image][weight]" value="-1" size="3" maxlength="128"> </div>
+<div class="js-form-item form-item js-form-type-textfield form-type--textfield js-form-item-fields-field-image-weight form-item--fields-field-image-weight form-item--no-label"> <label for="edit-fields-field-image-weight" class="form-item__label visually-hidden">Weight for Image</label> <input class="field-weight form-text form-element form-element--type-text form-element--api-textfield" data-drupal-selector="edit-fields-field-image-weight" type="text" id="edit-fields-field-image-weight" name="fields[field_image][weight]" value="-1" size="3" maxlength="128" style=""> </div>
 ```
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[4]/div[1]`
    - Text sample: Label display for Image - None - content hidden
+   - Related page screenshot: baseline-pages/structure-content-type-article-display__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-type-article-display__default__light__page.png
 
 ```html
 <div class="js-form-item form-item js-form-type-select form-type--select js-form-item-fields-field-image-parent form-item--fields-field-image-parent form-item--no-label"> <label for="edit-fields-field-image-parent" class="form-item__label visually-hidden">Label display for Image</label> <select class="js-field-parent field-parent form-select form-element form-element--type-select" data-drupal-selector="edit-fields-field-image-parent" id="edit-fields-field-image-parent" name="fields[field_image][parent]"> <option value="" selected="selected">- None -</option> <option value="content">content</option> <option value="hidden">hidden</option> </select> </div>

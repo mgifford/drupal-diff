@@ -57,14 +57,20 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: 
 - Candidate element screenshot: 
+- Baseline page screenshot: baseline-pages/content-overview__default__light__page.png
+- Candidate page screenshot: candidate-pages/content-overview__default__light__page.png
 
 
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/content-overview__default__light__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/content-overview__default__light__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[7]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
    - Text sample: Delete
+   - Related page screenshot: baseline-pages/content-overview__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/content-overview__default__light__page.png
 
 ```html
 <a href="/node/50/delete?destination=/admin/content" aria-label="Delete Dummy Page 20" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" hreflang="en" data-once="ajax">Delete</a>
@@ -72,6 +78,8 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[7]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]`
    - Text sample: View
+   - Related page screenshot: baseline-pages/content-overview__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/content-overview__default__light__page.png
 
 ```html
 <a href="/node/50?destination=/admin/content" aria-label="View Dummy Page 20" hreflang="en">View</a>
@@ -80,6 +88,8 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[7]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
    - Text sample: Delete
+   - Related page screenshot: candidate-pages/content-overview__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/content-overview__default__light__page.png
 
 ```html
 <a href="/node/52/delete?destination=/admin/content" aria-label="Delete red" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" hreflang="en" data-once="ajax">Delete</a>
@@ -87,6 +97,8 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[7]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]`
    - Text sample: View
+   - Related page screenshot: candidate-pages/content-overview__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/content-overview__default__light__page.png
 
 ```html
 <a href="/node/52?destination=/admin/content" aria-label="View red" hreflang="en">View</a>

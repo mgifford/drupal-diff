@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin Theme (light) Reports Updates - Details Summary style regression vs Drupal 11 Gin</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
+  h1 { margin-bottom: 0.4rem; }
+  .meta { color: #4a5568; }
+  .links a { margin-right: 0.8rem; }
+  .card { border: 1px solid #d0d7de; border-radius: 8px; padding: 0.8rem 1rem; margin: 0.9rem 0; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 0.7rem; }
+  code { font-size: 0.95em; }
+  img { max-width: 100%; border: 1px solid #d0d7de; border-radius: 4px; margin-top: 0.5rem; }
+  ul { margin-top: 0.4rem; }
+</style>
+</head>
+<body>
+  <h1>Admin Theme (light) Reports Updates - Details Summary style regression vs Drupal 11 Gin</h1>
+  <p class="meta">Potential CSS regression in <strong>Details Summary</strong> on <strong>Reports Updates</strong> (light mode).</p>
+  <p class="links">
+    <a href="reports-updates-light-default-details-summary.md" target="_blank" rel="noopener">Local Markdown</a>
+    <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-updates-light-default-details-summary.md" target="_blank" rel="noopener">GitHub Source (Markdown)</a>
+    <a href="../element-compare-dashboard.html" target="_blank" rel="noopener">Dashboard</a>
+  </p>
+
+  <section class="card">
+    <h2>Reproduction</h2>
+    <ol>
+      <li>Open baseline page: <a href="http://drupal-11.3.10.ddev.site/admin/reports/updates" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/reports/updates</a></li>
+      <li>Open candidate page: <a href="http://drupal-12-git.ddev.site:8080/admin/reports/updates" target="_blank" rel="noopener">http://drupal-12-git.ddev.site:8080/admin/reports/updates</a></li>
+      <li>Inspect selector: <code>details &gt; summary</code></li>
+      <li>Compare typography, spacing, sizing, and marker presence.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Screenshots</h2>
+    <ul>
+      <li>Baseline element: <a href="../baseline/reports-updates__default__light__details-summary.png" target="_blank" rel="noopener">baseline/reports-updates__default__light__details-summary.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/reports-updates__default__light__details-summary.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate element: n/a </li>
+      <li>Baseline page: <a href="../baseline-pages/reports-updates__default__light__page.png" target="_blank" rel="noopener">baseline-pages/reports-updates__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/reports-updates__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate page: <a href="../candidate-pages/reports-updates__default__light__page.png" target="_blank" rel="noopener">candidate-pages/reports-updates__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/reports-updates__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>DOM Evidence (XPath + HTML)</h2>
+    
+      <div class="meta"><strong>Drupal 11 with Gin 1 XPath:</strong> <code>/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[3]/div[1]/div[3]/ul[1]/li[2]/details[1]/summary[1]</code></div>
+      <div class="meta">text: Compatible</div>
+      <pre>&lt;summary role=&quot;button&quot; aria-expanded=&quot;false&quot; class=&quot;claro-details__summary&quot;&gt;Compatible&lt;span class=&quot;required-mark&quot;&gt;&lt;/span&gt; &lt;span class=&quot;claro-details__summary-summary&quot;&gt;&lt;/span&gt;&lt;/summary&gt;</pre>
+    <div class="meta"><strong>Drupal 12 with Admin Theme:</strong> no matches captured</div>
+  </section>
+</body>
+</html>

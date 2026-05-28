@@ -55,14 +55,22 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/structure-views__default__light__dropbutton-toggle.png
 - Candidate element screenshot: candidate/structure-views__default__light__dropbutton-toggle.png
+- Baseline page screenshot: baseline-pages/structure-views__default__light__page.png
+- Candidate page screenshot: candidate-pages/structure-views__default__light__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-views__default__light__dropbutton-toggle.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-views__default__light__dropbutton-toggle.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-views__default__light__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-views__default__light__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/div[1]/ul[1]/li[2]/button[1]`
    - Text sample: List additional actions
+   - Related element screenshot: baseline/structure-views__default__light__dropbutton-toggle.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-views__default__light__dropbutton-toggle.png
+   - Related page screenshot: baseline-pages/structure-views__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-views__default__light__page.png
 
 ```html
 <button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button>
@@ -70,6 +78,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[5]/div[1]/div[1]/ul[1]/li[2]/button[1]`
    - Text sample: List additional actions
+   - Related element screenshot: baseline/structure-views__default__light__dropbutton-toggle.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-views__default__light__dropbutton-toggle.png
+   - Related page screenshot: baseline-pages/structure-views__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-views__default__light__page.png
 
 ```html
 <button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button>
@@ -78,6 +90,10 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/div[1]/ul[1]/li[2]/button[1]`
    - Text sample: List additional actions
+   - Related element screenshot: candidate/structure-views__default__light__dropbutton-toggle.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-views__default__light__dropbutton-toggle.png
+   - Related page screenshot: candidate-pages/structure-views__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-views__default__light__page.png
 
 ```html
 <button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button>
@@ -85,6 +101,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[5]/div[1]/div[1]/ul[1]/li[2]/button[1]`
    - Text sample: List additional actions
+   - Related element screenshot: candidate/structure-views__default__light__dropbutton-toggle.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-views__default__light__dropbutton-toggle.png
+   - Related page screenshot: candidate-pages/structure-views__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-views__default__light__page.png
 
 ```html
 <button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button>

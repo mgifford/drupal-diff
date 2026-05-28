@@ -53,14 +53,22 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/structure-block-layout__default__dark__required-marker.png
 - Candidate element screenshot: candidate/structure-block-layout__default__dark__required-marker.png
+- Baseline page screenshot: baseline-pages/structure-block-layout__default__dark__page.png
+- Candidate page screenshot: candidate-pages/structure-block-layout__default__dark__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-block-layout__default__dark__required-marker.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-block-layout__default__dark__required-marker.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-block-layout__default__dark__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-block-layout__default__dark__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[3]/div[1]/label[1]`
    - Text sample: Region for Site branding block
+   - Related element screenshot: baseline/structure-block-layout__default__dark__required-marker.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-block-layout__default__dark__required-marker.png
+   - Related page screenshot: baseline-pages/structure-block-layout__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-block-layout__default__dark__page.png
 
 ```html
 <label for="edit-blocks-olivero-site-branding-region" class="form-item__label visually-hidden js-form-required form-required">Region for Site branding block</label>
@@ -68,6 +76,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[6]/td[3]/div[1]/label[1]`
    - Text sample: Region for Search form (narrow) block
+   - Related element screenshot: baseline/structure-block-layout__default__dark__required-marker.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-block-layout__default__dark__required-marker.png
+   - Related page screenshot: baseline-pages/structure-block-layout__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-block-layout__default__dark__page.png
 
 ```html
 <label for="edit-blocks-olivero-search-form-narrow-region" class="form-item__label visually-hidden js-form-required form-required">Region for Search form (narrow) block</label>
@@ -76,6 +88,10 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[3]/div[1]/label[1]`
    - Text sample: Region for Site branding block
+   - Related element screenshot: candidate/structure-block-layout__default__dark__required-marker.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-block-layout__default__dark__required-marker.png
+   - Related page screenshot: candidate-pages/structure-block-layout__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-block-layout__default__dark__page.png
 
 ```html
 <label for="edit-blocks-olivero-site-branding-region" class="form-item__label visually-hidden js-form-required form-required">Region for Site branding block</label>
@@ -83,6 +99,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[6]/td[3]/div[1]/label[1]`
    - Text sample: Region for Main navigation block
+   - Related element screenshot: candidate/structure-block-layout__default__dark__required-marker.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-block-layout__default__dark__required-marker.png
+   - Related page screenshot: candidate-pages/structure-block-layout__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-block-layout__default__dark__page.png
 
 ```html
 <label for="edit-blocks-olivero-main-menu-region" class="form-item__label visually-hidden js-form-required form-required">Region for Main navigation block</label>

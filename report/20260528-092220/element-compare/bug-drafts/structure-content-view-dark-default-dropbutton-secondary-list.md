@@ -54,14 +54,20 @@ ul {
 ## Evidence
 - Baseline element screenshot: 
 - Candidate element screenshot: 
+- Baseline page screenshot: baseline-pages/structure-view-content__default__dark__page.png
+- Candidate page screenshot: candidate-pages/structure-view-content__default__dark__page.png
 
 
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-view-content__default__dark__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-view-content__default__dark__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
    - Text sample: Analyze view Duplicate view Reorder displays Delete view
+   - Related page screenshot: baseline-pages/structure-view-content__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-view-content__default__dark__page.png
 
 ```html
 <ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 691.781px;"> <li class="analyze dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/nojs/analyze/content/page_1" class="views-ajax-link" data-once="views-ajax">Analyze view</a></li> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/duplicate">Duplicate view</a></li> <li class="reorder dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/nojs/reorder-displays/content/page_1" class="views-ajax-link" data-once="views-ajax">Reorder displays</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/v
@@ -69,6 +75,8 @@ ul {
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
    - Text sample: Rearrange fields
+   - Related page screenshot: baseline-pages/structure-view-content__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-view-content__default__dark__page.png
 
 ```html
 <ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: auto; bottom: 100%; max-height: 451.547px;"> <li class="rearrange dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/nojs/rearrange/content/page_1/field" class="compact rearrange views-ajax-link" id="views-rearrange-field" data-once="views-ajax">Rearrange <span class="visually-hidden">fields</span></a></li> </ul>
@@ -77,6 +85,8 @@ ul {
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
    - Text sample: Analyze view Duplicate view Reorder displays Delete view
+   - Related page screenshot: candidate-pages/structure-view-content__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-view-content__default__dark__page.png
 
 ```html
 <ul class="dropbutton__items" style="position: fixed; left: auto; right: 126px; top: 275.219px;"> <li class="analyze dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/nojs/analyze/content/page_1" class="views-ajax-link" data-once="views-ajax">Analyze view</a></li> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/duplicate">Duplicate view</a></li> <li class="reorder dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/nojs/reorder-displays/content/page_1" class="views-ajax-link" data-once="views-ajax">Reorder displays</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/delete">Delete 
@@ -84,6 +94,8 @@ ul {
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
    - Text sample: Rearrange fields
+   - Related page screenshot: candidate-pages/structure-view-content__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-view-content__default__dark__page.png
 
 ```html
 <ul class="dropbutton__items" style="position: fixed; left: 562px; right: auto; top: -1051.45px;"> <li class="rearrange dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/nojs/rearrange/content/page_1/field" class="compact rearrange views-ajax-link" id="views-rearrange-field" data-once="views-ajax">Rearrange <span class="visually-hidden">fields</span></a></li> </ul>

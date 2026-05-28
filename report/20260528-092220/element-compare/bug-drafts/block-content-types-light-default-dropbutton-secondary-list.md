@@ -46,14 +46,22 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/block-content__default__light__dropbutton-secondary-list.png
 - Candidate element screenshot: candidate/block-content__default__light__dropbutton-secondary-list.png
+- Baseline page screenshot: baseline-pages/block-content__default__light__page.png
+- Candidate page screenshot: candidate-pages/block-content__default__light__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/block-content__default__light__dropbutton-secondary-list.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/block-content__default__light__dropbutton-secondary-list.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/block-content__default__light__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/block-content__default__light__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
    - Text sample: Manage form display Manage display Edit Manage permissions Delete
+   - Related element screenshot: baseline/block-content__default__light__dropbutton-secondary-list.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/block-content__default__light__dropbutton-secondary-list.png
+   - Related page screenshot: baseline-pages/block-content__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/block-content__default__light__page.png
 
 ```html
 <ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 736px;"> <li class="manage-form-display dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block-content/manage/basic/form-display">Manage form display</a></li> <li class="manage-display dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block-content/manage/basic/display">Manage display</a></li> <li class="edit dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block-content/manage/basic?destination=/admin/structure/block-content" aria-label="Edit Basic block">Edit</a></li> <li class="manage-permissions dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block-content/m
@@ -62,6 +70,10 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
    - Text sample: Manage form display Manage display Edit Manage permissions Delete
+   - Related element screenshot: candidate/block-content__default__light__dropbutton-secondary-list.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/block-content__default__light__dropbutton-secondary-list.png
+   - Related page screenshot: candidate-pages/block-content__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/block-content__default__light__page.png
 
 ```html
 <ul class="dropbutton__items" style="position: fixed; left: 1109.83px; right: auto; top: 251px;"> <li class="manage-form-display dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block-content/manage/basic/form-display">Manage form display</a></li> <li class="manage-display dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block-content/manage/basic/display">Manage display</a></li> <li class="edit dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block-content/manage/basic?destination=/admin/structure/block-content" aria-label="Edit Basic block">Edit</a></li> <li class="manage-permissions dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/block-content/manage/basic/permissions

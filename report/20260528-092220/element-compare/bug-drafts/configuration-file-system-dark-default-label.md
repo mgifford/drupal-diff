@@ -49,14 +49,22 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/config-file-system__default__dark__label.png
 - Candidate element screenshot: candidate/config-file-system__default__dark__label.png
+- Baseline page screenshot: baseline-pages/config-file-system__default__dark__page.png
+- Candidate page screenshot: candidate-pages/config-file-system__default__dark__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/config-file-system__default__dark__label.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/config-file-system__default__dark__label.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/config-file-system__default__dark__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/config-file-system__default__dark__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/label[1]`
    - Text sample: Public file system path
+   - Related element screenshot: baseline/config-file-system__default__dark__label.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/config-file-system__default__dark__label.png
+   - Related page screenshot: baseline-pages/config-file-system__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/config-file-system__default__dark__page.png
 
 ```html
 <label for="edit-file-public-path" class="form-item__label">Public file system path</label>
@@ -64,6 +72,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[2]/label[1]`
    - Text sample: Public file base URL
+   - Related element screenshot: baseline/config-file-system__default__dark__label.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/config-file-system__default__dark__label.png
+   - Related page screenshot: baseline-pages/config-file-system__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/config-file-system__default__dark__page.png
 
 ```html
 <label for="edit-file-public-base-url" class="form-item__label">Public file base URL</label>
@@ -72,6 +84,10 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/label[1]`
    - Text sample: Public file system path
+   - Related element screenshot: candidate/config-file-system__default__dark__label.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/config-file-system__default__dark__label.png
+   - Related page screenshot: candidate-pages/config-file-system__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/config-file-system__default__dark__page.png
 
 ```html
 <label for="edit-file-public-path" class="form-item__label">Public file system path</label>
@@ -79,6 +95,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[2]/label[1]`
    - Text sample: Public file base URL
+   - Related element screenshot: candidate/config-file-system__default__dark__label.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/config-file-system__default__dark__label.png
+   - Related page screenshot: candidate-pages/config-file-system__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/config-file-system__default__dark__page.png
 
 ```html
 <label for="edit-file-public-base-url" class="form-item__label">Public file base URL</label>

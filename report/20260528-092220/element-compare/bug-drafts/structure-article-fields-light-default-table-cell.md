@@ -45,14 +45,22 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/structure-content-type-article-fields__default__light__table-cell.png
 - Candidate element screenshot: candidate/structure-content-type-article-fields__default__light__table-cell.png
+- Baseline page screenshot: baseline-pages/structure-content-type-article-fields__default__light__page.png
+- Candidate page screenshot: candidate-pages/structure-content-type-article-fields__default__light__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-content-type-article-fields__default__light__table-cell.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-content-type-article-fields__default__light__table-cell.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-type-article-fields__default__light__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-type-article-fields__default__light__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]`
    - Text sample: Body body Single
+   - Related element screenshot: baseline/structure-content-type-article-fields__default__light__table-cell.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-content-type-article-fields__default__light__table-cell.png
+   - Related page screenshot: baseline-pages/structure-content-type-article-fields__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-type-article-fields__default__light__page.png
 
 ```html
 <td><div class="field-label-container"><div class="field-label-wrapper"><span class="field-label-text">Body</span> <span class="field-ui-secondary-text field-machine-name"> body</span> </div> <div class="field-details-container"><span class="field-ui-pill">Single</span> </div> </div> </td>
@@ -60,6 +68,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]`
    - Text sample: Text (formatted, long, with summary)
+   - Related element screenshot: baseline/structure-content-type-article-fields__default__light__table-cell.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-content-type-article-fields__default__light__table-cell.png
+   - Related page screenshot: baseline-pages/structure-content-type-article-fields__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-type-article-fields__default__light__page.png
 
 ```html
 <td class="field-settings-summary-cell"><div class="field-settings-summary-container"><div class="field-type-label">Text (formatted, long, with summary)</div> <div class="field-settings-summary-items"></div> </div> </td>
@@ -68,6 +80,10 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]`
    - Text sample: Body body Single
+   - Related element screenshot: candidate/structure-content-type-article-fields__default__light__table-cell.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-content-type-article-fields__default__light__table-cell.png
+   - Related page screenshot: candidate-pages/structure-content-type-article-fields__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-type-article-fields__default__light__page.png
 
 ```html
 <td><div class="field-label-container"><div class="field-label-wrapper"><span class="field-label-text">Body</span> <span class="field-ui-secondary-text field-machine-name"> body</span> </div> <div class="field-details-container"><span class="field-ui-pill">Single</span> </div> </div> </td>
@@ -75,6 +91,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]`
    - Text sample: Long text with summary
+   - Related element screenshot: candidate/structure-content-type-article-fields__default__light__table-cell.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-content-type-article-fields__default__light__table-cell.png
+   - Related page screenshot: candidate-pages/structure-content-type-article-fields__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-type-article-fields__default__light__page.png
 
 ```html
 <td class="field-settings-summary-cell"><div class="field-settings-summary-container"><div class="field-type-label">Long text with summary</div> <div class="field-settings-summary-items"></div> </div> </td>

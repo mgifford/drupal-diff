@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin Theme (light) People List - H2 Heading style regression vs Drupal 11 Gin</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
+  h1 { margin-bottom: 0.4rem; }
+  .meta { color: #4a5568; }
+  .links a { margin-right: 0.8rem; }
+  .card { border: 1px solid #d0d7de; border-radius: 8px; padding: 0.8rem 1rem; margin: 0.9rem 0; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 0.7rem; }
+  code { font-size: 0.95em; }
+  img { max-width: 100%; border: 1px solid #d0d7de; border-radius: 4px; margin-top: 0.5rem; }
+  ul { margin-top: 0.4rem; }
+</style>
+</head>
+<body>
+  <h1>Admin Theme (light) People List - H2 Heading style regression vs Drupal 11 Gin</h1>
+  <p class="meta">Potential CSS regression in <strong>H2 Heading</strong> on <strong>People List</strong> (light mode).</p>
+  <p class="links">
+    <a href="people-list-light-default-h2.md" target="_blank" rel="noopener">Local Markdown</a>
+    <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-light-default-h2.md" target="_blank" rel="noopener">GitHub Source (Markdown)</a>
+    <a href="../element-compare-dashboard.html" target="_blank" rel="noopener">Dashboard</a>
+  </p>
+
+  <section class="card">
+    <h2>Reproduction</h2>
+    <ol>
+      <li>Open baseline page: <a href="http://drupal-11.3.10.ddev.site/admin/people" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/people</a></li>
+      <li>Open candidate page: <a href="http://drupal-12-git.ddev.site:8080/admin/people" target="_blank" rel="noopener">http://drupal-12-git.ddev.site:8080/admin/people</a></li>
+      <li>Inspect selector: <code>h2</code></li>
+      <li>Compare typography, spacing, sizing, and marker presence.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Screenshots</h2>
+    <ul>
+      <li>Baseline element: n/a </li>
+      <li>Candidate element: <a href="../candidate/people-list__default__light__h2.png" target="_blank" rel="noopener">candidate/people-list__default__light__h2.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/people-list__default__light__h2.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Baseline page: <a href="../baseline-pages/people-list__default__light__page.png" target="_blank" rel="noopener">baseline-pages/people-list__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/people-list__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate page: <a href="../candidate-pages/people-list__default__light__page.png" target="_blank" rel="noopener">candidate-pages/people-list__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/people-list__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>DOM Evidence (XPath + HTML)</h2>
+    
+      <div class="meta"><strong>Drupal 11 with Gin 1 XPath:</strong> <code>/html[1]/body[1]/div[1]/nav[1]/h2[1]</code></div>
+      <div class="meta">text: Toolbar items</div>
+      <pre>&lt;h2 class=&quot;visually-hidden&quot;&gt;Toolbar items&lt;/h2&gt;</pre>
+      <div class="meta"><strong>Drupal 11 with Gin 2 XPath:</strong> <code>//*[@id=&quot;menu--create&quot;]</code></div>
+      <div class="meta">text: Create Navigation</div>
+      <pre>&lt;h2 id=&quot;menu--create&quot; class=&quot;toolbar-block__title visually-hidden focusable&quot;&gt;Create Navigation&lt;/h2&gt;</pre>
+    
+      <div class="meta"><strong>Drupal 12 with Admin Theme 1 XPath:</strong> <code>//*[@id=&quot;admin-toolbar__scroll-wrapper-529699787&quot;]</code></div>
+      <div class="meta">text: Administrative sidebar</div>
+      <pre>&lt;h2 id=&quot;admin-toolbar__scroll-wrapper-529699787&quot; class=&quot;visually-hidden&quot;&gt;Administrative sidebar&lt;/h2&gt;</pre>
+      <div class="meta"><strong>Drupal 12 with Admin Theme 2 XPath:</strong> <code>//*[@id=&quot;system-breadcrumb&quot;]</code></div>
+      <div class="meta">text: Breadcrumb</div>
+      <pre>&lt;h2 id=&quot;system-breadcrumb&quot; class=&quot;visually-hidden&quot;&gt;Breadcrumb&lt;/h2&gt;</pre>
+  </section>
+</body>
+</html>

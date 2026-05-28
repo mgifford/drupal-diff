@@ -50,14 +50,22 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/people-roles__default__light__table-header.png
 - Candidate element screenshot: candidate/people-roles__default__light__table-header.png
+- Baseline page screenshot: baseline-pages/people-roles__default__light__page.png
+- Candidate page screenshot: candidate-pages/people-roles__default__light__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/people-roles__default__light__table-header.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/people-roles__default__light__table-header.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/people-roles__default__light__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/people-roles__default__light__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/thead[1]/tr[1]/th[1]`
    - Text sample: Name
+   - Related element screenshot: baseline/people-roles__default__light__table-header.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/people-roles__default__light__table-header.png
+   - Related page screenshot: baseline-pages/people-roles__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/people-roles__default__light__page.png
 
 ```html
 <th class="th__name">Name </th>
@@ -65,6 +73,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/thead[1]/tr[1]/th[2]`
    - Text sample: Weight
+   - Related element screenshot: baseline/people-roles__default__light__table-header.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/people-roles__default__light__table-header.png
+   - Related page screenshot: baseline-pages/people-roles__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/people-roles__default__light__page.png
 
 ```html
 <th class="th__weight tabledrag-hide" style="display: none;">Weight </th>
@@ -73,6 +85,10 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/thead[1]/tr[1]/th[1]`
    - Text sample: Name
+   - Related element screenshot: candidate/people-roles__default__light__table-header.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/people-roles__default__light__table-header.png
+   - Related page screenshot: candidate-pages/people-roles__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/people-roles__default__light__page.png
 
 ```html
 <th class="th__name">Name </th>
@@ -80,6 +96,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/thead[1]/tr[1]/th[2]`
    - Text sample: Weight
+   - Related element screenshot: candidate/people-roles__default__light__table-header.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/people-roles__default__light__table-header.png
+   - Related page screenshot: candidate-pages/people-roles__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/people-roles__default__light__page.png
 
 ```html
 <th class="th__weight tabledrag-hide" style="display: none;">Weight </th>

@@ -14,7 +14,7 @@ Color mode: **light**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- width: 929.5%
+- width: 1088.0%
 
 ## Likely CSS Sources
 - core/themes/default_admin/css/components/form.css
@@ -52,14 +52,22 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/structure-content-type-article__default__light__required-marker.png
 - Candidate element screenshot: candidate/structure-content-type-article__default__light__required-marker.png
+- Baseline page screenshot: baseline-pages/structure-content-type-article__default__light__page.png
+- Candidate page screenshot: candidate-pages/structure-content-type-article__default__light__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-content-type-article__default__light__required-marker.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-content-type-article__default__light__required-marker.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-type-article__default__light__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-type-article__default__light__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/label[1]`
    - Text sample: Name
+   - Related element screenshot: baseline/structure-content-type-article__default__light__required-marker.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-content-type-article__default__light__required-marker.png
+   - Related page screenshot: baseline-pages/structure-content-type-article__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-type-article__default__light__page.png
 
 ```html
 <label for="edit-name" class="form-item__label js-form-required form-required">Name</label>
@@ -67,6 +75,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[2]/label[1]`
    - Text sample: Machine-readable name
+   - Related element screenshot: baseline/structure-content-type-article__default__light__required-marker.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-content-type-article__default__light__required-marker.png
+   - Related page screenshot: baseline-pages/structure-content-type-article__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-type-article__default__light__page.png
 
 ```html
 <label class="is-disabled form-item__label js-form-required form-required" for="edit-type">Machine-readable name</label>
@@ -75,6 +87,10 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/label[1]`
    - Text sample: Name
+   - Related element screenshot: candidate/structure-content-type-article__default__light__required-marker.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-content-type-article__default__light__required-marker.png
+   - Related page screenshot: candidate-pages/structure-content-type-article__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-type-article__default__light__page.png
 
 ```html
 <label for="edit-name" class="form-item__label js-form-required form-required">Name</label>
@@ -82,6 +98,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[2]/label[1]`
    - Text sample: Machine-readable name
+   - Related element screenshot: candidate/structure-content-type-article__default__light__required-marker.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-content-type-article__default__light__required-marker.png
+   - Related page screenshot: candidate-pages/structure-content-type-article__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-type-article__default__light__page.png
 
 ```html
 <label class="is-disabled form-item__label js-form-required form-required" for="edit-type">Machine-readable name</label>

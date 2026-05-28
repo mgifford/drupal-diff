@@ -52,37 +52,57 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/structure-view-content__default__dark__table-header.png
 - Candidate element screenshot: candidate/structure-view-content__default__dark__table-header.png
+- Baseline page screenshot: baseline-pages/structure-view-content__default__dark__page.png
+- Candidate page screenshot: candidate-pages/structure-view-content__default__dark__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-view-content__default__dark__table-header.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-view-content__default__dark__table-header.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-view-content__default__dark__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-view-content__default__dark__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[2]/form[1]/div[4]/div[2]/div[3]/div[1]/div[2]/div[1]/form[1]/table[1]/thead[1]/tr[1]/th[1]`
+   - Related element screenshot: baseline/structure-view-content__default__dark__table-header.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-view-content__default__dark__table-header.png
+   - Related page screenshot: baseline-pages/structure-view-content__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-view-content__default__dark__page.png
 
 ```html
 <th class="select-all views-field views-field-node-bulk-form gin--sticky-bulk-select" scope="col" style="width: 53px;"> <input type="checkbox" class="form-checkbox form-boolean form-boolean--type-checkbox" title="Select all rows in this table" style=""> </th>
 ```
 
-2. XPath: `//*[@id="view-title-table-column--5mQ7Ra_s7jM"]`
+2. XPath: `//*[@id="view-title-table-column--GeDoRTqZA78"]`
    - Text sample: Title
+   - Related element screenshot: baseline/structure-view-content__default__dark__table-header.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-view-content__default__dark__table-header.png
+   - Related page screenshot: baseline-pages/structure-view-content__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-view-content__default__dark__page.png
 
 ```html
-<th id="view-title-table-column--5mQ7Ra_s7jM" class="sortable-heading views-field views-field-title" scope="col" style="width: 179.484px;"> <a href="/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc" title="sort by Title" rel="nofollow" data-once="views-ajax">Title</a></th>
+<th id="view-title-table-column--GeDoRTqZA78" class="sortable-heading views-field views-field-title" scope="col" style="width: 179.484px;"> <a href="/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc" title="sort by Title" rel="nofollow" data-once="views-ajax">Title</a></th>
 ```
 
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[2]/form[1]/div[4]/div[2]/div[3]/div[1]/div[2]/div[1]/form[1]/table[1]/thead[1]/tr[1]/th[1]`
+   - Related element screenshot: candidate/structure-view-content__default__dark__table-header.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-view-content__default__dark__table-header.png
+   - Related page screenshot: candidate-pages/structure-view-content__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-view-content__default__dark__page.png
 
 ```html
 <th class="select-all views-field views-field-node-bulk-form gin--sticky-bulk-select" scope="col" style="width: 53px;"> <input type="checkbox" class="form-checkbox form-boolean form-boolean--type-checkbox" title="Select all rows in this table" style=""> </th>
 ```
 
-2. XPath: `//*[@id="view-title-table-column--OJiYY1r-4ks"]`
+2. XPath: `//*[@id="view-title-table-column--9xFkIiok_to"]`
    - Text sample: Title
+   - Related element screenshot: candidate/structure-view-content__default__dark__table-header.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-view-content__default__dark__table-header.png
+   - Related page screenshot: candidate-pages/structure-view-content__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-view-content__default__dark__page.png
 
 ```html
-<th id="view-title-table-column--OJiYY1r-4ks" class="sortable-heading views-field views-field-title" scope="col" style="width: 191.203px;"> <a href="/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc" title="sort by Title" rel="nofollow" data-once="views-ajax">Title</a></th>
+<th id="view-title-table-column--9xFkIiok_to" class="sortable-heading views-field views-field-title" scope="col" style="width: 191.203px;"> <a href="/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc" title="sort by Title" rel="nofollow" data-once="views-ajax">Title</a></th>
 ```
 
 ## Notes

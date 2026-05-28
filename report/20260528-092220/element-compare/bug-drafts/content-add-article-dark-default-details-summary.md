@@ -66,14 +66,22 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/content-add-article__default__dark__details-summary.png
 - Candidate element screenshot: candidate/content-add-article__default__dark__details-summary.png
+- Baseline page screenshot: baseline-pages/content-add-article__default__dark__page.png
+- Candidate page screenshot: candidate-pages/content-add-article__default__dark__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/content-add-article__default__dark__details-summary.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/content-add-article__default__dark__details-summary.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/content-add-article__default__dark__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/content-add-article__default__dark__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[1]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/details[1]/summary[1]`
    - Text sample: Image
+   - Related element screenshot: baseline/content-add-article__default__dark__details-summary.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/content-add-article__default__dark__details-summary.png
+   - Related page screenshot: baseline-pages/content-add-article__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/content-add-article__default__dark__page.png
 
 ```html
 <summary role="button" aria-expanded="true" class="claro-details__summary">Image<span class="required-mark"></span> <span class="claro-details__summary-summary"></span></summary>
@@ -81,6 +89,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[1]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/details[1]/summary[1]`
    - Text sample: Menu settings Not in menu
+   - Related element screenshot: baseline/content-add-article__default__dark__details-summary.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/content-add-article__default__dark__details-summary.png
+   - Related page screenshot: baseline-pages/content-add-article__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/content-add-article__default__dark__page.png
 
 ```html
 <summary role="button" aria-controls="edit-menu" aria-expanded="false" class="claro-details__summary claro-details__summary--accordion-item">Menu settings<span class="required-mark"></span> <span class="claro-details__summary-summary">Not in menu</span></summary>
@@ -89,6 +101,10 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[1]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/details[1]/summary[1]`
    - Text sample: Menu settings Not in menu
+   - Related element screenshot: candidate/content-add-article__default__dark__details-summary.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/content-add-article__default__dark__details-summary.png
+   - Related page screenshot: candidate-pages/content-add-article__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/content-add-article__default__dark__page.png
 
 ```html
 <summary role="button" aria-controls="edit-menu" aria-expanded="false" class="gin-details__summary gin-details__summary--accordion-item">Menu settings<span class="required-mark"></span> <span class="gin-details__summary-summary">Not in menu</span></summary>
@@ -96,6 +112,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[4]/div[1]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/details[2]/summary[1]`
    - Text sample: URL alias No alias
+   - Related element screenshot: candidate/content-add-article__default__dark__details-summary.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/content-add-article__default__dark__details-summary.png
+   - Related page screenshot: candidate-pages/content-add-article__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/content-add-article__default__dark__page.png
 
 ```html
 <summary role="button" aria-controls="edit-path-0" aria-expanded="false" class="gin-details__summary gin-details__summary--accordion-item">URL alias<span class="required-mark"></span> <span class="gin-details__summary-summary">No alias</span></summary>

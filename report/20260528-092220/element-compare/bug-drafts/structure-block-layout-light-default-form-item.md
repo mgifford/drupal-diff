@@ -50,14 +50,22 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/structure-block-layout__default__light__form-item.png
 - Candidate element screenshot: candidate/structure-block-layout__default__light__form-item.png
+- Baseline page screenshot: baseline-pages/structure-block-layout__default__light__page.png
+- Candidate page screenshot: candidate-pages/structure-block-layout__default__light__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-block-layout__default__light__form-item.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-block-layout__default__light__form-item.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-block-layout__default__light__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-block-layout__default__light__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[3]/div[1]`
    - Text sample: Region for Site branding block Header Primary menu Secondary menu Hero (full wid
+   - Related element screenshot: baseline/structure-block-layout__default__light__form-item.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-block-layout__default__light__form-item.png
+   - Related page screenshot: baseline-pages/structure-block-layout__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-block-layout__default__light__page.png
 
 ```html
 <div class="js-form-item form-item js-form-type-select form-type--select js-form-item-blocks-olivero-site-branding-region form-item--blocks-olivero-site-branding-region form-item--no-label"> <label for="edit-blocks-olivero-site-branding-region" class="form-item__label visually-hidden js-form-required form-required">Region for Site branding block</label> <select class="block-region-select block-region-header form-select required form-element form-element--type-select form-element--extrasmall" data-drupal-selector="edit-blocks-olivero-site-branding-region" id="edit-blocks-olivero-site-branding-region" name="blocks[olivero_site_branding][region]" required="required" data-once="block-region-select"> <option value="header" selected="selected">Header</option> <option value="primary_menu">Primary
@@ -65,6 +73,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[4]/div[1]`
    - Text sample: Weight for Site branding block -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7
+   - Related element screenshot: baseline/structure-block-layout__default__light__form-item.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-block-layout__default__light__form-item.png
+   - Related page screenshot: baseline-pages/structure-block-layout__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-block-layout__default__light__page.png
 
 ```html
 <div class="js-form-item form-item js-form-type-select form-type--select js-form-item-blocks-olivero-site-branding-weight form-item--blocks-olivero-site-branding-weight form-item--no-label"> <label for="edit-blocks-olivero-site-branding-weight" class="form-item__label visually-hidden">Weight for Site branding block</label> <select class="block-weight block-weight-header form-select form-element form-element--type-select form-element--extrasmall" data-drupal-selector="edit-blocks-olivero-site-branding-weight" id="edit-blocks-olivero-site-branding-weight" name="blocks[olivero_site_branding][weight]"> <option value="-7">-7</option> <option value="-6">-6</option> <option value="-5">-5</option> <option value="-4">-4</option> <option value="-3">-3</option> <option value="-2">-2</option> <option 
@@ -73,6 +85,10 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[3]/div[1]`
    - Text sample: Region for Site branding block Header Primary menu Secondary menu Hero (full wid
+   - Related element screenshot: candidate/structure-block-layout__default__light__form-item.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-block-layout__default__light__form-item.png
+   - Related page screenshot: candidate-pages/structure-block-layout__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-block-layout__default__light__page.png
 
 ```html
 <div class="js-form-item form-item js-form-type-select form-type--select js-form-item-blocks-olivero-site-branding-region form-item--blocks-olivero-site-branding-region form-item--no-label"> <label for="edit-blocks-olivero-site-branding-region" class="form-item__label visually-hidden js-form-required form-required">Region for Site branding block</label> <select class="block-region-select block-region-header form-select required form-element form-element--type-select form-element--extrasmall" data-drupal-selector="edit-blocks-olivero-site-branding-region" id="edit-blocks-olivero-site-branding-region" name="blocks[olivero_site_branding][region]" required="required" data-once="block-region-select"> <option value="header" selected="selected">Header</option> <option value="primary_menu">Primary
@@ -80,6 +96,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[4]/div[1]`
    - Text sample: Weight for Site branding block -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6
+   - Related element screenshot: candidate/structure-block-layout__default__light__form-item.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-block-layout__default__light__form-item.png
+   - Related page screenshot: candidate-pages/structure-block-layout__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-block-layout__default__light__page.png
 
 ```html
 <div class="js-form-item form-item js-form-type-select form-type--select js-form-item-blocks-olivero-site-branding-weight form-item--blocks-olivero-site-branding-weight form-item--no-label"> <label for="edit-blocks-olivero-site-branding-weight" class="form-item__label visually-hidden">Weight for Site branding block</label> <select class="block-weight block-weight-header form-select form-element form-element--type-select form-element--extrasmall" data-drupal-selector="edit-blocks-olivero-site-branding-weight" id="edit-blocks-olivero-site-branding-weight" name="blocks[olivero_site_branding][weight]"> <option value="-6">-6</option> <option value="-5">-5</option> <option value="-4">-4</option> <option value="-3">-3</option> <option value="-2">-2</option> <option value="-1">-1</option> <option 

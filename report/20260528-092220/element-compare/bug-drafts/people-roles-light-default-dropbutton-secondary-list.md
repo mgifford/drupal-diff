@@ -54,14 +54,20 @@ ul {
 ## Evidence
 - Baseline element screenshot: 
 - Candidate element screenshot: 
+- Baseline page screenshot: baseline-pages/people-roles__default__light__page.png
+- Candidate page screenshot: candidate-pages/people-roles__default__light__page.png
 
 
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/people-roles__default__light__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/people-roles__default__light__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
    - Text sample: Edit permissions
+   - Related page screenshot: baseline-pages/people-roles__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/people-roles__default__light__page.png
 
 ```html
 <ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 552.5px;"> <li class="permissions dropbutton__item dropbutton-action secondary-action"><a href="/admin/people/permissions/anonymous">Edit permissions</a></li> </ul>
@@ -69,6 +75,8 @@ ul {
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[3]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
    - Text sample: Edit permissions
+   - Related page screenshot: baseline-pages/people-roles__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/people-roles__default__light__page.png
 
 ```html
 <ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 470.5px;"> <li class="permissions dropbutton__item dropbutton-action secondary-action"><a href="/admin/people/permissions/authenticated">Edit permissions</a></li> </ul>
@@ -77,6 +85,8 @@ ul {
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
    - Text sample: Edit permissions
+   - Related page screenshot: candidate-pages/people-roles__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/people-roles__default__light__page.png
 
 ```html
 <ul class="dropbutton__items" style="position: fixed; left: 1053.22px; right: auto; top: 440.203px;"> <li class="permissions dropbutton__item dropbutton-action secondary-action"><a href="/admin/people/permissions/anonymous">Edit permissions</a></li> </ul>
@@ -84,6 +94,8 @@ ul {
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[3]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
    - Text sample: Edit permissions
+   - Related page screenshot: candidate-pages/people-roles__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/people-roles__default__light__page.png
 
 ```html
 <ul class="dropbutton__items" style="position: fixed; left: 1053.22px; right: auto; top: 517.203px;"> <li class="permissions dropbutton__item dropbutton-action secondary-action"><a href="/admin/people/permissions/authenticated">Edit permissions</a></li> </ul>

@@ -14,7 +14,7 @@ Color mode: **dark**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- width: 814.6%
+- width: 935.8%
 
 ## Likely CSS Sources
 - core/themes/default_admin/css/components/form.css
@@ -49,14 +49,22 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/config-site-info__default__dark__required-marker.png
 - Candidate element screenshot: candidate/config-site-info__default__dark__required-marker.png
+- Baseline page screenshot: baseline-pages/config-site-info__default__dark__page.png
+- Candidate page screenshot: candidate-pages/config-site-info__default__dark__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/config-site-info__default__dark__required-marker.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/config-site-info__default__dark__required-marker.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/config-site-info__default__dark__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/config-site-info__default__dark__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/details[1]/div[1]/div[1]/label[1]`
    - Text sample: Site name
+   - Related element screenshot: baseline/config-site-info__default__dark__required-marker.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/config-site-info__default__dark__required-marker.png
+   - Related page screenshot: baseline-pages/config-site-info__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/config-site-info__default__dark__page.png
 
 ```html
 <label for="edit-site-name" class="form-item__label js-form-required form-required">Site name</label>
@@ -64,6 +72,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/details[1]/div[1]/div[3]/label[1]`
    - Text sample: Email address
+   - Related element screenshot: baseline/config-site-info__default__dark__required-marker.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/config-site-info__default__dark__required-marker.png
+   - Related page screenshot: baseline-pages/config-site-info__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/config-site-info__default__dark__page.png
 
 ```html
 <label for="edit-site-mail" class="form-item__label js-form-required form-required">Email address</label>
@@ -72,6 +84,10 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/details[1]/div[1]/div[1]/label[1]`
    - Text sample: Site name
+   - Related element screenshot: candidate/config-site-info__default__dark__required-marker.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/config-site-info__default__dark__required-marker.png
+   - Related page screenshot: candidate-pages/config-site-info__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/config-site-info__default__dark__page.png
 
 ```html
 <label for="edit-site-name" class="form-item__label js-form-required form-required">Site name</label>
@@ -79,6 +95,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/details[1]/div[1]/div[3]/label[1]`
    - Text sample: Email address
+   - Related element screenshot: candidate/config-site-info__default__dark__required-marker.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/config-site-info__default__dark__required-marker.png
+   - Related page screenshot: candidate-pages/config-site-info__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/config-site-info__default__dark__page.png
 
 ```html
 <label for="edit-site-mail" class="form-item__label js-form-required form-required">Email address</label>

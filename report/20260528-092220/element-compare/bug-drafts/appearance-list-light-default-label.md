@@ -49,14 +49,22 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/appearance-list__default__light__label.png
 - Candidate element screenshot: candidate/appearance-list__default__light__label.png
+- Baseline page screenshot: baseline-pages/appearance-list__default__light__page.png
+- Candidate page screenshot: candidate-pages/appearance-list__default__light__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/appearance-list__default__light__label.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/appearance-list__default__light__label.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/appearance-list__default__light__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/appearance-list__default__light__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/details[1]/div[1]/div[1]/label[1]`
    - Text sample: Administration theme
+   - Related element screenshot: baseline/appearance-list__default__light__label.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/appearance-list__default__light__label.png
+   - Related page screenshot: baseline-pages/appearance-list__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/appearance-list__default__light__page.png
 
 ```html
 <label for="edit-admin-theme--2" class="form-item__label">Administration theme</label>
@@ -64,6 +72,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/details[1]/div[1]/div[2]/label[1]`
    - Text sample: Use the administration theme when editing or creating content
+   - Related element screenshot: baseline/appearance-list__default__light__label.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/appearance-list__default__light__label.png
+   - Related page screenshot: baseline-pages/appearance-list__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/appearance-list__default__light__page.png
 
 ```html
 <label for="edit-use-admin-theme" class="form-item__label option">Use the administration theme when editing or creating content</label>
@@ -72,6 +84,10 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/details[1]/div[1]/div[1]/label[1]`
    - Text sample: Administration theme
+   - Related element screenshot: candidate/appearance-list__default__light__label.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/appearance-list__default__light__label.png
+   - Related page screenshot: candidate-pages/appearance-list__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/appearance-list__default__light__page.png
 
 ```html
 <label for="edit-admin-theme--2" class="form-item__label">Administration theme</label>
@@ -79,6 +95,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/details[1]/div[1]/div[2]/label[1]`
    - Text sample: Use the administration theme when editing or creating content
+   - Related element screenshot: candidate/appearance-list__default__light__label.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/appearance-list__default__light__label.png
+   - Related page screenshot: candidate-pages/appearance-list__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/appearance-list__default__light__page.png
 
 ```html
 <label for="edit-use-admin-theme" class="form-item__label option">Use the administration theme when editing or creating content</label>

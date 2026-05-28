@@ -54,14 +54,22 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/structure-view-content__default__dark__dropbutton-wrapper.png
 - Candidate element screenshot: candidate/structure-view-content__default__dark__dropbutton-wrapper.png
+- Baseline page screenshot: baseline-pages/structure-view-content__default__dark__page.png
+- Candidate page screenshot: candidate-pages/structure-view-content__default__dark__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-view-content__default__dark__dropbutton-wrapper.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-view-content__default__dark__dropbutton-wrapper.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-view-content__default__dark__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-view-content__default__dark__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/form[1]/div[2]/div[1]/div[1]/div[1]`
    - Text sample: Edit view name/descriptionList additional actions Analyze view Duplicate view Re
+   - Related element screenshot: baseline/structure-view-content__default__dark__dropbutton-wrapper.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-view-content__default__dark__dropbutton-wrapper.png
+   - Related page screenshot: baseline-pages/structure-view-content__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-view-content__default__dark__page.png
 
 ```html
 <div class="dropbutton-wrapper dropbutton-multiple" data-drupal-ajax-container="" data-once="dropbutton ginDropbutton"> <div class="dropbutton-widget"><ul id="views-display-extra-actions" data-drupal-selector="edit-displays-top-extra-actions" class="dropbutton dropbutton--small dropbutton--multiple dropbutton--gin" data-once="dropbutton-icon"> <li class="edit-details dropbutton__item dropbutton-action"><a href="/admin/structure/views/nojs/edit-details/content/page_1" class="views-ajax-link" data-once="views-ajax">Edit view name/description</a></li><li class="dropbutton-toggle"><button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button></li> <li class="dropbutton__item dropbutton-action secondary-action"> <ul class="dropbutton__item
@@ -69,6 +77,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]`
    - Text sample: View PageList additional actions
+   - Related element screenshot: baseline/structure-view-content__default__dark__dropbutton-wrapper.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-view-content__default__dark__dropbutton-wrapper.png
+   - Related page screenshot: baseline-pages/structure-view-content__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-view-content__default__dark__page.png
 
 ```html
 <div class="dropbutton-wrapper dropbutton-multiple" data-drupal-ajax-container="" data-once="dropbutton"> <div class="dropbutton-widget"><ul class="dropbutton dropbutton--extrasmall dropbutton--multiple" data-once="dropbutton-icon"><li class="view dropbutton__item dropbutton-action"><a href="/admin/content" data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-top-actions-path" id="edit-displays-settings-settings-content-tab-content-details-top-actions-path">View Page</a></li><li class="dropbutton-toggle"><button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button></li><li class="duplicate dropbutton__item dropbutton-action secondary-action"> <input data-drupal-selector="edit-displays-settings-settings-co
@@ -77,6 +89,10 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/form[1]/div[2]/div[1]/div[1]/div[1]`
    - Text sample: Edit view name/descriptionList additional actions Analyze view Duplicate view Re
+   - Related element screenshot: candidate/structure-view-content__default__dark__dropbutton-wrapper.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-view-content__default__dark__dropbutton-wrapper.png
+   - Related page screenshot: candidate-pages/structure-view-content__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-view-content__default__dark__page.png
 
 ```html
 <div class="dropbutton-wrapper dropbutton-multiple" data-drupal-ajax-container="" data-once="dropbutton ginDropbutton"> <div class="dropbutton-widget"><ul id="views-display-extra-actions" data-drupal-selector="edit-displays-top-extra-actions" class="dropbutton dropbutton--small dropbutton--multiple dropbutton--gin" data-once="dropbutton-icon"> <li class="edit-details dropbutton__item dropbutton-action"><a href="/admin/structure/views/nojs/edit-details/content/page_1" class="views-ajax-link" data-once="views-ajax">Edit view name/description</a></li><li class="dropbutton-toggle"><button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button></li> <li class="dropbutton__item dropbutton-action secondary-action"> <ul class="dropbutton__item
@@ -84,6 +100,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]`
    - Text sample: View PageList additional actions
+   - Related element screenshot: candidate/structure-view-content__default__dark__dropbutton-wrapper.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-view-content__default__dark__dropbutton-wrapper.png
+   - Related page screenshot: candidate-pages/structure-view-content__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-view-content__default__dark__page.png
 
 ```html
 <div class="dropbutton-wrapper dropbutton-multiple" data-drupal-ajax-container="" data-once="dropbutton"> <div class="dropbutton-widget"><ul class="dropbutton dropbutton--extrasmall dropbutton--multiple" data-once="dropbutton-icon"><li class="view dropbutton__item dropbutton-action"><a href="/admin/content" data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-top-actions-path" id="edit-displays-settings-settings-content-tab-content-details-top-actions-path">View Page</a></li><li class="dropbutton-toggle"><button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button></li><li class="duplicate dropbutton__item dropbutton-action secondary-action"> <input data-drupal-selector="edit-displays-settings-settings-co

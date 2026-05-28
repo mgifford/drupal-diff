@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin Theme (dark) Configuration Text Formats - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
+  h1 { margin-bottom: 0.4rem; }
+  .meta { color: #4a5568; }
+  .links a { margin-right: 0.8rem; }
+  .card { border: 1px solid #d0d7de; border-radius: 8px; padding: 0.8rem 1rem; margin: 0.9rem 0; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 0.7rem; }
+  code { font-size: 0.95em; }
+  img { max-width: 100%; border: 1px solid #d0d7de; border-radius: 4px; margin-top: 0.5rem; }
+  ul { margin-top: 0.4rem; }
+</style>
+</head>
+<body>
+  <h1>Admin Theme (dark) Configuration Text Formats - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin</h1>
+  <p class="meta">Potential CSS regression in <strong>Dropbutton Secondary Action Link</strong> on <strong>Configuration Text Formats</strong> (dark mode).</p>
+  <p class="links">
+    <a href="configuration-text-formats-dark-default-dropbutton-secondary-action.md" target="_blank" rel="noopener">Local Markdown</a>
+    <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/configuration-text-formats-dark-default-dropbutton-secondary-action.md" target="_blank" rel="noopener">GitHub Source (Markdown)</a>
+    <a href="../element-compare-dashboard.html" target="_blank" rel="noopener">Dashboard</a>
+  </p>
+
+  <section class="card">
+    <h2>Reproduction</h2>
+    <ol>
+      <li>Open baseline page: <a href="http://drupal-11.3.10.ddev.site/admin/config/content/formats" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/config/content/formats</a></li>
+      <li>Open candidate page: <a href="http://drupal-12-git.ddev.site:8080/admin/config/content/formats" target="_blank" rel="noopener">http://drupal-12-git.ddev.site:8080/admin/config/content/formats</a></li>
+      <li>Inspect selector: <code>.dropbutton-wrapper .dropbutton__items .dropbutton__item a</code></li>
+      <li>Compare typography, spacing, sizing, and marker presence.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Screenshots</h2>
+    <ul>
+      <li>Baseline element: n/a </li>
+      <li>Candidate element: n/a </li>
+      <li>Baseline page: <a href="../baseline-pages/config-text-formats__default__dark__page.png" target="_blank" rel="noopener">baseline-pages/config-text-formats__default__dark__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/config-text-formats__default__dark__page.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate page: <a href="../candidate-pages/config-text-formats__default__dark__page.png" target="_blank" rel="noopener">candidate-pages/config-text-formats__default__dark__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/config-text-formats__default__dark__page.png" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>DOM Evidence (XPath + HTML)</h2>
+    
+      <div class="meta"><strong>Drupal 11 with Gin 1 XPath:</strong> <code>/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[6]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]</code></div>
+      <div class="meta">text: Disable</div>
+      <pre>&lt;a href=&quot;/admin/config/content/formats/manage/basic_html/disable?destination=/admin/config/content/formats&quot;&gt;Disable&lt;/a&gt;</pre>
+      <div class="meta"><strong>Drupal 11 with Gin 2 XPath:</strong> <code>/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[6]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]</code></div>
+      <div class="meta">text: Disable</div>
+      <pre>&lt;a href=&quot;/admin/config/content/formats/manage/restricted_html/disable?destination=/admin/config/content/formats&quot;&gt;Disable&lt;/a&gt;</pre>
+    
+      <div class="meta"><strong>Drupal 12 with Admin Theme 1 XPath:</strong> <code>/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[6]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]</code></div>
+      <div class="meta">text: Disable</div>
+      <pre>&lt;a href=&quot;/admin/config/content/formats/manage/basic_html/disable?destination=/admin/config/content/formats&quot;&gt;Disable&lt;/a&gt;</pre>
+      <div class="meta"><strong>Drupal 12 with Admin Theme 2 XPath:</strong> <code>/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[6]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]</code></div>
+      <div class="meta">text: Disable</div>
+      <pre>&lt;a href=&quot;/admin/config/content/formats/manage/restricted_html/disable?destination=/admin/config/content/formats&quot;&gt;Disable&lt;/a&gt;</pre>
+  </section>
+</body>
+</html>

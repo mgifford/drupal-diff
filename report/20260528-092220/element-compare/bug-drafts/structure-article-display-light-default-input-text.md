@@ -38,22 +38,30 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: 
 - Candidate element screenshot: 
+- Baseline page screenshot: baseline-pages/structure-content-type-article-display__default__light__page.png
+- Candidate page screenshot: candidate-pages/structure-content-type-article-display__default__light__page.png
 
 
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-type-article-display__default__light__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-type-article-display__default__light__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `//*[@id="edit-fields-field-image-weight"]`
+   - Related page screenshot: baseline-pages/structure-content-type-article-display__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-type-article-display__default__light__page.png
 
 ```html
-<input class="field-weight form-text form-element form-element--type-text form-element--api-textfield" data-drupal-selector="edit-fields-field-image-weight" type="text" id="edit-fields-field-image-weight" name="fields[field_image][weight]" value="-1" size="3" maxlength="128">
+<input class="field-weight form-text form-element form-element--type-text form-element--api-textfield" data-drupal-selector="edit-fields-field-image-weight" type="text" id="edit-fields-field-image-weight" name="fields[field_image][weight]" value="-1" size="3" maxlength="128" style="">
 ```
 
 2. XPath: `//*[@id="edit-fields-body-weight"]`
+   - Related page screenshot: baseline-pages/structure-content-type-article-display__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-type-article-display__default__light__page.png
 
 ```html
-<input class="field-weight form-text form-element form-element--type-text form-element--api-textfield" data-drupal-selector="edit-fields-body-weight" type="text" id="edit-fields-body-weight" name="fields[body][weight]" value="5" size="3" maxlength="128">
+<input class="field-weight form-text form-element form-element--type-text form-element--api-textfield" data-drupal-selector="edit-fields-body-weight" type="text" id="edit-fields-body-weight" name="fields[body][weight]" value="5" size="3" maxlength="128" style="">
 ```
 
 ### Drupal 12 with Admin Theme

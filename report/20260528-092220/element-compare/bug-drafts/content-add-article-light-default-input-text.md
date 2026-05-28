@@ -58,19 +58,31 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/content-add-article__default__light__input-text.png
 - Candidate element screenshot: candidate/content-add-article__default__light__input-text.png
+- Baseline page screenshot: baseline-pages/content-add-article__default__light__page.png
+- Candidate page screenshot: candidate-pages/content-add-article__default__light__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/content-add-article__default__light__input-text.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/content-add-article__default__light__input-text.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/content-add-article__default__light__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/content-add-article__default__light__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `//*[@id="edit-title-0-value"]`
+   - Related element screenshot: baseline/content-add-article__default__light__input-text.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/content-add-article__default__light__input-text.png
+   - Related page screenshot: baseline-pages/content-add-article__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/content-add-article__default__light__page.png
 
 ```html
 <input class="js-text-full text-full form-text required form-element form-element--type-text form-element--api-textfield" data-drupal-selector="edit-title-0-value" type="text" id="edit-title-0-value" name="title[0][value]" value="" size="60" maxlength="255" placeholder="" required="required" style="">
 ```
 
 2. XPath: `//*[@id="edit-field-tags-target-id"]`
+   - Related element screenshot: baseline/content-add-article__default__light__input-text.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/content-add-article__default__light__input-text.png
+   - Related page screenshot: baseline-pages/content-add-article__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/content-add-article__default__light__page.png
 
 ```html
 <input data-drupal-selector="edit-field-tags-target-id" aria-describedby="edit-field-tags-target-id--description" class="form-autocomplete form-text form-element form-element--type-text form-element--api-entity-autocomplete ui-autocomplete-input" data-autocomplete-path="/entity_reference_autocomplete/taxonomy_term/default%3Ataxonomy_term/6biOMHxkR3bQ7OLor_-WnX6s_pZT45M-LnwO696TQR4" type="text" id="edit-field-tags-target-id" name="field_tags[target_id]" size="60" maxlength="1024" placeholder="" data-once="autocomplete claroAutoComplete" autocomplete="off" style="">
@@ -78,12 +90,20 @@ No high-confidence automatic patch suggestion for this diff.
 
 ### Drupal 12 with Admin Theme
 1. XPath: `//*[@id="edit-title-0-value"]`
+   - Related element screenshot: candidate/content-add-article__default__light__input-text.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/content-add-article__default__light__input-text.png
+   - Related page screenshot: candidate-pages/content-add-article__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/content-add-article__default__light__page.png
 
 ```html
 <input class="js-text-full text-full form-text required form-element form-element--type-text form-element--api-textfield" data-drupal-selector="edit-title-0-value" type="text" id="edit-title-0-value" name="title[0][value]" value="" size="60" maxlength="255" placeholder="" required="required" style="">
 ```
 
 2. XPath: `//*[@id="edit-menu-title"]`
+   - Related element screenshot: candidate/content-add-article__default__light__input-text.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/content-add-article__default__light__input-text.png
+   - Related page screenshot: candidate-pages/content-add-article__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/content-add-article__default__light__page.png
 
 ```html
 <input data-drupal-selector="edit-menu-title" type="text" id="edit-menu-title" name="menu[title]" value="" size="60" maxlength="255" class="form-text form-element form-element--type-text form-element--api-textfield" style="">

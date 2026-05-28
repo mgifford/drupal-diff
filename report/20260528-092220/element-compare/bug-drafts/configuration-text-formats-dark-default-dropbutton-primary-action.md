@@ -61,14 +61,22 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/config-text-formats__default__dark__dropbutton-primary-action.png
 - Candidate element screenshot: candidate/config-text-formats__default__dark__dropbutton-primary-action.png
+- Baseline page screenshot: baseline-pages/config-text-formats__default__dark__page.png
+- Candidate page screenshot: candidate-pages/config-text-formats__default__dark__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/config-text-formats__default__dark__dropbutton-primary-action.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/config-text-formats__default__dark__dropbutton-primary-action.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/config-text-formats__default__dark__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/config-text-formats__default__dark__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[6]/div[1]/div[1]/ul[1]/li[1]/a[1]`
    - Text sample: Configure
+   - Related element screenshot: baseline/config-text-formats__default__dark__dropbutton-primary-action.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/config-text-formats__default__dark__dropbutton-primary-action.png
+   - Related page screenshot: baseline-pages/config-text-formats__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/config-text-formats__default__dark__page.png
 
 ```html
 <a href="/admin/config/content/formats/manage/basic_html?destination=/admin/config/content/formats" aria-label="Edit Basic HTML">Configure</a>
@@ -76,6 +84,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[6]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
    - Text sample: Disable
+   - Related element screenshot: baseline/config-text-formats__default__dark__dropbutton-primary-action.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/config-text-formats__default__dark__dropbutton-primary-action.png
+   - Related page screenshot: baseline-pages/config-text-formats__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/config-text-formats__default__dark__page.png
 
 ```html
 <a href="/admin/config/content/formats/manage/basic_html/disable?destination=/admin/config/content/formats">Disable</a>
@@ -84,6 +96,10 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[6]/div[1]/div[1]/ul[1]/li[1]/a[1]`
    - Text sample: Configure
+   - Related element screenshot: candidate/config-text-formats__default__dark__dropbutton-primary-action.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/config-text-formats__default__dark__dropbutton-primary-action.png
+   - Related page screenshot: candidate-pages/config-text-formats__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/config-text-formats__default__dark__page.png
 
 ```html
 <a href="/admin/config/content/formats/manage/basic_html?destination=/admin/config/content/formats" aria-label="Edit Basic HTML">Configure</a>
@@ -91,6 +107,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[6]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
    - Text sample: Disable
+   - Related element screenshot: candidate/config-text-formats__default__dark__dropbutton-primary-action.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/config-text-formats__default__dark__dropbutton-primary-action.png
+   - Related page screenshot: candidate-pages/config-text-formats__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/config-text-formats__default__dark__page.png
 
 ```html
 <a href="/admin/config/content/formats/manage/basic_html/disable?destination=/admin/config/content/formats">Disable</a>

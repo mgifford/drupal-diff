@@ -54,14 +54,22 @@ Confidence: **medium**
 ## Evidence
 - Baseline element screenshot: baseline/structure-views__default__dark__table-cell.png
 - Candidate element screenshot: candidate/structure-views__default__dark__table-cell.png
+- Baseline page screenshot: baseline-pages/structure-views__default__dark__page.png
+- Candidate page screenshot: candidate-pages/structure-views__default__dark__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-views__default__dark__table-cell.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-views__default__dark__table-cell.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-views__default__dark__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-views__default__dark__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]`
    - Text sample: Comments
+   - Related element screenshot: baseline/structure-views__default__dark__table-cell.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-views__default__dark__table-cell.png
+   - Related page screenshot: baseline-pages/structure-views__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-views__default__dark__page.png
 
 ```html
 <td class="views-ui-view-name"> <strong data-drupal-selector="views-table-filter-text-source">Comments</strong> </td>
@@ -69,6 +77,10 @@ Confidence: **medium**
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]`
    - Text sample: comment
+   - Related element screenshot: baseline/structure-views__default__dark__table-cell.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-views__default__dark__table-cell.png
+   - Related page screenshot: baseline-pages/structure-views__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-views__default__dark__page.png
 
 ```html
 <td class="views-ui-view-machine-name" data-drupal-selector="views-table-filter-text-source"> comment </td>
@@ -77,6 +89,10 @@ Confidence: **medium**
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]`
    - Text sample: Content
+   - Related element screenshot: candidate/structure-views__default__dark__table-cell.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-views__default__dark__table-cell.png
+   - Related page screenshot: candidate-pages/structure-views__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-views__default__dark__page.png
 
 ```html
 <td class="views-ui-view-name"> <strong data-drupal-selector="views-table-filter-text-source">Content</strong> </td>
@@ -84,6 +100,10 @@ Confidence: **medium**
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]`
    - Text sample: content
+   - Related element screenshot: candidate/structure-views__default__dark__table-cell.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-views__default__dark__table-cell.png
+   - Related page screenshot: candidate-pages/structure-views__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-views__default__dark__page.png
 
 ```html
 <td class="views-ui-view-machine-name" data-drupal-selector="views-table-filter-text-source"> content </td>

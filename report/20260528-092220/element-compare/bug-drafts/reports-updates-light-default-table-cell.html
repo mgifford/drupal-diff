@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin Theme (light) Reports Updates - Table Body Cell style regression vs Drupal 11 Gin</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
+  h1 { margin-bottom: 0.4rem; }
+  .meta { color: #4a5568; }
+  .links a { margin-right: 0.8rem; }
+  .card { border: 1px solid #d0d7de; border-radius: 8px; padding: 0.8rem 1rem; margin: 0.9rem 0; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 0.7rem; }
+  code { font-size: 0.95em; }
+  img { max-width: 100%; border: 1px solid #d0d7de; border-radius: 4px; margin-top: 0.5rem; }
+  ul { margin-top: 0.4rem; }
+</style>
+</head>
+<body>
+  <h1>Admin Theme (light) Reports Updates - Table Body Cell style regression vs Drupal 11 Gin</h1>
+  <p class="meta">Potential CSS regression in <strong>Table Body Cell</strong> on <strong>Reports Updates</strong> (light mode).</p>
+  <p class="links">
+    <a href="reports-updates-light-default-table-cell.md" target="_blank" rel="noopener">Local Markdown</a>
+    <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/reports-updates-light-default-table-cell.md" target="_blank" rel="noopener">GitHub Source (Markdown)</a>
+    <a href="../element-compare-dashboard.html" target="_blank" rel="noopener">Dashboard</a>
+  </p>
+
+  <section class="card">
+    <h2>Reproduction</h2>
+    <ol>
+      <li>Open baseline page: <a href="http://drupal-11.3.10.ddev.site/admin/reports/updates" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/reports/updates</a></li>
+      <li>Open candidate page: <a href="http://drupal-12-git.ddev.site:8080/admin/reports/updates" target="_blank" rel="noopener">http://drupal-12-git.ddev.site:8080/admin/reports/updates</a></li>
+      <li>Inspect selector: <code>table tbody td</code></li>
+      <li>Compare typography, spacing, sizing, and marker presence.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Screenshots</h2>
+    <ul>
+      <li>Baseline element: <a href="../baseline/reports-updates__default__light__table-cell.png" target="_blank" rel="noopener">baseline/reports-updates__default__light__table-cell.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/reports-updates__default__light__table-cell.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate element: <a href="../candidate/reports-updates__default__light__table-cell.png" target="_blank" rel="noopener">candidate/reports-updates__default__light__table-cell.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/reports-updates__default__light__table-cell.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Baseline page: <a href="../baseline-pages/reports-updates__default__light__page.png" target="_blank" rel="noopener">baseline-pages/reports-updates__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/reports-updates__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate page: <a href="../candidate-pages/reports-updates__default__light__page.png" target="_blank" rel="noopener">candidate-pages/reports-updates__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/reports-updates__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>DOM Evidence (XPath + HTML)</h2>
+    
+      <div class="meta"><strong>Drupal 11 with Gin 1 XPath:</strong> <code>/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]</code></div>
+      <div class="meta">text: Update available Drupal core 11.3.10 Recommended version: 11.3.11 (2026-May-28) </div>
+      <pre>&lt;td&gt;&lt;div class=&quot;project-update__status project-update__status--not-current gin-status gin-status--warning&quot;&gt; &lt;span class=&quot;gin-status-icon&quot;&gt; &lt;img src=&quot;/core/misc/icons/e29700/warning.svg&quot; width=&quot;18&quot; height=&quot;18&quot; alt=&quot;Warning&quot; title=&quot;Warning&quot; loading=&quot;lazy&quot;&gt; &lt;/span&gt;&lt;span&gt;Update available&lt;/span&gt;&lt;/div&gt; &lt;div class=&quot;project-update__title&quot;&gt;&lt;a href=&quot;https://www.drupal.org/project/drupal&quot;&gt;Drupal core&lt;/a&gt; 11.3.10 &lt;/div&gt; &lt;div class=&quot;project-update__version--recommended project-update__version&quot;&gt; &lt;div class=&quot;layout-row clearfix&quot;&gt; &lt;div class=&quot;project-update__version-title layout-column layout-column--quarter&quot;&gt;Recommended version:&lt;/div&gt; &lt;div class=&quot;project-update__version-details layout-column layout-column--quarter&quot;&gt; &lt;a href=&quot;https://www.drupal.org/project/drupal/releases/11.3.11&quot;&gt;11.3.11&lt;/a&gt; &lt;span class=</pre>
+      <div class="meta"><strong>Drupal 11 with Gin 2 XPath:</strong> <code>/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]</code></div>
+      <div class="meta">text: Update available Gin Admin Theme 5.0.13 Recommended version: 5.0.14 (2026-May-27</div>
+      <pre>&lt;td&gt;&lt;div class=&quot;project-update__status project-update__status--not-current gin-status gin-status--warning&quot;&gt; &lt;span class=&quot;gin-status-icon&quot;&gt; &lt;img src=&quot;/core/misc/icons/e29700/warning.svg&quot; width=&quot;18&quot; height=&quot;18&quot; alt=&quot;Warning&quot; title=&quot;Warning&quot; loading=&quot;lazy&quot;&gt; &lt;/span&gt;&lt;span&gt;Update available&lt;/span&gt;&lt;/div&gt; &lt;div class=&quot;project-update__title&quot;&gt;&lt;a href=&quot;https://www.drupal.org/project/gin&quot;&gt;Gin Admin Theme&lt;/a&gt; 5.0.13 &lt;/div&gt; &lt;div class=&quot;project-update__version--recommended project-update__version&quot;&gt; &lt;div class=&quot;layout-row clearfix&quot;&gt; &lt;div class=&quot;project-update__version-title layout-column layout-column--quarter&quot;&gt;Recommended version:&lt;/div&gt; &lt;div class=&quot;project-update__version-details layout-column layout-column--quarter&quot;&gt; &lt;a href=&quot;https://www.drupal.org/project/gin/releases/5.0.14&quot;&gt;5.0.14&lt;/a&gt; &lt;span class=&quot;proj</pre>
+    
+      <div class="meta"><strong>Drupal 12 with Admin Theme 1 XPath:</strong> <code>/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]</code></div>
+      <div class="meta">text: Not supported! Drupal core 12.0-dev Includes: Enabled: Announcements, Automated </div>
+      <pre>&lt;td&gt;&lt;div class=&quot;project-update__status project-update__status--not-supported gin-status gin-status--danger&quot;&gt; &lt;span class=&quot;gin-status-icon&quot;&gt; &lt;img src=&quot;/core/misc/icons/e32700/error.svg&quot; width=&quot;18&quot; height=&quot;18&quot; alt=&quot;Error&quot; title=&quot;Error&quot; loading=&quot;lazy&quot;&gt; &lt;/span&gt;&lt;span&gt;Not supported!&lt;/span&gt;&lt;/div&gt; &lt;div class=&quot;project-update__title&quot;&gt;&lt;a href=&quot;https://www.drupal.org/project/drupal&quot;&gt;Drupal core&lt;/a&gt; 12.0-dev &lt;/div&gt; &lt;div class=&quot;project-update__details&quot;&gt; Includes: &lt;ul&gt; &lt;li&gt; Enabled: &lt;em class=&quot;placeholder&quot;&gt;Announcements, Automated Cron, BigPipe, Block, Block Content, Breakpoint, CKEditor 5, Configuration Manager, Contextual Links, Custom Menu Links, Database Logging, Datetime, Field, Field UI, File, Filter, Help, Image, Internal Dynamic Page Cache, Internal Page Cache, Layout Builder, Layout Discovery, L</pre>
+  </section>
+</body>
+</html>

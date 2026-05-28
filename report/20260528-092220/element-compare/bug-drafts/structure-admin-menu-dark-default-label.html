@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin Theme (dark) Structure Admin Menu - Form Label style regression vs Drupal 11 Gin</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
+  h1 { margin-bottom: 0.4rem; }
+  .meta { color: #4a5568; }
+  .links a { margin-right: 0.8rem; }
+  .card { border: 1px solid #d0d7de; border-radius: 8px; padding: 0.8rem 1rem; margin: 0.9rem 0; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 0.7rem; }
+  code { font-size: 0.95em; }
+  img { max-width: 100%; border: 1px solid #d0d7de; border-radius: 4px; margin-top: 0.5rem; }
+  ul { margin-top: 0.4rem; }
+</style>
+</head>
+<body>
+  <h1>Admin Theme (dark) Structure Admin Menu - Form Label style regression vs Drupal 11 Gin</h1>
+  <p class="meta">Potential CSS regression in <strong>Form Label</strong> on <strong>Structure Admin Menu</strong> (dark mode).</p>
+  <p class="links">
+    <a href="structure-admin-menu-dark-default-label.md" target="_blank" rel="noopener">Local Markdown</a>
+    <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-dark-default-label.md" target="_blank" rel="noopener">GitHub Source (Markdown)</a>
+    <a href="../element-compare-dashboard.html" target="_blank" rel="noopener">Dashboard</a>
+  </p>
+
+  <section class="card">
+    <h2>Reproduction</h2>
+    <ol>
+      <li>Open baseline page: <a href="http://drupal-11.3.10.ddev.site/admin/structure/menu/manage/admin" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/structure/menu/manage/admin</a></li>
+      <li>Open candidate page: <a href="http://drupal-12-git.ddev.site:8080/admin/structure/menu/manage/admin" target="_blank" rel="noopener">http://drupal-12-git.ddev.site:8080/admin/structure/menu/manage/admin</a></li>
+      <li>Inspect selector: <code>label</code></li>
+      <li>Compare typography, spacing, sizing, and marker presence.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Screenshots</h2>
+    <ul>
+      <li>Baseline element: <a href="../baseline/structure-menu-admin__default__dark__label.png" target="_blank" rel="noopener">baseline/structure-menu-admin__default__dark__label.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-menu-admin__default__dark__label.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate element: <a href="../candidate/structure-menu-admin__default__dark__label.png" target="_blank" rel="noopener">candidate/structure-menu-admin__default__dark__label.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-menu-admin__default__dark__label.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Baseline page: <a href="../baseline-pages/structure-menu-admin__default__dark__page.png" target="_blank" rel="noopener">baseline-pages/structure-menu-admin__default__dark__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-menu-admin__default__dark__page.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate page: <a href="../candidate-pages/structure-menu-admin__default__dark__page.png" target="_blank" rel="noopener">candidate-pages/structure-menu-admin__default__dark__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-menu-admin__default__dark__page.png" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>DOM Evidence (XPath + HTML)</h2>
+    
+      <div class="meta"><strong>Drupal 11 with Gin 1 XPath:</strong> <code>/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/label[1]</code></div>
+      <div class="meta">text: Title</div>
+      <pre>&lt;label for=&quot;edit-label&quot; class=&quot;form-item__label js-form-required form-required&quot;&gt;Title&lt;/label&gt;</pre>
+      <div class="meta"><strong>Drupal 11 with Gin 2 XPath:</strong> <code>/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[2]/label[1]</code></div>
+      <div class="meta">text: Menu name</div>
+      <pre>&lt;label class=&quot;is-disabled form-item__label js-form-required form-required&quot; for=&quot;edit-id&quot;&gt;Menu name&lt;/label&gt;</pre>
+    
+      <div class="meta"><strong>Drupal 12 with Admin Theme 1 XPath:</strong> <code>/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/label[1]</code></div>
+      <div class="meta">text: Title</div>
+      <pre>&lt;label for=&quot;edit-label&quot; class=&quot;form-item__label js-form-required form-required&quot;&gt;Title&lt;/label&gt;</pre>
+      <div class="meta"><strong>Drupal 12 with Admin Theme 2 XPath:</strong> <code>/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[2]/label[1]</code></div>
+      <div class="meta">text: Menu name</div>
+      <pre>&lt;label class=&quot;is-disabled form-item__label js-form-required form-required&quot; for=&quot;edit-id&quot;&gt;Menu name&lt;/label&gt;</pre>
+  </section>
+</body>
+</html>

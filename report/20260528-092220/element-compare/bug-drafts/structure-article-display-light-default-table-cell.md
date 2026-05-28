@@ -51,14 +51,20 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: 
 - Candidate element screenshot: candidate/structure-content-type-article-display__default__light__table-cell.png
+- Baseline page screenshot: baseline-pages/structure-content-type-article-display__default__light__page.png
+- Candidate page screenshot: candidate-pages/structure-content-type-article-display__default__light__page.png
 
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-content-type-article-display__default__light__table-cell.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-type-article-display__default__light__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-type-article-display__default__light__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]`
    - Text sample: No field is displayed.
+   - Related page screenshot: baseline-pages/structure-content-type-article-display__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-type-article-display__default__light__page.png
 
 ```html
 <td colspan="9">No field is displayed.</td>
@@ -66,6 +72,8 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[1]`
    - Text sample: Image
+   - Related page screenshot: baseline-pages/structure-content-type-article-display__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-type-article-display__default__light__page.png
 
 ```html
 <td class="tabledrag-cell"><div class="tabledrag-cell-content js-tabledrag-cell-content"><a href="#" title="Change order" class="tabledrag-handle js-tabledrag-handle tabledrag-handle-y"></a><div class="tabledrag-cell-content__item">Image</div></div></td>
@@ -74,12 +82,20 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[1]`
    - Text sample: Default
+   - Related element screenshot: candidate/structure-content-type-article-display__default__light__table-cell.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-content-type-article-display__default__light__table-cell.png
+   - Related page screenshot: candidate-pages/structure-content-type-article-display__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-type-article-display__default__light__page.png
 
 ```html
 <td>Default</td>
 ```
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[2]`
+   - Related element screenshot: candidate/structure-content-type-article-display__default__light__table-cell.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/structure-content-type-article-display__default__light__table-cell.png
+   - Related page screenshot: candidate-pages/structure-content-type-article-display__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-type-article-display__default__light__page.png
 
 ```html
 <td></td>

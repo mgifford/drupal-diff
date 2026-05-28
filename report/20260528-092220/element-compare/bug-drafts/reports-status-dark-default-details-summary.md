@@ -59,14 +59,22 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/reports-status__default__dark__details-summary.png
 - Candidate element screenshot: candidate/reports-status__default__dark__details-summary.png
+- Baseline page screenshot: baseline-pages/reports-status__default__dark__page.png
+- Candidate page screenshot: candidate-pages/reports-status__default__dark__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/reports-status__default__dark__details-summary.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/reports-status__default__dark__details-summary.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/reports-status__default__dark__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/reports-status__default__dark__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `//*[@id="warning"]`
    - Text sample: Warnings found
+   - Related element screenshot: baseline/reports-status__default__dark__details-summary.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/reports-status__default__dark__details-summary.png
+   - Related page screenshot: baseline-pages/reports-status__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/reports-status__default__dark__page.png
 
 ```html
 <summary id="warning" class="claro-details__summary claro-details__summary--system-status-report">Warnings found<span class="claro-details__summary-summary"></span></summary>
@@ -74,6 +82,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `//*[@id="checked"]`
    - Text sample: Checked
+   - Related element screenshot: baseline/reports-status__default__dark__details-summary.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/reports-status__default__dark__details-summary.png
+   - Related page screenshot: baseline-pages/reports-status__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/reports-status__default__dark__page.png
 
 ```html
 <summary id="checked" class="claro-details__summary claro-details__summary--system-status-report">Checked<span class="claro-details__summary-summary"></span></summary>
@@ -82,6 +94,10 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `//*[@id="error"]`
    - Text sample: Errors found
+   - Related element screenshot: candidate/reports-status__default__dark__details-summary.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/reports-status__default__dark__details-summary.png
+   - Related page screenshot: candidate-pages/reports-status__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/reports-status__default__dark__page.png
 
 ```html
 <summary id="error" class="gin-details__summary gin-details__summary--system-status-report">Errors found<span class="gin-details__summary-summary"></span></summary>
@@ -89,6 +105,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `//*[@id="warning"]`
    - Text sample: Warnings found
+   - Related element screenshot: candidate/reports-status__default__dark__details-summary.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/reports-status__default__dark__details-summary.png
+   - Related page screenshot: candidate-pages/reports-status__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/reports-status__default__dark__page.png
 
 ```html
 <summary id="warning" class="gin-details__summary gin-details__summary--system-status-report">Warnings found<span class="gin-details__summary-summary"></span></summary>

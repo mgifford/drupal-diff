@@ -53,14 +53,22 @@ ul {
 ## Evidence
 - Baseline element screenshot: baseline/structure-content-types__default__light__dropbutton-secondary-list.png
 - Candidate element screenshot: 
+- Baseline page screenshot: baseline-pages/structure-content-types__default__light__page.png
+- Candidate page screenshot: candidate-pages/structure-content-types__default__light__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-content-types__default__light__dropbutton-secondary-list.png
 
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-types__default__light__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-types__default__light__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
    - Text sample: Manage form display Manage display Edit Manage permissions Delete
+   - Related element screenshot: baseline/structure-content-types__default__light__dropbutton-secondary-list.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-content-types__default__light__dropbutton-secondary-list.png
+   - Related page screenshot: baseline-pages/structure-content-types__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-types__default__light__page.png
 
 ```html
 <ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 736px;"> <li class="manage-form-display dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/types/manage/article/form-display">Manage form display</a></li> <li class="manage-display dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/types/manage/article/display">Manage display</a></li> <li class="edit dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/types/manage/article?destination=/admin/structure/types" aria-label="Edit Article">Edit</a></li> <li class="manage-permissions dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/types/manage/article/permissions">Manage perm
@@ -68,6 +76,10 @@ ul {
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[3]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
    - Text sample: Manage form display Manage display Edit Manage permissions Delete
+   - Related element screenshot: baseline/structure-content-types__default__light__dropbutton-secondary-list.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-content-types__default__light__dropbutton-secondary-list.png
+   - Related page screenshot: baseline-pages/structure-content-types__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-types__default__light__page.png
 
 ```html
 <ul class="dropbutton__items"> <li class="manage-form-display dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/types/manage/page/form-display">Manage form display</a></li> <li class="manage-display dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/types/manage/page/display">Manage display</a></li> <li class="edit dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/types/manage/page?destination=/admin/structure/types" aria-label="Edit Basic page">Edit</a></li> <li class="manage-permissions dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/types/manage/page/permissions">Manage permissions</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/a
@@ -76,6 +88,8 @@ ul {
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
    - Text sample: Manage form display Manage display Edit Manage permissions Delete
+   - Related page screenshot: candidate-pages/structure-content-types__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-types__default__light__page.png
 
 ```html
 <ul class="dropbutton__items" style="position: fixed; left: 1099.3px; right: auto; top: 251px;"> <li class="manage-form-display dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/types/manage/article/form-display">Manage form display</a></li> <li class="manage-display dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/types/manage/article/display">Manage display</a></li> <li class="edit dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/types/manage/article?destination=/admin/structure/types" aria-label="Edit Article">Edit</a></li> <li class="manage-permissions dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/types/manage/article/permissions">Manage permissions</a></li> <li cla
@@ -83,6 +97,8 @@ ul {
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[3]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
    - Text sample: Manage form display Manage display Edit Manage permissions Delete
+   - Related page screenshot: candidate-pages/structure-content-types__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-types__default__light__page.png
 
 ```html
 <ul class="dropbutton__items" style="position: fixed; left: 1099.3px; right: auto; top: 179px;"> <li class="manage-form-display dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/types/manage/page/form-display">Manage form display</a></li> <li class="manage-display dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/types/manage/page/display">Manage display</a></li> <li class="edit dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/types/manage/page?destination=/admin/structure/types" aria-label="Edit Basic page">Edit</a></li> <li class="manage-permissions dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/types/manage/page/permissions">Manage permissions</a></li> <li class="delet

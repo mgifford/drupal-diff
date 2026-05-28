@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin Theme (dark) Structure Article Display - Form Item Wrapper style regression vs Drupal 11 Gin</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
+  h1 { margin-bottom: 0.4rem; }
+  .meta { color: #4a5568; }
+  .links a { margin-right: 0.8rem; }
+  .card { border: 1px solid #d0d7de; border-radius: 8px; padding: 0.8rem 1rem; margin: 0.9rem 0; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 0.7rem; }
+  code { font-size: 0.95em; }
+  img { max-width: 100%; border: 1px solid #d0d7de; border-radius: 4px; margin-top: 0.5rem; }
+  ul { margin-top: 0.4rem; }
+</style>
+</head>
+<body>
+  <h1>Admin Theme (dark) Structure Article Display - Form Item Wrapper style regression vs Drupal 11 Gin</h1>
+  <p class="meta">Potential CSS regression in <strong>Form Item Wrapper</strong> on <strong>Structure Article Display</strong> (dark mode).</p>
+  <p class="links">
+    <a href="structure-article-display-dark-default-form-item.md" target="_blank" rel="noopener">Local Markdown</a>
+    <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-dark-default-form-item.md" target="_blank" rel="noopener">GitHub Source (Markdown)</a>
+    <a href="../element-compare-dashboard.html" target="_blank" rel="noopener">Dashboard</a>
+  </p>
+
+  <section class="card">
+    <h2>Reproduction</h2>
+    <ol>
+      <li>Open baseline page: <a href="http://drupal-11.3.10.ddev.site/admin/structure/types/manage/article/display" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/structure/types/manage/article/display</a></li>
+      <li>Open candidate page: <a href="http://drupal-12-git.ddev.site:8080/admin/structure/types/manage/article/display" target="_blank" rel="noopener">http://drupal-12-git.ddev.site:8080/admin/structure/types/manage/article/display</a></li>
+      <li>Inspect selector: <code>.form-item</code></li>
+      <li>Compare typography, spacing, sizing, and marker presence.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Screenshots</h2>
+    <ul>
+      <li>Baseline element: n/a </li>
+      <li>Candidate element: n/a </li>
+      <li>Baseline page: <a href="../baseline-pages/structure-content-type-article-display__default__dark__page.png" target="_blank" rel="noopener">baseline-pages/structure-content-type-article-display__default__dark__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-type-article-display__default__dark__page.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate page: <a href="../candidate-pages/structure-content-type-article-display__default__dark__page.png" target="_blank" rel="noopener">candidate-pages/structure-content-type-article-display__default__dark__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-type-article-display__default__dark__page.png" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>DOM Evidence (XPath + HTML)</h2>
+    
+      <div class="meta"><strong>Drupal 11 with Gin 1 XPath:</strong> <code>/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[3]/div[1]</code></div>
+      <div class="meta">text: Weight for Image</div>
+      <pre>&lt;div class=&quot;js-form-item form-item js-form-type-textfield form-type--textfield js-form-item-fields-field-image-weight form-item--fields-field-image-weight form-item--no-label&quot;&gt; &lt;label for=&quot;edit-fields-field-image-weight&quot; class=&quot;form-item__label visually-hidden&quot;&gt;Weight for Image&lt;/label&gt; &lt;input class=&quot;field-weight form-text form-element form-element--type-text form-element--api-textfield&quot; data-drupal-selector=&quot;edit-fields-field-image-weight&quot; type=&quot;text&quot; id=&quot;edit-fields-field-image-weight&quot; name=&quot;fields[field_image][weight]&quot; value=&quot;-1&quot; size=&quot;3&quot; maxlength=&quot;128&quot; style=&quot;&quot;&gt; &lt;/div&gt;</pre>
+      <div class="meta"><strong>Drupal 11 with Gin 2 XPath:</strong> <code>/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[4]/div[1]</code></div>
+      <div class="meta">text: Label display for Image - None - content hidden</div>
+      <pre>&lt;div class=&quot;js-form-item form-item js-form-type-select form-type--select js-form-item-fields-field-image-parent form-item--fields-field-image-parent form-item--no-label&quot;&gt; &lt;label for=&quot;edit-fields-field-image-parent&quot; class=&quot;form-item__label visually-hidden&quot;&gt;Label display for Image&lt;/label&gt; &lt;select class=&quot;js-field-parent field-parent form-select form-element form-element--type-select&quot; data-drupal-selector=&quot;edit-fields-field-image-parent&quot; id=&quot;edit-fields-field-image-parent&quot; name=&quot;fields[field_image][parent]&quot;&gt; &lt;option value=&quot;&quot; selected=&quot;selected&quot;&gt;- None -&lt;/option&gt; &lt;option value=&quot;content&quot;&gt;content&lt;/option&gt; &lt;option value=&quot;hidden&quot;&gt;hidden&lt;/option&gt; &lt;/select&gt; &lt;/div&gt;</pre>
+    <div class="meta"><strong>Drupal 12 with Admin Theme:</strong> no matches captured</div>
+  </section>
+</body>
+</html>

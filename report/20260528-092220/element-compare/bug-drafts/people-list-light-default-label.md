@@ -57,14 +57,22 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: baseline/people-list__default__light__label.png
 - Candidate element screenshot: candidate/people-list__default__light__label.png
+- Baseline page screenshot: baseline-pages/people-list__default__light__page.png
+- Candidate page screenshot: candidate-pages/people-list__default__light__page.png
 - Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/people-list__default__light__label.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/people-list__default__light__label.png
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/people-list__default__light__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/people-list__default__light__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/label[1]`
    - Text sample: Name or email contains
+   - Related element screenshot: baseline/people-list__default__light__label.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/people-list__default__light__label.png
+   - Related page screenshot: baseline-pages/people-list__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/people-list__default__light__page.png
 
 ```html
 <label for="edit-user" class="form-item__label">Name or email contains</label>
@@ -72,6 +80,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/form[1]/div[2]/label[1]`
    - Text sample: Status
+   - Related element screenshot: baseline/people-list__default__light__label.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/people-list__default__light__label.png
+   - Related page screenshot: baseline-pages/people-list__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/people-list__default__light__page.png
 
 ```html
 <label for="edit-status" class="form-item__label">Status</label>
@@ -80,6 +92,10 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/label[1]`
    - Text sample: Name or email contains
+   - Related element screenshot: candidate/people-list__default__light__label.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/people-list__default__light__label.png
+   - Related page screenshot: candidate-pages/people-list__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/people-list__default__light__page.png
 
 ```html
 <label for="edit-user" class="form-item__label">Name or email contains</label>
@@ -87,6 +103,10 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/form[1]/div[2]/label[1]`
    - Text sample: Status
+   - Related element screenshot: candidate/people-list__default__light__label.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/people-list__default__light__label.png
+   - Related page screenshot: candidate-pages/people-list__default__light__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/people-list__default__light__page.png
 
 ```html
 <label for="edit-status" class="form-item__label">Status</label>

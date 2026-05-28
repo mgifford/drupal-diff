@@ -52,21 +52,29 @@ No high-confidence automatic patch suggestion for this diff.
 ## Evidence
 - Baseline element screenshot: 
 - Candidate element screenshot: 
+- Baseline page screenshot: baseline-pages/structure-block-layout__default__dark__page.png
+- Candidate page screenshot: candidate-pages/structure-block-layout__default__dark__page.png
 
 
+- Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-block-layout__default__dark__page.png
+- Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-block-layout__default__dark__page.png
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
    - Text sample: Disable
+   - Related page screenshot: baseline-pages/structure-block-layout__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-block-layout__default__dark__page.png
 
 ```html
-<a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=2GCVzalycKD8AaxZBdcU_kMi3-YKBpAFho4uTiM0mFc">Disable</a>
+<a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=pP4p34RISlcmVnFpigZAzTJY19WYqVdjAQnrWGECLug">Disable</a>
 ```
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]`
    - Text sample: Remove
+   - Related page screenshot: baseline-pages/structure-block-layout__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-block-layout__default__dark__page.png
 
 ```html
 <a href="/admin/structure/block/manage/olivero_site_branding/delete?destination=/admin/structure/block" aria-label="Delete Site branding" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" data-once="ajax">Remove</a>
@@ -75,13 +83,17 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
    - Text sample: Disable
+   - Related page screenshot: candidate-pages/structure-block-layout__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-block-layout__default__dark__page.png
 
 ```html
-<a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=lyc8zpBWpDZ3eyHCiBSn19U0AzX1pDZBvhadBGF9kBM">Disable</a>
+<a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=BFsq8gQT81zWvAvcaSO1_uP94GCtkqSUnmcGINveKi8">Disable</a>
 ```
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]`
    - Text sample: Remove
+   - Related page screenshot: candidate-pages/structure-block-layout__default__dark__page.png
+   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-block-layout__default__dark__page.png
 
 ```html
 <a href="/admin/structure/block/manage/olivero_site_branding/delete?destination=/admin/structure/block" aria-label="Delete Site branding" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" data-once="ajax">Remove</a>
