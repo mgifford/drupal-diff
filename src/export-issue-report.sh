@@ -9,6 +9,17 @@ fi
 
 CSV_OUT="$RUN_REPORT_DIR/issue-3592061-summary.csv"
 MD_OUT="$RUN_REPORT_DIR/issue-3592061-summary.md"
+RUN_ID="$(basename "$RUN_REPORT_DIR")"
+PUBLISHED_BASE="https://mgifford.github.io/drupal-diff/report/$RUN_ID"
+
+relative_from_run_dir() {
+  local path="$1"
+  path="${path#./}"
+  path="${path#${RUN_REPORT_DIR}/}"
+  path="${path#${RUN_REPORT_DIR}}"
+  path="${path#/}"
+  printf '%s' "$path"
+}
 
 section_for_route() {
   local route="$1"
@@ -52,6 +63,7 @@ fi
   echo "# Issue 3592061 Visual Diff Summary"
   echo
   echo "Generated from: $RUN_REPORT_DIR"
+  echo "Published run base: $PUBLISHED_BASE"
   echo
   for section in "Content" "Structure" "Appearance" "Configuration" "People" "Reports" "Other"; do
     section_count="$(awk -F',' -v s="$section" 'NR>1 && $1==s {c++} END {print c+0}' "$CSV_OUT")"
@@ -61,10 +73,16 @@ fi
 
     echo "## $section ($section_count)"
     echo
-    echo "| Route | Viewport | Change Type | Severity | Diff Artifact |"
-    echo "|---|---|---|---|---|"
+    echo "| Route | Viewport | Change Type | Severity | Diff | Actual | Expected |"
+    echo "|---|---|---|---|---|---|---|"
     awk -F',' -v s="$section" 'NR>1 && $1==s {print $0}' "$CSV_OUT" | while IFS=',' read -r _section route viewport change_type severity diff_path actual_path expected_path run_dir; do
-      echo "| $route | $viewport | $change_type | $severity | $diff_path |"
+      diff_rel="$(relative_from_run_dir "$diff_path")"
+      actual_rel="$(relative_from_run_dir "$actual_path")"
+      expected_rel="$(relative_from_run_dir "$expected_path")"
+      diff_pub="$PUBLISHED_BASE/$diff_rel"
+      actual_pub="$PUBLISHED_BASE/$actual_rel"
+      expected_pub="$PUBLISHED_BASE/$expected_rel"
+      echo "| $route | $viewport | $change_type | $severity | $diff_pub | $actual_pub | $expected_pub |"
     done
     echo
   done

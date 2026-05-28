@@ -361,6 +361,11 @@ function githubElementShotUrl(relativeShotPath) {
   return `${repoWebBase}/report/${runId}/element-compare/${relativeShotPath}`;
 }
 
+function bugDraftPublishedUrl(mdName) {
+  if (!runId || !mdName) return '';
+  return `${repoWebBase.replace('/blob/main', '')}/report/${runId}/element-compare/bug-drafts/${mdName}`;
+}
+
 function summarize(measures) {
   return {
     count: measures.length,
@@ -882,7 +887,17 @@ function evidenceMarkdown(title, evidence) {
   fs.mkdirSync(bugDraftDir, { recursive: true });
 
   const csvLines = ['id,title,route,color_mode,component,selector,baseline_url,candidate_url,key_deltas,likely_css_files,baseline_css_sources,candidate_css_sources,suggested_patch_confidence,suggested_css_selector,suggested_declarations,baseline_xpath,baseline_html_snippet,candidate_xpath,candidate_html_snippet,evidence_baseline,evidence_candidate'];
-  const indexLines = ['# Draft Bug Reports', '', `Generated: ${new Date().toISOString()}`, '', `Baseline: ${baselineLabel}`, `Candidate: ${candidateLabel}`, ''];
+  const indexLines = [
+    '# Draft Bug Reports',
+    '',
+    `Generated: ${new Date().toISOString()}`,
+    '',
+    `Baseline: ${baselineLabel}`,
+    `Candidate: ${candidateLabel}`,
+    runId ? `Run: ${runId}` : '',
+    runId ? `Dashboard: ${repoWebBase.replace('/blob/main', '')}/report/${runId}/element-compare/element-compare-dashboard.html` : '',
+    '',
+  ].filter(Boolean);
   const cssBuckets = {};
   const patchLines = ['# Suggested CSS Patch Ideas', '', `Generated: ${new Date().toISOString()}`, '', 'Only medium/high confidence suggestions are included.', ''];
   const patchBuckets = {};
@@ -996,7 +1011,13 @@ function evidenceMarkdown(title, evidence) {
       row.candidateShot,
     ].map(csvEsc).join(','));
 
-    indexLines.push(`${idx}. [${title}](bug-drafts/${mdName})`);
+    const publishedBugUrl = bugDraftPublishedUrl(mdName);
+    if (publishedBugUrl) {
+      indexLines.push(`${idx}. [${title}](bug-drafts/${mdName})`);
+      indexLines.push(`   Published: ${publishedBugUrl}`);
+    } else {
+      indexLines.push(`${idx}. [${title}](bug-drafts/${mdName})`);
+    }
     const primaryCssFile = cssList[0] || 'unknown';
     cssBuckets[primaryCssFile] = cssBuckets[primaryCssFile] || [];
     cssBuckets[primaryCssFile].push({ idx, title, mdName, secondary: cssList.slice(1) });
@@ -1021,7 +1042,11 @@ function evidenceMarkdown(title, evidence) {
   for (const [cssFile, items] of cssEntries) {
     cssIndex.push(`## ${cssFile} (${items.length})`);
     for (const item of items) {
+      const publishedBugUrl = bugDraftPublishedUrl(item.mdName);
       cssIndex.push(`- ${item.idx}. [${item.title}](bug-drafts/${item.mdName})`);
+      if (publishedBugUrl) {
+        cssIndex.push(`  - Published: ${publishedBugUrl}`);
+      }
       if (item.secondary && item.secondary.length) {
         cssIndex.push(`  - Secondary candidates: ${item.secondary.slice(0, 3).join(' | ')}`);
       }
