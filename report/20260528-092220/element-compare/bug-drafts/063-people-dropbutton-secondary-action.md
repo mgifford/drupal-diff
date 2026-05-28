@@ -1,0 +1,99 @@
+# Admin Theme (dark) People - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin
+
+## Summary
+Potential CSS regression in **Dropbutton Secondary Action Link** on **People** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
+Color mode: **dark**
+
+## Steps To Reproduce
+1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/people
+2. Open candidate page: http://drupal-git.ddev.site:8080/admin/people
+3. Inspect selector: .dropbutton-wrapper .dropbutton__items .dropbutton__item a
+4. Compare typography, spacing, sizing, and marker presence.
+
+## Expected Result
+Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
+
+## Actual Result
+- width: 25.3%
+
+## Likely CSS Sources
+- core/themes/default_admin/css/base/elements.css
+- core/themes/default_admin/css/base/elements.pcss.css
+- core/themes/default_admin/css/base/print.css
+- core/themes/default_admin/css/base/print.pcss.css
+
+## Candidate Matched CSS Rules
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_nPckB4DV-RFbxCpBvH64vRhNH8eHAMk_bPZn679lykQ.css?delta=0&language=en&theme=default_admin&include=eJxtkFFywzAIRC9kWUfKYIl4aBFoEErTnr5Km0lixz98vGWBJak4Xr0Dx2y9As_pQQKTfLYpqWFMWqoKirdZ4EIrOKmE4Kq8gIWlu6v8t97nwAdcNyATsK5bZFoPrORYxvLmG2rY0APUimAgCTeiw8JDZ0x-wNXuVNQKMP3glPEMnf0EuZDElXUZgZt_j8zrTnwG3gm39E71jdbT-Mn0tEUaLzUZ57yMuhB-tfhX56K5M_4CUTqaOw :: a
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_LSDC0mQSUYUe-MIxUavBq49SD8SI93myoZ4iAI6BEZk.css?delta=1&language=en&theme=default_admin&include=eJxtkFFywzAIRC9kWUfKYIl4aBFoEErTnr5Km0lixz98vGWBJak4Xr0Dx2y9As_pQQKTfLYpqWFMWqoKirdZ4EIrOKmE4Kq8gIWlu6v8t97nwAdcNyATsK5bZFoPrORYxvLmG2rY0APUimAgCTeiw8JDZ0x-wNXuVNQKMP3glPEMnf0EuZDElXUZgZt_j8zrTnwG3gm39E71jdbT-Mn0tEUaLzUZ57yMuhB-tfhX56K5M_4CUTqaOw :: a, .link, button.link
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_LSDC0mQSUYUe-MIxUavBq49SD8SI93myoZ4iAI6BEZk.css?delta=1&language=en&theme=default_admin&include=eJxtkFFywzAIRC9kWUfKYIl4aBFoEErTnr5Km0lixz98vGWBJak4Xr0Dx2y9As_pQQKTfLYpqWFMWqoKirdZ4EIrOKmE4Kq8gIWlu6v8t97nwAdcNyATsK5bZFoPrORYxvLmG2rY0APUimAgCTeiw8JDZ0x-wNXuVNQKMP3glPEMnf0EuZDElXUZgZt_j8zrTnwG3gm39E71jdbT-Mn0tEUaLzUZ57yMuhB-tfhX56K5M_4CUTqaOw :: *
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_LSDC0mQSUYUe-MIxUavBq49SD8SI93myoZ4iAI6BEZk.css?delta=1&language=en&theme=default_admin&include=eJxtkFFywzAIRC9kWUfKYIl4aBFoEErTnr5Km0lixz98vGWBJak4Xr0Dx2y9As_pQQKTfLYpqWFMWqoKirdZ4EIrOKmE4Kq8gIWlu6v8t97nwAdcNyATsK5bZFoPrORYxvLmG2rY0APUimAgCTeiw8JDZ0x-wNXuVNQKMP3glPEMnf0EuZDElXUZgZt_j8zrTnwG3gm39E71jdbT-Mn0tEUaLzUZ57yMuhB-tfhX56K5M_4CUTqaOw :: a, .link
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_LSDC0mQSUYUe-MIxUavBq49SD8SI93myoZ4iAI6BEZk.css?delta=1&language=en&theme=default_admin&include=eJxtkFFywzAIRC9kWUfKYIl4aBFoEErTnr5Km0lixz98vGWBJak4Xr0Dx2y9As_pQQKTfLYpqWFMWqoKirdZ4EIrOKmE4Kq8gIWlu6v8t97nwAdcNyATsK5bZFoPrORYxvLmG2rY0APUimAgCTeiw8JDZ0x-wNXuVNQKMP3glPEMnf0EuZDElXUZgZt_j8zrTnwG3gm39E71jdbT-Mn0tEUaLzUZ57yMuhB-tfhX56K5M_4CUTqaOw :: :where(*), :is(#extra-specificity-hack, [data-drupal-admin-styles])
+
+## Candidate Theme Source Matches (default_admin)
+- core/themes/default_admin/css/base/elements.css (score: 2; selectors: .link, button.link)
+- core/themes/default_admin/css/base/elements.pcss.css (score: 2; selectors: .link, button.link)
+- core/themes/default_admin/css/base/print.css (score: 1; selectors: .link)
+- core/themes/default_admin/css/base/print.pcss.css (score: 1; selectors: .link)
+
+## Candidate Aggregate Libraries (decoded include= token)
+- contextual/drupal.contextual-links
+- core/components.navigation--toolbar-button
+- core/drupal.ajax
+- core/drupal.dialog
+- core/drupal.dropbutton
+- core/drupal.item-list
+- core/drupal.reset-appearance
+- core/drupal.tableselect
+- core/drupal.tablesort
+- core/normalize
+- default_admin/global-styling
+- default_admin/navigation
+- default_admin/tooltip
+- default_admin/top_bar
+- navigation/internal.navigation
+- views/views.module
+
+## Suggested CSS Patch (Confidence-Gated)
+No high-confidence automatic patch suggestion for this diff.
+
+## Evidence
+- Baseline element screenshot: baseline/people__dark__dropbutton-secondary-action.png
+- Candidate element screenshot: candidate/people__dark__dropbutton-secondary-action.png
+- Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/people__dark__dropbutton-secondary-action.png
+- Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/people__dark__dropbutton-secondary-action.png
+- Dashboard: ../element-compare-dashboard.html
+
+## DOM Evidence (XPath + HTML Snippets)
+### Drupal 11 with Gin
+1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[7]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
+   - Text sample: View
+
+```html
+<a href="/user/2?destination=/admin/people" aria-label="View editor1" hreflang="en">View</a>
+```
+
+2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[2]/td[7]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
+   - Text sample: View
+
+```html
+<a href="/user/1?destination=/admin/people" aria-label="View admin" hreflang="en">View</a>
+```
+
+### Drupal 12 with Admin Theme
+1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[7]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
+   - Text sample: View
+
+```html
+<a href="/user/2?destination=/admin/people" aria-label="View editor1" hreflang="en">View</a>
+```
+
+2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[2]/td[7]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
+   - Text sample: View
+
+```html
+<a href="/user/1?destination=/admin/people" aria-label="View admin" hreflang="en">View</a>
+```
+
+## Notes
+- Validate whether this is planned design change or unplanned regression.
+- If unplanned, file as CSS parity issue for Drupal 12 Admin Theme.

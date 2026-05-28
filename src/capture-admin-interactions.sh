@@ -89,6 +89,7 @@ async function assertRouteAccessible(page, url, response) {
   const routes = [
     { id: 'content', path: '/admin/content' },
     { id: 'structure', path: '/admin/structure' },
+    { id: 'block-content', path: '/admin/structure/block-content' },
     { id: 'appearance', path: '/admin/appearance' },
     { id: 'config', path: '/admin/config' },
     { id: 'people', path: '/admin/people' },
@@ -103,6 +104,10 @@ async function assertRouteAccessible(page, url, response) {
       id: 'contextual-config-trigger',
       selector: 'button.trigger.focusable, button.trigger[aria-pressed], .contextual .trigger',
     },
+    {
+      id: 'dropbutton-toggle',
+      selector: '.dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle',
+    },
   ];
 
   const interactionTypes = [
@@ -110,6 +115,7 @@ async function assertRouteAccessible(page, url, response) {
     { id: 'hover-navigation-link', selector: 'a[href]', action: 'hover' },
     { id: 'toggle-aria-expanded', selector: 'button[aria-expanded], [role="button"][aria-expanded]', action: 'click' },
     { id: 'toggle-aria-pressed', selector: 'button[aria-pressed], [role="button"][aria-pressed]', action: 'click' },
+    { id: 'open-dropbutton-toggle', selector: '.dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle', action: 'click' },
     { id: 'toggle-details-summary', selector: 'details > summary', action: 'click' },
     { id: 'open-contextual-trigger', selector: 'button.trigger.focusable, .contextual .trigger', action: 'click' },
   ];

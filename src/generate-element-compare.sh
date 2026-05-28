@@ -62,6 +62,7 @@ const routes = [
   { id: 'config', path: '/admin/config', label: 'Configuration' },
   { id: 'content', path: '/admin/content', label: 'Content' },
   { id: 'structure', path: '/admin/structure', label: 'Structure' },
+  { id: 'block-content', path: '/admin/structure/block-content', label: 'Block Content Types' },
   { id: 'people', path: '/admin/people', label: 'People' },
 ];
 
@@ -76,9 +77,34 @@ const components = [
   { id: 'table-cell', label: 'Table Body Cell', selector: 'table tbody td' },
   { id: 'details-summary', label: 'Details Summary', selector: 'details > summary' },
   { id: 'label', label: 'Form Label', selector: 'label' },
+  { id: 'dropbutton-wrapper', label: 'Dropbutton Wrapper', selector: '.dropbutton-wrapper.dropbutton-multiple, .dropbutton-wrapper' },
+  { id: 'dropbutton-primary-action', label: 'Dropbutton Primary Action Link', selector: '.dropbutton-wrapper .dropbutton__item.dropbutton-action > a' },
+  { id: 'dropbutton-toggle', label: 'Dropbutton Toggle Button', selector: '.dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle' },
+  { id: 'dropbutton-secondary-list', label: 'Dropbutton Secondary Actions List', selector: '.dropbutton-wrapper .dropbutton__items' },
+  { id: 'dropbutton-secondary-action', label: 'Dropbutton Secondary Action Link', selector: '.dropbutton-wrapper .dropbutton__items .dropbutton__item a' },
   { id: 'toolbar-structure-toggle', label: 'Toolbar Structure Toggle Button', selector: 'button.toolbar-link.toolbar-link--system-admin-structure' },
   { id: 'contextual-config-trigger', label: 'Contextual Config Trigger Button', selector: 'button.trigger.focusable, button.trigger[aria-pressed], .contextual .trigger' },
 ];
+
+async function expandDropbuttons(page) {
+  const toggles = page.locator('.dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle');
+  const count = await toggles.count();
+  const max = Math.min(count, 3);
+
+  for (let i = 0; i < max; i++) {
+    const toggle = toggles.nth(i);
+    try {
+      if (!(await toggle.isVisible())) {
+        continue;
+      }
+      await toggle.scrollIntoViewIfNeeded({ timeout: 3000 });
+      await toggle.click({ timeout: 2000 });
+      await page.waitForTimeout(150);
+    } catch {
+      // Non-fatal: continue with best-effort dropbutton expansion.
+    }
+  }
+}
 
 const broadSelectors = new Set([
   '*', 'html', 'body', ':root',
@@ -549,6 +575,8 @@ function evidenceMarkdown(title, evidence) {
       const candidateResponse = await candidatePage.goto(`${candidateUrl}${route.path}`, { waitUntil: 'networkidle' });
       await assertRouteAccessible(baselinePage, `${baselineUrl}${route.path}`, baselineLabel, baselineResponse);
       await assertRouteAccessible(candidatePage, `${candidateUrl}${route.path}`, candidateLabel, candidateResponse);
+      await expandDropbuttons(baselinePage);
+      await expandDropbuttons(candidatePage);
 
       for (const component of components) {
         const baseMeasures = await measure(baselinePage, component.selector);

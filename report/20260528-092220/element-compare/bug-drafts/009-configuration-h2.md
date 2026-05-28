@@ -75,11 +75,11 @@ No high-confidence automatic patch suggestion for this diff.
 ```
 
 ### Drupal 12 with Admin Theme
-1. XPath: `//*[@id="admin-toolbar__scroll-wrapper-1739148866"]`
+1. XPath: `//*[@id="admin-toolbar__scroll-wrapper-777889206"]`
    - Text sample: Administrative sidebar
 
 ```html
-<h2 id="admin-toolbar__scroll-wrapper-1739148866" class="visually-hidden">Administrative sidebar</h2>
+<h2 id="admin-toolbar__scroll-wrapper-777889206" class="visually-hidden">Administrative sidebar</h2>
 ```
 
 2. XPath: `//*[@id="system-breadcrumb"]`
