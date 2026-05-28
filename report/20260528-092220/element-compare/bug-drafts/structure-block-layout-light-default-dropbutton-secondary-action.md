@@ -6,7 +6,7 @@ Color mode: **light**
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/structure/block
-2. Open candidate page: http://drupal-git.ddev.site:8080/admin/structure/block
+2. Open candidate page: http://drupal-12-git.ddev.site:8080/admin/structure/block
 3. Inspect selector: .dropbutton-wrapper .dropbutton__items .dropbutton__item a
 4. Compare typography, spacing, sizing, and marker presence.
 
@@ -62,7 +62,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Text sample: Disable
 
 ```html
-<a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=ev4Vty1YIaeQefOA5_ELSLCcdOewh78m5x2EvQGa89Q">Disable</a>
+<a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=2GCVzalycKD8AaxZBdcU_kMi3-YKBpAFho4uTiM0mFc">Disable</a>
 ```
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]`
@@ -77,7 +77,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Text sample: Disable
 
 ```html
-<a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=bCuuBIsyh7rWMhy_R0tGnGQvQK8DK3NjD30ut7MRXmU">Disable</a>
+<a href="/admin/structure/block/manage/olivero_site_branding/disable?destination=/admin/structure/block&amp;token=lyc8zpBWpDZ3eyHCiBSn19U0AzX1pDZBvhadBGF9kBM">Disable</a>
 ```
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]`

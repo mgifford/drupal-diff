@@ -6,7 +6,7 @@ Color mode: **light**
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/node/add/article
-2. Open candidate page: http://drupal-git.ddev.site:8080/node/add/article
+2. Open candidate page: http://drupal-12-git.ddev.site:8080/node/add/article
 3. Inspect selector: h2
 4. Compare typography, spacing, sizing, and marker presence.
 
@@ -14,12 +14,12 @@ Color mode: **light**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- fontSize: 47.4%
-- lineHeight: 47.4%
+- fontSize: 15.8%
+- lineHeight: 15.8%
 - paddingX: -100.0%
-- width: -88.0%
-- height: 20.0%
-- count: -4 (-66.7%)
+- width: 570.9%
+- height: 1207.8%
+- count: -2 (-33.3%)
 
 ## Likely CSS Sources
 - core/themes/default_admin/css/base/elements.css
@@ -84,11 +84,11 @@ No high-confidence automatic patch suggestion for this diff.
 ```
 
 ### Drupal 12 with Admin Theme
-1. XPath: `//*[@id="admin-toolbar__scroll-wrapper-777889206"]`
+1. XPath: `//*[@id="admin-toolbar__scroll-wrapper-1725743639"]`
    - Text sample: Administrative sidebar
 
 ```html
-<h2 id="admin-toolbar__scroll-wrapper-777889206" class="visually-hidden">Administrative sidebar</h2>
+<h2 id="admin-toolbar__scroll-wrapper-1725743639" class="visually-hidden">Administrative sidebar</h2>
 ```
 
 2. XPath: `//*[@id="system-breadcrumb"]`

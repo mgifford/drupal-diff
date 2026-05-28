@@ -32,6 +32,8 @@ cd "$ROOT_DIR/drupal-git"
 ddev exec -d /var/www/html/.ddev/drupal-admin-vrt env \
   BASELINE_URL="http://drupal-11.3.10.ddev.site" \
   CANDIDATE_URL="http://drupal-git.ddev.site:8080" \
+  BASELINE_REPORT_URL="${BASELINE_REPORT_URL:-http://drupal-11.3.10.ddev.site}" \
+  CANDIDATE_REPORT_URL="${CANDIDATE_REPORT_URL:-http://drupal-12-git.ddev.site:8080}" \
   COLOR_MODE="$COLOR_MODE" \
   DRUPAL_ADMIN_USER="admin" \
   DRUPAL_ADMIN_PASS="admin" \
@@ -46,6 +48,8 @@ const { chromium } = require('playwright');
 
 const baselineUrl = process.env.BASELINE_URL;
 const candidateUrl = process.env.CANDIDATE_URL;
+const baselineReportUrl = process.env.BASELINE_REPORT_URL || baselineUrl;
+const candidateReportUrl = process.env.CANDIDATE_REPORT_URL || candidateUrl;
 const colorMode = process.env.COLOR_MODE || 'both';
 const username = process.env.DRUPAL_ADMIN_USER;
 const password = process.env.DRUPAL_ADMIN_PASS;
@@ -852,8 +856,8 @@ function evidenceMarkdown(title, evidence) {
           scenario: profile.label,
           scenarioId: profile.id,
           colorMode: scheme,
-          baselineUrl: `${baselineUrl}${baselinePath}`,
-          candidateUrl: `${candidateUrl}${candidatePath}`,
+          baselineUrl: `${baselineReportUrl}${baselinePath}`,
+          candidateUrl: `${candidateReportUrl}${candidatePath}`,
           component: component.label,
           componentId: component.id,
           selector: component.selector,
@@ -980,8 +984,8 @@ function evidenceMarkdown(title, evidence) {
   const routeLinksHtml = routes.map((r) => {
     const bPath = r.baselinePath || r.path;
     const cPath = r.candidatePath || r.path;
-    const b = `${baselineUrl}${bPath}`;
-    const c = `${candidateUrl}${cPath}`;
+    const b = `${baselineReportUrl}${bPath}`;
+    const c = `${candidateReportUrl}${cPath}`;
     const displayPath = bPath === cPath ? bPath : `${bPath} -> ${cPath}`;
     return `<tr><td>${esc(r.label)}</td><td>${esc(displayPath)}</td><td><a href="${esc(b)}" target="_blank" rel="noopener">${esc(b)}</a></td><td><a href="${esc(c)}" target="_blank" rel="noopener">${esc(c)}</a></td></tr>`;
   }).join('');

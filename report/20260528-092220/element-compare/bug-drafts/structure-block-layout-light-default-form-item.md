@@ -6,7 +6,7 @@ Color mode: **light**
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/structure/block
-2. Open candidate page: http://drupal-git.ddev.site:8080/admin/structure/block
+2. Open candidate page: http://drupal-12-git.ddev.site:8080/admin/structure/block
 3. Inspect selector: .form-item
 4. Compare typography, spacing, sizing, and marker presence.
 
@@ -75,7 +75,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Text sample: Region for Site branding block Header Primary menu Secondary menu Hero (full wid
 
 ```html
-<div class="js-form-item form-item js-form-type-select form-type--select js-form-item-blocks-olivero-site-branding-region form-item--blocks-olivero-site-branding-region form-item--no-label"> <label for="edit-blocks-olivero-site-branding-region" class="form-item__label visually-hidden js-form-required form-required">Region for Site branding block</label> <select class="block-region-select block-region-header form-select required form-element form-element--type-select form-element--extrasmall" data-drupal-selector="edit-blocks-olivero-site-branding-region" id="edit-blocks-olivero-site-branding-region" name="blocks[olivero_site_branding][region]" required="required"> <option value="header" selected="selected">Header</option> <option value="primary_menu">Primary menu</option> <option value="se
+<div class="js-form-item form-item js-form-type-select form-type--select js-form-item-blocks-olivero-site-branding-region form-item--blocks-olivero-site-branding-region form-item--no-label"> <label for="edit-blocks-olivero-site-branding-region" class="form-item__label visually-hidden js-form-required form-required">Region for Site branding block</label> <select class="block-region-select block-region-header form-select required form-element form-element--type-select form-element--extrasmall" data-drupal-selector="edit-blocks-olivero-site-branding-region" id="edit-blocks-olivero-site-branding-region" name="blocks[olivero_site_branding][region]" required="required" data-once="block-region-select"> <option value="header" selected="selected">Header</option> <option value="primary_menu">Primary
 ```
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[4]/div[1]`

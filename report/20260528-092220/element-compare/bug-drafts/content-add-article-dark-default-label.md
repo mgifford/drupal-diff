@@ -6,7 +6,7 @@ Color mode: **dark**
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/node/add/article
-2. Open candidate page: http://drupal-git.ddev.site:8080/node/add/article
+2. Open candidate page: http://drupal-12-git.ddev.site:8080/node/add/article
 3. Inspect selector: label
 4. Compare typography, spacing, sizing, and marker presence.
 
@@ -87,7 +87,7 @@ No high-confidence automatic patch suggestion for this diff.
 <label for="edit-title-0-value" class="form-item__label js-form-required form-required">Title</label>
 ```
 
-2. XPath: `/html[1]/body[1]/div[4]/div[1]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/label[1]`
+2. XPath: `/html[1]/body[1]/div[4]/div[1]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/label[1]`
    - Text sample: Summary
 
 ```html

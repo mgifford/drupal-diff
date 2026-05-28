@@ -6,7 +6,7 @@ Color mode: **light**
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/structure/views/view/content
-2. Open candidate page: http://drupal-git.ddev.site:8080/admin/structure/views/view/content
+2. Open candidate page: http://drupal-12-git.ddev.site:8080/admin/structure/views/view/content
 3. Inspect selector: .dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle
 4. Compare typography, spacing, sizing, and marker presence.
 

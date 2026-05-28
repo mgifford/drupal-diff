@@ -6,7 +6,7 @@ Color mode: **light**
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/config/content/formats/manage/basic_html
-2. Open candidate page: http://drupal-git.ddev.site:8080/admin/config/content/formats/manage/basic_html
+2. Open candidate page: http://drupal-12-git.ddev.site:8080/admin/config/content/formats/manage/basic_html
 3. Inspect selector: button, input[type="submit"], .button
 4. Compare typography, spacing, sizing, and marker presence.
 

@@ -6,7 +6,7 @@ Color mode: **dark**
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/structure/types/manage/article/display
-2. Open candidate page: http://drupal-git.ddev.site:8080/admin/structure/types/manage/article/display
+2. Open candidate page: http://drupal-12-git.ddev.site:8080/admin/structure/types/manage/article/display
 3. Inspect selector: .dropbutton-wrapper .dropbutton__item.dropbutton-action > a
 4. Compare typography, spacing, sizing, and marker presence.
 
@@ -87,7 +87,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Text sample: Enable (Full content)
 
 ```html
-<a href="/admin/structure/types/manage/article/display/full/enable?token=HBUZxbw9CJyLKHc1qbdm-ibbpfOaFRBDEsazq9xaetI">Enable <span class="visually-hidden">(Full content)</span></a>
+<a href="/admin/structure/types/manage/article/display/full/enable?token=XmW7s5TlP7pej8bY8qDPe3--mSHldB_5B59RP8tGYeM">Enable <span class="visually-hidden">(Full content)</span></a>
 ```
 
 ## Notes

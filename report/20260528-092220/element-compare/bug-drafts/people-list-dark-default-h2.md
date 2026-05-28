@@ -6,7 +6,7 @@ Color mode: **dark**
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/people
-2. Open candidate page: http://drupal-git.ddev.site:8080/admin/people
+2. Open candidate page: http://drupal-12-git.ddev.site:8080/admin/people
 3. Inspect selector: h2
 4. Compare typography, spacing, sizing, and marker presence.
 
@@ -83,11 +83,11 @@ No high-confidence automatic patch suggestion for this diff.
 ```
 
 ### Drupal 12 with Admin Theme
-1. XPath: `//*[@id="admin-toolbar__scroll-wrapper-1725743639"]`
+1. XPath: `//*[@id="admin-toolbar__scroll-wrapper-896067187"]`
    - Text sample: Administrative sidebar
 
 ```html
-<h2 id="admin-toolbar__scroll-wrapper-1725743639" class="visually-hidden">Administrative sidebar</h2>
+<h2 id="admin-toolbar__scroll-wrapper-896067187" class="visually-hidden">Administrative sidebar</h2>
 ```
 
 2. XPath: `//*[@id="system-breadcrumb"]`

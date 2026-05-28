@@ -6,7 +6,7 @@ Color mode: **light**
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/structure/menu/manage/admin
-2. Open candidate page: http://drupal-git.ddev.site:8080/admin/structure/menu/manage/admin
+2. Open candidate page: http://drupal-12-git.ddev.site:8080/admin/structure/menu/manage/admin
 3. Inspect selector: .dropbutton-wrapper .dropbutton__items .dropbutton__item a
 4. Compare typography, spacing, sizing, and marker presence.
 

@@ -6,7 +6,7 @@ Color mode: **dark**
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/config/system/site-information
-2. Open candidate page: http://drupal-git.ddev.site:8080/admin/config/system/site-information
+2. Open candidate page: http://drupal-12-git.ddev.site:8080/admin/config/system/site-information
 3. Inspect selector: label.form-required, .form-required
 4. Compare typography, spacing, sizing, and marker presence.
 

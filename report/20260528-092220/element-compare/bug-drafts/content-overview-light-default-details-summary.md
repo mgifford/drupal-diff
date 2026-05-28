@@ -1,12 +1,12 @@
-# Admin Theme (dark) People List - Details Summary style regression vs Drupal 11 Gin
+# Admin Theme (light) Content Overview - Details Summary style regression vs Drupal 11 Gin
 
 ## Summary
-Potential CSS regression in **Details Summary** on **People List** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
-Color mode: **dark**
+Potential CSS regression in **Details Summary** on **Content Overview** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
+Color mode: **light**
 
 ## Steps To Reproduce
-1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/people
-2. Open candidate page: http://drupal-12-git.ddev.site:8080/admin/people
+1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/content
+2. Open candidate page: http://drupal-12-git.ddev.site:8080/admin/content
 3. Inspect selector: details > summary
 4. Compare typography, spacing, sizing, and marker presence.
 
@@ -20,7 +20,7 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 - paddingX: -100.0%
 - width: -100.0%
 - height: -100.0%
-- count: -1 (-100.0%)
+- count: -8 (-100.0%)
 
 ## Likely CSS Sources
 - unknown
@@ -38,15 +38,22 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 No high-confidence automatic patch suggestion for this diff.
 
 ## Evidence
-- Baseline element screenshot: baseline/people-list__default__dark__details-summary.png
+- Baseline element screenshot: baseline/content-overview__default__light__details-summary.png
 - Candidate element screenshot: 
-- Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/people-list__default__dark__details-summary.png
+- Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/content-overview__default__light__details-summary.png
 
 - Dashboard: ../element-compare-dashboard.html
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
-1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[2]/div[2]/div[1]/div[1]/div[2]/details[1]/summary[1]`
+1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[1]/details[1]/summary[1]`
+   - Text sample: Deprecated function: Using null as an array offset is deprecated, use an empty s
+
+```html
+<summary><em class="placeholder">Deprecated function</em>: Using null as an array offset is deprecated, use an empty string instead in <em class="placeholder">Drupal\Core\Entity\ContentEntityBase-&gt;hasTranslation()</em> (line <em class="placeholder">984</em> of <em class="placeholder">core/lib/Drupal/Core/Entity/ContentEntityBase.php</em>).</summary>
+```
+
+2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[2]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[2]/details[1]/summary[1]`
    - Text sample: Deprecated function: Using null as an array offset is deprecated, use an empty s
 
 ```html

@@ -6,7 +6,7 @@ Color mode: **dark**
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/structure/views/view/content
-2. Open candidate page: http://drupal-git.ddev.site:8080/admin/structure/views/view/content
+2. Open candidate page: http://drupal-12-git.ddev.site:8080/admin/structure/views/view/content
 3. Inspect selector: table thead th
 4. Compare typography, spacing, sizing, and marker presence.
 
@@ -64,11 +64,11 @@ No high-confidence automatic patch suggestion for this diff.
 <th class="select-all views-field views-field-node-bulk-form gin--sticky-bulk-select" scope="col" style="width: 53px;"> <input type="checkbox" class="form-checkbox form-boolean form-boolean--type-checkbox" title="Select all rows in this table" style=""> </th>
 ```
 
-2. XPath: `//*[@id="view-title-table-column--70-l50-RTLU"]`
+2. XPath: `//*[@id="view-title-table-column--5mQ7Ra_s7jM"]`
    - Text sample: Title
 
 ```html
-<th id="view-title-table-column--70-l50-RTLU" class="sortable-heading views-field views-field-title" scope="col" style="width: 179.484px;"> <a href="/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc" title="sort by Title" rel="nofollow" data-once="views-ajax">Title</a></th>
+<th id="view-title-table-column--5mQ7Ra_s7jM" class="sortable-heading views-field views-field-title" scope="col" style="width: 179.484px;"> <a href="/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc" title="sort by Title" rel="nofollow" data-once="views-ajax">Title</a></th>
 ```
 
 ### Drupal 12 with Admin Theme
@@ -78,11 +78,11 @@ No high-confidence automatic patch suggestion for this diff.
 <th class="select-all views-field views-field-node-bulk-form gin--sticky-bulk-select" scope="col" style="width: 53px;"> <input type="checkbox" class="form-checkbox form-boolean form-boolean--type-checkbox" title="Select all rows in this table" style=""> </th>
 ```
 
-2. XPath: `//*[@id="view-title-table-column--DdRsH0CM8NU"]`
+2. XPath: `//*[@id="view-title-table-column--OJiYY1r-4ks"]`
    - Text sample: Title
 
 ```html
-<th id="view-title-table-column--DdRsH0CM8NU" class="sortable-heading views-field views-field-title" scope="col" style="width: 191.203px;"> <a href="/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc" title="sort by Title" rel="nofollow" data-once="views-ajax">Title</a></th>
+<th id="view-title-table-column--OJiYY1r-4ks" class="sortable-heading views-field views-field-title" scope="col" style="width: 191.203px;"> <a href="/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc" title="sort by Title" rel="nofollow" data-once="views-ajax">Title</a></th>
 ```
 
 ## Notes

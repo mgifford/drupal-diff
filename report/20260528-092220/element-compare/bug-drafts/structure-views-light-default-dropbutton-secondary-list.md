@@ -6,7 +6,7 @@ Color mode: **light**
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/structure/views
-2. Open candidate page: http://drupal-git.ddev.site:8080/admin/structure/views
+2. Open candidate page: http://drupal-12-git.ddev.site:8080/admin/structure/views
 3. Inspect selector: .dropbutton-wrapper .dropbutton__items
 4. Compare typography, spacing, sizing, and marker presence.
 
@@ -20,9 +20,9 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 - http://drupal-git.ddev.site:8080/sites/default/files/css/css_QpvbzsFrbV7TKL2CBrx2MGTLS5uTJ9WSrn5z5OZoHto.css
 
 ## Candidate Matched CSS Rules
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_QpvbzsFrbV7TKL2CBrx2MGTLS5uTJ9WSrn5z5OZoHto.css?delta=1&language=en&theme=default_admin&include=eJxtkGsSwiAMhC9UypE6KUQmShMGQn2cXrQda6t_d7ObL3HCijetEK3PNUHs3UcxkfhSOicZrZMpCSNr6RlmCqAkbIyKxBGyGauq8DK69sAZbjvBE0QJeylL-hPNWFANpISQgR0uJkueINIDO48nqFEH8BOxDVHGBlv03njDwdxgD8aLXCn9qGlo93RbzFJ7R-ZG9VU1E17LUMm-U_26-gk0IoG5 :: ul
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_QpvbzsFrbV7TKL2CBrx2MGTLS5uTJ9WSrn5z5OZoHto.css?delta=1&language=en&theme=default_admin&include=eJxtkGsSwiAMhC9UypE6KUQmShMGQn2cXrQda6t_d7ObL3HCijetEK3PNUHs3UcxkfhSOicZrZMpCSNr6RlmCqAkbIyKxBGyGauq8DK69sAZbjvBE0QJeylL-hPNWFANpISQgR0uJkueINIDO48nqFEH8BOxDVHGBlv03njDwdxgD8aLXCn9qGlo93RbzFJ7R-ZG9VU1E17LUMm-U_26-gk0IoG5 :: *
-- http://drupal-git.ddev.site:8080/sites/default/files/css/css_QpvbzsFrbV7TKL2CBrx2MGTLS5uTJ9WSrn5z5OZoHto.css?delta=1&language=en&theme=default_admin&include=eJxtkGsSwiAMhC9UypE6KUQmShMGQn2cXrQda6t_d7ObL3HCijetEK3PNUHs3UcxkfhSOicZrZMpCSNr6RlmCqAkbIyKxBGyGauq8DK69sAZbjvBE0QJeylL-hPNWFANpISQgR0uJkueINIDO48nqFEH8BOxDVHGBlv03njDwdxgD8aLXCn9qGlo93RbzFJ7R-ZG9VU1E17LUMm-U_26-gk0IoG5 :: :where(*), :is(#extra-specificity-hack, [data-drupal-admin-styles])
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_QpvbzsFrbV7TKL2CBrx2MGTLS5uTJ9WSrn5z5OZoHto.css?delta=1&language=en&theme=default_admin&include=eJxlj1sSwiAMRTdUypI6KSATTRMGQq2uXtSOffh7bm5y4oQ1LFqBrM81AfXuRwwh30rnJAfrZErCgbX0DDNGUBQ2RkVohGzGqir8HV33wBWWA_AIJPGIsqR9lSVPQPgMnQ8XqKQD-AnZRpKx-RR9NKV4CjefU_CWU0x_NA1NudtqFtvHmZvPbtWM4V6GivbT6tfTL0-Qdp8 :: ul
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_QpvbzsFrbV7TKL2CBrx2MGTLS5uTJ9WSrn5z5OZoHto.css?delta=1&language=en&theme=default_admin&include=eJxlj1sSwiAMRTdUypI6KSATTRMGQq2uXtSOffh7bm5y4oQ1LFqBrM81AfXuRwwh30rnJAfrZErCgbX0DDNGUBQ2RkVohGzGqir8HV33wBWWA_AIJPGIsqR9lSVPQPgMnQ8XqKQD-AnZRpKx-RR9NKV4CjefU_CWU0x_NA1NudtqFtvHmZvPbtWM4V6GivbT6tfTL0-Qdp8 :: *
+- http://drupal-git.ddev.site:8080/sites/default/files/css/css_QpvbzsFrbV7TKL2CBrx2MGTLS5uTJ9WSrn5z5OZoHto.css?delta=1&language=en&theme=default_admin&include=eJxlj1sSwiAMRTdUypI6KSATTRMGQq2uXtSOffh7bm5y4oQ1LFqBrM81AfXuRwwh30rnJAfrZErCgbX0DDNGUBQ2RkVohGzGqir8HV33wBWWA_AIJPGIsqR9lSVPQPgMnQ8XqKQD-AnZRpKx-RR9NKV4CjefU_CWU0x_NA1NudtqFtvHmZvPbtWM4V6GivbT6tfTL0-Qdp8 :: :where(*), :is(#extra-specificity-hack, [data-drupal-admin-styles])
 
 ## Candidate Theme Source Matches (default_admin)
 - No direct selector match found under core/themes/default_admin/css
@@ -33,7 +33,6 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 - core/drupal.ajax
 - core/drupal.dialog
 - core/drupal.dropbutton
-- core/drupal.reset-appearance
 - core/normalize
 - default_admin/global-styling
 - default_admin/navigation
@@ -58,14 +57,14 @@ No high-confidence automatic patch suggestion for this diff.
    - Text sample: Duplicate Disable Delete
 
 ```html
-<ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 524.609px;"> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/comment/duplicate" data-drupal-selector="views-listing-comment">Duplicate</a></li> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/comment/disable?token=DLUyqjYYE1W0Up4IjB5LyE2gqolqFmey6kFGk6Edx6A" class="use-ajax" data-drupal-selector="views-listing-comment" data-once="ajax">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/comment/delete?destination=/admin/structure/views" aria-label="Delete Comments" class="use-ajax" data
+<ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 524.609px;"> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/comment/duplicate" data-drupal-selector="views-listing-comment">Duplicate</a></li> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/comment/disable?token=y0A019OvFVDG9CKHfzKbMUIscFEMfhuCdDP4PA3IbAs" class="use-ajax" data-drupal-selector="views-listing-comment" data-once="ajax">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/comment/delete?destination=/admin/structure/views" aria-label="Delete Comments" class="use-ajax" data
 ```
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
    - Text sample: Duplicate Disable Delete
 
 ```html
-<ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 435.609px;"> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/duplicate" data-drupal-selector="views-listing-content">Duplicate</a></li> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/disable?token=PysIpfUhFewtj1RNmbz5_hnZx3d5NP9r6QmkLS_fvH0" class="use-ajax" data-drupal-selector="views-listing-content" data-once="ajax">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/delete?destination=/admin/structure/views" aria-label="Delete Content" class="use-ajax" data-
+<ul class="dropbutton__items" style="position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 435.609px;"> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/duplicate" data-drupal-selector="views-listing-content">Duplicate</a></li> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/disable?token=FLDmmWEoqu_M3FdLNTlBfhCV1YODcwGzLudnDxg6v_U" class="use-ajax" data-drupal-selector="views-listing-content" data-once="ajax">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/delete?destination=/admin/structure/views" aria-label="Delete Content" class="use-ajax" data-
 ```
 
 ### Drupal 12 with Admin Theme
@@ -73,14 +72,14 @@ No high-confidence automatic patch suggestion for this diff.
    - Text sample: Duplicate Disable Delete
 
 ```html
-<ul class="dropbutton__items" style="position: fixed; left: auto; right: 76.0156px; top: 438.594px;"> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/duplicate" data-drupal-selector="views-listing-content">Duplicate</a></li> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/disable?token=6_eEuWaeNJazM4uUzlXp4STC26V1GaQGJ46bAGeo7gk" class="use-ajax" data-drupal-selector="views-listing-content" data-once="ajax">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/delete?destination=/admin/structure/views" aria-label="Delete Content" class="use-ajax" data-dialog-type="modal" dat
+<ul class="dropbutton__items" style="position: fixed; left: auto; right: 76.0156px; top: 438.594px;"> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/duplicate" data-drupal-selector="views-listing-content">Duplicate</a></li> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/disable?token=lCZKc_kPFyd-B8qMPr77oUQW_XtbuY6vjyOKXtyBK6E" class="use-ajax" data-drupal-selector="views-listing-content" data-once="ajax">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/content/delete?destination=/admin/structure/views" aria-label="Delete Content" class="use-ajax" data-dialog-type="modal" dat
 ```
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]`
    - Text sample: Duplicate Disable Delete
 
 ```html
-<ul class="dropbutton__items" style="position: fixed; left: auto; right: 76.0156px; top: 503.594px;"> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/block_content/duplicate" data-drupal-selector="views-listing-block_content">Duplicate</a></li> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/block_content/disable?token=KH0A9frNb20jh3bqXzWJdrJyCIOMhpejcPXdxK9qcr0" class="use-ajax" data-drupal-selector="views-listing-block_content" data-once="ajax">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/block_content/delete?destination=/admin/structure/views" aria-label="Delete Content blocks" class="u
+<ul class="dropbutton__items" style="position: fixed; left: auto; right: 76.0156px; top: 503.594px;"> <li class="duplicate dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/block_content/duplicate" data-drupal-selector="views-listing-block_content">Duplicate</a></li> <li class="disable dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/block_content/disable?token=a8Y2KBER_sSiuCAnEGrymOh7BoNr44UVeSgaFokW580" class="use-ajax" data-drupal-selector="views-listing-block_content" data-once="ajax">Disable</a></li> <li class="delete dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/views/view/block_content/delete?destination=/admin/structure/views" aria-label="Delete Content blocks" class="u
 ```
 
 ## Notes
