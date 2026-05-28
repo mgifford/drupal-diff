@@ -1,0 +1,47 @@
+[
+  {
+    "route": "/admin/content",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "no-modal-trigger-found"
+    ]
+  },
+  {
+    "route": "/admin/structure",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "no-modal-trigger-found"
+    ]
+  },
+  {
+    "route": "/admin/appearance",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "no-modal-trigger-found"
+    ]
+  },
+  {
+    "route": "/admin/config",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "no-modal-trigger-found"
+    ]
+  },
+  {
+    "route": "/admin/people",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "no-modal-trigger-found"
+    ]
+  }
+]

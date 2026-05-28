@@ -8,6 +8,7 @@ SHARED_SCREENSHOTS_DIR="$ROOT_DIR/screenshots"
 SHARED_REPORT_DIR="$ROOT_DIR/report"
 INTERACTION_SCRIPT="$ROOT_DIR/src/capture-admin-interactions.sh"
 ISSUE_EXPORT_SCRIPT="$ROOT_DIR/src/export-issue-report.sh"
+ADDON_OVERRIDE_SCRIPT="$ROOT_DIR/src/apply-vrt-addon-overrides.sh"
 MODE="${1:-normal}"
 RUN_LABEL="${2:-manual}"
 REFRESH_BASELINE="${3:-false}"
@@ -37,6 +38,41 @@ BASELINE_REV="$(git -C "$BASELINE_DIR" rev-parse --short HEAD 2>/dev/null || ech
 CANDIDATE_REV="$(git -C "$CANDIDATE_DIR" rev-parse --short HEAD 2>/dev/null || echo n/a)"
 BASELINE_THEME="$(cd "$BASELINE_DIR" && ddev mysql -Nse "select data from config where name='system.theme';" 2>/dev/null | sed -n "s/.*s:5:\"admin\";s:[0-9]*:\"\([a-z0-9_\-]*\)\".*/\1/p" | head -n1)"
 CANDIDATE_THEME="$(cd "$CANDIDATE_DIR" && ddev mysql -Nse "select data from config where name='system.theme';" 2>/dev/null | sed -n "s/.*s:5:\"admin\";s:[0-9]*:\"\([a-z0-9_\-]*\)\".*/\1/p" | head -n1)"
+
+build_projects_args() {
+  local mode="$1"
+  local color_mode="$2"
+  local -a args=()
+
+  if [[ "$mode" == "normal" ]]; then
+    case "$color_mode" in
+      light)
+        args+=(--project=narrow --project=wide)
+        ;;
+      dark)
+        args+=(--project=narrow-dark --project=wide-dark)
+        ;;
+      both)
+        args+=(--project=narrow --project=wide --project=narrow-dark --project=wide-dark)
+        ;;
+    esac
+  else
+    case "$color_mode" in
+      light)
+        args+=(--project=narrow --project=mid --project=wide --project=rtl-narrow --project=rtl-mid --project=rtl-wide)
+        ;;
+      dark)
+        args+=(--project=narrow-dark --project=mid-dark --project=wide-dark --project=rtl-narrow-dark --project=rtl-mid-dark --project=rtl-wide-dark)
+        ;;
+      both)
+        ;;
+    esac
+  fi
+
+  printf '%s\n' "${args[@]}"
+}
+
+mapfile -t PROJECT_ARGS < <(build_projects_args "$MODE" "$COLOR_MODE")
 
 mkdir -p "$RUN_REPORT_DIR" "$RUN_SCREENSHOT_DIR"
 
@@ -71,6 +107,11 @@ fi
 (cd "$BASELINE_DIR" && ddev restart >/dev/null)
 (cd "$CANDIDATE_DIR" && ddev restart >/dev/null)
 
+if [[ -x "$ADDON_OVERRIDE_SCRIPT" ]]; then
+  echo "[2.5/7] Applying tracked VRT add-on overrides"
+  "$ADDON_OVERRIDE_SCRIPT"
+fi
+
 echo "[3/7] Installing Node/Playwright dependencies in both projects"
 (cd "$BASELINE_DIR" && ddev exec -d /var/www/html/.ddev/drupal-admin-vrt npm install >/dev/null)
 (cd "$BASELINE_DIR" && ddev exec -d /var/www/html/.ddev/drupal-admin-vrt npx playwright install --with-deps chromium >/dev/null)
@@ -79,7 +120,11 @@ echo "[3/7] Installing Node/Playwright dependencies in both projects"
 
 if [[ "$REFRESH_BASELINE" == "true" ]] || [[ ! -d "$BASELINE_DIR/__screenshots__" ]] || [[ -z "$(find "$BASELINE_DIR/__screenshots__" -name '*.png' -print -quit 2>/dev/null)" ]]; then
   echo "[4/7] Capturing baseline screenshots (Drupal 11 + Gin)"
-  (cd "$BASELINE_DIR" && TZ=UTC LANG=C.UTF-8 LC_ALL=C.UTF-8 DRUPAL_ADMIN_USER=admin DRUPAL_ADMIN_PASS=adminadminadmin ddev vrt-update "$MODE_FLAG")
+  if [[ ${#PROJECT_ARGS[@]} -gt 0 ]]; then
+    (cd "$BASELINE_DIR" && TZ=UTC LANG=C.UTF-8 LC_ALL=C.UTF-8 DRUPAL_ADMIN_USER=admin DRUPAL_ADMIN_PASS=adminadminadmin ddev vrt-update "${PROJECT_ARGS[@]}")
+  else
+    (cd "$BASELINE_DIR" && TZ=UTC LANG=C.UTF-8 LC_ALL=C.UTF-8 DRUPAL_ADMIN_USER=admin DRUPAL_ADMIN_PASS=adminadminadmin ddev vrt-update "$MODE_FLAG")
+  fi
 else
   echo "[4/7] Using existing baseline screenshots (set refresh-baseline=true to regenerate)"
 fi
@@ -94,7 +139,11 @@ rsync -a --delete "$RUN_SCREENSHOT_DIR/baseline/" "$CANDIDATE_DIR/__screenshots_
 
 echo "[6/7] Running candidate comparison (Drupal 12 core admin)"
 set +e
-(cd "$CANDIDATE_DIR" && TZ=UTC LANG=C.UTF-8 LC_ALL=C.UTF-8 DRUPAL_ADMIN_USER=admin DRUPAL_ADMIN_PASS=adminadminadmin ddev vrt "$MODE_FLAG" --no-bail)
+if [[ ${#PROJECT_ARGS[@]} -gt 0 ]]; then
+  (cd "$CANDIDATE_DIR" && TZ=UTC LANG=C.UTF-8 LC_ALL=C.UTF-8 DRUPAL_ADMIN_USER=admin DRUPAL_ADMIN_PASS=adminadminadmin ddev vrt "${PROJECT_ARGS[@]}" --no-bail)
+else
+  (cd "$CANDIDATE_DIR" && TZ=UTC LANG=C.UTF-8 LC_ALL=C.UTF-8 DRUPAL_ADMIN_USER=admin DRUPAL_ADMIN_PASS=adminadminadmin ddev vrt "$MODE_FLAG" --no-bail)
+fi
 VRT_EXIT_CODE=$?
 set -e
 

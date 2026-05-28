@@ -27,10 +27,15 @@ GitHub Pages links:
 - [Pages Home](https://mgifford.github.io/drupal-diff/)
 - [Pages Report Index](https://mgifford.github.io/drupal-diff/report/)
 
-Quick links for the most recent published run (`20260527-160939`):
+Quick links for the most recent published run (`20260527-211449`):
 
-- [Element Compare Dashboard](https://mgifford.github.io/drupal-diff/report/20260527-160939/element-compare/element-compare-dashboard.html)
-- [Bug Drafts Index](report/20260527-160939/element-compare/bug-drafts-index.md)
+- [Element Compare Dashboard](https://mgifford.github.io/drupal-diff/report/20260527-211449/element-compare/element-compare-dashboard.html)
+- [Bug Drafts Index](report/20260527-211449/element-compare/bug-drafts-index.md)
+- [Bug Drafts Grouped by CSS](report/20260527-211449/element-compare/bug-drafts-by-css.md)
+- [Suggested CSS Patches](report/20260527-211449/element-compare/suggested-css-patches.md)
+
+Latest full VRT run links (`20260527-160939`):
+
 - [Issue Summary (Markdown)](report/20260527-160939/issue-3592061-summary.md)
 - [Issue Summary (CSV)](report/20260527-160939/issue-3592061-summary.csv)
 - [Side-by-side VRT Diff Viewer](https://mgifford.github.io/drupal-diff/report/20260527-160939/side-by-side-vrt-diffs.html)
@@ -64,6 +69,7 @@ Optional but recommended:
 - [src/open-latest-side-by-side.sh](src/open-latest-side-by-side.sh): Baseline/Candidate interaction side-by-side viewer
 - [src/generate-element-compare.sh](src/generate-element-compare.sh): Element-level metrics and screenshots dashboard
 - [src/open-latest-element-compare.sh](src/open-latest-element-compare.sh): Generates and opens latest element dashboard + bug drafts
+- [src/apply-vrt-addon-overrides.sh](src/apply-vrt-addon-overrides.sh): Re-applies tracked dark-mode VRT overrides into local Drupal copies
 - [src/export-issue-report.sh](src/export-issue-report.sh): CSV/Markdown issue summary export
 - [src/publish-report-updates.sh](src/publish-report-updates.sh): One-command commit/push of scripts/reports/screenshots
 
@@ -185,6 +191,16 @@ This mode crawls the baseline admin UI, discovers reachable Core admin routes, t
 ./src/open-latest-element-compare.sh
 ```
 
+The VRT viewer now includes both formats for each test case:
+
+1. Diff-only view
+2. Side-by-side baseline vs candidate view
+
+It also includes filters for:
+
+1. Viewport (`narrow`/mobile, `wide`/desktop, `mid`/tablet)
+2. Color mode (`light`, `dark`, `unknown`)
+
 ### E) Seed dummy content only
 
 ```bash
@@ -216,10 +232,11 @@ Important files:
 6. `report/<run-id>/element-compare/bug-drafts-index.md`
 7. `report/<run-id>/element-compare/bug-drafts-by-css.md`
 8. `report/<run-id>/element-compare/bug-drafts/*.md`
-9. `report/<run-id>/core-admin-coverage-summary.md` (when full coverage script is used)
-10. `report/<run-id>/core-admin-route-status.csv` (when full coverage script is used)
-11. `screenshots/<run-id>/interactions/baseline`
-12. `screenshots/<run-id>/interactions/candidate`
+9. `report/<run-id>/element-compare/suggested-css-patches.md`
+10. `report/<run-id>/core-admin-coverage-summary.md` (when full coverage script is used)
+11. `report/<run-id>/core-admin-route-status.csv` (when full coverage script is used)
+12. `screenshots/<run-id>/interactions/baseline`
+13. `screenshots/<run-id>/interactions/candidate`
 
 ## Replication Notes for Other Contributors
 

@@ -1,0 +1,102 @@
+[
+  {
+    "route": "/admin/content",
+    "colorMode": "light",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "no-modal-trigger-found"
+    ]
+  },
+  {
+    "route": "/admin/content",
+    "colorMode": "dark",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "no-modal-trigger-found"
+    ]
+  },
+  {
+    "route": "/admin/structure",
+    "colorMode": "light",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "no-modal-trigger-found"
+    ]
+  },
+  {
+    "route": "/admin/structure",
+    "colorMode": "dark",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "no-modal-trigger-found"
+    ]
+  },
+  {
+    "route": "/admin/appearance",
+    "colorMode": "light",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "no-modal-trigger-found"
+    ]
+  },
+  {
+    "route": "/admin/appearance",
+    "colorMode": "dark",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "no-modal-trigger-found"
+    ]
+  },
+  {
+    "route": "/admin/config",
+    "colorMode": "light",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "no-modal-trigger-found"
+    ]
+  },
+  {
+    "route": "/admin/config",
+    "colorMode": "dark",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "no-modal-trigger-found"
+    ]
+  },
+  {
+    "route": "/admin/people",
+    "colorMode": "light",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "no-modal-trigger-found"
+    ]
+  },
+  {
+    "route": "/admin/people",
+    "colorMode": "dark",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "no-modal-trigger-found"
+    ]
+  }
+]

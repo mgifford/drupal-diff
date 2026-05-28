@@ -231,6 +231,64 @@ function compareStats(base, cand) {
   };
 }
 
+function fmtPx(n) {
+  if (!Number.isFinite(n)) return '0px';
+  return `${Math.round(n * 10) / 10}px`;
+}
+
+function buildPatchSuggestion(row) {
+  const props = [
+    { key: 'fontSize', css: 'font-size', minPct: 5, maxPct: 45 },
+    { key: 'lineHeight', css: 'line-height', minPct: 5, maxPct: 45 },
+    { key: 'paddingY', css: 'padding-block', minPct: 8, maxPct: 60 },
+    { key: 'paddingX', css: 'padding-inline', minPct: 8, maxPct: 60 },
+    { key: 'height', css: 'min-height', minPct: 10, maxPct: 60 },
+  ];
+
+  const declarations = [];
+  let score = 0;
+
+  for (const prop of props) {
+    const baseVal = row.baseline[prop.key];
+    const candVal = row.candidate[prop.key];
+    const deltaPct = pctDiff(baseVal, candVal);
+    const absPct = Math.abs(deltaPct);
+
+    if (!baseVal || !candVal) continue;
+    if (absPct < prop.minPct || absPct > prop.maxPct) continue;
+
+    declarations.push(`${prop.css}: ${fmtPx(baseVal)}; /* current ~${fmtPx(candVal)} */`);
+    score += 1;
+  }
+
+  if (declarations.length === 0) {
+    return null;
+  }
+
+  const cssFiles = row.likelyCssFiles || [];
+  const singleFile = cssFiles.length === 1;
+  const selectorHint = (row.candidateCssSources && row.candidateCssSources[0] && row.candidateCssSources[0].selector) || row.selector;
+
+  if (singleFile) score += 1;
+  if ((row.comparison.significant || 0) <= 2) score += 1;
+  if (row.comparison.countFlagged) score -= 1;
+
+  let confidence = 'low';
+  if (score >= 4) confidence = 'high';
+  else if (score >= 3) confidence = 'medium';
+
+  if (confidence === 'low') {
+    return null;
+  }
+
+  return {
+    confidence,
+    cssFile: cssFiles[0] || 'unknown',
+    selectorHint,
+    declarations,
+  };
+}
+
 function esc(s) {
   return String(s)
     .replace(/&/g, '&amp;')
@@ -304,7 +362,7 @@ function esc(s) {
           }
         }
 
-        rows.push({
+        const row = {
           route: route.label,
           routePath: route.path,
           colorMode: scheme,
@@ -321,7 +379,10 @@ function esc(s) {
           likelyCssFiles: likelyCss,
           baselineShot,
           candidateShot,
-        });
+        };
+
+        row.patchSuggestion = buildPatchSuggestion(row);
+        rows.push(row);
       }
     }
   }
@@ -580,9 +641,11 @@ function esc(s) {
   const bugDraftDir = path.join(outDir, 'bug-drafts');
   fs.mkdirSync(bugDraftDir, { recursive: true });
 
-  const csvLines = ['id,title,route,color_mode,component,selector,baseline_url,candidate_url,key_deltas,likely_css_files,baseline_css_sources,candidate_css_sources,evidence_baseline,evidence_candidate'];
+  const csvLines = ['id,title,route,color_mode,component,selector,baseline_url,candidate_url,key_deltas,likely_css_files,baseline_css_sources,candidate_css_sources,suggested_patch_confidence,suggested_css_selector,suggested_declarations,evidence_baseline,evidence_candidate'];
   const indexLines = ['# Draft Bug Reports', '', `Generated: ${new Date().toISOString()}`, '', `Baseline: ${baselineLabel}`, `Candidate: ${candidateLabel}`, ''];
   const cssBuckets = {};
+  const patchLines = ['# Suggested CSS Patch Ideas', '', `Generated: ${new Date().toISOString()}`, '', 'Only medium/high confidence suggestions are included.', ''];
+  const patchBuckets = {};
 
   let idx = 1;
   for (const row of flagged) {
@@ -603,6 +666,7 @@ function esc(s) {
     const cssList = (row.likelyCssFiles && row.likelyCssFiles.length) ? row.likelyCssFiles : ['unknown'];
     const baselineCssList = cssSourceList(row.baselineCssSources || []);
     const candidateCssList = cssSourceList(row.candidateCssSources || []);
+    const suggestion = row.patchSuggestion;
 
     const body = [
       `# ${title}`,
@@ -628,6 +692,11 @@ function esc(s) {
       '',
       '## Candidate Matched CSS Rules',
       (row.candidateCssSources || []).length ? (row.candidateCssSources || []).map((m) => `- ${m.source} :: ${m.selector}`).join('\n') : '- No matched rules captured',
+      '',
+      '## Suggested CSS Patch (Confidence-Gated)',
+      suggestion
+        ? [`Confidence: **${suggestion.confidence}**`, '', '```css', `${suggestion.selectorHint} {`, ...suggestion.declarations.map((d) => `  ${d}`), '}', '```'].join('\n')
+        : 'No high-confidence automatic patch suggestion for this diff.',
       '',
       '## Evidence',
       `- Baseline element screenshot: ${row.baselineShot}`,
@@ -656,6 +725,9 @@ function esc(s) {
       cssList.join(' | '),
       baselineCssList.join(' | '),
       candidateCssList.join(' | '),
+      suggestion ? suggestion.confidence : '',
+      suggestion ? suggestion.selectorHint : '',
+      suggestion ? suggestion.declarations.join(' | ') : '',
       row.baselineShot,
       row.candidateShot,
     ].map(csvEsc).join(','));
@@ -664,6 +736,16 @@ function esc(s) {
     for (const cssFile of cssList) {
       cssBuckets[cssFile] = cssBuckets[cssFile] || [];
       cssBuckets[cssFile].push({ idx, title, mdName });
+    }
+    if (suggestion) {
+      patchBuckets[suggestion.cssFile] = patchBuckets[suggestion.cssFile] || [];
+      patchBuckets[suggestion.cssFile].push({
+        idx,
+        title,
+        selector: suggestion.selectorHint,
+        confidence: suggestion.confidence,
+        declarations: suggestion.declarations,
+      });
     }
     idx += 1;
   }
@@ -680,6 +762,30 @@ function esc(s) {
     cssIndex.push('');
   }
   fs.writeFileSync(path.join(outDir, 'bug-drafts-by-css.md'), `${cssIndex.join('\n')}\n`);
+
+  for (const cssFile of Object.keys(patchBuckets).sort()) {
+    patchLines.push(`## ${cssFile}`);
+    for (const item of patchBuckets[cssFile]) {
+      patchLines.push(`### ${item.idx}. ${item.title}`);
+      patchLines.push(`Confidence: **${item.confidence}**`);
+      patchLines.push('');
+      patchLines.push('```css');
+      patchLines.push(`${item.selector} {`);
+      for (const decl of item.declarations) {
+        patchLines.push(`  ${decl}`);
+      }
+      patchLines.push('}');
+      patchLines.push('```');
+      patchLines.push('');
+    }
+  }
+
+  if (Object.keys(patchBuckets).length === 0) {
+    patchLines.push('No medium/high confidence patch suggestions were generated for this run.');
+    patchLines.push('');
+  }
+
+  fs.writeFileSync(path.join(outDir, 'suggested-css-patches.md'), `${patchLines.join('\n')}\n`);
   console.log('Generated element compare dashboard');
 })();
 NODE
@@ -696,6 +802,7 @@ ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/element-compare-dashboard.html'" > "
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/element-compare.json'" > "$HOST_OUT_DIR/element-compare.json"
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts-index.md'" > "$HOST_OUT_DIR/bug-drafts-index.md"
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts-by-css.md'" > "$HOST_OUT_DIR/bug-drafts-by-css.md"
+ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/suggested-css-patches.md'" > "$HOST_OUT_DIR/suggested-css-patches.md"
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts.csv'" > "$HOST_OUT_DIR/bug-drafts.csv"
 
 echo "Generated: $HOST_OUT_DIR/element-compare-dashboard.html"
