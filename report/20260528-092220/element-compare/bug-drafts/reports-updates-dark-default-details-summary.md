@@ -4,8 +4,8 @@
 - Text size is significantly smaller: 0.0px vs 16.0px (-100.0%).
 - Component width is significantly narrower: 0.0px vs 449.0px (-100.0%).
 - Component height is significantly shorter: 0.0px vs 56.0px (-100.0%).
-- Vertical padding is significantly (less): 0.0px vs 40.0px (-100.0%).
-- Horizontal padding is significantly (less): 0.0px vs 60.0px (-100.0%).
+- Vertical padding is significantly lower: 0.0px vs 40.0px (-100.0%).
+- Horizontal padding is significantly lower: 0.0px vs 60.0px (-100.0%).
 - Line height is significantly smaller: 0.0px vs 16.0px (-100.0%).
 - Matched element count is different: 1 fewer element(s) (-100.0%).
 

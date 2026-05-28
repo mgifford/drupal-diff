@@ -4,8 +4,8 @@
 - Text size is slightly larger: 14.0px vs 13.0px (+7.7%).
 - Component width is significantly wider: 142.5px vs 0.0px (+100.0%).
 - Component height is significantly taller: 25.0px vs 0.0px (+100.0%).
-- Vertical padding is significantly (more): 20.0px vs 0.0px (+100.0%).
-- Horizontal padding is significantly (more): 23.0px vs 0.0px (+100.0%).
+- Vertical padding is significantly higher: 20.0px vs 0.0px (+100.0%).
+- Horizontal padding is significantly higher: 23.0px vs 0.0px (+100.0%).
 - Line height is noticeably smaller: 16.0px vs 18.0px (-11.1%).
 
 ## Summary

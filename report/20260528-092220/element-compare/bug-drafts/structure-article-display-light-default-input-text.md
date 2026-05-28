@@ -2,8 +2,8 @@
 
 ## Human-Readable Change Summary
 - Text size is significantly smaller: 0.0px vs 16.0px (-100.0%).
-- Vertical padding is significantly (less): 0.0px vs 14.0px (-100.0%).
-- Horizontal padding is significantly (less): 0.0px vs 24.0px (-100.0%).
+- Vertical padding is significantly lower: 0.0px vs 14.0px (-100.0%).
+- Horizontal padding is significantly lower: 0.0px vs 24.0px (-100.0%).
 - Line height is significantly smaller: 0.0px vs 24.0px (-100.0%).
 - Matched element count is different: 5 fewer element(s) (-100.0%).
 

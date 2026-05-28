@@ -2,7 +2,7 @@
 
 ## Human-Readable Change Summary
 - Component width is noticeably narrower: 96.1px vs 110.6px (-13.1%).
-- Horizontal padding is noticeably (less): 26.0px vs 29.0px (-10.3%).
+- Horizontal padding is noticeably lower: 26.0px vs 29.0px (-10.3%).
 
 ## Summary
 Potential CSS regression in **Dropbutton Primary Action Link** on **People Roles** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.

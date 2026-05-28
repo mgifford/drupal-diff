@@ -786,12 +786,12 @@ function summarizeSingleDelta(row, key) {
     return `Line height is ${magnitude} ${trend}: ${candVal.toFixed(1)}px vs ${baseVal.toFixed(1)}px (${metric.delta >= 0 ? '+' : ''}${metric.delta.toFixed(1)}%).`;
   }
   if (key === 'paddingY') {
-    const trend = deltaDirectionWord(metric.delta, 'more', 'less');
-    return `Vertical padding is ${magnitude} (${trend}): ${candVal.toFixed(1)}px vs ${baseVal.toFixed(1)}px (${metric.delta >= 0 ? '+' : ''}${metric.delta.toFixed(1)}%).`;
+    const trend = deltaDirectionWord(metric.delta, 'higher', 'lower');
+    return `Vertical padding is ${magnitude} ${trend}: ${candVal.toFixed(1)}px vs ${baseVal.toFixed(1)}px (${metric.delta >= 0 ? '+' : ''}${metric.delta.toFixed(1)}%).`;
   }
   if (key === 'paddingX') {
-    const trend = deltaDirectionWord(metric.delta, 'more', 'less');
-    return `Horizontal padding is ${magnitude} (${trend}): ${candVal.toFixed(1)}px vs ${baseVal.toFixed(1)}px (${metric.delta >= 0 ? '+' : ''}${metric.delta.toFixed(1)}%).`;
+    const trend = deltaDirectionWord(metric.delta, 'higher', 'lower');
+    return `Horizontal padding is ${magnitude} ${trend}: ${candVal.toFixed(1)}px vs ${baseVal.toFixed(1)}px (${metric.delta >= 0 ? '+' : ''}${metric.delta.toFixed(1)}%).`;
   }
   if (key === 'width') {
     const trend = deltaDirectionWord(metric.delta, 'wider', 'narrower');
@@ -863,8 +863,24 @@ function evidenceMarkdown(title, evidence, elementShotPath, elementShotGitHub, p
   return lines;
 }
 
+async function clearOutputDir(targetDir) {
+  const maxAttempts = 6;
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      fs.rmSync(targetDir, { recursive: true, force: true });
+      return;
+    } catch (err) {
+      const retryable = err && (err.code === 'ENOTEMPTY' || err.code === 'EBUSY');
+      if (!retryable || attempt === maxAttempts) {
+        throw err;
+      }
+      await new Promise((resolve) => setTimeout(resolve, 250));
+    }
+  }
+}
+
 (async () => {
-  fs.rmSync(outDir, { recursive: true, force: true });
+  await clearOutputDir(outDir);
   fs.mkdirSync(path.join(outDir, 'baseline'), { recursive: true });
   fs.mkdirSync(path.join(outDir, 'candidate'), { recursive: true });
   fs.mkdirSync(path.join(outDir, 'baseline-pages'), { recursive: true });

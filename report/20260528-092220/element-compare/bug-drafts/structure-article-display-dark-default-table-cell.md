@@ -3,7 +3,7 @@
 ## Human-Readable Change Summary
 - Component width is significantly wider: 358.4px vs 94.9px (+277.9%).
 - Component height is significantly taller: 61.4px vs 41.8px (+47.0%).
-- Horizontal padding is significantly (more): 32.0px vs 20.0px (+60.0%).
+- Horizontal padding is significantly higher: 32.0px vs 20.0px (+60.0%).
 
 ## Summary
 Potential CSS regression in **Table Body Cell** on **Structure Article Display** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.

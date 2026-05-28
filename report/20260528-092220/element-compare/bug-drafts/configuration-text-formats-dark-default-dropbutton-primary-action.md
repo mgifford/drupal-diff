@@ -1,7 +1,7 @@
 # Admin Theme (dark) Configuration Text Formats - Dropbutton Primary Action Link style regression vs Drupal 11 Gin
 
 ## Human-Readable Change Summary
-- Horizontal padding is noticeably (less): 25.7px vs 31.4px (-18.2%).
+- Horizontal padding is noticeably lower: 25.7px vs 31.4px (-18.2%).
 
 ## Summary
 Potential CSS regression in **Dropbutton Primary Action Link** on **Configuration Text Formats** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.

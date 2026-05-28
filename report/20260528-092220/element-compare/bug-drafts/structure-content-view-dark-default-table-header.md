@@ -1,7 +1,7 @@
 # Admin Theme (dark) Structure Content View - Table Header Cell style regression vs Drupal 11 Gin
 
 ## Human-Readable Change Summary
-- Vertical padding is significantly (more): 24.0px vs 16.0px (+50.0%).
+- Vertical padding is significantly higher: 24.0px vs 16.0px (+50.0%).
 
 ## Summary
 Potential CSS regression in **Table Header Cell** on **Structure Content View** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.

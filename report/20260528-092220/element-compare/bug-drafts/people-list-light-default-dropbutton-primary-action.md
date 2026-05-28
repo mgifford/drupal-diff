@@ -1,7 +1,7 @@
 # Admin Theme (light) People List - Dropbutton Primary Action Link style regression vs Drupal 11 Gin
 
 ## Human-Readable Change Summary
-- Horizontal padding is noticeably (less): 26.0px vs 29.0px (-10.3%).
+- Horizontal padding is noticeably lower: 26.0px vs 29.0px (-10.3%).
 
 ## Summary
 Potential CSS regression in **Dropbutton Primary Action Link** on **People List** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.

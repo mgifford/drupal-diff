@@ -2,7 +2,7 @@
 
 ## Human-Readable Change Summary
 - Component width is significantly wider: 241.0px vs 59.1px (+307.4%).
-- Horizontal padding is significantly (less): 0.0px vs 0.5px (-100.0%).
+- Horizontal padding is significantly lower: 0.0px vs 0.5px (-100.0%).
 
 ## Summary
 Potential CSS regression in **Form Label** on **Content Add Article** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.

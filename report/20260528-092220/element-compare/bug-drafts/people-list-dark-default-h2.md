@@ -4,7 +4,7 @@
 - Text size is significantly larger: 28.0px vs 19.8px (+41.8%).
 - Component width is significantly narrower: 1.0px vs 20.2px (-95.1%).
 - Component height is significantly shorter: 1.0px vs 3.3px (-70.1%).
-- Horizontal padding is significantly (less): 0.0px vs 5.6px (-100.0%).
+- Horizontal padding is significantly lower: 0.0px vs 5.6px (-100.0%).
 - Line height is significantly larger: 36.4px vs 25.7px (+41.8%).
 - Matched element count is different: 5 fewer element(s) (-62.5%).
 
