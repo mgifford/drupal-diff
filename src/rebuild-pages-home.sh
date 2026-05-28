@@ -19,20 +19,41 @@ run_has_valid_data() {
 
 format_run_human_eastern() {
   local run_id="$1"
+  local run_dir="$2"
 
-  python3 - "$run_id" <<'PY'
+  python3 - "$run_id" "$run_dir" <<'PY'
 from datetime import datetime
 from zoneinfo import ZoneInfo
 import sys
+import os
 
 run_id = sys.argv[1]
+run_dir = sys.argv[2]
 tz = ZoneInfo("America/New_York")
 
-try:
-  run_dt = datetime.strptime(run_id, "%Y%m%d-%H%M%S").replace(tzinfo=tz)
-except ValueError:
-  print(run_id)
-  raise SystemExit(0)
+candidate_files = [
+  os.path.join(run_dir, "element-compare", "element-compare-dashboard.html"),
+  os.path.join(run_dir, "element-compare", "bug-drafts-index.html"),
+  os.path.join(run_dir, "element-compare", "bug-drafts-by-css.html"),
+  os.path.join(run_dir, "playwright-report", "index.html"),
+  os.path.join(run_dir, "issue-3592061-summary.html"),
+  os.path.join(run_dir, "issue-3592061-summary.md"),
+  os.path.join(run_dir, "issue-3592061-summary.csv"),
+  os.path.join(run_dir, "side-by-side-vrt-diffs.html"),
+  os.path.join(run_dir, "side-by-side-interactions.html"),
+]
+
+existing_mtimes = [os.path.getmtime(path) for path in candidate_files if os.path.exists(path)]
+
+if existing_mtimes:
+  latest_timestamp = max(existing_mtimes)
+  run_dt = datetime.fromtimestamp(latest_timestamp, tz)
+else:
+  try:
+    run_dt = datetime.strptime(run_id, "%Y%m%d-%H%M%S").replace(tzinfo=tz)
+  except ValueError:
+    print(run_id)
+    raise SystemExit(0)
 
 now = datetime.now(tz)
 delta_seconds = int((now - run_dt).total_seconds())
@@ -104,7 +125,7 @@ if [[ -z "$latest_run" ]]; then
   exit 1
 fi
 
-latest_run_human="$(format_run_human_eastern "$latest_run")"
+latest_run_human="$(format_run_human_eastern "$latest_run" "$REPORT_DIR/$latest_run")"
 
 recent_items=""
 count=0
