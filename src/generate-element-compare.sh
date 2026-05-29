@@ -689,6 +689,67 @@ function legacyDefaultBugDraftFileName(row) {
   return `${routeSlug}-${modeSlug}-${componentSlug}.md`;
 }
 
+function componentLegacyAliasSlugs(row) {
+  const aliases = new Set([
+    slugify(row.componentId || ''),
+    slugify(row.component || ''),
+  ].filter(Boolean));
+  const componentId = slugify(row.componentId || '');
+
+  if (componentId === 'page-title-heading') {
+    ['h1', 'h2', 'page-title', 'title-heading', 'page-heading'].forEach((alias) => aliases.add(alias));
+  } else if (componentId === 'required-marker') {
+    ['required', 'asterisk', 'required-asterisk'].forEach((alias) => aliases.add(alias));
+  } else if (componentId === 'input-text') {
+    ['text-input', 'input', 'form-text'].forEach((alias) => aliases.add(alias));
+  } else if (componentId === 'form-item') {
+    ['form-item-wrapper', 'form-wrapper'].forEach((alias) => aliases.add(alias));
+  } else if (componentId === 'label') {
+    ['form-label'].forEach((alias) => aliases.add(alias));
+  } else if (componentId === 'table-header') {
+    ['table-header-cell', 'th'].forEach((alias) => aliases.add(alias));
+  } else if (componentId === 'table-cell') {
+    ['table-body-cell', 'td'].forEach((alias) => aliases.add(alias));
+  } else if (componentId === 'details-summary') {
+    ['details', 'summary'].forEach((alias) => aliases.add(alias));
+  } else if (componentId === 'dropbutton-wrapper') {
+    ['dropbutton', 'dropbutton-container'].forEach((alias) => aliases.add(alias));
+  } else if (componentId === 'dropbutton-primary-action') {
+    ['dropbutton-primary', 'dropbutton-action'].forEach((alias) => aliases.add(alias));
+  } else if (componentId === 'dropbutton-toggle') {
+    ['dropbutton-secondary-toggle', 'dropbutton-trigger'].forEach((alias) => aliases.add(alias));
+  } else if (componentId === 'dropbutton-secondary-list') {
+    ['dropbutton-list', 'dropbutton-items'].forEach((alias) => aliases.add(alias));
+  } else if (componentId === 'dropbutton-secondary-action') {
+    ['dropbutton-secondary', 'dropbutton-item'].forEach((alias) => aliases.add(alias));
+  } else if (componentId === 'toolbar-structure-toggle') {
+    ['toolbar-structure', 'toolbar-toggle', 'structure-toggle'].forEach((alias) => aliases.add(alias));
+  } else if (componentId === 'contextual-config-trigger') {
+    ['contextual-trigger', 'contextual-config', 'contextual'].forEach((alias) => aliases.add(alias));
+  }
+
+  return [...aliases];
+}
+
+function legacyAliasDraftFileNames(row) {
+  const routeSlug = slugify(row.route || 'route');
+  const modeSlug = slugify(row.colorMode || 'light');
+  const scenarioSlug = slugify(row.scenarioId || row.scenario || 'default');
+  const componentAliases = componentLegacyAliasSlugs(row);
+  const names = new Set();
+
+  for (const componentSlug of componentAliases) {
+    names.add(`${routeSlug}-${modeSlug}-${scenarioSlug}-${componentSlug}.md`);
+    names.add(`${routeSlug}-${scenarioSlug}-${modeSlug}-${componentSlug}.md`);
+    names.add(`${routeSlug}-${modeSlug}-${componentSlug}.md`);
+    if (scenarioSlug === 'default') {
+      names.add(`${routeSlug}-${componentSlug}.md`);
+    }
+  }
+
+  return [...names];
+}
+
 function normalizeSelector(selector) {
   return String(selector || '').replace(/\s+/g, ' ').trim();
 }
@@ -921,6 +982,91 @@ function headingWithAnchor(level, text, options = {}) {
   const className = options.className ? ` class="${esc(options.className)}"` : '';
   const labelText = `Link to \"${text}\" section`;
   return `<h${headingLevel} id="${esc(headingId)}" tabindex="-1"${className}>${esc(text)}<a class="heading-anchor" href="#${esc(headingId)}" aria-label="${esc(labelText)}">Link to \"${esc(text)}\" section</a></h${headingLevel}>`;
+}
+
+function shouldValidateLocalLink(rawTarget) {
+  if (!rawTarget) return false;
+  const value = String(rawTarget).trim();
+  if (!value) return false;
+  if (value.startsWith('#')) return false;
+  if (/^(https?:|mailto:|tel:|javascript:|data:)/i.test(value)) return false;
+  return true;
+}
+
+function normalizeTargetPath(rawTarget) {
+  const value = String(rawTarget || '').trim();
+  return value.split('#')[0].split('?')[0];
+}
+
+function collectHtmlTargets(content) {
+  const targets = [];
+  const attrRegex = /(?:href|src)="([^"]+)"/g;
+  let match;
+  while ((match = attrRegex.exec(content)) !== null) {
+    targets.push(match[1]);
+  }
+  return targets;
+}
+
+function collectMarkdownTargets(content) {
+  const targets = [];
+  const mdLinkRegex = /\[[^\]]+\]\(([^)]+)\)/g;
+  let match;
+  while ((match = mdLinkRegex.exec(content)) !== null) {
+    targets.push(match[1]);
+  }
+  return targets;
+}
+
+function validateGeneratedLocalLinks(rootDir) {
+  const filesToScan = [];
+  const walk = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(fullPath);
+        continue;
+      }
+      if (/\.(html|md)$/i.test(entry.name)) {
+        filesToScan.push(fullPath);
+      }
+    }
+  };
+
+  walk(rootDir);
+
+  const missing = [];
+  let checked = 0;
+
+  for (const filePath of filesToScan) {
+    const content = fs.readFileSync(filePath, 'utf8');
+    const targets = filePath.endsWith('.md') ? collectMarkdownTargets(content) : collectHtmlTargets(content);
+    for (const rawTarget of targets) {
+      if (!shouldValidateLocalLink(rawTarget)) {
+        continue;
+      }
+      const normalized = normalizeTargetPath(rawTarget);
+      if (!normalized) {
+        continue;
+      }
+
+      checked += 1;
+      const resolved = path.resolve(path.dirname(filePath), normalized);
+      if (!fs.existsSync(resolved)) {
+        missing.push({
+          source: path.relative(rootDir, filePath),
+          target: rawTarget,
+          resolved: path.relative(rootDir, resolved),
+        });
+      }
+    }
+  }
+
+  return {
+    scannedFiles: filesToScan.length,
+    checkedTargets: checked,
+    missing,
+  };
 }
 
 function compactDomEvidence(measures) {
@@ -1278,6 +1424,7 @@ async function clearOutputDir(targetDir) {
   const draftNameByGroupKey = new Map(consolidatedIssues.map((issue) => [issue.key, issue.mdName]));
   const draftHtmlByGroupKey = new Map(consolidatedIssues.map((issue) => [issue.key, issue.htmlName]));
   const expectedDraftNames = new Set(consolidatedIssues.map((issue) => issue.mdName));
+  const legacyAliasTargetByName = new Map();
 
   const rowHtml = rows.map((row) => {
     const sig = row.comparison.significant;
@@ -1923,19 +2070,24 @@ async function clearOutputDir(targetDir) {
     fs.writeFileSync(htmlPath, renderedHtml);
 
     const legacyMdNames = new Set();
-    const primaryLegacyDefault = legacyDefaultBugDraftFileName(row);
-    if (primaryLegacyDefault) {
-      legacyMdNames.add(primaryLegacyDefault);
-    }
-    if (issue.modes.length > 1) {
-      const alternateModeRow = issue.rows.find((modeRow) => String(modeRow.colorMode || '').toLowerCase() !== String(row.colorMode || '').toLowerCase());
-      if (alternateModeRow) {
-        legacyMdNames.add(bugDraftFileName(alternateModeRow));
+    for (const modeRow of issue.rows) {
+      legacyAliasDraftFileNames(modeRow).forEach((name) => legacyMdNames.add(name));
+      const legacyDefaultName = legacyDefaultBugDraftFileName(modeRow);
+      if (legacyDefaultName) {
+        legacyMdNames.add(legacyDefaultName);
       }
+      legacyMdNames.add(bugDraftFileName(modeRow));
     }
 
     legacyMdNames.delete(mdName);
     for (const legacyMdName of legacyMdNames) {
+      if (!legacyMdName || expectedDraftNames.has(legacyMdName)) {
+        continue;
+      }
+      if (legacyAliasTargetByName.has(legacyMdName) && legacyAliasTargetByName.get(legacyMdName) !== mdName) {
+        continue;
+      }
+      legacyAliasTargetByName.set(legacyMdName, mdName);
       const legacyHtmlName = legacyMdName.replace(/\.md$/i, '.html');
       const legacyMdPath = path.join(bugDraftDir, legacyMdName);
       const legacyHtmlPath = path.join(bugDraftDir, legacyHtmlName);
@@ -2393,6 +2545,22 @@ async function clearOutputDir(targetDir) {
   }
 
   fs.writeFileSync(path.join(outDir, 'suggested-css-patches.md'), `${patchLines.join('\n')}\n`);
+
+  const linkValidation = validateGeneratedLocalLinks(outDir);
+  fs.writeFileSync(
+    path.join(outDir, 'link-check-report.json'),
+    `${JSON.stringify({
+      generatedAt: new Date().toISOString(),
+      scannedFiles: linkValidation.scannedFiles,
+      checkedTargets: linkValidation.checkedTargets,
+      brokenLinks: linkValidation.missing.length,
+      missing: linkValidation.missing,
+    }, null, 2)}\n`,
+  );
+  if (linkValidation.missing.length) {
+    throw new Error(`Link validation failed: ${linkValidation.missing.length} broken local links found. See link-check-report.json`);
+  }
+
   console.log('Generated element compare dashboard');
 })();
 NODE
@@ -2412,6 +2580,7 @@ ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts-by-css.html'" > "$TMP_HOS
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts-by-css.md'" > "$TMP_HOST_OUT_DIR/bug-drafts-by-css.md"
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/suggested-css-patches.md'" > "$TMP_HOST_OUT_DIR/suggested-css-patches.md"
 ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/bug-drafts.csv'" > "$TMP_HOST_OUT_DIR/bug-drafts.csv"
+ddev exec bash -lc "cat '$CONTAINER_OUT_DIR/link-check-report.json'" > "$TMP_HOST_OUT_DIR/link-check-report.json"
 
 rm -rf "$HOST_OUT_DIR"
 mv "$TMP_HOST_OUT_DIR" "$HOST_OUT_DIR"
