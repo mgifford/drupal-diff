@@ -29,7 +29,7 @@ mkdir -p "$TMP_HOST_OUT_DIR"
 
 cd "$ROOT_DIR/drupal-git"
 
-ddev exec -d /var/www/html/.ddev/drupal-admin-vrt env \
+ddev exec --dir /var/www/html/.ddev/drupal-admin-vrt env \
   BASELINE_URL="http://drupal-11.3.10.ddev.site" \
   CANDIDATE_URL="http://drupal-git.ddev.site:8080" \
   BASELINE_REPORT_URL="${BASELINE_REPORT_URL:-http://drupal-11.3.10.ddev.site}" \
@@ -772,6 +772,79 @@ function fmtPx(n) {
   return `${Math.round(n * 10) / 10}px`;
 }
 
+function clamp(n, min, max) {
+  return Math.min(max, Math.max(min, n));
+}
+
+function triageLevel(score) {
+  if (score >= 75) return 'high';
+  if (score >= 52) return 'medium';
+  return 'low';
+}
+
+function componentImpactWeight(component) {
+  const value = String(component || '').toLowerCase();
+  if (!value) return 12;
+  if (value.includes('button') || value.includes('input') || value.includes('field') || value.includes('link')) return 28;
+  if (value.includes('title') || value.includes('heading') || value.includes('menu') || value.includes('nav')) return 24;
+  if (value.includes('table') || value.includes('list') || value.includes('content')) return 20;
+  if (value.includes('icon') || value.includes('badge') || value.includes('label')) return 16;
+  return 14;
+}
+
+function triageMetadata(row) {
+  const comparison = row.comparison || { deltas: [], significant: 0, countDeltaPct: 0 };
+  const deltas = comparison.deltas || [];
+  const maxAbsDelta = deltas.reduce((max, d) => Math.max(max, Math.abs(Number(d.abs) || 0)), 0);
+  const significant = Number(comparison.significant) || 0;
+
+  const impactScore = clamp(
+    componentImpactWeight(row.component)
+      + (significant * 10)
+      + Math.min(maxAbsDelta, 90) * 0.33
+      + (Math.abs(Number(comparison.countDeltaPct) || 0) >= 30 ? 8 : 0),
+    0,
+    100,
+  );
+
+  const hasBothSamples = (row.baseline && row.baseline.count > 0) && (row.candidate && row.candidate.count > 0);
+  const hasSingleSample = (row.baseline && row.baseline.count > 0) || (row.candidate && row.candidate.count > 0);
+  const selectorComplexityPenalty = /[>,+~]/.test(String(row.selector || '')) ? 10 : 0;
+  const reproducibilityScore = clamp(
+    (hasBothSamples ? 66 : hasSingleSample ? 40 : 20)
+      + (row.scenarioId === 'default' ? 12 : 6)
+      + (row.mode === 'light' || row.mode === 'dark' ? 8 : 4)
+      - selectorComplexityPenalty,
+    0,
+    100,
+  );
+
+  const knownCssFiles = (row.likelyCssFiles || []).filter((file) => file && file !== 'unknown').length;
+  const patchConfidence = row.patchSuggestion && row.patchSuggestion.confidence;
+  const fixabilityScore = clamp(
+    20
+      + (knownCssFiles > 0 ? 30 : 0)
+      + (knownCssFiles > 1 ? -6 : 0)
+      + (patchConfidence === 'high' ? 44 : patchConfidence === 'medium' ? 30 : 0)
+      + ((row.candidateThemeMatches || []).length ? 8 : 0),
+    0,
+    100,
+  );
+
+  const actionableBase = (impactScore * 0.45) + (reproducibilityScore * 0.2) + (fixabilityScore * 0.35);
+  const actionableScore = clamp(Math.round(actionableBase + (significant > 0 ? 0 : -12)), 0, 100);
+  return {
+    impactScore,
+    impactLevel: triageLevel(impactScore),
+    reproducibilityScore,
+    reproducibilityLevel: triageLevel(reproducibilityScore),
+    fixabilityScore,
+    fixabilityLevel: triageLevel(fixabilityScore),
+    actionableScore,
+    actionableLevel: triageLevel(actionableScore),
+  };
+}
+
 function buildPatchSuggestion(row) {
   const props = [
     { key: 'fontSize', css: 'font-size', minPct: 5, maxPct: 45 },
@@ -832,6 +905,22 @@ function esc(s) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
+}
+
+function headingSlug(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .replace(/-{2,}/g, '-');
+}
+
+function headingWithAnchor(level, text, options = {}) {
+  const headingLevel = Math.min(6, Math.max(1, Number(level) || 2));
+  const headingId = options.id || headingSlug(text) || `section-${headingLevel}`;
+  const className = options.className ? ` class="${esc(options.className)}"` : '';
+  const labelText = `Link to \"${text}\" section`;
+  return `<h${headingLevel} id="${esc(headingId)}" tabindex="-1"${className}>${esc(text)}<a class="heading-anchor" href="#${esc(headingId)}" aria-label="${esc(labelText)}">Link to \"${esc(text)}\" section</a></h${headingLevel}>`;
 }
 
 function compactDomEvidence(measures) {
@@ -1193,6 +1282,7 @@ async function clearOutputDir(targetDir) {
   const rowHtml = rows.map((row) => {
     const sig = row.comparison.significant;
     const className = sig > 0 ? 'flagged' : '';
+    const triage = triageMetadata(row);
     const draftMdName = sig > 0 ? (draftNameByGroupKey.get(issueGroupKey(row)) || bugDraftFileName(row)) : '';
     const draftHtmlName = sig > 0 ? (draftHtmlByGroupKey.get(issueGroupKey(row)) || bugDraftHtmlFileName(row)) : '';
     const draftLegacyMdName = sig > 0 ? legacyDefaultBugDraftFileName(row) : '';
@@ -1217,11 +1307,12 @@ async function clearOutputDir(targetDir) {
     const candidateEvidence = evidenceBlockHtml('Candidate', row.candidateDomEvidence || []);
 
     return `
-      <tr class="${className}" data-route="${esc(row.route)}" data-component="${esc(row.component)}" data-significant="${sig > 0 ? 'yes' : 'no'}" data-css="${esc(cssKey)}" data-mode="${esc(row.colorMode)}">
+      <tr class="${className}" data-route="${esc(row.route)}" data-component="${esc(row.component)}" data-significant="${sig > 0 ? 'yes' : 'no'}" data-css="${esc(cssKey)}" data-mode="${esc(row.colorMode)}" data-impact="${esc(triage.impactLevel)}" data-repro="${esc(triage.reproducibilityLevel)}" data-fix="${esc(triage.fixabilityLevel)}" data-actionable="${triage.actionableScore}">
         <td>
           <div><strong>${esc(row.route)}</strong></div>
           <div class="meta"><strong>Scenario:</strong> ${esc(row.scenario || 'Default')}</div>
           <div class="meta"><strong>Mode:</strong> ${esc(row.colorMode)}</div>
+          <div class="meta"><strong>Triage:</strong> Impact ${esc(triage.impactLevel.toUpperCase())} (${triage.impactScore}) | Repeatability ${esc(triage.reproducibilityLevel.toUpperCase())} (${triage.reproducibilityScore}) | Fixability ${esc(triage.fixabilityLevel.toUpperCase())} (${triage.fixabilityScore}) | Actionability ${triage.actionableScore}</div>
           <div>${esc(row.component)}</div>
           <div class="meta"><a href="${esc(row.baselineUrl)}" target="_blank" rel="noopener">${esc(baselineLabel)} URL</a></div>
           <div class="meta"><a href="${esc(row.candidateUrl)}" target="_blank" rel="noopener">${esc(candidateLabel)} URL</a></div>
@@ -1254,6 +1345,7 @@ async function clearOutputDir(targetDir) {
         </td>
         <td>
           ${diffs.length ? `<div>${diffs.map(esc).join('<br/>')}</div>` : '<div>No major delta</div>'}
+          <div class="meta"><strong>Issue candidate:</strong> ${sig > 0 && triage.impactLevel === 'high' && triage.reproducibilityLevel === 'high' && (triage.fixabilityLevel === 'high' || triage.fixabilityLevel === 'medium') ? 'Likely yes' : 'Needs more review'}</div>
         </td>
       </tr>`;
   }).join('');
@@ -1278,7 +1370,7 @@ async function clearOutputDir(targetDir) {
   header { position: sticky; top: 0; background: #102a43; color: #fff; padding: 12px 16px; z-index: 10; }
   .sub { font-size: 13px; opacity: 0.9; }
   main { padding: 16px; }
-  .controls { display: grid; grid-template-columns: repeat(7, minmax(140px, 1fr)); gap: 8px; margin-bottom: 14px; }
+  .controls { display: grid; grid-template-columns: repeat(10, minmax(140px, 1fr)); gap: 8px; margin-bottom: 14px; }
   select, input { padding: 8px; border: 1px solid #bcccdc; border-radius: 6px; }
   table { width: 100%; border-collapse: collapse; background: #fff; }
   th, td { border: 1px solid #d9e2ec; padding: 8px; vertical-align: top; }
@@ -1319,6 +1411,7 @@ async function clearOutputDir(targetDir) {
 
   <section>
     <h2>Detailed Element Comparison</h2>
+    <div class="meta" style="margin-bottom:8px;">Tip: choose <strong>Issue candidates</strong> to focus on high-impact, easy-to-repeat, likely-fixable regressions.</div>
     <div class="controls">
       <input id="textFilter" placeholder="Search route/component/selector" />
       <select id="routeFilter"><option value="">All routes</option></select>
@@ -1329,11 +1422,21 @@ async function clearOutputDir(targetDir) {
       </select>
       <select id="modeFilter"><option value="">All modes</option></select>
       <select id="cssFilter"><option value="">All CSS files</option></select>
+      <select id="triagePreset">
+        <option value="">All triage presets</option>
+        <option value="issue-candidate">Issue candidates (high impact + easy repeat + fixable)</option>
+        <option value="quick-win">Quick wins (fixability high + repeatability high)</option>
+        <option value="high-impact">High impact only</option>
+      </select>
+      <select id="impactFilter"><option value="">All impact levels</option></select>
+      <select id="reproFilter"><option value="">All repeatability levels</option></select>
+      <select id="fixFilter"><option value="">All fixability levels</option></select>
       <select id="sortOrder">
         <option value="route">Sort: Route</option>
         <option value="component">Sort: Component</option>
         <option value="css">Sort: CSS source</option>
         <option value="flagged">Sort: Flagged first</option>
+        <option value="actionable">Sort: Triage score (high to low)</option>
       </select>
     </div>
 
@@ -1360,6 +1463,10 @@ async function clearOutputDir(targetDir) {
   const signalFilter = document.getElementById('signalFilter');
   const modeFilter = document.getElementById('modeFilter');
   const cssFilter = document.getElementById('cssFilter');
+  const triagePreset = document.getElementById('triagePreset');
+  const impactFilter = document.getElementById('impactFilter');
+  const reproFilter = document.getElementById('reproFilter');
+  const fixFilter = document.getElementById('fixFilter');
   const sortOrder = document.getElementById('sortOrder');
   const textFilter = document.getElementById('textFilter');
 
@@ -1367,6 +1474,7 @@ async function clearOutputDir(targetDir) {
   const components = [...new Set(rows.map(r => r.dataset.component))].sort();
   const modes = [...new Set(rows.map(r => r.dataset.mode || 'light'))].sort();
   const cssSources = [...new Set(rows.map(r => r.dataset.css || 'unknown'))].sort();
+  const triageLevels = ['high', 'medium', 'low'];
 
   for (const r of routes) {
     const opt = document.createElement('option');
@@ -1388,13 +1496,31 @@ async function clearOutputDir(targetDir) {
     opt.value = css; opt.textContent = css;
     cssFilter.appendChild(opt);
   }
+  for (const level of triageLevels) {
+    const impactOpt = document.createElement('option');
+    impactOpt.value = level;
+    impactOpt.textContent = level.toUpperCase();
+    impactFilter.appendChild(impactOpt);
+
+    const reproOpt = document.createElement('option');
+    reproOpt.value = level;
+    reproOpt.textContent = level.toUpperCase();
+    reproFilter.appendChild(reproOpt);
+
+    const fixOpt = document.createElement('option');
+    fixOpt.value = level;
+    fixOpt.textContent = level.toUpperCase();
+    fixFilter.appendChild(fixOpt);
+  }
 
   function sortRows(order) {
     const get = (r, key) => (r.dataset[key] || '').toLowerCase();
+    const getNum = (r, key) => Number(r.dataset[key] || 0);
     const sorted = [...rows].sort((a, b) => {
       if (order === 'component') return get(a, 'component').localeCompare(get(b, 'component'));
       if (order === 'css') return get(a, 'css').localeCompare(get(b, 'css'));
       if (order === 'flagged') return get(b, 'significant').localeCompare(get(a, 'significant'));
+      if (order === 'actionable') return getNum(b, 'actionable') - getNum(a, 'actionable');
       return get(a, 'route').localeCompare(get(b, 'route'));
     });
 
@@ -1409,6 +1535,10 @@ async function clearOutputDir(targetDir) {
     const sig = signalFilter.value;
     const mode = modeFilter.value;
     const css = cssFilter.value;
+    const preset = triagePreset.value;
+    const impact = impactFilter.value;
+    const repro = reproFilter.value;
+    const fix = fixFilter.value;
     const txt = textFilter.value.toLowerCase().trim();
 
     for (const row of rows) {
@@ -1417,8 +1547,22 @@ async function clearOutputDir(targetDir) {
       const matchesSig = !sig || row.dataset.significant === sig;
       const matchesMode = !mode || row.dataset.mode === mode;
       const matchesCss = !css || row.dataset.css === css;
+      const matchesImpact = !impact || row.dataset.impact === impact;
+      const matchesRepro = !repro || row.dataset.repro === repro;
+      const matchesFix = !fix || row.dataset.fix === fix;
+
+      let matchesPreset = true;
+      const actionable = Number(row.dataset.actionable || 0);
+      if (preset === 'issue-candidate') {
+        matchesPreset = row.dataset.significant === 'yes' && row.dataset.impact === 'high' && row.dataset.repro === 'high' && row.dataset.fix === 'high' && actionable >= 78;
+      } else if (preset === 'quick-win') {
+        matchesPreset = row.dataset.significant === 'yes' && row.dataset.fix === 'high' && row.dataset.repro === 'high' && actionable >= 72;
+      } else if (preset === 'high-impact') {
+        matchesPreset = row.dataset.significant === 'yes' && row.dataset.impact === 'high' && actionable >= 68;
+      }
+
       const matchesTxt = !txt || row.textContent.toLowerCase().includes(txt);
-      row.style.display = (matchesRoute && matchesComp && matchesSig && matchesMode && matchesCss && matchesTxt) ? '' : 'none';
+      row.style.display = (matchesRoute && matchesComp && matchesSig && matchesMode && matchesCss && matchesImpact && matchesRepro && matchesFix && matchesPreset && matchesTxt) ? '' : 'none';
     }
 
     sortRows(sortOrder.value);
@@ -1429,6 +1573,10 @@ async function clearOutputDir(targetDir) {
   signalFilter.addEventListener('change', applyFilters);
   modeFilter.addEventListener('change', applyFilters);
   cssFilter.addEventListener('change', applyFilters);
+  triagePreset.addEventListener('change', applyFilters);
+  impactFilter.addEventListener('change', applyFilters);
+  reproFilter.addEventListener('change', applyFilters);
+  fixFilter.addEventListener('change', applyFilters);
   sortOrder.addEventListener('change', applyFilters);
   textFilter.addEventListener('input', applyFilters);
   applyFilters();
@@ -1855,6 +2003,8 @@ async function clearOutputDir(targetDir) {
       ? `${suggestion.selectorHint} { ${suggestion.declarations.join(' ')} }`
       : 'No confidence-gated patch suggestion generated.';
     const priority = priorityScoreForIssue(issue, suggestion, cssList);
+    const quickSummary = humanSummaryLines[0] || 'Visual differences were detected between baseline and candidate.';
+    const publishedBugUrl = runId ? `${repoPagesBase}/report/${runId}/element-compare/bug-drafts/${htmlName}` : '';
     htmlIndexRows.push({
       idx,
       title,
@@ -1863,11 +2013,13 @@ async function clearOutputDir(targetDir) {
       colorMode: issue.modeLabel,
       component: row.component,
       localBugUrl: `bug-drafts/${htmlName}`,
+      publishedBugUrl,
       sourceBugUrl,
       cssSummary,
       primaryCssFile: cssList[0] || 'unknown',
       patchSummary,
       deltas: deltas.join(' | ') || 'Significant visual difference observed',
+      quickSummary,
       priorityScore: priority.score,
       priorityLevel: priority.level,
       priorityReasons: priority.reasons,
@@ -1906,26 +2058,31 @@ async function clearOutputDir(targetDir) {
     const sourceLink = item.sourceBugUrl
       ? `<a href="${esc(item.sourceBugUrl)}" target="_blank" rel="noopener">GitHub Source</a>`
       : '<span class="muted">Source n/a</span>';
+    const renderedLocalLink = `<a href="${esc(item.localBugUrl)}" target="_blank" rel="noopener">Rendered Draft (HTML)</a>`;
+    const renderedPublishedLink = item.publishedBugUrl
+      ? `<a href="${esc(item.publishedBugUrl)}" target="_blank" rel="noopener">Published Draft (HTML)</a>`
+      : '';
     const reasonItems = (item.priorityReasons || []).map((reason) => `<li>${esc(reason)}</li>`).join('');
     const caveatItems = (item.priorityCaveats || []).map((caveat) => `<li>${esc(caveat)}</li>`).join('');
     const caveatSection = caveatItems
       ? `<p class="meta"><strong>Review caveats:</strong></p><ul class="priority-reasons muted-list">${caveatItems}</ul>`
       : '';
+    const headingText = `${item.idx}. ${item.title}`;
+    const headingId = `draft-${item.idx}-${headingSlug(item.title).slice(0, 60)}`;
+    const linkParts = [renderedLocalLink, renderedPublishedLink, sourceLink].filter(Boolean);
     return [
       '<li>',
-      `<h2>${item.idx}. ${esc(item.title)}</h2>`,
+      headingWithAnchor(2, headingText, { id: headingId }),
       `<p><strong>Priority:</strong> <span class="priority-badge ${esc(item.priorityLevel)}">${esc(item.priorityLevel.toUpperCase())}</span> <strong>Score:</strong> ${item.priorityScore}</p>`,
       `<p><strong>Route:</strong> ${esc(item.route)} | <strong>Mode:</strong> ${esc(item.colorMode)} | <strong>Component:</strong> ${esc(item.component)}</p>`,
+      `<p><strong>Quick Summary:</strong> ${esc(item.quickSummary || 'Visual differences were detected between baseline and candidate.')}</p>`,
       `<p><strong>Deltas:</strong> ${esc(item.deltas)}</p>`,
       `<p><strong>Likely CSS:</strong> ${esc(item.cssSummary)}</p>`,
       '<p><strong>Why prioritized:</strong></p>',
       `<ul class="priority-reasons">${reasonItems || '<li>No specific prioritization reason captured.</li>'}</ul>`,
       caveatSection,
       `<pre>${esc(item.patchSummary)}</pre>`,
-      '<p class="links">',
-      `<a href="${esc(item.localBugUrl)}" target="_blank" rel="noopener">Rendered Draft (HTML)</a>`,
-      sourceLink,
-      '</p>',
+      `<p class="links">${linkParts.join(' <span aria-hidden="true">|</span> ')}</p>`,
       '</li>',
     ].join('');
   }).join('\n');
@@ -2012,27 +2169,31 @@ async function clearOutputDir(targetDir) {
   .cluster-list li { margin: 0.35rem 0; border: 0; padding: 0; }
   .family-samples { margin-top: 0.3rem; }
   .family-samples li { border: 0; padding: 0; margin: 0.2rem 0; }
+  .heading-anchor { margin-left: 0.45rem; font-size: 0.8em; font-weight: 500; text-decoration: none; opacity: 0.78; }
+  .heading-anchor:hover, .heading-anchor:focus { text-decoration: underline; opacity: 1; }
+  :target { scroll-margin-top: 1rem; }
+  h1:focus, h2:focus { outline: 3px solid #005fcc; outline-offset: 2px; scroll-margin-top: 1rem; }
 </style>
 </head>
 <body>
-  <h1>Draft Bug Reports</h1>
+  ${headingWithAnchor(1, 'Draft Bug Reports')}
   <p class="meta">Generated: ${esc(new Date().toISOString())}</p>
   <p class="meta">Baseline: ${esc(baselineLabel)} | Candidate: ${esc(candidateLabel)}${runId ? ` | Run: ${esc(runId)}` : ''}</p>
   <p>This list is sorted by impact to help triage what to review first: commonly found issues, easily visible changes, and drafts with potential patch suggestions.</p>
-  <h2 class="section-title">Signal Families (Top Repeated Patterns)</h2>
+  ${headingWithAnchor(2, 'Signal Families (Top Repeated Patterns)', { className: 'section-title' })}
   <ul class="cluster-list">
     ${signalFamilyRows || '<li>No repeated issue families found for this run.</li>'}
   </ul>
-  <h2 class="section-title">Common Issue Clusters (By Component)</h2>
+  ${headingWithAnchor(2, 'Common Issue Clusters (By Component)', { className: 'section-title' })}
   <ul class="cluster-list">
     ${componentClusterRows || '<li>No component clusters found for this run.</li>'}
   </ul>
   <p>Use <strong>GitHub Source</strong> to inspect the draft markdown in the repository and <strong>Rendered Draft (HTML)</strong> for the report-local file.</p>
-  <h2 class="section-title">Top 25 to Review First</h2>
+  ${headingWithAnchor(2, 'Top 25 to Review First', { className: 'section-title' })}
   <ol>
     ${topPriorityRows || '<li><p>No flagged diffs found for this run.</p></li>'}
   </ol>
-  <h2 class="section-title">All Drafts (Priority Sorted)</h2>
+  ${headingWithAnchor(2, 'All Drafts (Priority Sorted)', { className: 'section-title' })}
   <ol>
     ${htmlRows || '<li><p>No flagged diffs found for this run.</p></li>'}
   </ol>
