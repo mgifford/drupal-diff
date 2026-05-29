@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin Theme (dark + light) Structure Content Types - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
+  h1 { margin-bottom: 0.4rem; }
+  .meta { color: #4a5568; }
+  .links a { margin-right: 0.8rem; }
+  .card { border: 1px solid #d0d7de; border-radius: 8px; padding: 0.8rem 1rem; margin: 0.9rem 0; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 0.7rem; }
+  code { font-size: 0.95em; }
+  img { max-width: 100%; border: 1px solid #d0d7de; border-radius: 4px; margin-top: 0.5rem; }
+  ul { margin-top: 0.4rem; }
+</style>
+</head>
+<body>
+  <h1>Admin Theme (dark + light) Structure Content Types - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin</h1>
+  <p class="meta">Potential CSS regression in <strong>Dropbutton Secondary Actions List</strong> on <strong>Structure Content Types</strong> (modes: dark + light).</p>
+  <p class="links">
+    <a href="structure-content-types-default-dropbutton-secondary-list-xg3c9w.md" target="_blank" rel="noopener">Local Markdown</a>
+    <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-types-default-dropbutton-secondary-list-xg3c9w.md" target="_blank" rel="noopener">GitHub Source (Markdown)</a>
+    <a href="../element-compare-dashboard.html" target="_blank" rel="noopener">Dashboard</a>
+  </p>
+
+  <section class="card">
+    <h2>What Changed (Human Summary)</h2>
+    <ul>
+      <li>Text size is significantly smaller: 0.0px vs 16.0px (-100.0%).</li><li>Component width is significantly narrower: 0.0px vs 216.0px (-100.0%).</li><li>Component height is significantly shorter: 0.0px vs 181.0px (-100.0%).</li><li>Vertical padding is significantly lower: 0.0px vs 16.0px (-100.0%).</li><li>Horizontal padding is significantly lower: 0.0px vs 16.0px (-100.0%).</li><li>Line height is significantly smaller: 0.0px vs 24.0px (-100.0%).</li><li>Matched element count is different: 1 fewer element(s) (-100.0%).</li><li>This same issue was also identified in dark mode.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Reproduction</h2>
+    <ol>
+      <li>Open baseline page: <a href="http://drupal-11.3.10.ddev.site/admin/structure/types" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/structure/types</a></li>
+      <li>Open candidate page: <a href="http://drupal-12-git.ddev.site:8080/admin/structure/types" target="_blank" rel="noopener">http://drupal-12-git.ddev.site:8080/admin/structure/types</a></li>
+      <li>Inspect selector: <code>.dropbutton-wrapper .dropbutton__items</code></li>
+      <li>Compare typography, spacing, sizing, and marker presence in dark + light.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Screenshots</h2>
+    <ul>
+      <li>Baseline element: <a href="../baseline/structure-content-types__default__light__dropbutton-secondary-list.png" target="_blank" rel="noopener">baseline/structure-content-types__default__light__dropbutton-secondary-list.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-content-types__default__light__dropbutton-secondary-list.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate element: n/a </li>
+      <li>Baseline page: <a href="../baseline-pages/structure-content-types__default__light__page.png" target="_blank" rel="noopener">baseline-pages/structure-content-types__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-content-types__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate page: <a href="../candidate-pages/structure-content-types__default__light__page.png" target="_blank" rel="noopener">candidate-pages/structure-content-types__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-content-types__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>DOM Evidence (XPath + HTML)</h2>
+    
+      <div class="meta"><strong>Drupal 11 with Gin 1 XPath:</strong> <code>/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[1]/ul[1]/li[3]/ul[1]</code></div>
+      <div class="meta">text: Manage form display Manage display Edit Manage permissions Delete</div>
+      <pre>&lt;ul class=&quot;dropbutton__items&quot; style=&quot;position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 736px;&quot;&gt; &lt;li class=&quot;manage-form-display dropbutton__item dropbutton-action secondary-action&quot;&gt;&lt;a href=&quot;/admin/structure/types/manage/article/form-display&quot;&gt;Manage form display&lt;/a&gt;&lt;/li&gt; &lt;li class=&quot;manage-display dropbutton__item dropbutton-action secondary-action&quot;&gt;&lt;a href=&quot;/admin/structure/types/manage/article/display&quot;&gt;Manage display&lt;/a&gt;&lt;/li&gt; &lt;li class=&quot;edit dropbutton__item dropbutton-action secondary-action&quot;&gt;&lt;a href=&quot;/admin/structure/types/manage/article?destination=/admin/structure/types&quot; aria-label=&quot;Edit Article&quot;&gt;Edit&lt;/a&gt;&lt;/li&gt; &lt;li class=&quot;manage-permissions dropbutton__item dropbutton-action secondary-action&quot;&gt;&lt;a href=&quot;/admin/structure/types/manage/article/permissions&quot;&gt;Manage perm</pre>
+    <div class="meta"><strong>Drupal 12 with Admin Theme:</strong> no matches captured</div>
+  </section>
+</body>
+</html>

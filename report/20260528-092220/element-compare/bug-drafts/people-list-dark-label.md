@@ -1,5 +1,5 @@
 # Legacy Draft Redirect
-This legacy draft path now maps to the default scenario draft for **Admin Theme (dark) People List - Form Label style regression vs Drupal 11 Gin**.
-- Rendered HTML: ./people-list-dark-label.html
-- Canonical Markdown: ./people-list-dark-default-label.md
-- GitHub Source (Canonical Markdown): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-dark-default-label.md
+This legacy draft path now maps to the consolidated draft for **Admin Theme (dark + light) People List - Form Label style regression vs Drupal 11 Gin**.
+- Rendered HTML: ./people-list-default-label-1p5sz8.html
+- Canonical Markdown: ./people-list-default-label-1p5sz8.md
+- GitHub Source (Canonical Markdown): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-default-label-1p5sz8.md

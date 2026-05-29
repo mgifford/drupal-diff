@@ -1,5 +1,5 @@
 # Legacy Draft Redirect
-This legacy draft path now maps to the default scenario draft for **Admin Theme (light) Structure Admin Menu - Dropbutton Primary Action Link style regression vs Drupal 11 Gin**.
-- Rendered HTML: ./structure-admin-menu-light-dropbutton-primary-action.html
-- Canonical Markdown: ./structure-admin-menu-light-default-dropbutton-primary-action.md
-- GitHub Source (Canonical Markdown): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-light-default-dropbutton-primary-action.md
+This legacy draft path now maps to the consolidated draft for **Admin Theme (dark + light) Structure Admin Menu - Dropbutton Primary Action Link style regression vs Drupal 11 Gin**.
+- Rendered HTML: ./structure-admin-menu-default-dropbutton-primary-action-pwv7ka.html
+- Canonical Markdown: ./structure-admin-menu-default-dropbutton-primary-action-pwv7ka.md
+- GitHub Source (Canonical Markdown): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-admin-menu-default-dropbutton-primary-action-pwv7ka.md

@@ -3,71 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Admin Theme (light) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin</title>
-<style>
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
-  h1 { margin-bottom: 0.4rem; }
-  .meta { color: #4a5568; }
-  .links a { margin-right: 0.8rem; }
-  .card { border: 1px solid #d0d7de; border-radius: 8px; padding: 0.8rem 1rem; margin: 0.9rem 0; }
-  pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 0.7rem; }
-  code { font-size: 0.95em; }
-  img { max-width: 100%; border: 1px solid #d0d7de; border-radius: 4px; margin-top: 0.5rem; }
-  ul { margin-top: 0.4rem; }
-</style>
+<title>Legacy Draft Redirect</title>
+<meta http-equiv="refresh" content="0; url=theme-settings-gin-vs-default-admin-increase-contrast-button-92qakj.html" />
 </head>
 <body>
-  <h1>Admin Theme (light) Theme Settings (Gin vs Default Admin) - Button style regression vs Drupal 11 Gin</h1>
-  <p class="meta">Potential CSS regression in <strong>Button</strong> on <strong>Theme Settings (Gin vs Default Admin)</strong> (light mode).</p>
-  <p class="links">
-    <a href="theme-settings-gin-vs-default-admin-light-increase-contrast-button.md" target="_blank" rel="noopener">Local Markdown</a>
-    <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-light-increase-contrast-button.md" target="_blank" rel="noopener">GitHub Source (Markdown)</a>
-    <a href="../element-compare-dashboard.html" target="_blank" rel="noopener">Dashboard</a>
-  </p>
-
-  <section class="card">
-    <h2>What Changed (Human Summary)</h2>
-    <ul>
-      <li>Text size is slightly larger: 14.0px vs 13.3px (+5.7%).</li><li>Component width is significantly wider: 142.5px vs 59.8px (+138.5%).</li><li>Component height is significantly taller: 25.0px vs 9.5px (+163.2%).</li><li>Vertical padding is significantly higher: 20.0px vs 12.8px (+56.9%).</li><li>Horizontal padding is significantly higher: 23.0px vs 16.6px (+38.3%).</li>
-    </ul>
-  </section>
-
-  <section class="card">
-    <h2>Reproduction</h2>
-    <ol>
-      <li>Open baseline page: <a href="http://drupal-11.3.10.ddev.site/admin/appearance/settings/gin" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/appearance/settings/gin</a></li>
-      <li>Open candidate page: <a href="http://drupal-12-git.ddev.site:8080/admin/appearance/settings/default_admin" target="_blank" rel="noopener">http://drupal-12-git.ddev.site:8080/admin/appearance/settings/default_admin</a></li>
-      <li>Inspect selector: <code>button, input[type=&quot;submit&quot;], .button</code></li>
-      <li>Compare typography, spacing, sizing, and marker presence.</li>
-    </ol>
-  </section>
-
-  <section class="card">
-    <h2>Screenshots</h2>
-    <ul>
-      <li>Baseline element: n/a </li>
-      <li>Candidate element: n/a </li>
-      <li>Baseline page: <a href="../baseline-pages/theme-settings__increase-contrast__light__page.png" target="_blank" rel="noopener">baseline-pages/theme-settings__increase-contrast__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/theme-settings__increase-contrast__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
-      <li>Candidate page: <a href="../candidate-pages/theme-settings__increase-contrast__light__page.png" target="_blank" rel="noopener">candidate-pages/theme-settings__increase-contrast__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/theme-settings__increase-contrast__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
-    </ul>
-  </section>
-
-  <section class="card">
-    <h2>DOM Evidence (XPath + HTML)</h2>
-    
-      <div class="meta"><strong>Drupal 11 with Gin 1 XPath:</strong> <code>/html[1]/body[1]/div[1]/nav[1]/div[2]/div[1]/nav[1]/div[2]/div[1]/button[1]</code></div>
-      <div class="meta">text: Vertical orientation</div>
-      <pre>&lt;button class=&quot;toolbar-icon toolbar-icon-toggle-vertical&quot; type=&quot;button&quot; value=&quot;vertical&quot; title=&quot;Vertical orientation&quot;&gt;Vertical orientation&lt;/button&gt;</pre>
-      <div class="meta"><strong>Drupal 11 with Gin 2 XPath:</strong> <code>/html[1]/body[1]/div[1]/nav[1]/div[3]/div[1]/nav[1]/div[1]/div[1]/button[1]</code></div>
-      
-      <pre>&lt;button class=&quot;toolbar-icon toolbar-icon-toggle-vertical&quot; type=&quot;button&quot; title=&quot;Vertical orientation&quot;&gt;&lt;/button&gt;</pre>
-    
-      <div class="meta"><strong>Drupal 12 with Admin Theme 1 XPath:</strong> <code>/html[1]/body[1]/div[1]/div[1]/button[1]</code></div>
-      <div class="meta">text: Collapse sidebar</div>
-      <pre>&lt;button data-drupal-selector=&quot;admin-toolbar-mobile-trigger&quot; aria-expanded=&quot;true&quot; aria-controls=&quot;admin-toolbar&quot; type=&quot;button&quot; data-component-id=&quot;navigation:toolbar-button&quot; data-index-text=&quot;e&quot; data-icon-text=&quot;Ex&quot; class=&quot;toolbar-button toolbar-button--icon--burger toolbar-button--small-offset admin-toolbar-control-bar__burger&quot; data-once=&quot;admin-toolbar-trigger&quot;&gt; &lt;svg fill=&quot;none&quot; viewBox=&quot;0 0 18 14&quot; class=&quot;toolbar-button__icon&quot; width=&quot;20&quot; height=&quot;20&quot; aria-hidden=&quot;true&quot;&gt; &lt;path stroke=&quot;#55565B&quot; stroke-width=&quot;2&quot; d=&quot;M0 1h18M0 7h18M0 13h18&quot;&gt;&lt;/path&gt; &lt;/svg&gt; &lt;span class=&quot;toolbar-button__label&quot; data-toolbar-text=&quot;&quot;&gt;Collapse sidebar&lt;/span&gt; &lt;/button&gt;</pre>
-      <div class="meta"><strong>Drupal 12 with Admin Theme 2 XPath:</strong> <code>/html[1]/body[1]/aside[1]/nav[1]/div[1]/div[1]/button[1]</code></div>
-      <div class="meta">text: Back</div>
-      <pre>&lt;button data-toolbar-back-control=&quot;&quot; tabindex=&quot;-1&quot; data-component-id=&quot;navigation:toolbar-button&quot; data-index-text=&quot;b&quot; data-icon-text=&quot;Ba&quot; class=&quot;toolbar-button toolbar-button--icon--arrow-left admin-toolbar__back-button&quot;&gt; &lt;svg viewBox=&quot;0 0 16 16&quot; class=&quot;toolbar-button__icon&quot; width=&quot;20&quot; height=&quot;20&quot; aria-hidden=&quot;true&quot;&gt; &lt;path d=&quot;M14.2501 7.99994c0 .19892-.079.38968-.2197.53033-.1406.14066-.3314.21967-.5303.21967H4.3126l3.22 3.21936c.1409.1409.22005.332.22005.5313 0 .1992-.07915.3903-.22005.5312-.14089.1409-.33199.2201-.53125.2201-.19925 0-.39035-.0792-.53125-.2201l-4.5-4.49998c-.06992-.06968-.12539-.15247-.16325-.24364-.03785-.09116-.05734-.1889-.05734-.28761 0-.09871.01949-.19645.05734-.28762.03786-.09116.09333-.17395.16325-.24363l4.5-4.5c.06977-.06977.15259-.12511.24374-.16286.09115-.03776.1</pre>
-  </section>
+  <p>This legacy path now redirects to <a href="theme-settings-gin-vs-default-admin-increase-contrast-button-92qakj.html">theme-settings-gin-vs-default-admin-increase-contrast-button-92qakj.html</a>.</p>
 </body>
 </html>

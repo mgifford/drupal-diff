@@ -3,71 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Admin Theme (light) People List - Dropbutton Wrapper style regression vs Drupal 11 Gin</title>
-<style>
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
-  h1 { margin-bottom: 0.4rem; }
-  .meta { color: #4a5568; }
-  .links a { margin-right: 0.8rem; }
-  .card { border: 1px solid #d0d7de; border-radius: 8px; padding: 0.8rem 1rem; margin: 0.9rem 0; }
-  pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 0.7rem; }
-  code { font-size: 0.95em; }
-  img { max-width: 100%; border: 1px solid #d0d7de; border-radius: 4px; margin-top: 0.5rem; }
-  ul { margin-top: 0.4rem; }
-</style>
+<title>Legacy Draft Redirect</title>
+<meta http-equiv="refresh" content="0; url=people-list-default-dropbutton-wrapper-2t84ki.html" />
 </head>
 <body>
-  <h1>Admin Theme (light) People List - Dropbutton Wrapper style regression vs Drupal 11 Gin</h1>
-  <p class="meta">Potential CSS regression in <strong>Dropbutton Wrapper</strong> on <strong>People List</strong> (light mode).</p>
-  <p class="links">
-    <a href="people-list-light-default-dropbutton-wrapper.md" target="_blank" rel="noopener">Local Markdown</a>
-    <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/people-list-light-default-dropbutton-wrapper.md" target="_blank" rel="noopener">GitHub Source (Markdown)</a>
-    <a href="../element-compare-dashboard.html" target="_blank" rel="noopener">Dashboard</a>
-  </p>
-
-  <section class="card">
-    <h2>What Changed (Human Summary)</h2>
-    <ul>
-      <li>Component width is noticeably narrower: 78.0px vs 100.0px (-22.0%).</li>
-    </ul>
-  </section>
-
-  <section class="card">
-    <h2>Reproduction</h2>
-    <ol>
-      <li>Open baseline page: <a href="http://drupal-11.3.10.ddev.site/admin/people" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/people</a></li>
-      <li>Open candidate page: <a href="http://drupal-12-git.ddev.site:8080/admin/people" target="_blank" rel="noopener">http://drupal-12-git.ddev.site:8080/admin/people</a></li>
-      <li>Inspect selector: <code>.dropbutton-wrapper.dropbutton-multiple, .dropbutton-wrapper</code></li>
-      <li>Compare typography, spacing, sizing, and marker presence.</li>
-    </ol>
-  </section>
-
-  <section class="card">
-    <h2>Screenshots</h2>
-    <ul>
-      <li>Baseline element: <a href="../baseline/people-list__default__light__dropbutton-wrapper.png" target="_blank" rel="noopener">baseline/people-list__default__light__dropbutton-wrapper.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/people-list__default__light__dropbutton-wrapper.png" target="_blank" rel="noopener">GitHub</a></li>
-      <li>Candidate element: <a href="../candidate/people-list__default__light__dropbutton-wrapper.png" target="_blank" rel="noopener">candidate/people-list__default__light__dropbutton-wrapper.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/people-list__default__light__dropbutton-wrapper.png" target="_blank" rel="noopener">GitHub</a></li>
-      <li>Baseline page: <a href="../baseline-pages/people-list__default__light__page.png" target="_blank" rel="noopener">baseline-pages/people-list__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/people-list__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
-      <li>Candidate page: <a href="../candidate-pages/people-list__default__light__page.png" target="_blank" rel="noopener">candidate-pages/people-list__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/people-list__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
-    </ul>
-  </section>
-
-  <section class="card">
-    <h2>DOM Evidence (XPath + HTML)</h2>
-    
-      <div class="meta"><strong>Drupal 11 with Gin 1 XPath:</strong> <code>/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[7]/div[1]</code></div>
-      <div class="meta">text: EditList additional actions View</div>
-      <pre>&lt;div class=&quot;dropbutton-wrapper dropbutton-multiple open&quot; data-drupal-ajax-container=&quot;&quot; data-once=&quot;dropbutton ginDropbutton&quot;&gt; &lt;div class=&quot;dropbutton-widget&quot;&gt;&lt;ul class=&quot;dropbutton dropbutton--extrasmall dropbutton--multiple dropbutton--gin&quot;&gt; &lt;li class=&quot;edit dropbutton__item dropbutton-action&quot;&gt;&lt;a href=&quot;/user/2/edit?destination=/admin/people&quot; aria-label=&quot;Edit editor1&quot; hreflang=&quot;en&quot;&gt;Edit&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;dropbutton-toggle&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;dropbutton__toggle&quot;&gt;&lt;span class=&quot;visually-hidden&quot;&gt;List additional actions&lt;/span&gt;&lt;/button&gt;&lt;/li&gt; &lt;li class=&quot;dropbutton__item dropbutton-action secondary-action&quot;&gt; &lt;ul class=&quot;dropbutton__items&quot; style=&quot;position: absolute; overflow-y: auto; top: 100%; bottom: auto; max-height: 320.328px;&quot;&gt; &lt;li class=&quot;view dropbutton__item dropbutton-action secondary-a</pre>
-      <div class="meta"><strong>Drupal 11 with Gin 2 XPath:</strong> <code>/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[2]/td[7]/div[1]</code></div>
-      <div class="meta">text: EditList additional actions View</div>
-      <pre>&lt;div class=&quot;dropbutton-wrapper dropbutton-multiple&quot; data-drupal-ajax-container=&quot;&quot; data-once=&quot;dropbutton ginDropbutton&quot;&gt; &lt;div class=&quot;dropbutton-widget&quot;&gt;&lt;ul class=&quot;dropbutton dropbutton--extrasmall dropbutton--multiple dropbutton--gin&quot;&gt; &lt;li class=&quot;edit dropbutton__item dropbutton-action&quot;&gt;&lt;a href=&quot;/user/1/edit?destination=/admin/people&quot; aria-label=&quot;Edit admin&quot; hreflang=&quot;en&quot;&gt;Edit&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;dropbutton-toggle&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;dropbutton__toggle&quot;&gt;&lt;span class=&quot;visually-hidden&quot;&gt;List additional actions&lt;/span&gt;&lt;/button&gt;&lt;/li&gt; &lt;li class=&quot;dropbutton__item dropbutton-action secondary-action&quot;&gt; &lt;ul class=&quot;dropbutton__items&quot;&gt; &lt;li class=&quot;view dropbutton__item dropbutton-action secondary-action&quot;&gt;&lt;a href=&quot;/user/1?destination=/admin/people&quot; aria-label=&quot;View admin&quot; hreflang=&quot;en&quot;&gt;View&lt;/a&gt;&lt;/li</pre>
-    
-      <div class="meta"><strong>Drupal 12 with Admin Theme 1 XPath:</strong> <code>/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[7]/div[1]</code></div>
-      <div class="meta">text: EditList additional actions View</div>
-      <pre>&lt;div class=&quot;dropbutton-wrapper dropbutton-multiple open&quot; data-drupal-ajax-container=&quot;&quot; data-once=&quot;dropbutton ginDropbutton&quot;&gt; &lt;div class=&quot;dropbutton-widget&quot;&gt;&lt;ul class=&quot;dropbutton dropbutton--extrasmall dropbutton--multiple dropbutton--gin&quot;&gt; &lt;li class=&quot;edit dropbutton__item dropbutton-action&quot;&gt;&lt;a href=&quot;/user/2/edit?destination=/admin/people&quot; aria-label=&quot;Edit editor1&quot; hreflang=&quot;en&quot;&gt;Edit&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;dropbutton-toggle&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;dropbutton__toggle&quot;&gt;&lt;span class=&quot;visually-hidden&quot;&gt;List additional actions&lt;/span&gt;&lt;/button&gt;&lt;/li&gt; &lt;li class=&quot;dropbutton__item dropbutton-action secondary-action&quot;&gt; &lt;ul class=&quot;dropbutton__items&quot; style=&quot;position: fixed; left: auto; right: 75px; top: 420.203px;&quot;&gt; &lt;li class=&quot;view dropbutton__item dropbutton-action secondary-action&quot;&gt;&lt;a href=&quot;/user/2?dest</pre>
-      <div class="meta"><strong>Drupal 12 with Admin Theme 2 XPath:</strong> <code>/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[2]/td[7]/div[1]</code></div>
-      <div class="meta">text: EditList additional actions View</div>
-      <pre>&lt;div class=&quot;dropbutton-wrapper dropbutton-multiple&quot; data-drupal-ajax-container=&quot;&quot; data-once=&quot;dropbutton ginDropbutton&quot;&gt; &lt;div class=&quot;dropbutton-widget&quot;&gt;&lt;ul class=&quot;dropbutton dropbutton--extrasmall dropbutton--multiple dropbutton--gin&quot;&gt; &lt;li class=&quot;edit dropbutton__item dropbutton-action&quot;&gt;&lt;a href=&quot;/user/1/edit?destination=/admin/people&quot; aria-label=&quot;Edit admin&quot; hreflang=&quot;en&quot;&gt;Edit&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;dropbutton-toggle&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;dropbutton__toggle&quot;&gt;&lt;span class=&quot;visually-hidden&quot;&gt;List additional actions&lt;/span&gt;&lt;/button&gt;&lt;/li&gt; &lt;li class=&quot;dropbutton__item dropbutton-action secondary-action&quot;&gt; &lt;ul class=&quot;dropbutton__items&quot;&gt; &lt;li class=&quot;view dropbutton__item dropbutton-action secondary-action&quot;&gt;&lt;a href=&quot;/user/1?destination=/admin/people&quot; aria-label=&quot;View admin&quot; hreflang=&quot;en&quot;&gt;View&lt;/a&gt;&lt;/li</pre>
-  </section>
+  <p>This legacy path now redirects to <a href="people-list-default-dropbutton-wrapper-2t84ki.html">people-list-default-dropbutton-wrapper-2t84ki.html</a>.</p>
 </body>
 </html>

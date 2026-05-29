@@ -1,5 +1,5 @@
 # Legacy Draft Redirect
-This legacy draft path now maps to the default scenario draft for **Admin Theme (light) Block Content Types - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin**.
-- Rendered HTML: ./block-content-types-light-dropbutton-secondary-list.html
-- Canonical Markdown: ./block-content-types-light-default-dropbutton-secondary-list.md
-- GitHub Source (Canonical Markdown): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/block-content-types-light-default-dropbutton-secondary-list.md
+This legacy draft path now maps to the consolidated draft for **Admin Theme (dark + light) Block Content Types - Dropbutton Secondary Actions List style regression vs Drupal 11 Gin**.
+- Rendered HTML: ./block-content-types-default-dropbutton-secondary-list-xg3c9w.html
+- Canonical Markdown: ./block-content-types-default-dropbutton-secondary-list-xg3c9w.md
+- GitHub Source (Canonical Markdown): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/block-content-types-default-dropbutton-secondary-list-xg3c9w.md

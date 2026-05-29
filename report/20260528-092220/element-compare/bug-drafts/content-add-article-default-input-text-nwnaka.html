@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin Theme (dark + light) Content Add Article - Text Input style regression vs Drupal 11 Gin</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
+  h1 { margin-bottom: 0.4rem; }
+  .meta { color: #4a5568; }
+  .links a { margin-right: 0.8rem; }
+  .card { border: 1px solid #d0d7de; border-radius: 8px; padding: 0.8rem 1rem; margin: 0.9rem 0; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 0.7rem; }
+  code { font-size: 0.95em; }
+  img { max-width: 100%; border: 1px solid #d0d7de; border-radius: 4px; margin-top: 0.5rem; }
+  ul { margin-top: 0.4rem; }
+</style>
+</head>
+<body>
+  <h1>Admin Theme (dark + light) Content Add Article - Text Input style regression vs Drupal 11 Gin</h1>
+  <p class="meta">Potential CSS regression in <strong>Text Input</strong> on <strong>Content Add Article</strong> (modes: dark + light).</p>
+  <p class="links">
+    <a href="content-add-article-default-input-text-nwnaka.md" target="_blank" rel="noopener">Local Markdown</a>
+    <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/content-add-article-default-input-text-nwnaka.md" target="_blank" rel="noopener">GitHub Source (Markdown)</a>
+    <a href="../element-compare-dashboard.html" target="_blank" rel="noopener">Dashboard</a>
+  </p>
+
+  <section class="card">
+    <h2>What Changed (Human Summary)</h2>
+    <ul>
+      <li>Line height is noticeably smaller: 16.0px vs 18.0px (-11.1%).</li><li>Matched element count is different: 1 fewer element(s) (-25.0%).</li><li>This same issue was also identified in dark mode.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Reproduction</h2>
+    <ol>
+      <li>Open baseline page: <a href="http://drupal-11.3.10.ddev.site/node/add/article" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/node/add/article</a></li>
+      <li>Open candidate page: <a href="http://drupal-12-git.ddev.site:8080/node/add/article" target="_blank" rel="noopener">http://drupal-12-git.ddev.site:8080/node/add/article</a></li>
+      <li>Inspect selector: <code>input[type=&quot;text&quot;], input.form-text</code></li>
+      <li>Compare typography, spacing, sizing, and marker presence in dark + light.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Screenshots</h2>
+    <ul>
+      <li>Baseline element: <a href="../baseline/content-add-article__default__light__input-text.png" target="_blank" rel="noopener">baseline/content-add-article__default__light__input-text.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/content-add-article__default__light__input-text.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate element: <a href="../candidate/content-add-article__default__light__input-text.png" target="_blank" rel="noopener">candidate/content-add-article__default__light__input-text.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/content-add-article__default__light__input-text.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Baseline page: <a href="../baseline-pages/content-add-article__default__light__page.png" target="_blank" rel="noopener">baseline-pages/content-add-article__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/content-add-article__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate page: <a href="../candidate-pages/content-add-article__default__light__page.png" target="_blank" rel="noopener">candidate-pages/content-add-article__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/content-add-article__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>DOM Evidence (XPath + HTML)</h2>
+    
+      <div class="meta"><strong>Drupal 11 with Gin 1 XPath:</strong> <code>//*[@id=&quot;edit-title-0-value&quot;]</code></div>
+      
+      <pre>&lt;input class=&quot;js-text-full text-full form-text required form-element form-element--type-text form-element--api-textfield&quot; data-drupal-selector=&quot;edit-title-0-value&quot; type=&quot;text&quot; id=&quot;edit-title-0-value&quot; name=&quot;title[0][value]&quot; value=&quot;&quot; size=&quot;60&quot; maxlength=&quot;255&quot; placeholder=&quot;&quot; required=&quot;required&quot; style=&quot;&quot;&gt;</pre>
+      <div class="meta"><strong>Drupal 11 with Gin 2 XPath:</strong> <code>//*[@id=&quot;edit-field-tags-target-id&quot;]</code></div>
+      
+      <pre>&lt;input data-drupal-selector=&quot;edit-field-tags-target-id&quot; aria-describedby=&quot;edit-field-tags-target-id--description&quot; class=&quot;form-autocomplete form-text form-element form-element--type-text form-element--api-entity-autocomplete ui-autocomplete-input&quot; data-autocomplete-path=&quot;/entity_reference_autocomplete/taxonomy_term/default%3Ataxonomy_term/6biOMHxkR3bQ7OLor_-WnX6s_pZT45M-LnwO696TQR4&quot; type=&quot;text&quot; id=&quot;edit-field-tags-target-id&quot; name=&quot;field_tags[target_id]&quot; size=&quot;60&quot; maxlength=&quot;1024&quot; placeholder=&quot;&quot; data-once=&quot;autocomplete claroAutoComplete&quot; autocomplete=&quot;off&quot; style=&quot;&quot;&gt;</pre>
+    
+      <div class="meta"><strong>Drupal 12 with Admin Theme 1 XPath:</strong> <code>//*[@id=&quot;edit-title-0-value&quot;]</code></div>
+      
+      <pre>&lt;input class=&quot;js-text-full text-full form-text required form-element form-element--type-text form-element--api-textfield&quot; data-drupal-selector=&quot;edit-title-0-value&quot; type=&quot;text&quot; id=&quot;edit-title-0-value&quot; name=&quot;title[0][value]&quot; value=&quot;&quot; size=&quot;60&quot; maxlength=&quot;255&quot; placeholder=&quot;&quot; required=&quot;required&quot; style=&quot;&quot;&gt;</pre>
+      <div class="meta"><strong>Drupal 12 with Admin Theme 2 XPath:</strong> <code>//*[@id=&quot;edit-path-0-alias&quot;]</code></div>
+      
+      <pre>&lt;input data-drupal-selector=&quot;edit-path-0-alias&quot; aria-describedby=&quot;edit-path-0-alias--description&quot; type=&quot;text&quot; id=&quot;edit-path-0-alias&quot; name=&quot;path[0][alias]&quot; value=&quot;&quot; size=&quot;60&quot; maxlength=&quot;255&quot; class=&quot;form-text form-element form-element--type-text form-element--api-textfield&quot; style=&quot;&quot;&gt;</pre>
+  </section>
+</body>
+</html>

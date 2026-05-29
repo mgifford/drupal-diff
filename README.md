@@ -214,6 +214,26 @@ Current interaction archetypes include:
 5. details/summary toggle
 6. contextual trigger open
 
+### F) Validate element-compare consistency (recommended before publish)
+
+Run this after generating/updating element-compare artifacts to catch broken local links and missing required report files:
+
+```bash
+./src/test-element-compare-consistency.sh
+```
+
+Optional: validate a specific run directory:
+
+```bash
+./src/test-element-compare-consistency.sh report/<run-id>/element-compare
+```
+
+The check verifies:
+
+1. required files exist (dashboard, bug draft indices, suggested CSS, link-check report)
+2. all local links and image references inside generated HTML/Markdown resolve
+3. `link-check-report.json` reports `brokenLinks: 0`
+
 ### E) Seed dummy content only
 
 ```bash

@@ -1,5 +1,5 @@
 # Legacy Draft Redirect
-This legacy draft path now maps to the default scenario draft for **Admin Theme (dark) Structure Article Display - Dropbutton Primary Action Link style regression vs Drupal 11 Gin**.
-- Rendered HTML: ./structure-article-display-dark-dropbutton-primary-action.html
-- Canonical Markdown: ./structure-article-display-dark-default-dropbutton-primary-action.md
-- GitHub Source (Canonical Markdown): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-dark-default-dropbutton-primary-action.md
+This legacy draft path now maps to the consolidated draft for **Admin Theme (dark + light) Structure Article Display - Dropbutton Primary Action Link style regression vs Drupal 11 Gin**.
+- Rendered HTML: ./structure-article-display-default-dropbutton-primary-action-pwv7ka.html
+- Canonical Markdown: ./structure-article-display-default-dropbutton-primary-action-pwv7ka.md
+- GitHub Source (Canonical Markdown): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-article-display-default-dropbutton-primary-action-pwv7ka.md

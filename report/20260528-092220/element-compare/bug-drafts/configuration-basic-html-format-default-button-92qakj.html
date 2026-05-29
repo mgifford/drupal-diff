@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin Theme (dark + light) Configuration Basic HTML Format - Button style regression vs Drupal 11 Gin</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
+  h1 { margin-bottom: 0.4rem; }
+  .meta { color: #4a5568; }
+  .links a { margin-right: 0.8rem; }
+  .card { border: 1px solid #d0d7de; border-radius: 8px; padding: 0.8rem 1rem; margin: 0.9rem 0; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 0.7rem; }
+  code { font-size: 0.95em; }
+  img { max-width: 100%; border: 1px solid #d0d7de; border-radius: 4px; margin-top: 0.5rem; }
+  ul { margin-top: 0.4rem; }
+</style>
+</head>
+<body>
+  <h1>Admin Theme (dark + light) Configuration Basic HTML Format - Button style regression vs Drupal 11 Gin</h1>
+  <p class="meta">Potential CSS regression in <strong>Button</strong> on <strong>Configuration Basic HTML Format</strong> (modes: dark + light).</p>
+  <p class="links">
+    <a href="configuration-basic-html-format-default-button-92qakj.md" target="_blank" rel="noopener">Local Markdown</a>
+    <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/configuration-basic-html-format-default-button-92qakj.md" target="_blank" rel="noopener">GitHub Source (Markdown)</a>
+    <a href="../element-compare-dashboard.html" target="_blank" rel="noopener">Dashboard</a>
+  </p>
+
+  <section class="card">
+    <h2>What Changed (Human Summary)</h2>
+    <ul>
+      <li>Vertical padding is slightly higher: 20.0px vs 18.3px (+9.1%).</li><li>Horizontal padding is noticeably higher: 27.5px vs 22.0px (+25.0%).</li><li>Matched element count is different: 2 more element(s) (+33.3%).</li><li>This same issue was also identified in dark mode.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Reproduction</h2>
+    <ol>
+      <li>Open baseline page: <a href="http://drupal-11.3.10.ddev.site/admin/config/content/formats/manage/basic_html" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/config/content/formats/manage/basic_html</a></li>
+      <li>Open candidate page: <a href="http://drupal-12-git.ddev.site:8080/admin/config/content/formats/manage/basic_html" target="_blank" rel="noopener">http://drupal-12-git.ddev.site:8080/admin/config/content/formats/manage/basic_html</a></li>
+      <li>Inspect selector: <code>button, input[type=&quot;submit&quot;], .button</code></li>
+      <li>Compare typography, spacing, sizing, and marker presence in dark + light.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Screenshots</h2>
+    <ul>
+      <li>Baseline element: <a href="../baseline/config-text-format-basic-html__default__light__button.png" target="_blank" rel="noopener">baseline/config-text-format-basic-html__default__light__button.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/config-text-format-basic-html__default__light__button.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate element: <a href="../candidate/config-text-format-basic-html__default__light__button.png" target="_blank" rel="noopener">candidate/config-text-format-basic-html__default__light__button.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate/config-text-format-basic-html__default__light__button.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Baseline page: <a href="../baseline-pages/config-text-format-basic-html__default__light__page.png" target="_blank" rel="noopener">baseline-pages/config-text-format-basic-html__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/config-text-format-basic-html__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate page: <a href="../candidate-pages/config-text-format-basic-html__default__light__page.png" target="_blank" rel="noopener">candidate-pages/config-text-format-basic-html__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/config-text-format-basic-html__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>DOM Evidence (XPath + HTML)</h2>
+    
+      <div class="meta"><strong>Drupal 11 with Gin 1 XPath:</strong> <code>/html[1]/body[1]/aside[1]/nav[1]/div[2]/ul[1]/li[1]/button[1]</code></div>
+      <div class="meta">text: Extend Create</div>
+      <pre>&lt;button class=&quot;toolbar-link toolbar-link--has-icon toolbar-link--create&quot;&gt; &lt;span class=&quot;toolbar-link__action&quot;&gt;Extend&lt;/span&gt; &lt;span class=&quot;toolbar-link__label&quot;&gt;Create&lt;/span&gt; &lt;/button&gt;</pre>
+      <div class="meta"><strong>Drupal 11 with Gin 2 XPath:</strong> <code>/html[1]/body[1]/aside[1]/nav[1]/div[4]/ul[1]/li[1]/button[1]</code></div>
+      <div class="meta">text: Extend Structure</div>
+      <pre>&lt;button class=&quot;toolbar-link toolbar-link--has-icon toolbar-link--system-admin-structure&quot;&gt; &lt;span class=&quot;toolbar-link__action&quot;&gt;Extend&lt;/span&gt; &lt;span class=&quot;toolbar-link__label&quot;&gt;Structure&lt;/span&gt; &lt;/button&gt;</pre>
+    
+      <div class="meta"><strong>Drupal 12 with Admin Theme 1 XPath:</strong> <code>/html[1]/body[1]/aside[1]/nav[1]/div[1]/div[2]/ul[1]/li[1]/button[1]</code></div>
+      <div class="meta">text: Extend Create</div>
+      <pre>&lt;button aria-expanded=&quot;false&quot; aria-controls=&quot;navigation-link--navigationcreate-1305022686&quot; data-toolbar-popover-control=&quot;&quot; data-has-safe-triangle=&quot;&quot; data-component-id=&quot;navigation:toolbar-button&quot; data-index-text=&quot;c&quot; data-icon-text=&quot;Cr&quot; class=&quot;toolbar-button toolbar-button--icon--navigation-create toolbar-button--expand--side toolbar-button--collapsible toolbar-popover__control&quot; data-once=&quot;safe-triangle&quot;&gt; &lt;svg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; class=&quot;toolbar-button__icon&quot; aria-hidden=&quot;true&quot;&gt; &lt;path d=&quot;M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96452 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.74</pre>
+      <div class="meta"><strong>Drupal 12 with Admin Theme 2 XPath:</strong> <code>/html[1]/body[1]/aside[1]/nav[1]/div[1]/div[3]/ul[1]/li[1]/button[1]</code></div>
+      <div class="meta">text: Extend Structure</div>
+      <pre>&lt;button aria-expanded=&quot;false&quot; aria-controls=&quot;navigation-link--systemadmin-structure-46465609&quot; data-toolbar-popover-control=&quot;&quot; data-has-safe-triangle=&quot;&quot; data-component-id=&quot;navigation:toolbar-button&quot; data-index-text=&quot;s&quot; data-icon-text=&quot;St&quot; class=&quot;toolbar-button toolbar-button--icon--system-admin-structure toolbar-button--expand--side toolbar-button--collapsible toolbar-popover__control&quot; data-once=&quot;safe-triangle&quot;&gt; &lt;svg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; class=&quot;toolbar-button__icon&quot; aria-hidden=&quot;true&quot;&gt; &lt;path d=&quot;M15.75 10.5H20.25C20.6478 10.5 21.0294 10.342 21.3107 10.0607C21.592 9.77936 21.75 9.39782 21.75 9V4.5C21.75 4.10218 21.592 3.72064 21.3107 3.43934C21.0294 3.15804 20.6478 3 20.25 3H15.75C15.3522 3 14.9706 3.15804 14.6893 3.43934C14.408 3.72064 14.25 4.10218 14.25 4.</pre>
+  </section>
+</body>
+</html>

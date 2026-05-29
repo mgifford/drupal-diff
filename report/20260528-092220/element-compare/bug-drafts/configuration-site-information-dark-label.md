@@ -1,5 +1,5 @@
 # Legacy Draft Redirect
-This legacy draft path now maps to the default scenario draft for **Admin Theme (dark) Configuration Site Information - Form Label style regression vs Drupal 11 Gin**.
-- Rendered HTML: ./configuration-site-information-dark-label.html
-- Canonical Markdown: ./configuration-site-information-dark-default-label.md
-- GitHub Source (Canonical Markdown): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/configuration-site-information-dark-default-label.md
+This legacy draft path now maps to the consolidated draft for **Admin Theme (dark + light) Configuration Site Information - Form Label style regression vs Drupal 11 Gin**.
+- Rendered HTML: ./configuration-site-information-default-label-1p5sz8.html
+- Canonical Markdown: ./configuration-site-information-default-label-1p5sz8.md
+- GitHub Source (Canonical Markdown): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/configuration-site-information-default-label-1p5sz8.md

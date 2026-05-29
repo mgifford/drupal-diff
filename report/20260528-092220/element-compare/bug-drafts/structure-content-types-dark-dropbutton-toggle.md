@@ -1,5 +1,5 @@
 # Legacy Draft Redirect
-This legacy draft path now maps to the default scenario draft for **Admin Theme (dark) Structure Content Types - Dropbutton Toggle Button style regression vs Drupal 11 Gin**.
-- Rendered HTML: ./structure-content-types-dark-dropbutton-toggle.html
-- Canonical Markdown: ./structure-content-types-dark-default-dropbutton-toggle.md
-- GitHub Source (Canonical Markdown): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-types-dark-default-dropbutton-toggle.md
+This legacy draft path now maps to the consolidated draft for **Admin Theme (dark + light) Structure Content Types - Dropbutton Toggle Button style regression vs Drupal 11 Gin**.
+- Rendered HTML: ./structure-content-types-default-dropbutton-toggle-lqn1u9.html
+- Canonical Markdown: ./structure-content-types-default-dropbutton-toggle-lqn1u9.md
+- GitHub Source (Canonical Markdown): https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-content-types-default-dropbutton-toggle-lqn1u9.md

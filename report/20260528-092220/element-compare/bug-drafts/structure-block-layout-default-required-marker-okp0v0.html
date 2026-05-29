@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin Theme (dark + light) Structure Block Layout - Required Marker (*) style regression vs Drupal 11 Gin</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
+  h1 { margin-bottom: 0.4rem; }
+  .meta { color: #4a5568; }
+  .links a { margin-right: 0.8rem; }
+  .card { border: 1px solid #d0d7de; border-radius: 8px; padding: 0.8rem 1rem; margin: 0.9rem 0; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 0.7rem; }
+  code { font-size: 0.95em; }
+  img { max-width: 100%; border: 1px solid #d0d7de; border-radius: 4px; margin-top: 0.5rem; }
+  ul { margin-top: 0.4rem; }
+</style>
+</head>
+<body>
+  <h1>Admin Theme (dark + light) Structure Block Layout - Required Marker (*) style regression vs Drupal 11 Gin</h1>
+  <p class="meta">Potential CSS regression in <strong>Required Marker (*)</strong> on <strong>Structure Block Layout</strong> (modes: dark + light).</p>
+  <p class="links">
+    <a href="structure-block-layout-default-required-marker-okp0v0.md" target="_blank" rel="noopener">Local Markdown</a>
+    <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/bug-drafts/structure-block-layout-default-required-marker-okp0v0.md" target="_blank" rel="noopener">GitHub Source (Markdown)</a>
+    <a href="../element-compare-dashboard.html" target="_blank" rel="noopener">Dashboard</a>
+  </p>
+
+  <section class="card">
+    <h2>What Changed (Human Summary)</h2>
+    <ul>
+      <li>Text size is significantly smaller: 0.0px vs 14.0px (-100.0%).</li><li>Component width is significantly narrower: 0.0px vs 60.9px (-100.0%).</li><li>Component height is significantly shorter: 0.0px vs 92.3px (-100.0%).</li><li>Line height is significantly smaller: 0.0px vs 18.0px (-100.0%).</li><li>Matched element count is different: 8 fewer element(s) (-100.0%).</li><li>This same issue was also identified in dark mode.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Reproduction</h2>
+    <ol>
+      <li>Open baseline page: <a href="http://drupal-11.3.10.ddev.site/admin/structure/block" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/structure/block</a></li>
+      <li>Open candidate page: <a href="http://drupal-12-git.ddev.site:8080/admin/structure/block" target="_blank" rel="noopener">http://drupal-12-git.ddev.site:8080/admin/structure/block</a></li>
+      <li>Inspect selector: <code>label.form-required, .form-required</code></li>
+      <li>Compare typography, spacing, sizing, and marker presence in dark + light.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Screenshots</h2>
+    <ul>
+      <li>Baseline element: <a href="../baseline/structure-block-layout__default__light__required-marker.png" target="_blank" rel="noopener">baseline/structure-block-layout__default__light__required-marker.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline/structure-block-layout__default__light__required-marker.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate element: n/a </li>
+      <li>Baseline page: <a href="../baseline-pages/structure-block-layout__default__light__page.png" target="_blank" rel="noopener">baseline-pages/structure-block-layout__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/baseline-pages/structure-block-layout__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate page: <a href="../candidate-pages/structure-block-layout__default__light__page.png" target="_blank" rel="noopener">candidate-pages/structure-block-layout__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260528-092220/element-compare/candidate-pages/structure-block-layout__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>DOM Evidence (XPath + HTML)</h2>
+    
+      <div class="meta"><strong>Drupal 11 with Gin 1 XPath:</strong> <code>/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[3]/div[1]/label[1]</code></div>
+      <div class="meta">text: Region for Site branding block</div>
+      <pre>&lt;label for=&quot;edit-blocks-olivero-site-branding-region&quot; class=&quot;form-item__label visually-hidden js-form-required form-required&quot;&gt;Region for Site branding block&lt;/label&gt;</pre>
+      <div class="meta"><strong>Drupal 11 with Gin 2 XPath:</strong> <code>/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[6]/td[3]/div[1]/label[1]</code></div>
+      <div class="meta">text: Region for Search form (narrow) block</div>
+      <pre>&lt;label for=&quot;edit-blocks-olivero-search-form-narrow-region&quot; class=&quot;form-item__label visually-hidden js-form-required form-required&quot;&gt;Region for Search form (narrow) block&lt;/label&gt;</pre>
+    <div class="meta"><strong>Drupal 12 with Admin Theme:</strong> no matches captured</div>
+  </section>
+</body>
+</html>
