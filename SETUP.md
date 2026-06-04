@@ -36,6 +36,11 @@ That gives you:
 - Drupal 11 at `http://drupal-11.3.10.ddev.site/`
 - Drupal 12 at `http://drupal-12.ddev.site/`
 
+Default login for both local sites:
+
+- Username: `admin`
+- Password: `admin`
+
 ## Confirm Themes
 
 The compare setup expects these admin themes:

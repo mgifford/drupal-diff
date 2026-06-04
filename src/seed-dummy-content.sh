@@ -403,6 +403,13 @@ $managedSeedFileCount = (int) \Drupal::entityQuery("file")
   ->execute();
 print "Seeded managed files under public://vrt-seed-files: $managedSeedFileCount\n";
 
+$adminUser = User::load(1);
+if ($adminUser) {
+  $adminUser->setPassword("admin");
+  $adminUser->save();
+  print "Reset admin user password to admin\n";
+}
+
 print "Done.\n";
 ')
 
