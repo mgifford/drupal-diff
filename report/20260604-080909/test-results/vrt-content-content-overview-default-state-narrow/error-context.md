@@ -1,0 +1,1250 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: vrt/content.spec.ts >> content-overview >> default state
+- Location: tests/vrt/generate-vrt-tests.ts:9:11
+
+# Error details
+
+```
+Error: expect(page).toHaveScreenshot(expected) failed
+
+  Expected an image 375px by 5922px, received 375px by 5918px. 78234 pixels (ratio 0.04 of all image pixels) are different.
+
+  Snapshot: content-overview.png
+
+Call log:
+  - Expect "toHaveScreenshot(content-overview.png)" with timeout 5000ms
+    - verifying given screenshot expectation
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - Expected an image 375px by 5922px, received 375px by 5918px. 78234 pixels (ratio 0.04 of all image pixels) are different.
+  - waiting 100ms before taking screenshot
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - captured a stable screenshot
+  - Expected an image 375px by 5922px, received 375px by 5918px. 78234 pixels (ratio 0.04 of all image pixels) are different.
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - button "Expand sidebar" [ref=e5] [cursor=pointer]:
+    - img [ref=e6]
+    - generic [ref=e8]: Expand sidebar
+  - generic [ref=e10]:
+    - navigation "Breadcrumb" [ref=e12]:
+      - heading "Breadcrumb" [level=2] [ref=e13]
+      - list [ref=e14]:
+        - listitem:
+          - link "Back to site" [ref=e15] [cursor=pointer]:
+            - /url: /
+        - listitem:
+          - link "Administration" [ref=e16] [cursor=pointer]:
+            - /url: /admin
+    - list [ref=e18]:
+      - listitem [ref=e19]:
+        - link "+Add content" [ref=e20] [cursor=pointer]:
+          - /url: /node/add
+  - generic [ref=e21]:
+    - banner [ref=e22]:
+      - heading "Content" [level=1] [ref=e26]
+    - generic [ref=e30]:
+      - heading "Primary tabs" [level=2] [ref=e31]
+      - navigation "Primary tabs" [ref=e32]:
+        - list [ref=e33]:
+          - listitem [ref=e34]:
+            - link "Content" [ref=e35] [cursor=pointer]:
+              - /url: /admin/content
+            - button "Tabs display toggle" [ref=e36]:
+              - img [ref=e37]
+    - main [ref=e40]:
+      - generic [ref=e45]:
+        - form "Filter the contents of the Content view" [ref=e47]:
+          - generic [ref=e48]:
+            - generic [ref=e49] [cursor=pointer]: Title
+            - textbox "Title" [ref=e50]
+          - generic [ref=e51]:
+            - generic [ref=e52] [cursor=pointer]: Content type
+            - combobox "Content type" [ref=e53]:
+              - option "- Any -" [selected]
+              - option "Article"
+              - option "Basic page"
+          - generic [ref=e54]:
+            - generic [ref=e55] [cursor=pointer]: Published status
+            - combobox "Published status" [ref=e56]:
+              - option "- Any -" [selected]
+              - option "Published"
+              - option "Unpublished"
+          - button "Filter" [ref=e58] [cursor=pointer]
+        - generic [ref=e61]:
+          - table [ref=e62]:
+            - rowgroup [ref=e63]:
+              - row "Select all rows in this table Title Content type Status Operations" [ref=e64]:
+                - columnheader "Select all rows in this table" [ref=e65]:
+                  - checkbox "Select all rows in this table" [ref=e66]
+                - columnheader "Title" [ref=e67]:
+                  - link "Title" [ref=e68] [cursor=pointer]:
+                    - /url: "?order=title&sort=asc"
+                - columnheader "Content type" [ref=e69]:
+                  - link "Content type" [ref=e70] [cursor=pointer]:
+                    - /url: "?order=type&sort=asc"
+                - columnheader "Status" [ref=e71]:
+                  - link "Status" [ref=e72] [cursor=pointer]:
+                    - /url: "?order=status&sort=asc"
+                - columnheader "Operations" [ref=e73]
+          - generic [ref=e74]:
+            - button "Show all columns" [ref=e76] [cursor=pointer]
+            - table [ref=e77]:
+              - rowgroup:
+                - row "Select all rows in this table Title Content type Status Operations":
+                  - columnheader "Select all rows in this table":
+                    - checkbox "Select all rows in this table"
+                  - columnheader "Title":
+                    - link "Title":
+                      - /url: "?order=title&sort=asc"
+                  - columnheader "Content type":
+                    - link "Content type":
+                      - /url: "?order=type&sort=asc"
+                  - columnheader "Status":
+                    - link "Status":
+                      - /url: "?order=status&sort=asc"
+                  - columnheader "Operations"
+              - rowgroup [ref=e78]:
+                - row "Update this item Dummy Page 20 Basic page Published Edit Dummy Page 20 List additional actions" [ref=e79]:
+                  - cell "Update this item" [ref=e80]:
+                    - generic [ref=e81]:
+                      - generic [ref=e82] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e83]
+                  - cell "Dummy Page 20" [ref=e84]:
+                    - link "Dummy Page 20" [ref=e85] [cursor=pointer]:
+                      - /url: /node/50
+                  - cell "Basic page" [ref=e86]
+                  - cell "Published" [ref=e87]:
+                    - generic [ref=e88]: Published
+                  - cell "Edit Dummy Page 20 List additional actions" [ref=e89]:
+                    - list [ref=e92]:
+                      - listitem [ref=e93]:
+                        - link "Edit Dummy Page 20" [ref=e94] [cursor=pointer]:
+                          - /url: /node/50/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e95]:
+                          - generic [ref=e96]: List additional actions
+                - row "Update this item Dummy Page 6 Basic page Published Edit Dummy Page 6 List additional actions" [ref=e97]:
+                  - cell "Update this item" [ref=e98]:
+                    - generic [ref=e99]:
+                      - generic [ref=e100] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e101]
+                  - cell "Dummy Page 6" [ref=e102]:
+                    - link "Dummy Page 6" [ref=e103] [cursor=pointer]:
+                      - /url: /node/36
+                  - cell "Basic page" [ref=e104]
+                  - cell "Published" [ref=e105]:
+                    - generic [ref=e106]: Published
+                  - cell "Edit Dummy Page 6 List additional actions" [ref=e107]:
+                    - list [ref=e110]:
+                      - listitem [ref=e111]:
+                        - link "Edit Dummy Page 6" [ref=e112] [cursor=pointer]:
+                          - /url: /node/36/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e113]:
+                          - generic [ref=e114]: List additional actions
+                - row "Update this item Dummy Page 5 Basic page Published Edit Dummy Page 5 List additional actions" [ref=e115]:
+                  - cell "Update this item" [ref=e116]:
+                    - generic [ref=e117]:
+                      - generic [ref=e118] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e119]
+                  - cell "Dummy Page 5" [ref=e120]:
+                    - link "Dummy Page 5" [ref=e121] [cursor=pointer]:
+                      - /url: /node/35
+                  - cell "Basic page" [ref=e122]
+                  - cell "Published" [ref=e123]:
+                    - generic [ref=e124]: Published
+                  - cell "Edit Dummy Page 5 List additional actions" [ref=e125]:
+                    - list [ref=e128]:
+                      - listitem [ref=e129]:
+                        - link "Edit Dummy Page 5" [ref=e130] [cursor=pointer]:
+                          - /url: /node/35/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e131]:
+                          - generic [ref=e132]: List additional actions
+                - row "Update this item Dummy Page 4 Basic page Published Edit Dummy Page 4 List additional actions" [ref=e133]:
+                  - cell "Update this item" [ref=e134]:
+                    - generic [ref=e135]:
+                      - generic [ref=e136] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e137]
+                  - cell "Dummy Page 4" [ref=e138]:
+                    - link "Dummy Page 4" [ref=e139] [cursor=pointer]:
+                      - /url: /node/34
+                  - cell "Basic page" [ref=e140]
+                  - cell "Published" [ref=e141]:
+                    - generic [ref=e142]: Published
+                  - cell "Edit Dummy Page 4 List additional actions" [ref=e143]:
+                    - list [ref=e146]:
+                      - listitem [ref=e147]:
+                        - link "Edit Dummy Page 4" [ref=e148] [cursor=pointer]:
+                          - /url: /node/34/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e149]:
+                          - generic [ref=e150]: List additional actions
+                - row "Update this item Dummy Page 3 Basic page Published Edit Dummy Page 3 List additional actions" [ref=e151]:
+                  - cell "Update this item" [ref=e152]:
+                    - generic [ref=e153]:
+                      - generic [ref=e154] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e155]
+                  - cell "Dummy Page 3" [ref=e156]:
+                    - link "Dummy Page 3" [ref=e157] [cursor=pointer]:
+                      - /url: /node/33
+                  - cell "Basic page" [ref=e158]
+                  - cell "Published" [ref=e159]:
+                    - generic [ref=e160]: Published
+                  - cell "Edit Dummy Page 3 List additional actions" [ref=e161]:
+                    - list [ref=e164]:
+                      - listitem [ref=e165]:
+                        - link "Edit Dummy Page 3" [ref=e166] [cursor=pointer]:
+                          - /url: /node/33/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e167]:
+                          - generic [ref=e168]: List additional actions
+                - row "Update this item Dummy Page 2 Basic page Published Edit Dummy Page 2 List additional actions" [ref=e169]:
+                  - cell "Update this item" [ref=e170]:
+                    - generic [ref=e171]:
+                      - generic [ref=e172] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e173]
+                  - cell "Dummy Page 2" [ref=e174]:
+                    - link "Dummy Page 2" [ref=e175] [cursor=pointer]:
+                      - /url: /node/32
+                  - cell "Basic page" [ref=e176]
+                  - cell "Published" [ref=e177]:
+                    - generic [ref=e178]: Published
+                  - cell "Edit Dummy Page 2 List additional actions" [ref=e179]:
+                    - list [ref=e182]:
+                      - listitem [ref=e183]:
+                        - link "Edit Dummy Page 2" [ref=e184] [cursor=pointer]:
+                          - /url: /node/32/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e185]:
+                          - generic [ref=e186]: List additional actions
+                - row "Update this item Dummy Page 1 Basic page Published Edit Dummy Page 1 List additional actions" [ref=e187]:
+                  - cell "Update this item" [ref=e188]:
+                    - generic [ref=e189]:
+                      - generic [ref=e190] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e191]
+                  - cell "Dummy Page 1" [ref=e192]:
+                    - link "Dummy Page 1" [ref=e193] [cursor=pointer]:
+                      - /url: /node/31
+                  - cell "Basic page" [ref=e194]
+                  - cell "Published" [ref=e195]:
+                    - generic [ref=e196]: Published
+                  - cell "Edit Dummy Page 1 List additional actions" [ref=e197]:
+                    - list [ref=e200]:
+                      - listitem [ref=e201]:
+                        - link "Edit Dummy Page 1" [ref=e202] [cursor=pointer]:
+                          - /url: /node/31/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e203]:
+                          - generic [ref=e204]: List additional actions
+                - row "Update this item Dummy Article 30 Article Published Edit Dummy Article 30 List additional actions" [ref=e205]:
+                  - cell "Update this item" [ref=e206]:
+                    - generic [ref=e207]:
+                      - generic [ref=e208] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e209]
+                  - cell "Dummy Article 30" [ref=e210]:
+                    - link "Dummy Article 30" [ref=e211] [cursor=pointer]:
+                      - /url: /node/30
+                  - cell "Article" [ref=e212]
+                  - cell "Published" [ref=e213]:
+                    - generic [ref=e214]: Published
+                  - cell "Edit Dummy Article 30 List additional actions" [ref=e215]:
+                    - list [ref=e218]:
+                      - listitem [ref=e219]:
+                        - link "Edit Dummy Article 30" [ref=e220] [cursor=pointer]:
+                          - /url: /node/30/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e221]:
+                          - generic [ref=e222]: List additional actions
+                - row "Update this item Dummy Article 29 Article Published Edit Dummy Article 29 List additional actions" [ref=e223]:
+                  - cell "Update this item" [ref=e224]:
+                    - generic [ref=e225]:
+                      - generic [ref=e226] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e227]
+                  - cell "Dummy Article 29" [ref=e228]:
+                    - link "Dummy Article 29" [ref=e229] [cursor=pointer]:
+                      - /url: /node/29
+                  - cell "Article" [ref=e230]
+                  - cell "Published" [ref=e231]:
+                    - generic [ref=e232]: Published
+                  - cell "Edit Dummy Article 29 List additional actions" [ref=e233]:
+                    - list [ref=e236]:
+                      - listitem [ref=e237]:
+                        - link "Edit Dummy Article 29" [ref=e238] [cursor=pointer]:
+                          - /url: /node/29/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e239]:
+                          - generic [ref=e240]: List additional actions
+                - row "Update this item Dummy Article 28 Article Published Edit Dummy Article 28 List additional actions" [ref=e241]:
+                  - cell "Update this item" [ref=e242]:
+                    - generic [ref=e243]:
+                      - generic [ref=e244] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e245]
+                  - cell "Dummy Article 28" [ref=e246]:
+                    - link "Dummy Article 28" [ref=e247] [cursor=pointer]:
+                      - /url: /node/28
+                  - cell "Article" [ref=e248]
+                  - cell "Published" [ref=e249]:
+                    - generic [ref=e250]: Published
+                  - cell "Edit Dummy Article 28 List additional actions" [ref=e251]:
+                    - list [ref=e254]:
+                      - listitem [ref=e255]:
+                        - link "Edit Dummy Article 28" [ref=e256] [cursor=pointer]:
+                          - /url: /node/28/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e257]:
+                          - generic [ref=e258]: List additional actions
+                - row "Update this item Dummy Article 27 Article Published Edit Dummy Article 27 List additional actions" [ref=e259]:
+                  - cell "Update this item" [ref=e260]:
+                    - generic [ref=e261]:
+                      - generic [ref=e262] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e263]
+                  - cell "Dummy Article 27" [ref=e264]:
+                    - link "Dummy Article 27" [ref=e265] [cursor=pointer]:
+                      - /url: /node/27
+                  - cell "Article" [ref=e266]
+                  - cell "Published" [ref=e267]:
+                    - generic [ref=e268]: Published
+                  - cell "Edit Dummy Article 27 List additional actions" [ref=e269]:
+                    - list [ref=e272]:
+                      - listitem [ref=e273]:
+                        - link "Edit Dummy Article 27" [ref=e274] [cursor=pointer]:
+                          - /url: /node/27/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e275]:
+                          - generic [ref=e276]: List additional actions
+                - row "Update this item Dummy Page 7 Basic page Published Edit Dummy Page 7 List additional actions" [ref=e277]:
+                  - cell "Update this item" [ref=e278]:
+                    - generic [ref=e279]:
+                      - generic [ref=e280] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e281]
+                  - cell "Dummy Page 7" [ref=e282]:
+                    - link "Dummy Page 7" [ref=e283] [cursor=pointer]:
+                      - /url: /node/37
+                  - cell "Basic page" [ref=e284]
+                  - cell "Published" [ref=e285]:
+                    - generic [ref=e286]: Published
+                  - cell "Edit Dummy Page 7 List additional actions" [ref=e287]:
+                    - list [ref=e290]:
+                      - listitem [ref=e291]:
+                        - link "Edit Dummy Page 7" [ref=e292] [cursor=pointer]:
+                          - /url: /node/37/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e293]:
+                          - generic [ref=e294]: List additional actions
+                - row "Update this item Dummy Page 8 Basic page Published Edit Dummy Page 8 List additional actions" [ref=e295]:
+                  - cell "Update this item" [ref=e296]:
+                    - generic [ref=e297]:
+                      - generic [ref=e298] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e299]
+                  - cell "Dummy Page 8" [ref=e300]:
+                    - link "Dummy Page 8" [ref=e301] [cursor=pointer]:
+                      - /url: /node/38
+                  - cell "Basic page" [ref=e302]
+                  - cell "Published" [ref=e303]:
+                    - generic [ref=e304]: Published
+                  - cell "Edit Dummy Page 8 List additional actions" [ref=e305]:
+                    - list [ref=e308]:
+                      - listitem [ref=e309]:
+                        - link "Edit Dummy Page 8" [ref=e310] [cursor=pointer]:
+                          - /url: /node/38/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e311]:
+                          - generic [ref=e312]: List additional actions
+                - row "Update this item Dummy Page 9 Basic page Published Edit Dummy Page 9 List additional actions" [ref=e313]:
+                  - cell "Update this item" [ref=e314]:
+                    - generic [ref=e315]:
+                      - generic [ref=e316] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e317]
+                  - cell "Dummy Page 9" [ref=e318]:
+                    - link "Dummy Page 9" [ref=e319] [cursor=pointer]:
+                      - /url: /node/39
+                  - cell "Basic page" [ref=e320]
+                  - cell "Published" [ref=e321]:
+                    - generic [ref=e322]: Published
+                  - cell "Edit Dummy Page 9 List additional actions" [ref=e323]:
+                    - list [ref=e326]:
+                      - listitem [ref=e327]:
+                        - link "Edit Dummy Page 9" [ref=e328] [cursor=pointer]:
+                          - /url: /node/39/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e329]:
+                          - generic [ref=e330]: List additional actions
+                - row "Update this item Dummy Page 19 Basic page Published Edit Dummy Page 19 List additional actions" [ref=e331]:
+                  - cell "Update this item" [ref=e332]:
+                    - generic [ref=e333]:
+                      - generic [ref=e334] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e335]
+                  - cell "Dummy Page 19" [ref=e336]:
+                    - link "Dummy Page 19" [ref=e337] [cursor=pointer]:
+                      - /url: /node/49
+                  - cell "Basic page" [ref=e338]
+                  - cell "Published" [ref=e339]:
+                    - generic [ref=e340]: Published
+                  - cell "Edit Dummy Page 19 List additional actions" [ref=e341]:
+                    - list [ref=e344]:
+                      - listitem [ref=e345]:
+                        - link "Edit Dummy Page 19" [ref=e346] [cursor=pointer]:
+                          - /url: /node/49/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e347]:
+                          - generic [ref=e348]: List additional actions
+                - row "Update this item Dummy Page 18 Basic page Published Edit Dummy Page 18 List additional actions" [ref=e349]:
+                  - cell "Update this item" [ref=e350]:
+                    - generic [ref=e351]:
+                      - generic [ref=e352] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e353]
+                  - cell "Dummy Page 18" [ref=e354]:
+                    - link "Dummy Page 18" [ref=e355] [cursor=pointer]:
+                      - /url: /node/48
+                  - cell "Basic page" [ref=e356]
+                  - cell "Published" [ref=e357]:
+                    - generic [ref=e358]: Published
+                  - cell "Edit Dummy Page 18 List additional actions" [ref=e359]:
+                    - list [ref=e362]:
+                      - listitem [ref=e363]:
+                        - link "Edit Dummy Page 18" [ref=e364] [cursor=pointer]:
+                          - /url: /node/48/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e365]:
+                          - generic [ref=e366]: List additional actions
+                - row "Update this item Dummy Page 17 Basic page Published Edit Dummy Page 17 List additional actions" [ref=e367]:
+                  - cell "Update this item" [ref=e368]:
+                    - generic [ref=e369]:
+                      - generic [ref=e370] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e371]
+                  - cell "Dummy Page 17" [ref=e372]:
+                    - link "Dummy Page 17" [ref=e373] [cursor=pointer]:
+                      - /url: /node/47
+                  - cell "Basic page" [ref=e374]
+                  - cell "Published" [ref=e375]:
+                    - generic [ref=e376]: Published
+                  - cell "Edit Dummy Page 17 List additional actions" [ref=e377]:
+                    - list [ref=e380]:
+                      - listitem [ref=e381]:
+                        - link "Edit Dummy Page 17" [ref=e382] [cursor=pointer]:
+                          - /url: /node/47/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e383]:
+                          - generic [ref=e384]: List additional actions
+                - row "Update this item Dummy Page 16 Basic page Published Edit Dummy Page 16 List additional actions" [ref=e385]:
+                  - cell "Update this item" [ref=e386]:
+                    - generic [ref=e387]:
+                      - generic [ref=e388] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e389]
+                  - cell "Dummy Page 16" [ref=e390]:
+                    - link "Dummy Page 16" [ref=e391] [cursor=pointer]:
+                      - /url: /node/46
+                  - cell "Basic page" [ref=e392]
+                  - cell "Published" [ref=e393]:
+                    - generic [ref=e394]: Published
+                  - cell "Edit Dummy Page 16 List additional actions" [ref=e395]:
+                    - list [ref=e398]:
+                      - listitem [ref=e399]:
+                        - link "Edit Dummy Page 16" [ref=e400] [cursor=pointer]:
+                          - /url: /node/46/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e401]:
+                          - generic [ref=e402]: List additional actions
+                - row "Update this item Dummy Page 15 Basic page Published Edit Dummy Page 15 List additional actions" [ref=e403]:
+                  - cell "Update this item" [ref=e404]:
+                    - generic [ref=e405]:
+                      - generic [ref=e406] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e407]
+                  - cell "Dummy Page 15" [ref=e408]:
+                    - link "Dummy Page 15" [ref=e409] [cursor=pointer]:
+                      - /url: /node/45
+                  - cell "Basic page" [ref=e410]
+                  - cell "Published" [ref=e411]:
+                    - generic [ref=e412]: Published
+                  - cell "Edit Dummy Page 15 List additional actions" [ref=e413]:
+                    - list [ref=e416]:
+                      - listitem [ref=e417]:
+                        - link "Edit Dummy Page 15" [ref=e418] [cursor=pointer]:
+                          - /url: /node/45/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e419]:
+                          - generic [ref=e420]: List additional actions
+                - row "Update this item Dummy Page 14 Basic page Published Edit Dummy Page 14 List additional actions" [ref=e421]:
+                  - cell "Update this item" [ref=e422]:
+                    - generic [ref=e423]:
+                      - generic [ref=e424] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e425]
+                  - cell "Dummy Page 14" [ref=e426]:
+                    - link "Dummy Page 14" [ref=e427] [cursor=pointer]:
+                      - /url: /node/44
+                  - cell "Basic page" [ref=e428]
+                  - cell "Published" [ref=e429]:
+                    - generic [ref=e430]: Published
+                  - cell "Edit Dummy Page 14 List additional actions" [ref=e431]:
+                    - list [ref=e434]:
+                      - listitem [ref=e435]:
+                        - link "Edit Dummy Page 14" [ref=e436] [cursor=pointer]:
+                          - /url: /node/44/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e437]:
+                          - generic [ref=e438]: List additional actions
+                - row "Update this item Dummy Page 13 Basic page Published Edit Dummy Page 13 List additional actions" [ref=e439]:
+                  - cell "Update this item" [ref=e440]:
+                    - generic [ref=e441]:
+                      - generic [ref=e442] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e443]
+                  - cell "Dummy Page 13" [ref=e444]:
+                    - link "Dummy Page 13" [ref=e445] [cursor=pointer]:
+                      - /url: /node/43
+                  - cell "Basic page" [ref=e446]
+                  - cell "Published" [ref=e447]:
+                    - generic [ref=e448]: Published
+                  - cell "Edit Dummy Page 13 List additional actions" [ref=e449]:
+                    - list [ref=e452]:
+                      - listitem [ref=e453]:
+                        - link "Edit Dummy Page 13" [ref=e454] [cursor=pointer]:
+                          - /url: /node/43/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e455]:
+                          - generic [ref=e456]: List additional actions
+                - row "Update this item Dummy Page 12 Basic page Published Edit Dummy Page 12 List additional actions" [ref=e457]:
+                  - cell "Update this item" [ref=e458]:
+                    - generic [ref=e459]:
+                      - generic [ref=e460] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e461]
+                  - cell "Dummy Page 12" [ref=e462]:
+                    - link "Dummy Page 12" [ref=e463] [cursor=pointer]:
+                      - /url: /node/42
+                  - cell "Basic page" [ref=e464]
+                  - cell "Published" [ref=e465]:
+                    - generic [ref=e466]: Published
+                  - cell "Edit Dummy Page 12 List additional actions" [ref=e467]:
+                    - list [ref=e470]:
+                      - listitem [ref=e471]:
+                        - link "Edit Dummy Page 12" [ref=e472] [cursor=pointer]:
+                          - /url: /node/42/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e473]:
+                          - generic [ref=e474]: List additional actions
+                - row "Update this item Dummy Page 11 Basic page Published Edit Dummy Page 11 List additional actions" [ref=e475]:
+                  - cell "Update this item" [ref=e476]:
+                    - generic [ref=e477]:
+                      - generic [ref=e478] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e479]
+                  - cell "Dummy Page 11" [ref=e480]:
+                    - link "Dummy Page 11" [ref=e481] [cursor=pointer]:
+                      - /url: /node/41
+                  - cell "Basic page" [ref=e482]
+                  - cell "Published" [ref=e483]:
+                    - generic [ref=e484]: Published
+                  - cell "Edit Dummy Page 11 List additional actions" [ref=e485]:
+                    - list [ref=e488]:
+                      - listitem [ref=e489]:
+                        - link "Edit Dummy Page 11" [ref=e490] [cursor=pointer]:
+                          - /url: /node/41/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e491]:
+                          - generic [ref=e492]: List additional actions
+                - row "Update this item Dummy Page 10 Basic page Published Edit Dummy Page 10 List additional actions" [ref=e493]:
+                  - cell "Update this item" [ref=e494]:
+                    - generic [ref=e495]:
+                      - generic [ref=e496] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e497]
+                  - cell "Dummy Page 10" [ref=e498]:
+                    - link "Dummy Page 10" [ref=e499] [cursor=pointer]:
+                      - /url: /node/40
+                  - cell "Basic page" [ref=e500]
+                  - cell "Published" [ref=e501]:
+                    - generic [ref=e502]: Published
+                  - cell "Edit Dummy Page 10 List additional actions" [ref=e503]:
+                    - list [ref=e506]:
+                      - listitem [ref=e507]:
+                        - link "Edit Dummy Page 10" [ref=e508] [cursor=pointer]:
+                          - /url: /node/40/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e509]:
+                          - generic [ref=e510]: List additional actions
+                - row "Update this item Dummy Article 26 Article Published Edit Dummy Article 26 List additional actions" [ref=e511]:
+                  - cell "Update this item" [ref=e512]:
+                    - generic [ref=e513]:
+                      - generic [ref=e514] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e515]
+                  - cell "Dummy Article 26" [ref=e516]:
+                    - link "Dummy Article 26" [ref=e517] [cursor=pointer]:
+                      - /url: /node/26
+                  - cell "Article" [ref=e518]
+                  - cell "Published" [ref=e519]:
+                    - generic [ref=e520]: Published
+                  - cell "Edit Dummy Article 26 List additional actions" [ref=e521]:
+                    - list [ref=e524]:
+                      - listitem [ref=e525]:
+                        - link "Edit Dummy Article 26" [ref=e526] [cursor=pointer]:
+                          - /url: /node/26/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e527]:
+                          - generic [ref=e528]: List additional actions
+                - row "Update this item Dummy Article 25 Article Published Edit Dummy Article 25 List additional actions" [ref=e529]:
+                  - cell "Update this item" [ref=e530]:
+                    - generic [ref=e531]:
+                      - generic [ref=e532] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e533]
+                  - cell "Dummy Article 25" [ref=e534]:
+                    - link "Dummy Article 25" [ref=e535] [cursor=pointer]:
+                      - /url: /node/25
+                  - cell "Article" [ref=e536]
+                  - cell "Published" [ref=e537]:
+                    - generic [ref=e538]: Published
+                  - cell "Edit Dummy Article 25 List additional actions" [ref=e539]:
+                    - list [ref=e542]:
+                      - listitem [ref=e543]:
+                        - link "Edit Dummy Article 25" [ref=e544] [cursor=pointer]:
+                          - /url: /node/25/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e545]:
+                          - generic [ref=e546]: List additional actions
+                - row "Update this item Dummy Article 11 Article Published Edit Dummy Article 11 List additional actions" [ref=e547]:
+                  - cell "Update this item" [ref=e548]:
+                    - generic [ref=e549]:
+                      - generic [ref=e550] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e551]
+                  - cell "Dummy Article 11" [ref=e552]:
+                    - link "Dummy Article 11" [ref=e553] [cursor=pointer]:
+                      - /url: /node/11
+                  - cell "Article" [ref=e554]
+                  - cell "Published" [ref=e555]:
+                    - generic [ref=e556]: Published
+                  - cell "Edit Dummy Article 11 List additional actions" [ref=e557]:
+                    - list [ref=e560]:
+                      - listitem [ref=e561]:
+                        - link "Edit Dummy Article 11" [ref=e562] [cursor=pointer]:
+                          - /url: /node/11/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e563]:
+                          - generic [ref=e564]: List additional actions
+                - row "Update this item Dummy Article 10 Article Published Edit Dummy Article 10 List additional actions" [ref=e565]:
+                  - cell "Update this item" [ref=e566]:
+                    - generic [ref=e567]:
+                      - generic [ref=e568] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e569]
+                  - cell "Dummy Article 10" [ref=e570]:
+                    - link "Dummy Article 10" [ref=e571] [cursor=pointer]:
+                      - /url: /node/10
+                  - cell "Article" [ref=e572]
+                  - cell "Published" [ref=e573]:
+                    - generic [ref=e574]: Published
+                  - cell "Edit Dummy Article 10 List additional actions" [ref=e575]:
+                    - list [ref=e578]:
+                      - listitem [ref=e579]:
+                        - link "Edit Dummy Article 10" [ref=e580] [cursor=pointer]:
+                          - /url: /node/10/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e581]:
+                          - generic [ref=e582]: List additional actions
+                - row "Update this item Dummy Article 9 Article Published Edit Dummy Article 9 List additional actions" [ref=e583]:
+                  - cell "Update this item" [ref=e584]:
+                    - generic [ref=e585]:
+                      - generic [ref=e586] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e587]
+                  - cell "Dummy Article 9" [ref=e588]:
+                    - link "Dummy Article 9" [ref=e589] [cursor=pointer]:
+                      - /url: /node/9
+                  - cell "Article" [ref=e590]
+                  - cell "Published" [ref=e591]:
+                    - generic [ref=e592]: Published
+                  - cell "Edit Dummy Article 9 List additional actions" [ref=e593]:
+                    - list [ref=e596]:
+                      - listitem [ref=e597]:
+                        - link "Edit Dummy Article 9" [ref=e598] [cursor=pointer]:
+                          - /url: /node/9/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e599]:
+                          - generic [ref=e600]: List additional actions
+                - row "Update this item Dummy Article 8 Article Published Edit Dummy Article 8 List additional actions" [ref=e601]:
+                  - cell "Update this item" [ref=e602]:
+                    - generic [ref=e603]:
+                      - generic [ref=e604] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e605]
+                  - cell "Dummy Article 8" [ref=e606]:
+                    - link "Dummy Article 8" [ref=e607] [cursor=pointer]:
+                      - /url: /node/8
+                  - cell "Article" [ref=e608]
+                  - cell "Published" [ref=e609]:
+                    - generic [ref=e610]: Published
+                  - cell "Edit Dummy Article 8 List additional actions" [ref=e611]:
+                    - list [ref=e614]:
+                      - listitem [ref=e615]:
+                        - link "Edit Dummy Article 8" [ref=e616] [cursor=pointer]:
+                          - /url: /node/8/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e617]:
+                          - generic [ref=e618]: List additional actions
+                - row "Update this item Dummy Article 7 Article Published Edit Dummy Article 7 List additional actions" [ref=e619]:
+                  - cell "Update this item" [ref=e620]:
+                    - generic [ref=e621]:
+                      - generic [ref=e622] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e623]
+                  - cell "Dummy Article 7" [ref=e624]:
+                    - link "Dummy Article 7" [ref=e625] [cursor=pointer]:
+                      - /url: /node/7
+                  - cell "Article" [ref=e626]
+                  - cell "Published" [ref=e627]:
+                    - generic [ref=e628]: Published
+                  - cell "Edit Dummy Article 7 List additional actions" [ref=e629]:
+                    - list [ref=e632]:
+                      - listitem [ref=e633]:
+                        - link "Edit Dummy Article 7" [ref=e634] [cursor=pointer]:
+                          - /url: /node/7/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e635]:
+                          - generic [ref=e636]: List additional actions
+                - row "Update this item Dummy Article 6 Article Published Edit Dummy Article 6 List additional actions" [ref=e637]:
+                  - cell "Update this item" [ref=e638]:
+                    - generic [ref=e639]:
+                      - generic [ref=e640] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e641]
+                  - cell "Dummy Article 6" [ref=e642]:
+                    - link "Dummy Article 6" [ref=e643] [cursor=pointer]:
+                      - /url: /node/6
+                  - cell "Article" [ref=e644]
+                  - cell "Published" [ref=e645]:
+                    - generic [ref=e646]: Published
+                  - cell "Edit Dummy Article 6 List additional actions" [ref=e647]:
+                    - list [ref=e650]:
+                      - listitem [ref=e651]:
+                        - link "Edit Dummy Article 6" [ref=e652] [cursor=pointer]:
+                          - /url: /node/6/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e653]:
+                          - generic [ref=e654]: List additional actions
+                - row "Update this item Dummy Article 5 Article Published Edit Dummy Article 5 List additional actions" [ref=e655]:
+                  - cell "Update this item" [ref=e656]:
+                    - generic [ref=e657]:
+                      - generic [ref=e658] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e659]
+                  - cell "Dummy Article 5" [ref=e660]:
+                    - link "Dummy Article 5" [ref=e661] [cursor=pointer]:
+                      - /url: /node/5
+                  - cell "Article" [ref=e662]
+                  - cell "Published" [ref=e663]:
+                    - generic [ref=e664]: Published
+                  - cell "Edit Dummy Article 5 List additional actions" [ref=e665]:
+                    - list [ref=e668]:
+                      - listitem [ref=e669]:
+                        - link "Edit Dummy Article 5" [ref=e670] [cursor=pointer]:
+                          - /url: /node/5/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e671]:
+                          - generic [ref=e672]: List additional actions
+                - row "Update this item Dummy Article 4 Article Published Edit Dummy Article 4 List additional actions" [ref=e673]:
+                  - cell "Update this item" [ref=e674]:
+                    - generic [ref=e675]:
+                      - generic [ref=e676] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e677]
+                  - cell "Dummy Article 4" [ref=e678]:
+                    - link "Dummy Article 4" [ref=e679] [cursor=pointer]:
+                      - /url: /node/4
+                  - cell "Article" [ref=e680]
+                  - cell "Published" [ref=e681]:
+                    - generic [ref=e682]: Published
+                  - cell "Edit Dummy Article 4 List additional actions" [ref=e683]:
+                    - list [ref=e686]:
+                      - listitem [ref=e687]:
+                        - link "Edit Dummy Article 4" [ref=e688] [cursor=pointer]:
+                          - /url: /node/4/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e689]:
+                          - generic [ref=e690]: List additional actions
+                - row "Update this item Dummy Article 3 Article Published Edit Dummy Article 3 List additional actions" [ref=e691]:
+                  - cell "Update this item" [ref=e692]:
+                    - generic [ref=e693]:
+                      - generic [ref=e694] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e695]
+                  - cell "Dummy Article 3" [ref=e696]:
+                    - link "Dummy Article 3" [ref=e697] [cursor=pointer]:
+                      - /url: /node/3
+                  - cell "Article" [ref=e698]
+                  - cell "Published" [ref=e699]:
+                    - generic [ref=e700]: Published
+                  - cell "Edit Dummy Article 3 List additional actions" [ref=e701]:
+                    - list [ref=e704]:
+                      - listitem [ref=e705]:
+                        - link "Edit Dummy Article 3" [ref=e706] [cursor=pointer]:
+                          - /url: /node/3/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e707]:
+                          - generic [ref=e708]: List additional actions
+                - row "Update this item Dummy Article 2 Article Published Edit Dummy Article 2 List additional actions" [ref=e709]:
+                  - cell "Update this item" [ref=e710]:
+                    - generic [ref=e711]:
+                      - generic [ref=e712] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e713]
+                  - cell "Dummy Article 2" [ref=e714]:
+                    - link "Dummy Article 2" [ref=e715] [cursor=pointer]:
+                      - /url: /node/2
+                  - cell "Article" [ref=e716]
+                  - cell "Published" [ref=e717]:
+                    - generic [ref=e718]: Published
+                  - cell "Edit Dummy Article 2 List additional actions" [ref=e719]:
+                    - list [ref=e722]:
+                      - listitem [ref=e723]:
+                        - link "Edit Dummy Article 2" [ref=e724] [cursor=pointer]:
+                          - /url: /node/2/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e725]:
+                          - generic [ref=e726]: List additional actions
+                - row "Update this item Dummy Article 12 Article Published Edit Dummy Article 12 List additional actions" [ref=e727]:
+                  - cell "Update this item" [ref=e728]:
+                    - generic [ref=e729]:
+                      - generic [ref=e730] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e731]
+                  - cell "Dummy Article 12" [ref=e732]:
+                    - link "Dummy Article 12" [ref=e733] [cursor=pointer]:
+                      - /url: /node/12
+                  - cell "Article" [ref=e734]
+                  - cell "Published" [ref=e735]:
+                    - generic [ref=e736]: Published
+                  - cell "Edit Dummy Article 12 List additional actions" [ref=e737]:
+                    - list [ref=e740]:
+                      - listitem [ref=e741]:
+                        - link "Edit Dummy Article 12" [ref=e742] [cursor=pointer]:
+                          - /url: /node/12/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e743]:
+                          - generic [ref=e744]: List additional actions
+                - row "Update this item Dummy Article 13 Article Published Edit Dummy Article 13 List additional actions" [ref=e745]:
+                  - cell "Update this item" [ref=e746]:
+                    - generic [ref=e747]:
+                      - generic [ref=e748] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e749]
+                  - cell "Dummy Article 13" [ref=e750]:
+                    - link "Dummy Article 13" [ref=e751] [cursor=pointer]:
+                      - /url: /node/13
+                  - cell "Article" [ref=e752]
+                  - cell "Published" [ref=e753]:
+                    - generic [ref=e754]: Published
+                  - cell "Edit Dummy Article 13 List additional actions" [ref=e755]:
+                    - list [ref=e758]:
+                      - listitem [ref=e759]:
+                        - link "Edit Dummy Article 13" [ref=e760] [cursor=pointer]:
+                          - /url: /node/13/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e761]:
+                          - generic [ref=e762]: List additional actions
+                - row "Update this item Dummy Article 14 Article Published Edit Dummy Article 14 List additional actions" [ref=e763]:
+                  - cell "Update this item" [ref=e764]:
+                    - generic [ref=e765]:
+                      - generic [ref=e766] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e767]
+                  - cell "Dummy Article 14" [ref=e768]:
+                    - link "Dummy Article 14" [ref=e769] [cursor=pointer]:
+                      - /url: /node/14
+                  - cell "Article" [ref=e770]
+                  - cell "Published" [ref=e771]:
+                    - generic [ref=e772]: Published
+                  - cell "Edit Dummy Article 14 List additional actions" [ref=e773]:
+                    - list [ref=e776]:
+                      - listitem [ref=e777]:
+                        - link "Edit Dummy Article 14" [ref=e778] [cursor=pointer]:
+                          - /url: /node/14/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e779]:
+                          - generic [ref=e780]: List additional actions
+                - row "Update this item Dummy Article 24 Article Published Edit Dummy Article 24 List additional actions" [ref=e781]:
+                  - cell "Update this item" [ref=e782]:
+                    - generic [ref=e783]:
+                      - generic [ref=e784] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e785]
+                  - cell "Dummy Article 24" [ref=e786]:
+                    - link "Dummy Article 24" [ref=e787] [cursor=pointer]:
+                      - /url: /node/24
+                  - cell "Article" [ref=e788]
+                  - cell "Published" [ref=e789]:
+                    - generic [ref=e790]: Published
+                  - cell "Edit Dummy Article 24 List additional actions" [ref=e791]:
+                    - list [ref=e794]:
+                      - listitem [ref=e795]:
+                        - link "Edit Dummy Article 24" [ref=e796] [cursor=pointer]:
+                          - /url: /node/24/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e797]:
+                          - generic [ref=e798]: List additional actions
+                - row "Update this item Dummy Article 23 Article Published Edit Dummy Article 23 List additional actions" [ref=e799]:
+                  - cell "Update this item" [ref=e800]:
+                    - generic [ref=e801]:
+                      - generic [ref=e802] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e803]
+                  - cell "Dummy Article 23" [ref=e804]:
+                    - link "Dummy Article 23" [ref=e805] [cursor=pointer]:
+                      - /url: /node/23
+                  - cell "Article" [ref=e806]
+                  - cell "Published" [ref=e807]:
+                    - generic [ref=e808]: Published
+                  - cell "Edit Dummy Article 23 List additional actions" [ref=e809]:
+                    - list [ref=e812]:
+                      - listitem [ref=e813]:
+                        - link "Edit Dummy Article 23" [ref=e814] [cursor=pointer]:
+                          - /url: /node/23/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e815]:
+                          - generic [ref=e816]: List additional actions
+                - row "Update this item Dummy Article 22 Article Published Edit Dummy Article 22 List additional actions" [ref=e817]:
+                  - cell "Update this item" [ref=e818]:
+                    - generic [ref=e819]:
+                      - generic [ref=e820] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e821]
+                  - cell "Dummy Article 22" [ref=e822]:
+                    - link "Dummy Article 22" [ref=e823] [cursor=pointer]:
+                      - /url: /node/22
+                  - cell "Article" [ref=e824]
+                  - cell "Published" [ref=e825]:
+                    - generic [ref=e826]: Published
+                  - cell "Edit Dummy Article 22 List additional actions" [ref=e827]:
+                    - list [ref=e830]:
+                      - listitem [ref=e831]:
+                        - link "Edit Dummy Article 22" [ref=e832] [cursor=pointer]:
+                          - /url: /node/22/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e833]:
+                          - generic [ref=e834]: List additional actions
+                - row "Update this item Dummy Article 21 Article Published Edit Dummy Article 21 List additional actions" [ref=e835]:
+                  - cell "Update this item" [ref=e836]:
+                    - generic [ref=e837]:
+                      - generic [ref=e838] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e839]
+                  - cell "Dummy Article 21" [ref=e840]:
+                    - link "Dummy Article 21" [ref=e841] [cursor=pointer]:
+                      - /url: /node/21
+                  - cell "Article" [ref=e842]
+                  - cell "Published" [ref=e843]:
+                    - generic [ref=e844]: Published
+                  - cell "Edit Dummy Article 21 List additional actions" [ref=e845]:
+                    - list [ref=e848]:
+                      - listitem [ref=e849]:
+                        - link "Edit Dummy Article 21" [ref=e850] [cursor=pointer]:
+                          - /url: /node/21/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e851]:
+                          - generic [ref=e852]: List additional actions
+                - row "Update this item Dummy Article 20 Article Published Edit Dummy Article 20 List additional actions" [ref=e853]:
+                  - cell "Update this item" [ref=e854]:
+                    - generic [ref=e855]:
+                      - generic [ref=e856] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e857]
+                  - cell "Dummy Article 20" [ref=e858]:
+                    - link "Dummy Article 20" [ref=e859] [cursor=pointer]:
+                      - /url: /node/20
+                  - cell "Article" [ref=e860]
+                  - cell "Published" [ref=e861]:
+                    - generic [ref=e862]: Published
+                  - cell "Edit Dummy Article 20 List additional actions" [ref=e863]:
+                    - list [ref=e866]:
+                      - listitem [ref=e867]:
+                        - link "Edit Dummy Article 20" [ref=e868] [cursor=pointer]:
+                          - /url: /node/20/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e869]:
+                          - generic [ref=e870]: List additional actions
+                - row "Update this item Dummy Article 19 Article Published Edit Dummy Article 19 List additional actions" [ref=e871]:
+                  - cell "Update this item" [ref=e872]:
+                    - generic [ref=e873]:
+                      - generic [ref=e874] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e875]
+                  - cell "Dummy Article 19" [ref=e876]:
+                    - link "Dummy Article 19" [ref=e877] [cursor=pointer]:
+                      - /url: /node/19
+                  - cell "Article" [ref=e878]
+                  - cell "Published" [ref=e879]:
+                    - generic [ref=e880]: Published
+                  - cell "Edit Dummy Article 19 List additional actions" [ref=e881]:
+                    - list [ref=e884]:
+                      - listitem [ref=e885]:
+                        - link "Edit Dummy Article 19" [ref=e886] [cursor=pointer]:
+                          - /url: /node/19/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e887]:
+                          - generic [ref=e888]: List additional actions
+                - row "Update this item Dummy Article 18 Article Published Edit Dummy Article 18 List additional actions" [ref=e889]:
+                  - cell "Update this item" [ref=e890]:
+                    - generic [ref=e891]:
+                      - generic [ref=e892] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e893]
+                  - cell "Dummy Article 18" [ref=e894]:
+                    - link "Dummy Article 18" [ref=e895] [cursor=pointer]:
+                      - /url: /node/18
+                  - cell "Article" [ref=e896]
+                  - cell "Published" [ref=e897]:
+                    - generic [ref=e898]: Published
+                  - cell "Edit Dummy Article 18 List additional actions" [ref=e899]:
+                    - list [ref=e902]:
+                      - listitem [ref=e903]:
+                        - link "Edit Dummy Article 18" [ref=e904] [cursor=pointer]:
+                          - /url: /node/18/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e905]:
+                          - generic [ref=e906]: List additional actions
+                - row "Update this item Dummy Article 17 Article Published Edit Dummy Article 17 List additional actions" [ref=e907]:
+                  - cell "Update this item" [ref=e908]:
+                    - generic [ref=e909]:
+                      - generic [ref=e910] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e911]
+                  - cell "Dummy Article 17" [ref=e912]:
+                    - link "Dummy Article 17" [ref=e913] [cursor=pointer]:
+                      - /url: /node/17
+                  - cell "Article" [ref=e914]
+                  - cell "Published" [ref=e915]:
+                    - generic [ref=e916]: Published
+                  - cell "Edit Dummy Article 17 List additional actions" [ref=e917]:
+                    - list [ref=e920]:
+                      - listitem [ref=e921]:
+                        - link "Edit Dummy Article 17" [ref=e922] [cursor=pointer]:
+                          - /url: /node/17/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e923]:
+                          - generic [ref=e924]: List additional actions
+                - row "Update this item Dummy Article 16 Article Published Edit Dummy Article 16 List additional actions" [ref=e925]:
+                  - cell "Update this item" [ref=e926]:
+                    - generic [ref=e927]:
+                      - generic [ref=e928] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e929]
+                  - cell "Dummy Article 16" [ref=e930]:
+                    - link "Dummy Article 16" [ref=e931] [cursor=pointer]:
+                      - /url: /node/16
+                  - cell "Article" [ref=e932]
+                  - cell "Published" [ref=e933]:
+                    - generic [ref=e934]: Published
+                  - cell "Edit Dummy Article 16 List additional actions" [ref=e935]:
+                    - list [ref=e938]:
+                      - listitem [ref=e939]:
+                        - link "Edit Dummy Article 16" [ref=e940] [cursor=pointer]:
+                          - /url: /node/16/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e941]:
+                          - generic [ref=e942]: List additional actions
+                - row "Update this item Dummy Article 15 Article Published Edit Dummy Article 15 List additional actions" [ref=e943]:
+                  - cell "Update this item" [ref=e944]:
+                    - generic [ref=e945]:
+                      - generic [ref=e946] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e947]
+                  - cell "Dummy Article 15" [ref=e948]:
+                    - link "Dummy Article 15" [ref=e949] [cursor=pointer]:
+                      - /url: /node/15
+                  - cell "Article" [ref=e950]
+                  - cell "Published" [ref=e951]:
+                    - generic [ref=e952]: Published
+                  - cell "Edit Dummy Article 15 List additional actions" [ref=e953]:
+                    - list [ref=e956]:
+                      - listitem [ref=e957]:
+                        - link "Edit Dummy Article 15" [ref=e958] [cursor=pointer]:
+                          - /url: /node/15/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e959]:
+                          - generic [ref=e960]: List additional actions
+                - row "Update this item Dummy Article 1 Article Published Edit Dummy Article 1 List additional actions" [ref=e961]:
+                  - cell "Update this item" [ref=e962]:
+                    - generic [ref=e963]:
+                      - generic [ref=e964] [cursor=pointer]: Update this item
+                      - checkbox "Update this item" [ref=e965]
+                  - cell "Dummy Article 1" [ref=e966]:
+                    - link "Dummy Article 1" [ref=e967] [cursor=pointer]:
+                      - /url: /node/1
+                  - cell "Article" [ref=e968]
+                  - cell "Published" [ref=e969]:
+                    - generic [ref=e970]: Published
+                  - cell "Edit Dummy Article 1 List additional actions" [ref=e971]:
+                    - list [ref=e974]:
+                      - listitem [ref=e975]:
+                        - link "Edit Dummy Article 1" [ref=e976] [cursor=pointer]:
+                          - /url: /node/1/edit?destination=/admin/content
+                          - text: Edit
+                      - listitem:
+                        - button "List additional actions" [ref=e977]:
+                          - generic [ref=e978]: List additional actions
+          - group "Perform actions on the selected items in the Content view" [ref=e979]:
+            - generic [ref=e980]:
+              - text: Perform actions on the selected items in the
+              - emphasis [ref=e981]: Content
+              - text: view
+            - generic [ref=e982]: No items selected
+            - generic [ref=e983]:
+              - text: "Action:"
+              - combobox "Action:" [ref=e984]:
+                - option "- Select -" [selected]
+                - option "Delete content"
+                - option "Make content sticky"
+                - option "Make content unsticky"
+                - option "Promote content to front page"
+                - option "Publish content"
+                - option "Save content"
+                - option "Remove content from front page"
+                - option "Unpublish content"
+            - button "Apply to selected items" [ref=e986] [cursor=pointer]
+  - generic [ref=e987]: No items selected
+```
+
+# Test source
+
+```ts
+  1  | // #ddev-generated
+  2  | import { test, expect } from '@playwright/test';
+  3  | import fs from 'fs';
+  4  | import type { AdminPageDefinition } from '../../page-definitions/admin-pages.js';
+  5  | 
+  6  | export function generateVrtTests(pages: AdminPageDefinition[]) {
+  7  |   for (const pageDef of pages) {
+  8  |     test.describe(pageDef.id, () => {
+  9  |       test('default state', async ({ page }, testInfo) => {
+  10 |         if (pageDef.testTimeout) {
+  11 |           test.setTimeout(pageDef.testTimeout);
+  12 |         }
+  13 | 
+  14 |         if (testInfo.project.name.includes('dark')) {
+  15 |           await page.emulateMedia({ colorScheme: 'dark' });
+  16 |         }
+  17 |         else {
+  18 |           await page.emulateMedia({ colorScheme: 'light' });
+  19 |         }
+  20 | 
+  21 |         await page.goto(pageDef.path);
+  22 | 
+  23 |         if (testInfo.project.name.startsWith('rtl-')) {
+  24 |           await page.evaluate(() => {
+  25 |             document.documentElement.dir = 'rtl';
+  26 |           });
+  27 |         }
+  28 | 
+  29 |         if (pageDef.waitFor) {
+  30 |           await page.locator(pageDef.waitFor).waitFor();
+  31 |         }
+  32 | 
+  33 |         await page.waitForLoadState('load');
+  34 | 
+  35 |         const mask = (pageDef.maskSelectors || []).map((s) => page.locator(s));
+  36 | 
+> 37 |         await expect(page).toHaveScreenshot(`${pageDef.id}.png`, {
+     |                            ^ Error: expect(page).toHaveScreenshot(expected) failed
+  38 |           fullPage: pageDef.fullPage ?? false,
+  39 |           mask,
+  40 |           ...(pageDef.timeout ? { timeout: pageDef.timeout } : {}),
+  41 |         });
+  42 |         const snapshotPath = testInfo.snapshotPath(`${pageDef.id}.png`);
+  43 |         if (fs.existsSync(snapshotPath)) {
+  44 |           await testInfo.attach('screenshot', { body: fs.readFileSync(snapshotPath), contentType: 'image/png' });
+  45 |         }
+  46 |       });
+  47 | 
+  48 |       if (pageDef.interactions) {
+  49 |         for (const interaction of pageDef.interactions) {
+  50 |           test(`interaction: ${interaction.label}`, async ({ page }, testInfo) => {
+  51 |             if (pageDef.testTimeout) {
+  52 |               test.setTimeout(pageDef.testTimeout);
+  53 |             }
+  54 | 
+  55 |             if (testInfo.project.name.includes('dark')) {
+  56 |               await page.emulateMedia({ colorScheme: 'dark' });
+  57 |             }
+  58 |             else {
+  59 |               await page.emulateMedia({ colorScheme: 'light' });
+  60 |             }
+  61 | 
+  62 |             await page.goto(pageDef.path);
+  63 | 
+  64 |             if (testInfo.project.name.startsWith('rtl-')) {
+  65 |               await page.evaluate(() => {
+  66 |                 document.documentElement.dir = 'rtl';
+  67 |               });
+  68 |             }
+  69 | 
+  70 |             if (pageDef.waitFor) {
+  71 |               await page.locator(pageDef.waitFor).waitFor();
+  72 |             }
+  73 | 
+  74 |             await page.waitForLoadState('load');
+  75 |             await interaction.action(page);
+  76 | 
+  77 |             const mask = (pageDef.maskSelectors || []).map((s) => page.locator(s));
+  78 | 
+  79 |             await expect(page).toHaveScreenshot(
+  80 |               `${pageDef.id}--${interaction.label}.png`,
+  81 |               {
+  82 |                 fullPage: pageDef.fullPage ?? false,
+  83 |                 mask,
+  84 |                 ...(pageDef.timeout ? { timeout: pageDef.timeout } : {}),
+  85 |               }
+  86 |             );
+  87 |             const snapshotPath = testInfo.snapshotPath(`${pageDef.id}--${interaction.label}.png`);
+  88 |             if (fs.existsSync(snapshotPath)) {
+  89 |               await testInfo.attach('screenshot', { body: fs.readFileSync(snapshotPath), contentType: 'image/png' });
+  90 |             }
+  91 |           });
+  92 |         }
+  93 |       }
+  94 |     });
+  95 |   }
+  96 | }
+  97 | 
+```

@@ -1,0 +1,1930 @@
+[
+  {
+    "route": "/admin/content",
+    "colorMode": "light",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "modal-trigger-click-failed",
+      "contextual-config-trigger-not-found"
+    ],
+    "buttonProbes": [
+      {
+        "id": "toolbar-structure-toggle",
+        "selector": "button.toolbar-link.toolbar-link--system-admin-structure",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": "false",
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "content-light-toolbar-structure-toggle.png"
+      },
+      {
+        "id": "contextual-config-trigger",
+        "selector": "button.trigger.focusable, button.trigger[aria-pressed], .contextual .trigger",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      },
+      {
+        "id": "dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "content-light-dropbutton-toggle.png"
+      }
+    ],
+    "interactionTypes": [
+      {
+        "id": "focus-form-control",
+        "selector": "input, textarea, select",
+        "action": "focus",
+        "found": true,
+        "visible": true,
+        "captured": true,
+        "screenshot": "content-light-interaction-focus-form-control.png",
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": []
+      },
+      {
+        "id": "hover-navigation-link",
+        "selector": "a[href]",
+        "action": "hover",
+        "found": true,
+        "visible": true,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "action-failed"
+        ]
+      },
+      {
+        "id": "toggle-aria-expanded",
+        "selector": "button[aria-expanded], [role=\"button\"][aria-expanded]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": "false",
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "toggle-aria-pressed",
+        "selector": "button[aria-pressed], [role=\"button\"][aria-pressed]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": "true",
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "open-dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "action": "click",
+        "found": true,
+        "visible": true,
+        "captured": true,
+        "screenshot": "content-light-interaction-open-dropbutton-toggle.png",
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": []
+      },
+      {
+        "id": "toggle-details-summary",
+        "selector": "details > summary",
+        "action": "click",
+        "found": true,
+        "visible": true,
+        "captured": true,
+        "screenshot": "content-light-interaction-toggle-details-summary.png",
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": []
+      },
+      {
+        "id": "open-contextual-trigger",
+        "selector": "button.trigger.focusable, .contextual .trigger",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/admin/content",
+    "colorMode": "dark",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "modal-trigger-click-failed",
+      "contextual-config-trigger-not-found"
+    ],
+    "buttonProbes": [
+      {
+        "id": "toolbar-structure-toggle",
+        "selector": "button.toolbar-link.toolbar-link--system-admin-structure",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": "false",
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "content-dark-toolbar-structure-toggle.png"
+      },
+      {
+        "id": "contextual-config-trigger",
+        "selector": "button.trigger.focusable, button.trigger[aria-pressed], .contextual .trigger",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      },
+      {
+        "id": "dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "content-dark-dropbutton-toggle.png"
+      }
+    ],
+    "interactionTypes": [
+      {
+        "id": "focus-form-control",
+        "selector": "input, textarea, select",
+        "action": "focus",
+        "found": true,
+        "visible": true,
+        "captured": true,
+        "screenshot": "content-dark-interaction-focus-form-control.png",
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": []
+      },
+      {
+        "id": "hover-navigation-link",
+        "selector": "a[href]",
+        "action": "hover",
+        "found": true,
+        "visible": true,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "action-failed"
+        ]
+      },
+      {
+        "id": "toggle-aria-expanded",
+        "selector": "button[aria-expanded], [role=\"button\"][aria-expanded]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": "false",
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "toggle-aria-pressed",
+        "selector": "button[aria-pressed], [role=\"button\"][aria-pressed]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": "true",
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "open-dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "action": "click",
+        "found": true,
+        "visible": true,
+        "captured": true,
+        "screenshot": "content-dark-interaction-open-dropbutton-toggle.png",
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": []
+      },
+      {
+        "id": "toggle-details-summary",
+        "selector": "details > summary",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "open-contextual-trigger",
+        "selector": "button.trigger.focusable, .contextual .trigger",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/admin/structure",
+    "colorMode": "light",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "modal-trigger-click-failed",
+      "contextual-config-trigger-not-found",
+      "dropbutton-toggle-not-found"
+    ],
+    "buttonProbes": [
+      {
+        "id": "toolbar-structure-toggle",
+        "selector": "button.toolbar-link.toolbar-link--system-admin-structure",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": "false",
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "structure-light-toolbar-structure-toggle.png"
+      },
+      {
+        "id": "contextual-config-trigger",
+        "selector": "button.trigger.focusable, button.trigger[aria-pressed], .contextual .trigger",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      },
+      {
+        "id": "dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      }
+    ],
+    "interactionTypes": [
+      {
+        "id": "focus-form-control",
+        "selector": "input, textarea, select",
+        "action": "focus",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "hover-navigation-link",
+        "selector": "a[href]",
+        "action": "hover",
+        "found": true,
+        "visible": true,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "action-failed"
+        ]
+      },
+      {
+        "id": "toggle-aria-expanded",
+        "selector": "button[aria-expanded], [role=\"button\"][aria-expanded]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": "false",
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "toggle-aria-pressed",
+        "selector": "button[aria-pressed], [role=\"button\"][aria-pressed]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": "true",
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "open-dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "toggle-details-summary",
+        "selector": "details > summary",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "open-contextual-trigger",
+        "selector": "button.trigger.focusable, .contextual .trigger",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/admin/structure",
+    "colorMode": "dark",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "modal-trigger-click-failed",
+      "contextual-config-trigger-not-found",
+      "dropbutton-toggle-not-found"
+    ],
+    "buttonProbes": [
+      {
+        "id": "toolbar-structure-toggle",
+        "selector": "button.toolbar-link.toolbar-link--system-admin-structure",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": "false",
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "structure-dark-toolbar-structure-toggle.png"
+      },
+      {
+        "id": "contextual-config-trigger",
+        "selector": "button.trigger.focusable, button.trigger[aria-pressed], .contextual .trigger",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      },
+      {
+        "id": "dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      }
+    ],
+    "interactionTypes": [
+      {
+        "id": "focus-form-control",
+        "selector": "input, textarea, select",
+        "action": "focus",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "hover-navigation-link",
+        "selector": "a[href]",
+        "action": "hover",
+        "found": true,
+        "visible": true,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "action-failed"
+        ]
+      },
+      {
+        "id": "toggle-aria-expanded",
+        "selector": "button[aria-expanded], [role=\"button\"][aria-expanded]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": "false",
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "toggle-aria-pressed",
+        "selector": "button[aria-pressed], [role=\"button\"][aria-pressed]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": "true",
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "open-dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "toggle-details-summary",
+        "selector": "details > summary",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "open-contextual-trigger",
+        "selector": "button.trigger.focusable, .contextual .trigger",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/admin/structure/block-content",
+    "colorMode": "light",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "modal-trigger-click-failed",
+      "contextual-config-trigger-not-found"
+    ],
+    "buttonProbes": [
+      {
+        "id": "toolbar-structure-toggle",
+        "selector": "button.toolbar-link.toolbar-link--system-admin-structure",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": "false",
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "block-content-light-toolbar-structure-toggle.png"
+      },
+      {
+        "id": "contextual-config-trigger",
+        "selector": "button.trigger.focusable, button.trigger[aria-pressed], .contextual .trigger",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      },
+      {
+        "id": "dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "block-content-light-dropbutton-toggle.png"
+      }
+    ],
+    "interactionTypes": [
+      {
+        "id": "focus-form-control",
+        "selector": "input, textarea, select",
+        "action": "focus",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "hover-navigation-link",
+        "selector": "a[href]",
+        "action": "hover",
+        "found": true,
+        "visible": true,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "action-failed"
+        ]
+      },
+      {
+        "id": "toggle-aria-expanded",
+        "selector": "button[aria-expanded], [role=\"button\"][aria-expanded]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": "false",
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "toggle-aria-pressed",
+        "selector": "button[aria-pressed], [role=\"button\"][aria-pressed]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": "true",
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "open-dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "action": "click",
+        "found": true,
+        "visible": true,
+        "captured": true,
+        "screenshot": "block-content-light-interaction-open-dropbutton-toggle.png",
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": []
+      },
+      {
+        "id": "toggle-details-summary",
+        "selector": "details > summary",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "open-contextual-trigger",
+        "selector": "button.trigger.focusable, .contextual .trigger",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/admin/structure/block-content",
+    "colorMode": "dark",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "modal-trigger-click-failed",
+      "contextual-config-trigger-not-found"
+    ],
+    "buttonProbes": [
+      {
+        "id": "toolbar-structure-toggle",
+        "selector": "button.toolbar-link.toolbar-link--system-admin-structure",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": "false",
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "block-content-dark-toolbar-structure-toggle.png"
+      },
+      {
+        "id": "contextual-config-trigger",
+        "selector": "button.trigger.focusable, button.trigger[aria-pressed], .contextual .trigger",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      },
+      {
+        "id": "dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "block-content-dark-dropbutton-toggle.png"
+      }
+    ],
+    "interactionTypes": [
+      {
+        "id": "focus-form-control",
+        "selector": "input, textarea, select",
+        "action": "focus",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "hover-navigation-link",
+        "selector": "a[href]",
+        "action": "hover",
+        "found": true,
+        "visible": true,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "action-failed"
+        ]
+      },
+      {
+        "id": "toggle-aria-expanded",
+        "selector": "button[aria-expanded], [role=\"button\"][aria-expanded]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": "false",
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "toggle-aria-pressed",
+        "selector": "button[aria-pressed], [role=\"button\"][aria-pressed]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": "true",
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "open-dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "action": "click",
+        "found": true,
+        "visible": true,
+        "captured": true,
+        "screenshot": "block-content-dark-interaction-open-dropbutton-toggle.png",
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": []
+      },
+      {
+        "id": "toggle-details-summary",
+        "selector": "details > summary",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "open-contextual-trigger",
+        "selector": "button.trigger.focusable, .contextual .trigger",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/admin/appearance",
+    "colorMode": "light",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "modal-trigger-click-failed",
+      "contextual-config-trigger-not-found",
+      "dropbutton-toggle-not-found"
+    ],
+    "buttonProbes": [
+      {
+        "id": "toolbar-structure-toggle",
+        "selector": "button.toolbar-link.toolbar-link--system-admin-structure",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": "false",
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "appearance-light-toolbar-structure-toggle.png"
+      },
+      {
+        "id": "contextual-config-trigger",
+        "selector": "button.trigger.focusable, button.trigger[aria-pressed], .contextual .trigger",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      },
+      {
+        "id": "dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      }
+    ],
+    "interactionTypes": [
+      {
+        "id": "focus-form-control",
+        "selector": "input, textarea, select",
+        "action": "focus",
+        "found": true,
+        "visible": true,
+        "captured": true,
+        "screenshot": "appearance-light-interaction-focus-form-control.png",
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": []
+      },
+      {
+        "id": "hover-navigation-link",
+        "selector": "a[href]",
+        "action": "hover",
+        "found": true,
+        "visible": true,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "action-failed"
+        ]
+      },
+      {
+        "id": "toggle-aria-expanded",
+        "selector": "button[aria-expanded], [role=\"button\"][aria-expanded]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": "false",
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "toggle-aria-pressed",
+        "selector": "button[aria-pressed], [role=\"button\"][aria-pressed]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": "true",
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "open-dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "toggle-details-summary",
+        "selector": "details > summary",
+        "action": "click",
+        "found": true,
+        "visible": true,
+        "captured": true,
+        "screenshot": "appearance-light-interaction-toggle-details-summary.png",
+        "ariaExpandedBefore": "true",
+        "ariaExpandedAfter": "false",
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": []
+      },
+      {
+        "id": "open-contextual-trigger",
+        "selector": "button.trigger.focusable, .contextual .trigger",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/admin/appearance",
+    "colorMode": "dark",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "modal-trigger-click-failed",
+      "contextual-config-trigger-not-found",
+      "dropbutton-toggle-not-found"
+    ],
+    "buttonProbes": [
+      {
+        "id": "toolbar-structure-toggle",
+        "selector": "button.toolbar-link.toolbar-link--system-admin-structure",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": "false",
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "appearance-dark-toolbar-structure-toggle.png"
+      },
+      {
+        "id": "contextual-config-trigger",
+        "selector": "button.trigger.focusable, button.trigger[aria-pressed], .contextual .trigger",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      },
+      {
+        "id": "dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      }
+    ],
+    "interactionTypes": [
+      {
+        "id": "focus-form-control",
+        "selector": "input, textarea, select",
+        "action": "focus",
+        "found": true,
+        "visible": true,
+        "captured": true,
+        "screenshot": "appearance-dark-interaction-focus-form-control.png",
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": []
+      },
+      {
+        "id": "hover-navigation-link",
+        "selector": "a[href]",
+        "action": "hover",
+        "found": true,
+        "visible": true,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "action-failed"
+        ]
+      },
+      {
+        "id": "toggle-aria-expanded",
+        "selector": "button[aria-expanded], [role=\"button\"][aria-expanded]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": "false",
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "toggle-aria-pressed",
+        "selector": "button[aria-pressed], [role=\"button\"][aria-pressed]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": "true",
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "open-dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "toggle-details-summary",
+        "selector": "details > summary",
+        "action": "click",
+        "found": true,
+        "visible": true,
+        "captured": true,
+        "screenshot": "appearance-dark-interaction-toggle-details-summary.png",
+        "ariaExpandedBefore": "true",
+        "ariaExpandedAfter": "false",
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": []
+      },
+      {
+        "id": "open-contextual-trigger",
+        "selector": "button.trigger.focusable, .contextual .trigger",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/admin/config",
+    "colorMode": "light",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "modal-trigger-click-failed",
+      "contextual-config-trigger-not-found",
+      "dropbutton-toggle-not-found"
+    ],
+    "buttonProbes": [
+      {
+        "id": "toolbar-structure-toggle",
+        "selector": "button.toolbar-link.toolbar-link--system-admin-structure",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": "false",
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "config-light-toolbar-structure-toggle.png"
+      },
+      {
+        "id": "contextual-config-trigger",
+        "selector": "button.trigger.focusable, button.trigger[aria-pressed], .contextual .trigger",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      },
+      {
+        "id": "dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      }
+    ],
+    "interactionTypes": [
+      {
+        "id": "focus-form-control",
+        "selector": "input, textarea, select",
+        "action": "focus",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "hover-navigation-link",
+        "selector": "a[href]",
+        "action": "hover",
+        "found": true,
+        "visible": true,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "action-failed"
+        ]
+      },
+      {
+        "id": "toggle-aria-expanded",
+        "selector": "button[aria-expanded], [role=\"button\"][aria-expanded]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": "false",
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "toggle-aria-pressed",
+        "selector": "button[aria-pressed], [role=\"button\"][aria-pressed]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": "true",
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "open-dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "toggle-details-summary",
+        "selector": "details > summary",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "open-contextual-trigger",
+        "selector": "button.trigger.focusable, .contextual .trigger",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/admin/config",
+    "colorMode": "dark",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "modal-trigger-click-failed",
+      "contextual-config-trigger-not-found",
+      "dropbutton-toggle-not-found"
+    ],
+    "buttonProbes": [
+      {
+        "id": "toolbar-structure-toggle",
+        "selector": "button.toolbar-link.toolbar-link--system-admin-structure",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": "false",
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "config-dark-toolbar-structure-toggle.png"
+      },
+      {
+        "id": "contextual-config-trigger",
+        "selector": "button.trigger.focusable, button.trigger[aria-pressed], .contextual .trigger",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      },
+      {
+        "id": "dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      }
+    ],
+    "interactionTypes": [
+      {
+        "id": "focus-form-control",
+        "selector": "input, textarea, select",
+        "action": "focus",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "hover-navigation-link",
+        "selector": "a[href]",
+        "action": "hover",
+        "found": true,
+        "visible": true,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "action-failed"
+        ]
+      },
+      {
+        "id": "toggle-aria-expanded",
+        "selector": "button[aria-expanded], [role=\"button\"][aria-expanded]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": "false",
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "toggle-aria-pressed",
+        "selector": "button[aria-pressed], [role=\"button\"][aria-pressed]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": "true",
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "open-dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "toggle-details-summary",
+        "selector": "details > summary",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      },
+      {
+        "id": "open-contextual-trigger",
+        "selector": "button.trigger.focusable, .contextual .trigger",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/admin/people",
+    "colorMode": "light",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "modal-trigger-click-failed",
+      "contextual-config-trigger-not-found"
+    ],
+    "buttonProbes": [
+      {
+        "id": "toolbar-structure-toggle",
+        "selector": "button.toolbar-link.toolbar-link--system-admin-structure",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": "false",
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "people-light-toolbar-structure-toggle.png"
+      },
+      {
+        "id": "contextual-config-trigger",
+        "selector": "button.trigger.focusable, button.trigger[aria-pressed], .contextual .trigger",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      },
+      {
+        "id": "dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "people-light-dropbutton-toggle.png"
+      }
+    ],
+    "interactionTypes": [
+      {
+        "id": "focus-form-control",
+        "selector": "input, textarea, select",
+        "action": "focus",
+        "found": true,
+        "visible": true,
+        "captured": true,
+        "screenshot": "people-light-interaction-focus-form-control.png",
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": []
+      },
+      {
+        "id": "hover-navigation-link",
+        "selector": "a[href]",
+        "action": "hover",
+        "found": true,
+        "visible": true,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "action-failed"
+        ]
+      },
+      {
+        "id": "toggle-aria-expanded",
+        "selector": "button[aria-expanded], [role=\"button\"][aria-expanded]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": "false",
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "toggle-aria-pressed",
+        "selector": "button[aria-pressed], [role=\"button\"][aria-pressed]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": "true",
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "open-dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "action": "click",
+        "found": true,
+        "visible": true,
+        "captured": true,
+        "screenshot": "people-light-interaction-open-dropbutton-toggle.png",
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": []
+      },
+      {
+        "id": "toggle-details-summary",
+        "selector": "details > summary",
+        "action": "click",
+        "found": true,
+        "visible": true,
+        "captured": true,
+        "screenshot": "people-light-interaction-toggle-details-summary.png",
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": []
+      },
+      {
+        "id": "open-contextual-trigger",
+        "selector": "button.trigger.focusable, .contextual .trigger",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/admin/people",
+    "colorMode": "dark",
+    "hover": true,
+    "focus": true,
+    "modal": false,
+    "notes": [
+      "modal-trigger-click-failed",
+      "contextual-config-trigger-not-found"
+    ],
+    "buttonProbes": [
+      {
+        "id": "toolbar-structure-toggle",
+        "selector": "button.toolbar-link.toolbar-link--system-admin-structure",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": "false",
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "people-dark-toolbar-structure-toggle.png"
+      },
+      {
+        "id": "contextual-config-trigger",
+        "selector": "button.trigger.focusable, button.trigger[aria-pressed], .contextual .trigger",
+        "found": false,
+        "visible": false,
+        "clicked": false,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": null
+      },
+      {
+        "id": "dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "found": true,
+        "visible": true,
+        "clicked": true,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "screenshot": "people-dark-dropbutton-toggle.png"
+      }
+    ],
+    "interactionTypes": [
+      {
+        "id": "focus-form-control",
+        "selector": "input, textarea, select",
+        "action": "focus",
+        "found": true,
+        "visible": true,
+        "captured": true,
+        "screenshot": "people-dark-interaction-focus-form-control.png",
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": []
+      },
+      {
+        "id": "hover-navigation-link",
+        "selector": "a[href]",
+        "action": "hover",
+        "found": true,
+        "visible": true,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "action-failed"
+        ]
+      },
+      {
+        "id": "toggle-aria-expanded",
+        "selector": "button[aria-expanded], [role=\"button\"][aria-expanded]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": "false",
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "toggle-aria-pressed",
+        "selector": "button[aria-pressed], [role=\"button\"][aria-pressed]",
+        "action": "click",
+        "found": true,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": "true",
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-visible"
+        ]
+      },
+      {
+        "id": "open-dropbutton-toggle",
+        "selector": ".dropbutton-wrapper .dropbutton__toggle, .dropbutton-toggle button.dropbutton__toggle",
+        "action": "click",
+        "found": true,
+        "visible": true,
+        "captured": true,
+        "screenshot": "people-dark-interaction-open-dropbutton-toggle.png",
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": []
+      },
+      {
+        "id": "toggle-details-summary",
+        "selector": "details > summary",
+        "action": "click",
+        "found": true,
+        "visible": true,
+        "captured": true,
+        "screenshot": "people-dark-interaction-toggle-details-summary.png",
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": []
+      },
+      {
+        "id": "open-contextual-trigger",
+        "selector": "button.trigger.focusable, .contextual .trigger",
+        "action": "click",
+        "found": false,
+        "visible": false,
+        "captured": false,
+        "screenshot": null,
+        "ariaExpandedBefore": null,
+        "ariaExpandedAfter": null,
+        "ariaPressedBefore": null,
+        "ariaPressedAfter": null,
+        "notes": [
+          "not-found"
+        ]
+      }
+    ]
+  }
+]

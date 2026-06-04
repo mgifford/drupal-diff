@@ -1,0 +1,1602 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: vrt/structure.spec.ts >> structure-menu-admin >> default state
+- Location: tests/vrt/generate-vrt-tests.ts:9:11
+
+# Error details
+
+```
+Error: A snapshot doesn't exist at /var/www/html/__screenshots__/rtl-wide-dark/vrt/structure.spec.ts/structure-menu-admin.png, writing actual.
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - navigation "Administrative sidebar" [ref=e3]:
+    - heading "Administrative sidebar" [level=2] [ref=e4]
+    - generic [ref=e5]:
+      - link "Home page" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img [ref=e8]
+        - generic [ref=e11]: Home page
+      - generic [ref=e12]:
+        - heading "Content" [level=3] [ref=e13]
+        - list [ref=e14]:
+          - listitem [ref=e15]:
+            - button "Extend Create" [ref=e16] [cursor=pointer]:
+              - img [ref=e17]
+              - generic [ref=e19]: Extend
+              - generic [ref=e20]: Create
+              - img [ref=e21]
+            - generic [ref=e23]:
+              - link "Create" [ref=e24] [cursor=pointer]:
+                - /url: /node/add
+                - generic [ref=e25]: Create
+              - list [ref=e26]:
+                - listitem [ref=e27]:
+                  - link "Article" [ref=e28] [cursor=pointer]:
+                    - /url: /node/add/article
+                    - generic [ref=e29]: Article
+                - listitem [ref=e30]:
+                  - link "Basic page" [ref=e31] [cursor=pointer]:
+                    - /url: /node/add/page
+                    - generic [ref=e32]: Basic page
+          - listitem [ref=e33]:
+            - link "Blocks" [ref=e34] [cursor=pointer]:
+              - /url: /admin/content/block
+              - img [ref=e35]
+              - generic [ref=e37]: Blocks
+          - listitem [ref=e38]:
+            - link "Content" [ref=e39] [cursor=pointer]:
+              - /url: /admin/content
+              - img [ref=e40]
+              - generic [ref=e42]: Content
+          - listitem [ref=e43]:
+            - link "Files" [ref=e44] [cursor=pointer]:
+              - /url: /admin/content/files
+              - img [ref=e45]
+              - generic [ref=e47]: Files
+      - generic [ref=e48]:
+        - heading "Administration" [level=3] [ref=e49]
+        - list [ref=e50]:
+          - listitem [ref=e51]:
+            - button "Extend Structure" [ref=e52] [cursor=pointer]:
+              - img [ref=e53]
+              - generic [ref=e55]: Extend
+              - generic [ref=e56]: Structure
+              - img [ref=e57]
+            - generic [ref=e59]:
+              - link "Structure" [ref=e60] [cursor=pointer]:
+                - /url: /admin/structure
+                - generic [ref=e61]: Structure
+              - list [ref=e62]:
+                - listitem [ref=e63]:
+                  - link "Block layout" [ref=e64] [cursor=pointer]:
+                    - /url: /admin/structure/block
+                    - generic [ref=e65]: Block layout
+                - listitem [ref=e66]:
+                  - link "Block types" [ref=e67] [cursor=pointer]:
+                    - /url: /admin/structure/block-content
+                    - generic [ref=e68]: Block types
+                - listitem [ref=e69]:
+                  - link "Content types" [ref=e70] [cursor=pointer]:
+                    - /url: /admin/structure/types
+                    - generic [ref=e71]: Content types
+                - listitem [ref=e72]:
+                  - button "Display modes" [ref=e73] [cursor=pointer]:
+                    - generic [ref=e74]: Display modes
+                    - img [ref=e75]
+                - listitem [ref=e77]:
+                  - link "Menus" [ref=e78] [cursor=pointer]:
+                    - /url: /admin/structure/menu
+                    - generic [ref=e79]: Menus
+                - listitem [ref=e80]:
+                  - link "Taxonomy" [ref=e81] [cursor=pointer]:
+                    - /url: /admin/structure/taxonomy
+                    - generic [ref=e82]: Taxonomy
+                - listitem [ref=e83]:
+                  - link "Views" [ref=e84] [cursor=pointer]:
+                    - /url: /admin/structure/views
+                    - generic [ref=e85]: Views
+          - listitem [ref=e86]:
+            - link "Appearance" [ref=e87] [cursor=pointer]:
+              - /url: /admin/appearance
+              - img [ref=e88]
+              - generic [ref=e90]: Appearance
+          - listitem [ref=e91]:
+            - link "Extend" [ref=e92] [cursor=pointer]:
+              - /url: /admin/modules
+              - img [ref=e93]
+              - generic [ref=e95]: Extend
+          - listitem [ref=e96]:
+            - button "Extend Configuration" [ref=e97] [cursor=pointer]:
+              - img [ref=e98]
+              - generic [ref=e100]: Extend
+              - generic [ref=e101]: Configuration
+              - img [ref=e102]
+            - generic [ref=e104]:
+              - link "Configuration" [ref=e105] [cursor=pointer]:
+                - /url: /admin/config
+                - generic [ref=e106]: Configuration
+              - list [ref=e107]:
+                - listitem [ref=e108]:
+                  - button "People" [ref=e109] [cursor=pointer]:
+                    - generic [ref=e110]: People
+                    - img [ref=e111]
+                - listitem [ref=e113]:
+                  - button "System" [ref=e114] [cursor=pointer]:
+                    - generic [ref=e115]: System
+                    - img [ref=e116]
+                - listitem [ref=e118]:
+                  - button "Content authoring" [ref=e119] [cursor=pointer]:
+                    - generic [ref=e120]: Content authoring
+                    - img [ref=e121]
+                - listitem [ref=e123]:
+                  - button "User interface" [ref=e124] [cursor=pointer]:
+                    - generic [ref=e125]: User interface
+                    - img [ref=e126]
+                - listitem [ref=e128]:
+                  - button "Development" [ref=e129] [cursor=pointer]:
+                    - generic [ref=e130]: Development
+                    - img [ref=e131]
+                - listitem [ref=e133]:
+                  - button "Media" [ref=e134] [cursor=pointer]:
+                    - generic [ref=e135]: Media
+                    - img [ref=e136]
+                - listitem [ref=e138]:
+                  - button "Search and metadata" [ref=e139] [cursor=pointer]:
+                    - generic [ref=e140]: Search and metadata
+                    - img [ref=e141]
+                - listitem [ref=e143]:
+                  - button "Region and language" [ref=e144] [cursor=pointer]:
+                    - generic [ref=e145]: Region and language
+                    - img [ref=e146]
+                - listitem [ref=e148]:
+                  - button "Web services" [ref=e149] [cursor=pointer]:
+                    - generic [ref=e150]: Web services
+                    - img [ref=e151]
+          - listitem [ref=e153]:
+            - link "People" [ref=e154] [cursor=pointer]:
+              - /url: /admin/people
+              - img [ref=e155]
+              - generic [ref=e157]: People
+          - listitem [ref=e158]:
+            - button "Extend Reports" [ref=e159] [cursor=pointer]:
+              - img [ref=e160]
+              - generic [ref=e162]: Extend
+              - generic [ref=e163]: Reports
+              - img [ref=e164]
+            - generic [ref=e166]:
+              - link "Reports" [ref=e167] [cursor=pointer]:
+                - /url: /admin/reports
+                - generic [ref=e168]: Reports
+              - list [ref=e169]:
+                - listitem [ref=e170]:
+                  - link "Status report" [ref=e171] [cursor=pointer]:
+                    - /url: /admin/reports/status
+                    - generic [ref=e172]: Status report
+                - listitem [ref=e173]:
+                  - link "Available updates" [ref=e174] [cursor=pointer]:
+                    - /url: /admin/reports/updates
+                    - generic [ref=e175]: Available updates
+                - listitem [ref=e176]:
+                  - link "Recent log messages" [ref=e177] [cursor=pointer]:
+                    - /url: /admin/reports/dblog
+                    - generic [ref=e178]: Recent log messages
+                - listitem [ref=e179]:
+                  - link "Field list" [ref=e180] [cursor=pointer]:
+                    - /url: /admin/reports/fields
+                    - generic [ref=e181]: Field list
+                - listitem [ref=e182]:
+                  - link "Top 'access denied' errors" [ref=e183] [cursor=pointer]:
+                    - /url: /admin/reports/access-denied
+                    - generic [ref=e184]: Top 'access denied' errors
+                - listitem [ref=e185]:
+                  - link "Top 'page not found' errors" [ref=e186] [cursor=pointer]:
+                    - /url: /admin/reports/page-not-found
+                    - generic [ref=e187]: Top 'page not found' errors
+                - listitem [ref=e188]:
+                  - link "Views plugins" [ref=e189] [cursor=pointer]:
+                    - /url: /admin/reports/views-plugins
+                    - generic [ref=e190]: Views plugins
+          - listitem [ref=e191]:
+            - link "Announcements" [ref=e192] [cursor=pointer]:
+              - /url: /admin/announcements_feed
+              - img [ref=e193]
+              - generic [ref=e197]: Announcements
+    - generic [ref=e198]:
+      - generic [ref=e199]:
+        - heading "Help" [level=3] [ref=e200]
+        - list [ref=e201]:
+          - listitem [ref=e202]:
+            - link "Help" [ref=e203] [cursor=pointer]:
+              - /url: /admin/help
+              - img [ref=e204]
+              - generic [ref=e206]: Help
+      - generic [ref=e207]:
+        - heading "User" [level=3] [ref=e208]
+        - list [ref=e209]:
+          - listitem [ref=e210]:
+            - button "Extend admin" [ref=e211] [cursor=pointer]:
+              - img [ref=e212]
+              - generic [ref=e214]: Extend
+              - generic [ref=e215]: admin
+              - img [ref=e216]
+            - generic [ref=e218]:
+              - link "admin" [ref=e219] [cursor=pointer]:
+                - /url: /user
+                - generic [ref=e220]: admin
+              - list [ref=e221]:
+                - listitem [ref=e222]:
+                  - link "View profile" [ref=e223] [cursor=pointer]:
+                    - /url: /user
+                    - generic [ref=e224]: View profile
+                - listitem [ref=e225]:
+                  - link "Edit profile" [ref=e226] [cursor=pointer]:
+                    - /url: /user/edit
+                    - generic [ref=e227]: Edit profile
+                - listitem [ref=e228]:
+                  - link "Log out" [ref=e229] [cursor=pointer]:
+                    - /url: /user/logout?token=eo89YCrv2zKQc3N32SW-D_UUgmk2ti5UPbpdR-kaC2Q
+                    - generic [ref=e230]: Log out
+      - button "Collapse sidebar" [expanded] [ref=e231] [cursor=pointer]:
+        - img [ref=e232]
+        - generic [ref=e234]: Collapse sidebar
+  - generic [ref=e236]:
+    - navigation "Breadcrumb" [ref=e238]:
+      - heading "Breadcrumb" [level=2] [ref=e239]
+      - list [ref=e240]:
+        - listitem:
+          - link "Back to site" [ref=e241] [cursor=pointer]:
+            - /url: /
+        - listitem:
+          - link "Administration" [ref=e242] [cursor=pointer]:
+            - /url: /admin
+        - listitem:
+          - text: /
+          - link "Structure" [ref=e243] [cursor=pointer]:
+            - /url: /admin/structure
+        - listitem:
+          - text: /
+          - link "Menus" [ref=e244] [cursor=pointer]:
+            - /url: /admin/structure/menu
+    - list [ref=e246]:
+      - listitem [ref=e247]:
+        - link "+Add link" [ref=e248] [cursor=pointer]:
+          - /url: /admin/structure/menu/manage/admin/add?destination=/admin/structure/menu/manage/admin
+  - generic [ref=e249]:
+    - banner [ref=e250]:
+      - heading "Edit menu Administration" [level=1] [ref=e254]:
+        - text: Edit menu
+        - emphasis [ref=e255]: Administration
+    - main [ref=e257]:
+      - generic [ref=e261]:
+        - generic [ref=e262]:
+          - generic [ref=e263] [cursor=pointer]: Title *
+          - textbox "Title *" [ref=e264]: Administration
+          - generic [ref=e266]: "Machine name: admin"
+        - text: "*"
+        - generic [ref=e267]:
+          - generic [ref=e268] [cursor=pointer]: Administrative summary
+          - textbox "Administrative summary" [ref=e269]: Administrative task links
+        - generic [ref=e270]:
+          - button "Show row weights" [ref=e272] [cursor=pointer]:
+            - generic [ref=e273]: Show row weights
+          - table [ref=e275]:
+            - rowgroup [ref=e276]:
+              - row "Menu link Enabled Operations" [ref=e277]:
+                - columnheader "Menu link" [ref=e278]
+                - columnheader "Enabled" [ref=e279]
+                - columnheader "Operations" [ref=e280]
+            - rowgroup [ref=e281]:
+              - row "Administration Enable Administration menu link Edit List additional actions" [ref=e282]:
+                - cell "Administration" [ref=e283]:
+                  - generic [ref=e284]:
+                    - link "Move in any direction" [ref=e285]:
+                      - /url: "#"
+                    - link "Administration" [ref=e287] [cursor=pointer]:
+                      - /url: /admin
+                - cell "Enable Administration menu link" [ref=e288]:
+                  - generic [ref=e289]:
+                    - generic [ref=e290] [cursor=pointer]: Enable Administration menu link
+                    - checkbox "Enable Administration menu link" [checked] [ref=e291]
+                - cell "Edit List additional actions" [ref=e292]:
+                  - list [ref=e295]:
+                    - listitem [ref=e296]:
+                      - link "Edit" [ref=e297] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.admin/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e298]:
+                        - generic [ref=e299]: List additional actions
+                - cell [ref=e300]
+              - row "Content Enable Content menu link Edit List additional actions" [ref=e301]:
+                - cell "Content" [ref=e302]:
+                  - generic [ref=e303]:
+                    - img [ref=e305]
+                    - link "Move in any direction" [ref=e306]:
+                      - /url: "#"
+                    - link "Content" [ref=e308] [cursor=pointer]:
+                      - /url: /admin/content
+                - cell "Enable Content menu link" [ref=e309]:
+                  - generic [ref=e310]:
+                    - generic [ref=e311] [cursor=pointer]: Enable Content menu link
+                    - checkbox "Enable Content menu link" [checked] [ref=e312]
+                - cell "Edit List additional actions" [ref=e313]:
+                  - list [ref=e316]:
+                    - listitem [ref=e317]:
+                      - link "Edit" [ref=e318] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.admin_content/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e319]:
+                        - generic [ref=e320]: List additional actions
+                - cell [ref=e321]
+              - row "Structure Enable Structure menu link Edit List additional actions" [ref=e322]:
+                - cell "Structure" [ref=e323]:
+                  - generic [ref=e324]:
+                    - img [ref=e326]
+                    - link "Move in any direction" [ref=e327]:
+                      - /url: "#"
+                    - link "Structure" [ref=e329] [cursor=pointer]:
+                      - /url: /admin/structure
+                - cell "Enable Structure menu link" [ref=e330]:
+                  - generic [ref=e331]:
+                    - generic [ref=e332] [cursor=pointer]: Enable Structure menu link
+                    - checkbox "Enable Structure menu link" [checked] [ref=e333]
+                - cell "Edit List additional actions" [ref=e334]:
+                  - list [ref=e337]:
+                    - listitem [ref=e338]:
+                      - link "Edit" [ref=e339] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.admin_structure/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e340]:
+                        - generic [ref=e341]: List additional actions
+                - cell [ref=e342]
+              - row "Block layout Enable Block layout menu link Edit List additional actions" [ref=e343]:
+                - cell "Block layout" [ref=e344]:
+                  - generic [ref=e345]:
+                    - img [ref=e347]
+                    - img [ref=e349]
+                    - link "Move in any direction" [ref=e350]:
+                      - /url: "#"
+                    - link "Block layout" [ref=e352] [cursor=pointer]:
+                      - /url: /admin/structure/block
+                - cell "Enable Block layout menu link" [ref=e353]:
+                  - generic [ref=e354]:
+                    - generic [ref=e355] [cursor=pointer]: Enable Block layout menu link
+                    - checkbox "Enable Block layout menu link" [checked] [ref=e356]
+                - cell "Edit List additional actions" [ref=e357]:
+                  - list [ref=e360]:
+                    - listitem [ref=e361]:
+                      - link "Edit" [ref=e362] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/block.admin_display/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e363]:
+                        - generic [ref=e364]: List additional actions
+                - cell [ref=e365]
+              - row "Block types Enable Block types menu link Edit List additional actions" [ref=e366]:
+                - cell "Block types" [ref=e367]:
+                  - generic [ref=e368]:
+                    - img [ref=e370]
+                    - img [ref=e372]
+                    - link "Move in any direction" [ref=e373]:
+                      - /url: "#"
+                    - link "Block types" [ref=e375] [cursor=pointer]:
+                      - /url: /admin/structure/block-content
+                - cell "Enable Block types menu link" [ref=e376]:
+                  - generic [ref=e377]:
+                    - generic [ref=e378] [cursor=pointer]: Enable Block types menu link
+                    - checkbox "Enable Block types menu link" [checked] [ref=e379]
+                - cell "Edit List additional actions" [ref=e380]:
+                  - list [ref=e383]:
+                    - listitem [ref=e384]:
+                      - link "Edit" [ref=e385] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/entity.block_content_type.collection/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e386]:
+                        - generic [ref=e387]: List additional actions
+                - cell [ref=e388]
+              - row "Content types Enable Content types menu link Edit List additional actions" [ref=e389]:
+                - cell "Content types" [ref=e390]:
+                  - generic [ref=e391]:
+                    - img [ref=e393]
+                    - img [ref=e395]
+                    - link "Move in any direction" [ref=e396]:
+                      - /url: "#"
+                    - link "Content types" [ref=e398] [cursor=pointer]:
+                      - /url: /admin/structure/types
+                - cell "Enable Content types menu link" [ref=e399]:
+                  - generic [ref=e400]:
+                    - generic [ref=e401] [cursor=pointer]: Enable Content types menu link
+                    - checkbox "Enable Content types menu link" [checked] [ref=e402]
+                - cell "Edit List additional actions" [ref=e403]:
+                  - list [ref=e406]:
+                    - listitem [ref=e407]:
+                      - link "Edit" [ref=e408] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/entity.node_type.collection/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e409]:
+                        - generic [ref=e410]: List additional actions
+                - cell [ref=e411]
+              - row "Display modes Enable Display modes menu link Edit List additional actions" [ref=e412]:
+                - cell "Display modes" [ref=e413]:
+                  - generic [ref=e414]:
+                    - img [ref=e416]
+                    - img [ref=e418]
+                    - link "Move in any direction" [ref=e419]:
+                      - /url: "#"
+                    - link "Display modes" [ref=e421] [cursor=pointer]:
+                      - /url: /admin/structure/display-modes
+                - cell "Enable Display modes menu link" [ref=e422]:
+                  - generic [ref=e423]:
+                    - generic [ref=e424] [cursor=pointer]: Enable Display modes menu link
+                    - checkbox "Enable Display modes menu link" [checked] [ref=e425]
+                - cell "Edit List additional actions" [ref=e426]:
+                  - list [ref=e429]:
+                    - listitem [ref=e430]:
+                      - link "Edit" [ref=e431] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/field_ui.display_mode/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e432]:
+                        - generic [ref=e433]: List additional actions
+                - cell [ref=e434]
+              - row "Form modes Enable Form modes menu link Edit List additional actions" [ref=e435]:
+                - cell "Form modes" [ref=e436]:
+                  - generic [ref=e437]:
+                    - img [ref=e439]
+                    - img [ref=e441]
+                    - img [ref=e443]
+                    - link "Move in any direction" [ref=e444]:
+                      - /url: "#"
+                    - link "Form modes" [ref=e446] [cursor=pointer]:
+                      - /url: /admin/structure/display-modes/form
+                - cell "Enable Form modes menu link" [ref=e447]:
+                  - generic [ref=e448]:
+                    - generic [ref=e449] [cursor=pointer]: Enable Form modes menu link
+                    - checkbox "Enable Form modes menu link" [checked] [ref=e450]
+                - cell "Edit List additional actions" [ref=e451]:
+                  - list [ref=e454]:
+                    - listitem [ref=e455]:
+                      - link "Edit" [ref=e456] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/entity.entity_form_mode.collection/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e457]:
+                        - generic [ref=e458]: List additional actions
+                - cell [ref=e459]
+              - row "View modes Enable View modes menu link Edit List additional actions" [ref=e460]:
+                - cell "View modes" [ref=e461]:
+                  - generic [ref=e462]:
+                    - img [ref=e464]
+                    - img [ref=e466]
+                    - img [ref=e468]
+                    - link "Move in any direction" [ref=e469]:
+                      - /url: "#"
+                    - link "View modes" [ref=e471] [cursor=pointer]:
+                      - /url: /admin/structure/display-modes/view
+                - cell "Enable View modes menu link" [ref=e472]:
+                  - generic [ref=e473]:
+                    - generic [ref=e474] [cursor=pointer]: Enable View modes menu link
+                    - checkbox "Enable View modes menu link" [checked] [ref=e475]
+                - cell "Edit List additional actions" [ref=e476]:
+                  - list [ref=e479]:
+                    - listitem [ref=e480]:
+                      - link "Edit" [ref=e481] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/entity.entity_view_mode.collection/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e482]:
+                        - generic [ref=e483]: List additional actions
+                - cell [ref=e484]
+              - row "Menus Enable Menus menu link Edit List additional actions" [ref=e485]:
+                - cell "Menus" [ref=e486]:
+                  - generic [ref=e487]:
+                    - img [ref=e489]
+                    - img [ref=e491]
+                    - link "Move in any direction" [ref=e492]:
+                      - /url: "#"
+                    - link "Menus" [ref=e494] [cursor=pointer]:
+                      - /url: /admin/structure/menu
+                - cell "Enable Menus menu link" [ref=e495]:
+                  - generic [ref=e496]:
+                    - generic [ref=e497] [cursor=pointer]: Enable Menus menu link
+                    - checkbox "Enable Menus menu link" [checked] [ref=e498]
+                - cell "Edit List additional actions" [ref=e499]:
+                  - list [ref=e502]:
+                    - listitem [ref=e503]:
+                      - link "Edit" [ref=e504] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/entity.menu.collection/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e505]:
+                        - generic [ref=e506]: List additional actions
+                - cell [ref=e507]
+              - row "Taxonomy Enable Taxonomy menu link Edit List additional actions" [ref=e508]:
+                - cell "Taxonomy" [ref=e509]:
+                  - generic [ref=e510]:
+                    - img [ref=e512]
+                    - img [ref=e514]
+                    - link "Move in any direction" [ref=e515]:
+                      - /url: "#"
+                    - link "Taxonomy" [ref=e517] [cursor=pointer]:
+                      - /url: /admin/structure/taxonomy
+                - cell "Enable Taxonomy menu link" [ref=e518]:
+                  - generic [ref=e519]:
+                    - generic [ref=e520] [cursor=pointer]: Enable Taxonomy menu link
+                    - checkbox "Enable Taxonomy menu link" [checked] [ref=e521]
+                - cell "Edit List additional actions" [ref=e522]:
+                  - list [ref=e525]:
+                    - listitem [ref=e526]:
+                      - link "Edit" [ref=e527] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/entity.taxonomy_vocabulary.collection/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e528]:
+                        - generic [ref=e529]: List additional actions
+                - cell [ref=e530]
+              - row "Views Enable Views menu link Edit List additional actions" [ref=e531]:
+                - cell "Views" [ref=e532]:
+                  - generic [ref=e533]:
+                    - img [ref=e535]
+                    - img [ref=e537]
+                    - link "Move in any direction" [ref=e538]:
+                      - /url: "#"
+                    - link "Views" [ref=e540] [cursor=pointer]:
+                      - /url: /admin/structure/views
+                - cell "Enable Views menu link" [ref=e541]:
+                  - generic [ref=e542]:
+                    - generic [ref=e543] [cursor=pointer]: Enable Views menu link
+                    - checkbox "Enable Views menu link" [checked] [ref=e544]
+                - cell "Edit List additional actions" [ref=e545]:
+                  - list [ref=e548]:
+                    - listitem [ref=e549]:
+                      - link "Edit" [ref=e550] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/entity.view.collection/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e551]:
+                        - generic [ref=e552]: List additional actions
+                - cell [ref=e553]
+              - row "Appearance Enable Appearance menu link Edit List additional actions" [ref=e554]:
+                - cell "Appearance" [ref=e555]:
+                  - generic [ref=e556]:
+                    - img [ref=e558]
+                    - link "Move in any direction" [ref=e559]:
+                      - /url: "#"
+                    - link "Appearance" [ref=e561] [cursor=pointer]:
+                      - /url: /admin/appearance
+                - cell "Enable Appearance menu link" [ref=e562]:
+                  - generic [ref=e563]:
+                    - generic [ref=e564] [cursor=pointer]: Enable Appearance menu link
+                    - checkbox "Enable Appearance menu link" [checked] [ref=e565]
+                - cell "Edit List additional actions" [ref=e566]:
+                  - list [ref=e569]:
+                    - listitem [ref=e570]:
+                      - link "Edit" [ref=e571] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.themes_page/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e572]:
+                        - generic [ref=e573]: List additional actions
+                - cell [ref=e574]
+              - row "Extend Enable Extend menu link Edit List additional actions" [ref=e575]:
+                - cell "Extend" [ref=e576]:
+                  - generic [ref=e577]:
+                    - img [ref=e579]
+                    - link "Move in any direction" [ref=e580]:
+                      - /url: "#"
+                    - link "Extend" [ref=e582] [cursor=pointer]:
+                      - /url: /admin/modules
+                - cell "Enable Extend menu link" [ref=e583]:
+                  - generic [ref=e584]:
+                    - generic [ref=e585] [cursor=pointer]: Enable Extend menu link
+                    - checkbox "Enable Extend menu link" [checked] [ref=e586]
+                - cell "Edit List additional actions" [ref=e587]:
+                  - list [ref=e590]:
+                    - listitem [ref=e591]:
+                      - link "Edit" [ref=e592] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.modules_list/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e593]:
+                        - generic [ref=e594]: List additional actions
+                - cell [ref=e595]
+              - row "Configuration Enable Configuration menu link Edit List additional actions" [ref=e596]:
+                - cell "Configuration" [ref=e597]:
+                  - generic [ref=e598]:
+                    - img [ref=e600]
+                    - link "Move in any direction" [ref=e601]:
+                      - /url: "#"
+                    - link "Configuration" [ref=e603] [cursor=pointer]:
+                      - /url: /admin/config
+                - cell "Enable Configuration menu link" [ref=e604]:
+                  - generic [ref=e605]:
+                    - generic [ref=e606] [cursor=pointer]: Enable Configuration menu link
+                    - checkbox "Enable Configuration menu link" [checked] [ref=e607]
+                - cell "Edit List additional actions" [ref=e608]:
+                  - list [ref=e611]:
+                    - listitem [ref=e612]:
+                      - link "Edit" [ref=e613] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.admin_config/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e614]:
+                        - generic [ref=e615]: List additional actions
+                - cell [ref=e616]
+              - row "People Enable People menu link Edit List additional actions" [ref=e617]:
+                - cell "People" [ref=e618]:
+                  - generic [ref=e619]:
+                    - img [ref=e621]
+                    - img [ref=e623]
+                    - link "Move in any direction" [ref=e624]:
+                      - /url: "#"
+                    - link "People" [ref=e626] [cursor=pointer]:
+                      - /url: /admin/config/people
+                - cell "Enable People menu link" [ref=e627]:
+                  - generic [ref=e628]:
+                    - generic [ref=e629] [cursor=pointer]: Enable People menu link
+                    - checkbox "Enable People menu link" [checked] [ref=e630]
+                - cell "Edit List additional actions" [ref=e631]:
+                  - list [ref=e634]:
+                    - listitem [ref=e635]:
+                      - link "Edit" [ref=e636] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/user.admin_index/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e637]:
+                        - generic [ref=e638]: List additional actions
+                - cell [ref=e639]
+              - row "Account settings Enable Account settings menu link Edit List additional actions" [ref=e640]:
+                - cell "Account settings" [ref=e641]:
+                  - generic [ref=e642]:
+                    - img [ref=e644]
+                    - img [ref=e646]
+                    - img [ref=e648]
+                    - link "Move in any direction" [ref=e649]:
+                      - /url: "#"
+                    - link "Account settings" [ref=e651] [cursor=pointer]:
+                      - /url: /admin/config/people/accounts
+                - cell "Enable Account settings menu link" [ref=e652]:
+                  - generic [ref=e653]:
+                    - generic [ref=e654] [cursor=pointer]: Enable Account settings menu link
+                    - checkbox "Enable Account settings menu link" [checked] [ref=e655]
+                - cell "Edit List additional actions" [ref=e656]:
+                  - list [ref=e659]:
+                    - listitem [ref=e660]:
+                      - link "Edit" [ref=e661] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/entity.user.admin_form/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e662]:
+                        - generic [ref=e663]: List additional actions
+                - cell [ref=e664]
+              - row "System Enable System menu link Edit List additional actions" [ref=e665]:
+                - cell "System" [ref=e666]:
+                  - generic [ref=e667]:
+                    - img [ref=e669]
+                    - img [ref=e671]
+                    - link "Move in any direction" [ref=e672]:
+                      - /url: "#"
+                    - link "System" [ref=e674] [cursor=pointer]:
+                      - /url: /admin/config/system
+                - cell "Enable System menu link" [ref=e675]:
+                  - generic [ref=e676]:
+                    - generic [ref=e677] [cursor=pointer]: Enable System menu link
+                    - checkbox "Enable System menu link" [checked] [ref=e678]
+                - cell "Edit List additional actions" [ref=e679]:
+                  - list [ref=e682]:
+                    - listitem [ref=e683]:
+                      - link "Edit" [ref=e684] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.admin_config_system/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e685]:
+                        - generic [ref=e686]: List additional actions
+                - cell [ref=e687]
+              - row "Basic site settings Enable Basic site settings menu link Edit List additional actions" [ref=e688]:
+                - cell "Basic site settings" [ref=e689]:
+                  - generic [ref=e690]:
+                    - img [ref=e692]
+                    - img [ref=e694]
+                    - img [ref=e696]
+                    - link "Move in any direction" [ref=e697]:
+                      - /url: "#"
+                    - link "Basic site settings" [ref=e699] [cursor=pointer]:
+                      - /url: /admin/config/system/site-information
+                - cell "Enable Basic site settings menu link" [ref=e700]:
+                  - generic [ref=e701]:
+                    - generic [ref=e702] [cursor=pointer]: Enable Basic site settings menu link
+                    - checkbox "Enable Basic site settings menu link" [checked] [ref=e703]
+                - cell "Edit List additional actions" [ref=e704]:
+                  - list [ref=e707]:
+                    - listitem [ref=e708]:
+                      - link "Edit" [ref=e709] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.site_information_settings/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e710]:
+                        - generic [ref=e711]: List additional actions
+                - cell [ref=e712]
+              - row "Cron Enable Cron menu link Edit List additional actions" [ref=e713]:
+                - cell "Cron" [ref=e714]:
+                  - generic [ref=e715]:
+                    - img [ref=e717]
+                    - img [ref=e719]
+                    - img [ref=e721]
+                    - link "Move in any direction" [ref=e722]:
+                      - /url: "#"
+                    - link "Cron" [ref=e724] [cursor=pointer]:
+                      - /url: /admin/config/system/cron
+                - cell "Enable Cron menu link" [ref=e725]:
+                  - generic [ref=e726]:
+                    - generic [ref=e727] [cursor=pointer]: Enable Cron menu link
+                    - checkbox "Enable Cron menu link" [checked] [ref=e728]
+                - cell "Edit List additional actions" [ref=e729]:
+                  - list [ref=e732]:
+                    - listitem [ref=e733]:
+                      - link "Edit" [ref=e734] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.cron_settings/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e735]:
+                        - generic [ref=e736]: List additional actions
+                - cell [ref=e737]
+              - row "Content authoring Enable Content authoring menu link Edit List additional actions" [ref=e738]:
+                - cell "Content authoring" [ref=e739]:
+                  - generic [ref=e740]:
+                    - img [ref=e742]
+                    - img [ref=e744]
+                    - link "Move in any direction" [ref=e745]:
+                      - /url: "#"
+                    - link "Content authoring" [ref=e747] [cursor=pointer]:
+                      - /url: /admin/config/content
+                - cell "Enable Content authoring menu link" [ref=e748]:
+                  - generic [ref=e749]:
+                    - generic [ref=e750] [cursor=pointer]: Enable Content authoring menu link
+                    - checkbox "Enable Content authoring menu link" [checked] [ref=e751]
+                - cell "Edit List additional actions" [ref=e752]:
+                  - list [ref=e755]:
+                    - listitem [ref=e756]:
+                      - link "Edit" [ref=e757] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.admin_config_content/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e758]:
+                        - generic [ref=e759]: List additional actions
+                - cell [ref=e760]
+              - row "Text formats and editors Enable Text formats and editors menu link Edit List additional actions" [ref=e761]:
+                - cell "Text formats and editors" [ref=e762]:
+                  - generic [ref=e763]:
+                    - img [ref=e765]
+                    - img [ref=e767]
+                    - img [ref=e769]
+                    - link "Move in any direction" [ref=e770]:
+                      - /url: "#"
+                    - link "Text formats and editors" [ref=e772] [cursor=pointer]:
+                      - /url: /admin/config/content/formats
+                - cell "Enable Text formats and editors menu link" [ref=e773]:
+                  - generic [ref=e774]:
+                    - generic [ref=e775] [cursor=pointer]: Enable Text formats and editors menu link
+                    - checkbox "Enable Text formats and editors menu link" [checked] [ref=e776]
+                - cell "Edit List additional actions" [ref=e777]:
+                  - list [ref=e780]:
+                    - listitem [ref=e781]:
+                      - link "Edit" [ref=e782] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/filter.admin_overview/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e783]:
+                        - generic [ref=e784]: List additional actions
+                - cell [ref=e785]
+              - row "User interface Enable User interface menu link Edit List additional actions" [ref=e786]:
+                - cell "User interface" [ref=e787]:
+                  - generic [ref=e788]:
+                    - img [ref=e790]
+                    - img [ref=e792]
+                    - link "Move in any direction" [ref=e793]:
+                      - /url: "#"
+                    - link "User interface" [ref=e795] [cursor=pointer]:
+                      - /url: /admin/config/user-interface
+                - cell "Enable User interface menu link" [ref=e796]:
+                  - generic [ref=e797]:
+                    - generic [ref=e798] [cursor=pointer]: Enable User interface menu link
+                    - checkbox "Enable User interface menu link" [checked] [ref=e799]
+                - cell "Edit List additional actions" [ref=e800]:
+                  - list [ref=e803]:
+                    - listitem [ref=e804]:
+                      - link "Edit" [ref=e805] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.admin_config_ui/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e806]:
+                        - generic [ref=e807]: List additional actions
+                - cell [ref=e808]
+              - row "Navigation blocks Enable Navigation blocks menu link Edit List additional actions" [ref=e809]:
+                - cell "Navigation blocks" [ref=e810]:
+                  - generic [ref=e811]:
+                    - img [ref=e813]
+                    - img [ref=e815]
+                    - img [ref=e817]
+                    - link "Move in any direction" [ref=e818]:
+                      - /url: "#"
+                    - link "Navigation blocks" [ref=e820] [cursor=pointer]:
+                      - /url: /admin/config/user-interface/navigation-block
+                - cell "Enable Navigation blocks menu link" [ref=e821]:
+                  - generic [ref=e822]:
+                    - generic [ref=e823] [cursor=pointer]: Enable Navigation blocks menu link
+                    - checkbox "Enable Navigation blocks menu link" [checked] [ref=e824]
+                - cell "Edit List additional actions" [ref=e825]:
+                  - list [ref=e828]:
+                    - listitem [ref=e829]:
+                      - link "Edit" [ref=e830] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/navigation_block.admin_display/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e831]:
+                        - generic [ref=e832]: List additional actions
+                - cell [ref=e833]
+              - row "Navigation settings Enable Navigation settings menu link Edit List additional actions" [ref=e834]:
+                - cell "Navigation settings" [ref=e835]:
+                  - generic [ref=e836]:
+                    - img [ref=e838]
+                    - img [ref=e840]
+                    - img [ref=e842]
+                    - link "Move in any direction" [ref=e843]:
+                      - /url: "#"
+                    - link "Navigation settings" [ref=e845] [cursor=pointer]:
+                      - /url: /admin/config/user-interface/navigation/settings
+                - cell "Enable Navigation settings menu link" [ref=e846]:
+                  - generic [ref=e847]:
+                    - generic [ref=e848] [cursor=pointer]: Enable Navigation settings menu link
+                    - checkbox "Enable Navigation settings menu link" [checked] [ref=e849]
+                - cell "Edit List additional actions" [ref=e850]:
+                  - list [ref=e853]:
+                    - listitem [ref=e854]:
+                      - link "Edit" [ref=e855] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/navigation.settings/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e856]:
+                        - generic [ref=e857]: List additional actions
+                - cell [ref=e858]
+              - row "Development Enable Development menu link Edit List additional actions" [ref=e859]:
+                - cell "Development" [ref=e860]:
+                  - generic [ref=e861]:
+                    - img [ref=e863]
+                    - img [ref=e865]
+                    - link "Move in any direction" [ref=e866]:
+                      - /url: "#"
+                    - link "Development" [ref=e868] [cursor=pointer]:
+                      - /url: /admin/config/development
+                - cell "Enable Development menu link" [ref=e869]:
+                  - generic [ref=e870]:
+                    - generic [ref=e871] [cursor=pointer]: Enable Development menu link
+                    - checkbox "Enable Development menu link" [checked] [ref=e872]
+                - cell "Edit List additional actions" [ref=e873]:
+                  - list [ref=e876]:
+                    - listitem [ref=e877]:
+                      - link "Edit" [ref=e878] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.admin_config_development/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e879]:
+                        - generic [ref=e880]: List additional actions
+                - cell [ref=e881]
+              - row "Performance Enable Performance menu link Edit List additional actions" [ref=e882]:
+                - cell "Performance" [ref=e883]:
+                  - generic [ref=e884]:
+                    - img [ref=e886]
+                    - img [ref=e888]
+                    - img [ref=e890]
+                    - link "Move in any direction" [ref=e891]:
+                      - /url: "#"
+                    - link "Performance" [ref=e893] [cursor=pointer]:
+                      - /url: /admin/config/development/performance
+                - cell "Enable Performance menu link" [ref=e894]:
+                  - generic [ref=e895]:
+                    - generic [ref=e896] [cursor=pointer]: Enable Performance menu link
+                    - checkbox "Enable Performance menu link" [checked] [ref=e897]
+                - cell "Edit List additional actions" [ref=e898]:
+                  - list [ref=e901]:
+                    - listitem [ref=e902]:
+                      - link "Edit" [ref=e903] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.performance_settings/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e904]:
+                        - generic [ref=e905]: List additional actions
+                - cell [ref=e906]
+              - row "Development settings Enable Development settings menu link Edit List additional actions" [ref=e907]:
+                - cell "Development settings" [ref=e908]:
+                  - generic [ref=e909]:
+                    - img [ref=e911]
+                    - img [ref=e913]
+                    - img [ref=e915]
+                    - link "Move in any direction" [ref=e916]:
+                      - /url: "#"
+                    - link "Development settings" [ref=e918] [cursor=pointer]:
+                      - /url: /admin/config/development/settings
+                - cell "Enable Development settings menu link" [ref=e919]:
+                  - generic [ref=e920]:
+                    - generic [ref=e921] [cursor=pointer]: Enable Development settings menu link
+                    - checkbox "Enable Development settings menu link" [checked] [ref=e922]
+                - cell "Edit List additional actions" [ref=e923]:
+                  - list [ref=e926]:
+                    - listitem [ref=e927]:
+                      - link "Edit" [ref=e928] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.development_settings/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e929]:
+                        - generic [ref=e930]: List additional actions
+                - cell [ref=e931]
+              - row "Logging and errors Enable Logging and errors menu link Edit List additional actions" [ref=e932]:
+                - cell "Logging and errors" [ref=e933]:
+                  - generic [ref=e934]:
+                    - img [ref=e936]
+                    - img [ref=e938]
+                    - img [ref=e940]
+                    - link "Move in any direction" [ref=e941]:
+                      - /url: "#"
+                    - link "Logging and errors" [ref=e943] [cursor=pointer]:
+                      - /url: /admin/config/development/logging
+                - cell "Enable Logging and errors menu link" [ref=e944]:
+                  - generic [ref=e945]:
+                    - generic [ref=e946] [cursor=pointer]: Enable Logging and errors menu link
+                    - checkbox "Enable Logging and errors menu link" [checked] [ref=e947]
+                - cell "Edit List additional actions" [ref=e948]:
+                  - list [ref=e951]:
+                    - listitem [ref=e952]:
+                      - link "Edit" [ref=e953] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.logging_settings/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e954]:
+                        - generic [ref=e955]: List additional actions
+                - cell [ref=e956]
+              - row "Maintenance mode Enable Maintenance mode menu link Edit List additional actions" [ref=e957]:
+                - cell "Maintenance mode" [ref=e958]:
+                  - generic [ref=e959]:
+                    - img [ref=e961]
+                    - img [ref=e963]
+                    - img [ref=e965]
+                    - link "Move in any direction" [ref=e966]:
+                      - /url: "#"
+                    - link "Maintenance mode" [ref=e968] [cursor=pointer]:
+                      - /url: /admin/config/development/maintenance
+                - cell "Enable Maintenance mode menu link" [ref=e969]:
+                  - generic [ref=e970]:
+                    - generic [ref=e971] [cursor=pointer]: Enable Maintenance mode menu link
+                    - checkbox "Enable Maintenance mode menu link" [checked] [ref=e972]
+                - cell "Edit List additional actions" [ref=e973]:
+                  - list [ref=e976]:
+                    - listitem [ref=e977]:
+                      - link "Edit" [ref=e978] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.site_maintenance_mode/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e979]:
+                        - generic [ref=e980]: List additional actions
+                - cell [ref=e981]
+              - row "Configuration synchronization Enable Configuration synchronization menu link Edit List additional actions" [ref=e982]:
+                - cell "Configuration synchronization" [ref=e983]:
+                  - generic [ref=e984]:
+                    - img [ref=e986]
+                    - img [ref=e988]
+                    - img [ref=e990]
+                    - link "Move in any direction" [ref=e991]:
+                      - /url: "#"
+                    - link "Configuration synchronization" [ref=e993] [cursor=pointer]:
+                      - /url: /admin/config/development/configuration
+                - cell "Enable Configuration synchronization menu link" [ref=e994]:
+                  - generic [ref=e995]:
+                    - generic [ref=e996] [cursor=pointer]: Enable Configuration synchronization menu link
+                    - checkbox "Enable Configuration synchronization menu link" [checked] [ref=e997]
+                - cell "Edit List additional actions" [ref=e998]:
+                  - list [ref=e1001]:
+                    - listitem [ref=e1002]:
+                      - link "Edit" [ref=e1003] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/config.sync/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1004]:
+                        - generic [ref=e1005]: List additional actions
+                - cell [ref=e1006]
+              - row "Media Enable Media menu link Edit List additional actions" [ref=e1007]:
+                - cell "Media" [ref=e1008]:
+                  - generic [ref=e1009]:
+                    - img [ref=e1011]
+                    - img [ref=e1013]
+                    - link "Move in any direction" [ref=e1014]:
+                      - /url: "#"
+                    - link "Media" [ref=e1016] [cursor=pointer]:
+                      - /url: /admin/config/media
+                - cell "Enable Media menu link" [ref=e1017]:
+                  - generic [ref=e1018]:
+                    - generic [ref=e1019] [cursor=pointer]: Enable Media menu link
+                    - checkbox "Enable Media menu link" [checked] [ref=e1020]
+                - cell "Edit List additional actions" [ref=e1021]:
+                  - list [ref=e1024]:
+                    - listitem [ref=e1025]:
+                      - link "Edit" [ref=e1026] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.admin_config_media/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1027]:
+                        - generic [ref=e1028]: List additional actions
+                - cell [ref=e1029]
+              - row "File system Enable File system menu link Edit List additional actions" [ref=e1030]:
+                - cell "File system" [ref=e1031]:
+                  - generic [ref=e1032]:
+                    - img [ref=e1034]
+                    - img [ref=e1036]
+                    - img [ref=e1038]
+                    - link "Move in any direction" [ref=e1039]:
+                      - /url: "#"
+                    - link "File system" [ref=e1041] [cursor=pointer]:
+                      - /url: /admin/config/media/file-system
+                - cell "Enable File system menu link" [ref=e1042]:
+                  - generic [ref=e1043]:
+                    - generic [ref=e1044] [cursor=pointer]: Enable File system menu link
+                    - checkbox "Enable File system menu link" [checked] [ref=e1045]
+                - cell "Edit List additional actions" [ref=e1046]:
+                  - list [ref=e1049]:
+                    - listitem [ref=e1050]:
+                      - link "Edit" [ref=e1051] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.file_system_settings/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1052]:
+                        - generic [ref=e1053]: List additional actions
+                - cell [ref=e1054]
+              - row "Image styles Enable Image styles menu link Edit List additional actions" [ref=e1055]:
+                - cell "Image styles" [ref=e1056]:
+                  - generic [ref=e1057]:
+                    - img [ref=e1059]
+                    - img [ref=e1061]
+                    - img [ref=e1063]
+                    - link "Move in any direction" [ref=e1064]:
+                      - /url: "#"
+                    - link "Image styles" [ref=e1066] [cursor=pointer]:
+                      - /url: /admin/config/media/image-styles
+                - cell "Enable Image styles menu link" [ref=e1067]:
+                  - generic [ref=e1068]:
+                    - generic [ref=e1069] [cursor=pointer]: Enable Image styles menu link
+                    - checkbox "Enable Image styles menu link" [checked] [ref=e1070]
+                - cell "Edit List additional actions" [ref=e1071]:
+                  - list [ref=e1074]:
+                    - listitem [ref=e1075]:
+                      - link "Edit" [ref=e1076] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/entity.image_style.collection/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1077]:
+                        - generic [ref=e1078]: List additional actions
+                - cell [ref=e1079]
+              - row "Image toolkit Enable Image toolkit menu link Edit List additional actions" [ref=e1080]:
+                - cell "Image toolkit" [ref=e1081]:
+                  - generic [ref=e1082]:
+                    - img [ref=e1084]
+                    - img [ref=e1086]
+                    - img [ref=e1088]
+                    - link "Move in any direction" [ref=e1089]:
+                      - /url: "#"
+                    - link "Image toolkit" [ref=e1091] [cursor=pointer]:
+                      - /url: /admin/config/media/image-toolkit
+                - cell "Enable Image toolkit menu link" [ref=e1092]:
+                  - generic [ref=e1093]:
+                    - generic [ref=e1094] [cursor=pointer]: Enable Image toolkit menu link
+                    - checkbox "Enable Image toolkit menu link" [checked] [ref=e1095]
+                - cell "Edit List additional actions" [ref=e1096]:
+                  - list [ref=e1099]:
+                    - listitem [ref=e1100]:
+                      - link "Edit" [ref=e1101] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.image_toolkit_settings/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1102]:
+                        - generic [ref=e1103]: List additional actions
+                - cell [ref=e1104]
+              - row "Search and metadata Enable Search and metadata menu link Edit List additional actions" [ref=e1105]:
+                - cell "Search and metadata" [ref=e1106]:
+                  - generic [ref=e1107]:
+                    - img [ref=e1109]
+                    - img [ref=e1111]
+                    - link "Move in any direction" [ref=e1112]:
+                      - /url: "#"
+                    - link "Search and metadata" [ref=e1114] [cursor=pointer]:
+                      - /url: /admin/config/search
+                - cell "Enable Search and metadata menu link" [ref=e1115]:
+                  - generic [ref=e1116]:
+                    - generic [ref=e1117] [cursor=pointer]: Enable Search and metadata menu link
+                    - checkbox "Enable Search and metadata menu link" [checked] [ref=e1118]
+                - cell "Edit List additional actions" [ref=e1119]:
+                  - list [ref=e1122]:
+                    - listitem [ref=e1123]:
+                      - link "Edit" [ref=e1124] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.admin_config_search/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1125]:
+                        - generic [ref=e1126]: List additional actions
+                - cell [ref=e1127]
+              - row "URL aliases Enable URL aliases menu link Edit List additional actions" [ref=e1128]:
+                - cell "URL aliases" [ref=e1129]:
+                  - generic [ref=e1130]:
+                    - img [ref=e1132]
+                    - img [ref=e1134]
+                    - img [ref=e1136]
+                    - link "Move in any direction" [ref=e1137]:
+                      - /url: "#"
+                    - link "URL aliases" [ref=e1139] [cursor=pointer]:
+                      - /url: /admin/config/search/path
+                - cell "Enable URL aliases menu link" [ref=e1140]:
+                  - generic [ref=e1141]:
+                    - generic [ref=e1142] [cursor=pointer]: Enable URL aliases menu link
+                    - checkbox "Enable URL aliases menu link" [checked] [ref=e1143]
+                - cell "Edit List additional actions" [ref=e1144]:
+                  - list [ref=e1147]:
+                    - listitem [ref=e1148]:
+                      - link "Edit" [ref=e1149] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/entity.path_alias.collection/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1150]:
+                        - generic [ref=e1151]: List additional actions
+                - cell [ref=e1152]
+              - row "Region and language Enable Region and language menu link Edit List additional actions" [ref=e1153]:
+                - cell "Region and language" [ref=e1154]:
+                  - generic [ref=e1155]:
+                    - img [ref=e1157]
+                    - img [ref=e1159]
+                    - link "Move in any direction" [ref=e1160]:
+                      - /url: "#"
+                    - link "Region and language" [ref=e1162] [cursor=pointer]:
+                      - /url: /admin/config/regional
+                - cell "Enable Region and language menu link" [ref=e1163]:
+                  - generic [ref=e1164]:
+                    - generic [ref=e1165] [cursor=pointer]: Enable Region and language menu link
+                    - checkbox "Enable Region and language menu link" [checked] [ref=e1166]
+                - cell "Edit List additional actions" [ref=e1167]:
+                  - list [ref=e1170]:
+                    - listitem [ref=e1171]:
+                      - link "Edit" [ref=e1172] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.admin_config_regional/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1173]:
+                        - generic [ref=e1174]: List additional actions
+                - cell [ref=e1175]
+              - row "Regional settings Enable Regional settings menu link Edit List additional actions" [ref=e1176]:
+                - cell "Regional settings" [ref=e1177]:
+                  - generic [ref=e1178]:
+                    - img [ref=e1180]
+                    - img [ref=e1182]
+                    - img [ref=e1184]
+                    - link "Move in any direction" [ref=e1185]:
+                      - /url: "#"
+                    - link "Regional settings" [ref=e1187] [cursor=pointer]:
+                      - /url: /admin/config/regional/settings
+                - cell "Enable Regional settings menu link" [ref=e1188]:
+                  - generic [ref=e1189]:
+                    - generic [ref=e1190] [cursor=pointer]: Enable Regional settings menu link
+                    - checkbox "Enable Regional settings menu link" [checked] [ref=e1191]
+                - cell "Edit List additional actions" [ref=e1192]:
+                  - list [ref=e1195]:
+                    - listitem [ref=e1196]:
+                      - link "Edit" [ref=e1197] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.regional_settings/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1198]:
+                        - generic [ref=e1199]: List additional actions
+                - cell [ref=e1200]
+              - row "Date and time formats Enable Date and time formats menu link Edit List additional actions" [ref=e1201]:
+                - cell "Date and time formats" [ref=e1202]:
+                  - generic [ref=e1203]:
+                    - img [ref=e1205]
+                    - img [ref=e1207]
+                    - img [ref=e1209]
+                    - link "Move in any direction" [ref=e1210]:
+                      - /url: "#"
+                    - link "Date and time formats" [ref=e1212] [cursor=pointer]:
+                      - /url: /admin/config/regional/date-time
+                - cell "Enable Date and time formats menu link" [ref=e1213]:
+                  - generic [ref=e1214]:
+                    - generic [ref=e1215] [cursor=pointer]: Enable Date and time formats menu link
+                    - checkbox "Enable Date and time formats menu link" [checked] [ref=e1216]
+                - cell "Edit List additional actions" [ref=e1217]:
+                  - list [ref=e1220]:
+                    - listitem [ref=e1221]:
+                      - link "Edit" [ref=e1222] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/entity.date_format.collection/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1223]:
+                        - generic [ref=e1224]: List additional actions
+                - cell [ref=e1225]
+              - row "Web services Enable Web services menu link Edit List additional actions" [ref=e1226]:
+                - cell "Web services" [ref=e1227]:
+                  - generic [ref=e1228]:
+                    - img [ref=e1230]
+                    - img [ref=e1232]
+                    - link "Move in any direction" [ref=e1233]:
+                      - /url: "#"
+                    - link "Web services" [ref=e1235] [cursor=pointer]:
+                      - /url: /admin/config/services
+                - cell "Enable Web services menu link" [ref=e1236]:
+                  - generic [ref=e1237]:
+                    - generic [ref=e1238] [cursor=pointer]: Enable Web services menu link
+                    - checkbox "Enable Web services menu link" [checked] [ref=e1239]
+                - cell "Edit List additional actions" [ref=e1240]:
+                  - list [ref=e1243]:
+                    - listitem [ref=e1244]:
+                      - link "Edit" [ref=e1245] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.admin_config_services/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1246]:
+                        - generic [ref=e1247]: List additional actions
+                - cell [ref=e1248]
+              - row "Menu Linkset Settings Enable Menu Linkset Settings menu link Edit List additional actions" [ref=e1249]:
+                - cell "Menu Linkset Settings" [ref=e1250]:
+                  - generic [ref=e1251]:
+                    - img [ref=e1253]
+                    - img [ref=e1255]
+                    - img [ref=e1257]
+                    - link "Move in any direction" [ref=e1258]:
+                      - /url: "#"
+                    - link "Menu Linkset Settings" [ref=e1260] [cursor=pointer]:
+                      - /url: /admin/config/services/linkset
+                - cell "Enable Menu Linkset Settings menu link" [ref=e1261]:
+                  - generic [ref=e1262]:
+                    - generic [ref=e1263] [cursor=pointer]: Enable Menu Linkset Settings menu link
+                    - checkbox "Enable Menu Linkset Settings menu link" [checked] [ref=e1264]
+                - cell "Edit List additional actions" [ref=e1265]:
+                  - list [ref=e1268]:
+                    - listitem [ref=e1269]:
+                      - link "Edit" [ref=e1270] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.linkset_settings/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1271]:
+                        - generic [ref=e1272]: List additional actions
+                - cell [ref=e1273]
+              - row "Workflow Enable Workflow menu link Edit List additional actions" [ref=e1274]:
+                - cell "Workflow" [ref=e1275]:
+                  - generic [ref=e1276]:
+                    - img [ref=e1278]
+                    - img [ref=e1280]
+                    - link "Move in any direction" [ref=e1281]:
+                      - /url: "#"
+                    - link "Workflow" [ref=e1283] [cursor=pointer]:
+                      - /url: /admin/config/workflow
+                - cell "Enable Workflow menu link" [ref=e1284]:
+                  - generic [ref=e1285]:
+                    - generic [ref=e1286] [cursor=pointer]: Enable Workflow menu link
+                    - checkbox "Enable Workflow menu link" [checked] [ref=e1287]
+                - cell "Edit List additional actions" [ref=e1288]:
+                  - list [ref=e1291]:
+                    - listitem [ref=e1292]:
+                      - link "Edit" [ref=e1293] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.admin_config_workflow/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1294]:
+                        - generic [ref=e1295]: List additional actions
+                - cell [ref=e1296]
+              - row "People Enable People menu link Edit List additional actions" [ref=e1297]:
+                - cell "People" [ref=e1298]:
+                  - generic [ref=e1299]:
+                    - img [ref=e1301]
+                    - link "Move in any direction" [ref=e1302]:
+                      - /url: "#"
+                    - link "People" [ref=e1304] [cursor=pointer]:
+                      - /url: /admin/people
+                - cell "Enable People menu link" [ref=e1305]:
+                  - generic [ref=e1306]:
+                    - generic [ref=e1307] [cursor=pointer]: Enable People menu link
+                    - checkbox "Enable People menu link" [checked] [ref=e1308]
+                - cell "Edit List additional actions" [ref=e1309]:
+                  - list [ref=e1312]:
+                    - listitem [ref=e1313]:
+                      - link "Edit" [ref=e1314] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/entity.user.collection/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1315]:
+                        - generic [ref=e1316]: List additional actions
+                - cell [ref=e1317]
+              - row "Reports Enable Reports menu link Edit List additional actions" [ref=e1318]:
+                - cell "Reports" [ref=e1319]:
+                  - generic [ref=e1320]:
+                    - img [ref=e1322]
+                    - link "Move in any direction" [ref=e1323]:
+                      - /url: "#"
+                    - link "Reports" [ref=e1325] [cursor=pointer]:
+                      - /url: /admin/reports
+                - cell "Enable Reports menu link" [ref=e1326]:
+                  - generic [ref=e1327]:
+                    - generic [ref=e1328] [cursor=pointer]: Enable Reports menu link
+                    - checkbox "Enable Reports menu link" [checked] [ref=e1329]
+                - cell "Edit List additional actions" [ref=e1330]:
+                  - list [ref=e1333]:
+                    - listitem [ref=e1334]:
+                      - link "Edit" [ref=e1335] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.admin_reports/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1336]:
+                        - generic [ref=e1337]: List additional actions
+                - cell [ref=e1338]
+              - row "Status report Enable Status report menu link Edit List additional actions" [ref=e1339]:
+                - cell "Status report" [ref=e1340]:
+                  - generic [ref=e1341]:
+                    - img [ref=e1343]
+                    - img [ref=e1345]
+                    - link "Move in any direction" [ref=e1346]:
+                      - /url: "#"
+                    - link "Status report" [ref=e1348] [cursor=pointer]:
+                      - /url: /admin/reports/status
+                - cell "Enable Status report menu link" [ref=e1349]:
+                  - generic [ref=e1350]:
+                    - generic [ref=e1351] [cursor=pointer]: Enable Status report menu link
+                    - checkbox "Enable Status report menu link" [checked] [ref=e1352]
+                - cell "Edit List additional actions" [ref=e1353]:
+                  - list [ref=e1356]:
+                    - listitem [ref=e1357]:
+                      - link "Edit" [ref=e1358] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/system.status/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1359]:
+                        - generic [ref=e1360]: List additional actions
+                - cell [ref=e1361]
+              - row "Available updates Enable Available updates menu link Edit List additional actions" [ref=e1362]:
+                - cell "Available updates" [ref=e1363]:
+                  - generic [ref=e1364]:
+                    - img [ref=e1366]
+                    - img [ref=e1368]
+                    - link "Move in any direction" [ref=e1369]:
+                      - /url: "#"
+                    - link "Available updates" [ref=e1371] [cursor=pointer]:
+                      - /url: /admin/reports/updates
+                - cell "Enable Available updates menu link" [ref=e1372]:
+                  - generic [ref=e1373]:
+                    - generic [ref=e1374] [cursor=pointer]: Enable Available updates menu link
+                    - checkbox "Enable Available updates menu link" [checked] [ref=e1375]
+                - cell "Edit List additional actions" [ref=e1376]:
+                  - list [ref=e1379]:
+                    - listitem [ref=e1380]:
+                      - link "Edit" [ref=e1381] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/update.status/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1382]:
+                        - generic [ref=e1383]: List additional actions
+                - cell [ref=e1384]
+              - row "Recent log messages Enable Recent log messages menu link Edit List additional actions" [ref=e1385]:
+                - cell "Recent log messages" [ref=e1386]:
+                  - generic [ref=e1387]:
+                    - img [ref=e1389]
+                    - img [ref=e1391]
+                    - link "Move in any direction" [ref=e1392]:
+                      - /url: "#"
+                    - link "Recent log messages" [ref=e1394] [cursor=pointer]:
+                      - /url: /admin/reports/dblog
+                - cell "Enable Recent log messages menu link" [ref=e1395]:
+                  - generic [ref=e1396]:
+                    - generic [ref=e1397] [cursor=pointer]: Enable Recent log messages menu link
+                    - checkbox "Enable Recent log messages menu link" [checked] [ref=e1398]
+                - cell "Edit List additional actions" [ref=e1399]:
+                  - list [ref=e1402]:
+                    - listitem [ref=e1403]:
+                      - link "Edit" [ref=e1404] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/dblog.overview/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1405]:
+                        - generic [ref=e1406]: List additional actions
+                - cell [ref=e1407]
+              - row "Field list Enable Field list menu link Edit List additional actions" [ref=e1408]:
+                - cell "Field list" [ref=e1409]:
+                  - generic [ref=e1410]:
+                    - img [ref=e1412]
+                    - img [ref=e1414]
+                    - link "Move in any direction" [ref=e1415]:
+                      - /url: "#"
+                    - link "Field list" [ref=e1417] [cursor=pointer]:
+                      - /url: /admin/reports/fields
+                - cell "Enable Field list menu link" [ref=e1418]:
+                  - generic [ref=e1419]:
+                    - generic [ref=e1420] [cursor=pointer]: Enable Field list menu link
+                    - checkbox "Enable Field list menu link" [checked] [ref=e1421]
+                - cell "Edit List additional actions" [ref=e1422]:
+                  - list [ref=e1425]:
+                    - listitem [ref=e1426]:
+                      - link "Edit" [ref=e1427] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/entity.field_storage_config.collection/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1428]:
+                        - generic [ref=e1429]: List additional actions
+                - cell [ref=e1430]
+              - row "Top 'access denied' errors Enable Top 'access denied' errors menu link Edit List additional actions" [ref=e1431]:
+                - cell "Top 'access denied' errors" [ref=e1432]:
+                  - generic [ref=e1433]:
+                    - img [ref=e1435]
+                    - img [ref=e1437]
+                    - link "Move in any direction" [ref=e1438]:
+                      - /url: "#"
+                    - link "Top 'access denied' errors" [ref=e1440] [cursor=pointer]:
+                      - /url: /admin/reports/access-denied
+                - cell "Enable Top 'access denied' errors menu link" [ref=e1441]:
+                  - generic [ref=e1442]:
+                    - generic [ref=e1443] [cursor=pointer]: Enable Top 'access denied' errors menu link
+                    - checkbox "Enable Top 'access denied' errors menu link" [checked] [ref=e1444]
+                - cell "Edit List additional actions" [ref=e1445]:
+                  - list [ref=e1448]:
+                    - listitem [ref=e1449]:
+                      - link "Edit" [ref=e1450] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/dblog.access_denied/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1451]:
+                        - generic [ref=e1452]: List additional actions
+                - cell [ref=e1453]
+              - row "Top 'page not found' errors Enable Top 'page not found' errors menu link Edit List additional actions" [ref=e1454]:
+                - cell "Top 'page not found' errors" [ref=e1455]:
+                  - generic [ref=e1456]:
+                    - img [ref=e1458]
+                    - img [ref=e1460]
+                    - link "Move in any direction" [ref=e1461]:
+                      - /url: "#"
+                    - link "Top 'page not found' errors" [ref=e1463] [cursor=pointer]:
+                      - /url: /admin/reports/page-not-found
+                - cell "Enable Top 'page not found' errors menu link" [ref=e1464]:
+                  - generic [ref=e1465]:
+                    - generic [ref=e1466] [cursor=pointer]: Enable Top 'page not found' errors menu link
+                    - checkbox "Enable Top 'page not found' errors menu link" [checked] [ref=e1467]
+                - cell "Edit List additional actions" [ref=e1468]:
+                  - list [ref=e1471]:
+                    - listitem [ref=e1472]:
+                      - link "Edit" [ref=e1473] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/dblog.page_not_found/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1474]:
+                        - generic [ref=e1475]: List additional actions
+                - cell [ref=e1476]
+              - row "Views plugins Enable Views plugins menu link Edit List additional actions" [ref=e1477]:
+                - cell "Views plugins" [ref=e1478]:
+                  - generic [ref=e1479]:
+                    - img [ref=e1481]
+                    - img [ref=e1483]
+                    - link "Move in any direction" [ref=e1484]:
+                      - /url: "#"
+                    - link "Views plugins" [ref=e1486] [cursor=pointer]:
+                      - /url: /admin/reports/views-plugins
+                - cell "Enable Views plugins menu link" [ref=e1487]:
+                  - generic [ref=e1488]:
+                    - generic [ref=e1489] [cursor=pointer]: Enable Views plugins menu link
+                    - checkbox "Enable Views plugins menu link" [checked] [ref=e1490]
+                - cell "Edit List additional actions" [ref=e1491]:
+                  - list [ref=e1494]:
+                    - listitem [ref=e1495]:
+                      - link "Edit" [ref=e1496] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/views_ui.reports_plugins/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1497]:
+                        - generic [ref=e1498]: List additional actions
+                - cell [ref=e1499]
+              - row "Help Enable Help menu link Edit List additional actions" [ref=e1500]:
+                - cell "Help" [ref=e1501]:
+                  - generic [ref=e1502]:
+                    - img [ref=e1504]
+                    - link "Move in any direction" [ref=e1505]:
+                      - /url: "#"
+                    - link "Help" [ref=e1507] [cursor=pointer]:
+                      - /url: /admin/help
+                - cell "Enable Help menu link" [ref=e1508]:
+                  - generic [ref=e1509]:
+                    - generic [ref=e1510] [cursor=pointer]: Enable Help menu link
+                    - checkbox "Enable Help menu link" [checked] [ref=e1511]
+                - cell "Edit List additional actions" [ref=e1512]:
+                  - list [ref=e1515]:
+                    - listitem [ref=e1516]:
+                      - link "Edit" [ref=e1517] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/help.main/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1518]:
+                        - generic [ref=e1519]: List additional actions
+                - cell [ref=e1520]
+              - row "Announcements Enable Announcements menu link Edit List additional actions" [ref=e1521]:
+                - cell "Announcements" [ref=e1522]:
+                  - generic [ref=e1523]:
+                    - img [ref=e1525]
+                    - link "Move in any direction" [ref=e1526]:
+                      - /url: "#"
+                    - link "Announcements" [ref=e1528] [cursor=pointer]:
+                      - /url: /admin/announcements_feed
+                - cell "Enable Announcements menu link" [ref=e1529]:
+                  - generic [ref=e1530]:
+                    - generic [ref=e1531] [cursor=pointer]: Enable Announcements menu link
+                    - checkbox "Enable Announcements menu link" [checked] [ref=e1532]
+                - cell "Edit List additional actions" [ref=e1533]:
+                  - list [ref=e1536]:
+                    - listitem [ref=e1537]:
+                      - link "Edit" [ref=e1538] [cursor=pointer]:
+                        - /url: /admin/structure/menu/link/announcements_feed.announcement/edit?destination=/admin/structure/menu/manage/admin
+                    - listitem:
+                      - button "List additional actions" [ref=e1539]:
+                        - generic [ref=e1540]: List additional actions
+                - cell [ref=e1541]
+        - button "Save" [ref=e1543] [cursor=pointer]
+```
+
+# Test source
+
+```ts
+  1  | // #ddev-generated
+  2  | import { test, expect } from '@playwright/test';
+  3  | import fs from 'fs';
+  4  | import type { AdminPageDefinition } from '../../page-definitions/admin-pages.js';
+  5  | 
+  6  | export function generateVrtTests(pages: AdminPageDefinition[]) {
+  7  |   for (const pageDef of pages) {
+  8  |     test.describe(pageDef.id, () => {
+  9  |       test('default state', async ({ page }, testInfo) => {
+  10 |         if (pageDef.testTimeout) {
+  11 |           test.setTimeout(pageDef.testTimeout);
+  12 |         }
+  13 | 
+  14 |         if (testInfo.project.name.includes('dark')) {
+  15 |           await page.emulateMedia({ colorScheme: 'dark' });
+  16 |         }
+  17 |         else {
+  18 |           await page.emulateMedia({ colorScheme: 'light' });
+  19 |         }
+  20 | 
+  21 |         await page.goto(pageDef.path);
+  22 | 
+  23 |         if (testInfo.project.name.startsWith('rtl-')) {
+  24 |           await page.evaluate(() => {
+  25 |             document.documentElement.dir = 'rtl';
+  26 |           });
+  27 |         }
+  28 | 
+  29 |         if (pageDef.waitFor) {
+  30 |           await page.locator(pageDef.waitFor).waitFor();
+  31 |         }
+  32 | 
+  33 |         await page.waitForLoadState('load');
+  34 | 
+  35 |         const mask = (pageDef.maskSelectors || []).map((s) => page.locator(s));
+  36 | 
+> 37 |         await expect(page).toHaveScreenshot(`${pageDef.id}.png`, {
+     |         ^ Error: A snapshot doesn't exist at /var/www/html/__screenshots__/rtl-wide-dark/vrt/structure.spec.ts/structure-menu-admin.png, writing actual.
+  38 |           fullPage: pageDef.fullPage ?? false,
+  39 |           mask,
+  40 |           ...(pageDef.timeout ? { timeout: pageDef.timeout } : {}),
+  41 |         });
+  42 |         const snapshotPath = testInfo.snapshotPath(`${pageDef.id}.png`);
+  43 |         if (fs.existsSync(snapshotPath)) {
+  44 |           await testInfo.attach('screenshot', { body: fs.readFileSync(snapshotPath), contentType: 'image/png' });
+  45 |         }
+  46 |       });
+  47 | 
+  48 |       if (pageDef.interactions) {
+  49 |         for (const interaction of pageDef.interactions) {
+  50 |           test(`interaction: ${interaction.label}`, async ({ page }, testInfo) => {
+  51 |             if (pageDef.testTimeout) {
+  52 |               test.setTimeout(pageDef.testTimeout);
+  53 |             }
+  54 | 
+  55 |             if (testInfo.project.name.includes('dark')) {
+  56 |               await page.emulateMedia({ colorScheme: 'dark' });
+  57 |             }
+  58 |             else {
+  59 |               await page.emulateMedia({ colorScheme: 'light' });
+  60 |             }
+  61 | 
+  62 |             await page.goto(pageDef.path);
+  63 | 
+  64 |             if (testInfo.project.name.startsWith('rtl-')) {
+  65 |               await page.evaluate(() => {
+  66 |                 document.documentElement.dir = 'rtl';
+  67 |               });
+  68 |             }
+  69 | 
+  70 |             if (pageDef.waitFor) {
+  71 |               await page.locator(pageDef.waitFor).waitFor();
+  72 |             }
+  73 | 
+  74 |             await page.waitForLoadState('load');
+  75 |             await interaction.action(page);
+  76 | 
+  77 |             const mask = (pageDef.maskSelectors || []).map((s) => page.locator(s));
+  78 | 
+  79 |             await expect(page).toHaveScreenshot(
+  80 |               `${pageDef.id}--${interaction.label}.png`,
+  81 |               {
+  82 |                 fullPage: pageDef.fullPage ?? false,
+  83 |                 mask,
+  84 |                 ...(pageDef.timeout ? { timeout: pageDef.timeout } : {}),
+  85 |               }
+  86 |             );
+  87 |             const snapshotPath = testInfo.snapshotPath(`${pageDef.id}--${interaction.label}.png`);
+  88 |             if (fs.existsSync(snapshotPath)) {
+  89 |               await testInfo.attach('screenshot', { body: fs.readFileSync(snapshotPath), contentType: 'image/png' });
+  90 |             }
+  91 |           });
+  92 |         }
+  93 |       }
+  94 |     });
+  95 |   }
+  96 | }
+  97 | 
+```

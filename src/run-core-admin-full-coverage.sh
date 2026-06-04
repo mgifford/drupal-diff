@@ -64,6 +64,12 @@ else
   echo "Skipping dummy content seeding"
 fi
 
+echo "[3.5/8] Refreshing Playwright dependencies after seed reset"
+(cd "$BASELINE_DIR" && ddev exec -d /var/www/html/.ddev/drupal-admin-vrt npm install >/dev/null)
+(cd "$BASELINE_DIR" && ddev exec -d /var/www/html/.ddev/drupal-admin-vrt npx playwright install --with-deps chromium >/dev/null)
+(cd "$CANDIDATE_DIR" && ddev exec -d /var/www/html/.ddev/drupal-admin-vrt npm install >/dev/null)
+(cd "$CANDIDATE_DIR" && ddev exec -d /var/www/html/.ddev/drupal-admin-vrt npx playwright install --with-deps chromium >/dev/null)
+
 echo "[4/8] Discovering reachable /admin routes from baseline"
 (cd "$CANDIDATE_DIR" && ddev exec -d /var/www/html/.ddev/drupal-admin-vrt env \
   BASE_URL="http://drupal-11.3.10.ddev.site" \

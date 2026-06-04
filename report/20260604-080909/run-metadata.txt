@@ -1,0 +1,12 @@
+run_id: 20260604-080909
+run_label: full-matrix
+mode: full
+refresh_baseline: false
+color_mode: both
+baseline_project: /Users/mike.gifford/drupal-diff/drupal-11.3.10
+baseline_revision: 26adc3e4f17
+baseline_admin_theme: gin
+candidate_project: /Users/mike.gifford/drupal-diff/drupal-git
+candidate_revision: bf557462a00
+candidate_admin_theme: default_admin
+timestamp_utc: 2026-06-04T12:09:11Z

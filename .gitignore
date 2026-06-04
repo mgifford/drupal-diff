@@ -1,16 +1,6 @@
 # Exclude local Drupal source copies
 /drupal-11.3.10/
-/drupal-git/*
-!/drupal-git/composer.json
-!/drupal-git/composer.lock
-!/drupal-git/core/
-/drupal-git/core/*
-!/drupal-git/core/PATCHES.txt
-!/drupal-git/patches/
-/drupal-git/patches/*
-!/drupal-git/patches/core/
-/drupal-git/patches/core/*
-!/drupal-git/patches/core/content-entity-base-null-langcode.patch
+/drupal-git/
 
 # macOS
 .DS_Store
