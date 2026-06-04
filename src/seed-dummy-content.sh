@@ -99,7 +99,7 @@ create_content_for_project() {
   if [[ "$label" == "drupal-11.3.10" ]]; then
     base_url="http://drupal-11.3.10.ddev.site"
   else
-    base_url="http://drupal-git.ddev.site:8080"
+    base_url="http://drupal-12.ddev.site"
   fi
 
   echo "Seeding dummy content in $label"

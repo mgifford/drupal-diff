@@ -310,4 +310,4 @@ NODE
 }
 
 capture_project "$BASELINE_DIR" "http://drupal-11.3.10.ddev.site" "baseline"
-capture_project "$CANDIDATE_DIR" "http://drupal-git.ddev.site:8080" "candidate"
+capture_project "$CANDIDATE_DIR" "http://drupal-12.ddev.site" "candidate"

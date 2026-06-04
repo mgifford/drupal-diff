@@ -1,0 +1,4 @@
+project=candidate
+base_url=http://drupal-12.ddev.site
+capture_exit_code=0
+timestamp_utc=2026-06-04T11:10:25Z

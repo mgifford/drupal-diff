@@ -7,6 +7,8 @@ This repository provides a reproducible workflow to compare:
 
 The goal is to identify **unplanned visual regressions** and create issue-ready evidence for CSS parity work.
 
+For a step-by-step rebuild guide, see [SETUP.md](SETUP.md).
+
 ## What This Repository Contains
 
 - Comparison orchestration scripts in [src](src)
@@ -113,10 +115,10 @@ Candidate (Drupal 12):
 
 The workflow expects both to be accessible:
 
-- `http://drupal-11.3.10.ddev.site`
-- `http://drupal-git.ddev.site:8080`
+- `http://drupal-11.3.10.ddev.site/`
+- `http://drupal-12.ddev.site/`
 
-If ports conflict, adjust `.ddev/config.yaml` in candidate project (for example `8080/8443`).
+If ports conflict, adjust `.ddev/config.yaml` in the candidate project (for example `8080/8443`).
 
 ## Quick Start (Reproducible)
 
@@ -375,13 +377,13 @@ cd ../drupal-git && ddev mysql -e "TRUNCATE flood;"
 - This workflow primarily uses form-based auth fallback and Playwright flows
 - Drush compatibility can vary with Symfony/PHP in bleeding-edge branches
 
-### Cannot use `ddev drush uli` on `drupal-git`
+### Cannot use `ddev drush uli` on Drupal 12
 
 Use direct login credentials for this harness:
 
 - Username: `admin`
 - Password: `admin`
-- Login URL: `http://drupal-git.ddev.site:8080/user/login`
+- Login URL: `http://drupal-12.ddev.site/user/login`
 
 If the password does not work, reset it from the project root:
 
@@ -393,7 +395,7 @@ ddev mysql -e "UPDATE users_field_data SET pass='${HASH}' WHERE uid=1;"
 
 You can also request a one-time login email token from:
 
-- `http://drupal-git.ddev.site:8080/user/password`
+- `http://drupal-12.ddev.site/user/password`
 - default admin email in this setup: `admin@example.test`
 
 If you want one-time login links without email dependency, install Drush locally in `drupal-git`:
@@ -410,6 +412,18 @@ If login attempts were rate-limited, clear Drupal flood control:
 cd drupal-git
 ddev mysql -e "TRUNCATE flood;"
 ```
+
+### Rebuild both local sites after a database reset
+
+If either site database gets wiped, bring both DDEV projects back up and reseed the shared dummy content before comparing again:
+
+```bash
+cd drupal-11.3.10 && ddev start
+cd ../drupal-git && ddev start
+cd .. && ./src/seed-dummy-content.sh
+```
+
+That script repopulates the Drupal 11 and Drupal 12 sites with the same admin-focused test content used by the compare runners.
 
 ## License
 

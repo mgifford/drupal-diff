@@ -175,7 +175,7 @@ echo "Discovered $TOTAL_ROUTES admin routes"
 echo "[5/8] Capturing full-page and interactive element states across all routes"
 (cd "$CANDIDATE_DIR" && ddev exec -d /var/www/html/.ddev/drupal-admin-vrt env \
   BASELINE_URL="http://drupal-11.3.10.ddev.site" \
-  CANDIDATE_URL="http://drupal-git.ddev.site:8080" \
+  CANDIDATE_URL="http://drupal-12.ddev.site" \
   ROUTES_FILE="/var/www/html/.ddev/drupal-admin-vrt/core-admin-routes.txt" \
   OUT_DIR="/var/www/html/.ddev/drupal-admin-vrt/core-admin-coverage-out" \
   STATUS_FILE="/var/www/html/.ddev/drupal-admin-vrt/core-admin-route-status.csv" \

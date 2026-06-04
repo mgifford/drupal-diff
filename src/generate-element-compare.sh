@@ -31,9 +31,9 @@ cd "$ROOT_DIR/drupal-git"
 
 ddev exec --dir /var/www/html/.ddev/drupal-admin-vrt env \
   BASELINE_URL="http://drupal-11.3.10.ddev.site" \
-  CANDIDATE_URL="http://drupal-git.ddev.site:8080" \
+  CANDIDATE_URL="http://drupal-12.ddev.site" \
   BASELINE_REPORT_URL="${BASELINE_REPORT_URL:-http://drupal-11.3.10.ddev.site}" \
-  CANDIDATE_REPORT_URL="${CANDIDATE_REPORT_URL:-http://drupal-12-git.ddev.site:8080}" \
+  CANDIDATE_REPORT_URL="${CANDIDATE_REPORT_URL:-http://drupal-12.ddev.site}" \
   COLOR_MODE="$COLOR_MODE" \
   DRUPAL_ADMIN_USER="admin" \
   DRUPAL_ADMIN_PASS="admin" \
