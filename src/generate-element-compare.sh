@@ -1617,6 +1617,22 @@ async function clearOutputDir(targetDir) {
   img { max-width: 100%; border: 1px solid #cbd2d9; margin-top: 6px; }
   .agg { margin-bottom: 16px; }
   .agg table { width: auto; min-width: 420px; }
+  .detail-panel { margin-top: 4px; padding-top: 4px; }
+  .detail-panel > summary.detail-toggle {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: #102a43;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .detail-panel > summary.detail-toggle::-webkit-details-marker { display: none; }
+  .detail-panel > summary.detail-toggle::marker { content: ''; }
+  .detail-panel > summary.detail-toggle:focus-visible {
+    outline: 3px solid #f0b429;
+    outline-offset: 3px;
+  }
 </style>
 </head>
 <body>
@@ -1651,8 +1667,8 @@ async function clearOutputDir(targetDir) {
     </table>
   </section>
 
-  <section>
-    <h2>Detailed Element Comparison</h2>
+  <details class="detail-panel">
+    <summary class="detail-toggle">Detailed Element Comparison</summary>
     <div class="meta" style="margin-bottom:8px;">Tip: choose <strong>Issue candidates</strong> to focus on high-impact, easy-to-repeat, likely-fixable regressions.</div>
     <div class="controls">
       <input id="textFilter" placeholder="Search route/component/selector" />
@@ -1695,7 +1711,7 @@ async function clearOutputDir(targetDir) {
         ${rowHtml}
       </tbody>
     </table>
-  </section>
+  </details>
 </main>
 <script>
   const rows = [...document.querySelectorAll('#resultsTable tbody tr')];
