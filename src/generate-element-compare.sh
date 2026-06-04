@@ -2,22 +2,52 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-LATEST_RUN="$(find "$ROOT_DIR/report" -maxdepth 1 -mindepth 1 -type d -name '20*' | sort | tail -n 1)"
 COLOR_MODE="${1:-both}"
+RUN_DIR="${2:-}"
 
 if [[ "$COLOR_MODE" != "light" && "$COLOR_MODE" != "dark" && "$COLOR_MODE" != "both" ]]; then
   echo "Usage: $0 [light|dark|both]"
   exit 1
 fi
 
-if [[ -z "$LATEST_RUN" ]]; then
-  echo "No run directories found in $ROOT_DIR/report"
+run_has_valid_data() {
+  local run_dir="$1"
+  [[ -f "$run_dir/playwright-report/index.html" ]] && return 0
+  [[ -f "$run_dir/side-by-side-vrt-diffs.html" ]] && return 0
+  [[ -f "$run_dir/side-by-side-interactions.html" ]] && return 0
+  [[ -f "$run_dir/element-compare/element-compare-dashboard.html" ]] && return 0
+  [[ -f "$run_dir/issue-3592061-summary.html" ]] && return 0
+  [[ -f "$run_dir/issue-3592061-summary.md" ]] && return 0
+  [[ -f "$run_dir/issue-3592061-summary.csv" ]] && return 0
+  return 1
+}
+
+if [[ -n "$RUN_DIR" ]]; then
+  if [[ ! -d "$RUN_DIR" ]]; then
+    echo "Run directory not found: $RUN_DIR"
+    exit 1
+  fi
+  TARGET_RUN_DIR="$RUN_DIR"
+else
+  TARGET_RUN_DIR=""
+  while IFS= read -r candidate_run; do
+    [[ -n "$candidate_run" ]] || continue
+    candidate_dir="$ROOT_DIR/report/$candidate_run"
+    if run_has_valid_data "$candidate_dir"; then
+      TARGET_RUN_DIR="$candidate_dir"
+      break
+    fi
+  done < <(find "$ROOT_DIR/report" -maxdepth 1 -mindepth 1 -type d -name '20*' -exec basename {} \; | sort -r)
+fi
+
+if [[ -z "$TARGET_RUN_DIR" ]]; then
+  echo "No completed run directories found in $ROOT_DIR/report"
   exit 1
 fi
 
-RUN_ID="$(basename "$LATEST_RUN")"
-HOST_OUT_DIR="$LATEST_RUN/element-compare"
-TMP_HOST_OUT_DIR="$LATEST_RUN/element-compare.tmp"
+RUN_ID="$(basename "$TARGET_RUN_DIR")"
+HOST_OUT_DIR="$TARGET_RUN_DIR/element-compare"
+TMP_HOST_OUT_DIR="$TARGET_RUN_DIR/element-compare.tmp"
 CONTAINER_OUT_DIR="/var/www/html/.ddev/drupal-admin-vrt/element-compare-out"
 
 rm -rf "$TMP_HOST_OUT_DIR"

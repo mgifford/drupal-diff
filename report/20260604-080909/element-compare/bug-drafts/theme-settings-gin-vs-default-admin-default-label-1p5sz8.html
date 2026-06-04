@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin Theme (dark + light) Theme Settings (Gin vs Default Admin) - Form Label style regression vs Drupal 11 Gin</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
+  h1 { margin-bottom: 0.4rem; }
+  .meta { color: #4a5568; }
+  .links a { margin-right: 0.8rem; }
+  .card { border: 1px solid #d0d7de; border-radius: 8px; padding: 0.8rem 1rem; margin: 0.9rem 0; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 0.7rem; }
+  code { font-size: 0.95em; }
+  img { max-width: 100%; border: 1px solid #d0d7de; border-radius: 4px; margin-top: 0.5rem; }
+  ul { margin-top: 0.4rem; }
+</style>
+</head>
+<body>
+  <h1>Admin Theme (dark + light) Theme Settings (Gin vs Default Admin) - Form Label style regression vs Drupal 11 Gin</h1>
+  <p class="meta">Potential CSS regression in <strong>Form Label</strong> on <strong>Theme Settings (Gin vs Default Admin)</strong> (modes: dark + light).</p>
+  <p class="links">
+    <a href="theme-settings-gin-vs-default-admin-default-label-1p5sz8.md" target="_blank" rel="noopener">Local Markdown</a>
+    <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/bug-drafts/theme-settings-gin-vs-default-admin-default-label-1p5sz8.md" target="_blank" rel="noopener">GitHub Source (Markdown)</a>
+    <a href="../element-compare-dashboard.html" target="_blank" rel="noopener">Dashboard</a>
+  </p>
+
+  <section class="card">
+    <h2>What Changed (Human Summary)</h2>
+    <ul>
+      <li>Text size is slightly larger: 13.3px vs 12.5px (+6.0%).</li><li>Component width is significantly wider: 264.9px vs 150.4px (+76.1%).</li><li>Component height is significantly shorter: 17.5px vs 33.9px (-48.4%).</li><li>Horizontal padding is significantly higher: 2.0px vs 1.0px (+100.0%).</li><li>This same issue was also identified in dark mode.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Reproduction</h2>
+    <ol>
+      <li>Open baseline page: <a href="http://drupal-11.3.10.ddev.site/admin/appearance/settings/gin" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/admin/appearance/settings/gin</a></li>
+      <li>Open candidate page: <a href="http://drupal-12.ddev.site/admin/appearance/settings/default_admin" target="_blank" rel="noopener">http://drupal-12.ddev.site/admin/appearance/settings/default_admin</a></li>
+      <li>Inspect selector: <code>label</code></li>
+      <li>Compare typography, spacing, sizing, and marker presence in dark + light.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Screenshots</h2>
+    <ul>
+      <li>Baseline element: <a href="../baseline/theme-settings__default__light__label.png" target="_blank" rel="noopener">baseline/theme-settings__default__light__label.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline/theme-settings__default__light__label.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate element: <a href="../candidate/theme-settings__default__light__label.png" target="_blank" rel="noopener">candidate/theme-settings__default__light__label.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate/theme-settings__default__light__label.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Baseline page: <a href="../baseline-pages/theme-settings__default__light__page.png" target="_blank" rel="noopener">baseline-pages/theme-settings__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline-pages/theme-settings__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
+      <li>Candidate page: <a href="../candidate-pages/theme-settings__default__light__page.png" target="_blank" rel="noopener">candidate-pages/theme-settings__default__light__page.png</a> | <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/theme-settings__default__light__page.png" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>DOM Evidence (XPath + HTML)</h2>
+    
+      <div class="meta"><strong>Drupal 11 with Gin 1 XPath:</strong> <code>/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/details[1]/div[1]/fieldset[5]/div[1]/div[1]/div[1]/label[1]</code></div>
+      <div class="meta">text: New Drupal Navigation, Test integration New Experimental</div>
+      <pre>&lt;label for=&quot;edit-classic-toolbar-new&quot; class=&quot;form-item__label option&quot;&gt;New Drupal Navigation, Test integration &lt;span class=&quot;gin-new-flag&quot;&gt;New&lt;/span&gt; &lt;span class=&quot;gin-experimental-flag&quot;&gt;Experimental&lt;/span&gt;&lt;/label&gt;</pre>
+      <div class="meta"><strong>Drupal 11 with Gin 2 XPath:</strong> <code>/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/details[1]/div[1]/fieldset[5]/div[1]/div[1]/div[2]/label[1]</code></div>
+      <div class="meta">text: Sidebar, Vertical Toolbar (Default)</div>
+      <pre>&lt;label for=&quot;edit-classic-toolbar-vertical&quot; class=&quot;form-item__label option&quot;&gt;Sidebar, Vertical Toolbar (Default)&lt;/label&gt;</pre>
+    
+      <div class="meta"><strong>Drupal 12 with Admin Theme 1 XPath:</strong> <code>/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/details[1]/div[1]/div[1]/label[1]</code></div>
+      <div class="meta">text: Focus color</div>
+      <pre>&lt;label for=&quot;edit-preset-focus-color&quot; class=&quot;form-item__label&quot;&gt;Focus color&lt;/label&gt;</pre>
+      <div class="meta"><strong>Drupal 12 with Admin Theme 2 XPath:</strong> <code>/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/form[1]/details[1]/div[1]/div[2]/label[1]</code></div>
+      <div class="meta">text: Increase contrast Experimental</div>
+      <pre>&lt;label for=&quot;edit-high-contrast-mode&quot; class=&quot;form-item__label option&quot;&gt;Increase contrast &lt;span class=&quot;gin-experimental-flag&quot;&gt;Experimental&lt;/span&gt;&lt;/label&gt;</pre>
+  </section>
+</body>
+</html>
