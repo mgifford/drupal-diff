@@ -29,25 +29,25 @@ GitHub Pages links:
 - [Pages Home](https://mgifford.github.io/drupal-diff/)
 - [Pages Report Index](https://mgifford.github.io/drupal-diff/report/)
 
-Quick links for the most recent published run (`20260527-211449`):
+Quick links for the most recent published run (`20260604-080909`):
 
-- [Element Compare Dashboard](https://mgifford.github.io/drupal-diff/report/20260527-211449/element-compare/element-compare-dashboard.html)
-- [Bug Drafts Index](report/20260527-211449/element-compare/bug-drafts-index.md)
-- [Bug Drafts Grouped by CSS](report/20260527-211449/element-compare/bug-drafts-by-css.md)
-- [Suggested CSS Patches](report/20260527-211449/element-compare/suggested-css-patches.md)
+- [Element Compare Dashboard](https://mgifford.github.io/drupal-diff/report/20260604-080909/element-compare/element-compare-dashboard.html)
+- [Bug Drafts Index](report/20260604-080909/element-compare/bug-drafts-index.html)
+- [Bug Drafts Grouped by CSS](report/20260604-080909/element-compare/bug-drafts-by-css.html)
+- [Suggested CSS Patches](report/20260604-080909/element-compare/suggested-css-patches.md)
 
-Latest full VRT run links (`20260527-160939`):
+Latest full VRT run links (`20260604-080909`):
 
-- [Issue Summary (Markdown)](report/20260527-160939/issue-3592061-summary.md)
-- [Issue Summary (CSV)](report/20260527-160939/issue-3592061-summary.csv)
-- [Side-by-side VRT Diff Viewer](https://mgifford.github.io/drupal-diff/report/20260527-160939/side-by-side-vrt-diffs.html)
-- [Side-by-side Interaction Viewer](https://mgifford.github.io/drupal-diff/report/20260527-160939/side-by-side-interactions.html)
-- [Playwright HTML Report](https://mgifford.github.io/drupal-diff/report/20260527-160939/playwright-report/index.html)
+- [Issue Summary (HTML)](report/20260604-080909/issue-3592061-summary.html)
+- [Issue Summary (CSV)](report/20260604-080909/issue-3592061-summary.csv)
+- [Playwright HTML Report](https://mgifford.github.io/drupal-diff/report/20260604-080909/playwright-report/index.html)
 
 Browse all published runs:
 
 - [All run folders](report)
 - [Run index](report/run-index.csv)
+
+The element compare dashboard groups repeated findings by browser label, so Chromium, Firefox, and WebKit runs collapse into one issue family instead of repeating the same finding per browser.
 
 ## Prerequisites
 
@@ -69,7 +69,7 @@ Optional but recommended:
 - [src/rerun-after-patch.sh](src/rerun-after-patch.sh): Fast rerun against frozen baseline
 - [src/open-latest-vrt-diff-viewer.sh](src/open-latest-vrt-diff-viewer.sh): Expected vs Actual vs Diff viewer
 - [src/open-latest-side-by-side.sh](src/open-latest-side-by-side.sh): Baseline/Candidate interaction side-by-side viewer
-- [src/generate-element-compare.sh](src/generate-element-compare.sh): Element-level metrics and screenshots dashboard
+- [src/generate-element-compare.sh](src/generate-element-compare.sh): Element-level metrics, browser-aware rollups, and screenshots dashboard
 - [src/open-latest-element-compare.sh](src/open-latest-element-compare.sh): Generates and opens latest element dashboard + bug drafts
 - [src/apply-vrt-addon-overrides.sh](src/apply-vrt-addon-overrides.sh): Re-applies tracked dark-mode VRT overrides into local Drupal copies
 - [src/export-issue-report.sh](src/export-issue-report.sh): CSV/Markdown issue summary export
@@ -334,7 +334,7 @@ Note: some contextual trigger buttons are intentionally visually hidden until sp
 
 ## Publishing Updates
 
-Use one command to stage only harness content (`src`, `report`, `screenshots`, `.gitignore`), commit, rebase, and push:
+Use one command to rebuild the published indexes, stage the docs and harness content, commit, rebase, and push:
 
 ```bash
 ./src/publish-report-updates.sh --skip-run --label docs-only
