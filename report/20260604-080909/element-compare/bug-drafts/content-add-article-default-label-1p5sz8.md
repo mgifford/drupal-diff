@@ -1,8 +1,8 @@
 # Admin Theme (dark + light) Content Add Article - Form Label style regression vs Drupal 11 Gin
 
 ## Human-Readable Change Summary
-- Component width is significantly wider: 266.4px vs 75.6px (+252.1%).
-- Horizontal padding is significantly higher: 1.0px vs 0.5px (+100.0%).
+- Component width is significantly wider: 411.3px vs 75.6px (+443.6%).
+- Horizontal padding is significantly lower: 0.0px vs 0.5px (-100.0%).
 - This same issue was also identified in dark mode.
 
 ## Summary
@@ -10,8 +10,8 @@ Potential CSS regression in **Form Label** on **Content Add Article** when compa
 Color mode coverage: **dark + light**
 
 ## Color Mode Coverage
-- light: paddingX: 100.0% | width: 252.1%
-- dark: paddingX: 100.0% | width: 252.1%
+- light: paddingX: -100.0% | width: 443.6%
+- dark: paddingX: -100.0% | width: 443.6%
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/node/add/article
@@ -23,8 +23,8 @@ Color mode coverage: **dark + light**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- light: paddingX: 100.0% | width: 252.1%
-- dark: paddingX: 100.0% | width: 252.1%
+- light: paddingX: -100.0% | width: 443.6%
+- dark: paddingX: -100.0% | width: 443.6%
 
 ## Likely CSS Sources
 - core/themes/default_admin/css/components/navigation.css
@@ -35,9 +35,9 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 - core/themes/default_admin/css/components/tables.pcss.css
 
 ## Candidate Matched CSS Rules
-- http://drupal-12.ddev.site/sites/default/files/css/css_Ku18gqCdEdCAs434mQ0gFryfnc-pmzNoz2yFQvpTGmw.css?delta=1&language=en&theme=default_admin&include=eJyNkctuxCAMRX9oSFb9nsgBJ7LG2BGYvr6-RjNpVLpoV4h7Do8L8Y6JTMvLTGJYBHhKpR0-xJPc4t_ORBl2_JdpsLKb6sK7NeD5NL6TwCT36krBOWo-VFCsTgKvtIORSgimyiuUsDYzlYf63AeaaV_FaPgD9N2hIISClT6fTLRk4D5NuEFjWyBlkrnfdtkcDnmPgr1piMotSx3wzrp6gWof3mEf4FVgAJUSepsh7R2Njl_psXR3I_YXPrs9ZrfrhOsDruwLIRe_MA :: *
-- http://drupal-12.ddev.site/sites/default/files/css/css_Ku18gqCdEdCAs434mQ0gFryfnc-pmzNoz2yFQvpTGmw.css?delta=1&language=en&theme=default_admin&include=eJyNkctuxCAMRX9oSFb9nsgBJ7LG2BGYvr6-RjNpVLpoV4h7Do8L8Y6JTMvLTGJYBHhKpR0-xJPc4t_ORBl2_JdpsLKb6sK7NeD5NL6TwCT36krBOWo-VFCsTgKvtIORSgimyiuUsDYzlYf63AeaaV_FaPgD9N2hIISClT6fTLRk4D5NuEFjWyBlkrnfdtkcDnmPgr1piMotSx3wzrp6gWof3mEf4FVgAJUSepsh7R2Njl_psXR3I_YXPrs9ZrfrhOsDruwLIRe_MA :: .form-item__label
-- http://drupal-12.ddev.site/sites/default/files/css/css_Ku18gqCdEdCAs434mQ0gFryfnc-pmzNoz2yFQvpTGmw.css?delta=1&language=en&theme=default_admin&include=eJyNkctuxCAMRX9oSFb9nsgBJ7LG2BGYvr6-RjNpVLpoV4h7Do8L8Y6JTMvLTGJYBHhKpR0-xJPc4t_ORBl2_JdpsLKb6sK7NeD5NL6TwCT36krBOWo-VFCsTgKvtIORSgimyiuUsDYzlYf63AeaaV_FaPgD9N2hIISClT6fTLRk4D5NuEFjWyBlkrnfdtkcDnmPgr1piMotSx3wzrp6gWof3mEf4FVgAJUSepsh7R2Njl_psXR3I_YXPrs9ZrfrhOsDruwLIRe_MA :: :where(*), :is(#extra-specificity-hack, [data-drupal-admin-styles])
+- http://drupal-12.ddev.site/sites/default/files/css/css_Vi2jUSoeqE__LgwBTtdNPMo0eCiShfq0QGUu5aOMSts.css?delta=1&language=en&theme=default_admin&include=eJyNkdtyhSAMRX_ooE_9HidCdDInJA6E3r6-Yc7Flj60T8jai-DWeMVEpuVlJjEsAjyl0g5f4iO5xL-diTLs-C_TYGU31YV3a8Dzw3iSwCTX6krBOWo-VFCsTgKvtIORSgimyiuUsDYzlZt6nwPNtJ9iNPwR9OlQEELBSp_3TLRk4L5NuEFjWyBlkrm_7bJ5OPCOgr1piMotSx3inXX1AtU-vMM-hGeBIaiU0NsMtHc0On7RY-nuRvxs1p878E_-Dfnucl55_pGTfQH5DsWB :: *
+- http://drupal-12.ddev.site/sites/default/files/css/css_Vi2jUSoeqE__LgwBTtdNPMo0eCiShfq0QGUu5aOMSts.css?delta=1&language=en&theme=default_admin&include=eJyNkdtyhSAMRX_ooE_9HidCdDInJA6E3r6-Yc7Flj60T8jai-DWeMVEpuVlJjEsAjyl0g5f4iO5xL-diTLs-C_TYGU31YV3a8Dzw3iSwCTX6krBOWo-VFCsTgKvtIORSgimyiuUsDYzlZt6nwPNtJ9iNPwR9OlQEELBSp_3TLRk4L5NuEFjWyBlkrm_7bJ5OPCOgr1piMotSx3inXX1AtU-vMM-hGeBIaiU0NsMtHc0On7RY-nuRvxs1p878E_-Dfnucl55_pGTfQH5DsWB :: .form-item__label
+- http://drupal-12.ddev.site/sites/default/files/css/css_Vi2jUSoeqE__LgwBTtdNPMo0eCiShfq0QGUu5aOMSts.css?delta=1&language=en&theme=default_admin&include=eJyNkdtyhSAMRX_ooE_9HidCdDInJA6E3r6-Yc7Flj60T8jai-DWeMVEpuVlJjEsAjyl0g5f4iO5xL-diTLs-C_TYGU31YV3a8Dzw3iSwCTX6krBOWo-VFCsTgKvtIORSgimyiuUsDYzlZt6nwPNtJ9iNPwR9OlQEELBSp_3TLRk4L5NuEFjWyBlkrm_7bJ5OPCOgr1piMotSx3inXX1AtU-vMM-hGeBIaiU0NsMtHc0On7RY-nuRvxs1p878E_-Dfnucl55_pGTfQH5DsWB :: :where(*), :is(#extra-specificity-hack, [data-drupal-admin-styles])
 
 ## Candidate Theme Source Matches (default_admin)
 - core/themes/default_admin/css/components/navigation.css (score: 2; selectors: :is(#extra-specificity-hack, [data-drupal-admin-styles]))
@@ -63,6 +63,7 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 - default_admin/sidebar
 - default_admin/tooltip
 - default_admin/top_bar
+- file/drupal.file
 - filter/drupal.filter
 - navigation/internal.navigation
 
@@ -116,15 +117,15 @@ No high-confidence automatic patch suggestion for this diff.
 <label for="edit-title-0-value" class="form-item__label js-form-required form-required">Title</label>
 ```
 
-2. XPath: `/html[1]/body[1]/div[4]/div[1]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[1]/div[4]/div[1]/div[2]/label[1]`
-   - Text sample: Body (Edit summary)
+2. XPath: `//*[@id="edit-field-image-0--label"]`
+   - Text sample: Add a new file
    - Related element screenshot: candidate/content-add-article__default__light__label.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate/content-add-article__default__light__label.png
    - Related page screenshot: candidate-pages/content-add-article__default__light__page.png
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/content-add-article__default__light__page.png
 
 ```html
-<label for="edit-body-0-value" class="form-item__label">Body<span class="field-edit-link"> (<button type="button" class="link link-edit-summary">Edit summary</button>)</span></label>
+<label for="edit-field-image-0-upload" id="edit-field-image-0--label" class="form-item__label">Add a new file</label>
 ```
 
 ## Notes

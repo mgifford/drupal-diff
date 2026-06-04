@@ -1,13 +1,13 @@
 # Admin Theme (dark + light) Structure Article Display - Dropbutton Primary Action Link style regression vs Drupal 11 Gin
 
 ## Human-Readable Change Summary
-- Text size is significantly larger: 13.0px vs 0.0px (+100.0%).
-- Component width is significantly wider: 69.0px vs 0.0px (+100.0%).
-- Component height is significantly taller: 24.0px vs 0.0px (+100.0%).
-- Vertical padding is significantly higher: 10.0px vs 0.0px (+100.0%).
-- Horizontal padding is significantly higher: 24.0px vs 0.0px (+100.0%).
+- Text size is significantly larger: 13.2px vs 0.0px (+100.0%).
+- Component width is significantly wider: 82.2px vs 0.0px (+100.0%).
+- Component height is significantly taller: 25.8px vs 0.0px (+100.0%).
+- Vertical padding is significantly higher: 12.2px vs 0.0px (+100.0%).
+- Horizontal padding is significantly higher: 24.8px vs 0.0px (+100.0%).
 - Line height is significantly larger: 12.0px vs 0.0px (+100.0%).
-- Matched element count is different: 4 more element(s) (+100.0%).
+- Matched element count is different: 5 more element(s) (+100.0%).
 - This same issue was also identified in dark mode.
 
 ## Summary
@@ -15,8 +15,8 @@ Potential CSS regression in **Dropbutton Primary Action Link** on **Structure Ar
 Color mode coverage: **dark + light**
 
 ## Color Mode Coverage
-- light: fontSize: 100.0% | lineHeight: 100.0% | paddingY: 100.0% | paddingX: 100.0% | width: 100.0% | height: 100.0% | count: +4 (100.0%)
-- dark: fontSize: 100.0% | lineHeight: 100.0% | paddingY: 100.0% | paddingX: 100.0% | width: 100.0% | height: 100.0% | count: +4 (100.0%)
+- light: fontSize: 100.0% | lineHeight: 100.0% | paddingY: 100.0% | paddingX: 100.0% | width: 100.0% | height: 100.0% | count: +5 (100.0%)
+- dark: fontSize: 100.0% | lineHeight: 100.0% | paddingY: 100.0% | paddingX: 100.0% | width: 100.0% | height: 100.0% | count: +5 (100.0%)
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/structure/types/manage/article/display
@@ -28,8 +28,8 @@ Color mode coverage: **dark + light**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- light: fontSize: 100.0% | lineHeight: 100.0% | paddingY: 100.0% | paddingX: 100.0% | width: 100.0% | height: 100.0% | count: +4 (100.0%)
-- dark: fontSize: 100.0% | lineHeight: 100.0% | paddingY: 100.0% | paddingX: 100.0% | width: 100.0% | height: 100.0% | count: +4 (100.0%)
+- light: fontSize: 100.0% | lineHeight: 100.0% | paddingY: 100.0% | paddingX: 100.0% | width: 100.0% | height: 100.0% | count: +5 (100.0%)
+- dark: fontSize: 100.0% | lineHeight: 100.0% | paddingY: 100.0% | paddingX: 100.0% | width: 100.0% | height: 100.0% | count: +5 (100.0%)
 
 ## Likely CSS Sources
 - core/themes/default_admin/css/base/elements.css
@@ -103,15 +103,15 @@ No high-confidence automatic patch suggestion for this diff.
 <a href="/admin/structure/types/manage/article/display/default">Manage <span class="visually-hidden">(Default)</span></a>
 ```
 
-2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[1]/ul[1]/li[1]/a[1]`
-   - Text sample: Enable (Full content)
+2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[2]/td[3]/div[1]/div[1]/ul[1]/li[1]/a[1]`
+   - Text sample: Manage (RSS)
    - Related element screenshot: candidate/structure-content-type-article-display__default__light__dropbutton-primary-action.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate/structure-content-type-article-display__default__light__dropbutton-primary-action.png
    - Related page screenshot: candidate-pages/structure-content-type-article-display__default__light__page.png
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/structure-content-type-article-display__default__light__page.png
 
 ```html
-<a href="/admin/structure/types/manage/article/display/full/enable?token=gDFrgzVKGdKUTFmgnllHDtrcaQ2-WZKJZYHaT9mPCxs">Enable <span class="visually-hidden">(Full content)</span></a>
+<a href="/admin/structure/types/manage/article/display/rss">Manage <span class="visually-hidden">(RSS)</span></a>
 ```
 
 ## Notes

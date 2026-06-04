@@ -1,58 +1,46 @@
-# Admin Theme (dark + light) Content Add Article - Details Summary style regression vs Drupal 11 Gin
+# Admin Theme (light) Content Add Article - Details Summary style regression vs Drupal 11 Gin
 
 ## Human-Readable Change Summary
-- Component width is noticeably narrower: 359.0px vs 410.5px (-12.5%).
-- Component height is noticeably taller: 88.0px vs 78.7px (+11.9%).
-- Line height is slightly larger: 24.0px vs 22.7px (+5.9%).
-- Matched element count is different: 3 fewer element(s) (-50.0%).
-- This same issue was also identified in dark mode.
+- Component width is noticeably narrower: 360.3px vs 410.5px (-12.2%).
+- Component height is significantly taller: 179.5px vs 78.7px (+128.2%).
+- Horizontal padding is noticeably lower: 55.5px vs 70.0px (-20.7%).
+- Matched element count is different: 2 more element(s) (+33.3%).
 
 ## Summary
 Potential CSS regression in **Details Summary** on **Content Add Article** when comparing Drupal 11 with Gin to Drupal 12 with Admin Theme.
-Color mode coverage: **dark + light**
+Color mode coverage: **light**
 
 ## Color Mode Coverage
-- light: lineHeight: 5.9% | width: -12.5% | height: 11.9% | count: -3 (-50.0%)
-- dark: lineHeight: 5.9% | width: -12.5% | height: 11.9% | count: -3 (-50.0%)
+- light: paddingX: -20.7% | width: -12.2% | height: 128.2% | count: +2 (33.3%)
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/node/add/article
 2. Open candidate page: http://drupal-12.ddev.site/node/add/article
 3. Inspect selector: details > summary
-4. Compare typography, spacing, sizing, and marker presence in: dark + light.
+4. Compare typography, spacing, sizing, and marker presence in: light.
 
 ## Expected Result
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- light: lineHeight: 5.9% | width: -12.5% | height: 11.9% | count: -3 (-50.0%)
-- dark: lineHeight: 5.9% | width: -12.5% | height: 11.9% | count: -3 (-50.0%)
+- paddingX: -20.7%
+- width: -12.2%
+- height: 128.2%
+- count: +2 (33.3%)
 
 ## Likely CSS Sources
-- core/themes/default_admin/css/components/details.css
-- core/themes/default_admin/css/components/details.pcss.css
 - core/themes/default_admin/css/components/navigation.css
 - core/themes/default_admin/css/components/navigation.pcss.css
-- core/themes/default_admin/css/components/tabs.css
-- core/themes/default_admin/css/components/tabs.pcss.css
 
 ## Candidate Matched CSS Rules
-- http://drupal-12.ddev.site/sites/default/files/css/css_rp-gYXyeBg44InJtY65oLmSffmoLIOG3K7rOApD1fCA.css?delta=0&language=en&theme=default_admin&include=eJyNkctuxCAMRX9oSFb9nsgBJ7LG2BGYvr6-RjNpVLpoV4h7Do8L8Y6JTMvLTGJYBHhKpR0-xJPc4t_ORBl2_JdpsLKb6sK7NeD5NL6TwCT36krBOWo-VFCsTgKvtIORSgimyiuUsDYzlYf63AeaaV_FaPgD9N2hIISClT6fTLRk4D5NuEFjWyBlkrnfdtkcDnmPgr1piMotSx3wzrp6gWof3mEf4FVgAJUSepsh7R2Njl_psXR3I_YXPrs9ZrfrhOsDruwLIRe_MA :: summary
-- http://drupal-12.ddev.site/sites/default/files/css/css_Ku18gqCdEdCAs434mQ0gFryfnc-pmzNoz2yFQvpTGmw.css?delta=1&language=en&theme=default_admin&include=eJyNkctuxCAMRX9oSFb9nsgBJ7LG2BGYvr6-RjNpVLpoV4h7Do8L8Y6JTMvLTGJYBHhKpR0-xJPc4t_ORBl2_JdpsLKb6sK7NeD5NL6TwCT36krBOWo-VFCsTgKvtIORSgimyiuUsDYzlYf63AeaaV_FaPgD9N2hIISClT6fTLRk4D5NuEFjWyBlkrnfdtkcDnmPgr1piMotSx3wzrp6gWof3mEf4FVgAJUSepsh7R2Njl_psXR3I_YXPrs9ZrfrhOsDruwLIRe_MA :: summary
-- http://drupal-12.ddev.site/sites/default/files/css/css_Ku18gqCdEdCAs434mQ0gFryfnc-pmzNoz2yFQvpTGmw.css?delta=1&language=en&theme=default_admin&include=eJyNkctuxCAMRX9oSFb9nsgBJ7LG2BGYvr6-RjNpVLpoV4h7Do8L8Y6JTMvLTGJYBHhKpR0-xJPc4t_ORBl2_JdpsLKb6sK7NeD5NL6TwCT36krBOWo-VFCsTgKvtIORSgimyiuUsDYzlYf63AeaaV_FaPgD9N2hIISClT6fTLRk4D5NuEFjWyBlkrnfdtkcDnmPgr1piMotSx3wzrp6gWof3mEf4FVgAJUSepsh7R2Njl_psXR3I_YXPrs9ZrfrhOsDruwLIRe_MA :: *
-- http://drupal-12.ddev.site/sites/default/files/css/css_Ku18gqCdEdCAs434mQ0gFryfnc-pmzNoz2yFQvpTGmw.css?delta=1&language=en&theme=default_admin&include=eJyNkctuxCAMRX9oSFb9nsgBJ7LG2BGYvr6-RjNpVLpoV4h7Do8L8Y6JTMvLTGJYBHhKpR0-xJPc4t_ORBl2_JdpsLKb6sK7NeD5NL6TwCT36krBOWo-VFCsTgKvtIORSgimyiuUsDYzlYf63AeaaV_FaPgD9N2hIISClT6fTLRk4D5NuEFjWyBlkrnfdtkcDnmPgr1piMotSx3wzrp6gWof3mEf4FVgAJUSepsh7R2Njl_psXR3I_YXPrs9ZrfrhOsDruwLIRe_MA :: .gin-details__summary
-- http://drupal-12.ddev.site/sites/default/files/css/css_Ku18gqCdEdCAs434mQ0gFryfnc-pmzNoz2yFQvpTGmw.css?delta=1&language=en&theme=default_admin&include=eJyNkctuxCAMRX9oSFb9nsgBJ7LG2BGYvr6-RjNpVLpoV4h7Do8L8Y6JTMvLTGJYBHhKpR0-xJPc4t_ORBl2_JdpsLKb6sK7NeD5NL6TwCT36krBOWo-VFCsTgKvtIORSgimyiuUsDYzlYf63AeaaV_FaPgD9N2hIISClT6fTLRk4D5NuEFjWyBlkrnfdtkcDnmPgr1piMotSx3wzrp6gWof3mEf4FVgAJUSepsh7R2Njl_psXR3I_YXPrs9ZrfrhOsDruwLIRe_MA :: .gin-details__summary--accordion, .gin-details__summary--accordion-item, .gin-details__summary--vertical-tabs-item
-- http://drupal-12.ddev.site/sites/default/files/css/css_Ku18gqCdEdCAs434mQ0gFryfnc-pmzNoz2yFQvpTGmw.css?delta=1&language=en&theme=default_admin&include=eJyNkctuxCAMRX9oSFb9nsgBJ7LG2BGYvr6-RjNpVLpoV4h7Do8L8Y6JTMvLTGJYBHhKpR0-xJPc4t_ORBl2_JdpsLKb6sK7NeD5NL6TwCT36krBOWo-VFCsTgKvtIORSgimyiuUsDYzlYf63AeaaV_FaPgD9N2hIISClT6fTLRk4D5NuEFjWyBlkrnfdtkcDnmPgr1piMotSx3wzrp6gWof3mEf4FVgAJUSepsh7R2Njl_psXR3I_YXPrs9ZrfrhOsDruwLIRe_MA :: .gin-details__summary--accordion-item
-- http://drupal-12.ddev.site/sites/default/files/css/css_Ku18gqCdEdCAs434mQ0gFryfnc-pmzNoz2yFQvpTGmw.css?delta=1&language=en&theme=default_admin&include=eJyNkctuxCAMRX9oSFb9nsgBJ7LG2BGYvr6-RjNpVLpoV4h7Do8L8Y6JTMvLTGJYBHhKpR0-xJPc4t_ORBl2_JdpsLKb6sK7NeD5NL6TwCT36krBOWo-VFCsTgKvtIORSgimyiuUsDYzlYf63AeaaV_FaPgD9N2hIISClT6fTLRk4D5NuEFjWyBlkrnfdtkcDnmPgr1piMotSx3wzrp6gWof3mEf4FVgAJUSepsh7R2Njl_psXR3I_YXPrs9ZrfrhOsDruwLIRe_MA :: :where(*), :is(#extra-specificity-hack, [data-drupal-admin-styles])
-- http://drupal-12.ddev.site/sites/default/files/css/css_Ku18gqCdEdCAs434mQ0gFryfnc-pmzNoz2yFQvpTGmw.css?delta=1&language=en&theme=default_admin&include=eJyNkctuxCAMRX9oSFb9nsgBJ7LG2BGYvr6-RjNpVLpoV4h7Do8L8Y6JTMvLTGJYBHhKpR0-xJPc4t_ORBl2_JdpsLKb6sK7NeD5NL6TwCT36krBOWo-VFCsTgKvtIORSgimyiuUsDYzlYf63AeaaV_FaPgD9N2hIISClT6fTLRk4D5NuEFjWyBlkrnfdtkcDnmPgr1piMotSx3wzrp6gWof3mEf4FVgAJUSepsh7R2Njl_psXR3I_YXPrs9ZrfrhOsDruwLIRe_MA :: .tabs__link, .gin-details__summary, .horizontal-tabs ul.horizontal-tabs-list li.horizontal-tab-button a
+- http://drupal-12.ddev.site/sites/default/files/css/css_rp-gYXyeBg44InJtY65oLmSffmoLIOG3K7rOApD1fCA.css?delta=0&language=en&theme=default_admin&include=eJyNkdtyhSAMRX_ooE_9HidCdDInJA6E3r6-Yc7Flj60T8jai-DWeMVEpuVlJjEsAjyl0g5f4iO5xL-diTLs-C_TYGU31YV3a8Dzw3iSwCTX6krBOWo-VFCsTgKvtIORSgimyiuUsDYzlZt6nwPNtJ9iNPwR9OlQEELBSp_3TLRk4L5NuEFjWyBlkrm_7bJ5OPCOgr1piMotSx3inXX1AtU-vMM-hGeBIaiU0NsMtHc0On7RY-nuRvxs1p878E_-Dfnucl55_pGTfQH5DsWB :: summary
+- http://drupal-12.ddev.site/sites/default/files/css/css_Vi2jUSoeqE__LgwBTtdNPMo0eCiShfq0QGUu5aOMSts.css?delta=1&language=en&theme=default_admin&include=eJyNkdtyhSAMRX_ooE_9HidCdDInJA6E3r6-Yc7Flj60T8jai-DWeMVEpuVlJjEsAjyl0g5f4iO5xL-diTLs-C_TYGU31YV3a8Dzw3iSwCTX6krBOWo-VFCsTgKvtIORSgimyiuUsDYzlZt6nwPNtJ9iNPwR9OlQEELBSp_3TLRk4L5NuEFjWyBlkrm_7bJ5OPCOgr1piMotSx3inXX1AtU-vMM-hGeBIaiU0NsMtHc0On7RY-nuRvxs1p878E_-Dfnucl55_pGTfQH5DsWB :: summary
+- http://drupal-12.ddev.site/sites/default/files/css/css_Vi2jUSoeqE__LgwBTtdNPMo0eCiShfq0QGUu5aOMSts.css?delta=1&language=en&theme=default_admin&include=eJyNkdtyhSAMRX_ooE_9HidCdDInJA6E3r6-Yc7Flj60T8jai-DWeMVEpuVlJjEsAjyl0g5f4iO5xL-diTLs-C_TYGU31YV3a8Dzw3iSwCTX6krBOWo-VFCsTgKvtIORSgimyiuUsDYzlZt6nwPNtJ9iNPwR9OlQEELBSp_3TLRk4L5NuEFjWyBlkrm_7bJ5OPCOgr1piMotSx3inXX1AtU-vMM-hGeBIaiU0NsMtHc0On7RY-nuRvxs1p878E_-Dfnucl55_pGTfQH5DsWB :: *
+- http://drupal-12.ddev.site/sites/default/files/css/css_Vi2jUSoeqE__LgwBTtdNPMo0eCiShfq0QGUu5aOMSts.css?delta=1&language=en&theme=default_admin&include=eJyNkdtyhSAMRX_ooE_9HidCdDInJA6E3r6-Yc7Flj60T8jai-DWeMVEpuVlJjEsAjyl0g5f4iO5xL-diTLs-C_TYGU31YV3a8Dzw3iSwCTX6krBOWo-VFCsTgKvtIORSgimyiuUsDYzlZt6nwPNtJ9iNPwR9OlQEELBSp_3TLRk4L5NuEFjWyBlkrm_7bJ5OPCOgr1piMotSx3inXX1AtU-vMM-hGeBIaiU0NsMtHc0On7RY-nuRvxs1p878E_-Dfnucl55_pGTfQH5DsWB :: :where(*), :is(#extra-specificity-hack, [data-drupal-admin-styles])
 
 ## Candidate Theme Source Matches (default_admin)
-- core/themes/default_admin/css/components/details.css (score: 2; selectors: .gin-details__summary--accordion-item, .gin-details__summary--vertical-tabs-item)
-- core/themes/default_admin/css/components/details.pcss.css (score: 2; selectors: .gin-details__summary--accordion-item, .gin-details__summary--vertical-tabs-item)
 - core/themes/default_admin/css/components/navigation.css (score: 2; selectors: :is(#extra-specificity-hack, [data-drupal-admin-styles]))
 - core/themes/default_admin/css/components/navigation.pcss.css (score: 2; selectors: :is(#extra-specificity-hack, [data-drupal-admin-styles]))
-- core/themes/default_admin/css/components/tabs.css (score: 1; selectors: .tabs__link)
-- core/themes/default_admin/css/components/tabs.pcss.css (score: 1; selectors: .tabs__link)
 
 ## Candidate Aggregate Libraries (decoded include= token)
 - ckeditor5/internal.drupal.ckeditor5
@@ -70,6 +58,7 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 - default_admin/sidebar
 - default_admin/tooltip
 - default_admin/top_bar
+- file/drupal.file
 - filter/drupal.filter
 - navigation/internal.navigation
 
@@ -112,26 +101,26 @@ No high-confidence automatic patch suggestion for this diff.
 ```
 
 ### Drupal 12 with Admin Theme
-1. XPath: `/html[1]/body[1]/div[4]/div[1]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/details[1]/summary[1]`
-   - Text sample: Menu settings Not in menu
+1. XPath: `/html[1]/body[1]/div[4]/div[1]/div[2]/main[1]/div[2]/div[1]/div[1]/div[2]/div[2]/details[1]/summary[1]`
+   - Text sample: Deprecated function: dirname(): Passing null to parameter #1 ($path) of type str
    - Related element screenshot: candidate/content-add-article__default__light__details-summary.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate/content-add-article__default__light__details-summary.png
    - Related page screenshot: candidate-pages/content-add-article__default__light__page.png
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/content-add-article__default__light__page.png
 
 ```html
-<summary role="button" aria-controls="edit-menu" aria-expanded="false" class="gin-details__summary gin-details__summary--accordion-item">Menu settings<span class="required-mark"></span> <span class="gin-details__summary-summary">Not in menu</span></summary>
+<summary><em class="placeholder">Deprecated function</em>: dirname(): Passing null to parameter #1 ($path) of type string is deprecated in <em class="placeholder">Drupal\Core\Extension\ExtensionPathResolver-&gt;getPath()</em> (line <em class="placeholder">76</em> of <em class="placeholder">core/lib/Drupal/Core/Extension/ExtensionPathResolver.php</em>).<span class="gin-details__summary-summary"></span></summary>
 ```
 
-2. XPath: `/html[1]/body[1]/div[4]/div[1]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/details[2]/summary[1]`
-   - Text sample: URL alias No alias
+2. XPath: `/html[1]/body[1]/div[4]/div[1]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/details[1]/summary[1]`
+   - Text sample: Image
    - Related element screenshot: candidate/content-add-article__default__light__details-summary.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate/content-add-article__default__light__details-summary.png
    - Related page screenshot: candidate-pages/content-add-article__default__light__page.png
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/content-add-article__default__light__page.png
 
 ```html
-<summary role="button" aria-controls="edit-path-0" aria-expanded="false" class="gin-details__summary gin-details__summary--accordion-item">URL alias<span class="required-mark"></span> <span class="gin-details__summary-summary">No alias</span></summary>
+<summary role="button" aria-expanded="true" class="gin-details__summary">Image<span class="required-mark"></span> <span class="gin-details__summary-summary"></span></summary>
 ```
 
 ## Notes

@@ -11,7 +11,7 @@ Color mode coverage: **dark + light**
 
 ## Color Mode Coverage
 - light: paddingX: -17.6% | width: -22.9%
-- dark: paddingX: -17.6% | width: -22.9%
+- dark: paddingY: 13.8% | paddingX: -18.3% | width: -19.8%
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/structure/menu/manage/admin
@@ -24,7 +24,7 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 
 ## Actual Result
 - light: paddingX: -17.6% | width: -22.9%
-- dark: paddingX: -17.6% | width: -22.9%
+- dark: paddingY: 13.8% | paddingX: -18.3% | width: -19.8%
 
 ## Likely CSS Sources
 - core/themes/default_admin/css/base/elements.css
@@ -73,11 +73,11 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 No high-confidence automatic patch suggestion for this diff.
 
 ## Evidence
-- Baseline element screenshot: 
+- Baseline element screenshot: baseline/structure-menu-admin__default__light__dropbutton-primary-action.png
 - Candidate element screenshot: candidate/structure-menu-admin__default__light__dropbutton-primary-action.png
 - Baseline page screenshot: baseline-pages/structure-menu-admin__default__light__page.png
 - Candidate page screenshot: candidate-pages/structure-menu-admin__default__light__page.png
-
+- Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline/structure-menu-admin__default__light__dropbutton-primary-action.png
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate/structure-menu-admin__default__light__dropbutton-primary-action.png
 - Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline-pages/structure-menu-admin__default__light__page.png
 - Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/structure-menu-admin__default__light__page.png
@@ -87,6 +87,8 @@ No high-confidence automatic patch suggestion for this diff.
 ### Drupal 11 with Gin
 1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[4]/div[2]/table[1]/tbody[1]/tr[1]/td[4]/div[1]/div[1]/ul[1]/li[1]/a[1]`
    - Text sample: Edit
+   - Related element screenshot: baseline/structure-menu-admin__default__light__dropbutton-primary-action.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline/structure-menu-admin__default__light__dropbutton-primary-action.png
    - Related page screenshot: baseline-pages/structure-menu-admin__default__light__page.png
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline-pages/structure-menu-admin__default__light__page.png
 
@@ -96,6 +98,8 @@ No high-confidence automatic patch suggestion for this diff.
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/form[1]/div[4]/div[2]/table[1]/tbody[1]/tr[2]/td[4]/div[1]/div[1]/ul[1]/li[1]/a[1]`
    - Text sample: Edit
+   - Related element screenshot: baseline/structure-menu-admin__default__light__dropbutton-primary-action.png
+   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline/structure-menu-admin__default__light__dropbutton-primary-action.png
    - Related page screenshot: baseline-pages/structure-menu-admin__default__light__page.png
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline-pages/structure-menu-admin__default__light__page.png
 

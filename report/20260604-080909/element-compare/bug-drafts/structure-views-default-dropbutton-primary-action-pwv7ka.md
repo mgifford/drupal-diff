@@ -1,8 +1,10 @@
 # Admin Theme (dark + light) Structure Views - Dropbutton Primary Action Link style regression vs Drupal 11 Gin
 
 ## Human-Readable Change Summary
-- Component width is noticeably narrower: 75.5px vs 87.3px (-13.5%).
-- Horizontal padding is noticeably lower: 25.5px vs 29.3px (-12.8%).
+- Component width is significantly narrower: 49.0px vs 87.3px (-43.8%).
+- Component height is noticeably shorter: 24.0px vs 27.4px (-12.3%).
+- Vertical padding is noticeably lower: 10.0px vs 14.1px (-29.2%).
+- Horizontal padding is noticeably lower: 24.0px vs 29.3px (-17.9%).
 - This same issue was also identified in dark mode.
 
 ## Summary
@@ -10,8 +12,8 @@ Potential CSS regression in **Dropbutton Primary Action Link** on **Structure Vi
 Color mode coverage: **dark + light**
 
 ## Color Mode Coverage
-- light: paddingX: -12.8% | width: -13.5%
-- dark: paddingY: -29.2% | paddingX: -17.9% | width: -41.3% | height: -12.3%
+- light: paddingY: -29.2% | paddingX: -17.9% | width: -43.8% | height: -12.3%
+- dark: paddingY: -29.2% | paddingX: -17.9% | width: -43.8% | height: -12.3%
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/structure/views
@@ -23,8 +25,8 @@ Color mode coverage: **dark + light**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- light: paddingX: -12.8% | width: -13.5%
-- dark: paddingY: -29.2% | paddingX: -17.9% | width: -41.3% | height: -12.3%
+- light: paddingY: -29.2% | paddingX: -17.9% | width: -43.8% | height: -12.3%
+- dark: paddingY: -29.2% | paddingX: -17.9% | width: -43.8% | height: -12.3%
 
 ## Likely CSS Sources
 - core/themes/default_admin/css/base/elements.css
@@ -115,22 +117,22 @@ a {
 ```
 
 ### Drupal 12 with Admin Theme
-1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
-   - Text sample: Duplicate
+1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[5]/td[5]/div[1]/div[1]/ul[1]/li[1]/a[1]`
+   - Text sample: Edit
    - Related page screenshot: candidate-pages/structure-views__default__light__page.png
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/structure-views__default__light__page.png
 
 ```html
-<a href="/admin/structure/views/view/files/duplicate" data-drupal-selector="views-listing-files">Duplicate</a>
+<a href="/admin/structure/views/view/frontpage" data-drupal-selector="views-listing-frontpage">Edit</a>
 ```
 
-2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[5]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]`
-   - Text sample: Disable
+2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[6]/td[5]/div[1]/div[1]/ul[1]/li[1]/a[1]`
+   - Text sample: Edit
    - Related page screenshot: candidate-pages/structure-views__default__light__page.png
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/structure-views__default__light__page.png
 
 ```html
-<a href="/admin/structure/views/view/files/disable?token=c49rpfYdQvjHgFNuHsrGLUTEXbGB1IjbZokdNgm8Lcc" class="use-ajax" data-drupal-selector="views-listing-files" data-once="ajax">Disable</a>
+<a href="/admin/structure/views/view/user_admin_people" data-drupal-selector="views-listing-user_admin_people">Edit</a>
 ```
 
 ## Notes

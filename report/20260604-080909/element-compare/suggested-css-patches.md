@@ -1,23 +1,21 @@
 # Suggested CSS Patch Ideas
 
-Generated: 2026-06-04T13:25:19.155Z
+Generated: 2026-06-04T15:45:11.972Z
 
 Only medium/high confidence suggestions are included.
 
 ## core/themes/default_admin/css/base/elements.css
-### 47. Admin Theme (dark + light) Structure Block Layout - Dropbutton Primary Action Link style regression vs Drupal 11 Gin
-Confidence: **high**
+### 33. Admin Theme (dark + light) Content Overview - Dropbutton Primary Action Link style regression vs Drupal 11 Gin
+Confidence: **medium**
 
 ```css
 a {
-  font-size: 12.6px; /* current ~13.4px */
-  padding-block: 10px; /* current ~14.1px */
-  padding-inline: 30px; /* current ~25.5px */
-  min-height: 24px; /* current ~27.4px */
+  padding-block: 10px; /* current ~12.8px */
+  padding-inline: 30px; /* current ~25px */
 }
 ```
 
-### 102. Admin Theme (dark + light) Structure Views - Dropbutton Primary Action Link style regression vs Drupal 11 Gin
+### 107. Admin Theme (dark + light) Structure Views - Dropbutton Primary Action Link style regression vs Drupal 11 Gin
 Confidence: **medium**
 
 ```css
@@ -29,7 +27,18 @@ a {
 ```
 
 ## core/themes/default_admin/css/components/navigation.css
-### 13. Admin Theme (dark + light) Configuration Text Formats - Button style regression vs Drupal 11 Gin
+### 1. Admin Theme (light) Appearance List - Page Title Heading (h1) style regression vs Drupal 11 Gin
+Confidence: **medium**
+
+```css
+h1 {
+  font-size: 24px; /* current ~34px */
+  padding-inline: 6px; /* current ~8.5px */
+  min-height: 29px; /* current ~41px */
+}
+```
+
+### 14. Admin Theme (dark + light) Configuration Text Formats - Button style regression vs Drupal 11 Gin
 Confidence: **high**
 
 ```css
@@ -41,7 +50,18 @@ button, input, optgroup, select, textarea {
 }
 ```
 
-### 36. Admin Theme (dark + light) Content Add Article - Button style regression vs Drupal 11 Gin
+### 28. Admin Theme (light) Content Overview - Page Title Heading (h1) style regression vs Drupal 11 Gin
+Confidence: **medium**
+
+```css
+h1 {
+  font-size: 24px; /* current ~34px */
+  padding-inline: 6px; /* current ~8.5px */
+  min-height: 29px; /* current ~41px */
+}
+```
+
+### 40. Admin Theme (dark + light) Content Add Article - Button style regression vs Drupal 11 Gin
 Confidence: **high**
 
 ```css
@@ -53,18 +73,7 @@ button, input, optgroup, select, textarea {
 }
 ```
 
-### 43. Admin Theme (dark + light) Structure Block Layout - Button style regression vs Drupal 11 Gin
-Confidence: **medium**
-
-```css
-button, input, optgroup, select, textarea {
-  padding-block: 14.5px; /* current ~20px */
-  padding-inline: 20px; /* current ~27.5px */
-  min-height: 34.8px; /* current ~40px */
-}
-```
-
-### 52. Admin Theme (dark) Structure Block Layout - Page Title Heading (h1) style regression vs Drupal 11 Gin
+### 48. Admin Theme (dark + light) Structure Block Layout - Page Title Heading (h1) style regression vs Drupal 11 Gin
 Confidence: **medium**
 
 ```css
@@ -75,7 +84,18 @@ h1 {
 }
 ```
 
-### 53. Admin Theme (dark + light) Structure Content Types - Button style regression vs Drupal 11 Gin
+### 49. Admin Theme (dark + light) Structure Block Layout - Button style regression vs Drupal 11 Gin
+Confidence: **medium**
+
+```css
+button, input, optgroup, select, textarea {
+  padding-block: 14.5px; /* current ~20px */
+  padding-inline: 20px; /* current ~27.5px */
+  min-height: 34.8px; /* current ~40px */
+}
+```
+
+### 56. Admin Theme (dark + light) Structure Content Types - Button style regression vs Drupal 11 Gin
 Confidence: **high**
 
 ```css
@@ -87,7 +107,7 @@ button, input, optgroup, select, textarea {
 }
 ```
 
-### 64. Admin Theme (dark + light) Structure Article Fields - Button style regression vs Drupal 11 Gin
+### 67. Admin Theme (dark + light) Structure Article Fields - Button style regression vs Drupal 11 Gin
 Confidence: **high**
 
 ```css
@@ -99,7 +119,7 @@ button, input, optgroup, select, textarea {
 }
 ```
 
-### 71. Admin Theme (dark + light) Structure Article Display - Button style regression vs Drupal 11 Gin
+### 73. Admin Theme (dark + light) Structure Article Display - Button style regression vs Drupal 11 Gin
 Confidence: **high**
 
 ```css
@@ -111,7 +131,7 @@ button, input, optgroup, select, textarea {
 }
 ```
 
-### 80. Admin Theme (dark + light) Structure Menus - Button style regression vs Drupal 11 Gin
+### 85. Admin Theme (dark + light) Structure Menus - Button style regression vs Drupal 11 Gin
 Confidence: **high**
 
 ```css
@@ -123,7 +143,7 @@ button, input, optgroup, select, textarea {
 }
 ```
 
-### 87. Admin Theme (dark + light) Structure Admin Menu - Button style regression vs Drupal 11 Gin
+### 92. Admin Theme (dark + light) Structure Admin Menu - Button style regression vs Drupal 11 Gin
 Confidence: **high**
 
 ```css
@@ -135,7 +155,7 @@ button, input, optgroup, select, textarea {
 }
 ```
 
-### 96. Admin Theme (dark + light) Structure Taxonomy - Button style regression vs Drupal 11 Gin
+### 101. Admin Theme (dark + light) Structure Taxonomy - Button style regression vs Drupal 11 Gin
 Confidence: **high**
 
 ```css
@@ -147,7 +167,7 @@ button, input, optgroup, select, textarea {
 }
 ```
 
-### 99. Admin Theme (dark + light) Structure Views - Button style regression vs Drupal 11 Gin
+### 104. Admin Theme (dark + light) Structure Views - Button style regression vs Drupal 11 Gin
 Confidence: **high**
 
 ```css
@@ -159,7 +179,7 @@ button, input, optgroup, select, textarea {
 }
 ```
 
-### 139. Admin Theme (dark + light) Block Content Types - Button style regression vs Drupal 11 Gin
+### 141. Admin Theme (dark + light) Block Content Types - Button style regression vs Drupal 11 Gin
 Confidence: **high**
 
 ```css
@@ -171,7 +191,7 @@ button, input, optgroup, select, textarea {
 }
 ```
 
-### 151. Admin Theme (dark + light) People Roles - Button style regression vs Drupal 11 Gin
+### 153. Admin Theme (dark + light) People Roles - Button style regression vs Drupal 11 Gin
 Confidence: **high**
 
 ```css
@@ -180,6 +200,17 @@ button, input, optgroup, select, textarea {
   padding-block: 14px; /* current ~20px */
   padding-inline: 18px; /* current ~27.5px */
   min-height: 35px; /* current ~40px */
+}
+```
+
+### 160. Admin Theme (dark + light) People Permissions - Page Title Heading (h1) style regression vs Drupal 11 Gin
+Confidence: **medium**
+
+```css
+h1 {
+  font-size: 24px; /* current ~34px */
+  padding-inline: 6px; /* current ~8.5px */
+  min-height: 29px; /* current ~41px */
 }
 ```
 

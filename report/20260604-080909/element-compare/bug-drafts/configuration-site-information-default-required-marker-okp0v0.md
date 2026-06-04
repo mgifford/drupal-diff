@@ -1,7 +1,7 @@
 # Admin Theme (dark + light) Configuration Site Information - Required Marker (*) style regression vs Drupal 11 Gin
 
 ## Human-Readable Change Summary
-- Component width is significantly wider: 1020.0px vs 111.5px (+814.6%).
+- Component width is significantly wider: 1061.2px vs 111.5px (+851.6%).
 - This same issue was also identified in dark mode.
 
 ## Summary
@@ -9,7 +9,7 @@ Potential CSS regression in **Required Marker (*)** on **Configuration Site Info
 Color mode coverage: **dark + light**
 
 ## Color Mode Coverage
-- light: width: 814.6%
+- light: width: 851.6%
 - dark: width: 814.6%
 
 ## Steps To Reproduce
@@ -22,7 +22,7 @@ Color mode coverage: **dark + light**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- light: width: 814.6%
+- light: width: 851.6%
 - dark: width: 814.6%
 
 ## Likely CSS Sources

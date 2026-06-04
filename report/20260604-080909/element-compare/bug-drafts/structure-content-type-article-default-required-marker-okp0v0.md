@@ -1,7 +1,7 @@
 # Admin Theme (dark + light) Structure Content Type Article - Required Marker (*) style regression vs Drupal 11 Gin
 
 ## Human-Readable Change Summary
-- Component width is significantly wider: 976.4px vs 85.2px (+1046.2%).
+- Component width is significantly wider: 918.3px vs 85.2px (+978.0%).
 - This same issue was also identified in dark mode.
 
 ## Summary
@@ -9,8 +9,8 @@ Potential CSS regression in **Required Marker (*)** on **Structure Content Type 
 Color mode coverage: **dark + light**
 
 ## Color Mode Coverage
-- light: width: 1046.2%
-- dark: width: 977.8%
+- light: width: 978.0%
+- dark: width: 935.9%
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/structure/types/manage/article
@@ -22,8 +22,8 @@ Color mode coverage: **dark + light**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- light: width: 1046.2%
-- dark: width: 977.8%
+- light: width: 978.0%
+- dark: width: 935.9%
 
 ## Likely CSS Sources
 - core/themes/default_admin/css/components/navigation.css

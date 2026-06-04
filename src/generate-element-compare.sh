@@ -75,6 +75,7 @@ const fs = require('fs');
 const path = require('path');
 const zlib = require('zlib');
 const { chromium } = require('playwright');
+const browserLabel = String(process.env.BROWSER_LABEL || process.env.BROWSER_NAME || process.env.BROWSER_CHANNEL || 'Chromium');
 
 const baselineUrl = process.env.BASELINE_URL;
 const candidateUrl = process.env.CANDIDATE_URL;
@@ -1339,6 +1340,7 @@ async function clearOutputDir(targetDir) {
           routePath: baselinePath,
           baselineRoutePath: baselinePath,
           candidateRoutePath: candidatePath,
+          browserLabel,
           scenario: profile.label,
           scenarioId: profile.id,
           colorMode: scheme,
@@ -1387,6 +1389,7 @@ async function clearOutputDir(targetDir) {
       flagged: 0,
       routes: new Set(),
       modes: new Set(),
+      browsers: new Set(),
       cssFiles: new Set(),
       sampleRows: [],
     };
@@ -1403,6 +1406,9 @@ async function clearOutputDir(targetDir) {
     }
     if (row.colorMode) {
       group.modes.add(row.colorMode);
+    }
+    if (row.browserLabel) {
+      group.browsers.add(row.browserLabel);
     }
     for (const cssFile of (row.likelyCssFiles || [])) {
       if (cssFile) {
@@ -1430,6 +1436,7 @@ async function clearOutputDir(targetDir) {
       const routeList = Array.from(stats.routes).sort();
       const routePreview = routeList.slice(0, 5).join(' | ');
       const modePreview = Array.from(stats.modes).sort().join(' + ');
+      const browserPreview = Array.from(stats.browsers).sort().join(' + ') || browserLabel;
       const cssPreview = Array.from(stats.cssFiles).sort().slice(0, 4).join(' | ') || 'unknown';
       const sampleSummary = stats.sampleRows.length
         ? stats.sampleRows.map((row) => `${row.route} (${row.colorMode || 'light'})`).join(' | ')
@@ -1440,6 +1447,7 @@ async function clearOutputDir(targetDir) {
           <td>${stats.flagged}</td>
           <td>${stats.total}</td>
           <td>${esc(modePreview || 'unknown')}</td>
+          <td>${esc(browserPreview)}</td>
           <td>${esc(cssPreview)}</td>
           <td>
             <details>
@@ -1540,11 +1548,12 @@ async function clearOutputDir(targetDir) {
     const candidateEvidence = evidenceBlockHtml('Candidate', row.candidateDomEvidence || []);
 
     return `
-      <tr class="${className}" data-route="${esc(row.route)}" data-component="${esc(row.component)}" data-significant="${sig > 0 ? 'yes' : 'no'}" data-css="${esc(cssKey)}" data-mode="${esc(row.colorMode)}" data-impact="${esc(triage.impactLevel)}" data-repro="${esc(triage.reproducibilityLevel)}" data-fix="${esc(triage.fixabilityLevel)}" data-actionable="${triage.actionableScore}">
+      <tr class="${className}" data-route="${esc(row.route)}" data-component="${esc(row.component)}" data-significant="${sig > 0 ? 'yes' : 'no'}" data-css="${esc(cssKey)}" data-mode="${esc(row.colorMode)}" data-browser="${esc(row.browserLabel || browserLabel)}" data-impact="${esc(triage.impactLevel)}" data-repro="${esc(triage.reproducibilityLevel)}" data-fix="${esc(triage.fixabilityLevel)}" data-actionable="${triage.actionableScore}">
         <td>
           <div><strong>${esc(row.route)}</strong></div>
           <div class="meta"><strong>Scenario:</strong> ${esc(row.scenario || 'Default')}</div>
           <div class="meta"><strong>Mode:</strong> ${esc(row.colorMode)}</div>
+          <div class="meta"><strong>Browser:</strong> ${esc(row.browserLabel || browserLabel)}</div>
           <div class="meta"><strong>Triage:</strong> Impact ${esc(triage.impactLevel.toUpperCase())} (${triage.impactScore}) | Repeatability ${esc(triage.reproducibilityLevel.toUpperCase())} (${triage.reproducibilityScore}) | Fixability ${esc(triage.fixabilityLevel.toUpperCase())} (${triage.fixabilityScore}) | Actionability ${triage.actionableScore}</div>
           <div>${esc(row.component)}</div>
           <div class="meta"><a href="${esc(row.baselineUrl)}" target="_blank" rel="noopener">${esc(baselineLabel)} URL</a></div>
@@ -1653,7 +1662,7 @@ async function clearOutputDir(targetDir) {
     <h2>Component Rollup</h2>
     <div class="meta">One row per component, grouped across routes, modes, and scenarios. This is the consolidated view you can use when the detailed table feels repetitive.</div>
     <table>
-      <thead><tr><th>Component</th><th>Flagged Rows</th><th>Total Rows</th><th>Modes</th><th>CSS Sources</th><th>Routes</th></tr></thead>
+      <thead><tr><th>Component</th><th>Flagged Rows</th><th>Total Rows</th><th>Modes</th><th>Browsers</th><th>CSS Sources</th><th>Routes</th></tr></thead>
       <tbody>${rollupRows}</tbody>
     </table>
   </section>
@@ -2274,6 +2283,7 @@ async function clearOutputDir(targetDir) {
       mdName,
       route: row.route,
       colorMode: issue.modeLabel,
+      browserLabel: row.browserLabel || browserLabel,
       component: row.component,
       localBugUrl: `bug-drafts/${htmlName}`,
       publishedBugUrl,
@@ -2338,6 +2348,7 @@ async function clearOutputDir(targetDir) {
       headingWithAnchor(2, headingText, { id: headingId }),
       `<p><strong>Priority:</strong> <span class="priority-badge ${esc(item.priorityLevel)}">${esc(item.priorityLevel.toUpperCase())}</span> <strong>Score:</strong> ${item.priorityScore}</p>`,
       `<p><strong>Route:</strong> ${esc(item.route)} | <strong>Mode:</strong> ${esc(item.colorMode)} | <strong>Component:</strong> ${esc(item.component)}</p>`,
+      `<p><strong>Browsers:</strong> ${esc(item.browserLabel || browserLabel)}</p>`,
       `<p><strong>Quick Summary:</strong> ${esc(item.quickSummary || 'Visual differences were detected between baseline and candidate.')}</p>`,
       `<p><strong>Deltas:</strong> ${esc(item.deltas)}</p>`,
       `<p><strong>Likely CSS:</strong> ${esc(item.cssSummary)}</p>`,
@@ -2362,6 +2373,7 @@ async function clearOutputDir(targetDir) {
         count: 0,
         maxScore: 0,
         routes: new Set(),
+        browsers: new Set(),
         items: [],
       };
     }
@@ -2369,16 +2381,19 @@ async function clearOutputDir(targetDir) {
     family.count += 1;
     family.maxScore = Math.max(family.maxScore, item.priorityScore || 0);
     family.routes.add(item.route);
+    family.browsers.add(item.browserLabel || browserLabel);
     family.items.push(item);
     return acc;
   }, {}))
     .map((family) => ({
       ...family,
       routeList: Array.from(family.routes).sort(),
+      browserList: Array.from(family.browsers).sort(),
     }))
     .sort((a, b) => b.count - a.count || b.maxScore - a.maxScore || a.component.localeCompare(b.component));
   const signalFamilyRows = signalFamilies.slice(0, 20).map((family) => {
     const routePreview = family.routeList.slice(0, 6).join(' | ');
+    const browserPreview = family.browserList.join(' + ');
     const sampleLinks = family.items
       .slice()
       .sort((a, b) => b.priorityScore - a.priorityScore)
@@ -2389,20 +2404,22 @@ async function clearOutputDir(targetDir) {
       '<li>',
       `<strong>${esc(family.component)}</strong> via <code>${esc(family.cssFile)}</code>: ${family.count} issue(s), highest priority ${family.maxScore}`,
       `<div class="meta">Routes: ${esc(routePreview)}${family.routeList.length > 6 ? ` (+${family.routeList.length - 6} more)` : ''}</div>`,
+      `<div class="meta">Browsers: ${esc(browserPreview)}</div>`,
       `<ul class="family-samples">${sampleLinks}</ul>`,
       '</li>',
     ].join('');
   }).join('');
   const componentClusters = Object.entries(htmlIndexRows.reduce((acc, item) => {
     if (!acc[item.component]) {
-      acc[item.component] = { count: 0, maxScore: 0 };
+      acc[item.component] = { count: 0, maxScore: 0, browsers: new Set() };
     }
     acc[item.component].count += 1;
     acc[item.component].maxScore = Math.max(acc[item.component].maxScore, item.priorityScore || 0);
+    acc[item.component].browsers.add(item.browserLabel || browserLabel);
     return acc;
   }, {})).sort((a, b) => b[1].count - a[1].count || b[1].maxScore - a[1].maxScore || a[0].localeCompare(b[0]));
   const componentClusterRows = componentClusters
-    .map(([component, stats]) => `<li><strong>${esc(component)}</strong>: ${stats.count} issue(s), highest priority score ${stats.maxScore}</li>`)
+    .map(([component, stats]) => `<li><strong>${esc(component)}</strong>: ${stats.count} issue(s), highest priority score ${stats.maxScore} <span class="meta">Browsers: ${esc(Array.from(stats.browsers).sort().join(' + '))}</span></li>`)
     .join('');
 
   const htmlIndex = `<!DOCTYPE html>

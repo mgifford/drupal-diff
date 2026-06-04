@@ -1,10 +1,7 @@
 # Admin Theme (dark + light) Structure Block Layout - Dropbutton Primary Action Link style regression vs Drupal 11 Gin
 
 ## Human-Readable Change Summary
-- Text size is slightly larger: 13.4px vs 12.6px (+5.8%).
-- Component height is noticeably taller: 27.4px vs 24.0px (+14.1%).
-- Vertical padding is significantly higher: 14.1px vs 10.0px (+41.3%).
-- Horizontal padding is noticeably lower: 25.5px vs 30.0px (-15.0%).
+- Horizontal padding is noticeably lower: 24.0px vs 30.0px (-20.0%).
 - This same issue was also identified in dark mode.
 
 ## Summary
@@ -12,7 +9,7 @@ Potential CSS regression in **Dropbutton Primary Action Link** on **Structure Bl
 Color mode coverage: **dark + light**
 
 ## Color Mode Coverage
-- light: fontSize: 5.8% | paddingY: 41.3% | paddingX: -15.0% | height: 14.1%
+- light: paddingX: -20.0%
 - dark: paddingX: -20.0%
 
 ## Steps To Reproduce
@@ -25,7 +22,7 @@ Color mode coverage: **dark + light**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- light: fontSize: 5.8% | paddingY: 41.3% | paddingX: -15.0% | height: 14.1%
+- light: paddingX: -20.0%
 - dark: paddingX: -20.0%
 
 ## Likely CSS Sources
@@ -68,16 +65,7 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 - navigation/internal.navigation
 
 ## Suggested CSS Patch (Confidence-Gated)
-Confidence: **high**
-
-```css
-a {
-  font-size: 12.6px; /* current ~13.4px */
-  padding-block: 10px; /* current ~14.1px */
-  padding-inline: 30px; /* current ~25.5px */
-  min-height: 24px; /* current ~27.4px */
-}
-```
+No high-confidence automatic patch suggestion for this diff.
 
 ## Evidence
 - Baseline element screenshot: baseline/structure-block-layout__default__light__dropbutton-primary-action.png

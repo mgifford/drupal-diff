@@ -240,6 +240,96 @@ if (!Vocabulary::load("tags")) {
   print "Created taxonomy vocabulary: tags\n";
 }
 
+if (!\Drupal::moduleHandler()->moduleExists("comment")) {
+  \Drupal::service("module_installer")->install(["comment"]);
+  print "Enabled comment module\n";
+}
+
+if (!FieldStorageConfig::loadByName("node", "field_image")) {
+  FieldStorageConfig::create([
+    "field_name" => "field_image",
+    "entity_type" => "node",
+    "type" => "image",
+    "cardinality" => 1,
+    "translatable" => TRUE,
+    "settings" => [
+      "target_type" => "file",
+      "display_field" => FALSE,
+      "display_default" => FALSE,
+      "uri_scheme" => "public",
+      "default_image" => [
+        "uuid" => NULL,
+        "alt" => "",
+        "title" => "",
+        "width" => NULL,
+        "height" => NULL,
+      ],
+    ],
+  ])->save();
+}
+
+if (!FieldStorageConfig::loadByName("node", "field_tags")) {
+  FieldStorageConfig::create([
+    "field_name" => "field_tags",
+    "entity_type" => "node",
+    "type" => "entity_reference",
+    "cardinality" => -1,
+    "translatable" => TRUE,
+    "settings" => ["target_type" => "taxonomy_term"],
+  ])->save();
+}
+
+if (!FieldConfig::loadByName("node", "article", "field_image")) {
+  FieldConfig::create([
+    "field_name" => "field_image",
+    "entity_type" => "node",
+    "bundle" => "article",
+    "label" => "Image",
+    "required" => FALSE,
+    "translatable" => TRUE,
+    "settings" => [
+      "handler" => "default:file",
+      "handler_settings" => [],
+      "file_directory" => "[date:custom:Y]-[date:custom:m]",
+      "file_extensions" => "png gif jpg jpeg webp",
+      "max_filesize" => "",
+      "max_resolution" => "",
+      "min_resolution" => "",
+      "alt_field" => TRUE,
+      "alt_field_required" => TRUE,
+      "title_field" => FALSE,
+      "title_field_required" => FALSE,
+      "default_image" => [
+        "uuid" => NULL,
+        "alt" => "",
+        "title" => "",
+        "width" => NULL,
+        "height" => NULL,
+      ],
+    ],
+  ])->save();
+}
+
+if (!FieldConfig::loadByName("node", "article", "field_tags")) {
+  FieldConfig::create([
+    "field_name" => "field_tags",
+    "entity_type" => "node",
+    "bundle" => "article",
+    "label" => "Tags",
+    "description" => "Enter a comma-separated list. For example: Amsterdam, Mexico City, \"Cleveland, Ohio\"",
+    "required" => FALSE,
+    "translatable" => TRUE,
+    "settings" => [
+      "handler" => "default:taxonomy_term",
+      "handler_settings" => [
+        "target_bundles" => ["tags" => "tags"],
+        "sort" => ["field" => "_none"],
+        "auto_create" => TRUE,
+      ],
+    ],
+  ])->save();
+}
+
 $existingTerms = \Drupal::entityQuery("taxonomy_term")
   ->accessCheck(FALSE)
   ->condition("vid", "tags")
@@ -256,6 +346,21 @@ if ((int) $existingTerms < 15) {
   }
   print "Ensured 15 tags exist\n";
 }
+
+$seedImageFiles = [];
+foreach (["public://vrt-seed-files/seed-image-1.png", "public://vrt-seed-files/seed-image-2.jpg"] as $seedUri) {
+  $loadedFiles = \Drupal::entityTypeManager()->getStorage("file")
+    ->loadByProperties(["uri" => $seedUri]);
+  if ($loadedFiles) {
+    $seedImageFiles[] = reset($loadedFiles);
+  }
+}
+
+$tagTermIds = array_values(\Drupal::entityQuery("taxonomy_term")
+  ->accessCheck(FALSE)
+  ->condition("vid", "tags")
+  ->sort("tid")
+  ->execute());
 
 $articleCount = (int) \Drupal::entityQuery("node")
   ->accessCheck(FALSE)
@@ -278,10 +383,239 @@ if ($articleCount < 30) {
         "format" => "basic_html",
       ]);
     }
+    if ($node->hasField("field_image") && $seedImageFiles) {
+      $seedFile = $seedImageFiles[($i - 1) % count($seedImageFiles)];
+      $node->set("field_image", [
+        "target_id" => $seedFile->id(),
+        "alt" => "Dummy Article $i image",
+        "title" => "",
+      ]);
+    }
+    if ($node->hasField("field_tags") && $tagTermIds) {
+      $tagSlice = array_slice($tagTermIds, (($i - 1) * 3) % max(1, count($tagTermIds)), 3);
+      if (count($tagSlice) < 3) {
+        $tagSlice = array_slice(array_merge($tagTermIds, $tagTermIds), 0, 3);
+      }
+      $node->set("field_tags", array_map(fn($tid) => ["target_id" => $tid], $tagSlice));
+    }
     $node->save();
   }
   print "Ensured 30 articles exist\n";
 }
+
+$articleStorage = \Drupal::entityTypeManager()->getStorage("node");
+$articleIds = array_values(\Drupal::entityQuery("node")
+  ->accessCheck(FALSE)
+  ->condition("type", "article")
+  ->sort("nid")
+  ->execute());
+
+foreach ($articleIds as $index => $nid) {
+  $node = $articleStorage->load($nid);
+  if (!$node) {
+    continue;
+  }
+
+  $updated = FALSE;
+  if ($node->hasField("field_image") && $node->get("field_image")->isEmpty() && $seedImageFiles) {
+    $seedFile = $seedImageFiles[$index % count($seedImageFiles)];
+    $node->set("field_image", [
+      "target_id" => $seedFile->id(),
+      "alt" => $node->label() . " image",
+      "title" => "",
+    ]);
+    $updated = TRUE;
+  }
+  if ($node->hasField("field_tags") && $node->get("field_tags")->isEmpty() && $tagTermIds) {
+    $tagSlice = array_slice($tagTermIds, ($index * 3) % max(1, count($tagTermIds)), 3);
+    if (count($tagSlice) < 3) {
+      $tagSlice = array_slice(array_merge($tagTermIds, $tagTermIds), 0, 3);
+    }
+    $node->set("field_tags", array_map(fn($tid) => ["target_id" => $tid], $tagSlice));
+    $updated = TRUE;
+  }
+  if ($updated) {
+    $node->save();
+  }
+}
+
+$articleFormDisplay = EntityFormDisplay::load("node.article.default") ?: EntityFormDisplay::create([
+  "targetEntityType" => "node",
+  "bundle" => "article",
+  "mode" => "default",
+  "status" => TRUE,
+]);
+$articleFormDisplay->setComponent("body", [
+  "type" => "text_textarea_with_summary",
+  "weight" => 5,
+  "settings" => ["rows" => 9],
+]);
+$articleFormDisplay->setComponent("field_image", [
+  "type" => "image_image",
+  "weight" => 1,
+  "region" => "content",
+  "settings" => [
+    "progress_indicator" => "throbber",
+    "preview_image_style" => "thumbnail",
+  ],
+]);
+$articleFormDisplay->setComponent("field_tags", [
+  "type" => "entity_reference_autocomplete_tags",
+  "weight" => 3,
+  "region" => "content",
+  "settings" => [
+    "match_operator" => "CONTAINS",
+    "match_limit" => 10,
+    "size" => 60,
+    "placeholder" => "",
+  ],
+]);
+$articleFormDisplay->setComponent("comment", [
+  "type" => "comment_default",
+  "weight" => 20,
+  "region" => "content",
+  "settings" => [],
+]);
+$articleFormDisplay->setComponent("promote", [
+  "type" => "boolean_checkbox",
+  "weight" => 15,
+  "region" => "content",
+  "settings" => ["display_label" => TRUE],
+]);
+$articleFormDisplay->setComponent("sticky", [
+  "type" => "boolean_checkbox",
+  "weight" => 16,
+  "region" => "content",
+  "settings" => ["display_label" => TRUE],
+]);
+$articleFormDisplay->save();
+
+$articleViewDisplay = EntityViewDisplay::load("node.article.default") ?: EntityViewDisplay::create([
+  "targetEntityType" => "node",
+  "bundle" => "article",
+  "mode" => "default",
+  "status" => TRUE,
+]);
+$articleViewDisplay->setComponent("body", [
+  "type" => "text_default",
+  "label" => "hidden",
+  "weight" => 5,
+]);
+$articleViewDisplay->setComponent("field_image", [
+  "type" => "image",
+  "label" => "hidden",
+  "settings" => [
+    "image_link" => "",
+    "image_style" => "wide",
+    "image_loading" => ["attribute" => "eager"],
+  ],
+  "weight" => -1,
+]);
+$articleViewDisplay->setComponent("field_tags", [
+  "type" => "entity_reference_label",
+  "label" => "above",
+  "settings" => ["link" => TRUE],
+  "weight" => 10,
+]);
+$articleViewDisplay->setComponent("comment", [
+  "type" => "comment_default",
+  "label" => "above",
+  "settings" => [
+    "view_mode" => "default",
+    "pager_id" => 0,
+  ],
+  "weight" => 110,
+]);
+$articleViewDisplay->setComponent("uid", [
+  "label" => "hidden",
+  "type" => "author",
+  "weight" => 0,
+  "settings" => [],
+]);
+$articleViewDisplay->setComponent("title", [
+  "label" => "hidden",
+  "type" => "string",
+  "weight" => -5,
+  "settings" => ["link_to_entity" => FALSE],
+]);
+$articleViewDisplay->setComponent("created", [
+  "label" => "hidden",
+  "type" => "timestamp",
+  "weight" => 0,
+  "settings" => [
+    "date_format" => "medium",
+    "custom_date_format" => "",
+    "timezone" => "",
+    "tooltip" => [
+      "date_format" => "long",
+      "custom_date_format" => "",
+    ],
+    "time_diff" => [
+      "enabled" => FALSE,
+      "future_format" => "@interval hence",
+      "past_format" => "@interval ago",
+      "granularity" => 2,
+      "refresh" => 60,
+    ],
+  ],
+]);
+$articleViewDisplay->setComponent("links", [
+  "weight" => 100,
+  "settings" => [],
+]);
+$articleViewDisplay->save();
+
+$articleRssDisplay = EntityViewDisplay::load("node.article.rss") ?: EntityViewDisplay::create([
+  "targetEntityType" => "node",
+  "bundle" => "article",
+  "mode" => "rss",
+  "status" => TRUE,
+]);
+$articleRssDisplay->setComponent("links", [
+  "weight" => 100,
+  "region" => "content",
+]);
+$articleRssDisplay->save();
+
+$articleTeaserDisplay = EntityViewDisplay::load("node.article.teaser") ?: EntityViewDisplay::create([
+  "targetEntityType" => "node",
+  "bundle" => "article",
+  "mode" => "teaser",
+  "status" => TRUE,
+]);
+$articleTeaserDisplay->setComponent("body", [
+  "type" => "text_summary_or_trimmed",
+  "label" => "hidden",
+  "settings" => ["trim_length" => 600],
+  "third_party_settings" => [],
+  "weight" => 0,
+  "region" => "content",
+]);
+$articleTeaserDisplay->setComponent("field_image", [
+  "type" => "image",
+  "label" => "hidden",
+  "settings" => [
+    "image_link" => "content",
+    "image_style" => "medium",
+    "image_loading" => ["attribute" => "lazy"],
+  ],
+  "third_party_settings" => [],
+  "weight" => -1,
+  "region" => "content",
+]);
+$articleTeaserDisplay->setComponent("field_tags", [
+  "type" => "entity_reference_label",
+  "label" => "above",
+  "settings" => ["link" => TRUE],
+  "third_party_settings" => [],
+  "weight" => 10,
+  "region" => "content",
+]);
+$articleTeaserDisplay->setComponent("links", [
+  "weight" => 100,
+  "region" => "content",
+]);
+$articleTeaserDisplay->save();
 
 $pageCount = (int) \Drupal::entityQuery("node")
   ->accessCheck(FALSE)

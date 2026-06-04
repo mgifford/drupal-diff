@@ -1,10 +1,8 @@
 # Admin Theme (dark + light) Structure Article Fields - Dropbutton Primary Action Link style regression vs Drupal 11 Gin
 
 ## Human-Readable Change Summary
-- Component height is noticeably taller: 28.5px vs 25.8px (+10.5%).
-- Vertical padding is noticeably higher: 15.5px vs 12.2px (+27.0%).
-- Horizontal padding is noticeably lower: 26.0px vs 29.6px (-12.2%).
-- Matched element count is different: 3 fewer element(s) (-60.0%).
+- Component width is noticeably narrower: 66.5px vs 76.6px (-13.2%).
+- Horizontal padding is noticeably lower: 25.0px vs 29.6px (-15.5%).
 - This same issue was also identified in dark mode.
 
 ## Summary
@@ -12,8 +10,8 @@ Potential CSS regression in **Dropbutton Primary Action Link** on **Structure Ar
 Color mode coverage: **dark + light**
 
 ## Color Mode Coverage
-- light: paddingY: 27.0% | paddingX: -12.2% | height: 10.5% | count: -3 (-60.0%)
-- dark: paddingY: 27.0% | paddingX: -12.2% | height: 10.5% | count: -3 (-60.0%)
+- light: paddingX: -15.5% | width: -13.2%
+- dark: paddingX: -15.5% | width: -13.2%
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/structure/types/manage/article/fields
@@ -25,8 +23,8 @@ Color mode coverage: **dark + light**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- light: paddingY: 27.0% | paddingX: -12.2% | height: 10.5% | count: -3 (-60.0%)
-- dark: paddingY: 27.0% | paddingX: -12.2% | height: 10.5% | count: -3 (-60.0%)
+- light: paddingX: -15.5% | width: -13.2%
+- dark: paddingX: -15.5% | width: -13.2%
 
 ## Likely CSS Sources
 - core/themes/default_admin/css/base/elements.css
@@ -118,15 +116,15 @@ No high-confidence automatic patch suggestion for this diff.
 <a href="/admin/structure/types/manage/article/fields/node.article.body" title="Edit field settings." class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:1100}" data-once="ajax">Edit</a>
 ```
 
-2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
-   - Text sample: Delete
+2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[3]/div[1]/div[1]/ul[1]/li[1]/a[1]`
+   - Text sample: Edit
    - Related element screenshot: candidate/structure-content-type-article-fields__default__light__dropbutton-primary-action.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate/structure-content-type-article-fields__default__light__dropbutton-primary-action.png
    - Related page screenshot: candidate-pages/structure-content-type-article-fields__default__light__page.png
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/structure-content-type-article-fields__default__light__page.png
 
 ```html
-<a href="/admin/structure/types/manage/article/fields/node.article.body/delete" title="Delete field." class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" data-once="ajax">Delete</a>
+<a href="/admin/structure/types/manage/article/fields/node.article.field_image" title="Edit field settings." class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:1100}" data-once="ajax">Edit</a>
 ```
 
 ## Notes

@@ -1,7 +1,13 @@
 # Admin Theme (dark + light) Content Overview - Dropbutton Secondary Action Link style regression vs Drupal 11 Gin
 
 ## Human-Readable Change Summary
-- Component width is noticeably wider: 119.5px vs 107.5px (+11.2%).
+- Text size is significantly larger: 14.0px vs 0.0px (+100.0%).
+- Component width is significantly wider: 119.5px vs 0.0px (+100.0%).
+- Component height is significantly taller: 33.0px vs 0.0px (+100.0%).
+- Vertical padding is significantly higher: 21.0px vs 0.0px (+100.0%).
+- Horizontal padding is significantly higher: 28.0px vs 0.0px (+100.0%).
+- Line height is significantly larger: 12.0px vs 0.0px (+100.0%).
+- Matched element count is different: 2 more element(s) (+100.0%).
 - This same issue was also identified in dark mode.
 
 ## Summary
@@ -9,8 +15,8 @@ Potential CSS regression in **Dropbutton Secondary Action Link** on **Content Ov
 Color mode coverage: **dark + light**
 
 ## Color Mode Coverage
-- light: width: 11.2%
-- dark: width: 11.2%
+- light: fontSize: 100.0% | lineHeight: 100.0% | paddingY: 100.0% | paddingX: 100.0% | width: 100.0% | height: 100.0% | count: +2 (100.0%)
+- dark: fontSize: -100.0% | lineHeight: -100.0% | paddingY: -100.0% | paddingX: -100.0% | width: -100.0% | height: -100.0% | count: -2 (-100.0%)
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/content
@@ -22,8 +28,8 @@ Color mode coverage: **dark + light**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- light: width: 11.2%
-- dark: width: 11.2%
+- light: fontSize: 100.0% | lineHeight: 100.0% | paddingY: 100.0% | paddingX: 100.0% | width: 100.0% | height: 100.0% | count: +2 (100.0%)
+- dark: fontSize: -100.0% | lineHeight: -100.0% | paddingY: -100.0% | paddingX: -100.0% | width: -100.0% | height: -100.0% | count: -2 (-100.0%)
 
 ## Likely CSS Sources
 - core/themes/default_admin/css/base/elements.css
@@ -68,11 +74,11 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 No high-confidence automatic patch suggestion for this diff.
 
 ## Evidence
-- Baseline element screenshot: baseline/content-overview__default__light__dropbutton-secondary-action.png
+- Baseline element screenshot: 
 - Candidate element screenshot: candidate/content-overview__default__light__dropbutton-secondary-action.png
 - Baseline page screenshot: baseline-pages/content-overview__default__light__page.png
 - Candidate page screenshot: candidate-pages/content-overview__default__light__page.png
-- Baseline element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline/content-overview__default__light__dropbutton-secondary-action.png
+
 - Candidate element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate/content-overview__default__light__dropbutton-secondary-action.png
 - Baseline page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline-pages/content-overview__default__light__page.png
 - Candidate page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/content-overview__default__light__page.png
@@ -80,27 +86,7 @@ No high-confidence automatic patch suggestion for this diff.
 
 ## DOM Evidence (XPath + HTML Snippets)
 ### Drupal 11 with Gin
-1. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[3]/td[7]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
-   - Text sample: Delete
-   - Related element screenshot: baseline/content-overview__default__light__dropbutton-secondary-action.png
-   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline/content-overview__default__light__dropbutton-secondary-action.png
-   - Related page screenshot: baseline-pages/content-overview__default__light__page.png
-   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline-pages/content-overview__default__light__page.png
-
-```html
-<a href="/node/35/delete?destination=/admin/content" aria-label="Delete Dummy Page 5" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" hreflang="en" data-once="ajax">Delete</a>
-```
-
-2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[3]/td[7]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]`
-   - Text sample: View
-   - Related element screenshot: baseline/content-overview__default__light__dropbutton-secondary-action.png
-   - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline/content-overview__default__light__dropbutton-secondary-action.png
-   - Related page screenshot: baseline-pages/content-overview__default__light__page.png
-   - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline-pages/content-overview__default__light__page.png
-
-```html
-<a href="/node/35?destination=/admin/content" aria-label="View Dummy Page 5" hreflang="en">View</a>
-```
+- No matching element captured
 
 ### Drupal 12 with Admin Theme
 1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[3]/td[7]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]`
@@ -111,7 +97,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/content-overview__default__light__page.png
 
 ```html
-<a href="/node/35/delete?destination=/admin/content" aria-label="Delete Dummy Page 5" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" hreflang="en" data-once="ajax">Delete</a>
+<a href="/node/18/delete?destination=/admin/content" aria-label="Delete Dummy Article 18" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:880}" hreflang="en" data-once="ajax">Delete</a>
 ```
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[3]/td[7]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]`
@@ -122,7 +108,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/content-overview__default__light__page.png
 
 ```html
-<a href="/node/35?destination=/admin/content" aria-label="View Dummy Page 5" hreflang="en">View</a>
+<a href="/node/18?destination=/admin/content" aria-label="View Dummy Article 18" hreflang="en">View</a>
 ```
 
 ## Notes

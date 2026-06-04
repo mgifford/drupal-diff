@@ -35,6 +35,7 @@ That gives you:
 
 - Drupal 11 at `http://drupal-11.3.10.ddev.site/`
 - Drupal 12 at `http://drupal-12.ddev.site/`
+- The Article content type is normalized across both sites during seeding, including image, tags, comments, promote, and sticky controls.
 
 Default login for both local sites:
 
@@ -73,6 +74,8 @@ cd .. && ./src/seed-dummy-content.sh
 ```
 
 Then confirm the themes above, and run the compare workflow again.
+
+If you change the seed script, rerun it before comparing so both databases keep the same article content type structure and sample content.
 
 ## Run a Comparison
 

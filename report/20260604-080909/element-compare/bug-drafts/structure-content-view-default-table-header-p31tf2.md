@@ -85,7 +85,7 @@ No high-confidence automatic patch suggestion for this diff.
 <th class="select-all views-field views-field-node-bulk-form gin--sticky-bulk-select" scope="col" style="width: 53px;"> <input type="checkbox" class="form-checkbox form-boolean form-boolean--type-checkbox" title="Select all rows in this table" style=""> </th>
 ```
 
-2. XPath: `//*[@id="view-title-table-column---RuTMl4KJdQ"]`
+2. XPath: `//*[@id="view-title-table-column--g7DHE6AWF_I"]`
    - Text sample: Title
    - Related element screenshot: baseline/structure-view-content__default__light__table-header.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline/structure-view-content__default__light__table-header.png
@@ -93,7 +93,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline-pages/structure-view-content__default__light__page.png
 
 ```html
-<th id="view-title-table-column---RuTMl4KJdQ" class="sortable-heading views-field views-field-title" scope="col" style="width: 179.484px;"> <a href="/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc" title="sort by Title" rel="nofollow" data-once="views-ajax">Title</a></th>
+<th id="view-title-table-column--g7DHE6AWF_I" class="sortable-heading views-field views-field-title" scope="col" style="width: 179.484px;"> <a href="/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc" title="sort by Title" rel="nofollow" data-once="views-ajax">Title</a></th>
 ```
 
 ### Drupal 12 with Admin Theme
@@ -107,7 +107,7 @@ No high-confidence automatic patch suggestion for this diff.
 <th class="select-all views-field views-field-node-bulk-form gin--sticky-bulk-select" scope="col" style="width: 53px;"> <input type="checkbox" class="form-checkbox form-boolean form-boolean--type-checkbox" title="Select all rows in this table" style=""> </th>
 ```
 
-2. XPath: `//*[@id="view-title-table-column--r1vKdCQUnbQ"]`
+2. XPath: `//*[@id="view-title-table-column--UJNBJmpthpE"]`
    - Text sample: Title
    - Related element screenshot: candidate/structure-view-content__default__light__table-header.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate/structure-view-content__default__light__table-header.png
@@ -115,7 +115,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/structure-view-content__default__light__page.png
 
 ```html
-<th id="view-title-table-column--r1vKdCQUnbQ" class="sortable-heading views-field views-field-title" scope="col" style="width: 195.844px;"> <a href="/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc" title="sort by Title" rel="nofollow" data-once="views-ajax">Title</a></th>
+<th id="view-title-table-column--UJNBJmpthpE" class="sortable-heading views-field views-field-title" scope="col" style="width: 195.844px;"> <a href="/admin/structure/views/view/content/preview/page_1?_wrapper_format=drupal_ajax&amp;order=title&amp;sort=asc" title="sort by Title" rel="nofollow" data-once="views-ajax">Title</a></th>
 ```
 
 ## Notes

@@ -88,7 +88,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline-pages/structure-view-content__default__light__page.png
 
 ```html
-<label for="edit-title--im1WgFQok0k" class="form-item__label">Title</label>
+<label for="edit-title--jsGPkb39HAk" class="form-item__label">Title</label>
 ```
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[2]/form[1]/div[4]/div[2]/div[2]/div[1]/div[2]/div[2]/label[1]`
@@ -99,7 +99,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline-pages/structure-view-content__default__light__page.png
 
 ```html
-<label for="edit-type--wjxkf8O1JJs" class="form-item__label">Content type</label>
+<label for="edit-type--NrPUXMD-brk" class="form-item__label">Content type</label>
 ```
 
 ### Drupal 12 with Admin Theme
@@ -111,7 +111,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/structure-view-content__default__light__page.png
 
 ```html
-<label for="edit-title--4LoqVsF6GyM" class="form-item__label">Title</label>
+<label for="edit-title--B-mnNXjr9c4" class="form-item__label">Title</label>
 ```
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[2]/form[1]/div[4]/div[2]/div[2]/div[1]/div[2]/div[2]/label[1]`
@@ -122,7 +122,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/structure-view-content__default__light__page.png
 
 ```html
-<label for="edit-type--GZlswvcFU50" class="form-item__label">Content type</label>
+<label for="edit-type--giO7f81if4U" class="form-item__label">Content type</label>
 ```
 
 ## Notes

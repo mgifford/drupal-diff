@@ -1,8 +1,8 @@
 # Admin Theme (dark + light) Content Overview - Dropbutton Primary Action Link style regression vs Drupal 11 Gin
 
 ## Human-Readable Change Summary
-- Component width is noticeably narrower: 66.6px vs 80.9px (-17.6%).
-- Horizontal padding is noticeably lower: 25.0px vs 29.5px (-15.3%).
+- Vertical padding is noticeably higher: 12.8px vs 10.0px (+27.5%).
+- Horizontal padding is noticeably lower: 25.0px vs 30.0px (-16.7%).
 - This same issue was also identified in dark mode.
 
 ## Summary
@@ -10,8 +10,8 @@ Potential CSS regression in **Dropbutton Primary Action Link** on **Content Over
 Color mode coverage: **dark + light**
 
 ## Color Mode Coverage
-- light: paddingX: -15.3% | width: -17.6%
-- dark: paddingX: -15.3% | width: -17.6%
+- light: paddingY: 27.5% | paddingX: -16.7%
+- dark: paddingY: -21.6% | paddingX: -18.6% | width: -39.4%
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/content
@@ -23,8 +23,8 @@ Color mode coverage: **dark + light**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- light: paddingX: -15.3% | width: -17.6%
-- dark: paddingX: -15.3% | width: -17.6%
+- light: paddingY: 27.5% | paddingX: -16.7%
+- dark: paddingY: -21.6% | paddingX: -18.6% | width: -39.4%
 
 ## Likely CSS Sources
 - core/themes/default_admin/css/base/elements.css
@@ -71,7 +71,14 @@ Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this compone
 - views/views.module
 
 ## Suggested CSS Patch (Confidence-Gated)
-No high-confidence automatic patch suggestion for this diff.
+Confidence: **medium**
+
+```css
+a {
+  padding-block: 10px; /* current ~12.8px */
+  padding-inline: 30px; /* current ~25px */
+}
+```
 
 ## Evidence
 - Baseline element screenshot: baseline/content-overview__default__light__dropbutton-primary-action.png
@@ -94,7 +101,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline-pages/content-overview__default__light__page.png
 
 ```html
-<a href="/node/50/edit?destination=/admin/content" aria-label="Edit Dummy Page 20" hreflang="en">Edit</a>
+<a href="/node/30/edit?destination=/admin/content" aria-label="Edit Dummy Article 30" hreflang="en">Edit</a>
 ```
 
 2. XPath: `/html[1]/body[1]/div[2]/div[5]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[2]/td[7]/div[1]/div[1]/ul[1]/li[1]/a[1]`
@@ -105,7 +112,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/baseline-pages/content-overview__default__light__page.png
 
 ```html
-<a href="/node/36/edit?destination=/admin/content" aria-label="Edit Dummy Page 6" hreflang="en">Edit</a>
+<a href="/node/17/edit?destination=/admin/content" aria-label="Edit Dummy Article 17" hreflang="en">Edit</a>
 ```
 
 ### Drupal 12 with Admin Theme
@@ -117,7 +124,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/content-overview__default__light__page.png
 
 ```html
-<a href="/node/50/edit?destination=/admin/content" aria-label="Edit Dummy Page 20" hreflang="en">Edit</a>
+<a href="/node/30/edit?destination=/admin/content" aria-label="Edit Dummy Article 30" hreflang="en">Edit</a>
 ```
 
 2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr[2]/td[7]/div[1]/div[1]/ul[1]/li[1]/a[1]`
@@ -128,7 +135,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/content-overview__default__light__page.png
 
 ```html
-<a href="/node/36/edit?destination=/admin/content" aria-label="Edit Dummy Page 6" hreflang="en">Edit</a>
+<a href="/node/17/edit?destination=/admin/content" aria-label="Edit Dummy Article 17" hreflang="en">Edit</a>
 ```
 
 ## Notes

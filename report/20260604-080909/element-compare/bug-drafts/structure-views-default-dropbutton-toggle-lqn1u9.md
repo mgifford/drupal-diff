@@ -97,7 +97,7 @@ No high-confidence automatic patch suggestion for this diff.
 ```
 
 ### Drupal 12 with Admin Theme
-1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[4]/td[5]/div[1]/div[1]/ul[1]/li[2]/button[1]`
+1. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[5]/td[5]/div[1]/div[1]/ul[1]/li[2]/button[1]`
    - Text sample: List additional actions
    - Related page screenshot: candidate-pages/structure-views__default__light__page.png
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/structure-views__default__light__page.png
@@ -106,7 +106,7 @@ No high-confidence automatic patch suggestion for this diff.
 <button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button>
 ```
 
-2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[5]/td[5]/div[1]/div[1]/ul[1]/li[2]/button[1]`
+2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[6]/td[5]/div[1]/div[1]/ul[1]/li[2]/button[1]`
    - Text sample: List additional actions
    - Related page screenshot: candidate-pages/structure-views__default__light__page.png
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/structure-views__default__light__page.png

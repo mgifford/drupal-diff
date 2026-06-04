@@ -2,7 +2,7 @@
 
 ## Human-Readable Change Summary
 - Text size is significantly larger: 16.0px vs 0.0px (+100.0%).
-- Component width is significantly wider: 73.0px vs 0.0px (+100.0%).
+- Component width is significantly wider: 89.5px vs 0.0px (+100.0%).
 - Component height is significantly taller: 28.0px vs 0.0px (+100.0%).
 - Line height is significantly larger: 24.0px vs 0.0px (+100.0%).
 - Matched element count is different: 4 more element(s) (+100.0%).
@@ -94,15 +94,15 @@ No high-confidence automatic patch suggestion for this diff.
 <div class="dropbutton-wrapper dropbutton-single" data-drupal-ajax-container="" data-once="dropbutton"> <div class="dropbutton-widget"><ul class="dropbutton dropbutton--extrasmall dropbutton--single dropbutton--gin"> <li class="manage dropbutton__item dropbutton-action"><a href="/admin/structure/types/manage/article/display/default">Manage <span class="visually-hidden">(Default)</span></a></li> </ul></div> </div>
 ```
 
-2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]`
-   - Text sample: Enable (Full content)
+2. XPath: `/html[1]/body[1]/div[4]/div[2]/main[1]/div[4]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[2]/td[3]/div[1]`
+   - Text sample: Manage (RSS)List additional actions Disable (RSS)
    - Related element screenshot: candidate/structure-content-type-article-display__default__light__dropbutton-wrapper.png
    - Related element screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate/structure-content-type-article-display__default__light__dropbutton-wrapper.png
    - Related page screenshot: candidate-pages/structure-content-type-article-display__default__light__page.png
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/structure-content-type-article-display__default__light__page.png
 
 ```html
-<div class="dropbutton-wrapper dropbutton-single" data-drupal-ajax-container="" data-once="dropbutton"> <div class="dropbutton-widget"><ul class="dropbutton dropbutton--extrasmall dropbutton--single dropbutton--gin"> <li class="enable dropbutton__item dropbutton-action"><a href="/admin/structure/types/manage/article/display/full/enable?token=gDFrgzVKGdKUTFmgnllHDtrcaQ2-WZKJZYHaT9mPCxs">Enable <span class="visually-hidden">(Full content)</span></a></li> </ul></div> </div>
+<div class="dropbutton-wrapper dropbutton-multiple open" data-drupal-ajax-container="" data-once="dropbutton ginDropbutton"> <div class="dropbutton-widget"><ul class="dropbutton dropbutton--extrasmall dropbutton--multiple dropbutton--gin"> <li class="manage dropbutton__item dropbutton-action"><a href="/admin/structure/types/manage/article/display/rss">Manage <span class="visually-hidden">(RSS)</span></a></li><li class="dropbutton-toggle"><button type="button" class="dropbutton__toggle"><span class="visually-hidden">List additional actions</span></button></li> <li class="dropbutton__item dropbutton-action secondary-action"> <ul class="dropbutton__items" style="position: fixed; left: 1082.39px; right: auto; top: 528.797px;"> <li class="disable dropbutton__item dropbutton-action secondary-act
 ```
 
 ## Notes

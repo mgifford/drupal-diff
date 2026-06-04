@@ -2,7 +2,7 @@
 
 ## Human-Readable Change Summary
 - Component width is significantly wider: 358.4px vs 165.8px (+116.2%).
-- Component height is noticeably shorter: 61.4px vs 83.1px (-26.2%).
+- Component height is noticeably shorter: 61.2px vs 83.1px (-26.4%).
 - Horizontal padding is significantly higher: 32.0px vs 20.0px (+60.0%).
 - This same issue was also identified in dark mode.
 
@@ -11,8 +11,8 @@ Potential CSS regression in **Table Body Cell** on **Structure Article Display**
 Color mode coverage: **dark + light**
 
 ## Color Mode Coverage
-- light: paddingX: 60.0% | width: 116.2% | height: -26.2%
-- dark: paddingX: 60.0% | width: 116.2% | height: -26.2%
+- light: paddingX: 60.0% | width: 116.2% | height: -26.4%
+- dark: paddingX: 60.0% | width: 116.2% | height: -26.4%
 
 ## Steps To Reproduce
 1. Open baseline page: http://drupal-11.3.10.ddev.site/admin/structure/types/manage/article/display
@@ -24,8 +24,8 @@ Color mode coverage: **dark + light**
 Drupal 12 with Admin Theme should align with Drupal 11 with Gin for this component unless intentional and documented.
 
 ## Actual Result
-- light: paddingX: 60.0% | width: 116.2% | height: -26.2%
-- dark: paddingX: 60.0% | width: 116.2% | height: -26.2%
+- light: paddingX: 60.0% | width: 116.2% | height: -26.4%
+- dark: paddingX: 60.0% | width: 116.2% | height: -26.4%
 
 ## Likely CSS Sources
 - core/themes/default_admin/css/components/navigation.css

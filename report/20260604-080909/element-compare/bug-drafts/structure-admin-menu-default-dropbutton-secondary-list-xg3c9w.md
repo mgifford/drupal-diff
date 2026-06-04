@@ -86,7 +86,7 @@ No high-confidence automatic patch suggestion for this diff.
    - Related page screenshot (GitHub): https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/candidate-pages/structure-menu-admin__default__light__page.png
 
 ```html
-<ul class="dropbutton__items" style="position: fixed; left: 1092.73px; right: auto; top: 659px;"> <li class="add-child dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/menu/manage/admin/add?parent=system.admin_structure&amp;destination=/admin/structure/menu/manage/admin">Add child</a></li> </ul>
+<ul class="dropbutton__items" style="position: fixed; left: 1092.73px; right: auto; top: 659px;"> <li class="add-child dropbutton__item dropbutton-action secondary-action"><a href="/admin/structure/menu/manage/admin/add?parent=comment.admin&amp;destination=/admin/structure/menu/manage/admin">Add child</a></li> </ul>
 ```
 
 ## Notes

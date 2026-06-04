@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Admin Theme (dark + light) Content Add Article - Details Summary style regression vs Drupal 11 Gin</title>
+<title>Admin Theme (light) Content Add Article - Details Summary style regression vs Drupal 11 Gin</title>
 <style>
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 2rem auto; max-width: 1100px; padding: 0 1rem; line-height: 1.45; }
   h1 { margin-bottom: 0.4rem; }
@@ -17,8 +17,8 @@
 </style>
 </head>
 <body>
-  <h1>Admin Theme (dark + light) Content Add Article - Details Summary style regression vs Drupal 11 Gin</h1>
-  <p class="meta">Potential CSS regression in <strong>Details Summary</strong> on <strong>Content Add Article</strong> (modes: dark + light).</p>
+  <h1>Admin Theme (light) Content Add Article - Details Summary style regression vs Drupal 11 Gin</h1>
+  <p class="meta">Potential CSS regression in <strong>Details Summary</strong> on <strong>Content Add Article</strong> (modes: light).</p>
   <p class="links">
     <a href="content-add-article-default-details-summary-h7p4m2.md" target="_blank" rel="noopener">Local Markdown</a>
     <a href="https://github.com/mgifford/drupal-diff/blob/main/report/20260604-080909/element-compare/bug-drafts/content-add-article-default-details-summary-h7p4m2.md" target="_blank" rel="noopener">GitHub Source (Markdown)</a>
@@ -28,7 +28,7 @@
   <section class="card">
     <h2>What Changed (Human Summary)</h2>
     <ul>
-      <li>Component width is noticeably narrower: 359.0px vs 410.5px (-12.5%).</li><li>Component height is noticeably taller: 88.0px vs 78.7px (+11.9%).</li><li>Line height is slightly larger: 24.0px vs 22.7px (+5.9%).</li><li>Matched element count is different: 3 fewer element(s) (-50.0%).</li><li>This same issue was also identified in dark mode.</li>
+      <li>Component width is noticeably narrower: 360.3px vs 410.5px (-12.2%).</li><li>Component height is significantly taller: 179.5px vs 78.7px (+128.2%).</li><li>Horizontal padding is noticeably lower: 55.5px vs 70.0px (-20.7%).</li><li>Matched element count is different: 2 more element(s) (+33.3%).</li>
     </ul>
   </section>
 
@@ -38,7 +38,7 @@
       <li>Open baseline page: <a href="http://drupal-11.3.10.ddev.site/node/add/article" target="_blank" rel="noopener">http://drupal-11.3.10.ddev.site/node/add/article</a></li>
       <li>Open candidate page: <a href="http://drupal-12.ddev.site/node/add/article" target="_blank" rel="noopener">http://drupal-12.ddev.site/node/add/article</a></li>
       <li>Inspect selector: <code>details &gt; summary</code></li>
-      <li>Compare typography, spacing, sizing, and marker presence in dark + light.</li>
+      <li>Compare typography, spacing, sizing, and marker presence in light.</li>
     </ol>
   </section>
 
@@ -62,12 +62,12 @@
       <div class="meta">text: Menu settings Not in menu</div>
       <pre>&lt;summary role=&quot;button&quot; aria-controls=&quot;edit-menu&quot; aria-expanded=&quot;false&quot; class=&quot;claro-details__summary claro-details__summary--accordion-item&quot;&gt;Menu settings&lt;span class=&quot;required-mark&quot;&gt;&lt;/span&gt; &lt;span class=&quot;claro-details__summary-summary&quot;&gt;Not in menu&lt;/span&gt;&lt;/summary&gt;</pre>
     
-      <div class="meta"><strong>Drupal 12 with Admin Theme 1 XPath:</strong> <code>/html[1]/body[1]/div[4]/div[1]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/details[1]/summary[1]</code></div>
-      <div class="meta">text: Menu settings Not in menu</div>
-      <pre>&lt;summary role=&quot;button&quot; aria-controls=&quot;edit-menu&quot; aria-expanded=&quot;false&quot; class=&quot;gin-details__summary gin-details__summary--accordion-item&quot;&gt;Menu settings&lt;span class=&quot;required-mark&quot;&gt;&lt;/span&gt; &lt;span class=&quot;gin-details__summary-summary&quot;&gt;Not in menu&lt;/span&gt;&lt;/summary&gt;</pre>
-      <div class="meta"><strong>Drupal 12 with Admin Theme 2 XPath:</strong> <code>/html[1]/body[1]/div[4]/div[1]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/details[2]/summary[1]</code></div>
-      <div class="meta">text: URL alias No alias</div>
-      <pre>&lt;summary role=&quot;button&quot; aria-controls=&quot;edit-path-0&quot; aria-expanded=&quot;false&quot; class=&quot;gin-details__summary gin-details__summary--accordion-item&quot;&gt;URL alias&lt;span class=&quot;required-mark&quot;&gt;&lt;/span&gt; &lt;span class=&quot;gin-details__summary-summary&quot;&gt;No alias&lt;/span&gt;&lt;/summary&gt;</pre>
+      <div class="meta"><strong>Drupal 12 with Admin Theme 1 XPath:</strong> <code>/html[1]/body[1]/div[4]/div[1]/div[2]/main[1]/div[2]/div[1]/div[1]/div[2]/div[2]/details[1]/summary[1]</code></div>
+      <div class="meta">text: Deprecated function: dirname(): Passing null to parameter #1 ($path) of type str</div>
+      <pre>&lt;summary&gt;&lt;em class=&quot;placeholder&quot;&gt;Deprecated function&lt;/em&gt;: dirname(): Passing null to parameter #1 ($path) of type string is deprecated in &lt;em class=&quot;placeholder&quot;&gt;Drupal\Core\Extension\ExtensionPathResolver-&amp;gt;getPath()&lt;/em&gt; (line &lt;em class=&quot;placeholder&quot;&gt;76&lt;/em&gt; of &lt;em class=&quot;placeholder&quot;&gt;core/lib/Drupal/Core/Extension/ExtensionPathResolver.php&lt;/em&gt;).&lt;span class=&quot;gin-details__summary-summary&quot;&gt;&lt;/span&gt;&lt;/summary&gt;</pre>
+      <div class="meta"><strong>Drupal 12 with Admin Theme 2 XPath:</strong> <code>/html[1]/body[1]/div[4]/div[1]/div[2]/main[1]/div[4]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/details[1]/summary[1]</code></div>
+      <div class="meta">text: Image</div>
+      <pre>&lt;summary role=&quot;button&quot; aria-expanded=&quot;true&quot; class=&quot;gin-details__summary&quot;&gt;Image&lt;span class=&quot;required-mark&quot;&gt;&lt;/span&gt; &lt;span class=&quot;gin-details__summary-summary&quot;&gt;&lt;/span&gt;&lt;/summary&gt;</pre>
   </section>
 </body>
 </html>
