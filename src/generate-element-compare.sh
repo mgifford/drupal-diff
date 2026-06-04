@@ -1375,11 +1375,40 @@ async function clearOutputDir(targetDir) {
   await browser.close();
 
   const componentAgg = {};
+  const componentRollup = {};
   for (const row of rows) {
     const key = row.component;
     componentAgg[key] = componentAgg[key] || { total: 0, flagged: 0 };
     componentAgg[key].total += 1;
     if (row.comparison.significant > 0) componentAgg[key].flagged += 1;
+
+    componentRollup[key] = componentRollup[key] || {
+      total: 0,
+      flagged: 0,
+      routes: new Set(),
+      modes: new Set(),
+      cssFiles: new Set(),
+      sampleRows: [],
+    };
+    const group = componentRollup[key];
+    group.total += 1;
+    if (row.comparison.significant > 0) {
+      group.flagged += 1;
+      if (group.sampleRows.length < 3) {
+        group.sampleRows.push(row);
+      }
+    }
+    if (row.route) {
+      group.routes.add(row.route);
+    }
+    if (row.colorMode) {
+      group.modes.add(row.colorMode);
+    }
+    for (const cssFile of (row.likelyCssFiles || [])) {
+      if (cssFile) {
+        group.cssFiles.add(cssFile);
+      }
+    }
   }
 
   const data = {
@@ -1394,6 +1423,33 @@ async function clearOutputDir(targetDir) {
 
   const aggRows = Object.entries(componentAgg)
     .map(([name, s]) => `<tr><td>${esc(name)}</td><td>${s.flagged}</td><td>${s.total}</td></tr>`)
+    .join('');
+  const rollupRows = Object.entries(componentRollup)
+    .sort((a, b) => b[1].total - a[1].total || b[1].flagged - a[1].flagged || a[0].localeCompare(b[0]))
+    .map(([name, stats]) => {
+      const routeList = Array.from(stats.routes).sort();
+      const routePreview = routeList.slice(0, 5).join(' | ');
+      const modePreview = Array.from(stats.modes).sort().join(' + ');
+      const cssPreview = Array.from(stats.cssFiles).sort().slice(0, 4).join(' | ') || 'unknown';
+      const sampleSummary = stats.sampleRows.length
+        ? stats.sampleRows.map((row) => `${row.route} (${row.colorMode || 'light'})`).join(' | ')
+        : 'No flagged rows captured';
+      return `
+        <tr>
+          <td><strong>${esc(name)}</strong></td>
+          <td>${stats.flagged}</td>
+          <td>${stats.total}</td>
+          <td>${esc(modePreview || 'unknown')}</td>
+          <td>${esc(cssPreview)}</td>
+          <td>
+            <details>
+              <summary>View routes (${routeList.length})</summary>
+              <div class="meta">${esc(routePreview)}${routeList.length > 5 ? ` (+${routeList.length - 5} more)` : ''}</div>
+              <div class="meta"><strong>Sample flagged rows:</strong> ${esc(sampleSummary)}</div>
+            </details>
+          </td>
+        </tr>`;
+    })
     .join('');
   const uniqueRouteCount = new Set(rows.map((r) => r.route)).size;
   const uniqueModeCount = new Set(rows.map((r) => r.colorMode)).size;
@@ -1574,6 +1630,15 @@ async function clearOutputDir(targetDir) {
     <table>
       <thead><tr><th>Component</th><th>Flagged Routes</th><th>Total Routes</th></tr></thead>
       <tbody>${aggRows}</tbody>
+    </table>
+  </section>
+
+  <section class="agg">
+    <h2>Component Rollup</h2>
+    <div class="meta">One row per component, grouped across routes, modes, and scenarios. This is the consolidated view you can use when the detailed table feels repetitive.</div>
+    <table>
+      <thead><tr><th>Component</th><th>Flagged Rows</th><th>Total Rows</th><th>Modes</th><th>CSS Sources</th><th>Routes</th></tr></thead>
+      <tbody>${rollupRows}</tbody>
     </table>
   </section>
 

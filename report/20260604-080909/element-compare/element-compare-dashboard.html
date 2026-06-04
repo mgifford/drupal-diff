@@ -23,6 +23,7 @@
   img { max-width: 100%; border: 1px solid #cbd2d9; margin-top: 6px; }
   .agg { margin-bottom: 16px; }
   .agg table { width: auto; min-width: 420px; }
+  .rollup-note { max-width: 1120px; }
 </style>
 </head>
 <body>
@@ -36,6 +37,15 @@
     <table>
       <thead><tr><th>Component</th><th>Flagged Routes</th><th>Total Routes</th></tr></thead>
       <tbody><tr><td>Required Marker (*)</td><td>12</td><td>64</td></tr><tr><td>Page Title Heading (h1)</td><td>14</td><td>64</td></tr><tr><td>Text Input</td><td>2</td><td>64</td></tr><tr><td>Textarea</td><td>2</td><td>64</td></tr><tr><td>Button</td><td>64</td><td>64</td></tr><tr><td>Form Item Wrapper</td><td>6</td><td>64</td></tr><tr><td>Table Header Cell</td><td>12</td><td>64</td></tr><tr><td>Table Body Cell</td><td>6</td><td>64</td></tr><tr><td>Details Summary</td><td>8</td><td>64</td></tr><tr><td>Form Label</td><td>42</td><td>64</td></tr><tr><td>Dropbutton Wrapper</td><td>18</td><td>64</td></tr><tr><td>Dropbutton Primary Action Link</td><td>24</td><td>64</td></tr><tr><td>Dropbutton Toggle Button</td><td>26</td><td>64</td></tr><tr><td>Dropbutton Secondary Actions List</td><td>10</td><td>64</td></tr><tr><td>Dropbutton Secondary Action Link</td><td>16</td><td>64</td></tr><tr><td>Toolbar Structure Toggle Button</td><td>64</td><td>64</td></tr><tr><td>Contextual Config Trigger Button</td><td>0</td><td>64</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="agg">
+    <h2>Component Rollup</h2>
+    <div class="meta rollup-note">One row per component, grouped across routes, modes, and scenarios. This is the consolidated view for repeated entries like Appearance and configuration controls.</div>
+    <table id="componentRollupTable">
+      <thead><tr><th>Component</th><th>Flagged Rows</th><th>Total Rows</th><th>Modes</th><th>CSS Sources</th><th>Routes</th></tr></thead>
+      <tbody id="componentRollupBody"></tbody>
     </table>
   </section>
 
@@ -49547,6 +49557,7 @@
 <script>
   const rows = [...document.querySelectorAll('#resultsTable tbody tr')];
   const tbody = document.querySelector('#resultsTable tbody');
+  const rollupTbody = document.getElementById('componentRollupBody');
   const routeFilter = document.getElementById('routeFilter');
   const componentFilter = document.getElementById('componentFilter');
   const signalFilter = document.getElementById('signalFilter');
@@ -49558,6 +49569,58 @@
   const fixFilter = document.getElementById('fixFilter');
   const sortOrder = document.getElementById('sortOrder');
   const textFilter = document.getElementById('textFilter');
+
+  const componentRollup = {};
+  for (const row of rows) {
+    const key = row.dataset.component || 'Unknown component';
+    componentRollup[key] = componentRollup[key] || {
+      total: 0,
+      flagged: 0,
+      routes: new Set(),
+      modes: new Set(),
+      cssFiles: new Set(),
+      sampleRows: [],
+    };
+    const group = componentRollup[key];
+    group.total += 1;
+    if (row.dataset.significant === 'yes') {
+      group.flagged += 1;
+      if (group.sampleRows.length < 3) {
+        group.sampleRows.push(`${row.dataset.route} (${row.dataset.mode || 'light'})`);
+      }
+    }
+    if (row.dataset.route) group.routes.add(row.dataset.route);
+    if (row.dataset.mode) group.modes.add(row.dataset.mode);
+    if (row.dataset.css) group.cssFiles.add(row.dataset.css);
+  }
+
+  if (rollupTbody) {
+    rollupTbody.innerHTML = Object.entries(componentRollup)
+      .sort((a, b) => b[1].total - a[1].total || b[1].flagged - a[1].flagged || a[0].localeCompare(b[0]))
+      .map(([name, stats]) => {
+        const routes = [...stats.routes].sort();
+        const modes = [...stats.modes].sort().join(' + ') || 'unknown';
+        const cssFiles = [...stats.cssFiles].sort().slice(0, 4).join(' | ') || 'unknown';
+        const routePreview = routes.slice(0, 5).join(' | ');
+        const sampleRows = stats.sampleRows.length ? stats.sampleRows.join(' | ') : 'No flagged rows captured';
+        return `
+          <tr>
+            <td><strong>${name}</strong></td>
+            <td>${stats.flagged}</td>
+            <td>${stats.total}</td>
+            <td>${modes}</td>
+            <td>${cssFiles}</td>
+            <td>
+              <details>
+                <summary>View routes (${routes.length})</summary>
+                <div class="meta">${routePreview}${routes.length > 5 ? ` (+${routes.length - 5} more)` : ''}</div>
+                <div class="meta"><strong>Sample flagged rows:</strong> ${sampleRows}</div>
+              </details>
+            </td>
+          </tr>`;
+      })
+      .join('');
+  }
 
   const routes = [...new Set(rows.map(r => r.dataset.route))].sort();
   const components = [...new Set(rows.map(r => r.dataset.component))].sort();
